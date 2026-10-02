@@ -1,0 +1,42 @@
+<!-- IKMAUpdater.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    IKMAUpdater.dll, the BepInEx preloader patcher that installs a
+    downloaded IKMA update at game start (Session 32, DRAFT). Goes in
+    BepInEx\patchers, never in plugins. Built by package_release.ps1:
+
+      dotnet build tools\patcher\IKMAUpdater.csproj -c Release -o <out>
+
+    Same target as the mod (netstandard2.0), which the game's Mono runs.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>IKMAUpdater</AssemblyName>
+    <RootNamespace>IKMAUpdater</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <!--
+    The signature check and the public key are the MOD'S files, compiled in
+    here too, so the two can never disagree. Linked, not copied.
+  -->
+  <ItemGroup>
+    <Compile Include="..\..\UpdateSignature.cs" Link="UpdateSignature.cs" />
+    <Compile Include="..\..\UpdateKey.cs" Link="UpdateKey.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\core\Mono.Cecil.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
+<!-- IKMAUpdater.csproj -->

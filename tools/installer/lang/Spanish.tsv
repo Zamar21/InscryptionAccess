@@ -1,0 +1,66 @@
+# Spanish.tsv
+#status: unreviewed
+# IKMA Manager, drafted by Claude (Session 32). English [TAB] translation.
+IKMA Manager, version {0}.	IKMA Manager, versión {0}.
+Looking for Inscryption in your Steam library.	Buscando Inscryption en tu biblioteca de Steam.
+Found Inscryption at {0}.	Inscryption encontrado en {0}.
+Inscryption was not found in your Steam library.	No se encontró Inscryption en tu biblioteca de Steam.
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	Escribe o pega la ruta completa de tu carpeta de Inscryption y pulsa Intro. O pulsa solo Intro para salir.
+That folder does not contain Inscryption.exe.	Esa carpeta no contiene Inscryption.exe.
+IKMA version {0} is installed and turned on.	IKMA versión {0} está instalado y activado.
+IKMA is installed and turned on.	IKMA está instalado y activado.
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA versión {0} está instalado pero desactivado. Inscryption se inicia sin él.
+IKMA is installed but turned off. Inscryption starts without it.	IKMA está instalado pero desactivado. Inscryption se inicia sin él.
+IKMA is not installed in this game folder.	IKMA no está instalado en esta carpeta del juego.
+Main menu. Press Enter alone to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	Menú principal. Pulsa solo Intro para instalar o actualizar IKMA. O escribe un número y pulsa Intro. 1, instalar o actualizar. 2, ajustes. 3, volver a activar IKMA. 4, desinstalar. 5, salir.
+Main menu. Press Enter alone to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	Menú principal. Pulsa solo Intro para instalar o actualizar IKMA. O escribe un número y pulsa Intro. 1, instalar o actualizar. 2, ajustes. 3, desactivar IKMA. 4, desinstalar. 5, salir.
+That is not one of the choices.	Esa no es una de las opciones.
+IKMA is not installed, so there is nothing to turn off.	IKMA no está instalado, así que no hay nada que desactivar.
+IKMA is turned off. Inscryption starts without it. BepInEx and your other mods are unchanged, and IKMA's settings are kept.	IKMA está desactivado. Inscryption se inicia sin él. BepInEx y tus otros mods no cambian, y los ajustes de IKMA se conservan.
+IKMA is turned back on. It starts with the game.	IKMA está activado de nuevo. Se inicia con el juego.
+IKMA was turned off. Installing turned it back on.	IKMA estaba desactivado. La instalación lo volvió a activar.
+Settings. Type a number, then press Enter to change it. Press Enter alone to go back to the main menu. Changes take effect the next time you start the game.	Ajustes. Escribe un número y pulsa Intro para cambiarlo. Pulsa solo Intro para volver al menú principal. Los cambios se aplican la próxima vez que inicies el juego.
+{0}, {1}: {2}	{0}, {1}: {2}
+{0}. Type a number, then press Enter. Press Enter alone to keep it as it is.	{0}. Escribe un número y pulsa Intro. Pulsa solo Intro para dejarlo como está.
+{0}, {1} This is the current setting.	{0}, {1} Es el ajuste actual.
+{0} set to: {1}	{0} cambiado a: {1}
+a custom value, {0}.	un valor personalizado, {0}.
+Updates	Actualizaciones
+Speech engine	Motor de voz
+Language	Idioma
+Full log for bug reports	Registro completo para informes de errores
+Inscryption is running. Close the game, then press Enter.	Inscryption se está ejecutando. Cierra el juego y pulsa Intro.
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	Este Inscryption no es la versión de 32 bits para la que se hizo este instalador. No se cambió nada.
+BepInEx is already installed. Kept as it is.	BepInEx ya está instalado. Se ha dejado como estaba.
+Installed BepInEx, the mod loader.	Se instaló BepInEx, el cargador de mods.
+Installed IKMA and its speech files.	Se instalaron IKMA y sus archivos de voz.
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	Listo. Inicia Inscryption desde Steam como siempre. IKMA hablará en la pantalla de título.
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA está desinstalado. BepInEx se dejó en su sitio, porque otros mods pueden usarlo.
+IKMA was not installed in this folder.	IKMA no estaba instalado en esta carpeta.
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows no permitió que el instalador escribiera en la carpeta del juego. Cierra esta ventana, haz clic derecho en IKMA_Manager y elige Ejecutar como administrador.
+This installer is incomplete: a file it carries is missing. Download it again.	Este instalador está incompleto: falta un archivo que debería llevar. Descárgalo de nuevo.
+Something went wrong, and the install stopped: {0}	Algo salió mal y la instalación se detuvo: {0}
+Press Enter to close.	Pulsa Intro para cerrar.
+BepInEx {0} is already installed for your other mods. Kept exactly as it is.	BepInEx {0} ya está instalado para tus otros mods. Se ha dejado exactamente como estaba.
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	Este juego tiene BepInEx 6 instalado. IKMA necesita BepInEx 5, y reemplazarlo rompería tus otros mods. No se cambió nada.
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	Este juego tiene otro cargador de mods instalado ({0}). Añadir BepInEx junto a él podría romper tus otros mods. No se cambió nada.
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	El BepInEx de esta carpeta del juego es la versión de 64 bits, que no puede cargarse en este juego de 32 bits. No se cambió nada; hace falta el BepInEx de 32 bits.
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx está aquí, pero falta el archivo que lo inicia con el juego (winhttp.dll). Escribe Y y pulsa Intro para añadirlo. Pulsa solo Intro para dejarlo todo como está.
+Added the file that starts BepInEx.	Se añadió el archivo que inicia BepInEx.
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx se dejó como estaba. IKMA está instalado, pero no se cargará hasta que BepInEx se inicie con el juego.
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	Nota: BepInEx está desactivado en doorstop_config.ini (enabled=false). IKMA no se cargará hasta que se active. El instalador no lo cambió.
+Found an earlier IKMA at {0}. Updated it there.	Se encontró un IKMA anterior en {0}. Se actualizó allí.
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	Hay más de una copia de IKMA instalada: {0}. Elimina todas menos una y vuelve a ejecutar este programa. No se cambió nada.
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	{0}, de otro mod, se guardó como {1}.before-IKMA. Al desinstalar IKMA se vuelve a poner.
+Put back the earlier {0}.	Se volvió a poner el {0} anterior.
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	Nota: hay un gestor de mods (r2modman o Thunderstore) configurado para Inscryption en este PC. Si inicias el juego desde el gestor de mods, añade también IKMA a ese perfil; este instalador configuró el juego que se inicia desde Steam.
+Automatic: new versions download and install with no question.	Automático: las nuevas versiones se descargan e instalan sin preguntar.
+Download, then ask before installing.	Descargar y preguntar antes de instalar.
+Ask before downloading.	Preguntar antes de descargar.
+Off: IKMA never connects to the internet.	Desactivado: IKMA nunca se conecta a internet.
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	Automático: tu lector de pantalla en Windows, el asistente de voz de IKMA en Steam Deck.
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	Siempre tu lector de pantalla, mediante UniversalSpeech: NVDA, JAWS o la voz de Windows.
+Always the IKMA speech helper, for Steam Deck and Linux.	Siempre el asistente de voz de IKMA, para Steam Deck y Linux.
+Follow the game's language setting.	Seguir el ajuste de idioma del juego.
+Off: the short log, what IKMA said and anything that went wrong.	Desactivado: el registro corto, lo que dijo IKMA y cualquier cosa que saliera mal.
+On: every diagnostic line, for a bug report. The log gets much longer.	Activado: cada línea de diagnóstico, para un informe de errores. El registro se vuelve mucho más largo.

@@ -1,0 +1,1981 @@
+# ChineseSimplified.tsv
+# IKMA language file: Simplified Chinese. Translated by Claude (Session 32) following the game's own Simplified Chinese terms; no Simplified Chinese speaker has checked it yet.
+#status: unreviewed
+# Vocabulary.AndList
+{0} and {1}	{0}和{1}
+# Vocabulary.AndList
+{0}, and {1}	{0}和{1}
+# Vocabulary.HandEmpty
+Hand is empty.	手牌为空。
+# Vocabulary.BoardUnavailable
+Board unavailable.	无法读取牌桌。
+# Vocabulary.ItemsUnavailable
+Items unavailable.	无法读取道具。
+# Vocabulary.NoItems
+You have no items.	你没有道具。
+# Vocabulary.NoOptions
+No options.	没有选项。
+# Vocabulary.NoOptionsAvailable
+No options available.	没有可用选项。
+# Vocabulary.NoSettingsOnPage
+No settings on this page.	本页没有设置项。
+# Vocabulary.NoPathsAhead
+No paths ahead.	前方没有道路。
+# Vocabulary.NothingInFront
+Nothing is directly in front of you.	你正前方什么都没有。
+# Vocabulary.NothingToExamine
+Nothing to examine here.	这里没有可查看的东西。
+# Vocabulary.NothingOnThatKey
+Nothing on {0} from here.	在这里，{0}键没有对应的东西。
+# Vocabulary.RunEndControls
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	按回车键，以相同的初始牌组和已启用的挑战开始新的冒险。按退格键返回主菜单。按空格键重复。
+# Vocabulary.NoRunToContinue
+No current run available.	当前没有可继续的冒险。
+# Vocabulary.MainGameNotSupported
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	Inscryption 主游戏的支持仍在开发中。我一定会做完，别担心！——Zamar :)
+# Vocabulary.BootPlayButton
+In the center of the screen is a small play button. Press Enter...	屏幕中央有一个小小的播放按钮。按回车键……
+# Vocabulary.BootStudioLogo
+Daniel Mullins Games.	Daniel Mullins Games。
+# Vocabulary.TitleCardGlitches
+The screen glitches for a second.	画面短暂地出现了故障。
+# Vocabulary.VideoLogsNotAvailable
+Video logs not yet available. Coming soon!	录像日志暂未开放。敬请期待！
+# Vocabulary.BootPublisherLogo
+Devolver Digital.	Devolver Digital。
+# Vocabulary.BaseTitleCard
+Inscryption. Press any button to start.	Inscryption。按任意键开始。
+# Vocabulary.ModTitleCard
+Inscryption: Kaycee's Mod.	Inscryption：凯茜模组。
+# Vocabulary.RulebookNoPages
+The rulebook has no pages to read.	规则书没有可读的页面。
+# Vocabulary.CannotEndTurn
+Cannot end turn right now.	现在无法结束回合。
+# Vocabulary.NoCardSelected
+No card selected.	未选择卡牌。
+# Vocabulary.MustSelectCardFirst
+You must first select a card to add to your deck.	你必须先选择一张卡牌加入牌组。
+# Vocabulary.OptionCouldNotBeSelected
+That option could not be selected.	无法选择该选项。
+# Vocabulary.SurrenderNotAccepted
+The surrender could not be accepted.	无法接受投降。
+# Vocabulary.CouldNotReachTable
+Could not reach the table.	无法回到牌桌前。
+# Vocabulary.WoodcarvingCouldNotBeRead
+The woodcarving could not be read.	无法读取木雕。
+# Vocabulary.PressHForWhatStillWorks
+Press H for what still works.	按H键了解哪些功能仍可用。
+# Vocabulary.SpaceDescribesAhead_
+Space describes what is directly in front of you. 	空格键描述你正前方的东西。 
+# Vocabulary.ConversationInProgress
+Conversation in progress, press Space to proceed.	对话进行中，按空格键继续。
+# Vocabulary.Scales
+Scales: you lead by {0}.	天平：你领先{0}。
+# Vocabulary.Scales
+Scales: enemy leads by {0}.	天平：敌方领先{0}。
+# Vocabulary.Scales
+Scales: even.	天平：持平。
+# Vocabulary._sigilFlavour
+It resurfaces.	它浮出了水面。
+# Vocabulary._sigilFlavourPlural
+They resurface.	它们浮出了水面。
+# Vocabulary._sigilClause
+, granting four bones.	，获得四根骨头。
+# Vocabulary._sigilClause
+, sending one damage back to its attacker.	，对攻击者反弹一点伤害。
+# Vocabulary._sigilClause
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	，请从牌组中选一张卡牌加入手牌。方向键浏览，回车键确认。
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers{2}	{0}的{1}能力触发{2}
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers.	{0}的{1}能力触发。
+# Vocabulary.SigilTriggers
+{0}'s {1} abilities trigger.	{0}的{1}能力触发。
+# Vocabulary.OverlayLineText
+Comment line: {0}	注释行：{0}
+# Vocabulary.TotemGrant
+{0} gains ability: {1}.	{0}获得能力：{1}。
+# Vocabulary.TotemGrantNegated
+Copy of {0} sigil negated by Kaycee override.	重复的{0}印记被凯茜模组规则取消。
+# Vocabulary.OpponentTotem
+{0}'s totem gives enemy {1} cards {2}.	{0}的图腾让敌方{1}卡牌获得{2}。
+# Vocabulary.FootagePlaying
+Footage, {0}.	录像，{0}。
+# Vocabulary._maskFaces
+It is a rugged face with a bandana wrapped tightly below the eyes.	这是一张粗犷的脸，眼睛以下紧紧蒙着一条方巾。
+# Vocabulary._maskFaces
+He has a leathery face with deep wrinkles across his forehead.	他的脸如皮革般粗糙，额头上布满深深的皱纹。
+# Vocabulary._maskFaces
+She has a strong aged face with a patterned headband.	她有一张坚毅而苍老的脸，戴着带花纹的头带。
+# Vocabulary._maskFaces
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	他浓眉下是一双深陷的眼睛。好几枚鱼钩穿透了他的下唇。
+# Vocabulary._maskWholeLine
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	莱西戴上了双面的菌学家面具. 医生的脸是一个头发卷曲的男人，戴着又大又圆的眼镜和额镜。他的脖子上连着第二张较小的脸。蘑菇那张脸五官相同，头上长着一个按比例来说很大的蘑菇。
+# Vocabulary.DrawPhasePrompt
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	抽牌阶段。按D键从你的牌组抽牌，或按S键从松鼠牌组抽牌。
+# Vocabulary.WaterborneDive
+{0}'s Waterborne ability triggers. It dives underwater...	{0}的水袭能力触发。它潜入了水下……
+# Vocabulary.Submerged
+Submerged {0}	潜入水下的{0}
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask.	莱西戴上了{0}面具。
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask. {1}	莱西戴上了{0}面具。{1}
+# Vocabulary.LeshyMaskOn
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISIONAL: {0}面具没有面部描述。
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask...	莱西戴上了{0}面具……
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask, it floats away.	莱西摘下了{0}的面具，面具飘走了。
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask.	莱西摘下了{0}的面具。
+# Vocabulary.LeshyOrbiter
+the {0}	{0}
+# Vocabulary.LeshyOrbiter
+the {0}, and the {1}	{0}和{1}
+# Vocabulary.LeshyOrbiter
+{0} masks circle around Leshy's head: {1}. 	{0}个面具环绕在莱西头部周围：{1}。 
+# Vocabulary.LeshyOrbiter
+Behind Leshy is a large bright full moon...	莱西身后是一轮又大又亮的满月……
+# Vocabulary.LeshyDeathcardPhase
+Leshy takes back a second candle, blocks your board, and calls up the dead.	莱西收回了第二根蜡烛，封锁了你的牌桌，并召唤亡者。
+# Vocabulary.LeshyMoonPhase
+Leshy takes back a last candle. The masks fly away, and Leshy reaches for the moon.	莱西收回了最后一根蜡烛。面具纷纷飞走，莱西伸手去够月亮。
+# Vocabulary.LeshyWearingMask
+Leshy is wearing the {0}'s mask.	莱西戴着{0}的面具。
+# Vocabulary.LeshyNoMask
+Leshy is not wearing a mask.	莱西没有戴面具。
+# Vocabulary.LeshyThirdCandle
+Leshy lowers a third candle to the flame and lights it...	莱西把第三根蜡烛凑近火焰，将它点燃……
+# Vocabulary.PirateMutiny
+the ship	船
+# Vocabulary.PirateMutiny
+A {0} jumps off {1} and joins your side in slot {2}.	{0}跳下{1}，加入你方{2}号位。
+# Vocabulary.PirateMutiny
+{0} {1} jump off {2} and join your side in slots {3}.	{0}只{1}跳下{2}，加入你方{3}号位。
+# Vocabulary.PirateShipCrashes
+A massive ship called {0} crashes onto the board. 	一艘名为{0}的巨船撞上了牌桌。 
+# Vocabulary.PirateShipCrashes
+It has {0} dancing Skeleton Pirates on board making a ruckus.	船上有{0}个跳着舞的骷髅海盗在喧闹。
+# Vocabulary.PirateSkeletonsOnDeck
+ No Skeleton Pirates remain on deck.	 甲板上已没有骷髅海盗。
+# Vocabulary.PirateSkeletonsOnDeck
+ 1 Skeleton Pirate remains on deck.	 甲板上还剩1个骷髅海盗。
+# Vocabulary.PirateSkeletonsOnDeck
+ {0} Skeleton Pirates remain on deck.	 甲板上还剩{0}个骷髅海盗。
+# Vocabulary.ItemModeEntered
+Item menu. {0} 	道具菜单。{0} 
+# Vocabulary.ItemModeControls
+Arrows to Browse, Enter to select, Backspace to return to your hand.	方向键浏览，回车键选择，退格键返回手牌。
+# Vocabulary.ItemModeWhere
+Item menu. 	道具菜单。 
+# Vocabulary.ItemModeLeft
+Your hand.	你的手牌。
+# Vocabulary.ItemModeHelp
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	道具菜单。左右方向键浏览你携带的道具。回车键使用当前道具。Shift加I键读出全部三个栏位，包括空栏位。退格键返回手牌。Shift加1、2或3键可快速使用对应栏位的道具。
+# Vocabulary.PirateSkullRecedes
+The pirate skull fades backwards... Something is coming...	海盗头骨向后隐去……有什么东西要来了……
+# Vocabulary.PirateSkullPlaced
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0}把一个戴着眼罩和海盗帽的头骨放到桌上。
+# Vocabulary.PirateSkullEyeGlows
+The eye of the skull begins to glow.	头骨的眼睛开始发光。
+# Vocabulary.GiantArrives
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0}占满了敌方牌桌，一张卡牌横跨全部{1}个位置，力量{2}，生命{3}。
+# Vocabulary.GiantArrives
+{0} arrives, {1}/{2}.	{0}登场，力量{1}，生命{2}。
+# Vocabulary.GiantDestroyed
+{0} is destroyed.	{0}被摧毁了。
+# Vocabulary.HookAimed
+{0} aims his hook at your empty slot {1}.	{0}把鱼钩瞄准了你方空着的{1}号位。
+# Vocabulary.HookAimed
+{0} aims his hook at {1} in slot {2}.	{0}把鱼钩瞄准了{2}号位的{1}。
+# Vocabulary.HookPulled
+{0} hooks your {1} and pulls it to his slot {2}.	{0}钩住了你的{1}，把它拉到了他那边的{2}号位。
+# Vocabulary.HookCancelled
+{0} lowers his hook.	{0}放下了鱼钩。
+# Vocabulary.TradeOffered
+{0} on the board and {1} in the queue	牌桌上{0}张，队列中{1}张
+# Vocabulary.TradeOffered
+{0} on the board	牌桌上{0}张
+# Vocabulary.TradeOffered
+{0} in the queue	队列中{0}张
+# Vocabulary.TradeOffered
+cards	卡牌
+# Vocabulary.TradeOffered
+{0} offers a trade.	{0}提出交易。
+# Vocabulary.TradeOffered
+{0} gives you a {1} and offers a trade.	{0}给了你一张{1}，并提出交易。
+# Vocabulary.TradeOffered
+{0} Trade pelts in your hand for one of their cards. 	{0}用你手中的毛皮换取对方的一张卡牌。 
+# Vocabulary.TradeOffered
+They have {0}. 	对方可交易的有：{0}。 
+# Vocabulary.TradeOffered
+The bell is disabled until you trade at least once. 	至少交易一次后才能敲铃。 
+# Vocabulary.TradeOffered
+Trade pelts from your hand for cards on their board and queue.	用手中的毛皮换取对方牌桌和队列中的卡牌。
+# Vocabulary.CannonTargetCard
+{0} in slot {1}	{1}号位的{0}
+# Vocabulary.CannonTargetEmpty
+empty slot {0}	空着的{0}号位
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side, and {1} on theirs.	大炮瞄准了你方的{0}，以及对方的{1}。
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side.	大炮瞄准了你方的{0}。
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on their side.	大炮瞄准了对方的{0}。
+# Vocabulary.CannonAimedAtSlot
+The cannons are aimed at slot {0}.	大炮瞄准了{0}号位。
+# Vocabulary.CannonAimedHere
+The cannons are aimed here.	大炮瞄准了这里。
+# Vocabulary.PirateRodentPhase
+The Pirate Skull opens a pack of cards and calls in their crew.	海盗头骨打开一包卡牌，召来了船员。
+# Vocabulary.PirateShipPhase
+The Pirate Skull calls their ship. It bears down on the cabin.	海盗头骨召来了船只。船朝木屋直逼而来。
+# Vocabulary.LeshyMaskFlip
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	莱西摘下面具，把它倒过来，又戴了回去。他变成了{0}。
+# Vocabulary.AnglerBaitPhase
+{0} clears his side of the table.	{0}清空了自己那一侧的牌桌。
+# Vocabulary.AnglerShark
+A Shark takes the bait's place in slot {0}.	一条鲨鱼取代了{0}号位的鱼饵。
+# Vocabulary.ActorPossessive
+their	对方
+# Vocabulary.ActorPossessive
+his	他的
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean.	{0}把自己那一侧的牌桌清扫一空。
+# Vocabulary.TrapperPhaseTwo
+pelt	毛皮
+# Vocabulary.TrapperPhaseTwo
+pelts	毛皮
+# Vocabulary.TrapperPhaseTwo
+returns	返回
+# Vocabulary.TrapperPhaseTwo
+return	返回
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean, and 	{0}把自己那一侧的牌桌清扫一空， 
+# Vocabulary.TrapperPhaseTwo
+{0} played {1} {2} to your hand.	已打出的{0}张{1}回到了你的手牌。
+# Vocabulary.GrizzlyPhase
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	画面出现故障，{0}的双眼发出红光。一大群灰熊向你涌来……
+# Vocabulary.GrizzliesFillEverySlot
+Every opposing slot on the board is filled with Grizzlies...	牌桌上敌方的每个位置都被灰熊占满了……
+# Vocabulary.TradeScreenOpen
+card	卡牌
+# Vocabulary.TradeScreenOpen
+Begin trading. 	开始交易。 
+# Vocabulary.TradeScreenOpen
+Trade: {0} {1} to choose from, 	交易：可选{0}张卡牌， 
+# Vocabulary.TradeScreenOpen
+{0} {1} in hand. 	手中有{0}张毛皮。 
+# Vocabulary.TradeScreenOpen
+Arrow keys to browse, Enter to trade. Press H for help.	方向键浏览，回车键交易。按H键获取帮助。
+# Vocabulary.TradeOption
+in the queue, slot {0}	队列中，{0}号位
+# Vocabulary.TradeOption
+on the board, slot {0}	牌桌上，{0}号位
+# Vocabulary.TradeOption
+Option {0} of {1}, {2}. {3}	第{0}项，共{1}项，{2}。{3}
+# Vocabulary.TradeOptionUnreadable
+Option {0} of {1}. {2}	第{0}项，共{1}项。{2}
+# Vocabulary.TradeNoPelt
+You have no pelt to trade with.	你没有可用于交易的毛皮。
+# Vocabulary.AdjacentSpawnTriggers
+slot {0}	{0}号位
+# Vocabulary.AdjacentSpawnTriggers
+slot {0} and slot {1}	{0}号位和{1}号位
+# Vocabulary.AdjacentSpawnTriggers
+{0}'s {1} ability triggers, placing a {2} in {3}.	{0}的{1}能力触发，在{3}放置了{2}。
+# Vocabulary.LooseTailTriggers
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	{0}的断尾求生能力触发，它甩下尾巴作为诱饵， 
+# Vocabulary.LooseTailTriggers
+and moves to slot {0}.	并移动到{0}号位。
+# Vocabulary.AmorphousTriggers
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	{0}的无形之物能力触发，它发生变异，获得了{1}。
+# Vocabulary.TidalLockTriggers
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	{0}的潮汐锁定能力触发，把你的{1}拉入轨道，将其彻底消灭。
+# Vocabulary.TrinketBearerTriggers
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	{0}的道具商能力触发，{1}被放入{2}号道具栏。
+# Vocabulary.BugReportKeyHelp
+Shift L saves a log file to your desktop for a bug report, this command works here and at any point during gameplay.	按Shift加L键可将日志文件保存到桌面，用于提交错误报告。此命令在这里及游戏中的任何时候都可用。
+# Vocabulary.LogExported
+Log saved to your desktop as a .txt file. Attach it to your bug report.	日志已作为 .txt 文件保存到桌面。请将它附在错误报告中。
+# Vocabulary.LogExportFailed
+The log could not be saved because {0}.	无法保存日志，原因是{0}。
+# Vocabulary.SigilFizzles
+{0}'s {1} ability fizzles.	{0}的{1}能力没有生效。
+# Vocabulary.CorpseEaterTriggers
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	{0}死亡，触发了你手牌中{1}的食尸鬼能力， 
+# Vocabulary.CorpseEaterTriggers
+playing itself into slot {0}.	它自行打出到{0}号位。
+# Vocabulary.TradeTaken
+{0} traded for {1}.	用{0}换来了{1}。
+# Vocabulary.TradeHelp
+Trade pelts from your hand for cards on their board and queue. 	用手中的毛皮换取对方牌桌和队列中的卡牌。 
+# Vocabulary.TradeHelp
+Arrow keys browse, Enter trades. 	方向键浏览，回车键交易。 
+# Vocabulary.TradeHelp
+You have {0} {1} in hand. 	你手中有{0}张毛皮。 
+# Vocabulary.TradeHelp
+Trade until you run out of pelts, then the battle will continue.	交易到毛皮用完为止，之后战斗将继续。
+# Vocabulary._containerDeathClause
+the cage is destroyed	笼子被摧毁了
+# Vocabulary._containerDeathClause
+the ice is destroyed	冰块被摧毁了
+# Vocabulary.DeathClause
+is destroyed	被摧毁了
+# Vocabulary.DeathClause
+dies	死亡
+# Vocabulary._deathFlavour
+ It quickly snaps shut...	 它迅速啪地合上了……
+# Vocabulary.CaughtInTrapSentence
+{0} gets caught in the {1} and {2}.	{0}被{1}夹住，{2}。
+# Vocabulary.DeathTail
+destroyed	被摧毁
+# Vocabulary.NumberWord
+one	一
+# Vocabulary.NumberWord
+two	两
+# Vocabulary.NumberWord
+three	三
+# Vocabulary.NumberWord
+four	四
+# Vocabulary.NumberWord
+five	五
+# Vocabulary.NumberWord
+six	六
+# Vocabulary.NumberWord
+seven	七
+# Vocabulary.NumberWord
+eight	八
+# Vocabulary.Angler
+Angler	钓鱼人
+# Vocabulary.BoneCount
+1 bone	1根骨头
+# Vocabulary.BoneCount
+{0} bones	{0}根骨头
+# Vocabulary.BoneLord
+Bone Lord	骨王
+# Vocabulary.BoneOrBones
+bone	骨头
+# Vocabulary.BoneOrBones
+bones	骨头
+# Vocabulary.BothOrAll
+Both	两者
+# Vocabulary.BothOrAll
+All 	全部 
+# Vocabulary.BrowseChooseRepeat_
+Arrows browse, Enter chooses, Space repeats your position. 	方向键浏览，回车键选择，空格键重复当前位置。 
+# Vocabulary.Campfire
+Campfire	篝火
+# Vocabulary.CardCouldNotBeRead
+This card could not be read.	无法读取这张卡牌。
+# Vocabulary.CardCount
+1 card	1张卡牌
+# Vocabulary.CardCount
+{0} cards	{0}张卡牌
+# Vocabulary.DamageCount
+1 damage	1点伤害
+# Vocabulary.DamageCount
+{0} damage	{0}点伤害
+# Vocabulary.DeathCard
+Death card	死亡卡
+# Vocabulary.HealthRemainingCount
+1 health remaining	剩余1点生命
+# Vocabulary.HealthRemainingCount
+{0} health remaining	剩余{0}点生命
+# Vocabulary.ItemPickupName
+Item pickup	拾取道具
+# Vocabulary.Kin
+Kin	族群
+# Vocabulary.Leshy
+Leshy	莱西
+# Vocabulary.Mycologists
+Mycologists	菌学家
+# Vocabulary.OptionOf
+{0} Option {1} of {2}.	{0} 第{1}项，共{2}项。
+# Vocabulary.Prospector
+Prospector	矿工
+# Vocabulary.ReceivedBonesLine
+Received {0} {1}.	获得了{0}根骨头。
+# Vocabulary.SacrificeStone
+Sacrifice stone	献祭石
+# Vocabulary.Trader
+Trader	毛皮商
+# Vocabulary.Trapper
+Trapper	猎人
+# Vocabulary.UnnamedOption
+Unnamed option	未命名选项
+# Vocabulary.Woodcarver
+Woodcarver	木雕师
+# Vocabulary.YourDeck
+Your deck.	你的牌组。
+# Vocabulary.Mod.VersionOrUnknown
+unknown	未知
+# Vocabulary.Mod.IkmaVersionLoaded
+IKMA version {0} loaded.	IKMA {0} 版已加载。
+# Vocabulary.Mod.Loading
+Loading.	正在加载。
+# Vocabulary.Mod.UpdateDownloaded
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA {0} 版已下载，将在下次启动游戏时安装。
+# Vocabulary.Mod.UpdatedFrom
+Updated from version {0}.	已从 {0} 版更新。
+# Vocabulary.Mod.UpdateAvailableAsk
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	IKMA {0} 版现已推出。按F9下载，或按F10跳过此版本。
+# Vocabulary.Mod.UpdateDownloadedAsk
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA {0} 版已下载。按F9在下次启动游戏时安装，或按F10跳过此版本。
+# Vocabulary.Mod.UpdateDownloading
+Downloading IKMA version {0}.	正在下载 IKMA {0} 版。
+# Vocabulary.Mod.UpdateWillInstall
+IKMA version {0} installs the next time you start the game.	IKMA {0} 版将在下次启动游戏时安装。
+# Vocabulary.Mod.UpdateDownloadFailed
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	无法下载 IKMA 更新。下次启动游戏时 IKMA 会再次提示。
+# Vocabulary.Boot.OpeningScreenEnterPresses
+Opening screen. Enter presses the play button. Space repeats the description.	开场画面。回车键按下播放按钮。空格键重复描述。
+# Vocabulary.Title.OptionFallback
+Option	选项
+# Vocabulary.Title.NewGame
+New Game	新游戏
+# Vocabulary.Title.Continue
+Continue	继续
+# Vocabulary.Title.Options
+Options	选项
+# Vocabulary.Title.Credits
+Credits	制作团队
+# Vocabulary.Title.Quit
+Quit	退出
+# Vocabulary.Title.CardLibrary
+Card Library	卡牌库
+# Vocabulary.Title.EditDeck
+Edit Deck	编辑牌组
+# Vocabulary.Title.KayceesMod
+Kaycee's Mod	凯茜模组
+# Vocabulary.Title.ReturnToStartMenu
+Return To Start Menu	返回开始画面
+# Vocabulary.Title.EndRun
+End Run	终止冒险
+# Vocabulary.Title.Concede
+Concede	认输
+# Vocabulary.Title.InscryptionTitleScreenArrows
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption 标题画面。方向键导航，回车键确认。
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption 标题画面。方向键浏览卡牌。 
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Enter chooses the one you are on. Space repeats it. 	回车键选择当前卡牌。空格键重复。 
+# Vocabulary.Menus.InscryptionKayceesModMain
+Inscryption. Kaycee's Mod main menu	Inscryption。凯茜模组主菜单
+# Vocabulary.Menus.Unlocks
+Unlocks	已解锁内容
+# Vocabulary.Menus.CardsUnlocked
+Cards Unlocked	已解锁卡牌
+# Vocabulary.Menus.Cards
+Cards	卡牌
+# Vocabulary.Menus.Challenges
+Challenges	挑战
+# Vocabulary.Menus.ConfirmChallenges
+Confirm Challenges	确认挑战
+# Vocabulary.Menus.SelectStarterDeck
+Select Starter Deck	选择初始牌组
+# Vocabulary.Menus.Stats
+Stats	状态
+# Vocabulary.Menus.RunComplete
+Run Complete	冒险完成
+# Vocabulary.Menus.Devlog
+Devlog	开发日志
+# Vocabulary.Menus.NewChallenges
+New Challenges	新挑战
+# Vocabulary.Menus.NewStarterDeck
+New Starter Deck	新初始牌组
+# Vocabulary.Menus.StarterDecksUnlocked
+Starter Deck Unlocked	初始牌组已解锁
+# Vocabulary.Menus.NewRun
+New run	新的冒险
+# Vocabulary.Menus.MenuOrPrettyName
+Menu	菜单
+# Vocabulary.Menus.CoordsExpanded
+coordinates	坐标
+# Vocabulary.Menus.EntryLine
+Entry {0}. {1}	第{0}篇日志。{1}
+# Vocabulary.Menus.NoOptionsAvailable
+{0}. No options available.	{0}。没有可用选项。
+# Vocabulary.Menus.BackspaceToGoBack
+Backspace to go back.	退格键返回。
+# Vocabulary.Menus.ArrowsToNavigate
+Arrows to navigate	方向键导航
+# Vocabulary.Menus.AnnounceScreenBackspaceToGo
+, Backspace to go back.	，退格键返回。
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Arrows to navigate, Enter to confirm	方向键导航，回车键确认
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Enter to confirm	回车键确认
+# Vocabulary.Menus.PositionNounFor
+Deck	牌组
+# Vocabulary.Menus.OfCount
+{0} {1} of {2}.	第{1}个{0}，共{2}个。
+# Vocabulary.Menus.OfCount
+{0} of {1}.	第{0}个，共{1}个。
+# Vocabulary.Menus.EnabledOrDisabled
+enabled	已启用
+# Vocabulary.Menus.EnabledOrDisabled
+disabled	已禁用
+# Vocabulary.Menus.ChallengeFallback
+Challenge	挑战
+# Vocabulary.Menus.ChallengePointCount
+1 challenge point.	1挑战点数。
+# Vocabulary.Menus.ChallengePointCount
+{0} challenge points.	{0}挑战点数。
+# Vocabulary.Menus.OfChallengePoints
+{0} of {1} challenge points.	挑战点数：{0}，共需{1}。
+# Vocabulary.Menus.BackPressed
+Back.	返回。
+# Vocabulary.Menus.UnknownOption
+unknown option	未知选项
+# Vocabulary.Menus.NumberSign
+number 	编号 
+# Vocabulary.Menus.StartRun
+Start Run	开始运行
+# Vocabulary.Menus.LockedStarterDeck
+Locked starter deck	未解锁的初始牌组
+# Vocabulary.Menus.StarterDeck
+Starter Deck: {0}.	初始牌组：{0}。
+# Vocabulary.Menus.CardOf
+Card {0} of {1}	第{0}张卡牌，共{1}张
+# Vocabulary.Menus.CardsAndOf
+Cards 	第 
+# Vocabulary.Menus.CardsAndOf
+ and {0} of {1}	 和{0}张卡牌，共{1}张
+# Vocabulary.Menus.PreviousPage
+Previous page	上一页
+# Vocabulary.Menus.NextPage
+Next page	下一页
+# Vocabulary.Menus.PlusChallengePointCount
+plus 1 challenge point	加1挑战点数
+# Vocabulary.Menus.PlusChallengePointCount
+plus {0} challenge points	加{0}挑战点数
+# Vocabulary.Menus.ActiveLabel
+Active, 	已启用， 
+# Vocabulary.Menus.RandomStarterDeck
+Random Starter Deck	随机初始牌组
+# Vocabulary.Menus.UnlabelledOrText
+unlabelled option	无标签选项
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now full screen	已切换为全屏模式
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now windowed	已切换为窗口模式
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display resolution changed	分辨率已更改
+# Vocabulary.Options.ResolutionChanged
+, {0} by {1}	，{0}乘{1}
+# Vocabulary.Options.TextLanguage
+Text Language	文本语言
+# Vocabulary.Options.FullScreenOrWindowed
+Full screen	全屏模式
+# Vocabulary.Options.FullScreenOrWindowed
+Windowed	窗口模式
+# Vocabulary.Options.Resolution
+{0} by {1}	{0}乘{1}
+# Vocabulary.Options.OnOrOff
+On	开
+# Vocabulary.Options.OnOrOff
+Off	关
+# Vocabulary.Options.GammaZero
+Zero	零
+# Vocabulary.Options.DefaultMark
+, default	，默认
+# Vocabulary.Options.UnnamedSetting
+Unnamed setting.	未命名设置。
+# Vocabulary.Options.English
+English	英文
+# Vocabulary.Options.French
+French	法语
+# Vocabulary.Options.Italian
+Italian	意大利语
+# Vocabulary.Options.German
+German	德语
+# Vocabulary.Options.Spanish
+Spanish	西语
+# Vocabulary.Options.BrazilianPortuguese
+Brazilian Portuguese	葡萄牙语（巴西）
+# Vocabulary.Options.Turkish
+Turkish	土耳其语
+# Vocabulary.Options.Russian
+Russian	俄语
+# Vocabulary.Options.Japanese
+Japanese	日语
+# Vocabulary.Options.Korean
+Korean	韩语
+# Vocabulary.Options.SimplifiedChinese
+Simplified Chinese	简体中文
+# Vocabulary.Options.TraditionalChinese
+Traditional Chinese	繁体中文
+# Vocabulary.Options.UnnamedSettingPressEnter
+Unnamed setting. Press Enter to adjust.	未命名设置。按回车键调整。
+# Vocabulary.Options.PressEnterToAdjust
+{0} Press Enter to adjust.	{0} 按回车键调整。
+# Vocabulary.Options.OptionsMenu
+Options Menu	选项菜单
+# Vocabulary.Options.PageOf
+ Page {0} of {1}.	 第{0}页，共{1}页。
+# Vocabulary.Options.PressHForHelp
+{0}.{1} Press H for help.	{0}。{1} 按H键获取帮助。
+# Vocabulary.Options.ThatSettingCannotBe
+That setting cannot be changed.	该设置无法更改。
+# Vocabulary.Options.SettingFallback
+Setting	设置
+# Vocabulary.Options.ArrowsToAdjustBackspace
+Arrows to adjust. Backspace to return.	方向键调整。退格键返回。
+# Vocabulary.Options.BackThenRowPrompt
+Back. {0}	返回。{0}
+# Vocabulary.Pause.LockedMark
+, locked	，已锁定
+# Vocabulary.Pause.OptionCount
+1 option	1个选项
+# Vocabulary.Pause.OptionCount
+{0} options	{0}个选项
+# Vocabulary.Pause.PauseMenu
+Pause menu. {0}.	暂停菜单。{0}。
+# Vocabulary.Pause.GameSettings
+Game settings.	游戏设置。
+# Vocabulary.Pause.DisplaySettings
+Display settings.	显示设置。
+# Vocabulary.Pause.AudioSettings
+Audio settings.	音频设置。
+# Vocabulary.Pause.Page
+Page {0}.	第{0}页。
+# Vocabulary.Pause.NoActiveChallenges
+No active challenges.	没有已启用的挑战。
+# Vocabulary.Pause.ActiveChallenges
+Active Challenges. {0}.	已启用的挑战。{0}。
+# Vocabulary.Pause.UnnamedOption
+Unnamed option.	未命名选项。
+# Vocabulary.Pause.OptionOf
+{0}. Option {1} of {2}.	{0}。第{1}项，共{2}项。
+# Vocabulary.Pause.ThatOptionIsLocked
+That option is locked.	该选项已锁定。
+# Vocabulary.Pause.OptionsAndSwitchPages
+Options. 1, 2, and 3 switch pages. 	选项。1、2、3键切换页面。 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	第1页为游戏设置，第2页为显示设置，第3页为音频设置。 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Arrows browse the settings, Enter selects a setting to adjust, 	方向键浏览设置，回车键选择要调整的设置， 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Backspace returns. 	退格键返回。 
+# Vocabulary.Pause.TheyAreTheLast
+ They are the last stop past the options.	 它们位于所有选项之后。
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Pause menu. Arrows browse the options, Enter chooses, 	暂停菜单。方向键浏览选项，回车键选择， 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Space repeats your position and the run information, 	空格键重复当前位置和本次冒险的信息， 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Backspace or Escape closes the menu.	退格键或Esc键关闭菜单。
+# Vocabulary.Map.Encounter
+Encounter	遭遇战
+# Vocabulary.Map.TotemBattle
+Totem battle	图腾战
+# Vocabulary.Map.BossBattle
+Boss battle	头目战
+# Vocabulary.Map.CardChoice
+Card choice	选择卡牌
+# Vocabulary.Map.CardBundleChoice
+Card bundle choice	选择卡牌包
+# Vocabulary.Map.RareCardChoice
+Rare card choice	选择稀有卡牌
+# Vocabulary.Map.CardRemoval
+Card removal	移除卡牌
+# Vocabulary.Map.CardRecycling
+Card recycling	回收卡牌
+# Vocabulary.Map.CardCopying
+Card copying	复制卡牌
+# Vocabulary.Map.BoulderChoice
+Boulder choice	选择磐石
+# Vocabulary.Map.SideDeckChange
+Side deck change	更换副牌组
+# Vocabulary.Map.DeckTrial
+Deck trial	牌组试炼
+# Vocabulary.Map.VictoryFeast
+Victory feast	胜利宴席
+# Vocabulary.Map.RandomChoice
+Random	随机
+# Vocabulary.Map.CostChoice
+Cost	费用
+# Vocabulary.Map.CannotRightNow
+Cannot {0} right now.	现在无法{0}。
+# Vocabulary.Map.BringYourDeckUp
+bring your deck up	调出牌组
+# Vocabulary.Map.YouAreAlreadyStanding
+You are already standing.	你已经站起来了。
+# Vocabulary.Map.StandUp
+stand up	站起来
+# Vocabulary.Map.StandingUpFromThe
+Standing up from the table. Press H for help.	从桌前站起。按H键获取帮助。
+# Vocabulary.Map.YouAreAt
+You are at {0}.	你位于{0}。
+# Vocabulary.Map.ReturnTo
+return to {0}	返回{0}
+# Vocabulary.Map.BackAt
+Back at {0}.	回到了{0}。
+# Vocabulary.Map.YouAreAtThe
+You are at the map.	你在地图前。
+# Vocabulary.Map.ReturnToTheMap
+return to the map	返回地图
+# Vocabulary.Map.GameMap
+Game map.	游戏地图。
+# Vocabulary.Map.ReturningToTheTable
+Returning to the table.	正在回到牌桌前。
+# Vocabulary.Map.YouStepBackPress
+You step back. Press Backspace again to return to the table.	你退后一步。再按一次退格键回到牌桌前。
+# Vocabulary.Map.Counterclockwise
+counterclockwise	逆时针
+# Vocabulary.Map.Clockwise
+clockwise	顺时针
+# Vocabulary.Map.TurnedDegrees
+Turned {0} 90 degrees.	{0}转了90度。
+# Vocabulary.Map.ClockHandTurned
+ turned.	 已转动。
+# Vocabulary.Map.ToOclock
+{0} to {1} o'clock.	{0}指向{1}点。
+# Vocabulary.Map.MechanismCracksAndThe
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	机关咔嚓一声，保险箱门打开了。里面是一大团血淋淋、支离破碎的肉块。
+# Vocabulary.Map.YouStepBack
+You step back.	你退后一步。
+# Vocabulary.Map.YouStepBackFrom
+You step back from the {0}.	你从{0}前退开。
+# Vocabulary.Map.YouFocusInOrYouFocusOn
+You focus on the {0}.	你仔细查看{0}。
+# Vocabulary.Map.YouFocusIn
+You focus in.	你仔细查看。
+# Vocabulary.Map.RulebookIsNotWithin
+The rulebook is not within reach.	够不到规则书。
+# Vocabulary.Map.InsideTheSafeIs
+Inside the safe is a large mass of bloodied mangled flesh.	保险箱里是一大团血淋淋、支离破碎的肉块。
+# Vocabulary.Map.Facing
+Facing {0}.	面朝{0}。
+# Vocabulary.Map.NothingIsDirectlyIn
+Nothing is directly in front of you. {0}	你正前方什么都没有。{0}
+# Vocabulary.Map.FocusControlsAndExamine
+Focus controls. 	查看模式操作。 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace steps back from your focused object. 	退格键从当前查看的物体前退开。 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace again returns you to the game table and opens the map.	再按退格键回到牌桌前并打开地图。
+# Vocabulary.Map.ExamineKeys_
+1, 2 and 3 examine what is in front of you. 	1、2、3键查看你前方的东西。 
+# Vocabulary.Map.StandingControlsUpArrow
+Standing controls. Up arrow steps forward, down arrow steps back. 	站立操作。上方向键向前走，下方向键向后退。 
+# Vocabulary.Map.StandingControlsUpArrow
+Left and right arrows step to the side. 	左右方向键向侧面移动。 
+# Vocabulary.Map.StandingControlsUpArrow
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A键逆时针转90度，D键顺时针转90度。 
+# Vocabulary.Map.StandingControlsUpArrow
+Backspace returns you to the game table and opens the map.	退格键回到牌桌前并打开地图。
+# Vocabulary.Map.Woodlands
+The Woodlands	林地
+# Vocabulary.Map.Wetlands
+The Wetlands	湿地
+# Vocabulary.Map.SnowLine
+The Snow Line	雪线
+# Vocabulary.Map.Beach
+The Beach	海滩
+# Vocabulary.Map.PathToTheCabin
+the path to the Cabin	通往木屋的小路
+# Vocabulary.Map.YouHaveArrivedAt
+You have arrived at {0}	你已到达{0}
+# Vocabulary.Map.WhereSentenceYouAreAt
+You are at {0}	你位于{0}
+# Vocabulary.Map.PlaceName
+the beginning of a new map	新地图的起点
+# Vocabulary.Map.UnknownLocation
+unknown location	未知位置
+# Vocabulary.Map.MapReady
+Map ready.	地图已就绪。
+# Vocabulary.Map.PathCount
+1 path	1条路
+# Vocabulary.Map.PathCount
+{0} paths	{0}条路
+# Vocabulary.Map.MapAheadArrowsTo
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	地图。{0}。前方有{1}。方向键浏览，空格键查看详情，回车键前往，Shift+上方向键显示牌组。
+# Vocabulary.Map.MapAwaitingInputPress
+Map. Awaiting input. Press Space for your position, H for help.	地图。等待操作。按空格键了解当前位置，按H键获取帮助。
+# Vocabulary.Map.AwaitingPathSelectionH
+Awaiting path selection. H, for help.	等待选择道路。H键，获取帮助。
+# Vocabulary.Map.First
+First	第一
+# Vocabulary.Map.Second
+Second	第二
+# Vocabulary.Map.Third
+Third	第三
+# Vocabulary.Map.Fourth
+Fourth	第四
+# Vocabulary.Map.Fifth
+Fifth	第五
+# Vocabulary.Map.Sixth
+Sixth	第六
+# Vocabulary.Map.Seventh
+Seventh	第七
+# Vocabulary.Map.Eighth
+Eighth	第八
+# Vocabulary.Map.PathNumber
+Path {0}	第{0}条路
+# Vocabulary.Map.PathThen
+{0} path: {1}	{0}条路：{1}
+# Vocabulary.Map.MorePathsNotRead
+ {0} more paths not read.	 还有{0}条路未读出。
+# Vocabulary.Map.MapUnavailable
+Map unavailable.	无法读取地图。
+# Vocabulary.Map.NoPathsAhead
+{0}. No paths ahead.	{0}。前方没有道路。
+# Vocabulary.Map.OptionNode
+Option {0}: {1}	选项{0}：{1}
+# Vocabulary.Map.YouAreOnOption
+ You are on Option {0} of {1}.	 你在第{0}项，共{1}项。
+# Vocabulary.Map.LeftAndRightArrows
+Left and right arrows to browse, 	左右方向键浏览， 
+# Vocabulary.Map.AheadEnterToTravel
+{0}. {1} ahead. {2}.{3} 	{0}。前方有{1}。{2}。{3} 
+# Vocabulary.Map.AheadEnterToTravel
+Enter to travel, Shift+Up to display deck.	回车键前往，Shift+上方向键显示牌组。
+# Vocabulary.Map.ArrivedAt
+Arrived at {0}.	已到达{0}。
+# Vocabulary.Cabin.Safe
+Safe	保险箱
+# Vocabulary.Cabin.Woodcarving
+woodcarving	木雕
+# Vocabulary.Cabin.LargePictureFrame
+Large Picture Frame	大画框
+# Vocabulary.Cabin.Gramophone
+Gramophone	留声机
+# Vocabulary.Cabin.Skull
+skull	头骨
+# Vocabulary.Cabin.SettlerMan
+Settler Man	男拓荒者
+# Vocabulary.Cabin.SettlerWoman
+Settler Woman	女拓荒者
+# Vocabulary.Cabin.Chief
+Chief	酋长
+# Vocabulary.Cabin.Wildling
+Wildling	野人
+# Vocabulary.Cabin.Enchantress
+Enchantress	女魔法师
+# Vocabulary.Cabin.Gravedigger
+Gravedigger	掘墓人
+# Vocabulary.Cabin.Robot
+Robot	机器人
+# Vocabulary.Cabin.Head
+head	头部
+# Vocabulary.Cabin.Arms
+arms	手臂
+# Vocabulary.Cabin.Body
+body	身体
+# Vocabulary.Cabin.HourHand
+Hour hand	时针
+# Vocabulary.Cabin.MinuteHand
+Minute hand	分针
+# Vocabulary.Cabin.SecondHand
+Second hand	秒针
+# Vocabulary.Hotkeys.NothingHereCanBe
+Nothing here can be read yet. Escape opens the pause menu.	这里暂时没有可读取的内容。Esc键打开暂停菜单。
+# Vocabulary.Hotkeys.NoPathSelectedUse
+No path selected. Use left and right arrows to browse paths.	未选择道路。请用左右方向键浏览道路。
+# Vocabulary.Hotkeys.MapIsStillSettling
+The map is still settling. Try again in a moment.	地图还未就绪。请稍后再试。
+# Vocabulary.Hotkeys.CardPlacementCannotBe
+Card placement cannot be cancelled. Choose a slot.	无法取消放置卡牌。请选择一个位置。
+# Vocabulary.Hotkeys.YouAreInAn
+You are in an encounter. Press H for help.	你正处于战斗中。按H键获取帮助。
+# Vocabulary.Hotkeys.UnableToEndTurn
+Unable to end turn: bell method not found.	无法结束回合：找不到敲铃的方法。
+# Vocabulary.Hotkeys.DrawPilesUnavailable
+Draw piles unavailable.	无法读取牌堆。
+# Vocabulary.Hotkeys.NoCardsRemainingIn
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	你的牌组中没有剩余卡牌。按S键从松鼠牌组抽牌。
+# Vocabulary.Hotkeys.NoCardsRemainingInThe
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	松鼠牌组中没有剩余卡牌。按D键从你的牌组抽牌。
+# Vocabulary.Hotkeys.DrawPileUnavailable
+Draw pile unavailable.	无法读取该牌堆。
+# Vocabulary.Hotkeys.Drew
+Drew {0}.	抽到了{0}。
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Ability	印记能力
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Abilities	印记能力
+# Vocabulary.Hotkeys.DrewItGainsAnd
+Drew {0}. It gains {1}: {2}.	抽到了{0}。它获得了{1}：{2}。
+# Vocabulary.Hotkeys.FinishPlacingYourCard
+Finish placing your card before using an item.	请先放置好卡牌，再使用道具。
+# Vocabulary.Hotkeys.NoItems
+No items.	没有道具。
+# Vocabulary.Hotkeys.ItemUnavailable
+Item unavailable.	该道具不可用。
+# Vocabulary.Hotkeys.ItemEmpty
+Item {0}: empty.	{0}号道具栏：空。
+# Vocabulary.Hotkeys.ItemLine
+Item {0}: {1}	{0}号道具栏：{1}
+# Vocabulary.Hotkeys.CutUpOneOf
+# Vocabulary.Hotkeys.PlaceAWeightOn
+Place a weight on the scales. The pain is temporary.	在天平上给对手加些筹码。疼也只疼那一下子。
+# Vocabulary.Hotkeys.HookACardTo
+Hook a card to take it as your own. Card must enter an empty space.	钩走一张卡牌，占为己有。该卡牌必须进入一个空位。
+# Vocabulary.Hotkeys.SkinOneOfYour
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	给对手的一张卡牌剥皮。该卡牌会死亡，一张毛皮卡会加入你的手牌。
+# Vocabulary.Hotkeys.SearchYourDeckFor
+Search your deck for any card and add it into your hand.	在牌组中搜索任意一张卡牌并加入手牌。
+# Vocabulary.Hotkeys.UseToImmediatelyGain
+Use to immediately gain 4 Bones.	使用后立刻获得4根骨头。
+# Vocabulary.Hotkeys.PlaceASignificantWeight
+Place a significant weight on the scales. The pain will linger...	在天平上给对手加一大块筹码。疼痛会持续下去……
+# Vocabulary.Hotkeys.ItemIsAlreadyBeing
+An item is already being used.	已经有道具正在使用中。
+# Vocabulary.Hotkeys.ThereIsNoItem
+There is no item {0}.	没有{0}号道具。
+# Vocabulary.Hotkeys.ItemIsEmpty
+Item {0} is empty.	{0}号道具栏是空的。
+# Vocabulary.Hotkeys.CouldNotBeUsed
+{0} could not be used. Item activation is not yet supported for this slot.	无法使用{0}。暂不支持使用该栏位的道具。
+# Vocabulary.Hotkeys.Using
+Using {0}.	正在使用{0}。
+# Vocabulary.Hotkeys.IsStillWaitingFor
+{0} is still waiting for input.	{0}仍在等待操作。
+# Vocabulary.Hotkeys.WasNotUsed
+{0} was not used.	未使用{0}。
+# Vocabulary.Hotkeys.UsingTheLuckyClover
+Using the Lucky Clover discards all of these cards for new ones. 	使用幸运三叶草会弃掉所有这些卡牌，换成新的卡牌。 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Left and right arrows browse. Enter selects the card. 	左右方向键浏览。回车键选择卡牌。 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Space repeats the current option. 	空格键重复当前选项。 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R键打开规则书。Shift+上方向键显示你的牌组。 
+# Vocabulary.Hotkeys.NoBackOptionOn
+No back option on this screen.	此画面没有返回选项。
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	菜单导航。方向键浏览选项。回车键选择当前选项。 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Backspace or Escape goes back. Space repeats the current option. 	退格键或Esc键返回。空格键重复当前选项。 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Shift R looks up the last ability you heard. 	Shift加R键查询你最后听到的能力。 
+# Vocabulary.Hotkeys.NoValidTargets
+No valid targets.	没有有效目标。
+# Vocabulary.Hotkeys.ChooseATargetAvailable
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	选择一个目标。有{0}个可选。{1} 方向键浏览，回车键选择。
+# Vocabulary.Hotkeys.CannotCancelItemUse
+Cannot cancel item use, please choose a target.	无法取消使用道具，请选择一个目标。
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target.	正在选择目标。
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target for {0}.	正在为{0}选择目标。
+# Vocabulary.Hotkeys.ArrowKeysMoveBetween
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 方向键在此道具可作用的卡牌之间移动。回车键选择。道具一经使用便无法取消。
+# Vocabulary.Hotkeys.ThatTargetCouldNot
+That target could not be selected.	无法选择该目标。
+# Vocabulary.Hotkeys.IsDraggedDownTo
+{0} is dragged down to your side into slot {1}.	{0}被拉到你这一侧的{1}号位。
+# Vocabulary.Hotkeys.UnknownSlot
+unknown slot.	未知位置。
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Your slot	你方位置
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Opponent slot	对方位置
+# Vocabulary.Hotkeys.TargetSlotEmpty
+{0} {1}: empty.	{0}{1}：空。
+# Vocabulary.Hotkeys.ThereIsNoIkma
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	IKMA 目前还无法读取此画面，因此常规操作在这里不适用。 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+Space describes what is in front of you. Space repeats where you are. 	空格键描述你前方的东西。空格键重复你所在的位置。 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+This screen still needs the mouse until a reader is built for it.	在为此画面制作好读取功能之前，仍需使用鼠标操作。
+# Vocabulary.Hotkeys.IkmaCannotReadThis
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}IKMA 暂时无法读取此画面。游戏正在这里等待你的操作。 
+# Vocabulary.Hotkeys.MapControlsArrowsBrowse
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	地图操作。方向键，浏览前方的选择。回车键，前往。空格键，列出当前所有选择。B键，读出前方的道路。Shift+上方向键，浏览你的牌组。I键，听取你当前的道具。R键，打开规则书。Shift+下方向键，从桌前站起。H键，获取帮助。
+# Vocabulary.Hotkeys.PlacingACardLeft
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	正在放置卡牌。左右方向键切换位置。回车键，确认。读取牌桌的按键仍然可用。H键，获取帮助。
+# Vocabulary.Hotkeys.ChoosingSacrificesLeftAnd
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	正在选择祭品。左右方向键在你的牌桌上移动。回车键，献祭当前所在的卡牌。献祭一旦开始便无法取消。读取牌桌的按键仍然可用。H键，获取帮助。
+# Vocabulary.Hotkeys.CannotTravelThere
+Cannot travel there.	无法前往那里。
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. {0} returned to hand.	已取消。{0}已返回手牌。
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. Card returned to hand.	已取消。卡牌已返回手牌。
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+A sacrifice cannot be cancelled once started.	献祭一旦开始便无法取消。
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+Cannot cancel right now.	现在无法取消。
+# Vocabulary.Hotkeys.NoCardsToSacrifice
+No cards to sacrifice.	没有可献祭的卡牌。
+# Vocabulary.Hotkeys.NoSlot
+No slot {0}.	没有{0}号位。
+# Vocabulary.Hotkeys.OnlyInHand
+Only {0} in hand.	手中只有{0}。
+# Vocabulary.Hotkeys.NoCardsInHand
+No cards in hand are currently playable.	手牌中目前没有可打出的卡牌。
+# Vocabulary.Hotkeys.CardOrCardWord
+Card	卡牌
+# Vocabulary.Hotkeys.GainsFromYourTotem
+{0} gains {1} from your totem.	{0}从你的图腾获得了{1}。
+# Vocabulary.Hotkeys.RecentItemCount
+Recent item:	最近的道具：
+# Vocabulary.Hotkeys.RecentItemCount
+Recent items:	最近的道具：
+# Vocabulary.Hotkeys.NoRecentAbilityTo
+No recent ability to look up.	没有可查询的最近能力。
+# Vocabulary.Hotkeys.NoDescriptionAvailableFor
+No description available for that ability.	该能力没有可用的描述。
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent ability:	最近的能力：
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent abilities:	最近的能力：
+# Vocabulary.Hotkeys.CannotPlayACard
+Cannot play a card right now.	现在无法打出卡牌。
+# Vocabulary.Hotkeys.NoCardSelectedUse
+No card selected. Use left and right arrows to browse your hand first.	未选择卡牌。请先用左右方向键浏览手牌。
+# Vocabulary.Hotkeys.ThatCard
+That card	该卡牌
+# Vocabulary.Hotkeys.ThatCardCouldNot
+That card could not be played.	无法打出该卡牌。
+# Vocabulary.Hotkeys.WasNotPlayed
+{0} was not played.	未打出{0}。
+# Vocabulary.Hotkeys.NoCardInThis
+No card in this slot.	此位置没有卡牌。
+# Vocabulary.Hotkeys.SlotIsOccupiedBy
+Slot {0} is occupied by {1}. Choose an empty slot.	{0}号位已被{1}占据。请选择一个空位。
+# Vocabulary.Hotkeys.PlayedInSlot
+{0} played in Slot {1}.	{0}已打出到{1}号位。
+# Vocabulary.Hotkeys.NoSlotRestrictionsTo
+No slot restrictions to step through.	没有需要逐个切换的位置限制。
+# Vocabulary.Hotkeys.NoOtherSlotAvailable
+No other slot available for this card.	这张卡牌没有其他可用位置。
+# Vocabulary.Hotkeys.Ability
+ Ability: {0}.	 能力：{0}。
+# Vocabulary.Hotkeys.AbilitiesAnd
+ Abilities: {0}.	 能力：{0}。
+# Vocabulary.Hotkeys.SlotWithCard
+Slot {0}: {1}, {2}/{3}.{4}{5}	{0}号位：{1}，力量{2}，生命{3}。{4}{5}
+# Vocabulary.Hotkeys.SlotEmpty
+Slot {0}: empty.{1}	{0}号位：空。{1}
+# Vocabulary.Hotkeys.ChooseASlotTo
+ Choose a slot to play {0}.	 选择一个位置来打出{0}。
+# Vocabulary.Hotkeys.SlotOccupiedBy
+Slot {0}: occupied by {1}.{2}{3}	{0}号位：已被{1}占据。{2}{3}
+# Vocabulary.Hotkeys.SlotEmptyName
+Slot {0}: empty.{1}{2}	{0}号位：空。{1}{2}
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifice	祭品
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifices	祭品
+# Vocabulary.PlayFlow.CostsBloodChooseLeft
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}消耗{1}点鲜血。选择{2}个{3}。左右方向键移动，回车键确认。献祭一旦开始便无法取消。
+# Vocabulary.PlayFlow.Playing
+Playing {0}. 	正在打出{0}。 
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}选择一个位置来打出{1}。左右方向键移动，回车键确认。{2}
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	选择一个位置。左右方向键移动，回车键确认。{0}
+# Vocabulary.Board.Hand
+Hand: {0}. {1}.	手牌：{0}。{1}。
+# Vocabulary.Board.YourBoard
+Your board	你方牌桌
+# Vocabulary.Board.EnemyBoard
+Enemy board	敌方牌桌
+# Vocabulary.Board.ResourcesUnavailable
+Resources unavailable.	资源不可用。
+# Vocabulary.Board.CandleLitCount
+ 1 candle lit.	 点燃了1根蜡烛。
+# Vocabulary.Board.CandleLitCount
+ {0} candles lit.	 点燃了{0}根蜡烛。
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has 1 candle.	 敌方有1根蜡烛。
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has {0} candles.	 敌方有{0}根蜡烛。
+# Vocabulary.Board.WoodcarvingKinTypeSigil
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 木雕，同族类型：{0}，印记能力：{1}。
+# Vocabulary.Board.YourDeckRemainingCard
+ Your deck: {0} remaining.	 你的牌组：剩余{0}。
+# Vocabulary.Board.SquirrelDeckRemainingCard
+ Squirrel deck: {0} remaining.	 松鼠牌组：剩余{0}。
+# Vocabulary.Board.ItemEmpty
+empty	空
+# Vocabulary.Board.ItemAtCursor
+Item {0}: {1}.	道具{0}：{1}。
+# Vocabulary.Board.OpponentUnavailable
+Opponent unavailable.	对手不可用。
+# Vocabulary.Board.NoCardsQueued
+No cards queued.	没有排队的卡牌。
+# Vocabulary.Board.BlockedForSlot
+Blocked for Slot {0}: 	{0}号位被阻挡： 
+# Vocabulary.Board.EnteringSlot
+Entering Slot {0}: 	进入{0}号位： 
+# Vocabulary.Board.UpcomingQueue
+Upcoming queue: {0}. {1}.	即将登场：{0}。{1}。
+# Vocabulary.Board.GetHandNamesText
+Your hand: {0}. {1}.	你的手牌：{0}。{1}。
+# Vocabulary.Board.SideEmpty
+{0}: empty	{0}：空
+# Vocabulary.Board.SlotsList
+Slots 	号位 
+# Vocabulary.Board.SlotNumber
+Slot {0}	{0}号位
+# Vocabulary.Board.SlotsOneTo
+Slots 1 to {0}	1至{0}号位
+# Vocabulary.Board.CurrentlyStats
+currently {0}/{1}.	当前{0}/{1}。
+# Vocabulary.Board.SideEmptyCannon
+{0}: empty{1}	{0}：空{1}
+# Vocabulary.Board.NumberRange
+{0} to {1}	{0}至{1}
+# Vocabulary.Board.Ability
+. Ability: {0}	。能力：{0}
+# Vocabulary.Board.AbilitiesAnd
+. Abilities: {0}	。能力：{0}
+# Vocabulary.Board.CostsBloodCount
+costs 1 blood	消耗1点鲜血
+# Vocabulary.Board.CostsBloodCount
+costs {0} blood	消耗{0}点鲜血
+# Vocabulary.Board.CostsBoneCount
+costs 1 bone	消耗1根骨头
+# Vocabulary.Board.CostsBoneCount
+costs {0} bones	消耗{0}根骨头
+# Vocabulary.Board.GetScaleText
+Scales unavailable.	天平不可用。
+# Vocabulary.BoardChanges.MovesToSlot
+{0} moves to {1} slot {2}.	{0}移动到{1}{2}号位。
+# Vocabulary.BoardChanges.RightOrLeft
+right, 	向右， 
+# Vocabulary.BoardChanges.RightOrLeft
+left, 	向左， 
+# Vocabulary.BoardChanges.MovesFromSlotTo
+{0} {1} moves {2}from slot {3} to slot {4}.	{0}{1}{2}从{3}号位移动到{4}号位。
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+{0} {1} moves {2}	{0}{1}{2}
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+from slot {0} to slot {1}.	从{0}号位移动到{1}号位。
+# Vocabulary.BoardChanges.MovesDownToSlot
+{0} {1} moves down to slot {2}{3}.	{0}{1}下移到{2}号位{3}。
+# Vocabulary.BoardChanges.IsPlayedInSlot
+{0} {1} is played in slot {2}{3}.	{0}{1}被打出在{2}号位{3}。
+# Vocabulary.BoardChanges.TargetingSlot
+ targeting slot {0}	 ，瞄准{0}号位
+# Vocabulary.BoardChanges.EnemyIsQueued
+Enemy {0} is queued{1}.	敌方{0}已排队{1}。
+# Vocabulary.BoardChanges.HasLeftSlot
+{0} {1} has left slot {2}.	{0}{1}离开了{2}号位。
+# Vocabulary.BoardChanges.ProspectorClearsHisQueue
+The Prospector clears his queue.	矿工清空了他的队列。
+# Vocabulary.BoardChanges.ItIsCarryingA
+, it is carrying a pack of cards	，它背着一叠卡牌
+# Vocabulary.BoardChanges.Possessive
+Your	你方
+# Vocabulary.BoardChanges.Possessive
+Enemy	敌方
+# Vocabulary.BoardChanges.SideWord
+your	你方
+# Vocabulary.BoardChanges.SideWord
+enemy	敌方
+# Vocabulary.Cards.Fused
+Fused {0}	融合的{0}
+# Vocabulary.Cards.GlitchedCardThisCard
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	故障卡牌。这张卡牌发着白光并不断闪烁。打出前无法得知其数值。
+# Vocabulary.Cards.ShiftPlusRLooks
+Shift plus R looks up the last ability you heard.	Shift加R查询你最近听到的能力。
+# Vocabulary.Cards.AbilityCount
+Ability	能力
+# Vocabulary.Cards.AbilityCount
+Abilities	能力
+# Vocabulary.Cards.SigilAbility
+ Sigil Ability: {0}.	 印记能力：{0}。
+# Vocabulary.Cards.KinType
+ Kin type: {0}.	 同族类型：{0}。
+# Vocabulary.Cards.KinTypes
+ Kin types: {0}.	 同族类型：{0}。
+# Vocabulary.Cards.StarAttack
+Star	星
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving left.	 向左移动。
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving right.	 向右移动。
+# Vocabulary.Cards.Rare
+Rare	稀有
+# Vocabulary.Cards.TerrainBorder
+Terrain border	地形边框
+# Vocabulary.Cards.GlitchedPortrait
+Glitched portrait	故障肖像
+# Vocabulary.Cards.FullCardPortrait
+Full-card portrait	全卡肖像
+# Vocabulary.Cards.AnimatedPortrait
+Animated portrait	动态肖像
+# Vocabulary.Cards.HologramPortrait
+Hologram portrait	全息肖像
+# Vocabulary.Cards.GoldenGlow
+Golden glow	金色光芒
+# Vocabulary.Cards.RedGlow
+Red glow	红色光芒
+# Vocabulary.Cards.BloodiedPortrait
+Bloodied portrait	染血肖像
+# Vocabulary.Cards.MoonParticles
+Moon particles	月亮粒子
+# Vocabulary.Cards.AttackEqualsTheNumber
+ Attack equals the number of ants on its owner's side.	 攻击力等于其所属方的蚂蚁数量。
+# Vocabulary.Cards.AttackIsEqualTo
+ Attack is equal to half the Bones of the owner.	 攻击力等于所属方骨头数量的一半。
+# Vocabulary.Cards.AttackEqualsSacrificesMade
+ Attack equals sacrifices made this turn.	 攻击力等于本回合献祭的次数。
+# Vocabulary.Cards.AttackVariesWithGreen
+ Attack varies with green gems.	 攻击力随绿色宝石变化。
+# Vocabulary.Cards.BloodCount
+1 blood	1点鲜血
+# Vocabulary.Cards.BloodCount
+{0} blood	{0}点鲜血
+# Vocabulary.Cards.CostLine
+Cost: {0}.	费用：{0}。
+# Vocabulary.Cards.CostFree
+Cost: Free.	费用：免费。
+# Vocabulary.Combat.ASlot
+a slot	一个位置
+# Vocabulary.Combat.CardInSlot
+{0} in {1}	{1}的{0}
+# Vocabulary.Combat.EmptySlot
+empty {0}	空的{0}
+# Vocabulary.Combat.TargetListThree
+, and 	，以及 
+# Vocabulary.Combat.AttacksTargets
+{0} attacks {1}.	{0}攻击{1}。
+# Vocabulary.Combat.FliesOverAndAttacks
+{0} flies over {1} and attacks directly{2}.	{0}飞越{1}，直接攻击{2}。
+# Vocabulary.Combat.PassesByAndAttacks
+{0} passes by {1} and attacks directly{2}.	{0}越过{1}，直接攻击{2}。
+# Vocabulary.Combat.Airborne
+Airborne	空袭
+# Vocabulary.Combat.MightyLeap
+Mighty Leap	高跳
+# Vocabulary.Combat.BlocksDueTo
+{0} blocks {1} {2} due to {3}.	{0}凭借{3}挡住了{1}{2}。
+# Vocabulary.Combat.Attacks
+{0}{1} attacks {2}.	{0}{1}攻击{2}。
+# Vocabulary.Combat.AttacksEmptySlot
+{0}{1} attacks empty Slot {2}.	{0}{1}攻击空的{2}号位。
+# Vocabulary.Combat.AttacksDirectly
+{0}{1} attacks directly.	{0}{1}直接攻击。
+# Vocabulary.Combat.InSlotNumber
+ in Slot {0}	 在{0}号位
+# Vocabulary.Combat.FromYourHand
+ from your hand	 从你的手牌
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2} by Ability: {3}.	{0}{1}{2}被能力打出：{3}。
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2}.	{0}{1}{2}被打出。
+# Vocabulary.Combat.DeadlyName
+Touch of Death	死神之触
+# Vocabulary.Combat.WithOne
+ with {0}	 带有{0}
+# Vocabulary.Combat.ToDeadly
+ to {0}	 因{0}
+# Vocabulary.Combat.QueuedInSlot
+The {0} queued in slot {1}	排在{1}号位的{0}
+# Vocabulary.Combat.Queued
+The {0} queued	已排队的{0}
+# Vocabulary.Combat.TakesAnd
+{0} takes {1} and {2}{3}.	{0}受到{1}，{2}{3}。
+# Vocabulary.Combat.TakesDamage
+{0} takes {1}.	{0}受到{1}。
+# Vocabulary.Combat.TakesItsAbilityResolves
+{0} takes {1}, {2}. 	{0}受到{1}，{2}。 
+# Vocabulary.Combat.TakesItsAbilityResolves
+Its {0} ability resolves before it dies.	其{0}能力在死亡前生效。
+# Vocabulary.Combat.TakesDamageLeft
+{0} takes {1}, {2}.	{0}受到{1}，{2}。
+# Vocabulary.Combat.SideQualifiedName
+Your {0}	你方{0}
+# Vocabulary.Combat.SideQualifiedName
+Enemy {0}	敌方{0}
+# Vocabulary.Combat.IsSacrificed
+{0} is sacrificed.{1}	{0}被献祭。{1}
+# Vocabulary.Combat.Sacrificed
+{0} sacrificed.{1}	{0}已献祭。{1}
+# Vocabulary.Combat.PowerAndHealth
+{0} power and {1} health	{0}点攻击力和{1}点生命值
+# Vocabulary.Combat.Power
+{0} power	{0}点攻击力
+# Vocabulary.Combat.Health
+{0} health	{0}点生命值
+# Vocabulary.Combat.MorselFallback
+Morsel	一口之量
+# Vocabulary.Combat.AbilitiesTriggerGains
+{0} {1} abilities trigger, {2} gains {3}.	{0}{1}能力触发，{2}获得{3}。
+# Vocabulary.Combat.MorselGainFor
+{0} gained {1}.	{0}获得了{1}。
+# Vocabulary.Combat.IsSkinnedAnd
+{0} is skinned and {1}.	{0}被剥皮，{1}。
+# Vocabulary.Combat.IsCutAnd
+{0} is cut and {1}.	{0}被剪开，{1}。
+# Vocabulary.Combat.IsSmashedAnd
+{0} is smashed and {1}.	{0}被砸碎，{1}。
+# Vocabulary.Combat.InSlot
+{0} in Slot {1}	{1}号位的{0}
+# Vocabulary.Combat.DirectDamageCount
+1 direct damage.	1点直接伤害。
+# Vocabulary.Combat.DirectDamageCount
+{0} direct damage.	{0}点直接伤害。
+# Vocabulary.Combat.ScaleHits
+ The scale hits 5...	 天平倾斜到5……
+# Vocabulary.Combat.VolumeWarning
+VOLUME WARNING: 	音量警告： 
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+Enemy deals {0}{1}	敌方造成{0}{1}
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+You deal {0}{1}	你造成{0}{1}
+# Vocabulary.Combat.ReceivedBoneFromThe
+Received 1 bone from 	获得1根骨头，来自 
+# Vocabulary.Combat.TheBoneLordsBoon
+the Bone Lord's boon	骨王的恩惠
+# Vocabulary.Combat.ReceivedBonesFromThe
+Received 8 bones from 	获得8根骨头，来自 
+# Vocabulary.Combat.ReceivedBonesAtBattle
+Received {0} bones at battle start.	战斗开始时获得{0}根骨头。
+# Vocabulary.MultiStrike.AttacksEachOfYour
+{0} attacks each of your {1} 	{0}逐一攻击你的{1}个 
+# Vocabulary.MultiStrike.AttacksTimes
+{0} attacks {1} times.	{0}攻击{1}次。
+# Vocabulary.MultiStrike.AndDies
+and {0}{1}	并且{0}{1}
+# Vocabulary.MultiStrike.InStartSlot
+ in slot {0}	 在{0}号位
+# Vocabulary.MultiStrike.BurrowsFromTo
+{0} burrows from {1}	{0}从{1}钻地移动
+# Vocabulary.MultiStrike.Burrows
+{0}{1} burrows	{0}{1}钻地移动
+# Vocabulary.MultiStrike.HopsTakingDies
+{0}, taking {1}, {2}.	{0}，受到{1}，{2}。
+# Vocabulary.MultiStrike.HopsTaking
+{0}, taking {1}.	{0}，受到{1}。
+# Vocabulary.MultiStrike.TakesAndDies
+{0}{1} takes {2} {3}.	{0}{1}受到{2}，{3}。
+# Vocabulary.MultiStrike.TakesStrikes
+{0}{1} takes {2}.	{0}{1}受到{2}。
+# Vocabulary.MultiStrike.TakesWithOutcome
+{0}{1} takes {2}, {3}.	{0}{1}受到{2}，{3}。
+# Vocabulary.MultiStrike.AttacksGiant
+{0} attacks {1}	{0}攻击{1}
+# Vocabulary.MultiStrike.AttacksGiantTimes
+{0} attacks {1} {2} times	{0}攻击{1}{2}次
+# Vocabulary.MultiStrike.YourCardsAttackTimes
+Your cards attack {0} {1} times	你的卡牌攻击{0}{1}次
+# Vocabulary.MultiStrike.GiantDiesFor
+{0} for {1}.	{0}：{1}。
+# Vocabulary.MultiStrike.ForHealthRemaining
+{0} for {1}, {2} health remaining.	{0}：{1}，剩余{2}点生命值。
+# Vocabulary.MultiStrike.BrittleFallback
+Brittle	脆骨
+# Vocabulary.MultiStrike.SAbilityTriggersAnd
+{0}'s {1} ability triggers, and it dies.{2}	{0}的{1}能力触发，它随之死亡。{2}
+# Vocabulary.MultiStrike.InSlots
+{0} in {1} {2}	{1}{2}的{0}
+# Vocabulary.MultiStrike.AbilitiesTriggerDie
+{0} {1} abilities trigger, {2} die.{3}	{0}{1}能力触发，{2}死亡。{3}
+# Vocabulary.Turns.YourTurn
+Your turn.	你的回合。
+# Vocabulary.Turns.EnemyTurn
+Enemy turn.	敌方回合。
+# Vocabulary.Turns.DrawPhaseSkippedDue
+Draw Phase skipped due to no cards remaining in either deck...	双方牌组都已无牌，跳过抽牌阶段……
+# Vocabulary.Sigils.GuardianName
+Guardian	守护者
+# Vocabulary.Sigils.SAbilityTriggersIt
+{0}'s {1} ability triggers: it is blocked from 	{0}的{1}能力触发：它被阻止 
+# Vocabulary.Sigils.SAbilityTriggersIt
+moving to slot {0}.	移动到{0}号位。
+# Vocabulary.Sigils.SAbilityTriggersItMoves
+{0}'s {1} ability triggers: it moves to slot {2}.	{0}的{1}能力触发：它移动到{2}号位。
+# Vocabulary.Sigils.Burrower
+Burrower	钻地龙
+# Vocabulary.Sigils.RightOrLeft
+right	向右
+# Vocabulary.Sigils.RightOrLeft
+left	向左
+# Vocabulary.Sigils.SAbilityTriggersItMovesTo
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	{0}的{1}能力触发：它{2}移动到{3}号位。
+# Vocabulary.Sigils.Sprinter
+Sprinter	冲刺能手
+# Vocabulary.Sigils.Bloodlust
+Bloodlust	嗜血狂热
+# Vocabulary.Sigils.SAbilityTriggersItNow
+{0}'s {1} ability triggers: it now has {2} power.	{0}的{1}能力触发：它现在有{2}点攻击力。
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0}'s {1} ability triggers: it places a {2} in 	{0}的{1}能力触发：它将{2}放在 
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0} slot {1}.	{0}{1}号位。
+# Vocabulary.Sigils.SAbilityTriggersA
+{0}'s {1} ability triggers: a 	{0}的{1}能力触发： 
+# Vocabulary.Sigils.SAbilityTriggersA
+{0} is played in {1} slot {2}.	{0}被打出在{1}{2}号位。
+# Vocabulary.Sigils.WithAbilities
+, with 	，带有 
+# Vocabulary.Sigils.Enemy
+Enemy 	敌方 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+{0}{1}'s {2} ability triggers: 	{0}{1}的{2}能力触发： 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+it becomes a {0}/{1} {2}{3}.	它变为{0}/{1}的{2}{3}。
+# Vocabulary.Sigils.SAbilityFizzlesDue
+{0}'s {1} ability fizzles due to having no empty item slots.	{0}的{1}能力失效，因为没有空的道具栏。
+# Vocabulary.Events.IsCreatedInYour
+{0} is created in your hand.	{0}在你的手牌中生成。
+# Vocabulary.Events.AbilityTriggersIsAdded
+{0} ability triggers: {1} {2} is added to your hand.	{0}能力触发：{2}加入你的手牌。
+# Vocabulary.Events.OuroborosComesBackStronger
+ Ouroboros comes back stronger than before...	 衔尾蛇回来了，比以前更强……
+# Vocabulary.Events.ArticleA
+A	一张
+# Vocabulary.Events.AnOrA
+An	一张
+# Vocabulary.Events.CardsAbility
+{0}'s {1}	{0}的{1}
+# Vocabulary.Events.BySourcesAbility
+ by {0}'s {1}	 由{0}的{1}
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created in enemy Slot {1}{2}.	{0}在敌方{1}号位生成{2}。
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created on the opposing space{1}.	{0}在对面的位置生成{1}。
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue, targeting Slot {0}.	溢出伤害传递到队列，瞄准{0}号位。
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue.	溢出伤害传递到队列。
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory. {0} extra {1} received.	胜利。额外获得{0}个{1}。
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory.	胜利。
+# Vocabulary.Events.ItemSlotCount
+item slot {0}	道具栏{0}
+# Vocabulary.Events.ItemSlotCount
+an item slot	一个道具栏
+# Vocabulary.Events.Chosen
+{0} chosen.	已选择{0}。
+# Vocabulary.Events.IsCreatedIn
+{0} is created in {1}.	{0}在{1}生成。
+# Vocabulary.Events.Saving
+Saving.	正在保存。
+# Vocabulary.Events.IsAddedToYour
+{0} is added to your hand.	{0}加入你的手牌。
+# Vocabulary.Dialogue.PirateSkull
+Pirate Skull	海盗骷髅
+# Vocabulary.Dialogue.None
+None	无
+# Vocabulary.Bosses.OneOfSCandles
+One of {0}'s {1} candles is blown out.	{0}的{1}根蜡烛中有一根被吹灭。
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+A candle is blown out.	一根蜡烛被吹灭。
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+One of {0}'s candles is blown out.	{0}的一根蜡烛被吹灭。
+# Vocabulary.Bosses.CandleIsBlownOut
+A candle is blown out. {0} left.	一根蜡烛被吹灭。剩余{0}根。
+# Vocabulary.Bosses.CandleIsBlownOut
+One of {0}'s candles is blown out. {1} left.	{0}的一根蜡烛被吹灭。剩余{1}根。
+# Vocabulary.Bosses.TheMask
+The {0}	{0}
+# Vocabulary.Bosses.LeshyPutsOnA
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	莱西戴上一副木面具，面容肮脏狂野，留着凌乱的大胡子，还有一颗歪斜的金牙。他颤抖的手里握着一把大镐……
+# Vocabulary.Bosses.CandleCount
+candle	蜡烛
+# Vocabulary.Bosses.CandleCount
+candles	蜡烛
+# Vocabulary.Bosses.PlacesASkullHolding
+{0} places a skull holding {1} lit {2} 	{0}把一个托着{1}根点燃的{2}的头骨 
+# Vocabulary.Bosses.PlacesASkullHolding
+onto the table.	放到桌上。
+# Vocabulary.Bosses.LeshyRelightsYourCandle
+Leshy relights your candle. You now have {0} {1} lit.	莱西重新点燃了你的蜡烛。你现在有{0}根{1}亮着。
+# Vocabulary.Bosses.BlowsOutYourLast
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0}吹灭了你最后一根蜡烛。房间陷入黑暗，{1}的双手越过桌子伸了过来……
+# Vocabulary.Bosses.BlowsOutOneOf
+{0} blows out one of your candles. You have {1} remaining.	{0}吹灭了你的一根蜡烛。你还剩{1}根。
+# Vocabulary.Bosses.AndAreAddedTo
+{0} are added to your hand.	{0}加入你的手牌。
+# Vocabulary.Bosses.IsAddedToYourHand
+{0} is added to your hand.{1}	{0}加入你的手牌。{1}
+# Vocabulary.Bosses.AndAreAddedToYour
+{0} are added to your hand.{1}	{0}加入你的手牌。{1}
+# Vocabulary.Bosses.ExtraCandleIsLit
+An extra candle is lit.	又点燃了一根蜡烛。
+# Vocabulary.ProspectorBoss.ProspectorUsesHisPickaxe
+The Prospector uses his pickaxe to strike all of your creatures, turning them into Gold Nuggets.	矿工用他的镐砸向你所有的生物，把它们变成了金块。
+# Vocabulary.ProspectorBoss.ProspectorClearsHisQueue
+The Prospector clears his queue, 	矿工清空了他的队列， 
+# Vocabulary.PirateSkull.Limoncello
+The Limoncello	柠檬酒号
+# Vocabulary.PirateSkull.YourTheirSlot
+ slot {0}	 {0}号位
+# Vocabulary.PirateSkull.CannonsFireAtIs
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	大炮向{0}开火，{1}被炮弹击中，{2}。
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	大炮向{0}开火，{1}被炮弹击中，剩余{2}点生命值。
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball.	大炮向{0}开火，{1}被炮弹击中。
+# Vocabulary.CardChoices.DeathCard
+Death card.	死亡卡。
+# Vocabulary.CardChoices.BloodCostCard
+{0} blood cost card.	{0}点鲜血费用的卡牌。
+# Vocabulary.CardChoices.BonesCostCard
+Bones cost card.	骨头费用的卡牌。
+# Vocabulary.CardChoices.KinCard
+{0} kin card.	{0}同族卡牌。
+# Vocabulary.CardChoices.NewCardsDealt
+New cards dealt.	已发新牌。
+# Vocabulary.CardChoices.UseTheLuckyClover
+ Use the Lucky Clover to discard them all and be dealt new cards.	 使用幸运三叶草可弃掉所有卡牌并换发新牌。
+# Vocabulary.CardChoices.OpeningLine
+Left and right arrows to browse, Enter to turn a card over, 	左右方向键浏览，回车键翻开卡牌， 
+# Vocabulary.CardChoices.OpeningLine
+Shift Up displays your deck, Space to repeat, H for help.	Shift加上方向键显示牌组，空格键重复，H键帮助。
+# Vocabulary.CardChoices.DeckTrialLeshyPuts
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	牌组试炼。莱西在桌上放了一座石拱道具，让他发光的双眼看起来像是从漆黑的洞口望出来。
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Rare Card Choice	稀有卡牌选择
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Card Choice	卡牌选择
+# Vocabulary.CardChoices.FaceDownCardCount
+1 face-down card	1张背面朝上的卡牌
+# Vocabulary.CardChoices.FaceDownCardCount
+{0} face-down cards	{0}张背面朝上的卡牌
+# Vocabulary.CardChoices.FaceDownRareCardCount
+1 face-down rare card	1张背面朝上的稀有卡牌
+# Vocabulary.CardChoices.FaceDownRareCardCount
+{0} face-down rare cards	{0}张背面朝上的稀有卡牌
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}。莱西递给你一个木盒。他打开锁扣， 
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+opens it, revealing {0}... Choose 1 to add to your deck.	掀开盒盖，里面是{0}……选择1张加入你的牌组。
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}。所有卡牌都正面朝上。选择1张加入你的牌组。
+# Vocabulary.CardChoices.BeforeYouLayOrEveryCardIs
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}。你面前摆着{1}。选择1张加入你的牌组。
+# Vocabulary.CardChoices.LuckyCloverDiscardAll
+Lucky Clover. Discard all cards and be dealt new ones.	幸运三叶草。弃掉所有卡牌并换发新牌。
+# Vocabulary.CardChoices.FaceDown
+Face down.	背面朝上。
+# Vocabulary.CardChoices.TrialOf
+Trial of {0}.	{0}试炼。
+# Vocabulary.CardChoices.FaceUpButThe
+Face up, but the card could not be read.	已翻开，但无法读取这张卡牌。
+# Vocabulary.CardChoices.DuplicateOfCardIn
+ Duplicate of card in your deck.	 你的牌组中已有这张卡牌。
+# Vocabulary.CardChoices.ArrowKeysToBrowse
+{0}. Arrow keys to browse.	{0}。方向键浏览。
+# Vocabulary.CardChoices.ThatCardCouldNot
+That card could not be taken.	无法拿取这张卡牌。
+# Vocabulary.CardChoices.LuckyCloverCouldNot
+The Lucky Clover could not be used.	无法使用幸运三叶草。
+# Vocabulary.CardChoices.ThatCardCouldNotBe
+That card could not be selected.	无法选择这张卡牌。
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+{0} added to your deck.	{0}已加入你的牌组。
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+Card added to your deck.	卡牌已加入你的牌组。
+# Vocabulary.CardChoices.PressEnterToAdd
+ Press Enter to add it to your deck.	 按回车键将其加入你的牌组。
+# Vocabulary.DeckView.DeckReturned
+Deck returned.	牌组已放回。
+# Vocabulary.DeckView.PlaceBelow
+the card choice	卡牌选择
+# Vocabulary.DeckView.PlaceBelow
+the map	地图
+# Vocabulary.DeckView.YourDeck
+Your deck. 	你的牌组。 
+# Vocabulary.DeckView.LeftAndRightArrows
+Left and right arrows to browse, Space to repeat, A for teeth, I cycles through your items, H for help, Backspace to return to {0}.	左右方向键浏览，空格键重复，A键查看牙齿，I键切换道具，H键帮助，退格键返回{0}。
+# Vocabulary.DeckView.YourDeckIsStill
+Your deck is still being laid out.	你的牌组还在摆放中。
+# Vocabulary.DeckView.YourDeckName
+Your deck. {0}.	你的牌组。{0}。
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Left and right arrows browse the cards. Space repeats the card you are on. 	左右方向键浏览卡牌。空格键重复当前卡牌。 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+A reads the amount of teeth collected. I cycles through your items, one per press. 	A键读出已收集的牙齿数量。I键每按一次切换一个道具。 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+R opens the rulebook. 	R键打开规则书。 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Backspace closes your deck and returns you to {0}.	退格键关闭牌组，返回{0}。
+# Vocabulary.DeckView.NoTeethAreShown
+No teeth are shown here.	这里不显示牙齿。
+# Vocabulary.DeckView.ToothCollectedCount
+ 1 tooth collected.	 已收集1颗牙齿。
+# Vocabulary.DeckView.ToothCollectedCount
+ {0} teeth collected.	 已收集{0}颗牙齿。
+# Vocabulary.DeckPick.OpeningLine
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	你的牌组。选择一张卡牌加入手牌。方向键浏览，回车键选择。{0}。
+# Vocabulary.DeckPick.HelpLine
+Choose a card from your deck to add to your hand. 	从你的牌组中选择一张卡牌加入手牌。 
+# Vocabulary.DeckPick.HelpLine
+{0}. G, B and A to read the boardstate.	{0}。G、B、A键读出牌桌状态。
+# Vocabulary.NodeScreens.HostCard
+Host Card	宿主卡牌
+# Vocabulary.NodeScreens.CardToSacrifice
+Card to Sacrifice	献祭卡牌
+# Vocabulary.NodeScreens.BeginRitual
+Begin Ritual	开始仪式
+# Vocabulary.NodeScreens.SendCardToRest
+Send card to rest by the fire	让卡牌在火边休息
+# Vocabulary.NodeScreens.BeginExperiment
+Begin experiment...	开始实验……
+# Vocabulary.NodeScreens.SelectAPairOf
+Select a pair of cards to fuse together	选择一对要融合的卡牌
+# Vocabulary.NodeScreens.BeginPainting
+Begin painting	开始作画
+# Vocabulary.NodeScreens.ChooseACardTo
+Choose a card to receive an artistic rendition of	选择一张卡牌来接受艺术再现
+# Vocabulary.NodeScreens.ChooseOneCardFrom
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	从你的牌组中选择一张卡牌作为宿主。献祭牌组中的另一张卡牌，将其印记转移给宿主。
+# Vocabulary.NodeScreens.SelectACardFrom
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	从你的牌组中选择一张卡牌在篝火旁取暖。这会永久提升它的一项数值，但也有风险……
+# Vocabulary.NodeScreens.ChooseAPairOf
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	从你的牌组中选择一对相同的卡牌融合为一张。攻击力和生命值相加，两者的印记都会保留。
+# Vocabulary.NodeScreens.PickANewWoodcarving
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	挑选一个新木雕放进背包：同族头部或印记身体。如果头部和身体都有了，就选择一个图腾组合随身携带。只要图腾在使用中，你牌组中与同族头部相符的每张卡牌都会获得图腾的印记。
+# Vocabulary.NodeScreens.TradeTheTeethYouve
+Trade the teeth you've collected for pelt cards to add to your deck.	用你收集的牙齿换取毛皮卡牌加入牌组。
+# Vocabulary.NodeScreens.TradePeltsFromYourDeck
+Trade pelts from your deck for new cards.	用牌组中的毛皮换取新卡牌。
+# Vocabulary.NodeScreens.SelectOneCardFrom
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	从你的牌组中选择一张卡牌永久移除。作为回报，骨王会赐予一份恩惠：每场战斗开始时给你骨头的被动效果。
+# Vocabulary.NodeScreens.SelectOneCardFromYour
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	从你的牌组中选择一张卡牌。它的复制品会加入你的牌组，不过可能会有些偏差。
+# Vocabulary.NodeScreens.CardToReceiveAn
+card to receive an artistic rendition	接受艺术再现的卡牌
+# Vocabulary.NodeScreens.HostCardName
+host card	宿主卡牌
+# Vocabulary.NodeScreens.ChosenAsLabelsCardToSacrifice
+card to sacrifice	献祭卡牌
+# Vocabulary.NodeScreens.BackpackCannotBeReached
+The backpack cannot be reached right now.	现在无法打开背包。
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	背包。方向键浏览，退格键返回木雕选择。
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Enter chooses a totem combination.	背包。方向键浏览，回车键选择图腾组合。
+# Vocabulary.NodeScreens.DeckCannotBeReached
+The deck cannot be reached right now.	现在无法打开牌组。
+# Vocabulary.NodeScreens.CardS
+ {0}, {1} card{2}.	 {0}，{1}张卡牌。
+# Vocabulary.NodeScreens.WoodcarvingSelection
+Woodcarving selection.	木雕选择。
+# Vocabulary.NodeScreens.WithdrawFromTheCampfire
+Withdraw from the campfire.	离开篝火。
+# Vocabulary.NodeScreens.Fire
+the fire	火
+# Vocabulary.NodeScreens.PairOf
+Pair of {0}.	一对{0}。
+# Vocabulary.NodeScreens.Pluralise
+s	s
+# Vocabulary.NodeScreens.AltarOfTheBoneLord
+Altar of the Bone Lord	骨王的祭坛
+# Vocabulary.NodeScreens.AltarOfTheBone
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	骨王的祭坛。方向键浏览，回车键确认。
+# Vocabulary.NodeScreens.TrapperYouAreGifted
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	猎人。你获得了一张兔皮。用你收集的牙齿换取毛皮卡牌加入牌组。
+# Vocabulary.NodeScreens.TeethWord
+1 tooth	1颗牙齿
+# Vocabulary.NodeScreens.TeethWord
+{0} teeth	{0}颗牙齿
+# Vocabulary.NodeScreens.KnifeName
+Skinning Knife	剥皮刀
+# Vocabulary.NodeScreens.PurchasedForYouHave
+{0} purchased for {1}. You have {2} remaining.{3}	以{1}购买了{0}。你还剩{2}。{3}
+# Vocabulary.NodeScreens.YouAreShortFrom
+You are {0} short from buying {1}.{2}	购买{1}还差{0}。{2}
+# Vocabulary.NodeScreens.NotEnoughTeethRemaining
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 牙齿不够再购买了。退格键离开猎人。
+# Vocabulary.NodeScreens.YouHave
+You have {0}.	你有{0}。
+# Vocabulary.NodeScreens.ListOfThree
+, and {0}	，以及{0}
+# Vocabulary.NodeScreens.Sacrificed
+{0} sacrificed.	{0}已献祭。
+# Vocabulary.NodeScreens.SigilCount
+sigil	印记
+# Vocabulary.NodeScreens.SigilCount
+sigils	印记
+# Vocabulary.NodeScreens.RitualResult
+{0} gained the {1} {2}.	{0}获得了{2}：{1}。
+# Vocabulary.NodeScreens.BoostPhrase
+its {0} by {1}	{0}提升{1}
+# Vocabulary.NodeScreens.BoostPhrase
+its {0}	{0}
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise one of its stats	这会永久提升它的一项数值
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise {0}	这会永久提升{0}
+# Vocabulary.NodeScreens.CampfireChooseLine
+Choose a card to warm by the campfire. {0}.	选择一张卡牌在篝火旁取暖。{0}。
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting peacefully by the campfire, and raise the stat again.	继续在篝火旁安心休息，再次提升数值。
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting by the campfire, and raise the stat again.	继续在篝火旁休息，再次提升数值。
+# Vocabulary.NodeScreens.ChosenCard
+the chosen card	所选卡牌
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to peacefully rest by	安心休息于
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to risk resting by	冒险休息于
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire	让{0}{1}篝火旁
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire, permanently raising {2}.	让{0}{1}篝火旁，永久提升{2}。
+# Vocabulary.NodeScreens.ChooseACardToBecome
+Choose a card to become the host.	选择一张卡牌作为宿主。
+# Vocabulary.NodeScreens.ChooseACardToSacrifice
+Choose a card to sacrifice.	选择一张卡牌献祭。
+# Vocabulary.NodeScreens.ChooseACardToWarm
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	选择一张卡牌在篝火旁取暖。这会提升它的数值，但也有风险……
+# Vocabulary.NodeScreens.ChooseACard
+Choose a card.	选择一张卡牌。
+# Vocabulary.NodeScreens.SelectedAs
+{0} selected as {1}.	已选择{0}作为{1}。
+# Vocabulary.NodeScreens.PairOfChosenTo
+Pair of {0} chosen to fuse together. Enter to rechoose.	已选择一对{0}进行融合。按回车键重新选择。
+# Vocabulary.NodeScreens.ChosenAsEnterTo
+{0} chosen as {1}. Enter to rechoose.	已选择{0}作为{1}。按回车键重新选择。
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}.	{0}。
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}. {1}	{0}。{1}
+# Vocabulary.NodeScreens.ReceivedBoon
+Received {0}.	获得了{0}。
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+A carved head.	一个雕刻的头部。
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+{0} head.	{0}头部。
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+A carved sigil body.	一个雕刻的印记身体。
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+{0} sigil body.	{0}印记身体。
+# Vocabulary.NodeScreens.TotemYourCardsGain
+Totem: your {0} cards gain {1}.	图腾：你的{0}卡牌获得{1}。
+# Vocabulary.NodeScreens.FinishedTotem
+The finished totem.	完成的图腾。
+# Vocabulary.NodeScreens.OptionOf
+Option {0} of {1}.	第{0}个选项，共{1}个。
+# Vocabulary.NodeScreens.OptionSLeftAnd
+{0}. {1} option{2}. 	{0}。{1}个选项。 
+# Vocabulary.NodeScreens.OptionSLeftAnd
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	左右方向键浏览，回车键选择，空格键重复，H键帮助。
+# Vocabulary.NodeScreens.NoOptionSelectedUse
+No option selected. Use left and right arrows to browse.	未选择选项。用左右方向键浏览。
+# Vocabulary.NodeScreens.NoPairIsOn
+No pair is on the stone yet. Choose a pair of cards first.	石头上还没有卡牌对。请先选择一对卡牌。
+# Vocabulary.NodeScreens.PairOfSelected
+Pair of {0} selected.	已选择一对{0}。
+# Vocabulary.NodeScreens.YouTookThe
+You took the {0}.	你拿走了{0}。
+# Vocabulary.NodeScreens.Selected
+{0} selected.	已选择{0}。
+# Vocabulary.NodeScreens.NothingToChooseLine
+Nothing to choose here.	这里没有可选择的。
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0} You have {1} {2} left to trade.	毛皮商。{0}你还有{1}{2}可以交易。
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0}	毛皮商。{0}
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Choosing a card. {0}. 	正在选择卡牌。{0}。 
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Arrows browse, Enter chooses, Space repeats your position.	方向键浏览，回车键选择，空格键重复你的位置。
+# Vocabulary.NodeScreens.ShiftUpDisplaysYour
+Shift Up displays your deck.	Shift加上方向键显示牌组。
+# Vocabulary.NodeScreens.OpensYourBackpackShift
+A opens your backpack, Shift Up displays your deck. 	A键打开背包，Shift加上方向键显示牌组。 
+# Vocabulary.NodeScreens.CountsYourTeethBackspace
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A键数牙齿，退格键随时离开猎人。 
+# Vocabulary.NodeScreens.Zero
+zero	零
+# Vocabulary.NodeScreens.SelectOneOfItems
+{0}. Select one of {1} items to add to your backpack. 	{0}。从{1}个道具中选一个放进背包。 
+# Vocabulary.NodeScreens.SelectOneOfItems
+I cycles through your current items. R opens the rulebook.	I键切换当前道具。R键打开规则书。
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	方向键浏览，回车键选择，退格键随时离开猎人， 
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Space repeats your position, A counts your teeth, R opens the rulebook.	空格键重复你的位置，A键数牙齿，R键打开规则书。
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChoosesSpace
+R opens the rulebook.	R键打开规则书。
+# Vocabulary.NodeScreens.TotemIsAssembledYour
+The totem is assembled. Your {0} cards will gain {1}. 	图腾已组装完成。你的{0}卡牌将获得{1}。 
+# Vocabulary.NodeScreens.ReceivedNoNewSigils
+{0} received no new sigils.	{0}没有获得新的印记。
+# Vocabulary.NodeScreens.Received
+{0} received {1}.	{0}获得了{1}。
+# Vocabulary.NodeScreens.ReceivedAnd
+{0} received {1} 	{0}获得了{1} 
+# Vocabulary.NodeScreens.ReceivedAnd
+and {0}.	和{0}。
+# Vocabulary.NodeScreens.CopyCard
+Copy card	复制卡牌
+# Vocabulary.CopyCardNode.CorkedGlassBottleSuddenly
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	一个带软木塞的玻璃瓶突然跳上游戏桌。旁边落下两个小小的画架，上面放着空白卡牌。
+# Vocabulary.CopyCardNode.InsideTheGlassBottle
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	玻璃瓶里是发光的绿色黏液，有一张畸形的脸。瓶子上系着一支笔尖发光的画笔。
+# Vocabulary.ItemPickup.LeshyPresentsYouThe
+Leshy presents you the {0}.	莱西向你展示{0}。
+# Vocabulary.Rulebook.CombinationCode
+Combination code: 273.	密码：273。
+# Vocabulary.Rulebook.ThisPageIsDestroyed
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	这一页被墨水毁掉了。你能辨认出这些字：镜子……力量与……等于……那……带有……
+# Vocabulary.Rulebook.ThisPageIsDestroyedBy
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	这一页被墨水毁掉了。你能辨认出这些字：响铃……此所代表的数值……等于……那……
+# Vocabulary.Rulebook.ThisPageIsDestroyedByInk
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	这一页被墨水毁掉了。你能辨认出这些字：卡牌计数……所代表的数值……等于……数量……
+# Vocabulary.Rulebook.RulebookIsNotAvailable
+The rulebook is not available here.	这里无法使用规则书。
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Opened Rulebook from shelf.	从书架上拿出规则书并打开。
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Rulebook opened.	规则书已打开。
+# Vocabulary.Rulebook.LeftAndRightArrows
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0}{1}左右方向键翻页。退格键合上书。
+# Vocabulary.Rulebook.RulebookClosed
+Rulebook closed.	规则书已合上。
+# Vocabulary.Rulebook.RulebookLeftAndRight
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	规则书。左右方向键翻页。空格键重复当前页。退格键或R键合上书。
+# Vocabulary.Rulebook.VariableStat
+Variable stat	可变数值
+# Vocabulary.Rulebook.Boon
+Boon	恩惠
+# Vocabulary.Rulebook.Item
+Item	道具
+# Vocabulary.Rulebook.Rule
+Rule	规则
+# Vocabulary.Rulebook.PageUnavailable
+Page unavailable.	页面不可用。
+# Vocabulary.Rulebook.BlankPageOf
+Blank. Page {0} of {1}.	空白。第{0}页，共{1}页。
+# Vocabulary.Rulebook.DescriptionUnavailable
+{0}. Description unavailable.	{0}。描述不可用。
+# Vocabulary.Rulebook.BlankPage
+Blank page.	空白页。
+# Vocabulary.Rulebook.PageOf
+Page {0} of {1}.	第{0}页，共{1}页。
+# Vocabulary.Rulebook.DescriptionOnThisPage
+{0}. The description on this page is obscured by ink.	{0}。此页的描述被墨水遮住了。
+# Vocabulary.Rulebook.ToTheUser
+To the user: 	致用户： 
+# Vocabulary.Surrender.YourOpponent
+Your opponent	你的对手
+# Vocabulary.Surrender.IsOfferingToSurrender
+{0} is offering to surrender, press Shift and E to accept. 	{0}提出投降，按Shift加E接受。 
+# Vocabulary.Surrender.OliveBranch
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	莱西递出橄榄枝，认输了这场战斗。按Shift加E接受他的投降。
+# Vocabulary.Surrender.NoSurrenderIsBeing
+No surrender is being offered.	没有投降提议。
+# Vocabulary.Surrender.ConcedeAccepted
+Concede accepted. Victory.	已接受投降。胜利。
+# Vocabulary.RunEnd.OutcomeLine
+Victory	胜利
+# Vocabulary.RunEnd.OutcomeLine
+Defeat	失败
+# Vocabulary.RunEnd.IkmaCannotFindAn
+IKMA cannot find an option on this screen, so it still needs the mouse here.	IKMA在此画面找不到选项，所以这里仍需要鼠标。
+# Vocabulary.RunEnd.ThereIsNoOption
+There is no option to select on this screen.	此画面没有可选择的选项。
+# Vocabulary.RunEnd.RunEndControlsSpace
+Run end controls. Space repeats the screen. Enter takes the option on it. 	结局画面操作。空格键重复画面。回车键选择画面上的选项。 
+# Vocabulary.LogExport.LogFileCouldNot
+the log file could not be found	找不到日志文件
+# Vocabulary.LogExport.YourDesktopFolderCould
+your desktop folder could not be found	找不到你的桌面文件夹
+# Vocabulary.LogExport.FileCouldNotBe
+the file could not be written	无法写入文件
+# Vocabulary.DeathCardChoice.Part
+cost	费用
+# Vocabulary.DeathCardChoice.Part
+power and health	攻击力和生命值
+# Vocabulary.DeathCardChoice.Screen
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	死亡卡，选择它的{0}。{1}。方向键浏览，回车键选择。
+# Vocabulary.DeathCardName.Instructions
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	为你的卡牌输入名字，最多10个字符。回车键完成。Tab键读出目前的名字。
+# Vocabulary.DeathCardName.Typed
+space	空格
+# Vocabulary.DeathCardName.Typed
+capital {0}	大写{0}
+# Vocabulary.DeathCardName.Deleted
+backspace.	退格。
+# Vocabulary.DeathCardName.Full
+Character limit reached.	已达到字符上限。
+# Vocabulary.DeathCardName.NameSoFar
+No name yet.	还没有名字。
+# Vocabulary.DeathCardName.EmptyEnter
+Type at least one character first.	请先输入至少一个字符。
+# Added Session 32 (after the first catalogue): words that were built inside placeholders, and new lines.
+# Vocabulary.TradeTaken
+Pelt	毛皮
+# Vocabulary.Menus.ChallengeLocked
+Challenge locked.	挑战已锁定。
+# Vocabulary.Map.PathThen
+, then 	，然后 
+# Vocabulary.Hotkeys.DrewItGainsAnd (and other name lists)
+ and 	 和 
+# Vocabulary.Board.YourDeckRemainingCard
+ cards	 张卡牌
+# Vocabulary.Combat.FliesOverAndAttacks
+ twice	 两次
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slot	号位
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slots	号位
+# Vocabulary.MultiStrike.BurrowsFromTo
+ to 	 到 
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+tooth	牙齿
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+teeth	牙齿
+# Session 34 (Claude draft, unreviewed)
+Gamepad.	手柄。
+# Session 34 (Claude draft, unreviewed)
+Keyboard.	键盘。
+# Session 34 (Claude draft, unreviewed)
+Dev Log Locked.	开发日志已锁定。
+# Session 34 (Claude draft, unreviewed)
+Skipping IKMA version {0}.	跳过 IKMA 版本 {0}。
+# Session 34 (Claude draft, unreviewed)
+The IKMA update failed its safety check and was not installed.	IKMA 更新未通过安全检查，未安装。
+# Session 34 (Claude draft, unreviewed)
+Card locked	卡牌已锁定
+# Session 34 (Claude draft, unreviewed)
+Reset with {0}	以{0}重置
+# Session 34 (Claude draft, unreviewed)
+Opponent cards in slots 1 through 4 will lose all of their sigils.	对手在第1至4格的卡牌将失去所有印记。
+# Session 34 (Claude draft, unreviewed)
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	战斗操作。左右方向键浏览手牌。Tab键，手牌中下一张可出的牌。回车键，出牌。E键，敲铃结束回合。R键，打开规则书。Shift R键，查询最近听到的能力。C键，读手牌。U键，读敌方队列。G键，读敌方场面。Shift G键，读你的场面。B键，读整个场面和队列。A键，读天平、骨头及其他游戏信息。I键，重复按下以切换道具，回车键使用。在你的抽牌阶段：D键，从你的牌组抽牌，或S键，从松鼠牌组抽牌。H键，获取帮助。
+# Session 34 (Claude draft, unreviewed)
+{0} is cut in half and {1}.	{0}被剪成两半，{1}。
+# Session 34 (Claude draft, unreviewed)
+{0} added in {1}.	{0}已添加到{1}。
+# Session 34 (Claude draft, unreviewed)
+Space to repeat, H for help.	空格键重复，按H键获取帮助。
+# Session 34 (Claude draft, unreviewed)
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	牌组试炼。莱西给你三个条件供选择。选出对你当前牌组最可能成立的那个。然后他会从你的牌组中随机翻开三张牌。如果成功，你将获得奖励。左右方向键浏览，回车键翻开一张牌，Shift 上方向键显示你的牌组，空格键重复，按H键获取帮助。
+# Session 34 (Claude draft, unreviewed)
+You take the {0} Kin totem with the {1} Sigil.	你拿取了带有{1}印记的{0}族图腾。
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you. Backspace to return to backpack and reselect.	回车键带走图腾。退格键返回背包重新选择。
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you.	回车键带走图腾。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	莱西向你呈上一个华丽的墨水瓶，里面装着{0}，还有一支画笔。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a collapsible fan with bird talon feet.	莱西向你呈上一把长着鸟爪脚的折扇。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a rusty pair of pliers.	莱西向你呈上一把生锈的钳子。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a chipped pair of scissors.	莱西向你呈上一把有缺口的剪刀。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate wooden hourglass.	莱西向你呈上一个华丽的木制沙漏。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large magnifying glass.	莱西向你呈上一个大放大镜。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a ceramic piggy bank.	莱西向你呈上一个陶瓷小猪存钱罐。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large curved fish hook.	莱西向你呈上一个弯曲的大鱼钩。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a razor sharp straight knife.	莱西向你呈上一把锋利如剃刀的直刀。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	莱西向你呈上一个塞着软木塞的玻璃瓶，里面是一团带着畸形面孔的绿色黏液。
+# Session 34 (Claude draft, unreviewed)
+Your cards gain temporary {0}.	你的卡牌暂时获得{0}。
+# Session 34 (Claude draft, unreviewed)
+Opponent turn skipped due to {0}.	因{0}，对手的回合被跳过。
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	莱西向你呈上一个塞着软木塞的玻璃瓶，里面有一张小小的{0}卡牌。

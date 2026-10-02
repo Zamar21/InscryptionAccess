@@ -1,0 +1,1981 @@
+# Turkish.tsv
+# IKMA language file: Turkish. Translated by Claude (Session 32) following the game's own Turkish terms; no Turkish speaker has checked it yet.
+#status: unreviewed
+# Vocabulary.AndList
+{0} and {1}	{0} ve {1}
+# Vocabulary.AndList
+{0}, and {1}	{0} ve {1}
+# Vocabulary.HandEmpty
+Hand is empty.	Elin boş.
+# Vocabulary.BoardUnavailable
+Board unavailable.	Oyun tahtasına erişilemiyor.
+# Vocabulary.ItemsUnavailable
+Items unavailable.	Eşyalara erişilemiyor.
+# Vocabulary.NoItems
+You have no items.	Hiç eşyan yok.
+# Vocabulary.NoOptions
+No options.	Seçenek yok.
+# Vocabulary.NoOptionsAvailable
+No options available.	Kullanılabilir seçenek yok.
+# Vocabulary.NoSettingsOnPage
+No settings on this page.	Bu sayfada ayar yok.
+# Vocabulary.NoPathsAhead
+No paths ahead.	İleride yol yok.
+# Vocabulary.NothingInFront
+Nothing is directly in front of you.	Tam önünde hiçbir şey yok.
+# Vocabulary.NothingToExamine
+Nothing to examine here.	Burada incelenecek bir şey yok.
+# Vocabulary.NothingOnThatKey
+Nothing on {0} from here.	Buradan bakınca {0} tuşunda bir şey yok.
+# Vocabulary.RunEndControls
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Aynı Başlangıç Destesi ve etkin Mücadelelerle yeni bir tur başlatmak için Enter tuşuna bas. Ana menüye dönmek için Geri silme. Tekrar dinlemek için Boşluk.
+# Vocabulary.NoRunToContinue
+No current run available.	Devam edilecek bir tur yok.
+# Vocabulary.MainGameNotSupported
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	Inscryption ana oyun desteği hâlâ geliştiriliyor. Merak etme, bitireceğim! -Zamar :)
+# Vocabulary.BootPlayButton
+In the center of the screen is a small play button. Press Enter...	Ekranın ortasında küçük bir oynat düğmesi var. Enter tuşuna bas...
+# Vocabulary.BootStudioLogo
+Daniel Mullins Games.	Daniel Mullins Games.
+# Vocabulary.TitleCardGlitches
+The screen glitches for a second.	Ekran bir anlığına bozuluyor.
+# Vocabulary.VideoLogsNotAvailable
+Video logs not yet available. Coming soon!	Video günlükleri henüz kullanılamıyor. Çok yakında!
+# Vocabulary.BootPublisherLogo
+Devolver Digital.	Devolver Digital.
+# Vocabulary.BaseTitleCard
+Inscryption. Press any button to start.	Inscryption. Başlamak için herhangi bir tuşa bas.
+# Vocabulary.ModTitleCard
+Inscryption: Kaycee's Mod.	Inscryption: Kaycee'nin Modu.
+# Vocabulary.RulebookNoPages
+The rulebook has no pages to read.	Kural kitabında okunacak sayfa yok.
+# Vocabulary.CannotEndTurn
+Cannot end turn right now.	Şu anda sıranı bitiremezsin.
+# Vocabulary.NoCardSelected
+No card selected.	Kart seçilmedi.
+# Vocabulary.MustSelectCardFirst
+You must first select a card to add to your deck.	Önce destene eklemek için bir kart seçmelisin.
+# Vocabulary.OptionCouldNotBeSelected
+That option could not be selected.	Bu seçenek seçilemedi.
+# Vocabulary.SurrenderNotAccepted
+The surrender could not be accepted.	Teslim olma kabul edilemedi.
+# Vocabulary.CouldNotReachTable
+Could not reach the table.	Masaya ulaşılamadı.
+# Vocabulary.WoodcarvingCouldNotBeRead
+The woodcarving could not be read.	Ahşap oyma okunamadı.
+# Vocabulary.PressHForWhatStillWorks
+Press H for what still works.	Hâlâ neyin çalıştığını öğrenmek için H tuşuna bas.
+# Vocabulary.SpaceDescribesAhead_
+Space describes what is directly in front of you. 	Boşluk tuşu tam önündekini tarif eder. 
+# Vocabulary.ConversationInProgress
+Conversation in progress, press Space to proceed.	Konuşma sürüyor, devam etmek için Boşluk tuşuna bas.
+# Vocabulary.Scales
+Scales: you lead by {0}.	Terazi: {0} farkla öndesin.
+# Vocabulary.Scales
+Scales: enemy leads by {0}.	Terazi: düşman {0} farkla önde.
+# Vocabulary.Scales
+Scales: even.	Terazi: eşit.
+# Vocabulary._sigilFlavour
+It resurfaces.	Yeniden yüzeye çıkıyor.
+# Vocabulary._sigilFlavourPlural
+They resurface.	Yeniden yüzeye çıkıyorlar.
+# Vocabulary._sigilClause
+, granting four bones.	, dört kemik kazandırdı.
+# Vocabulary._sigilClause
+, sending one damage back to its attacker.	, saldırganına bir hasar geri gönderdi.
+# Vocabulary._sigilClause
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, destenden eline eklemek için bir kart seç. Oklarla gez, onaylamak için Enter.
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers{2}	{0} kartının {1} yeteneği tetiklendi{2}
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers.	{0} kartının {1} yeteneği tetiklendi.
+# Vocabulary.SigilTriggers
+{0}'s {1} abilities trigger.	{0} kartlarının {1} yetenekleri tetiklendi.
+# Vocabulary.OverlayLineText
+Comment line: {0}	Yorum satırı: {0}
+# Vocabulary.TotemGrant
+{0} gains ability: {1}.	{0} yeni bir yetenek kazandı: {1}.
+# Vocabulary.TotemGrantNegated
+Copy of {0} sigil negated by Kaycee override.	{0} mührünün kopyası Kaycee kuralıyla geçersiz kılındı.
+# Vocabulary.OpponentTotem
+{0}'s totem gives enemy {1} cards {2}.	{0} totemi, düşmanın {1} kartlarına şunu veriyor: {2}.
+# Vocabulary.FootagePlaying
+Footage, {0}.	Görüntü: {0}.
+# Vocabulary._maskFaces
+It is a rugged face with a bandana wrapped tightly below the eyes.	Gözlerinin hemen altından bandanayla sıkıca sarılmış, sert hatlı bir yüz.
+# Vocabulary._maskFaces
+He has a leathery face with deep wrinkles across his forehead.	Alnında derin kırışıklıklar olan, deri gibi sertleşmiş bir yüzü var.
+# Vocabulary._maskFaces
+She has a strong aged face with a patterned headband.	Desenli bir saç bandı olan, güçlü ve yaşlı bir yüzü var.
+# Vocabulary._maskFaces
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	Kalın kaşlarının altında çökük gözleri var. Alt dudağını birkaç olta iğnesi deliyor.
+# Vocabulary._maskWholeLine
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	Leshy iki yüzlü Mikolog maskesini takıyor. Doktorun yüzü, kabarık saçlı, iri yuvarlak gözlüklü ve alın aynalı bir adamınki. Boynuna ikinci, daha küçük bir yüz iliştirilmiş. Mantar da aynı yüz hatlarına sahip ve başına orantısız büyüklükte bir mantar kaynamış.
+# Vocabulary.DrawPhasePrompt
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Kart çekme aşaması. Destenden çekmek için D, Sincap destesinden çekmek için S tuşuna bas.
+# Vocabulary.WaterborneDive
+{0}'s Waterborne ability triggers. It dives underwater...	{0} kartının Suda Süzülen yeteneği tetiklendi. Suyun altına dalıyor...
+# Vocabulary.Submerged
+Submerged {0}	Suya dalmış: {0}
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask.	Leshy, {0} maskesini takıyor.
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask. {1}	Leshy, {0} maskesini takıyor. {1}
+# Vocabulary.LeshyMaskOn
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA GEÇİCİ: {0} maskesi için yüz tarifi yok.
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask...	Leshy, {0} maskesini takıyor...
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask, it floats away.	Leshy, {0} maskesini çıkarıyor; maske süzülerek uzaklaşıyor.
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask.	Leshy, {0} maskesini çıkarıyor.
+# Vocabulary.LeshyOrbiter
+the {0}	{0}
+# Vocabulary.LeshyOrbiter
+the {0}, and the {1}	{0} ve {1}
+# Vocabulary.LeshyOrbiter
+{0} masks circle around Leshy's head: {1}. 	Leshy'nin başının etrafında {0} maske dönüyor: {1}. 
+# Vocabulary.LeshyOrbiter
+Behind Leshy is a large bright full moon...	Leshy'nin arkasında büyük, parlak bir dolunay var...
+# Vocabulary.LeshyDeathcardPhase
+Leshy takes back a second candle, blocks your board, and calls up the dead.	Leshy ikinci bir mumu geri alıyor, senin tarafını kapatıyor ve ölüleri çağırıyor.
+# Vocabulary.LeshyMoonPhase
+Leshy takes back a last candle. The masks fly away, and Leshy reaches for the moon.	Leshy son bir mumu da geri alıyor. Maskeler uçup gidiyor ve Leshy aya uzanıyor.
+# Vocabulary.LeshyWearingMask
+Leshy is wearing the {0}'s mask.	Leshy, {0} maskesini takmış.
+# Vocabulary.LeshyNoMask
+Leshy is not wearing a mask.	Leshy maske takmıyor.
+# Vocabulary.LeshyThirdCandle
+Leshy lowers a third candle to the flame and lights it...	Leshy üçüncü bir mumu aleve indirip yakıyor...
+# Vocabulary.PirateMutiny
+the ship	gemi
+# Vocabulary.PirateMutiny
+A {0} jumps off {1} and joins your side in slot {2}.	Bir {0}, {1} güvertesinden atlayıp {2}. alanda senin tarafına katılıyor.
+# Vocabulary.PirateMutiny
+{0} {1} jump off {2} and join your side in slots {3}.	{1} kartları, {2} güvertesinden atlayıp {3}. alanlarda senin tarafına katılıyor.
+# Vocabulary.PirateShipCrashes
+A massive ship called {0} crashes onto the board. 	{0} adında devasa bir gemi oyun tahtasına çarpıyor. 
+# Vocabulary.PirateShipCrashes
+It has {0} dancing Skeleton Pirates on board making a ruckus.	Güvertede dans edip ortalığı birbirine katan {0} İskelet Korsan var.
+# Vocabulary.PirateSkeletonsOnDeck
+ No Skeleton Pirates remain on deck.	 Güvertede hiç İskelet Korsan kalmadı.
+# Vocabulary.PirateSkeletonsOnDeck
+ 1 Skeleton Pirate remains on deck.	 Güvertede 1 İskelet Korsan kaldı.
+# Vocabulary.PirateSkeletonsOnDeck
+ {0} Skeleton Pirates remain on deck.	 Güvertede {0} İskelet Korsan kaldı.
+# Vocabulary.ItemModeEntered
+Item menu. {0} 	Eşya menüsü. {0} 
+# Vocabulary.ItemModeControls
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Oklarla gez, seçmek için Enter, eline dönmek için Geri silme.
+# Vocabulary.ItemModeWhere
+Item menu. 	Eşya menüsü. 
+# Vocabulary.ItemModeLeft
+Your hand.	Elin.
+# Vocabulary.ItemModeHelp
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Eşya menüsü. Sol ve sağ oklar taşıdığın eşyalar arasında gezinir. Enter, üzerinde olduğun eşyayı kullanır. Shift artı I, boş olanlar dahil üç yuvanın hepsini okur. Geri silme seni eline döndürür. Shift artı 1, 2 veya 3, o yuvadaki eşyayı hızlıca kullanır.
+# Vocabulary.PirateSkullRecedes
+The pirate skull fades backwards... Something is coming...	Korsan kafatası geriye doğru silikleşiyor... Bir şey geliyor...
+# Vocabulary.PirateSkullPlaced
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0} masaya göz bantlı ve korsan şapkalı bir kafatası koyuyor.
+# Vocabulary.PirateSkullEyeGlows
+The eye of the skull begins to glow.	Kafatasının gözü parlamaya başlıyor.
+# Vocabulary.GiantArrives
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0} düşman tarafını dolduruyor; {1} alanın hepsini kaplayan tek bir kart, {2}/{3}.
+# Vocabulary.GiantArrives
+{0} arrives, {1}/{2}.	{0} geliyor, {1}/{2}.
+# Vocabulary.GiantDestroyed
+{0} is destroyed.	{0} yok edildi.
+# Vocabulary.HookAimed
+{0} aims his hook at your empty slot {1}.	{0}, kancasını senin boş {1}. alanına doğrultuyor.
+# Vocabulary.HookAimed
+{0} aims his hook at {1} in slot {2}.	{0}, kancasını {2}. alandaki {1} kartına doğrultuyor.
+# Vocabulary.HookPulled
+{0} hooks your {1} and pulls it to his slot {2}.	{0}, senin {1} kartını kancayla yakalayıp kendi {2}. alanına çekiyor.
+# Vocabulary.HookCancelled
+{0} lowers his hook.	{0} kancasını indiriyor.
+# Vocabulary.TradeOffered
+{0} on the board and {1} in the queue	oyun tahtasında {0}, arka sırada {1} kart
+# Vocabulary.TradeOffered
+{0} on the board	oyun tahtasında {0} kart
+# Vocabulary.TradeOffered
+{0} in the queue	arka sırada {0} kart
+# Vocabulary.TradeOffered
+cards	kartlar
+# Vocabulary.TradeOffered
+{0} offers a trade.	{0} takas teklif ediyor.
+# Vocabulary.TradeOffered
+{0} gives you a {1} and offers a trade.	{0} sana bir {1} verip takas teklif ediyor.
+# Vocabulary.TradeOffered
+{0} Trade pelts in your hand for one of their cards. 	{0} Elindeki postları onun kartlarından biriyle takas et. 
+# Vocabulary.TradeOffered
+They have {0}. 	Takas için {0} var. 
+# Vocabulary.TradeOffered
+The bell is disabled until you trade at least once. 	En az bir kez takas yapana kadar zil devre dışı. 
+# Vocabulary.TradeOffered
+Trade pelts from your hand for cards on their board and queue.	Elindeki postları, onun oyun tahtasındaki ve arka sırasındaki kartlarla takas et.
+# Vocabulary.CannonTargetCard
+{0} in slot {1}	{1}. alanda {0}
+# Vocabulary.CannonTargetEmpty
+empty slot {0}	boş {0}. alan
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side, and {1} on theirs.	Toplar nişan alıyor: senin tarafında {0}, karşı tarafta {1}.
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side.	Toplar nişan alıyor: senin tarafında {0}.
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on their side.	Toplar nişan alıyor: karşı tarafta {0}.
+# Vocabulary.CannonAimedAtSlot
+The cannons are aimed at slot {0}.	Toplar {0}. alana nişan almış.
+# Vocabulary.CannonAimedHere
+The cannons are aimed here.	Toplar buraya nişan almış.
+# Vocabulary.PirateRodentPhase
+The Pirate Skull opens a pack of cards and calls in their crew.	Korsan Kafatası bir kart paketi açıp tayfasını çağırıyor.
+# Vocabulary.PirateShipPhase
+The Pirate Skull calls their ship. It bears down on the cabin.	Korsan Kafatası gemisini çağırıyor. Gemi kulübenin üzerine doğru geliyor.
+# Vocabulary.LeshyMaskFlip
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	Leshy maskeyi çıkarıyor, ters çevirip yeniden takıyor. {0} haline geliyor.
+# Vocabulary.AnglerBaitPhase
+{0} clears his side of the table.	{0} masanın kendi tarafını temizliyor.
+# Vocabulary.AnglerShark
+A Shark takes the bait's place in slot {0}.	{0}. alanda yemin yerini bir Köpekbalığı alıyor.
+# Vocabulary.ActorPossessive
+their	onun
+# Vocabulary.ActorPossessive
+his	onun
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean.	{0} masanın kendi tarafını süpürüp temizliyor.
+# Vocabulary.TrapperPhaseTwo
+pelt	post
+# Vocabulary.TrapperPhaseTwo
+pelts	post
+# Vocabulary.TrapperPhaseTwo
+returns	eline dönüyor
+# Vocabulary.TrapperPhaseTwo
+return	eline dönüyor
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean, and 	{0} masanın kendi tarafını süpürüp temizliyor ve 
+# Vocabulary.TrapperPhaseTwo
+{0} played {1} {2} to your hand.	tahtadaki {0} {1} {2}.
+# Vocabulary.GrizzlyPhase
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	Ekran bozuluyor ve {0} kırmızı parlayan gözlerle bakıyor. Bir Bozayı duvarı üzerine akın ediyor...
+# Vocabulary.GrizzliesFillEverySlot
+Every opposing slot on the board is filled with Grizzlies...	Karşı taraftaki her alan Bozayılarla dolu...
+# Vocabulary.TradeScreenOpen
+card	kart
+# Vocabulary.TradeScreenOpen
+Begin trading. 	Takasa başla. 
+# Vocabulary.TradeScreenOpen
+Trade: {0} {1} to choose from, 	Takas: seçebileceğin {0} {1}, 
+# Vocabulary.TradeScreenOpen
+{0} {1} in hand. 	elinde {0} {1}. 
+# Vocabulary.TradeScreenOpen
+Arrow keys to browse, Enter to trade. Press H for help.	Gezinmek için ok tuşları, takas için Enter. Yardım için H tuşuna bas.
+# Vocabulary.TradeOption
+in the queue, slot {0}	arka sırada, {0}. alan
+# Vocabulary.TradeOption
+on the board, slot {0}	oyun tahtasında, {0}. alan
+# Vocabulary.TradeOption
+Option {0} of {1}, {2}. {3}	Seçenek {0}, toplam {1}, {2}. {3}
+# Vocabulary.TradeOptionUnreadable
+Option {0} of {1}. {2}	Seçenek {0}, toplam {1}. {2}
+# Vocabulary.TradeNoPelt
+You have no pelt to trade with.	Takas edecek postun yok.
+# Vocabulary.AdjacentSpawnTriggers
+slot {0}	{0}. alan
+# Vocabulary.AdjacentSpawnTriggers
+slot {0} and slot {1}	{0}. ve {1}. alan
+# Vocabulary.AdjacentSpawnTriggers
+{0}'s {1} ability triggers, placing a {2} in {3}.	{0} kartının {1} yeteneği tetiklendi, şuraya bir {2} yerleştirdi: {3}.
+# Vocabulary.LooseTailTriggers
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	{0} kartının Gevşek Kuyruk yeteneği tetiklendi, kuyruğunu yem olarak bırakıp 
+# Vocabulary.LooseTailTriggers
+and moves to slot {0}.	{0}. alana geçti.
+# Vocabulary.AmorphousTriggers
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	{0} kartının Özelliksiz yeteneği tetiklendi, başkalaşıp şu yeteneği kazandı: {1}.
+# Vocabulary.TidalLockTriggers
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	{0} kartının Gelgitsel Kilitleyiş yeteneği tetiklendi; senin {1} kartını yörüngeye çekip yok etti.
+# Vocabulary.TrinketBearerTriggers
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	{0} kartının Ziynet Sahibi yeteneği tetiklendi, {2}. eşya yuvasına bir {1} eklendi.
+# Vocabulary.BugReportKeyHelp
+Shift L saves a log file to your desktop for a bug report, this command works here and at any point during gameplay.	Shift L, hata bildirimi için masaüstüne bir günlük dosyası kaydeder; bu komut burada ve oyunun her anında çalışır.
+# Vocabulary.LogExported
+Log saved to your desktop as a .txt file. Attach it to your bug report.	Günlük, masaüstüne .txt dosyası olarak kaydedildi. Hata bildirimine ekle.
+# Vocabulary.LogExportFailed
+The log could not be saved because {0}.	Günlük kaydedilemedi, sebep: {0}.
+# Vocabulary.SigilFizzles
+{0}'s {1} ability fizzles.	{0} kartının {1} yeteneği etkisiz kaldı.
+# Vocabulary.CorpseEaterTriggers
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	{0} ölünce elindeki {1} kartının Ceset Yiyenler yeteneği tetiklendi, 
+# Vocabulary.CorpseEaterTriggers
+playing itself into slot {0}.	kart kendini {0}. alana oynadı.
+# Vocabulary.TradeTaken
+{0} traded for {1}.	{0} verildi, {1} alındı.
+# Vocabulary.TradeHelp
+Trade pelts from your hand for cards on their board and queue. 	Elindeki postları, onun oyun tahtasındaki ve arka sırasındaki kartlarla takas et. 
+# Vocabulary.TradeHelp
+Arrow keys browse, Enter trades. 	Ok tuşları gezinir, Enter takas eder. 
+# Vocabulary.TradeHelp
+You have {0} {1} in hand. 	Elinde {0} {1} var. 
+# Vocabulary.TradeHelp
+Trade until you run out of pelts, then the battle will continue.	Postların bitene kadar takas yap, ardından savaş devam edecek.
+# Vocabulary._containerDeathClause
+the cage is destroyed	kafes kırıldı
+# Vocabulary._containerDeathClause
+the ice is destroyed	buz kırıldı
+# Vocabulary.DeathClause
+is destroyed	yok edildi
+# Vocabulary.DeathClause
+dies	öldü
+# Vocabulary._deathFlavour
+ It quickly snaps shut...	 Hızla kapanıyor...
+# Vocabulary.CaughtInTrapSentence
+{0} gets caught in the {1} and {2}.	{0}, {1} içine düştü ve {2}.
+# Vocabulary.DeathTail
+destroyed	yok edildi
+# Vocabulary.NumberWord
+one	bir
+# Vocabulary.NumberWord
+two	iki
+# Vocabulary.NumberWord
+three	üç
+# Vocabulary.NumberWord
+four	dört
+# Vocabulary.NumberWord
+five	beş
+# Vocabulary.NumberWord
+six	altı
+# Vocabulary.NumberWord
+seven	yedi
+# Vocabulary.NumberWord
+eight	sekiz
+# Vocabulary.Angler
+Angler	Balıkçı
+# Vocabulary.BoneCount
+1 bone	1 kemik
+# Vocabulary.BoneCount
+{0} bones	{0} kemik
+# Vocabulary.BoneLord
+Bone Lord	Kemiklerin Efendisi
+# Vocabulary.BoneOrBones
+bone	kemik
+# Vocabulary.BoneOrBones
+bones	kemik
+# Vocabulary.BothOrAll
+Both	İki kartın da
+# Vocabulary.BothOrAll
+All 	Toplam 
+# Vocabulary.BrowseChooseRepeat_
+Arrows browse, Enter chooses, Space repeats your position. 	Oklarla gez, Enter ile seç, Boşluk konumunu tekrarlar. 
+# Vocabulary.Campfire
+Campfire	Kamp Ateşi
+# Vocabulary.CardCouldNotBeRead
+This card could not be read.	Bu kart okunamadı.
+# Vocabulary.CardCount
+1 card	1 kart
+# Vocabulary.CardCount
+{0} cards	{0} kart
+# Vocabulary.DamageCount
+1 damage	1 hasar
+# Vocabulary.DamageCount
+{0} damage	{0} hasar
+# Vocabulary.DeathCard
+Death card	Ölüm kartı
+# Vocabulary.HealthRemainingCount
+1 health remaining	1 can kaldı
+# Vocabulary.HealthRemainingCount
+{0} health remaining	{0} can kaldı
+# Vocabulary.ItemPickupName
+Item pickup	Eşya bulma
+# Vocabulary.Kin
+Kin	Soy
+# Vocabulary.Leshy
+Leshy	Leshy
+# Vocabulary.Mycologists
+Mycologists	Mikologlar
+# Vocabulary.OptionOf
+{0} Option {1} of {2}.	{0} Seçenek {1}, toplam {2}.
+# Vocabulary.Prospector
+Prospector	Madenci
+# Vocabulary.ReceivedBonesLine
+Received {0} {1}.	{0} {1} kazandın.
+# Vocabulary.SacrificeStone
+Sacrifice stone	Kurban taşı
+# Vocabulary.Trader
+Trader	Tüccar
+# Vocabulary.Trapper
+Trapper	Tuzakçı
+# Vocabulary.UnnamedOption
+Unnamed option	Adsız seçenek
+# Vocabulary.Woodcarver
+Woodcarver	Ahşap Oyma Sanatçısı
+# Vocabulary.YourDeck
+Your deck.	Desten.
+# Vocabulary.Mod.VersionOrUnknown
+unknown	bilinmiyor
+# Vocabulary.Mod.IkmaVersionLoaded
+IKMA version {0} loaded.	IKMA sürüm {0} yüklendi.
+# Vocabulary.Mod.Loading
+Loading.	Yükleniyor.
+# Vocabulary.Mod.UpdateDownloaded
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA sürüm {0} indirildi. Oyunu bir sonraki başlatışında kurulacak.
+# Vocabulary.Mod.UpdatedFrom
+Updated from version {0}.	Güncellendi, önceki sürüm: {0}.
+# Vocabulary.Mod.UpdateAvailableAsk
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	IKMA sürüm {0} mevcut. İndirmek için F9, bu sürümü atlamak için F10 tuşuna bas.
+# Vocabulary.Mod.UpdateDownloadedAsk
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA sürüm {0} indirildi. Oyunu bir sonraki başlatışında kurmak için F9, bu sürümü atlamak için F10 tuşuna bas.
+# Vocabulary.Mod.UpdateDownloading
+Downloading IKMA version {0}.	IKMA sürüm {0} indiriliyor.
+# Vocabulary.Mod.UpdateWillInstall
+IKMA version {0} installs the next time you start the game.	IKMA sürüm {0}, oyunu bir sonraki başlatışında kurulacak.
+# Vocabulary.Mod.UpdateDownloadFailed
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	IKMA güncellemesi indirilemedi. IKMA, oyunu bir sonraki başlatışında bunu yeniden önerecek.
+# Vocabulary.Boot.OpeningScreenEnterPresses
+Opening screen. Enter presses the play button. Space repeats the description.	Açılış ekranı. Enter oynat düğmesine basar. Boşluk açıklamayı tekrarlar.
+# Vocabulary.Title.OptionFallback
+Option	Seçenek
+# Vocabulary.Title.NewGame
+New Game	Yeni Oyun
+# Vocabulary.Title.Continue
+Continue	Devam Et
+# Vocabulary.Title.Options
+Options	Ayarlar
+# Vocabulary.Title.Credits
+Credits	Katkıda Bulunanlar
+# Vocabulary.Title.Quit
+Quit	Çıkış
+# Vocabulary.Title.CardLibrary
+Card Library	Kart Kütüphanesi
+# Vocabulary.Title.EditDeck
+Edit Deck	Desteyi Düzenle
+# Vocabulary.Title.KayceesMod
+Kaycee's Mod	Kaycee'nin Modu
+# Vocabulary.Title.ReturnToStartMenu
+Return To Start Menu	Başlangıç Menüsüne Dön
+# Vocabulary.Title.EndRun
+End Run	Turu Sonlandır
+# Vocabulary.Title.Concede
+Concede	Teslim Ol
+# Vocabulary.Title.InscryptionTitleScreenArrows
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption başlık ekranı. Gezinmek için oklar, onaylamak için Enter.
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption başlık ekranı. Ok tuşları kartlar arasında gezinir. 
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Enter chooses the one you are on. Space repeats it. 	Enter üzerinde olduğun kartı seçer. Boşluk onu tekrarlar. 
+# Vocabulary.Menus.InscryptionKayceesModMain
+Inscryption. Kaycee's Mod main menu	Inscryption. Kaycee'nin Modu ana menüsü
+# Vocabulary.Menus.Unlocks
+Unlocks	Kilidi Açılanlar
+# Vocabulary.Menus.CardsUnlocked
+Cards Unlocked	Kilidi Açılan Kartlar
+# Vocabulary.Menus.Cards
+Cards	Kartlar
+# Vocabulary.Menus.Challenges
+Challenges	Mücadeleler
+# Vocabulary.Menus.ConfirmChallenges
+Confirm Challenges	Mücadeleleri Onayla
+# Vocabulary.Menus.SelectStarterDeck
+Select Starter Deck	Başlangıç Destesi Seç
+# Vocabulary.Menus.Stats
+Stats	İstatistikler
+# Vocabulary.Menus.RunComplete
+Run Complete	Tur Tamamlandı
+# Vocabulary.Menus.Devlog
+Devlog	Geliştirici Günlüğü
+# Vocabulary.Menus.NewChallenges
+New Challenges	Yeni Mücadeleler
+# Vocabulary.Menus.NewStarterDeck
+New Starter Deck	Yeni Başlangıç Destesi
+# Vocabulary.Menus.StarterDecksUnlocked
+Starter Deck Unlocked	Başlangıç Destesinin Kilidi Açıldı
+# Vocabulary.Menus.NewRun
+New run	Yeni tur
+# Vocabulary.Menus.MenuOrPrettyName
+Menu	Menü
+# Vocabulary.Menus.CoordsExpanded
+coordinates	koordinatlar
+# Vocabulary.Menus.EntryLine
+Entry {0}. {1}	Kayıt {0}. {1}
+# Vocabulary.Menus.NoOptionsAvailable
+{0}. No options available.	{0}. Kullanılabilir seçenek yok.
+# Vocabulary.Menus.BackspaceToGoBack
+Backspace to go back.	Geri dönmek için Geri silme.
+# Vocabulary.Menus.ArrowsToNavigate
+Arrows to navigate	Gezinmek için oklar
+# Vocabulary.Menus.AnnounceScreenBackspaceToGo
+, Backspace to go back.	, geri dönmek için Geri silme.
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Arrows to navigate, Enter to confirm	Gezinmek için oklar, onaylamak için Enter
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Enter to confirm	Onaylamak için Enter
+# Vocabulary.Menus.PositionNounFor
+Deck	Deste
+# Vocabulary.Menus.OfCount
+{0} {1} of {2}.	{0} {1}, toplam {2}.
+# Vocabulary.Menus.OfCount
+{0} of {1}.	{0}, toplam {1}.
+# Vocabulary.Menus.EnabledOrDisabled
+enabled	etkin
+# Vocabulary.Menus.EnabledOrDisabled
+disabled	devre dışı
+# Vocabulary.Menus.ChallengeFallback
+Challenge	Mücadele
+# Vocabulary.Menus.ChallengePointCount
+1 challenge point.	1 mücadele puanı.
+# Vocabulary.Menus.ChallengePointCount
+{0} challenge points.	{0} mücadele puanı.
+# Vocabulary.Menus.OfChallengePoints
+{0} of {1} challenge points.	Mücadele puanı: {0}, toplam {1}.
+# Vocabulary.Menus.BackPressed
+Back.	Geri.
+# Vocabulary.Menus.UnknownOption
+unknown option	bilinmeyen seçenek
+# Vocabulary.Menus.NumberSign
+number 	numara 
+# Vocabulary.Menus.StartRun
+Start Run	Turu Başlat
+# Vocabulary.Menus.LockedStarterDeck
+Locked starter deck	Kilitli başlangıç destesi
+# Vocabulary.Menus.StarterDeck
+Starter Deck: {0}.	Başlangıç Destesi: {0}.
+# Vocabulary.Menus.CardOf
+Card {0} of {1}	Kart {0}, toplam {1}
+# Vocabulary.Menus.CardsAndOf
+Cards 	Kartlar 
+# Vocabulary.Menus.CardsAndOf
+ and {0} of {1}	 ve {0}, toplam {1}
+# Vocabulary.Menus.PreviousPage
+Previous page	Önceki sayfa
+# Vocabulary.Menus.NextPage
+Next page	Sonraki sayfa
+# Vocabulary.Menus.PlusChallengePointCount
+plus 1 challenge point	artı 1 mücadele puanı
+# Vocabulary.Menus.PlusChallengePointCount
+plus {0} challenge points	artı {0} mücadele puanı
+# Vocabulary.Menus.ActiveLabel
+Active, 	Etkin, 
+# Vocabulary.Menus.RandomStarterDeck
+Random Starter Deck	Rastgele Başlangıç Destesi
+# Vocabulary.Menus.UnlabelledOrText
+unlabelled option	etiketsiz seçenek
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now full screen	Ekran artık tam ekran
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now windowed	Ekran artık pencereli
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display resolution changed	Ekran çözünürlüğü değişti
+# Vocabulary.Options.ResolutionChanged
+, {0} by {1}	, {0} çarpı {1}
+# Vocabulary.Options.TextLanguage
+Text Language	Metin Dili
+# Vocabulary.Options.FullScreenOrWindowed
+Full screen	Tam ekran
+# Vocabulary.Options.FullScreenOrWindowed
+Windowed	Pencereli
+# Vocabulary.Options.Resolution
+{0} by {1}	{0} çarpı {1}
+# Vocabulary.Options.OnOrOff
+On	Açık
+# Vocabulary.Options.OnOrOff
+Off	Kapalı
+# Vocabulary.Options.GammaZero
+Zero	Sıfır
+# Vocabulary.Options.DefaultMark
+, default	, varsayılan
+# Vocabulary.Options.UnnamedSetting
+Unnamed setting.	Adsız ayar.
+# Vocabulary.Options.English
+English	İngilizce
+# Vocabulary.Options.French
+French	Fransızca
+# Vocabulary.Options.Italian
+Italian	İtalyanca
+# Vocabulary.Options.German
+German	Almanca
+# Vocabulary.Options.Spanish
+Spanish	İspanyolca
+# Vocabulary.Options.BrazilianPortuguese
+Brazilian Portuguese	Brezilya Portekizcesi
+# Vocabulary.Options.Turkish
+Turkish	Türkçe
+# Vocabulary.Options.Russian
+Russian	Rusça
+# Vocabulary.Options.Japanese
+Japanese	Japonca
+# Vocabulary.Options.Korean
+Korean	Korece
+# Vocabulary.Options.SimplifiedChinese
+Simplified Chinese	Basitleştirilmiş Çince
+# Vocabulary.Options.TraditionalChinese
+Traditional Chinese	Geleneksel Çince
+# Vocabulary.Options.UnnamedSettingPressEnter
+Unnamed setting. Press Enter to adjust.	Adsız ayar. Ayarlamak için Enter tuşuna bas.
+# Vocabulary.Options.PressEnterToAdjust
+{0} Press Enter to adjust.	{0} Ayarlamak için Enter tuşuna bas.
+# Vocabulary.Options.OptionsMenu
+Options Menu	Ayarlar Menüsü
+# Vocabulary.Options.PageOf
+ Page {0} of {1}.	 Sayfa {0}, toplam {1}.
+# Vocabulary.Options.PressHForHelp
+{0}.{1} Press H for help.	{0}.{1} Yardım için H tuşuna bas.
+# Vocabulary.Options.ThatSettingCannotBe
+That setting cannot be changed.	Bu ayar değiştirilemez.
+# Vocabulary.Options.SettingFallback
+Setting	Ayar
+# Vocabulary.Options.ArrowsToAdjustBackspace
+Arrows to adjust. Backspace to return.	Ayarlamak için oklar. Geri dönmek için Geri silme.
+# Vocabulary.Options.BackThenRowPrompt
+Back. {0}	Geri. {0}
+# Vocabulary.Pause.LockedMark
+, locked	, kilitli
+# Vocabulary.Pause.OptionCount
+1 option	1 seçenek
+# Vocabulary.Pause.OptionCount
+{0} options	{0} seçenek
+# Vocabulary.Pause.PauseMenu
+Pause menu. {0}.	Duraklatma menüsü. {0}.
+# Vocabulary.Pause.GameSettings
+Game settings.	Oyun ayarları.
+# Vocabulary.Pause.DisplaySettings
+Display settings.	Görüntü ayarları.
+# Vocabulary.Pause.AudioSettings
+Audio settings.	Ses ayarları.
+# Vocabulary.Pause.Page
+Page {0}.	Sayfa {0}.
+# Vocabulary.Pause.NoActiveChallenges
+No active challenges.	Etkin mücadele yok.
+# Vocabulary.Pause.ActiveChallenges
+Active Challenges. {0}.	Etkin Mücadeleler. {0}.
+# Vocabulary.Pause.UnnamedOption
+Unnamed option.	Adsız seçenek.
+# Vocabulary.Pause.OptionOf
+{0}. Option {1} of {2}.	{0}. Seçenek {1}, toplam {2}.
+# Vocabulary.Pause.ThatOptionIsLocked
+That option is locked.	Bu seçenek kilitli.
+# Vocabulary.Pause.OptionsAndSwitchPages
+Options. 1, 2, and 3 switch pages. 	Ayarlar. 1, 2 ve 3 sayfalar arasında geçiş yapar. 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	Sayfa 1 oyun ayarları, sayfa 2 görüntü ayarları, sayfa 3 ses ayarları. 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Arrows browse the settings, Enter selects a setting to adjust, 	Oklar ayarlar arasında gezinir, Enter ayarlamak için bir ayar seçer, 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Backspace returns. 	Geri silme geri döner. 
+# Vocabulary.Pause.TheyAreTheLast
+ They are the last stop past the options.	 Bunlar seçeneklerden sonraki son duraktır.
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Pause menu. Arrows browse the options, Enter chooses, 	Duraklatma menüsü. Oklar seçenekler arasında gezinir, Enter seçer, 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Space repeats your position and the run information, 	Boşluk konumunu ve tur bilgilerini tekrarlar, 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Backspace or Escape closes the menu.	Geri silme veya Esc menüyü kapatır.
+# Vocabulary.Map.Encounter
+Encounter	Karşılaşma
+# Vocabulary.Map.TotemBattle
+Totem battle	Totem savaşı
+# Vocabulary.Map.BossBattle
+Boss battle	Boss savaşı
+# Vocabulary.Map.CardChoice
+Card choice	Kart seçimi
+# Vocabulary.Map.CardBundleChoice
+Card bundle choice	Kart paketi seçimi
+# Vocabulary.Map.RareCardChoice
+Rare card choice	Nadir kart seçimi
+# Vocabulary.Map.CardRemoval
+Card removal	Kart çıkarma
+# Vocabulary.Map.CardRecycling
+Card recycling	Kart geri dönüşümü
+# Vocabulary.Map.CardCopying
+Card copying	Kart kopyalama
+# Vocabulary.Map.BoulderChoice
+Boulder choice	Kaya seçimi
+# Vocabulary.Map.SideDeckChange
+Side deck change	Yan deste değişimi
+# Vocabulary.Map.DeckTrial
+Deck trial	Deste sınaması
+# Vocabulary.Map.VictoryFeast
+Victory feast	Zafer ziyafeti
+# Vocabulary.Map.RandomChoice
+Random	Rastgele
+# Vocabulary.Map.CostChoice
+Cost	Bedel
+# Vocabulary.Map.CannotRightNow
+Cannot {0} right now.	Şu anda {0} mümkün değil.
+# Vocabulary.Map.BringYourDeckUp
+bring your deck up	desteni açmak
+# Vocabulary.Map.YouAreAlreadyStanding
+You are already standing.	Zaten ayaktasın.
+# Vocabulary.Map.StandUp
+stand up	ayağa kalkmak
+# Vocabulary.Map.StandingUpFromThe
+Standing up from the table. Press H for help.	Masadan kalkıyorsun. Yardım için H tuşuna bas.
+# Vocabulary.Map.YouAreAt
+You are at {0}.	Buradasın: {0}.
+# Vocabulary.Map.ReturnTo
+return to {0}	{0} konumuna dönmek
+# Vocabulary.Map.BackAt
+Back at {0}.	Yeniden buradasın: {0}.
+# Vocabulary.Map.YouAreAtThe
+You are at the map.	Haritadasın.
+# Vocabulary.Map.ReturnToTheMap
+return to the map	haritaya dönmek
+# Vocabulary.Map.GameMap
+Game map.	Oyun haritası.
+# Vocabulary.Map.ReturningToTheTable
+Returning to the table.	Masaya dönülüyor.
+# Vocabulary.Map.YouStepBackPress
+You step back. Press Backspace again to return to the table.	Geri çekiliyorsun. Masaya dönmek için Geri silme tuşuna yeniden bas.
+# Vocabulary.Map.Counterclockwise
+counterclockwise	saat yönünün tersine
+# Vocabulary.Map.Clockwise
+clockwise	saat yönünde
+# Vocabulary.Map.TurnedDegrees
+Turned {0} 90 degrees.	{0} 90 derece döndün.
+# Vocabulary.Map.ClockHandTurned
+ turned.	 döndürüldü.
+# Vocabulary.Map.ToOclock
+{0} to {1} o'clock.	{0}, saat {1} konumuna.
+# Vocabulary.Map.MechanismCracksAndThe
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	Mekanizma çatırdıyor ve kasanın kapısı açılıyor. İçinde kanlı, parçalanmış büyük bir et yığını var.
+# Vocabulary.Map.YouStepBack
+You step back.	Geri çekiliyorsun.
+# Vocabulary.Map.YouStepBackFrom
+You step back from the {0}.	{0} önünden geri çekiliyorsun.
+# Vocabulary.Map.YouFocusInOrYouFocusOn
+You focus on the {0}.	{0} üzerine odaklanıyorsun.
+# Vocabulary.Map.YouFocusIn
+You focus in.	Yakından bakıyorsun.
+# Vocabulary.Map.RulebookIsNotWithin
+The rulebook is not within reach.	Kural kitabı ulaşabileceğin bir yerde değil.
+# Vocabulary.Map.InsideTheSafeIs
+Inside the safe is a large mass of bloodied mangled flesh.	Kasanın içinde kanlı, parçalanmış büyük bir et yığını var.
+# Vocabulary.Map.Facing
+Facing {0}.	Yönün: {0}.
+# Vocabulary.Map.NothingIsDirectlyIn
+Nothing is directly in front of you. {0}	Tam önünde hiçbir şey yok. {0}
+# Vocabulary.Map.FocusControlsAndExamine
+Focus controls. 	Odak kontrolleri. 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace steps back from your focused object. 	Geri silme, odaklandığın nesneden geri çekilir. 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace again returns you to the game table and opens the map.	Geri silmeye yeniden basmak seni oyun masasına döndürür ve haritayı açar.
+# Vocabulary.Map.ExamineKeys_
+1, 2 and 3 examine what is in front of you. 	1, 2 ve 3 önündekini inceler. 
+# Vocabulary.Map.StandingControlsUpArrow
+Standing controls. Up arrow steps forward, down arrow steps back. 	Ayakta kontroller. Yukarı ok ileri adım atar, aşağı ok geri adım atar. 
+# Vocabulary.Map.StandingControlsUpArrow
+Left and right arrows step to the side. 	Sol ve sağ oklar yana adım atar. 
+# Vocabulary.Map.StandingControlsUpArrow
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A seni saat yönünün tersine 90 derece, D saat yönünde 90 derece döndürür. 
+# Vocabulary.Map.StandingControlsUpArrow
+Backspace returns you to the game table and opens the map.	Geri silme seni oyun masasına döndürür ve haritayı açar.
+# Vocabulary.Map.Woodlands
+The Woodlands	Odun Diyarı
+# Vocabulary.Map.Wetlands
+The Wetlands	Nemli Topraklar
+# Vocabulary.Map.SnowLine
+The Snow Line	Karlı Hat
+# Vocabulary.Map.Beach
+The Beach	Sahil
+# Vocabulary.Map.PathToTheCabin
+the path to the Cabin	kulübeye giden yol
+# Vocabulary.Map.YouHaveArrivedAt
+You have arrived at {0}	Vardığın yer: {0}
+# Vocabulary.Map.WhereSentenceYouAreAt
+You are at {0}	Bulunduğun yer: {0}
+# Vocabulary.Map.PlaceName
+the beginning of a new map	yeni bir haritanın başlangıcı
+# Vocabulary.Map.UnknownLocation
+unknown location	bilinmeyen konum
+# Vocabulary.Map.MapReady
+Map ready.	Harita hazır.
+# Vocabulary.Map.PathCount
+1 path	1 yol
+# Vocabulary.Map.PathCount
+{0} paths	{0} yol
+# Vocabulary.Map.MapAheadArrowsTo
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Harita. {0}. İleride {1}. Gezinmek için oklar, ayrıntılar için Boşluk, yolculuk için Enter, desteyi göstermek için Shift+Yukarı ok.
+# Vocabulary.Map.MapAwaitingInputPress
+Map. Awaiting input. Press Space for your position, H for help.	Harita. Girdi bekleniyor. Konumun için Boşluk, yardım için H tuşuna bas.
+# Vocabulary.Map.AwaitingPathSelectionH
+Awaiting path selection. H, for help.	Yol seçimi bekleniyor. Yardım için H.
+# Vocabulary.Map.First
+First	Birinci
+# Vocabulary.Map.Second
+Second	İkinci
+# Vocabulary.Map.Third
+Third	Üçüncü
+# Vocabulary.Map.Fourth
+Fourth	Dördüncü
+# Vocabulary.Map.Fifth
+Fifth	Beşinci
+# Vocabulary.Map.Sixth
+Sixth	Altıncı
+# Vocabulary.Map.Seventh
+Seventh	Yedinci
+# Vocabulary.Map.Eighth
+Eighth	Sekizinci
+# Vocabulary.Map.PathNumber
+Path {0}	Yol {0}
+# Vocabulary.Map.PathThen
+{0} path: {1}	{0} yol: {1}
+# Vocabulary.Map.MorePathsNotRead
+ {0} more paths not read.	 {0} yol daha okunmadı.
+# Vocabulary.Map.MapUnavailable
+Map unavailable.	Harita kullanılamıyor.
+# Vocabulary.Map.NoPathsAhead
+{0}. No paths ahead.	{0}. İleride yol yok.
+# Vocabulary.Map.OptionNode
+Option {0}: {1}	Seçenek {0}: {1}
+# Vocabulary.Map.YouAreOnOption
+ You are on Option {0} of {1}.	 Seçenek {0} üzerindesin, toplam {1}.
+# Vocabulary.Map.LeftAndRightArrows
+Left and right arrows to browse, 	Gezinmek için sol ve sağ oklar, 
+# Vocabulary.Map.AheadEnterToTravel
+{0}. {1} ahead. {2}.{3} 	{0}. İleride {1}. {2}.{3} 
+# Vocabulary.Map.AheadEnterToTravel
+Enter to travel, Shift+Up to display deck.	yolculuk için Enter, desteyi göstermek için Shift+Yukarı ok.
+# Vocabulary.Map.ArrivedAt
+Arrived at {0}.	Vardın: {0}.
+# Vocabulary.Cabin.Safe
+Safe	Kasa
+# Vocabulary.Cabin.Woodcarving
+woodcarving	ahşap oyma
+# Vocabulary.Cabin.LargePictureFrame
+Large Picture Frame	Büyük Resim Çerçevesi
+# Vocabulary.Cabin.Gramophone
+Gramophone	Gramofon
+# Vocabulary.Cabin.Skull
+skull	kafatası
+# Vocabulary.Cabin.SettlerMan
+Settler Man	Yerleşimci Adam
+# Vocabulary.Cabin.SettlerWoman
+Settler Woman	Yerleşimci Kadın
+# Vocabulary.Cabin.Chief
+Chief	Şef
+# Vocabulary.Cabin.Wildling
+Wildling	Vahşi
+# Vocabulary.Cabin.Enchantress
+Enchantress	Büyücü Kadın
+# Vocabulary.Cabin.Gravedigger
+Gravedigger	Mezarcı
+# Vocabulary.Cabin.Robot
+Robot	Robot
+# Vocabulary.Cabin.Head
+head	kafa
+# Vocabulary.Cabin.Arms
+arms	kollar
+# Vocabulary.Cabin.Body
+body	gövde
+# Vocabulary.Cabin.HourHand
+Hour hand	Akrep
+# Vocabulary.Cabin.MinuteHand
+Minute hand	Yelkovan
+# Vocabulary.Cabin.SecondHand
+Second hand	Saniye ibresi
+# Vocabulary.Hotkeys.NothingHereCanBe
+Nothing here can be read yet. Escape opens the pause menu.	Burada henüz okunabilecek bir şey yok. Esc duraklatma menüsünü açar.
+# Vocabulary.Hotkeys.NoPathSelectedUse
+No path selected. Use left and right arrows to browse paths.	Yol seçilmedi. Yollar arasında gezinmek için sol ve sağ okları kullan.
+# Vocabulary.Hotkeys.MapIsStillSettling
+The map is still settling. Try again in a moment.	Harita hâlâ yerleşiyor. Birazdan yeniden dene.
+# Vocabulary.Hotkeys.CardPlacementCannotBe
+Card placement cannot be cancelled. Choose a slot.	Kart yerleştirme iptal edilemez. Bir alan seç.
+# Vocabulary.Hotkeys.YouAreInAn
+You are in an encounter. Press H for help.	Bir karşılaşmadasın. Yardım için H tuşuna bas.
+# Vocabulary.Hotkeys.UnableToEndTurn
+Unable to end turn: bell method not found.	Sıra bitirilemiyor: zil yöntemi bulunamadı.
+# Vocabulary.Hotkeys.DrawPilesUnavailable
+Draw piles unavailable.	Çekme destelerine erişilemiyor.
+# Vocabulary.Hotkeys.NoCardsRemainingIn
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	Destende kart kalmadı. Sincap destesinden çekmek için S tuşuna bas.
+# Vocabulary.Hotkeys.NoCardsRemainingInThe
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	Sincap destesinde kart kalmadı. Kendi destenden çekmek için D tuşuna bas.
+# Vocabulary.Hotkeys.DrawPileUnavailable
+Draw pile unavailable.	Çekme destesine erişilemiyor.
+# Vocabulary.Hotkeys.Drew
+Drew {0}.	Çekilen kart: {0}.
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Ability	Mühür Yeteneği
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Abilities	Mühür Yetenekleri
+# Vocabulary.Hotkeys.DrewItGainsAnd
+Drew {0}. It gains {1}: {2}.	Çekilen kart: {0}. Kazandığı {1}: {2}.
+# Vocabulary.Hotkeys.FinishPlacingYourCard
+Finish placing your card before using an item.	Eşya kullanmadan önce kartını yerleştirmeyi bitir.
+# Vocabulary.Hotkeys.NoItems
+No items.	Eşya yok.
+# Vocabulary.Hotkeys.ItemUnavailable
+Item unavailable.	Eşyaya erişilemiyor.
+# Vocabulary.Hotkeys.ItemEmpty
+Item {0}: empty.	Eşya {0}: boş.
+# Vocabulary.Hotkeys.ItemLine
+Item {0}: {1}	Eşya {0}: {1}
+# Vocabulary.Hotkeys.CutUpOneOf
+# Vocabulary.Hotkeys.PlaceAWeightOn
+Place a weight on the scales. The pain is temporary.	Teraziye bir ağırlık koy. Acısı geçici.
+# Vocabulary.Hotkeys.HookACardTo
+Hook a card to take it as your own. Card must enter an empty space.	Bir kartı kancayla yakalayıp kendi kartın yap. Kart boş bir alana girmeli.
+# Vocabulary.Hotkeys.SkinOneOfYour
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	Rakibinin kartlarından birinin derisini yüz. Kart ölür ve eline bir Post kartı eklenir.
+# Vocabulary.Hotkeys.SearchYourDeckFor
+Search your deck for any card and add it into your hand.	Destende istediğin bir kartı arayıp eline ekle.
+# Vocabulary.Hotkeys.UseToImmediatelyGain
+Use to immediately gain 4 Bones.	Anında 4 Kemik kazanmak için kullan.
+# Vocabulary.Hotkeys.PlaceASignificantWeight
+Place a significant weight on the scales. The pain will linger...	Teraziye ağır bir yük koy. Acısı sürecek...
+# Vocabulary.Hotkeys.ItemIsAlreadyBeing
+An item is already being used.	Zaten bir eşya kullanılıyor.
+# Vocabulary.Hotkeys.ThereIsNoItem
+There is no item {0}.	{0} numaralı eşya yok.
+# Vocabulary.Hotkeys.ItemIsEmpty
+Item {0} is empty.	Eşya {0} boş.
+# Vocabulary.Hotkeys.CouldNotBeUsed
+{0} could not be used. Item activation is not yet supported for this slot.	{0} kullanılamadı. Bu yuva için eşya kullanımı henüz desteklenmiyor.
+# Vocabulary.Hotkeys.Using
+Using {0}.	Kullanılıyor: {0}.
+# Vocabulary.Hotkeys.IsStillWaitingFor
+{0} is still waiting for input.	{0} hâlâ girdi bekliyor.
+# Vocabulary.Hotkeys.WasNotUsed
+{0} was not used.	{0} kullanılmadı.
+# Vocabulary.Hotkeys.UsingTheLuckyClover
+Using the Lucky Clover discards all of these cards for new ones. 	Şans Yoncası'nı kullanmak bu kartların hepsini atıp yerine yenilerini verir. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Left and right arrows browse. Enter selects the card. 	Sol ve sağ oklar gezinir. Enter kartı seçer. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Space repeats the current option. 	Boşluk geçerli seçeneği tekrarlar. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R kural kitabını açar. Shift artı Yukarı ok desteni gösterir. 
+# Vocabulary.Hotkeys.NoBackOptionOn
+No back option on this screen.	Bu ekranda geri seçeneği yok.
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Menüde gezinme. Ok tuşları seçenekler arasında gezinir. Enter üzerinde olduğun seçeneği seçer. 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Backspace or Escape goes back. Space repeats the current option. 	Geri silme veya Esc geri gider. Boşluk geçerli seçeneği tekrarlar. 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Shift R looks up the last ability you heard. 	Shift R son duyduğun yeteneğe bakar. 
+# Vocabulary.Hotkeys.NoValidTargets
+No valid targets.	Geçerli hedef yok.
+# Vocabulary.Hotkeys.ChooseATargetAvailable
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Bir hedef seç. Kullanılabilir: {0}. {1} Gezinmek için oklar, seçmek için Enter.
+# Vocabulary.Hotkeys.CannotCancelItemUse
+Cannot cancel item use, please choose a target.	Eşya kullanımı iptal edilemez, lütfen bir hedef seç.
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target.	Hedef seçiliyor.
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target for {0}.	{0} için hedef seçiliyor.
+# Vocabulary.Hotkeys.ArrowKeysMoveBetween
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} Ok tuşları bu eşyanın etkileyebileceği kartlar arasında gezinir. Enter seçer. Bir eşya kullanıldıktan sonra iptal edilemez.
+# Vocabulary.Hotkeys.ThatTargetCouldNot
+That target could not be selected.	Bu hedef seçilemedi.
+# Vocabulary.Hotkeys.IsDraggedDownTo
+{0} is dragged down to your side into slot {1}.	{0} aşağı, senin tarafındaki {1}. alana çekildi.
+# Vocabulary.Hotkeys.UnknownSlot
+unknown slot.	bilinmeyen alan.
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Your slot	Senin alanın
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Opponent slot	Rakip alanı
+# Vocabulary.Hotkeys.TargetSlotEmpty
+{0} {1}: empty.	{0} {1}: boş.
+# Vocabulary.Hotkeys.ThereIsNoIkma
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	Bu ekran için henüz bir IKMA okuyucusu yok, bu yüzden olağan kontroller burada geçerli değil. 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+Space describes what is in front of you. Space repeats where you are. 	Boşluk önündekini tarif eder. Boşluk bulunduğun yeri tekrarlar. 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+This screen still needs the mouse until a reader is built for it.	Bu ekran, bir okuyucu yapılana kadar hâlâ fare gerektiriyor.
+# Vocabulary.Hotkeys.IkmaCannotReadThis
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}IKMA bu ekranı henüz okuyamıyor. Oyun burada seni bekliyor. 
+# Vocabulary.Hotkeys.MapControlsArrowsBrowse
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Harita kontrolleri. Oklar, ilerideki seçenekler arasında gezin. Enter, yolculuk et. Boşluk, mevcut tüm seçenekleri listeler. B, ilerideki yolları oku. Shift artı Yukarı ok, destene göz at. I, mevcut eşyalarını dinle. R, kural kitabını aç. Shift artı Aşağı ok, masadan kalk. H, yardım.
+# Vocabulary.Hotkeys.PlacingACardLeft
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Kart yerleştiriliyor. Sol ve sağ oklar alanlar arasında gezinir. Enter, onayla. Tahta okuma tuşları hâlâ çalışır. H, yardım.
+# Vocabulary.Hotkeys.ChoosingSacrificesLeftAnd
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Kurbanlar seçiliyor. Sol ve sağ oklar tahtanda gezinir. Enter, üzerinde olduğun kartı kurban et. Başlanan bir kurban iptal edilemez. Tahta okuma tuşları hâlâ çalışır. H, yardım.
+# Vocabulary.Hotkeys.CannotTravelThere
+Cannot travel there.	Oraya gidilemez.
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. {0} returned to hand.	İptal edildi. {0} eline döndü.
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. Card returned to hand.	İptal edildi. Kart eline döndü.
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+A sacrifice cannot be cancelled once started.	Başlanan bir kurban iptal edilemez.
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+Cannot cancel right now.	Şu anda iptal edilemez.
+# Vocabulary.Hotkeys.NoCardsToSacrifice
+No cards to sacrifice.	Kurban edilecek kart yok.
+# Vocabulary.Hotkeys.NoSlot
+No slot {0}.	{0}. alan yok.
+# Vocabulary.Hotkeys.OnlyInHand
+Only {0} in hand.	Elinde yalnızca {0} kart var.
+# Vocabulary.Hotkeys.NoCardsInHand
+No cards in hand are currently playable.	Elindeki kartların hiçbiri şu anda oynanamaz.
+# Vocabulary.Hotkeys.CardOrCardWord
+Card	Kart
+# Vocabulary.Hotkeys.GainsFromYourTotem
+{0} gains {1} from your totem.	{0}, totemin sayesinde {1} kazandı.
+# Vocabulary.Hotkeys.RecentItemCount
+Recent item:	Son eşya:
+# Vocabulary.Hotkeys.RecentItemCount
+Recent items:	Son eşyalar:
+# Vocabulary.Hotkeys.NoRecentAbilityTo
+No recent ability to look up.	Bakılacak son yetenek yok.
+# Vocabulary.Hotkeys.NoDescriptionAvailableFor
+No description available for that ability.	Bu yetenek için açıklama yok.
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent ability:	Son yetenek:
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent abilities:	Son yetenekler:
+# Vocabulary.Hotkeys.CannotPlayACard
+Cannot play a card right now.	Şu anda kart oynanamaz.
+# Vocabulary.Hotkeys.NoCardSelectedUse
+No card selected. Use left and right arrows to browse your hand first.	Kart seçilmedi. Önce sol ve sağ oklarla elindeki kartlara göz at.
+# Vocabulary.Hotkeys.ThatCard
+That card	O kart
+# Vocabulary.Hotkeys.ThatCardCouldNot
+That card could not be played.	O kart oynanamadı.
+# Vocabulary.Hotkeys.WasNotPlayed
+{0} was not played.	{0} oynanmadı.
+# Vocabulary.Hotkeys.NoCardInThis
+No card in this slot.	Bu alanda kart yok.
+# Vocabulary.Hotkeys.SlotIsOccupiedBy
+Slot {0} is occupied by {1}. Choose an empty slot.	{0}. alanda {1} var. Boş bir alan seç.
+# Vocabulary.Hotkeys.PlayedInSlot
+{0} played in Slot {1}.	{0}, {1}. alana oynandı.
+# Vocabulary.Hotkeys.NoSlotRestrictionsTo
+No slot restrictions to step through.	Geçilecek alan kısıtlaması yok.
+# Vocabulary.Hotkeys.NoOtherSlotAvailable
+No other slot available for this card.	Bu kart için başka uygun alan yok.
+# Vocabulary.Hotkeys.Ability
+ Ability: {0}.	 Yetenek: {0}.
+# Vocabulary.Hotkeys.AbilitiesAnd
+ Abilities: {0}.	 Yetenekler: {0}.
+# Vocabulary.Hotkeys.SlotWithCard
+Slot {0}: {1}, {2}/{3}.{4}{5}	{0}. alan: {1}, {2}/{3}.{4}{5}
+# Vocabulary.Hotkeys.SlotEmpty
+Slot {0}: empty.{1}	{0}. alan: boş.{1}
+# Vocabulary.Hotkeys.ChooseASlotTo
+ Choose a slot to play {0}.	 {0} kartını oynamak için bir alan seç.
+# Vocabulary.Hotkeys.SlotOccupiedBy
+Slot {0}: occupied by {1}.{2}{3}	{0}. alan: dolu, {1}.{2}{3}
+# Vocabulary.Hotkeys.SlotEmptyName
+Slot {0}: empty.{1}{2}	{0}. alan: boş.{1}{2}
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifice	kurban
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifices	kurban
+# Vocabulary.PlayFlow.CostsBloodChooseLeft
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} kartının bedeli {1} kan. {2} {3} seç. Gezinmek için sol ve sağ oklar, onaylamak için Enter. Başlanan bir kurban iptal edilemez.
+# Vocabulary.PlayFlow.Playing
+Playing {0}. 	{0} oynanıyor. 
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}{1} kartını oynamak için bir alan seç. Gezinmek için sol ve sağ oklar, onaylamak için Enter.{2}
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Bir alan seç. Gezinmek için sol ve sağ oklar, onaylamak için Enter.{0}
+# Vocabulary.Board.Hand
+Hand: {0}. {1}.	Elin: {0}. {1}.
+# Vocabulary.Board.YourBoard
+Your board	Senin tahtan
+# Vocabulary.Board.EnemyBoard
+Enemy board	Düşman tahtası
+# Vocabulary.Board.ResourcesUnavailable
+Resources unavailable.	Kaynaklara erişilemiyor.
+# Vocabulary.Board.CandleLitCount
+ 1 candle lit.	 1 mum yanıyor.
+# Vocabulary.Board.CandleLitCount
+ {0} candles lit.	 {0} mum yanıyor.
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has 1 candle.	 Düşmanın 1 mumu var.
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has {0} candles.	 Düşmanın {0} mumu var.
+# Vocabulary.Board.WoodcarvingKinTypeSigil
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 Ahşap oyma, Soy türü: {0}, Mühür Yeteneği: {1}.
+# Vocabulary.Board.YourDeckRemainingCard
+ Your deck: {0} remaining.	 Destende kalan: {0}.
+# Vocabulary.Board.SquirrelDeckRemainingCard
+ Squirrel deck: {0} remaining.	 Sincap destesinde kalan: {0}.
+# Vocabulary.Board.ItemEmpty
+empty	boş
+# Vocabulary.Board.ItemAtCursor
+Item {0}: {1}.	Eşya {0}: {1}.
+# Vocabulary.Board.OpponentUnavailable
+Opponent unavailable.	Rakibe erişilemiyor.
+# Vocabulary.Board.NoCardsQueued
+No cards queued.	Arka sırada kart yok.
+# Vocabulary.Board.BlockedForSlot
+Blocked for Slot {0}: 	{0}. alan için engellendi: 
+# Vocabulary.Board.EnteringSlot
+Entering Slot {0}: 	{0}. alana girecek: 
+# Vocabulary.Board.UpcomingQueue
+Upcoming queue: {0}. {1}.	Arka sıra: {0}. {1}.
+# Vocabulary.Board.GetHandNamesText
+Your hand: {0}. {1}.	Elin: {0}. {1}.
+# Vocabulary.Board.SideEmpty
+{0}: empty	{0}: boş
+# Vocabulary.Board.SlotsList
+Slots 	Alanlar 
+# Vocabulary.Board.SlotNumber
+Slot {0}	{0}. alan
+# Vocabulary.Board.SlotsOneTo
+Slots 1 to {0}	1 ile {0} arası alanlar
+# Vocabulary.Board.CurrentlyStats
+currently {0}/{1}.	şu anda {0}/{1}.
+# Vocabulary.Board.SideEmptyCannon
+{0}: empty{1}	{0}: boş{1}
+# Vocabulary.Board.NumberRange
+{0} to {1}	{0} ile {1} arası
+# Vocabulary.Board.Ability
+. Ability: {0}	. Yetenek: {0}
+# Vocabulary.Board.AbilitiesAnd
+. Abilities: {0}	. Yetenekler: {0}
+# Vocabulary.Board.CostsBloodCount
+costs 1 blood	bedeli 1 kan
+# Vocabulary.Board.CostsBloodCount
+costs {0} blood	bedeli {0} kan
+# Vocabulary.Board.CostsBoneCount
+costs 1 bone	bedeli 1 kemik
+# Vocabulary.Board.CostsBoneCount
+costs {0} bones	bedeli {0} kemik
+# Vocabulary.Board.GetScaleText
+Scales unavailable.	Teraziye erişilemiyor.
+# Vocabulary.BoardChanges.MovesToSlot
+{0} moves to {1} slot {2}.	{0}, {1} tarafında {2}. alana geçti.
+# Vocabulary.BoardChanges.RightOrLeft
+right, 	sağa, 
+# Vocabulary.BoardChanges.RightOrLeft
+left, 	sola, 
+# Vocabulary.BoardChanges.MovesFromSlotTo
+{0} {1} moves {2}from slot {3} to slot {4}.	{0} {1} {2}{3}. alandan {4}. alana geçti.
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+{0} {1} moves {2}	{0} {1} {2}
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+from slot {0} to slot {1}.	{0}. alandan {1}. alana geçti.
+# Vocabulary.BoardChanges.MovesDownToSlot
+{0} {1} moves down to slot {2}{3}.	{0} {1} aşağı, {2}. alana indi{3}.
+# Vocabulary.BoardChanges.IsPlayedInSlot
+{0} {1} is played in slot {2}{3}.	{0} {1}, {2}. alana oynandı{3}.
+# Vocabulary.BoardChanges.TargetingSlot
+ targeting slot {0}	 ve {0}. alanı hedefliyor
+# Vocabulary.BoardChanges.EnemyIsQueued
+Enemy {0} is queued{1}.	Arka sıraya düşman {0} geldi{1}.
+# Vocabulary.BoardChanges.HasLeftSlot
+{0} {1} has left slot {2}.	{0} {1}, {2}. alandan ayrıldı.
+# Vocabulary.BoardChanges.ProspectorClearsHisQueue
+The Prospector clears his queue.	Madenci arka sırasını boşaltıyor.
+# Vocabulary.BoardChanges.ItIsCarryingA
+, it is carrying a pack of cards	, bir kart paketi taşıyor
+# Vocabulary.BoardChanges.Possessive
+Your	Senin tarafındaki
+# Vocabulary.BoardChanges.Possessive
+Enemy	Düşman tarafındaki
+# Vocabulary.BoardChanges.SideWord
+your	senin
+# Vocabulary.BoardChanges.SideWord
+enemy	düşman
+# Vocabulary.Cards.Fused
+Fused {0}	Kaynaşmış {0}
+# Vocabulary.Cards.GlitchedCardThisCard
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	Bozuk kart. Bu kart beyaz parlıyor ve bozulup duruyor. Kartın istatistikleri oynanana kadar bilinmiyor.
+# Vocabulary.Cards.ShiftPlusRLooks
+Shift plus R looks up the last ability you heard.	Shift artı R son duyduğun yeteneğe bakar.
+# Vocabulary.Cards.AbilityCount
+Ability	Yetenek
+# Vocabulary.Cards.AbilityCount
+Abilities	Yetenekler
+# Vocabulary.Cards.SigilAbility
+ Sigil Ability: {0}.	 Mühür Yeteneği: {0}.
+# Vocabulary.Cards.KinType
+ Kin type: {0}.	 Soy türü: {0}.
+# Vocabulary.Cards.KinTypes
+ Kin types: {0}.	 Soy türleri: {0}.
+# Vocabulary.Cards.StarAttack
+Star	Yıldız
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving left.	 Sola doğru ilerliyor.
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving right.	 Sağa doğru ilerliyor.
+# Vocabulary.Cards.Rare
+Rare	Nadir
+# Vocabulary.Cards.TerrainBorder
+Terrain border	Arazi kenarlığı
+# Vocabulary.Cards.GlitchedPortrait
+Glitched portrait	Bozuk portre
+# Vocabulary.Cards.FullCardPortrait
+Full-card portrait	Tam kart portresi
+# Vocabulary.Cards.AnimatedPortrait
+Animated portrait	Hareketli portre
+# Vocabulary.Cards.HologramPortrait
+Hologram portrait	Hologram portre
+# Vocabulary.Cards.GoldenGlow
+Golden glow	Altın ışıltı
+# Vocabulary.Cards.RedGlow
+Red glow	Kırmızı ışıltı
+# Vocabulary.Cards.BloodiedPortrait
+Bloodied portrait	Kanlı portre
+# Vocabulary.Cards.MoonParticles
+Moon particles	Ay parçacıkları
+# Vocabulary.Cards.AttackEqualsTheNumber
+ Attack equals the number of ants on its owner's side.	 Saldırı gücü, sahibinin tarafındaki karınca sayısına eşittir.
+# Vocabulary.Cards.AttackIsEqualTo
+ Attack is equal to half the Bones of the owner.	 Saldırı gücü, sahibinin Kemiklerinin yarısına eşittir.
+# Vocabulary.Cards.AttackEqualsSacrificesMade
+ Attack equals sacrifices made this turn.	 Saldırı gücü, bu sırada yapılan kurban sayısına eşittir.
+# Vocabulary.Cards.AttackVariesWithGreen
+ Attack varies with green gems.	 Saldırı gücü yeşil cevherlere göre değişir.
+# Vocabulary.Cards.BloodCount
+1 blood	1 kan
+# Vocabulary.Cards.BloodCount
+{0} blood	{0} kan
+# Vocabulary.Cards.CostLine
+Cost: {0}.	Bedel: {0}.
+# Vocabulary.Cards.CostFree
+Cost: Free.	Bedel: Bedava.
+# Vocabulary.Combat.ASlot
+a slot	bir alan
+# Vocabulary.Combat.CardInSlot
+{0} in {1}	{1} üzerindeki {0}
+# Vocabulary.Combat.EmptySlot
+empty {0}	boş {0}
+# Vocabulary.Combat.TargetListThree
+, and 	ve 
+# Vocabulary.Combat.AttacksTargets
+{0} attacks {1}.	{0} saldırıyor: {1}.
+# Vocabulary.Combat.FliesOverAndAttacks
+{0} flies over {1} and attacks directly{2}.	{0}, {1} üzerinden uçup doğrudan saldırıyor{2}.
+# Vocabulary.Combat.PassesByAndAttacks
+{0} passes by {1} and attacks directly{2}.	{0}, {1} yanından geçip doğrudan saldırıyor{2}.
+# Vocabulary.Combat.Airborne
+Airborne	Uçuşan
+# Vocabulary.Combat.MightyLeap
+Mighty Leap	Güçlü Sıçrayış
+# Vocabulary.Combat.BlocksDueTo
+{0} blocks {1} {2} due to {3}.	{0}, {3} sayesinde {1} {2} kartını engelliyor.
+# Vocabulary.Combat.Attacks
+{0}{1} attacks {2}.	{0}{1} saldırıyor: {2}.
+# Vocabulary.Combat.AttacksEmptySlot
+{0}{1} attacks empty Slot {2}.	{0}{1} boş {2}. alana saldırıyor.
+# Vocabulary.Combat.AttacksDirectly
+{0}{1} attacks directly.	{0}{1} doğrudan saldırıyor.
+# Vocabulary.Combat.InSlotNumber
+ in Slot {0}	 {0}. alana
+# Vocabulary.Combat.FromYourHand
+ from your hand	 elinden
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2} by Ability: {3}.	{0}{1}{2} oynandı, Yetenek: {3}.
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2}.	{0}{1}{2} oynandı.
+# Vocabulary.Combat.DeadlyName
+Touch of Death	Ölümün Dokunuşu
+# Vocabulary.Combat.WithOne
+ with {0}	 {0} mührüyle
+# Vocabulary.Combat.ToDeadly
+ to {0}	 {0} yüzünden
+# Vocabulary.Combat.QueuedInSlot
+The {0} queued in slot {1}	{1}. alanın arkasında bekleyen {0}
+# Vocabulary.Combat.Queued
+The {0} queued	Arka sırada bekleyen {0}
+# Vocabulary.Combat.TakesAnd
+{0} takes {1} and {2}{3}.	{0} {1} aldı ve{3} {2}.
+# Vocabulary.Combat.TakesDamage
+{0} takes {1}.	{0} {1} aldı.
+# Vocabulary.Combat.TakesItsAbilityResolves
+{0} takes {1}, {2}. 	{0} {1} aldı, {2}. 
+# Vocabulary.Combat.TakesItsAbilityResolves
+Its {0} ability resolves before it dies.	Ölmeden önce {0} yeteneği işliyor.
+# Vocabulary.Combat.TakesDamageLeft
+{0} takes {1}, {2}.	{0} {1} aldı, {2}.
+# Vocabulary.Combat.SideQualifiedName
+Your {0}	Senin tarafındaki {0}
+# Vocabulary.Combat.SideQualifiedName
+Enemy {0}	Düşman tarafındaki {0}
+# Vocabulary.Combat.IsSacrificed
+{0} is sacrificed.{1}	{0} kurban edildi.{1}
+# Vocabulary.Combat.Sacrificed
+{0} sacrificed.{1}	{0} kurban edildi.{1}
+# Vocabulary.Combat.PowerAndHealth
+{0} power and {1} health	{0} güç ve {1} can
+# Vocabulary.Combat.Power
+{0} power	{0} güç
+# Vocabulary.Combat.Health
+{0} health	{0} can
+# Vocabulary.Combat.MorselFallback
+Morsel	Lokma
+# Vocabulary.Combat.AbilitiesTriggerGains
+{0} {1} abilities trigger, {2} gains {3}.	{0} {1} yeteneği tetiklendi, {2} {3} kazandı.
+# Vocabulary.Combat.MorselGainFor
+{0} gained {1}.	{0} {1} kazandı.
+# Vocabulary.Combat.IsSkinnedAnd
+{0} is skinned and {1}.	{0} yüzüldü ve {1}.
+# Vocabulary.Combat.IsCutAnd
+{0} is cut and {1}.	{0} kesildi ve {1}.
+# Vocabulary.Combat.IsSmashedAnd
+{0} is smashed and {1}.	{0} ezildi ve {1}.
+# Vocabulary.Combat.InSlot
+{0} in Slot {1}	{1}. alandaki {0}
+# Vocabulary.Combat.DirectDamageCount
+1 direct damage.	1 doğrudan hasar.
+# Vocabulary.Combat.DirectDamageCount
+{0} direct damage.	{0} doğrudan hasar.
+# Vocabulary.Combat.ScaleHits
+ The scale hits 5...	 Terazi beşe dayanıyor...
+# Vocabulary.Combat.VolumeWarning
+VOLUME WARNING: 	SES UYARISI: 
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+Enemy deals {0}{1}	Düşmanın vuruşu: {0}{1}
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+You deal {0}{1}	Senin vuruşun: {0}{1}
+# Vocabulary.Combat.ReceivedBoneFromThe
+Received 1 bone from 	1 kemik kazandın. Kaynak: 
+# Vocabulary.Combat.TheBoneLordsBoon
+the Bone Lord's boon	Kemiklerin Efendisi'nin nimeti
+# Vocabulary.Combat.ReceivedBonesFromThe
+Received 8 bones from 	8 kemik kazandın. Kaynak: 
+# Vocabulary.Combat.ReceivedBonesAtBattle
+Received {0} bones at battle start.	Savaşın başında {0} kemik kazandın.
+# Vocabulary.MultiStrike.AttacksEachOfYour
+{0} attacks each of your {1} 	{0}, senin {1} 
+# Vocabulary.MultiStrike.AttacksTimes
+{0} attacks {1} times.	{0} {1} kez saldırıyor.
+# Vocabulary.MultiStrike.AndDies
+and {0}{1}	ve{1} {0}
+# Vocabulary.MultiStrike.InStartSlot
+ in slot {0}	 {0}. alanda
+# Vocabulary.MultiStrike.BurrowsFromTo
+{0} burrows from {1}	{0} kazarak ilerliyor: {1}
+# Vocabulary.MultiStrike.Burrows
+{0}{1} burrows	{0}{1} kazarak ilerliyor
+# Vocabulary.MultiStrike.HopsTakingDies
+{0}, taking {1}, {2}.	{0}, {1} aldı, {2}.
+# Vocabulary.MultiStrike.HopsTaking
+{0}, taking {1}.	{0}, {1} aldı.
+# Vocabulary.MultiStrike.TakesAndDies
+{0}{1} takes {2} {3}.	{0}{1} {2} aldı {3}.
+# Vocabulary.MultiStrike.TakesStrikes
+{0}{1} takes {2}.	{0}{1} {2} aldı.
+# Vocabulary.MultiStrike.TakesWithOutcome
+{0}{1} takes {2}, {3}.	{0}{1} {2} aldı, {3}.
+# Vocabulary.MultiStrike.AttacksGiant
+{0} attacks {1}	{0}, {1} kartına saldırıyor
+# Vocabulary.MultiStrike.AttacksGiantTimes
+{0} attacks {1} {2} times	{0}, {1} kartına {2} kez saldırıyor
+# Vocabulary.MultiStrike.YourCardsAttackTimes
+Your cards attack {0} {1} times	Kartların, {0} kartına {1} kez saldırıyor
+# Vocabulary.MultiStrike.GiantDiesFor
+{0} for {1}.	{0}: {1}.
+# Vocabulary.MultiStrike.ForHealthRemaining
+{0} for {1}, {2} health remaining.	{0}: {1}, {2} can kaldı.
+# Vocabulary.MultiStrike.BrittleFallback
+Brittle	Narin
+# Vocabulary.MultiStrike.SAbilityTriggersAnd
+{0}'s {1} ability triggers, and it dies.{2}	{0} kartının {1} yeteneği tetiklendi ve kart öldü.{2}
+# Vocabulary.MultiStrike.InSlots
+{0} in {1} {2}	{2}. alandaki {0}
+# Vocabulary.MultiStrike.AbilitiesTriggerDie
+{0} {1} abilities trigger, {2} die.{3}	{0} {1} yeteneği tetiklendi, {2} öldü.{3}
+# Vocabulary.Turns.YourTurn
+Your turn.	Senin sıran.
+# Vocabulary.Turns.EnemyTurn
+Enemy turn.	Düşmanın sırası.
+# Vocabulary.Turns.DrawPhaseSkippedDue
+Draw Phase skipped due to no cards remaining in either deck...	Her iki destede de kart kalmadığı için Kart Çekme Aşaması atlandı...
+# Vocabulary.Sigils.GuardianName
+Guardian	Muhafız
+# Vocabulary.Sigils.SAbilityTriggersIt
+{0}'s {1} ability triggers: it is blocked from 	{0} kartının {1} yeteneği tetiklendi: 
+# Vocabulary.Sigils.SAbilityTriggersIt
+moving to slot {0}.	{0}. alana geçmesi engellendi.
+# Vocabulary.Sigils.SAbilityTriggersItMoves
+{0}'s {1} ability triggers: it moves to slot {2}.	{0} kartının {1} yeteneği tetiklendi: {2}. alana geçti.
+# Vocabulary.Sigils.Burrower
+Burrower	Delik Açan
+# Vocabulary.Sigils.RightOrLeft
+right	sağa
+# Vocabulary.Sigils.RightOrLeft
+left	sola
+# Vocabulary.Sigils.SAbilityTriggersItMovesTo
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	{0} kartının {1} yeteneği tetiklendi: {2}, {3}. alana geçti.
+# Vocabulary.Sigils.Sprinter
+Sprinter	Koşucu
+# Vocabulary.Sigils.Bloodlust
+Bloodlust	Kan Arzusu
+# Vocabulary.Sigils.SAbilityTriggersItNow
+{0}'s {1} ability triggers: it now has {2} power.	{0} kartının {1} yeteneği tetiklendi: gücü artık {2}.
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0}'s {1} ability triggers: it places a {2} in 	{0} kartının {1} yeteneği tetiklendi: bir {2} yerleştirdi, yeri 
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0} slot {1}.	{0} tarafında {1}. alan.
+# Vocabulary.Sigils.SAbilityTriggersA
+{0}'s {1} ability triggers: a 	{0} kartının {1} yeteneği tetiklendi: 
+# Vocabulary.Sigils.SAbilityTriggersA
+{0} is played in {1} slot {2}.	{1} tarafında {2}. alana bir {0} oynandı.
+# Vocabulary.Sigils.WithAbilities
+, with 	, yetenekleri: 
+# Vocabulary.Sigils.Enemy
+Enemy 	Düşman 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+{0}{1}'s {2} ability triggers: 	{0}{1} kartının {2} yeteneği tetiklendi: 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+it becomes a {0}/{1} {2}{3}.	{0}/{1} bir {2} kartına dönüştü{3}.
+# Vocabulary.Sigils.SAbilityFizzlesDue
+{0}'s {1} ability fizzles due to having no empty item slots.	{0} kartının {1} yeteneği, boş eşya yuvası olmadığı için etkisiz kaldı.
+# Vocabulary.Events.IsCreatedInYour
+{0} is created in your hand.	{0} elinde belirdi.
+# Vocabulary.Events.AbilityTriggersIsAdded
+{0} ability triggers: {1} {2} is added to your hand.	{0} yeteneği tetiklendi: {1} {2} eline eklendi.
+# Vocabulary.Events.OuroborosComesBackStronger
+ Ouroboros comes back stronger than before...	 Ouroboros eskisinden daha güçlü geri dönüyor...
+# Vocabulary.Events.ArticleA
+A	Bir
+# Vocabulary.Events.AnOrA
+An	Bir
+# Vocabulary.Events.CardsAbility
+{0}'s {1}	{0} kartının {1}
+# Vocabulary.Events.BySourcesAbility
+ by {0}'s {1}	 ({0} kartının {1} yeteneğiyle)
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created in enemy Slot {1}{2}.	{0}, düşmanın {1}. alanında belirdi{2}.
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created on the opposing space{1}.	{0} karşı alanda belirdi{1}.
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue, targeting Slot {0}.	Aşırı hasar arka sıraya geçiyor, hedef: {0}. alan.
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue.	Aşırı hasar arka sıraya geçiyor.
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory. {0} extra {1} received.	Zafer. {0} fazladan diş kazandın.
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory.	Zafer.
+# Vocabulary.Events.ItemSlotCount
+item slot {0}	{0}. eşya yuvası
+# Vocabulary.Events.ItemSlotCount
+an item slot	bir eşya yuvası
+# Vocabulary.Events.Chosen
+{0} chosen.	{0} seçildi.
+# Vocabulary.Events.IsCreatedIn
+{0} is created in {1}.	{0} belirdi: {1}.
+# Vocabulary.Events.Saving
+Saving.	Kaydediliyor.
+# Vocabulary.Events.IsAddedToYour
+{0} is added to your hand.	{0} eline eklendi.
+# Vocabulary.Dialogue.PirateSkull
+Pirate Skull	Korsan Kafatası
+# Vocabulary.Dialogue.None
+None	Yok
+# Vocabulary.Bosses.OneOfSCandles
+One of {0}'s {1} candles is blown out.	{0} için yanan {1} mumdan biri söndü.
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+A candle is blown out.	Bir mum söndü.
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+One of {0}'s candles is blown out.	{0} için yanan mumlardan biri söndü.
+# Vocabulary.Bosses.CandleIsBlownOut
+A candle is blown out. {0} left.	Bir mum söndü. Kalan: {0}.
+# Vocabulary.Bosses.CandleIsBlownOut
+One of {0}'s candles is blown out. {1} left.	{0} için yanan mumlardan biri söndü. Kalan: {1}.
+# Vocabulary.Bosses.TheMask
+The {0}	{0}
+# Vocabulary.Bosses.LeshyPutsOnA
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	Leshy kirli, vahşi bir yüzü olan ahşap bir maske takıyor; maskenin gür, darmadağın bir sakalı ve eğri bir altın dişi var. Titreyen elinde büyük bir kazma tutuyor...
+# Vocabulary.Bosses.CandleCount
+candle	mum
+# Vocabulary.Bosses.CandleCount
+candles	mum
+# Vocabulary.Bosses.PlacesASkullHolding
+{0} places a skull holding {1} lit {2} 	{0}, üzerinde {1} yanan {2} bulunan bir kafatasını 
+# Vocabulary.Bosses.PlacesASkullHolding
+onto the table.	masaya koyuyor.
+# Vocabulary.Bosses.LeshyRelightsYourCandle
+Leshy relights your candle. You now have {0} {1} lit.	Leshy mumunu yeniden yakıyor. Artık {0} {1} yanıyor.
+# Vocabulary.Bosses.BlowsOutYourLast
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0} son mumunu söndürüyor. {1} iki elini masanın üzerinden uzatırken oda kararıyor...
+# Vocabulary.Bosses.BlowsOutOneOf
+{0} blows out one of your candles. You have {1} remaining.	{0} mumlarından birini söndürüyor. Kalan mumun: {1}.
+# Vocabulary.Bosses.AndAreAddedTo
+{0} are added to your hand.	{0} eline eklendi.
+# Vocabulary.Bosses.IsAddedToYourHand
+{0} is added to your hand.{1}	{0} eline eklendi.{1}
+# Vocabulary.Bosses.AndAreAddedToYour
+{0} are added to your hand.{1}	{0} eline eklendi.{1}
+# Vocabulary.Bosses.ExtraCandleIsLit
+An extra candle is lit.	Fazladan bir mum yandı.
+# Vocabulary.ProspectorBoss.ProspectorUsesHisPickaxe
+The Prospector uses his pickaxe to strike all of your creatures, turning them into Gold Nuggets.	Madenci kazmasıyla tüm yaratıklarına vurup onları Altın Külçesine çeviriyor.
+# Vocabulary.ProspectorBoss.ProspectorClearsHisQueue
+The Prospector clears his queue, 	Madenci arka sırasını boşaltıyor, 
+# Vocabulary.PirateSkull.Limoncello
+The Limoncello	Limonçello
+# Vocabulary.PirateSkull.YourTheirSlot
+ slot {0}	 tarafında {0}. alan
+# Vocabulary.PirateSkull.CannonsFireAtIs
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	Toplar ateş ediyor: {0}. {1} gülleyle vuruldu ve {2}.
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	Toplar ateş ediyor: {0}. {1} gülleyle vuruldu, {2} can kaldı.
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball.	Toplar ateş ediyor: {0}. {1} gülleyle vuruldu.
+# Vocabulary.CardChoices.DeathCard
+Death card.	Ölüm kartı.
+# Vocabulary.CardChoices.BloodCostCard
+{0} blood cost card.	Kan bedeli {0} olan kart.
+# Vocabulary.CardChoices.BonesCostCard
+Bones cost card.	Kemik bedelli kart.
+# Vocabulary.CardChoices.KinCard
+{0} kin card.	Soy kartı: {0}.
+# Vocabulary.CardChoices.NewCardsDealt
+New cards dealt.	Yeni kartlar dağıtıldı.
+# Vocabulary.CardChoices.UseTheLuckyClover
+ Use the Lucky Clover to discard them all and be dealt new cards.	 Hepsini atıp yeni kartlar almak için Şans Yoncası'nı kullan.
+# Vocabulary.CardChoices.OpeningLine
+Left and right arrows to browse, Enter to turn a card over, 	Gezinmek için sol ve sağ oklar, bir kartı çevirmek için Enter, 
+# Vocabulary.CardChoices.OpeningLine
+Shift Up displays your deck, Space to repeat, H for help.	Shift ve yukarı ok desteni gösterir, tekrar için Boşluk, yardım için H.
+# Vocabulary.CardChoices.DeckTrialLeshyPuts
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	Deste sınaması. Leshy masaya taştan bir kemer koyuyor; parlayan gözleri karanlık bir mağara girişinden bakıyormuş gibi görünüyor.
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Rare Card Choice	Nadir Kart Seçimi
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Card Choice	Kart Seçimi
+# Vocabulary.CardChoices.FaceDownCardCount
+1 face-down card	1 kapalı kart
+# Vocabulary.CardChoices.FaceDownCardCount
+{0} face-down cards	{0} kapalı kart
+# Vocabulary.CardChoices.FaceDownRareCardCount
+1 face-down rare card	1 kapalı nadir kart
+# Vocabulary.CardChoices.FaceDownRareCardCount
+{0} face-down rare cards	{0} kapalı nadir kart
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}. Leshy sana tahta bir kutu uzatıyor. Kilidi açıyor ve 
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+opens it, revealing {0}... Choose 1 to add to your deck.	kapağı kaldırıyor. İçinde: {0}... Destene eklemek için 1 tane seç.
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}. Bütün kartlar açık. Destene eklemek için 1 tane seç.
+# Vocabulary.CardChoices.BeforeYouLayOrEveryCardIs
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}. Önünde: {1}. Destene eklemek için 1 tane seç.
+# Vocabulary.CardChoices.LuckyCloverDiscardAll
+Lucky Clover. Discard all cards and be dealt new ones.	Şans Yoncası. Bütün kartları at ve yenilerini al.
+# Vocabulary.CardChoices.FaceDown
+Face down.	Kapalı.
+# Vocabulary.CardChoices.TrialOf
+Trial of {0}.	Sınama: {0}.
+# Vocabulary.CardChoices.FaceUpButThe
+Face up, but the card could not be read.	Açık, ama kart okunamadı.
+# Vocabulary.CardChoices.DuplicateOfCardIn
+ Duplicate of card in your deck.	 Destende bu karttan zaten var.
+# Vocabulary.CardChoices.ArrowKeysToBrowse
+{0}. Arrow keys to browse.	{0}. Gezinmek için ok tuşları.
+# Vocabulary.CardChoices.ThatCardCouldNot
+That card could not be taken.	Bu kart alınamadı.
+# Vocabulary.CardChoices.LuckyCloverCouldNot
+The Lucky Clover could not be used.	Şans Yoncası kullanılamadı.
+# Vocabulary.CardChoices.ThatCardCouldNotBe
+That card could not be selected.	Bu kart seçilemedi.
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+{0} added to your deck.	{0} destene eklendi.
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+Card added to your deck.	Kart destene eklendi.
+# Vocabulary.CardChoices.PressEnterToAdd
+ Press Enter to add it to your deck.	 Destene eklemek için Enter'a bas.
+# Vocabulary.DeckView.DeckReturned
+Deck returned.	Deste geri kondu.
+# Vocabulary.DeckView.PlaceBelow
+the card choice	kart seçimi
+# Vocabulary.DeckView.PlaceBelow
+the map	harita
+# Vocabulary.DeckView.YourDeck
+Your deck. 	Destin. 
+# Vocabulary.DeckView.LeftAndRightArrows
+Left and right arrows to browse, Space to repeat, A for teeth, I cycles through your items, H for help, Backspace to return to {0}.	Gezinmek için sol ve sağ oklar, tekrar için Boşluk, dişler için A, eşyaları gezmek için I, yardım için H, şuraya dönmek için Geri silme: {0}.
+# Vocabulary.DeckView.YourDeckIsStill
+Your deck is still being laid out.	Destin hâlâ diziliyor.
+# Vocabulary.DeckView.YourDeckName
+Your deck. {0}.	Destin. {0}.
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Left and right arrows browse the cards. Space repeats the card you are on. 	Sol ve sağ oklar kartlarda gezinir. Boşluk bulunduğun kartı tekrarlar. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+A reads the amount of teeth collected. I cycles through your items, one per press. 	A toplanan diş sayısını okur. I eşyalarını her basışta bir tane olmak üzere gezer. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+R opens the rulebook. 	R kural kitabını açar. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Backspace closes your deck and returns you to {0}.	Geri silme desteni kapatır ve seni şuraya döndürür: {0}.
+# Vocabulary.DeckView.NoTeethAreShown
+No teeth are shown here.	Burada diş gösterilmiyor.
+# Vocabulary.DeckView.ToothCollectedCount
+ 1 tooth collected.	 1 diş toplandı.
+# Vocabulary.DeckView.ToothCollectedCount
+ {0} teeth collected.	 {0} diş toplandı.
+# Vocabulary.DeckPick.OpeningLine
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Destin. Eline eklemek için bir kart seç. Oklar gezinir, Enter seçer. {0}.
+# Vocabulary.DeckPick.HelpLine
+Choose a card from your deck to add to your hand. 	Destenden eline eklemek için bir kart seç. 
+# Vocabulary.DeckPick.HelpLine
+{0}. G, B and A to read the boardstate.	{0}. Oyun alanını okumak için G, B ve A.
+# Vocabulary.NodeScreens.HostCard
+Host Card	Ev Sahibi Kart
+# Vocabulary.NodeScreens.CardToSacrifice
+Card to Sacrifice	Kurban Edilecek Kart
+# Vocabulary.NodeScreens.BeginRitual
+Begin Ritual	Ayini Başlat
+# Vocabulary.NodeScreens.SendCardToRest
+Send card to rest by the fire	Kartı ateşin başında dinlenmeye gönder
+# Vocabulary.NodeScreens.BeginExperiment
+Begin experiment...	Deneyi başlat...
+# Vocabulary.NodeScreens.SelectAPairOf
+Select a pair of cards to fuse together	Birleştirilecek bir kart çifti seç
+# Vocabulary.NodeScreens.BeginPainting
+Begin painting	Resme başla
+# Vocabulary.NodeScreens.ChooseACardTo
+Choose a card to receive an artistic rendition of	Sanatsal bir tasviri yapılacak kartı seç
+# Vocabulary.NodeScreens.ChooseOneCardFrom
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	Destenden ev sahibi olacak bir kart seç. Mühürlerini ev sahibine aktarmak için destenden başka bir kartı kurban et.
+# Vocabulary.NodeScreens.SelectACardFrom
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	Destenden kamp ateşinde ısınacak bir kart seç. Bu, değerlerinden birini kalıcı olarak artırır ama risklidir...
+# Vocabulary.NodeScreens.ChooseAPairOf
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	Destenden birleştirilecek eş iki kart seç. Güçleri ve canları toplanır, ikisinin mühürleri de kalır.
+# Vocabulary.NodeScreens.PickANewWoodcarving
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	Sırt çantana eklemek için yeni bir ahşap oyma seç: bir Soy başı ya da bir Mühür gövdesi. Hem başın hem gövden varsa, yanına alacağın bir totem birleşimi seç. Destende Soy başına uyan her kart, totem kullanıldığı sürece totemin mührünü kazanır.
+# Vocabulary.NodeScreens.TradeTheTeethYouve
+Trade the teeth you've collected for pelt cards to add to your deck.	Topladığın dişleri destene eklenecek post kartlarıyla takas et.
+# Vocabulary.NodeScreens.TradePeltsFromYourDeck
+Trade pelts from your deck for new cards.	Destendeki postları yeni kartlarla takas et.
+# Vocabulary.NodeScreens.SelectOneCardFrom
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	Destenden kalıcı olarak çıkarılacak bir kart seç. Kemiklerin Efendisi karşılığında bir nimet sunar: her savaşın başında sana kemik veren kalıcı bir etki.
+# Vocabulary.NodeScreens.SelectOneCardFromYour
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	Destenden bir kart seç. Bir kopyası destene eklenir, ama biraz farklı olabilir.
+# Vocabulary.NodeScreens.CardToReceiveAn
+card to receive an artistic rendition	sanatsal tasviri yapılacak kart
+# Vocabulary.NodeScreens.HostCardName
+host card	ev sahibi kart
+# Vocabulary.NodeScreens.ChosenAsLabelsCardToSacrifice
+card to sacrifice	kurban edilecek kart
+# Vocabulary.NodeScreens.BackpackCannotBeReached
+The backpack cannot be reached right now.	Sırt çantasına şu an ulaşılamıyor.
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Sırt çantası. Oklar gezinir, Geri silme ahşap oyma seçimine döner.
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Enter chooses a totem combination.	Sırt çantası. Oklar gezinir, Enter bir totem birleşimi seçer.
+# Vocabulary.NodeScreens.DeckCannotBeReached
+The deck cannot be reached right now.	Desteye şu an ulaşılamıyor.
+# Vocabulary.NodeScreens.CardS
+ {0}, {1} card{2}.	 {0}, kart sayısı: {1}.
+# Vocabulary.NodeScreens.WoodcarvingSelection
+Woodcarving selection.	Ahşap oyma seçimi.
+# Vocabulary.NodeScreens.WithdrawFromTheCampfire
+Withdraw from the campfire.	Kamp ateşinden ayrıl.
+# Vocabulary.NodeScreens.Fire
+the fire	ateşin
+# Vocabulary.NodeScreens.PairOf
+Pair of {0}.	Çift: {0}.
+# Vocabulary.NodeScreens.Pluralise
+s	s
+# Vocabulary.NodeScreens.AltarOfTheBoneLord
+Altar of the Bone Lord	Kemiklerin Efendisi'nin Sunağı
+# Vocabulary.NodeScreens.AltarOfTheBone
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Kemiklerin Efendisi'nin Sunağı. Gezinmek için oklar, onaylamak için Enter.
+# Vocabulary.NodeScreens.TrapperYouAreGifted
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	Tuzakçı. Sana bir Tavşan Postu verildi. Topladığın dişleri destene eklenecek post kartlarıyla takas et.
+# Vocabulary.NodeScreens.TeethWord
+1 tooth	1 diş
+# Vocabulary.NodeScreens.TeethWord
+{0} teeth	{0} diş
+# Vocabulary.NodeScreens.KnifeName
+Skinning Knife	Deri Yüzme Bıçağı
+# Vocabulary.NodeScreens.PurchasedForYouHave
+{0} purchased for {1}. You have {2} remaining.{3}	{0} satın alındı, bedeli {1}. Kalan: {2}.{3}
+# Vocabulary.NodeScreens.YouAreShortFrom
+You are {0} short from buying {1}.{2}	{1} için {0} eksiğin var.{2}
+# Vocabulary.NodeScreens.NotEnoughTeethRemaining
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Başka bir alım için yeterli diş kalmadı. Tuzakçı'dan ayrılmak için Geri silme.
+# Vocabulary.NodeScreens.YouHave
+You have {0}.	Sende {0} var.
+# Vocabulary.NodeScreens.ListOfThree
+, and {0}	ve {0}
+# Vocabulary.NodeScreens.Sacrificed
+{0} sacrificed.	{0} kurban edildi.
+# Vocabulary.NodeScreens.SigilCount
+sigil	mühür
+# Vocabulary.NodeScreens.SigilCount
+sigils	mühürlerini
+# Vocabulary.NodeScreens.RitualResult
+{0} gained the {1} {2}.	{0} şunu kazandı: {1}.
+# Vocabulary.NodeScreens.BoostPhrase
+its {0} by {1}	{0}, {1} kadar
+# Vocabulary.NodeScreens.BoostPhrase
+its {0}	{0}
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise one of its stats	Bu, değerlerinden birini kalıcı olarak artırır
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise {0}	Bu, kalıcı olarak şunu artırır: {0}
+# Vocabulary.NodeScreens.CampfireChooseLine
+Choose a card to warm by the campfire. {0}.	Kamp ateşinde ısınacak bir kart seç. {0}.
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting peacefully by the campfire, and raise the stat again.	Kamp ateşinin başında huzurla dinlenmeye devam et ve değeri yeniden artır.
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting by the campfire, and raise the stat again.	Kamp ateşinin başında dinlenmeye devam et ve değeri yeniden artır.
+# Vocabulary.NodeScreens.ChosenCard
+the chosen card	seçilen kart
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to peacefully rest by	huzurla dinlenmeye
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to risk resting by	risk alarak dinlenmeye
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire	{0} kartını kamp ateşinin başına {1} gönder
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire, permanently raising {2}.	{0} kartını kamp ateşinin başına {1} gönder; kalıcı artış: {2}.
+# Vocabulary.NodeScreens.ChooseACardToBecome
+Choose a card to become the host.	Ev sahibi olacak bir kart seç.
+# Vocabulary.NodeScreens.ChooseACardToSacrifice
+Choose a card to sacrifice.	Kurban edilecek bir kart seç.
+# Vocabulary.NodeScreens.ChooseACardToWarm
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	Kamp ateşinde ısınacak bir kart seç. Bu, değerlerini artırır ama risklidir...
+# Vocabulary.NodeScreens.ChooseACard
+Choose a card.	Bir kart seç.
+# Vocabulary.NodeScreens.SelectedAs
+{0} selected as {1}.	{0}, {1} olarak seçildi.
+# Vocabulary.NodeScreens.PairOfChosenTo
+Pair of {0} chosen to fuse together. Enter to rechoose.	Birleştirmek için {0} çifti seçildi. Yeniden seçmek için Enter.
+# Vocabulary.NodeScreens.ChosenAsEnterTo
+{0} chosen as {1}. Enter to rechoose.	{0}, {1} olarak seçildi. Yeniden seçmek için Enter.
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}.	{0}.
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}. {1}	{0}. {1}
+# Vocabulary.NodeScreens.ReceivedBoon
+Received {0}.	Alındı: {0}.
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+A carved head.	Oyulmuş bir baş.
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+{0} head.	Baş: {0}.
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+A carved sigil body.	Oyulmuş bir mühür gövdesi.
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+{0} sigil body.	Mühür gövdesi: {0}.
+# Vocabulary.NodeScreens.TotemYourCardsGain
+Totem: your {0} cards gain {1}.	Totem: {0} soyundaki kartların {1} kazanır.
+# Vocabulary.NodeScreens.FinishedTotem
+The finished totem.	Bitmiş totem.
+# Vocabulary.NodeScreens.OptionOf
+Option {0} of {1}.	Seçenek {0} / {1}.
+# Vocabulary.NodeScreens.OptionSLeftAnd
+{0}. {1} option{2}. 	{0}. Seçenek sayısı: {1}. 
+# Vocabulary.NodeScreens.OptionSLeftAnd
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Gezinmek için sol ve sağ oklar, seçmek için Enter, tekrar için Boşluk, yardım için H.
+# Vocabulary.NodeScreens.NoOptionSelectedUse
+No option selected. Use left and right arrows to browse.	Seçenek seçilmedi. Gezinmek için sol ve sağ okları kullan.
+# Vocabulary.NodeScreens.NoPairIsOn
+No pair is on the stone yet. Choose a pair of cards first.	Taşın üzerinde henüz bir çift yok. Önce bir kart çifti seç.
+# Vocabulary.NodeScreens.PairOfSelected
+Pair of {0} selected.	{0} çifti seçildi.
+# Vocabulary.NodeScreens.YouTookThe
+You took the {0}.	Aldın: {0}.
+# Vocabulary.NodeScreens.Selected
+{0} selected.	{0} seçildi.
+# Vocabulary.NodeScreens.NothingToChooseLine
+Nothing to choose here.	Burada seçilecek bir şey yok.
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0} You have {1} {2} left to trade.	Tüccar. {0} Takas etmek için {1} {2} kaldı.
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0}	Tüccar. {0}
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Choosing a card. {0}. 	Kart seçimi. {0}. 
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Arrows browse, Enter chooses, Space repeats your position.	Oklar gezinir, Enter seçer, Boşluk konumunu tekrarlar.
+# Vocabulary.NodeScreens.ShiftUpDisplaysYour
+Shift Up displays your deck.	Shift ve yukarı ok desteni gösterir.
+# Vocabulary.NodeScreens.OpensYourBackpackShift
+A opens your backpack, Shift Up displays your deck. 	A sırt çantanı açar, Shift ve yukarı ok desteni gösterir. 
+# Vocabulary.NodeScreens.CountsYourTeethBackspace
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A dişlerini sayar, Geri silme Tuzakçı'dan istediğin an ayrılır. 
+# Vocabulary.NodeScreens.Zero
+zero	sıfır
+# Vocabulary.NodeScreens.SelectOneOfItems
+{0}. Select one of {1} items to add to your backpack. 	{0}. Sırt çantana eklemek için {1} eşyadan birini seç. 
+# Vocabulary.NodeScreens.SelectOneOfItems
+I cycles through your current items. R opens the rulebook.	I mevcut eşyalarını gezer. R kural kitabını açar.
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Oklar gezinir, Enter seçer, Geri silme Tuzakçı'dan istediğin an ayrılır, 
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Space repeats your position, A counts your teeth, R opens the rulebook.	Boşluk konumunu tekrarlar, A dişlerini sayar, R kural kitabını açar.
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChoosesSpace
+R opens the rulebook.	R kural kitabını açar.
+# Vocabulary.NodeScreens.TotemIsAssembledYour
+The totem is assembled. Your {0} cards will gain {1}. 	Totem birleştirildi. {0} soyundaki kartların {1} kazanacak. 
+# Vocabulary.NodeScreens.ReceivedNoNewSigils
+{0} received no new sigils.	{0} yeni mühür almadı.
+# Vocabulary.NodeScreens.Received
+{0} received {1}.	{0} şunu aldı: {1}.
+# Vocabulary.NodeScreens.ReceivedAnd
+{0} received {1} 	{0} şunları aldı: {1} 
+# Vocabulary.NodeScreens.ReceivedAnd
+and {0}.	ve {0}.
+# Vocabulary.NodeScreens.CopyCard
+Copy card	Kopya kart
+# Vocabulary.CopyCardNode.CorkedGlassBottleSuddenly
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	Mantarla kapatılmış bir cam şişe birden oyun masasına zıplıyor. Yanına üzerlerinde boş kartlar olan iki minik resim sehpası düşüyor.
+# Vocabulary.CopyCardNode.InsideTheGlassBottle
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	Cam şişenin içinde parlayan yeşil bir balçık var. Biçimsiz bir yüzü var. Şişeye ucu parlayan bir fırça bağlı.
+# Vocabulary.ItemPickup.LeshyPresentsYouThe
+Leshy presents you the {0}.	Leshy sana şunu sunuyor: {0}.
+# Vocabulary.Rulebook.CombinationCode
+Combination code: 273.	Şifre: 273.
+# Vocabulary.Rulebook.ThisPageIsDestroyed
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	Bu sayfa mürekkeple bozulmuş. Şu kelimeleri seçebiliyorsun: Ayna... Güç ve... Eşittir... ...taşıyan...
+# Vocabulary.Rulebook.ThisPageIsDestroyedBy
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	Bu sayfa mürekkeple bozulmuş. Şu kelimeleri seçebiliyorsun: Zil Çalma... Bunun temsil ettiği değer..... eşittir.... ...
+# Vocabulary.Rulebook.ThisPageIsDestroyedByInk
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	Bu sayfa mürekkeple bozulmuş. Şu kelimeleri seçebiliyorsun: Kart Sayısı.... Temsil edilen değer.... eşittir.... sayısı....
+# Vocabulary.Rulebook.RulebookIsNotAvailable
+The rulebook is not available here.	Kural kitabı burada kullanılamıyor.
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Opened Rulebook from shelf.	Kural kitabı raftan alınıp açıldı.
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Rulebook opened.	Kural kitabı açıldı.
+# Vocabulary.Rulebook.LeftAndRightArrows
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Sol ve sağ oklar sayfa çevirir. Geri silme kitabı kapatır.
+# Vocabulary.Rulebook.RulebookClosed
+Rulebook closed.	Kural kitabı kapandı.
+# Vocabulary.Rulebook.RulebookLeftAndRight
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Kural kitabı. Sol ve sağ oklar sayfa çevirir. Boşluk bulunduğun sayfayı tekrarlar. Geri silme ya da R kitabı kapatır.
+# Vocabulary.Rulebook.VariableStat
+Variable stat	Değişken değer
+# Vocabulary.Rulebook.Boon
+Boon	Nimet
+# Vocabulary.Rulebook.Item
+Item	Eşya
+# Vocabulary.Rulebook.Rule
+Rule	Kural
+# Vocabulary.Rulebook.PageUnavailable
+Page unavailable.	Sayfa kullanılamıyor.
+# Vocabulary.Rulebook.BlankPageOf
+Blank. Page {0} of {1}.	Boş. Sayfa {0} / {1}.
+# Vocabulary.Rulebook.DescriptionUnavailable
+{0}. Description unavailable.	{0}. Açıklama yok.
+# Vocabulary.Rulebook.BlankPage
+Blank page.	Boş sayfa.
+# Vocabulary.Rulebook.PageOf
+Page {0} of {1}.	Sayfa {0} / {1}.
+# Vocabulary.Rulebook.DescriptionOnThisPage
+{0}. The description on this page is obscured by ink.	{0}. Bu sayfadaki açıklama mürekkeple kapanmış.
+# Vocabulary.Rulebook.ToTheUser
+To the user: 	Kullanıcıya: 
+# Vocabulary.Surrender.YourOpponent
+Your opponent	Rakibin
+# Vocabulary.Surrender.IsOfferingToSurrender
+{0} is offering to surrender, press Shift and E to accept. 	{0} teslim olmayı teklif ediyor; kabul etmek için Shift ve E'ye bas. 
+# Vocabulary.Surrender.OliveBranch
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy zeytin dalı uzatıyor, savaşı bırakıyor. Teslimiyetini kabul etmek için Shift ve E'ye bas.
+# Vocabulary.Surrender.NoSurrenderIsBeing
+No surrender is being offered.	Teslim olma teklifi yok.
+# Vocabulary.Surrender.ConcedeAccepted
+Concede accepted. Victory.	Teslimiyet kabul edildi. Zafer.
+# Vocabulary.RunEnd.OutcomeLine
+Victory	Zafer
+# Vocabulary.RunEnd.OutcomeLine
+Defeat	Yenilgi
+# Vocabulary.RunEnd.IkmaCannotFindAn
+IKMA cannot find an option on this screen, so it still needs the mouse here.	IKMA bu ekranda bir seçenek bulamıyor; burada hâlâ fare gerekiyor.
+# Vocabulary.RunEnd.ThereIsNoOption
+There is no option to select on this screen.	Bu ekranda seçilecek bir seçenek yok.
+# Vocabulary.RunEnd.RunEndControlsSpace
+Run end controls. Space repeats the screen. Enter takes the option on it. 	Oyun sonu kontrolleri. Boşluk ekranı tekrarlar. Enter ekrandaki seçeneği seçer. 
+# Vocabulary.LogExport.LogFileCouldNot
+the log file could not be found	günlük dosyası bulunamadı
+# Vocabulary.LogExport.YourDesktopFolderCould
+your desktop folder could not be found	masaüstü klasörün bulunamadı
+# Vocabulary.LogExport.FileCouldNotBe
+the file could not be written	dosya yazılamadı
+# Vocabulary.DeathCardChoice.Part
+cost	bedelini
+# Vocabulary.DeathCardChoice.Part
+power and health	gücünü ve canını
+# Vocabulary.DeathCardChoice.Screen
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Ölüm kartı: {0} seç. {1}. Gezinmek için ok tuşları, seçmek için Enter.
+# Vocabulary.DeathCardName.Instructions
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	Kartına en fazla 10 karakterlik bir ad yaz. Bitirmek için Enter. Tab şimdiye kadarki adı okur.
+# Vocabulary.DeathCardName.Typed
+space	boşluk
+# Vocabulary.DeathCardName.Typed
+capital {0}	büyük {0}
+# Vocabulary.DeathCardName.Deleted
+backspace.	geri silme.
+# Vocabulary.DeathCardName.Full
+Character limit reached.	Karakter sınırına ulaşıldı.
+# Vocabulary.DeathCardName.NameSoFar
+No name yet.	Henüz ad yok.
+# Vocabulary.DeathCardName.EmptyEnter
+Type at least one character first.	Önce en az bir karakter yaz.
+# Added Session 32 (after the first catalogue): words that were built inside placeholders, and new lines.
+# Vocabulary.TradeTaken
+Pelt	Post
+# Vocabulary.Menus.ChallengeLocked
+Challenge locked.	Mücadele kilitli.
+# Vocabulary.Map.PathThen
+, then 	, sonra 
+# Vocabulary.Hotkeys.DrewItGainsAnd (and other name lists)
+ and 	 ve 
+# Vocabulary.Board.YourDeckRemainingCard
+ cards	 kart
+# Vocabulary.Combat.FliesOverAndAttacks
+ twice	 iki kez
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slot	alanına saldırıyor
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slots	alanının her birine saldırıyor
+# Vocabulary.MultiStrike.BurrowsFromTo
+ to 	 sonra 
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+tooth	diş
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+teeth	diş
+# Session 34 (Claude draft, unreviewed)
+Gamepad.	Oyun kumandası.
+# Session 34 (Claude draft, unreviewed)
+Keyboard.	Klavye.
+# Session 34 (Claude draft, unreviewed)
+Dev Log Locked.	Geliştirici günlüğü kilitli.
+# Session 34 (Claude draft, unreviewed)
+Skipping IKMA version {0}.	IKMA {0} sürümü atlanıyor.
+# Session 34 (Claude draft, unreviewed)
+The IKMA update failed its safety check and was not installed.	IKMA güncellemesi güvenlik denetiminden geçemedi ve yüklenmedi.
+# Session 34 (Claude draft, unreviewed)
+Card locked	Kart kilitli
+# Session 34 (Claude draft, unreviewed)
+Reset with {0}	{0} ile sıfırla
+# Session 34 (Claude draft, unreviewed)
+Opponent cards in slots 1 through 4 will lose all of their sigils.	1 ile 4 arasındaki yuvalardaki rakip kartlar tüm mühürlerini kaybedecek.
+# Session 34 (Claude draft, unreviewed)
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Karşılaşma kontrolleri. Sol ve sağ ok tuşları elinde gezinir. Tab, elindeki bir sonraki oynanabilir kart. Enter, kartı oyna. E, turu bitirmek için zili çal. R, kural kitabını aç. Son duyulan yeteneğe bakmak için Shift R. C, elini oku. U, rakip sırasını oku. G, rakip tahtasını oku. Shift G, kendi tahtanı oku. B, tüm tahtayı ve sırayı oku. A, teraziyi, kemikleri ve diğer oyun bilgilerini oku. I, eşyaların arasında gezinmek için tekrar tekrar bas, kullanmak için Enter. Kart çekme aşamanda: D, destenden çek, ya da S, Sincap destesinden çek. H, yardım için.
+# Session 34 (Claude draft, unreviewed)
+{0} is cut in half and {1}.	{0} ikiye kesildi ve {1}.
+# Session 34 (Claude draft, unreviewed)
+{0} added in {1}.	{0}, {1} içine eklendi.
+# Session 34 (Claude draft, unreviewed)
+Space to repeat, H for help.	Tekrarlamak için Boşluk, yardım için H.
+# Session 34 (Claude draft, unreviewed)
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Deste Sınavı. Leshy sana seçmen için üç koşul sunuyor. Mevcut destende doğru olma olasılığı en yüksek olanı seç. Ardından destenden rastgele üç kart açacak. Başarırsan bir ödül alacaksın. Gezinmek için sol ve sağ ok tuşları, bir kartı çevirmek için Enter, Shift Yukarı desteni gösterir, tekrarlamak için Boşluk, yardım için H.
+# Session 34 (Claude draft, unreviewed)
+You take the {0} Kin totem with the {1} Sigil.	{1} Mühürlü {0} Soy totemini alıyorsun.
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you. Backspace to return to backpack and reselect.	Totemi yanına almak için Enter. Sırt çantasına dönüp yeniden seçmek için Geri tuşu.
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you.	Totemi yanına almak için Enter.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	Leshy sana içinde {0} olan süslü bir mürekkep hokkası ve bir fırça sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a collapsible fan with bird talon feet.	Leshy sana kuş pençesi ayaklı katlanabilir bir yelpaze sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a rusty pair of pliers.	Leshy sana paslı bir kerpeten sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a chipped pair of scissors.	Leshy sana ağzı çentikli bir makas sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate wooden hourglass.	Leshy sana süslü ahşap bir kum saati sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large magnifying glass.	Leshy sana büyük bir büyüteç sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a ceramic piggy bank.	Leshy sana seramik bir domuz kumbara sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large curved fish hook.	Leshy sana büyük, kıvrık bir olta iğnesi sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a razor sharp straight knife.	Leshy sana ustura gibi keskin, düz bir bıçak sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	Leshy sana içinde biçimsiz yüzlü yeşil bir balçık olan mantarla kapatılmış bir cam şişe sunuyor.
+# Session 34 (Claude draft, unreviewed)
+Your cards gain temporary {0}.	Kartların geçici olarak {0} kazanır.
+# Session 34 (Claude draft, unreviewed)
+Opponent turn skipped due to {0}.	{0} nedeniyle rakibin turu atlandı.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	Leshy sana içinde küçük bir {0} kartı olan mantarla kapatılmış bir cam şişe sunuyor.

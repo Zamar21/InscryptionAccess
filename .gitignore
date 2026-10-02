@@ -1,0 +1,121 @@
+# .gitignore
+
+# =====================================================================
+# GAME CODE, BINARIES AND ASSETS - NEVER COMMIT
+#
+# These belong to Devolver / Daniel Mullins Games. Anyone building IKMA
+# supplies them from their own Inscryption install.
+#
+# THE REPO ROOT IS THIS FOLDER (IKMAccess\), so anything sitting beside
+# it in "IKM Access\" is already outside git's reach. These patterns are
+# belt and braces: they hold even if the repo root is ever moved up a
+# level, and they catch a decompile or an asset rip that lands in the
+# wrong folder by accident.
+# =====================================================================
+libs/
+lib/
+Managed/
+Inscryption_Data/
+dumps/
+decompiled/
+_gamesource/
+_decompiled/
+ExportedProject/
+AssetRipper*/
+AssetStudio*/
+ilspy*/
+dnSpy*/
+
+Assembly-CSharp*.dll
+Assembly-CSharp*.pdb
+Assembly-CSharp-firstpass*.dll
+UnityEngine*.dll
+Unity.*.dll
+mscorlib.dll
+netstandard.dll
+System.*.dll
+
+# CATCH-ALL FOR COMPILED AND PACKED FILES.
+#
+# Nothing in this project is ever meant to be committed as a binary. The
+# mod's own IKMAccess.dll ships as a GitHub Release asset, never as a
+# file in the tree, and every other DLL here belongs to the game or to a
+# third party. A blanket rule costs nothing and closes the gap a named
+# list always leaves.
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+
+# Archives. A zip of game code or assets is still game code or assets.
+*.zip
+*.7z
+*.rar
+
+# Unity asset containers and ripped asset output.
+*.assets
+*.resS
+*.resource
+*.unity3d
+*.bundle
+*.sharedAssets
+*.prefab
+*.unity
+*.asset
+*.meta
+
+# Decompiler and disassembler project files
+*.dnspy32
+*.dnspy64
+*.ilspyproj
+*.exported.cs
+
+# =====================================================================
+# THIRD-PARTY RUNTIME - LINK, DO NOT BUNDLE
+# Users install these themselves from the official sources.
+# BepInEx: https://github.com/BepInEx/BepInEx
+# =====================================================================
+BepInEx/
+0Harmony.dll
+InscryptionAPI.dll
+
+# UniversalSpeech - check its license terms before bundling in a release.
+UniversalSpeech.dll
+UniversalSpeech*.lib
+nvdaControllerClient*.dll
+
+# =====================================================================
+# BUILD OUTPUT
+# =====================================================================
+bin/
+obj/
+*.user
+*.suo
+*.cache
+.vs/
+.vscode/
+.cursor/
+
+# =====================================================================
+# WORKING NOTES - remove these lines if you want them public
+# =====================================================================
+handoff/
+*_handoff.md
+*_session*.md
+
+# Working doc for the Cowork session. Carries the real name and the local
+# folder path, so it stays out of anything published. (Session 15.)
+IKMA_Project_Instructions.md
+
+# =====================================================================
+# WHAT IS DELIBERATELY NOT IGNORED
+#
+# docs/ IS committed. It holds the project's own written analysis and its
+# spoken-string inventory - the same class of material as the source
+# comments, which cite member names and IL offsets throughout and have
+# always been committed. It contains no game code, no game binaries and
+# no extracted assets.
+#
+# If that judgment is ever reversed, one line here reverses it.
+# =====================================================================

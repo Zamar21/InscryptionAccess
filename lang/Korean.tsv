@@ -1,0 +1,1981 @@
+# Korean.tsv
+# IKMA language file: Korean. Translated by Claude (Session 32) following the game's own Korean terms; no Korean speaker has checked it yet.
+#status: unreviewed
+# Vocabulary.AndList
+{0} and {1}	{0} 및 {1}
+# Vocabulary.AndList
+{0}, and {1}	{0} 및 {1}
+# Vocabulary.HandEmpty
+Hand is empty.	패가 비어 있습니다.
+# Vocabulary.BoardUnavailable
+Board unavailable.	보드를 읽을 수 없습니다.
+# Vocabulary.ItemsUnavailable
+Items unavailable.	아이템을 읽을 수 없습니다.
+# Vocabulary.NoItems
+You have no items.	아이템이 없습니다.
+# Vocabulary.NoOptions
+No options.	선택지가 없습니다.
+# Vocabulary.NoOptionsAvailable
+No options available.	사용 가능한 선택지가 없습니다.
+# Vocabulary.NoSettingsOnPage
+No settings on this page.	이 페이지에는 설정이 없습니다.
+# Vocabulary.NoPathsAhead
+No paths ahead.	앞으로 갈 경로가 없습니다.
+# Vocabulary.NothingInFront
+Nothing is directly in front of you.	바로 앞에 아무것도 없습니다.
+# Vocabulary.NothingToExamine
+Nothing to examine here.	여기에는 살펴볼 것이 없습니다.
+# Vocabulary.NothingOnThatKey
+Nothing on {0} from here.	여기서는 {0} 키에 해당하는 것이 없습니다.
+# Vocabulary.RunEndControls
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	엔터를 누르면 같은 시작 덱과 챌린지로 새 도전을 시작합니다. 백스페이스를 누르면 메인 메뉴로 돌아갑니다. 스페이스를 누르면 다시 듣습니다.
+# Vocabulary.NoRunToContinue
+No current run available.	진행 중인 도전이 없습니다.
+# Vocabulary.MainGameNotSupported
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	인스크립션 본편 지원은 아직 개발 중입니다. 꼭 완성할 테니 걱정 마세요! -Zamar :)
+# Vocabulary.BootPlayButton
+In the center of the screen is a small play button. Press Enter...	화면 중앙에 작은 플레이 버튼이 있습니다. 엔터를 누르세요...
+# Vocabulary.BootStudioLogo
+Daniel Mullins Games.	Daniel Mullins Games.
+# Vocabulary.TitleCardGlitches
+The screen glitches for a second.	화면이 잠시 지직거립니다.
+# Vocabulary.VideoLogsNotAvailable
+Video logs not yet available. Coming soon!	비디오 로그는 아직 지원되지 않습니다. 곧 추가됩니다!
+# Vocabulary.BootPublisherLogo
+Devolver Digital.	Devolver Digital.
+# Vocabulary.BaseTitleCard
+Inscryption. Press any button to start.	인스크립션. 아무 버튼을 눌러 시작하세요.
+# Vocabulary.ModTitleCard
+Inscryption: Kaycee's Mod.	인스크립션: 케이시 모드.
+# Vocabulary.RulebookNoPages
+The rulebook has no pages to read.	룰북에 읽을 페이지가 없습니다.
+# Vocabulary.CannotEndTurn
+Cannot end turn right now.	지금은 턴을 끝낼 수 없습니다.
+# Vocabulary.NoCardSelected
+No card selected.	선택된 카드가 없습니다.
+# Vocabulary.MustSelectCardFirst
+You must first select a card to add to your deck.	먼저 덱에 추가할 카드를 선택해야 합니다.
+# Vocabulary.OptionCouldNotBeSelected
+That option could not be selected.	해당 선택지를 선택할 수 없습니다.
+# Vocabulary.SurrenderNotAccepted
+The surrender could not be accepted.	항복을 수락할 수 없습니다.
+# Vocabulary.CouldNotReachTable
+Could not reach the table.	테이블로 돌아갈 수 없습니다.
+# Vocabulary.WoodcarvingCouldNotBeRead
+The woodcarving could not be read.	목각을 읽을 수 없습니다.
+# Vocabulary.PressHForWhatStillWorks
+Press H for what still works.	H 키를 누르면 지금 사용할 수 있는 기능을 들을 수 있습니다.
+# Vocabulary.SpaceDescribesAhead_
+Space describes what is directly in front of you. 	스페이스로 바로 앞에 있는 것을 설명합니다. 
+# Vocabulary.ConversationInProgress
+Conversation in progress, press Space to proceed.	대화 중입니다. 스페이스를 눌러 진행하세요.
+# Vocabulary.Scales
+Scales: you lead by {0}.	저울: 내가 {0}만큼 앞섭니다.
+# Vocabulary.Scales
+Scales: enemy leads by {0}.	저울: 적이 {0}만큼 앞섭니다.
+# Vocabulary.Scales
+Scales: even.	저울: 균형 상태입니다.
+# Vocabulary._sigilFlavour
+It resurfaces.	다시 물 위로 떠오릅니다.
+# Vocabulary._sigilFlavourPlural
+They resurface.	모두 다시 물 위로 떠오릅니다.
+# Vocabulary._sigilClause
+, granting four bones.	, 뼈 4개를 얻습니다.
+# Vocabulary._sigilClause
+, sending one damage back to its attacker.	, 공격자에게 피해 1을 되돌려줍니다.
+# Vocabulary._sigilClause
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, 덱에서 패에 추가할 카드를 고르세요. 화살표로 탐색, 엔터로 확인.
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers{2}	{0}의 {1} 능력 발동{2}
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers.	{0}의 {1} 능력이 발동합니다.
+# Vocabulary.SigilTriggers
+{0}'s {1} abilities trigger.	{0}의 {1} 능력이 발동합니다.
+# Vocabulary.OverlayLineText
+Comment line: {0}	주석: {0}
+# Vocabulary.TotemGrant
+{0} gains ability: {1}.	{0}, 능력 획득: {1}.
+# Vocabulary.TotemGrantNegated
+Copy of {0} sigil negated by Kaycee override.	중복된 {0} 도장이 케이시 모드 규칙에 의해 무효화됩니다.
+# Vocabulary.OpponentTotem
+{0}'s totem gives enemy {1} cards {2}.	{0}의 토템이 적 {1} 카드에 {2} 능력을 부여합니다.
+# Vocabulary.FootagePlaying
+Footage, {0}.	영상, {0}.
+# Vocabulary._maskFaces
+It is a rugged face with a bandana wrapped tightly below the eyes.	눈 아래로 반다나를 단단히 두른 거친 얼굴입니다.
+# Vocabulary._maskFaces
+He has a leathery face with deep wrinkles across his forehead.	이마에 깊은 주름이 팬, 가죽처럼 질긴 얼굴입니다.
+# Vocabulary._maskFaces
+She has a strong aged face with a patterned headband.	무늬가 새겨진 머리띠를 두른, 강인하고 나이 든 얼굴입니다.
+# Vocabulary._maskFaces
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	두툼한 눈썹 아래 움푹 들어간 눈을 하고 있습니다. 아랫입술에는 낚싯바늘 여러 개가 꿰여 있습니다.
+# Vocabulary._maskWholeLine
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	레쉬가 두 얼굴을 가진 진균학자 가면을 씁니다. 의사의 얼굴은 부스스한 머리에 크고 둥근 안경과 이마 반사경을 쓴 남자입니다. 그의 목에는 더 작은 두 번째 얼굴이 붙어 있습니다. 이 버섯 얼굴도 이목구비는 똑같지만, 머리에 몸집에 비해 커다란 버섯이 붙어 있습니다.
+# Vocabulary.DrawPhasePrompt
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	뽑기 단계입니다. D 키로 내 덱에서, S 키로 다람쥐 덱에서 카드를 뽑으세요.
+# Vocabulary.WaterborneDive
+{0}'s Waterborne ability triggers. It dives underwater...	{0}의 수생 능력이 발동합니다. 물속으로 잠수합니다...
+# Vocabulary.Submerged
+Submerged {0}	잠수한 {0}
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask.	레쉬가 {0} 가면을 씁니다.
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask. {1}	레쉬가 {0} 가면을 씁니다. {1}
+# Vocabulary.LeshyMaskOn
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA 임시: {0} 가면의 얼굴 설명이 없습니다.
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask...	레쉬가 {0} 가면을 씁니다...
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask, it floats away.	레쉬가 {0}의 가면을 벗습니다. 가면이 둥실 떠나갑니다.
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask.	레쉬가 {0}의 가면을 벗습니다.
+# Vocabulary.LeshyOrbiter
+the {0}	{0}
+# Vocabulary.LeshyOrbiter
+the {0}, and the {1}	{0} 및 {1}
+# Vocabulary.LeshyOrbiter
+{0} masks circle around Leshy's head: {1}. 	레쉬의 머리 주위를 도는 가면 {0}: {1}. 
+# Vocabulary.LeshyOrbiter
+Behind Leshy is a large bright full moon...	레쉬 뒤로 크고 밝은 보름달이 떠 있습니다...
+# Vocabulary.LeshyDeathcardPhase
+Leshy takes back a second candle, blocks your board, and calls up the dead.	레쉬가 두 번째 촛불을 거두고, 내 보드를 막은 뒤 죽은 자들을 불러냅니다.
+# Vocabulary.LeshyMoonPhase
+Leshy takes back a last candle. The masks fly away, and Leshy reaches for the moon.	레쉬가 마지막 촛불을 거둡니다. 가면들이 날아가고, 레쉬가 달을 향해 손을 뻗습니다.
+# Vocabulary.LeshyWearingMask
+Leshy is wearing the {0}'s mask.	레쉬가 {0}의 가면을 쓰고 있습니다.
+# Vocabulary.LeshyNoMask
+Leshy is not wearing a mask.	레쉬는 가면을 쓰고 있지 않습니다.
+# Vocabulary.LeshyThirdCandle
+Leshy lowers a third candle to the flame and lights it...	레쉬가 세 번째 촛불을 불꽃에 가져가 불을 붙입니다...
+# Vocabulary.PirateMutiny
+the ship	배
+# Vocabulary.PirateMutiny
+A {0} jumps off {1} and joins your side in slot {2}.	{0} 한 장이 {1}에서 뛰어내려 내 쪽 {2}번 칸에 합류합니다.
+# Vocabulary.PirateMutiny
+{0} {1} jump off {2} and join your side in slots {3}.	{1} {0}, {2}에서 뛰어내려 내 쪽 {3}번 칸에 합류합니다.
+# Vocabulary.PirateShipCrashes
+A massive ship called {0} crashes onto the board. 	거대한 배가 보드 위로 들이닥칩니다. 배의 이름은 {0}입니다. 
+# Vocabulary.PirateShipCrashes
+It has {0} dancing Skeleton Pirates on board making a ruckus.	배 위에서는 해골 해적 {0}명이 춤추며 소란을 피우고 있습니다.
+# Vocabulary.PirateSkeletonsOnDeck
+ No Skeleton Pirates remain on deck.	 갑판에 남은 해골 해적이 없습니다.
+# Vocabulary.PirateSkeletonsOnDeck
+ 1 Skeleton Pirate remains on deck.	 갑판에 해골 해적 1명이 남아 있습니다.
+# Vocabulary.PirateSkeletonsOnDeck
+ {0} Skeleton Pirates remain on deck.	 갑판에 해골 해적 {0}명이 남아 있습니다.
+# Vocabulary.ItemModeEntered
+Item menu. {0} 	아이템 메뉴. {0} 
+# Vocabulary.ItemModeControls
+Arrows to Browse, Enter to select, Backspace to return to your hand.	화살표로 탐색, 엔터로 선택, 백스페이스로 패로 돌아가기.
+# Vocabulary.ItemModeWhere
+Item menu. 	아이템 메뉴. 
+# Vocabulary.ItemModeLeft
+Your hand.	내 패.
+# Vocabulary.ItemModeHelp
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	아이템 메뉴. 좌우 화살표로 가지고 있는 아이템을 탐색합니다. 엔터로 현재 아이템을 사용합니다. 시프트와 I를 누르면 빈 칸을 포함해 세 칸을 모두 읽습니다. 백스페이스로 패로 돌아갑니다. 시프트와 1, 2, 3 키로 해당 칸의 아이템을 바로 사용합니다.
+# Vocabulary.PirateSkullRecedes
+The pirate skull fades backwards... Something is coming...	해적 해골이 뒤로 물러나며 희미해집니다... 무언가가 다가옵니다...
+# Vocabulary.PirateSkullPlaced
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0}, 안대를 차고 해적 모자를 쓴 해골을 테이블 위에 올려놓습니다.
+# Vocabulary.PirateSkullEyeGlows
+The eye of the skull begins to glow.	해골의 눈이 빛나기 시작합니다.
+# Vocabulary.GiantArrives
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0}, 적 보드를 가득 채웁니다. 카드 한 장이 칸 {1} 전체를 차지합니다. 공격력 {2}, 체력 {3}.
+# Vocabulary.GiantArrives
+{0} arrives, {1}/{2}.	{0} 등장. 공격력 {1}, 체력 {2}.
+# Vocabulary.GiantDestroyed
+{0} is destroyed.	{0}, 파괴되었습니다.
+# Vocabulary.HookAimed
+{0} aims his hook at your empty slot {1}.	{0}, 내 빈 {1}번 칸에 갈고리를 겨눕니다.
+# Vocabulary.HookAimed
+{0} aims his hook at {1} in slot {2}.	{0}, {2}번 칸의 {1}에게 갈고리를 겨눕니다.
+# Vocabulary.HookPulled
+{0} hooks your {1} and pulls it to his slot {2}.	{0}, 갈고리로 내 {1} 카드를 걸어 자기 {2}번 칸으로 끌어갑니다.
+# Vocabulary.HookCancelled
+{0} lowers his hook.	{0}, 갈고리를 거둡니다.
+# Vocabulary.TradeOffered
+{0} on the board and {1} in the queue	보드에 {0}, 대기열에 {1}
+# Vocabulary.TradeOffered
+{0} on the board	보드에 {0}
+# Vocabulary.TradeOffered
+{0} in the queue	대기열에 {0}
+# Vocabulary.TradeOffered
+cards	카드
+# Vocabulary.TradeOffered
+{0} offers a trade.	{0}, 교환을 제안합니다.
+# Vocabulary.TradeOffered
+{0} gives you a {1} and offers a trade.	{0}, {1} 한 장을 주며 교환을 제안합니다.
+# Vocabulary.TradeOffered
+{0} Trade pelts in your hand for one of their cards. 	{0} 패의 가죽을 상대의 카드 한 장과 교환하세요. 
+# Vocabulary.TradeOffered
+They have {0}. 	상대의 카드: {0}. 
+# Vocabulary.TradeOffered
+The bell is disabled until you trade at least once. 	한 번 이상 교환하기 전까지는 종을 울릴 수 없습니다. 
+# Vocabulary.TradeOffered
+Trade pelts from your hand for cards on their board and queue.	패의 가죽을 상대의 보드와 대기열에 있는 카드와 교환하세요.
+# Vocabulary.CannonTargetCard
+{0} in slot {1}	{1}번 칸의 {0}
+# Vocabulary.CannonTargetEmpty
+empty slot {0}	빈 {0}번 칸
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side, and {1} on theirs.	대포 조준: 내 쪽 {0}, 상대 쪽 {1}.
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side.	대포 조준: 내 쪽 {0}.
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on their side.	대포 조준: 상대 쪽 {0}.
+# Vocabulary.CannonAimedAtSlot
+The cannons are aimed at slot {0}.	대포가 {0}번 칸을 조준하고 있습니다.
+# Vocabulary.CannonAimedHere
+The cannons are aimed here.	대포가 이곳을 조준하고 있습니다.
+# Vocabulary.PirateRodentPhase
+The Pirate Skull opens a pack of cards and calls in their crew.	해적 해골이 카드 팩을 열고 선원들을 불러들입니다.
+# Vocabulary.PirateShipPhase
+The Pirate Skull calls their ship. It bears down on the cabin.	해적 해골이 배를 부릅니다. 배가 오두막을 향해 돌진해 옵니다.
+# Vocabulary.LeshyMaskFlip
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	레쉬가 가면을 벗어 위아래로 뒤집은 뒤 다시 씁니다. 이제 레쉬는 {0}입니다.
+# Vocabulary.AnglerBaitPhase
+{0} clears his side of the table.	{0}, 자기 쪽 테이블을 비웁니다.
+# Vocabulary.AnglerShark
+A Shark takes the bait's place in slot {0}.	상어가 미끼 대신 {0}번 칸을 차지합니다.
+# Vocabulary.ActorPossessive
+their	상대
+# Vocabulary.ActorPossessive
+his	자기
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean.	{0}, 자기 쪽 테이블을 싹 쓸어냅니다.
+# Vocabulary.TrapperPhaseTwo
+pelt	가죽
+# Vocabulary.TrapperPhaseTwo
+pelts	가죽
+# Vocabulary.TrapperPhaseTwo
+returns	돌아옵니다
+# Vocabulary.TrapperPhaseTwo
+return	돌아옵니다
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean, and 	{0}, 자기 쪽 테이블을 싹 쓸어내고, 
+# Vocabulary.TrapperPhaseTwo
+{0} played {1} {2} to your hand.	냈던 {1} {0}, 내 패로 {2}.
+# Vocabulary.GrizzlyPhase
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	화면이 지직거리고 {0}의 눈이 붉게 빛납니다. 회색곰 떼가 벽처럼 몰려듭니다...
+# Vocabulary.GrizzliesFillEverySlot
+Every opposing slot on the board is filled with Grizzlies...	보드의 상대 쪽 칸이 모두 회색곰으로 가득 찹니다...
+# Vocabulary.TradeScreenOpen
+card	카드
+# Vocabulary.TradeScreenOpen
+Begin trading. 	교환을 시작합니다. 
+# Vocabulary.TradeScreenOpen
+Trade: {0} {1} to choose from, 	교환: 고를 수 있는 {1} {0}, 
+# Vocabulary.TradeScreenOpen
+{0} {1} in hand. 	패에 {1} {0}. 
+# Vocabulary.TradeScreenOpen
+Arrow keys to browse, Enter to trade. Press H for help.	화살표로 탐색, 엔터로 교환. H 키로 도움말.
+# Vocabulary.TradeOption
+in the queue, slot {0}	대기열, {0}번 칸
+# Vocabulary.TradeOption
+on the board, slot {0}	보드, {0}번 칸
+# Vocabulary.TradeOption
+Option {0} of {1}, {2}. {3}	선택지 {1}개 중 {0}번째, {2}. {3}
+# Vocabulary.TradeOptionUnreadable
+Option {0} of {1}. {2}	선택지 {1}개 중 {0}번째. {2}
+# Vocabulary.TradeNoPelt
+You have no pelt to trade with.	교환할 가죽이 없습니다.
+# Vocabulary.AdjacentSpawnTriggers
+slot {0}	{0}번 칸
+# Vocabulary.AdjacentSpawnTriggers
+slot {0} and slot {1}	{0}번 칸과 {1}번 칸
+# Vocabulary.AdjacentSpawnTriggers
+{0}'s {1} ability triggers, placing a {2} in {3}.	{0}의 {1} 능력이 발동합니다. {3}에 {2} 카드가 놓입니다.
+# Vocabulary.LooseTailTriggers
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	{0}의 헐거운 꼬리 능력이 발동합니다. 꼬리를 미끼로 떨어뜨리고 
+# Vocabulary.LooseTailTriggers
+and moves to slot {0}.	{0}번 칸으로 이동합니다.
+# Vocabulary.AmorphousTriggers
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	{0}의 비정질 능력이 발동합니다. 변이하여 {1} 능력을 얻습니다.
+# Vocabulary.TidalLockTriggers
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	{0}의 조력 고정 능력이 발동합니다. 내 {1} 카드를 궤도로 끌어당겨 소멸시킵니다.
+# Vocabulary.TrinketBearerTriggers
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	{0}의 싸구려 장신구 능력이 발동합니다. {2}번 아이템 칸에 {1} 아이템이 추가됩니다.
+# Vocabulary.BugReportKeyHelp
+Shift L saves a log file to your desktop for a bug report, this command works here and at any point during gameplay.	시프트 L 키로 버그 제보용 로그 파일을 바탕화면에 저장합니다. 이 명령은 여기서뿐 아니라 게임 중 언제든 사용할 수 있습니다.
+# Vocabulary.LogExported
+Log saved to your desktop as a .txt file. Attach it to your bug report.	로그를 바탕화면에 .txt 파일로 저장했습니다. 버그 제보에 첨부해 주세요.
+# Vocabulary.LogExportFailed
+The log could not be saved because {0}.	로그를 저장하지 못했습니다. 이유: {0}.
+# Vocabulary.SigilFizzles
+{0}'s {1} ability fizzles.	{0}의 {1} 능력이 불발됩니다.
+# Vocabulary.CorpseEaterTriggers
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	{0}의 죽음으로 패에 있는 {1}의 시체먹이 능력이 발동하여, 
+# Vocabulary.CorpseEaterTriggers
+playing itself into slot {0}.	스스로 {0}번 칸에 나옵니다.
+# Vocabulary.TradeTaken
+{0} traded for {1}.	{0} 한 장으로 {1} 카드를 얻었습니다.
+# Vocabulary.TradeHelp
+Trade pelts from your hand for cards on their board and queue. 	패의 가죽을 상대의 보드와 대기열에 있는 카드와 교환하세요. 
+# Vocabulary.TradeHelp
+Arrow keys browse, Enter trades. 	화살표로 탐색, 엔터로 교환. 
+# Vocabulary.TradeHelp
+You have {0} {1} in hand. 	패에 있는 {1}: {0}. 
+# Vocabulary.TradeHelp
+Trade until you run out of pelts, then the battle will continue.	가죽을 모두 쓸 때까지 교환할 수 있으며, 그 후 전투가 계속됩니다.
+# Vocabulary._containerDeathClause
+the cage is destroyed	우리가 부서집니다
+# Vocabulary._containerDeathClause
+the ice is destroyed	얼음이 깨집니다
+# Vocabulary.DeathClause
+is destroyed	파괴됩니다
+# Vocabulary.DeathClause
+dies	죽습니다
+# Vocabulary._deathFlavour
+ It quickly snaps shut...	 덫이 순식간에 철컥 닫힙니다...
+# Vocabulary.CaughtInTrapSentence
+{0} gets caught in the {1} and {2}.	{0}, {1}에 걸려 {2}.
+# Vocabulary.DeathTail
+destroyed	파괴됩니다
+# Vocabulary.NumberWord
+one	하나
+# Vocabulary.NumberWord
+two	둘
+# Vocabulary.NumberWord
+three	셋
+# Vocabulary.NumberWord
+four	넷
+# Vocabulary.NumberWord
+five	다섯
+# Vocabulary.NumberWord
+six	여섯
+# Vocabulary.NumberWord
+seven	일곱
+# Vocabulary.NumberWord
+eight	여덟
+# Vocabulary.Angler
+Angler	낚시꾼
+# Vocabulary.BoneCount
+1 bone	뼈 1개
+# Vocabulary.BoneCount
+{0} bones	뼈 {0}개
+# Vocabulary.BoneLord
+Bone Lord	뼈의 왕
+# Vocabulary.BoneOrBones
+bone	뼈
+# Vocabulary.BoneOrBones
+bones	뼈
+# Vocabulary.BothOrAll
+Both	둘 다
+# Vocabulary.BothOrAll
+All 	총 
+# Vocabulary.BrowseChooseRepeat_
+Arrows browse, Enter chooses, Space repeats your position. 	화살표로 탐색, 엔터로 선택, 스페이스로 현재 위치 반복. 
+# Vocabulary.Campfire
+Campfire	모닥불
+# Vocabulary.CardCouldNotBeRead
+This card could not be read.	이 카드를 읽을 수 없습니다.
+# Vocabulary.CardCount
+1 card	카드 1장
+# Vocabulary.CardCount
+{0} cards	카드 {0}장
+# Vocabulary.DamageCount
+1 damage	피해 1
+# Vocabulary.DamageCount
+{0} damage	피해 {0}
+# Vocabulary.DeathCard
+Death card	죽음 카드
+# Vocabulary.HealthRemainingCount
+1 health remaining	체력 1 남음
+# Vocabulary.HealthRemainingCount
+{0} health remaining	체력 {0} 남음
+# Vocabulary.ItemPickupName
+Item pickup	아이템 획득
+# Vocabulary.Kin
+Kin	친족
+# Vocabulary.Leshy
+Leshy	레쉬
+# Vocabulary.Mycologists
+Mycologists	진균학자
+# Vocabulary.OptionOf
+{0} Option {1} of {2}.	{0} 선택지 {2}개 중 {1}번째.
+# Vocabulary.Prospector
+Prospector	탐광자
+# Vocabulary.ReceivedBonesLine
+Received {0} {1}.	{1} {0}개를 받았습니다.
+# Vocabulary.SacrificeStone
+Sacrifice stone	희생의 돌
+# Vocabulary.Trader
+Trader	상인
+# Vocabulary.Trapper
+Trapper	덫사냥꾼
+# Vocabulary.UnnamedOption
+Unnamed option	이름 없는 선택지
+# Vocabulary.Woodcarver
+Woodcarver	목각사
+# Vocabulary.YourDeck
+Your deck.	내 덱.
+# Vocabulary.Mod.VersionOrUnknown
+unknown	알 수 없음
+# Vocabulary.Mod.IkmaVersionLoaded
+IKMA version {0} loaded.	IKMA 버전 {0} 로드 완료.
+# Vocabulary.Mod.Loading
+Loading.	로딩 중.
+# Vocabulary.Mod.UpdateDownloaded
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA 버전 {0} 다운로드 완료. 다음에 게임을 시작할 때 설치됩니다.
+# Vocabulary.Mod.UpdatedFrom
+Updated from version {0}.	버전 {0}에서 업데이트되었습니다.
+# Vocabulary.Mod.UpdateAvailableAsk
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	IKMA 새 버전 {0} 사용 가능. F9 키를 누르면 다운로드하고, F10 키를 누르면 이 버전을 건너뜁니다.
+# Vocabulary.Mod.UpdateDownloadedAsk
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA 버전 {0} 다운로드 완료. F9 키를 누르면 다음에 게임을 시작할 때 설치하고, F10 키를 누르면 이 버전을 건너뜁니다.
+# Vocabulary.Mod.UpdateDownloading
+Downloading IKMA version {0}.	IKMA 버전 {0} 다운로드 중.
+# Vocabulary.Mod.UpdateWillInstall
+IKMA version {0} installs the next time you start the game.	IKMA 버전 {0}: 다음에 게임을 시작할 때 설치됩니다.
+# Vocabulary.Mod.UpdateDownloadFailed
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	IKMA 업데이트를 다운로드하지 못했습니다. 다음에 게임을 시작할 때 다시 제안합니다.
+# Vocabulary.Boot.OpeningScreenEnterPresses
+Opening screen. Enter presses the play button. Space repeats the description.	시작 화면. 엔터로 플레이 버튼을 누릅니다. 스페이스로 설명을 다시 듣습니다.
+# Vocabulary.Title.OptionFallback
+Option	선택지
+# Vocabulary.Title.NewGame
+New Game	새 게임
+# Vocabulary.Title.Continue
+Continue	계속
+# Vocabulary.Title.Options
+Options	설정
+# Vocabulary.Title.Credits
+Credits	크레딧
+# Vocabulary.Title.Quit
+Quit	그만두기
+# Vocabulary.Title.CardLibrary
+Card Library	카드 라이브러리
+# Vocabulary.Title.EditDeck
+Edit Deck	덱 편집
+# Vocabulary.Title.KayceesMod
+Kaycee's Mod	케이시 모드
+# Vocabulary.Title.ReturnToStartMenu
+Return To Start Menu	시작 메뉴로 돌아가기
+# Vocabulary.Title.EndRun
+End Run	도전 끝내기
+# Vocabulary.Title.Concede
+Concede	수락
+# Vocabulary.Title.InscryptionTitleScreenArrows
+Inscryption title screen. Arrows to navigate, Enter to confirm.	인스크립션 타이틀 화면. 화살표로 이동, 엔터로 확인.
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Inscryption title screen. Arrow keys browse the cards. 	인스크립션 타이틀 화면. 화살표 키로 카드를 탐색합니다. 
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Enter chooses the one you are on. Space repeats it. 	엔터로 현재 카드를 선택합니다. 스페이스로 다시 듣습니다. 
+# Vocabulary.Menus.InscryptionKayceesModMain
+Inscryption. Kaycee's Mod main menu	인스크립션. 케이시 모드 메인 메뉴
+# Vocabulary.Menus.Unlocks
+Unlocks	해금 내역
+# Vocabulary.Menus.CardsUnlocked
+Cards Unlocked	해금한 카드
+# Vocabulary.Menus.Cards
+Cards	카드
+# Vocabulary.Menus.Challenges
+Challenges	챌린지
+# Vocabulary.Menus.ConfirmChallenges
+Confirm Challenges	챌린지 확인
+# Vocabulary.Menus.SelectStarterDeck
+Select Starter Deck	시작 덱 선택
+# Vocabulary.Menus.Stats
+Stats	통계
+# Vocabulary.Menus.RunComplete
+Run Complete	도전 완료
+# Vocabulary.Menus.Devlog
+Devlog	개발자 일지
+# Vocabulary.Menus.NewChallenges
+New Challenges	새 챌린지
+# Vocabulary.Menus.NewStarterDeck
+New Starter Deck	새 시작 덱
+# Vocabulary.Menus.StarterDecksUnlocked
+Starter Deck Unlocked	해금한 시작 덱
+# Vocabulary.Menus.NewRun
+New run	새 도전
+# Vocabulary.Menus.MenuOrPrettyName
+Menu	메뉴
+# Vocabulary.Menus.CoordsExpanded
+coordinates	좌표
+# Vocabulary.Menus.EntryLine
+Entry {0}. {1}	항목 {0}. {1}
+# Vocabulary.Menus.NoOptionsAvailable
+{0}. No options available.	{0}. 사용 가능한 선택지가 없습니다.
+# Vocabulary.Menus.BackspaceToGoBack
+Backspace to go back.	백스페이스로 뒤로 가기.
+# Vocabulary.Menus.ArrowsToNavigate
+Arrows to navigate	화살표로 이동
+# Vocabulary.Menus.AnnounceScreenBackspaceToGo
+, Backspace to go back.	, 백스페이스로 뒤로 가기.
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Arrows to navigate, Enter to confirm	화살표로 이동, 엔터로 확인
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Enter to confirm	엔터로 확인
+# Vocabulary.Menus.PositionNounFor
+Deck	덱
+# Vocabulary.Menus.OfCount
+{0} {1} of {2}.	{0} {2}개 중 {1}번째.
+# Vocabulary.Menus.OfCount
+{0} of {1}.	{1}개 중 {0}번째.
+# Vocabulary.Menus.EnabledOrDisabled
+enabled	활성화됨
+# Vocabulary.Menus.EnabledOrDisabled
+disabled	비활성화됨
+# Vocabulary.Menus.ChallengeFallback
+Challenge	챌린지
+# Vocabulary.Menus.ChallengePointCount
+1 challenge point.	챌린지 포인트 1점.
+# Vocabulary.Menus.ChallengePointCount
+{0} challenge points.	챌린지 포인트 {0}점.
+# Vocabulary.Menus.OfChallengePoints
+{0} of {1} challenge points.	챌린지 포인트 {1}점 중 {0}점.
+# Vocabulary.Menus.BackPressed
+Back.	뒤로.
+# Vocabulary.Menus.UnknownOption
+unknown option	알 수 없는 선택지
+# Vocabulary.Menus.NumberSign
+number 	번호 
+# Vocabulary.Menus.StartRun
+Start Run	시작하기
+# Vocabulary.Menus.LockedStarterDeck
+Locked starter deck	잠긴 시작 덱
+# Vocabulary.Menus.StarterDeck
+Starter Deck: {0}.	시작 덱: {0}.
+# Vocabulary.Menus.CardOf
+Card {0} of {1}	카드 {1}장 중 {0}번째
+# Vocabulary.Menus.CardsAndOf
+Cards 	카드 
+# Vocabulary.Menus.CardsAndOf
+ and {0} of {1}	 및 {0}번째, 총 {1}장
+# Vocabulary.Menus.PreviousPage
+Previous page	이전 페이지
+# Vocabulary.Menus.NextPage
+Next page	다음 페이지
+# Vocabulary.Menus.PlusChallengePointCount
+plus 1 challenge point	챌린지 포인트 1점 추가
+# Vocabulary.Menus.PlusChallengePointCount
+plus {0} challenge points	챌린지 포인트 {0}점 추가
+# Vocabulary.Menus.ActiveLabel
+Active, 	활성, 
+# Vocabulary.Menus.RandomStarterDeck
+Random Starter Deck	무작위 시작 덱
+# Vocabulary.Menus.UnlabelledOrText
+unlabelled option	라벨 없는 선택지
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now full screen	이제 전체 화면입니다
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now windowed	이제 창 모드입니다
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display resolution changed	화면 해상도가 변경되었습니다
+# Vocabulary.Options.ResolutionChanged
+, {0} by {1}	, {0} 곱하기 {1}
+# Vocabulary.Options.TextLanguage
+Text Language	텍스트 언어
+# Vocabulary.Options.FullScreenOrWindowed
+Full screen	전체 화면
+# Vocabulary.Options.FullScreenOrWindowed
+Windowed	창 모드
+# Vocabulary.Options.Resolution
+{0} by {1}	{0} 곱하기 {1}
+# Vocabulary.Options.OnOrOff
+On	켜짐
+# Vocabulary.Options.OnOrOff
+Off	꺼짐
+# Vocabulary.Options.GammaZero
+Zero	0
+# Vocabulary.Options.DefaultMark
+, default	, 기본값
+# Vocabulary.Options.UnnamedSetting
+Unnamed setting.	이름 없는 설정.
+# Vocabulary.Options.English
+English	영어
+# Vocabulary.Options.French
+French	프랑스어
+# Vocabulary.Options.Italian
+Italian	이탈리아어
+# Vocabulary.Options.German
+German	독일어
+# Vocabulary.Options.Spanish
+Spanish	스페인어
+# Vocabulary.Options.BrazilianPortuguese
+Brazilian Portuguese	브라질 포르투갈어
+# Vocabulary.Options.Turkish
+Turkish	터키어
+# Vocabulary.Options.Russian
+Russian	러시아어
+# Vocabulary.Options.Japanese
+Japanese	일본어
+# Vocabulary.Options.Korean
+Korean	한국어
+# Vocabulary.Options.SimplifiedChinese
+Simplified Chinese	중국어 간체
+# Vocabulary.Options.TraditionalChinese
+Traditional Chinese	중국어 번체
+# Vocabulary.Options.UnnamedSettingPressEnter
+Unnamed setting. Press Enter to adjust.	이름 없는 설정. 엔터를 눌러 조정하세요.
+# Vocabulary.Options.PressEnterToAdjust
+{0} Press Enter to adjust.	{0} 엔터를 눌러 조정하세요.
+# Vocabulary.Options.OptionsMenu
+Options Menu	설정 메뉴
+# Vocabulary.Options.PageOf
+ Page {0} of {1}.	 {1}페이지 중 {0}페이지.
+# Vocabulary.Options.PressHForHelp
+{0}.{1} Press H for help.	{0}.{1} H 키로 도움말.
+# Vocabulary.Options.ThatSettingCannotBe
+That setting cannot be changed.	이 설정은 변경할 수 없습니다.
+# Vocabulary.Options.SettingFallback
+Setting	설정
+# Vocabulary.Options.ArrowsToAdjustBackspace
+Arrows to adjust. Backspace to return.	화살표로 조정, 백스페이스로 돌아가기.
+# Vocabulary.Options.BackThenRowPrompt
+Back. {0}	뒤로. {0}
+# Vocabulary.Pause.LockedMark
+, locked	, 잠김
+# Vocabulary.Pause.OptionCount
+1 option	선택지 1개
+# Vocabulary.Pause.OptionCount
+{0} options	선택지 {0}개
+# Vocabulary.Pause.PauseMenu
+Pause menu. {0}.	일시정지 메뉴. {0}.
+# Vocabulary.Pause.GameSettings
+Game settings.	게임 설정.
+# Vocabulary.Pause.DisplaySettings
+Display settings.	디스플레이 설정.
+# Vocabulary.Pause.AudioSettings
+Audio settings.	오디오 설정.
+# Vocabulary.Pause.Page
+Page {0}.	{0}페이지.
+# Vocabulary.Pause.NoActiveChallenges
+No active challenges.	활성화된 챌린지가 없습니다.
+# Vocabulary.Pause.ActiveChallenges
+Active Challenges. {0}.	활성 챌린지. {0}.
+# Vocabulary.Pause.UnnamedOption
+Unnamed option.	이름 없는 선택지.
+# Vocabulary.Pause.OptionOf
+{0}. Option {1} of {2}.	{0}. 선택지 {2}개 중 {1}번째.
+# Vocabulary.Pause.ThatOptionIsLocked
+That option is locked.	해당 선택지는 잠겨 있습니다.
+# Vocabulary.Pause.OptionsAndSwitchPages
+Options. 1, 2, and 3 switch pages. 	설정. 1, 2, 3 키로 페이지를 전환합니다. 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	1페이지는 게임 설정, 2페이지는 디스플레이 설정, 3페이지는 오디오 설정입니다. 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Arrows browse the settings, Enter selects a setting to adjust, 	화살표로 설정 탐색, 엔터로 조정할 설정 선택, 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Backspace returns. 	백스페이스로 돌아가기. 
+# Vocabulary.Pause.TheyAreTheLast
+ They are the last stop past the options.	 챌린지는 선택지 목록의 맨 끝에 있습니다.
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Pause menu. Arrows browse the options, Enter chooses, 	일시정지 메뉴. 화살표로 선택지 탐색, 엔터로 선택, 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Space repeats your position and the run information, 	스페이스로 현재 위치와 도전 정보 반복, 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Backspace or Escape closes the menu.	백스페이스 또는 ESC로 메뉴 닫기.
+# Vocabulary.Map.Encounter
+Encounter	전투
+# Vocabulary.Map.TotemBattle
+Totem battle	토템 전투
+# Vocabulary.Map.BossBattle
+Boss battle	보스 전투
+# Vocabulary.Map.CardChoice
+Card choice	카드 선택
+# Vocabulary.Map.CardBundleChoice
+Card bundle choice	카드 묶음 선택
+# Vocabulary.Map.RareCardChoice
+Rare card choice	레어 카드 선택
+# Vocabulary.Map.CardRemoval
+Card removal	카드 제거
+# Vocabulary.Map.CardRecycling
+Card recycling	카드 재활용
+# Vocabulary.Map.CardCopying
+Card copying	카드 복제
+# Vocabulary.Map.BoulderChoice
+Boulder choice	바위 선택
+# Vocabulary.Map.SideDeckChange
+Side deck change	사이드 덱 변경
+# Vocabulary.Map.DeckTrial
+Deck trial	덱 시련
+# Vocabulary.Map.VictoryFeast
+Victory feast	승리의 만찬
+# Vocabulary.Map.RandomChoice
+Random	무작위
+# Vocabulary.Map.CostChoice
+Cost	비용
+# Vocabulary.Map.CannotRightNow
+Cannot {0} right now.	{0}: 지금은 할 수 없습니다.
+# Vocabulary.Map.BringYourDeckUp
+bring your deck up	덱 보기
+# Vocabulary.Map.YouAreAlreadyStanding
+You are already standing.	이미 서 있습니다.
+# Vocabulary.Map.StandUp
+stand up	일어서기
+# Vocabulary.Map.StandingUpFromThe
+Standing up from the table. Press H for help.	테이블에서 일어섭니다. H 키로 도움말.
+# Vocabulary.Map.YouAreAt
+You are at {0}.	현재 위치: {0}.
+# Vocabulary.Map.ReturnTo
+return to {0}	{0}에 돌아가기
+# Vocabulary.Map.BackAt
+Back at {0}.	{0}에 돌아왔습니다.
+# Vocabulary.Map.YouAreAtThe
+You are at the map.	지도 화면입니다.
+# Vocabulary.Map.ReturnToTheMap
+return to the map	지도로 돌아가기
+# Vocabulary.Map.GameMap
+Game map.	게임 지도.
+# Vocabulary.Map.ReturningToTheTable
+Returning to the table.	테이블로 돌아갑니다.
+# Vocabulary.Map.YouStepBackPress
+You step back. Press Backspace again to return to the table.	뒤로 물러납니다. 백스페이스를 한 번 더 누르면 테이블로 돌아갑니다.
+# Vocabulary.Map.Counterclockwise
+counterclockwise	시계 반대 방향
+# Vocabulary.Map.Clockwise
+clockwise	시계 방향
+# Vocabulary.Map.TurnedDegrees
+Turned {0} 90 degrees.	{0}으로 90도 회전했습니다.
+# Vocabulary.Map.ClockHandTurned
+ turned.	 회전.
+# Vocabulary.Map.ToOclock
+{0} to {1} o'clock.	{0}, {1}시.
+# Vocabulary.Map.MechanismCracksAndThe
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	장치가 딸깍 풀리며 금고 문이 활짝 열립니다. 안에는 피투성이로 짓이겨진 커다란 살덩어리가 있습니다.
+# Vocabulary.Map.YouStepBack
+You step back.	뒤로 물러납니다.
+# Vocabulary.Map.YouStepBackFrom
+You step back from the {0}.	{0}에서 물러납니다.
+# Vocabulary.Map.YouFocusInOrYouFocusOn
+You focus on the {0}.	{0}에 집중합니다.
+# Vocabulary.Map.YouFocusIn
+You focus in.	가까이 들여다봅니다.
+# Vocabulary.Map.RulebookIsNotWithin
+The rulebook is not within reach.	룰북이 손에 닿지 않습니다.
+# Vocabulary.Map.InsideTheSafeIs
+Inside the safe is a large mass of bloodied mangled flesh.	금고 안에는 피투성이로 짓이겨진 커다란 살덩어리가 있습니다.
+# Vocabulary.Map.Facing
+Facing {0}.	바라보는 방향: {0}.
+# Vocabulary.Map.NothingIsDirectlyIn
+Nothing is directly in front of you. {0}	바로 앞에 아무것도 없습니다. {0}
+# Vocabulary.Map.FocusControlsAndExamine
+Focus controls. 	집중 조작. 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace steps back from your focused object. 	백스페이스로 집중한 물체에서 물러납니다. 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace again returns you to the game table and opens the map.	백스페이스를 한 번 더 누르면 게임 테이블로 돌아가 지도를 엽니다.
+# Vocabulary.Map.ExamineKeys_
+1, 2 and 3 examine what is in front of you. 	1, 2, 3 키로 앞에 있는 것을 살펴봅니다. 
+# Vocabulary.Map.StandingControlsUpArrow
+Standing controls. Up arrow steps forward, down arrow steps back. 	서 있을 때 조작. 위쪽 화살표로 앞으로, 아래쪽 화살표로 뒤로 이동합니다. 
+# Vocabulary.Map.StandingControlsUpArrow
+Left and right arrows step to the side. 	좌우 화살표로 옆으로 이동합니다. 
+# Vocabulary.Map.StandingControlsUpArrow
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A 키로 시계 반대 방향 90도, D 키로 시계 방향 90도 회전합니다. 
+# Vocabulary.Map.StandingControlsUpArrow
+Backspace returns you to the game table and opens the map.	백스페이스로 게임 테이블로 돌아가 지도를 엽니다.
+# Vocabulary.Map.Woodlands
+The Woodlands	삼림 지대
+# Vocabulary.Map.Wetlands
+The Wetlands	습지
+# Vocabulary.Map.SnowLine
+The Snow Line	설선
+# Vocabulary.Map.Beach
+The Beach	해변
+# Vocabulary.Map.PathToTheCabin
+the path to the Cabin	오두막으로 가는 길
+# Vocabulary.Map.YouHaveArrivedAt
+You have arrived at {0}	{0}에 도착했습니다
+# Vocabulary.Map.WhereSentenceYouAreAt
+You are at {0}	현재 위치: {0}
+# Vocabulary.Map.PlaceName
+the beginning of a new map	새 지도의 시작 지점
+# Vocabulary.Map.UnknownLocation
+unknown location	알 수 없는 위치
+# Vocabulary.Map.MapReady
+Map ready.	지도 준비 완료.
+# Vocabulary.Map.PathCount
+1 path	경로 1개
+# Vocabulary.Map.PathCount
+{0} paths	경로 {0}개
+# Vocabulary.Map.MapAheadArrowsTo
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	지도. {0}. 앞에 {1}. 화살표로 탐색, 스페이스로 상세 정보, 엔터로 이동, 시프트와 위쪽 화살표로 덱 보기.
+# Vocabulary.Map.MapAwaitingInputPress
+Map. Awaiting input. Press Space for your position, H for help.	지도. 입력 대기 중. 스페이스로 현재 위치, H 키로 도움말.
+# Vocabulary.Map.AwaitingPathSelectionH
+Awaiting path selection. H, for help.	경로 선택 대기 중. H 키로 도움말.
+# Vocabulary.Map.First
+First	첫 번째
+# Vocabulary.Map.Second
+Second	두 번째
+# Vocabulary.Map.Third
+Third	세 번째
+# Vocabulary.Map.Fourth
+Fourth	네 번째
+# Vocabulary.Map.Fifth
+Fifth	다섯 번째
+# Vocabulary.Map.Sixth
+Sixth	여섯 번째
+# Vocabulary.Map.Seventh
+Seventh	일곱 번째
+# Vocabulary.Map.Eighth
+Eighth	여덟 번째
+# Vocabulary.Map.PathNumber
+Path {0}	경로 {0}
+# Vocabulary.Map.PathThen
+{0} path: {1}	{0} 경로: {1}
+# Vocabulary.Map.MorePathsNotRead
+ {0} more paths not read.	 읽지 않은 경로가 {0}개 더 있습니다.
+# Vocabulary.Map.MapUnavailable
+Map unavailable.	지도를 읽을 수 없습니다.
+# Vocabulary.Map.NoPathsAhead
+{0}. No paths ahead.	{0}. 앞에 경로가 없습니다.
+# Vocabulary.Map.OptionNode
+Option {0}: {1}	선택지 {0}: {1}
+# Vocabulary.Map.YouAreOnOption
+ You are on Option {0} of {1}.	 현재 선택지 {1}개 중 {0}번째입니다.
+# Vocabulary.Map.LeftAndRightArrows
+Left and right arrows to browse, 	좌우 화살표로 탐색, 
+# Vocabulary.Map.AheadEnterToTravel
+{0}. {1} ahead. {2}.{3} 	{0}. 앞에 {1}. {2}.{3} 
+# Vocabulary.Map.AheadEnterToTravel
+Enter to travel, Shift+Up to display deck.	엔터로 이동, 시프트와 위쪽 화살표로 덱 보기.
+# Vocabulary.Map.ArrivedAt
+Arrived at {0}.	{0}에 도착했습니다.
+# Vocabulary.Cabin.Safe
+Safe	금고
+# Vocabulary.Cabin.Woodcarving
+woodcarving	목각
+# Vocabulary.Cabin.LargePictureFrame
+Large Picture Frame	큰 액자
+# Vocabulary.Cabin.Gramophone
+Gramophone	축음기
+# Vocabulary.Cabin.Skull
+skull	해골
+# Vocabulary.Cabin.SettlerMan
+Settler Man	개척민 남자
+# Vocabulary.Cabin.SettlerWoman
+Settler Woman	개척민 여자
+# Vocabulary.Cabin.Chief
+Chief	족장
+# Vocabulary.Cabin.Wildling
+Wildling	야만인
+# Vocabulary.Cabin.Enchantress
+Enchantress	요술사
+# Vocabulary.Cabin.Gravedigger
+Gravedigger	도굴꾼
+# Vocabulary.Cabin.Robot
+Robot	로봇
+# Vocabulary.Cabin.Head
+head	머리
+# Vocabulary.Cabin.Arms
+arms	팔
+# Vocabulary.Cabin.Body
+body	몸통
+# Vocabulary.Cabin.HourHand
+Hour hand	시침
+# Vocabulary.Cabin.MinuteHand
+Minute hand	분침
+# Vocabulary.Cabin.SecondHand
+Second hand	초침
+# Vocabulary.Hotkeys.NothingHereCanBe
+Nothing here can be read yet. Escape opens the pause menu.	아직 읽을 수 있는 것이 없습니다. ESC로 일시정지 메뉴를 엽니다.
+# Vocabulary.Hotkeys.NoPathSelectedUse
+No path selected. Use left and right arrows to browse paths.	선택된 경로가 없습니다. 좌우 화살표로 경로를 탐색하세요.
+# Vocabulary.Hotkeys.MapIsStillSettling
+The map is still settling. Try again in a moment.	지도가 아직 준비 중입니다. 잠시 후 다시 시도하세요.
+# Vocabulary.Hotkeys.CardPlacementCannotBe
+Card placement cannot be cancelled. Choose a slot.	카드 배치는 취소할 수 없습니다. 칸을 선택하세요.
+# Vocabulary.Hotkeys.YouAreInAn
+You are in an encounter. Press H for help.	전투 중입니다. H 키로 도움말.
+# Vocabulary.Hotkeys.UnableToEndTurn
+Unable to end turn: bell method not found.	턴을 끝낼 수 없습니다: 종 메서드를 찾을 수 없습니다.
+# Vocabulary.Hotkeys.DrawPilesUnavailable
+Draw piles unavailable.	뽑기 더미를 읽을 수 없습니다.
+# Vocabulary.Hotkeys.NoCardsRemainingIn
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	내 덱에 남은 카드가 없습니다. S 키로 다람쥐 덱에서 뽑으세요.
+# Vocabulary.Hotkeys.NoCardsRemainingInThe
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	다람쥐 덱에 남은 카드가 없습니다. D 키로 내 덱에서 뽑으세요.
+# Vocabulary.Hotkeys.DrawPileUnavailable
+Draw pile unavailable.	뽑기 더미를 읽을 수 없습니다.
+# Vocabulary.Hotkeys.Drew
+Drew {0}.	뽑은 카드: {0}.
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Ability	도장 능력
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Abilities	도장 능력
+# Vocabulary.Hotkeys.DrewItGainsAnd
+Drew {0}. It gains {1}: {2}.	뽑은 카드: {0}. 획득한 {1}: {2}.
+# Vocabulary.Hotkeys.FinishPlacingYourCard
+Finish placing your card before using an item.	아이템을 사용하기 전에 카드 배치를 끝내세요.
+# Vocabulary.Hotkeys.NoItems
+No items.	아이템이 없습니다.
+# Vocabulary.Hotkeys.ItemUnavailable
+Item unavailable.	아이템을 사용할 수 없습니다.
+# Vocabulary.Hotkeys.ItemEmpty
+Item {0}: empty.	{0}번 아이템: 비어 있음.
+# Vocabulary.Hotkeys.ItemLine
+Item {0}: {1}	{0}번 아이템: {1}
+# Vocabulary.Hotkeys.CutUpOneOf
+# Vocabulary.Hotkeys.PlaceAWeightOn
+Place a weight on the scales. The pain is temporary.	저울에 무게를 올립니다. 고통은 잠시일 뿐입니다.
+# Vocabulary.Hotkeys.HookACardTo
+Hook a card to take it as your own. Card must enter an empty space.	카드 하나를 갈고리로 걸어 내 것으로 만듭니다. 카드는 빈 칸으로 들어와야 합니다.
+# Vocabulary.Hotkeys.SkinOneOfYour
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	상대 카드 하나의 가죽을 벗깁니다. 그 카드는 죽고, 패에 가죽 카드가 추가됩니다.
+# Vocabulary.Hotkeys.SearchYourDeckFor
+Search your deck for any card and add it into your hand.	덱을 뒤져 원하는 카드를 패에 넣습니다.
+# Vocabulary.Hotkeys.UseToImmediatelyGain
+Use to immediately gain 4 Bones.	사용하면 즉시 뼈 4개를 얻습니다.
+# Vocabulary.Hotkeys.PlaceASignificantWeight
+Place a significant weight on the scales. The pain will linger...	저울에 상당한 무게를 올립니다. 고통이 오래 남을 것입니다...
+# Vocabulary.Hotkeys.ItemIsAlreadyBeing
+An item is already being used.	이미 아이템을 사용 중입니다.
+# Vocabulary.Hotkeys.ThereIsNoItem
+There is no item {0}.	{0}번 아이템이 없습니다.
+# Vocabulary.Hotkeys.ItemIsEmpty
+Item {0} is empty.	{0}번 아이템 칸이 비어 있습니다.
+# Vocabulary.Hotkeys.CouldNotBeUsed
+{0} could not be used. Item activation is not yet supported for this slot.	{0}: 사용할 수 없습니다. 이 칸의 아이템 사용은 아직 지원되지 않습니다.
+# Vocabulary.Hotkeys.Using
+Using {0}.	{0} 사용 중.
+# Vocabulary.Hotkeys.IsStillWaitingFor
+{0} is still waiting for input.	{0}: 아직 입력을 기다리고 있습니다.
+# Vocabulary.Hotkeys.WasNotUsed
+{0} was not used.	{0}: 사용되지 않았습니다.
+# Vocabulary.Hotkeys.UsingTheLuckyClover
+Using the Lucky Clover discards all of these cards for new ones. 	행운의 클로버를 사용하면 이 카드들을 모두 버리고 새 카드를 받습니다. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Left and right arrows browse. Enter selects the card. 	좌우 화살표로 탐색, 엔터로 카드 선택. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Space repeats the current option. 	스페이스로 현재 선택지 반복. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R 키로 룰북 열기. 시프트와 위쪽 화살표로 덱 보기. 
+# Vocabulary.Hotkeys.NoBackOptionOn
+No back option on this screen.	이 화면에는 뒤로 가기 선택지가 없습니다.
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	메뉴 탐색. 화살표 키로 선택지 탐색, 엔터로 현재 선택지 선택. 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Backspace or Escape goes back. Space repeats the current option. 	백스페이스 또는 ESC로 뒤로 가기, 스페이스로 현재 선택지 반복. 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Shift R looks up the last ability you heard. 	시프트 R 키로 마지막으로 들은 능력을 찾아봅니다. 
+# Vocabulary.Hotkeys.NoValidTargets
+No valid targets.	유효한 대상이 없습니다.
+# Vocabulary.Hotkeys.ChooseATargetAvailable
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	대상을 선택하세요. 선택 가능한 대상 {0}개. {1} 화살표로 탐색, 엔터로 선택.
+# Vocabulary.Hotkeys.CannotCancelItemUse
+Cannot cancel item use, please choose a target.	아이템 사용은 취소할 수 없습니다. 대상을 선택하세요.
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target.	대상 선택 중.
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target for {0}.	{0}의 대상 선택 중.
+# Vocabulary.Hotkeys.ArrowKeysMoveBetween
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 화살표 키로 이 아이템을 쓸 수 있는 카드 사이를 이동합니다. 엔터로 선택합니다. 아이템은 한 번 사용하면 취소할 수 없습니다.
+# Vocabulary.Hotkeys.ThatTargetCouldNot
+That target could not be selected.	해당 대상을 선택할 수 없습니다.
+# Vocabulary.Hotkeys.IsDraggedDownTo
+{0} is dragged down to your side into slot {1}.	{0}, 내 쪽 {1}번 칸으로 끌려 내려옵니다.
+# Vocabulary.Hotkeys.UnknownSlot
+unknown slot.	알 수 없는 칸.
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Your slot	내 칸
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Opponent slot	상대 칸
+# Vocabulary.Hotkeys.TargetSlotEmpty
+{0} {1}: empty.	{0} {1}번: 비어 있음.
+# Vocabulary.Hotkeys.ThereIsNoIkma
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	이 화면에는 아직 IKMA 리더가 없어서 평소 조작이 적용되지 않습니다. 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+Space describes what is in front of you. Space repeats where you are. 	스페이스로 앞에 있는 것을 설명합니다. 스페이스로 현재 위치를 반복합니다. 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+This screen still needs the mouse until a reader is built for it.	리더가 만들어질 때까지 이 화면에서는 마우스가 필요합니다.
+# Vocabulary.Hotkeys.IkmaCannotReadThis
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}IKMA가 아직 이 화면을 읽을 수 없습니다. 게임이 여기서 입력을 기다리고 있습니다. 
+# Vocabulary.Hotkeys.MapControlsArrowsBrowse
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	지도 조작. 화살표: 앞의 선택지 탐색. 엔터: 이동. 스페이스: 현재 선택지 전체 듣기. B: 앞의 경로 읽기. 시프트와 위쪽 화살표: 덱 보기. I: 현재 아이템 듣기. R: 룰북 열기. 시프트와 아래쪽 화살표: 테이블에서 일어서기. H: 도움말.
+# Vocabulary.Hotkeys.PlacingACardLeft
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	카드 배치 중. 좌우 화살표: 칸 이동. 엔터: 확인. 보드 읽기 키도 계속 쓸 수 있습니다. H: 도움말.
+# Vocabulary.Hotkeys.ChoosingSacrificesLeftAnd
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	희생양 선택 중. 좌우 화살표: 내 보드 이동. 엔터: 현재 카드 희생. 희생은 한 번 시작하면 취소할 수 없습니다. 보드 읽기 키도 계속 쓸 수 있습니다. H: 도움말.
+# Vocabulary.Hotkeys.CannotTravelThere
+Cannot travel there.	그곳으로 이동할 수 없습니다.
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. {0} returned to hand.	취소했습니다. {0}, 패로 돌아갔습니다.
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. Card returned to hand.	취소했습니다. 카드가 패로 돌아갔습니다.
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+A sacrifice cannot be cancelled once started.	희생은 한 번 시작하면 취소할 수 없습니다.
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+Cannot cancel right now.	지금은 취소할 수 없습니다.
+# Vocabulary.Hotkeys.NoCardsToSacrifice
+No cards to sacrifice.	희생할 카드가 없습니다.
+# Vocabulary.Hotkeys.NoSlot
+No slot {0}.	{0}번 칸이 없습니다.
+# Vocabulary.Hotkeys.OnlyInHand
+Only {0} in hand.	패에 {0}만 있습니다.
+# Vocabulary.Hotkeys.NoCardsInHand
+No cards in hand are currently playable.	지금 낼 수 있는 카드가 패에 없습니다.
+# Vocabulary.Hotkeys.CardOrCardWord
+Card	카드
+# Vocabulary.Hotkeys.GainsFromYourTotem
+{0} gains {1} from your totem.	{0}, 토템에서 {1} 능력을 얻습니다.
+# Vocabulary.Hotkeys.RecentItemCount
+Recent item:	최근 아이템:
+# Vocabulary.Hotkeys.RecentItemCount
+Recent items:	최근 아이템:
+# Vocabulary.Hotkeys.NoRecentAbilityTo
+No recent ability to look up.	찾아볼 최근 능력이 없습니다.
+# Vocabulary.Hotkeys.NoDescriptionAvailableFor
+No description available for that ability.	해당 능력에 대한 설명이 없습니다.
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent ability:	최근 능력:
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent abilities:	최근 능력:
+# Vocabulary.Hotkeys.CannotPlayACard
+Cannot play a card right now.	지금은 카드를 낼 수 없습니다.
+# Vocabulary.Hotkeys.NoCardSelectedUse
+No card selected. Use left and right arrows to browse your hand first.	선택된 카드가 없습니다. 먼저 좌우 화살표로 패를 탐색하세요.
+# Vocabulary.Hotkeys.ThatCard
+That card	그 카드
+# Vocabulary.Hotkeys.ThatCardCouldNot
+That card could not be played.	그 카드를 낼 수 없습니다.
+# Vocabulary.Hotkeys.WasNotPlayed
+{0} was not played.	{0}, 내지 못했습니다.
+# Vocabulary.Hotkeys.NoCardInThis
+No card in this slot.	이 칸에는 카드가 없습니다.
+# Vocabulary.Hotkeys.SlotIsOccupiedBy
+Slot {0} is occupied by {1}. Choose an empty slot.	{0}번 칸에는 이미 {1} 카드가 있습니다. 빈 칸을 선택하세요.
+# Vocabulary.Hotkeys.PlayedInSlot
+{0} played in Slot {1}.	{0}, {1}번 칸에 냈습니다.
+# Vocabulary.Hotkeys.NoSlotRestrictionsTo
+No slot restrictions to step through.	넘겨 볼 칸 제한이 없습니다.
+# Vocabulary.Hotkeys.NoOtherSlotAvailable
+No other slot available for this card.	이 카드를 낼 수 있는 다른 칸이 없습니다.
+# Vocabulary.Hotkeys.Ability
+ Ability: {0}.	 능력: {0}.
+# Vocabulary.Hotkeys.AbilitiesAnd
+ Abilities: {0}.	 능력: {0}.
+# Vocabulary.Hotkeys.SlotWithCard
+Slot {0}: {1}, {2}/{3}.{4}{5}	{0}번 칸: {1}, 공격력 {2}, 체력 {3}.{4}{5}
+# Vocabulary.Hotkeys.SlotEmpty
+Slot {0}: empty.{1}	{0}번 칸: 비어 있음.{1}
+# Vocabulary.Hotkeys.ChooseASlotTo
+ Choose a slot to play {0}.	 {0} 카드를 낼 칸을 선택하세요.
+# Vocabulary.Hotkeys.SlotOccupiedBy
+Slot {0}: occupied by {1}.{2}{3}	{0}번 칸: 이미 차 있음, {1}.{2}{3}
+# Vocabulary.Hotkeys.SlotEmptyName
+Slot {0}: empty.{1}{2}	{0}번 칸: 비어 있음.{1}{2}
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifice	희생양
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifices	희생양
+# Vocabulary.PlayFlow.CostsBloodChooseLeft
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}의 비용은 피 {1}. 희생할 카드 {2}장을 선택하세요. 좌우 화살표로 이동, 엔터로 확인. 희생은 한 번 시작하면 취소할 수 없습니다.
+# Vocabulary.PlayFlow.Playing
+Playing {0}. 	{0} 내는 중. 
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}{1} 카드를 낼 칸을 선택하세요. 좌우 화살표로 이동, 엔터로 확인.{2}
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	칸을 선택하세요. 좌우 화살표로 이동, 엔터로 확인.{0}
+# Vocabulary.Board.Hand
+Hand: {0}. {1}.	패: {0}. {1}.
+# Vocabulary.Board.YourBoard
+Your board	내 보드
+# Vocabulary.Board.EnemyBoard
+Enemy board	적 보드
+# Vocabulary.Board.ResourcesUnavailable
+Resources unavailable.	자원 정보를 읽을 수 없습니다.
+# Vocabulary.Board.CandleLitCount
+ 1 candle lit.	 촛불 1개 켜짐.
+# Vocabulary.Board.CandleLitCount
+ {0} candles lit.	 촛불 {0}개 켜짐.
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has 1 candle.	 적 촛불 1개.
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has {0} candles.	 적 촛불 {0}개.
+# Vocabulary.Board.WoodcarvingKinTypeSigil
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 목각: 친족 {0}, 도장 능력 {1}.
+# Vocabulary.Board.YourDeckRemainingCard
+ Your deck: {0} remaining.	 내 덱: {0} 남음.
+# Vocabulary.Board.SquirrelDeckRemainingCard
+ Squirrel deck: {0} remaining.	 다람쥐 덱: {0} 남음.
+# Vocabulary.Board.ItemEmpty
+empty	비어 있음
+# Vocabulary.Board.ItemAtCursor
+Item {0}: {1}.	{0}번 아이템: {1}.
+# Vocabulary.Board.OpponentUnavailable
+Opponent unavailable.	상대 정보를 읽을 수 없습니다.
+# Vocabulary.Board.NoCardsQueued
+No cards queued.	대기 중인 카드가 없습니다.
+# Vocabulary.Board.BlockedForSlot
+Blocked for Slot {0}: 	{0}번 칸 진입 막힘: 
+# Vocabulary.Board.EnteringSlot
+Entering Slot {0}: 	{0}번 칸 진입 예정: 
+# Vocabulary.Board.UpcomingQueue
+Upcoming queue: {0}. {1}.	다가오는 대기열: {0}. {1}.
+# Vocabulary.Board.GetHandNamesText
+Your hand: {0}. {1}.	내 패: {0}. {1}.
+# Vocabulary.Board.SideEmpty
+{0}: empty	{0}: 비어 있음
+# Vocabulary.Board.SlotsList
+Slots 	칸 번호 
+# Vocabulary.Board.SlotNumber
+Slot {0}	{0}번 칸
+# Vocabulary.Board.SlotsOneTo
+Slots 1 to {0}	1번부터 {0}번 칸
+# Vocabulary.Board.CurrentlyStats
+currently {0}/{1}.	현재 공격력 {0}, 체력 {1}.
+# Vocabulary.Board.SideEmptyCannon
+{0}: empty{1}	{0}: 비어 있음{1}
+# Vocabulary.Board.NumberRange
+{0} to {1}	{0}부터 {1}까지
+# Vocabulary.Board.Ability
+. Ability: {0}	. 능력: {0}
+# Vocabulary.Board.AbilitiesAnd
+. Abilities: {0}	. 능력: {0}
+# Vocabulary.Board.CostsBloodCount
+costs 1 blood	비용 피 1
+# Vocabulary.Board.CostsBloodCount
+costs {0} blood	비용 피 {0}
+# Vocabulary.Board.CostsBoneCount
+costs 1 bone	비용 뼈 1
+# Vocabulary.Board.CostsBoneCount
+costs {0} bones	비용 뼈 {0}
+# Vocabulary.Board.GetScaleText
+Scales unavailable.	저울 정보를 읽을 수 없습니다.
+# Vocabulary.BoardChanges.MovesToSlot
+{0} moves to {1} slot {2}.	{0}, {1} {2}번 칸으로 이동합니다.
+# Vocabulary.BoardChanges.RightOrLeft
+right, 	오른쪽으로, 
+# Vocabulary.BoardChanges.RightOrLeft
+left, 	왼쪽으로, 
+# Vocabulary.BoardChanges.MovesFromSlotTo
+{0} {1} moves {2}from slot {3} to slot {4}.	{0} {1}, {2}{3}번 칸에서 {4}번 칸으로 이동합니다.
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+{0} {1} moves {2}	{0} {1}, {2}
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+from slot {0} to slot {1}.	{0}번 칸에서 {1}번 칸으로 이동합니다.
+# Vocabulary.BoardChanges.MovesDownToSlot
+{0} {1} moves down to slot {2}{3}.	{0} {1}, {2}번 칸으로 내려옵니다{3}.
+# Vocabulary.BoardChanges.IsPlayedInSlot
+{0} {1} is played in slot {2}{3}.	{0} {1}, {2}번 칸에 나옵니다{3}.
+# Vocabulary.BoardChanges.TargetingSlot
+ targeting slot {0}	 {0}번 칸을 노리고
+# Vocabulary.BoardChanges.EnemyIsQueued
+Enemy {0} is queued{1}.	적 {0}, {1} 대기열에 올라옵니다.
+# Vocabulary.BoardChanges.HasLeftSlot
+{0} {1} has left slot {2}.	{0} {1}, {2}번 칸을 떠났습니다.
+# Vocabulary.BoardChanges.ProspectorClearsHisQueue
+The Prospector clears his queue.	탐광자가 대기열을 비웁니다.
+# Vocabulary.BoardChanges.ItIsCarryingA
+, it is carrying a pack of cards	, 카드 팩을 들고 있습니다
+# Vocabulary.BoardChanges.Possessive
+Your	내
+# Vocabulary.BoardChanges.Possessive
+Enemy	적
+# Vocabulary.BoardChanges.SideWord
+your	내
+# Vocabulary.BoardChanges.SideWord
+enemy	적
+# Vocabulary.Cards.Fused
+Fused {0}	융합된 {0}
+# Vocabulary.Cards.GlitchedCardThisCard
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	글리치 카드. 이 카드는 하얗게 빛나며 지직거립니다. 카드를 내기 전까지 능력치를 알 수 없습니다.
+# Vocabulary.Cards.ShiftPlusRLooks
+Shift plus R looks up the last ability you heard.	시프트와 R 키로 마지막으로 들은 능력을 찾아봅니다.
+# Vocabulary.Cards.AbilityCount
+Ability	능력
+# Vocabulary.Cards.AbilityCount
+Abilities	능력
+# Vocabulary.Cards.SigilAbility
+ Sigil Ability: {0}.	 도장 능력: {0}.
+# Vocabulary.Cards.KinType
+ Kin type: {0}.	 친족: {0}.
+# Vocabulary.Cards.KinTypes
+ Kin types: {0}.	 친족: {0}.
+# Vocabulary.Cards.StarAttack
+Star	별
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving left.	 왼쪽으로 이동 중.
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving right.	 오른쪽으로 이동 중.
+# Vocabulary.Cards.Rare
+Rare	희귀
+# Vocabulary.Cards.TerrainBorder
+Terrain border	지형 테두리
+# Vocabulary.Cards.GlitchedPortrait
+Glitched portrait	글리치 초상화
+# Vocabulary.Cards.FullCardPortrait
+Full-card portrait	전체 카드 초상화
+# Vocabulary.Cards.AnimatedPortrait
+Animated portrait	움직이는 초상화
+# Vocabulary.Cards.HologramPortrait
+Hologram portrait	홀로그램 초상화
+# Vocabulary.Cards.GoldenGlow
+Golden glow	황금빛
+# Vocabulary.Cards.RedGlow
+Red glow	붉은빛
+# Vocabulary.Cards.BloodiedPortrait
+Bloodied portrait	피 묻은 초상화
+# Vocabulary.Cards.MoonParticles
+Moon particles	달 입자
+# Vocabulary.Cards.AttackEqualsTheNumber
+ Attack equals the number of ants on its owner's side.	 공격력은 주인 쪽의 개미 수와 같습니다.
+# Vocabulary.Cards.AttackIsEqualTo
+ Attack is equal to half the Bones of the owner.	 공격력은 주인이 가진 뼈의 절반입니다.
+# Vocabulary.Cards.AttackEqualsSacrificesMade
+ Attack equals sacrifices made this turn.	 공격력은 이번 턴에 바친 희생 수와 같습니다.
+# Vocabulary.Cards.AttackVariesWithGreen
+ Attack varies with green gems.	 공격력은 초록 보석에 따라 달라집니다.
+# Vocabulary.Cards.BloodCount
+1 blood	피 1
+# Vocabulary.Cards.BloodCount
+{0} blood	피 {0}
+# Vocabulary.Cards.CostLine
+Cost: {0}.	비용: {0}.
+# Vocabulary.Cards.CostFree
+Cost: Free.	비용: 무료.
+# Vocabulary.Combat.ASlot
+a slot	칸
+# Vocabulary.Combat.CardInSlot
+{0} in {1}	{1}의 {0}
+# Vocabulary.Combat.EmptySlot
+empty {0}	빈 {0}
+# Vocabulary.Combat.TargetListThree
+, and 	, 그리고 
+# Vocabulary.Combat.AttacksTargets
+{0} attacks {1}.	{0}: {1} 공격.
+# Vocabulary.Combat.FliesOverAndAttacks
+{0} flies over {1} and attacks directly{2}.	{0}: {1} 위로 날아 직접 공격{2}.
+# Vocabulary.Combat.PassesByAndAttacks
+{0} passes by {1} and attacks directly{2}.	{0}: {1} 옆을 지나 직접 공격{2}.
+# Vocabulary.Combat.Airborne
+Airborne	공수
+# Vocabulary.Combat.MightyLeap
+Mighty Leap	위대한 도약
+# Vocabulary.Combat.BlocksDueTo
+{0} blocks {1} {2} due to {3}.	{0}: {3} 능력으로 {1} {2} 방어.
+# Vocabulary.Combat.Attacks
+{0}{1} attacks {2}.	{0}{1}: {2} 공격.
+# Vocabulary.Combat.AttacksEmptySlot
+{0}{1} attacks empty Slot {2}.	{0}{1}: 빈 {2}번 칸 공격.
+# Vocabulary.Combat.AttacksDirectly
+{0}{1} attacks directly.	{0}{1}: 직접 공격.
+# Vocabulary.Combat.InSlotNumber
+ in Slot {0}	 {0}번 칸에
+# Vocabulary.Combat.FromYourHand
+ from your hand	 손에서
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2} by Ability: {3}.	{3} 능력으로 {0} 카드가{1}{2} 나옵니다.
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2}.	{0} 카드가{1}{2} 나옵니다.
+# Vocabulary.Combat.DeadlyName
+Touch of Death	죽음의 손길
+# Vocabulary.Combat.WithOne
+ with {0}	 {0} 사용
+# Vocabulary.Combat.ToDeadly
+ to {0}	 {0}에 의해
+# Vocabulary.Combat.QueuedInSlot
+The {0} queued in slot {1}	{1}번 칸 대기열의 {0}
+# Vocabulary.Combat.Queued
+The {0} queued	대기열의 {0}
+# Vocabulary.Combat.TakesAnd
+{0} takes {1} and {2}{3}.	{0}: {1} 받고 {2}{3}.
+# Vocabulary.Combat.TakesDamage
+{0} takes {1}.	{0}: {1} 받음.
+# Vocabulary.Combat.TakesItsAbilityResolves
+{0} takes {1}, {2}. 	{0}: {1} 받음, {2}. 
+# Vocabulary.Combat.TakesItsAbilityResolves
+Its {0} ability resolves before it dies.	죽기 전에 {0} 능력이 발동합니다.
+# Vocabulary.Combat.TakesDamageLeft
+{0} takes {1}, {2}.	{0}: {1} 받음, {2}.
+# Vocabulary.Combat.SideQualifiedName
+Your {0}	내 {0}
+# Vocabulary.Combat.SideQualifiedName
+Enemy {0}	적 {0}
+# Vocabulary.Combat.IsSacrificed
+{0} is sacrificed.{1}	{0} 카드가 희생됩니다.{1}
+# Vocabulary.Combat.Sacrificed
+{0} sacrificed.{1}	{0} 희생.{1}
+# Vocabulary.Combat.PowerAndHealth
+{0} power and {1} health	공격력 {0}, 체력 {1}
+# Vocabulary.Combat.Power
+{0} power	공격력 {0}
+# Vocabulary.Combat.Health
+{0} health	체력 {0}
+# Vocabulary.Combat.MorselFallback
+Morsel	한 입
+# Vocabulary.Combat.AbilitiesTriggerGains
+{0} {1} abilities trigger, {2} gains {3}.	{0} {1} 능력 발동, {2} 카드 획득: {3}.
+# Vocabulary.Combat.MorselGainFor
+{0} gained {1}.	{0}: {1} 획득.
+# Vocabulary.Combat.IsSkinnedAnd
+{0} is skinned and {1}.	{0} 카드가 가죽이 벗겨지고 {1}.
+# Vocabulary.Combat.IsCutAnd
+{0} is cut and {1}.	{0} 카드가 잘리고 {1}.
+# Vocabulary.Combat.IsSmashedAnd
+{0} is smashed and {1}.	{0} 카드가 박살 나고 {1}.
+# Vocabulary.Combat.InSlot
+{0} in Slot {1}	{1}번 칸의 {0}
+# Vocabulary.Combat.DirectDamageCount
+1 direct damage.	직접 피해 1.
+# Vocabulary.Combat.DirectDamageCount
+{0} direct damage.	직접 피해 {0}.
+# Vocabulary.Combat.ScaleHits
+ The scale hits 5...	 저울이 5에 닿습니다...
+# Vocabulary.Combat.VolumeWarning
+VOLUME WARNING: 	음량 주의: 
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+Enemy deals {0}{1}	적이 {0}{1} 피해를 줍니다
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+You deal {0}{1}	내가 {0}{1} 피해를 줍니다
+# Vocabulary.Combat.ReceivedBoneFromThe
+Received 1 bone from 	뼈 1개를 받았습니다: 
+# Vocabulary.Combat.TheBoneLordsBoon
+the Bone Lord's boon	뼈의 왕의 선물
+# Vocabulary.Combat.ReceivedBonesFromThe
+Received 8 bones from 	뼈 8개를 받았습니다: 
+# Vocabulary.Combat.ReceivedBonesAtBattle
+Received {0} bones at battle start.	전투 시작 시 뼈 {0}개를 받았습니다.
+# Vocabulary.MultiStrike.AttacksEachOfYour
+{0} attacks each of your {1} 	{0}의 공격 대상: 내 {1} 
+# Vocabulary.MultiStrike.AttacksTimes
+{0} attacks {1} times.	{0}: {1}번 공격.
+# Vocabulary.MultiStrike.AndDies
+and {0}{1}	그리고 {0}{1}
+# Vocabulary.MultiStrike.InStartSlot
+ in slot {0}	 {0}번 칸에서
+# Vocabulary.MultiStrike.BurrowsFromTo
+{0} burrows from {1}	{0}: {1}에서 땅을 파고 이동
+# Vocabulary.MultiStrike.Burrows
+{0}{1} burrows	{0}{1}: 땅을 파고 이동
+# Vocabulary.MultiStrike.HopsTakingDies
+{0}, taking {1}, {2}.	{0}, {1} 받음, {2}.
+# Vocabulary.MultiStrike.HopsTaking
+{0}, taking {1}.	{0}, {1} 받음.
+# Vocabulary.MultiStrike.TakesAndDies
+{0}{1} takes {2} {3}.	{0}{1}: {2} 받음, {3}.
+# Vocabulary.MultiStrike.TakesStrikes
+{0}{1} takes {2}.	{0}{1}: {2} 받음.
+# Vocabulary.MultiStrike.TakesWithOutcome
+{0}{1} takes {2}, {3}.	{0}{1}: {2} 받음, {3}.
+# Vocabulary.MultiStrike.AttacksGiant
+{0} attacks {1}	{0}: {1} 공격
+# Vocabulary.MultiStrike.AttacksGiantTimes
+{0} attacks {1} {2} times	{0}: {1} 대상 {2}번 공격
+# Vocabulary.MultiStrike.YourCardsAttackTimes
+Your cards attack {0} {1} times	내 카드들: {0} 대상 {1}번 공격
+# Vocabulary.MultiStrike.GiantDiesFor
+{0} for {1}.	{1}: {0}.
+# Vocabulary.MultiStrike.ForHealthRemaining
+{0} for {1}, {2} health remaining.	{1}: {0}, 남은 체력 {2}.
+# Vocabulary.MultiStrike.BrittleFallback
+Brittle	취약성
+# Vocabulary.MultiStrike.SAbilityTriggersAnd
+{0}'s {1} ability triggers, and it dies.{2}	{0}의 {1} 능력이 발동하고 카드가 죽습니다.{2}
+# Vocabulary.MultiStrike.InSlots
+{0} in {1} {2}	{1} {2}의 {0}
+# Vocabulary.MultiStrike.AbilitiesTriggerDie
+{0} {1} abilities trigger, {2} die.{3}	{0} {1} 능력 발동, {2} 카드가 죽습니다.{3}
+# Vocabulary.Turns.YourTurn
+Your turn.	내 턴.
+# Vocabulary.Turns.EnemyTurn
+Enemy turn.	적 턴.
+# Vocabulary.Turns.DrawPhaseSkippedDue
+Draw Phase skipped due to no cards remaining in either deck...	양쪽 덱 모두 카드가 없어 드로우 단계를 건너뜁니다...
+# Vocabulary.Sigils.GuardianName
+Guardian	수호자
+# Vocabulary.Sigils.SAbilityTriggersIt
+{0}'s {1} ability triggers: it is blocked from 	{0}의 {1} 능력 발동: 
+# Vocabulary.Sigils.SAbilityTriggersIt
+moving to slot {0}.	{0}번 칸으로 이동하지 못합니다.
+# Vocabulary.Sigils.SAbilityTriggersItMoves
+{0}'s {1} ability triggers: it moves to slot {2}.	{0}의 {1} 능력 발동: {2}번 칸으로 이동합니다.
+# Vocabulary.Sigils.Burrower
+Burrower	굴살이
+# Vocabulary.Sigils.RightOrLeft
+right	오른쪽
+# Vocabulary.Sigils.RightOrLeft
+left	왼쪽
+# Vocabulary.Sigils.SAbilityTriggersItMovesTo
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	{0}의 {1} 능력 발동: {2}으로 {3}번 칸까지 이동합니다.
+# Vocabulary.Sigils.Sprinter
+Sprinter	질주자
+# Vocabulary.Sigils.Bloodlust
+Bloodlust	피의 갈망
+# Vocabulary.Sigils.SAbilityTriggersItNow
+{0}'s {1} ability triggers: it now has {2} power.	{0}의 {1} 능력 발동: 공격력 {2}.
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0}'s {1} ability triggers: it places a {2} in 	{0}의 {1} 능력 발동: 놓는 카드 {2}, 위치 
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0} slot {1}.	{0} {1}번 칸에 놓습니다.
+# Vocabulary.Sigils.SAbilityTriggersA
+{0}'s {1} ability triggers: a 	{0}의 {1} 능력 발동: 
+# Vocabulary.Sigils.SAbilityTriggersA
+{0} is played in {1} slot {2}.	{0} 카드가 {1} {2}번 칸에 나옵니다.
+# Vocabulary.Sigils.WithAbilities
+, with 	, 능력: 
+# Vocabulary.Sigils.Enemy
+Enemy 	적 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+{0}{1}'s {2} ability triggers: 	{0}{1}의 {2} 능력 발동: 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+it becomes a {0}/{1} {2}{3}.	{0}/{1} {2} 카드로 변신{3}.
+# Vocabulary.Sigils.SAbilityFizzlesDue
+{0}'s {1} ability fizzles due to having no empty item slots.	아이템 칸이 비어 있지 않아 {0}의 {1} 능력이 실패합니다.
+# Vocabulary.Events.IsCreatedInYour
+{0} is created in your hand.	{0} 카드가 손에 생성됩니다.
+# Vocabulary.Events.AbilityTriggersIsAdded
+{0} ability triggers: {1} {2} is added to your hand.	{0} 능력 발동: {2} 카드가 손에 추가됩니다.
+# Vocabulary.Events.OuroborosComesBackStronger
+ Ouroboros comes back stronger than before...	 우로보로스가 전보다 강해져 돌아옵니다...
+# Vocabulary.Events.ArticleA
+A	한
+# Vocabulary.Events.AnOrA
+An	한
+# Vocabulary.Events.CardsAbility
+{0}'s {1}	{0}의 {1}
+# Vocabulary.Events.BySourcesAbility
+ by {0}'s {1}	 {0}의 {1}에 의해
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created in enemy Slot {1}{2}.	적 {1}번 칸에 {0} 카드가 생성됩니다{2}.
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created on the opposing space{1}.	맞은편 칸에 {0} 카드가 생성됩니다{1}.
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue, targeting Slot {0}.	초과 피해가 대기열로 넘어가 {0}번 칸을 노립니다.
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue.	초과 피해가 대기열로 넘어갑니다.
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory. {0} extra {1} received.	승리. 추가 {1} {0}개를 받았습니다.
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory.	승리.
+# Vocabulary.Events.ItemSlotCount
+item slot {0}	아이템 칸 {0}
+# Vocabulary.Events.ItemSlotCount
+an item slot	아이템 칸
+# Vocabulary.Events.Chosen
+{0} chosen.	{0} 선택.
+# Vocabulary.Events.IsCreatedIn
+{0} is created in {1}.	{1}에 {0} 카드가 생성됩니다.
+# Vocabulary.Events.Saving
+Saving.	저장 중.
+# Vocabulary.Events.IsAddedToYour
+{0} is added to your hand.	{0} 카드가 손에 추가됩니다.
+# Vocabulary.Dialogue.PirateSkull
+Pirate Skull	해적 해골
+# Vocabulary.Dialogue.None
+None	없음
+# Vocabulary.Bosses.OneOfSCandles
+One of {0}'s {1} candles is blown out.	{0}의 촛불 {1}개 중 하나가 꺼집니다.
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+A candle is blown out.	촛불 하나가 꺼집니다.
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+One of {0}'s candles is blown out.	{0}의 촛불 하나가 꺼집니다.
+# Vocabulary.Bosses.CandleIsBlownOut
+A candle is blown out. {0} left.	촛불 하나가 꺼집니다. 남은 촛불: {0}.
+# Vocabulary.Bosses.CandleIsBlownOut
+One of {0}'s candles is blown out. {1} left.	{0}의 촛불 하나가 꺼집니다. 남은 촛불: {1}.
+# Vocabulary.Bosses.TheMask
+The {0}	{0}
+# Vocabulary.Bosses.LeshyPutsOnA
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	레쉬가 거칠고 지저분한 얼굴의 나무 가면을 씁니다. 헝클어진 큰 수염에 삐뚤어진 금니가 있습니다. 떨리는 손에 큰 곡괭이를 들고 있습니다...
+# Vocabulary.Bosses.CandleCount
+candle	촛불
+# Vocabulary.Bosses.CandleCount
+candles	촛불
+# Vocabulary.Bosses.PlacesASkullHolding
+{0} places a skull holding {1} lit {2} 	{0}: 켜진 {2} {1}개가 담긴 해골을 
+# Vocabulary.Bosses.PlacesASkullHolding
+onto the table.	테이블에 올려놓습니다.
+# Vocabulary.Bosses.LeshyRelightsYourCandle
+Leshy relights your candle. You now have {0} {1} lit.	레쉬가 내 촛불을 다시 켭니다. 이제 켜진 {1}: {0}개.
+# Vocabulary.Bosses.BlowsOutYourLast
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0}: 내 마지막 촛불을 끕니다. {1} 쪽에서 테이블 너머로 두 손을 뻗자 방이 어두워집니다...
+# Vocabulary.Bosses.BlowsOutOneOf
+{0} blows out one of your candles. You have {1} remaining.	{0}: 내 촛불 하나를 끕니다. 남은 촛불: {1}개.
+# Vocabulary.Bosses.AndAreAddedTo
+{0} are added to your hand.	{0} 카드가 손에 추가됩니다.
+# Vocabulary.Bosses.IsAddedToYourHand
+{0} is added to your hand.{1}	{0} 카드가 손에 추가됩니다.{1}
+# Vocabulary.Bosses.AndAreAddedToYour
+{0} are added to your hand.{1}	{0} 카드가 손에 추가됩니다.{1}
+# Vocabulary.Bosses.ExtraCandleIsLit
+An extra candle is lit.	촛불 하나가 더 켜집니다.
+# Vocabulary.ProspectorBoss.ProspectorUsesHisPickaxe
+The Prospector uses his pickaxe to strike all of your creatures, turning them into Gold Nuggets.	탐광자가 곡괭이로 내 모든 생물을 내리쳐 황금 덩어리로 바꿉니다.
+# Vocabulary.ProspectorBoss.ProspectorClearsHisQueue
+The Prospector clears his queue, 	탐광자가 대기열을 비웁니다. 
+# Vocabulary.PirateSkull.Limoncello
+The Limoncello	리몬첼로 호
+# Vocabulary.PirateSkull.YourTheirSlot
+ slot {0}	 {0}번 칸
+# Vocabulary.PirateSkull.CannonsFireAtIs
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	대포 발사, 목표 {0}. {1} 카드가 포탄에 맞아 {2}.
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	대포 발사, 목표 {0}. {1} 카드가 포탄에 맞습니다. 남은 체력 {2}.
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball.	대포 발사, 목표 {0}. {1} 카드가 포탄에 맞습니다.
+# Vocabulary.CardChoices.DeathCard
+Death card.	죽음 카드.
+# Vocabulary.CardChoices.BloodCostCard
+{0} blood cost card.	피 비용 {0} 카드.
+# Vocabulary.CardChoices.BonesCostCard
+Bones cost card.	뼈 비용 카드.
+# Vocabulary.CardChoices.KinCard
+{0} kin card.	{0} 친족 카드.
+# Vocabulary.CardChoices.NewCardsDealt
+New cards dealt.	새 카드를 받았습니다.
+# Vocabulary.CardChoices.UseTheLuckyClover
+ Use the Lucky Clover to discard them all and be dealt new cards.	 행운의 클로버를 사용하면 모두 버리고 새 카드를 받습니다.
+# Vocabulary.CardChoices.OpeningLine
+Left and right arrows to browse, Enter to turn a card over, 	좌우 화살표로 둘러보기, 엔터로 카드 뒤집기, 
+# Vocabulary.CardChoices.OpeningLine
+Shift Up displays your deck, Space to repeat, H for help.	시프트와 위 화살표로 덱 보기, 스페이스로 반복, H로 도움말.
+# Vocabulary.CardChoices.DeckTrialLeshyPuts
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	덱 시련. 레쉬가 테이블에 돌 아치를 세워, 빛나는 두 눈이 어두운 동굴 입구에서 나오는 것처럼 보이게 합니다.
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Rare Card Choice	희귀 카드 선택
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Card Choice	카드 선택
+# Vocabulary.CardChoices.FaceDownCardCount
+1 face-down card	뒤집힌 카드 1장
+# Vocabulary.CardChoices.FaceDownCardCount
+{0} face-down cards	뒤집힌 카드 {0}장
+# Vocabulary.CardChoices.FaceDownRareCardCount
+1 face-down rare card	뒤집힌 희귀 카드 1장
+# Vocabulary.CardChoices.FaceDownRareCardCount
+{0} face-down rare cards	뒤집힌 희귀 카드 {0}장
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}. 레쉬가 나무 상자를 내밉니다. 자물쇠를 풀고 
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+opens it, revealing {0}... Choose 1 to add to your deck.	상자를 열자 보이는 것: {0}... 덱에 넣을 카드 1장을 고르세요.
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}. 모든 카드가 앞면입니다. 덱에 넣을 카드 1장을 고르세요.
+# Vocabulary.CardChoices.BeforeYouLayOrEveryCardIs
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}. 앞에 놓인 것: {1}. 덱에 넣을 카드 1장을 고르세요.
+# Vocabulary.CardChoices.LuckyCloverDiscardAll
+Lucky Clover. Discard all cards and be dealt new ones.	행운의 클로버. 모든 카드를 버리고 새 카드를 받습니다.
+# Vocabulary.CardChoices.FaceDown
+Face down.	뒷면.
+# Vocabulary.CardChoices.TrialOf
+Trial of {0}.	{0}의 시련.
+# Vocabulary.CardChoices.FaceUpButThe
+Face up, but the card could not be read.	앞면이지만 카드를 읽을 수 없습니다.
+# Vocabulary.CardChoices.DuplicateOfCardIn
+ Duplicate of card in your deck.	 덱에 이미 있는 카드입니다.
+# Vocabulary.CardChoices.ArrowKeysToBrowse
+{0}. Arrow keys to browse.	{0}. 화살표 키로 둘러보기.
+# Vocabulary.CardChoices.ThatCardCouldNot
+That card could not be taken.	그 카드를 가져올 수 없습니다.
+# Vocabulary.CardChoices.LuckyCloverCouldNot
+The Lucky Clover could not be used.	행운의 클로버를 사용할 수 없습니다.
+# Vocabulary.CardChoices.ThatCardCouldNotBe
+That card could not be selected.	그 카드를 선택할 수 없습니다.
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+{0} added to your deck.	{0} 카드를 덱에 추가했습니다.
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+Card added to your deck.	카드를 덱에 추가했습니다.
+# Vocabulary.CardChoices.PressEnterToAdd
+ Press Enter to add it to your deck.	 엔터를 눌러 덱에 추가하세요.
+# Vocabulary.DeckView.DeckReturned
+Deck returned.	덱을 되돌렸습니다.
+# Vocabulary.DeckView.PlaceBelow
+the card choice	카드 선택
+# Vocabulary.DeckView.PlaceBelow
+the map	지도
+# Vocabulary.DeckView.YourDeck
+Your deck. 	내 덱. 
+# Vocabulary.DeckView.LeftAndRightArrows
+Left and right arrows to browse, Space to repeat, A for teeth, I cycles through your items, H for help, Backspace to return to {0}.	좌우 화살표로 둘러보기, 스페이스로 반복, A로 이빨, I로 아이템 순환, H로 도움말, 백스페이스로 돌아가기: {0}.
+# Vocabulary.DeckView.YourDeckIsStill
+Your deck is still being laid out.	덱을 아직 펼치는 중입니다.
+# Vocabulary.DeckView.YourDeckName
+Your deck. {0}.	내 덱. {0}.
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Left and right arrows browse the cards. Space repeats the card you are on. 	좌우 화살표로 카드를 둘러봅니다. 스페이스는 현재 카드를 다시 읽습니다. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+A reads the amount of teeth collected. I cycles through your items, one per press. 	A는 모은 이빨 수를 읽습니다. I는 누를 때마다 아이템을 하나씩 순환합니다. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+R opens the rulebook. 	R은 룰북을 엽니다. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Backspace closes your deck and returns you to {0}.	백스페이스로 덱을 닫고 돌아갑니다: {0}.
+# Vocabulary.DeckView.NoTeethAreShown
+No teeth are shown here.	여기에는 이빨이 표시되지 않습니다.
+# Vocabulary.DeckView.ToothCollectedCount
+ 1 tooth collected.	 이빨 1개 모음.
+# Vocabulary.DeckView.ToothCollectedCount
+ {0} teeth collected.	 이빨 {0}개 모음.
+# Vocabulary.DeckPick.OpeningLine
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	내 덱. 손에 넣을 카드를 고르세요. 화살표로 둘러보고 엔터로 선택. {0}.
+# Vocabulary.DeckPick.HelpLine
+Choose a card from your deck to add to your hand. 	덱에서 손에 넣을 카드를 고르세요. 
+# Vocabulary.DeckPick.HelpLine
+{0}. G, B and A to read the boardstate.	{0}. G, B, A로 보드 상태를 읽습니다.
+# Vocabulary.NodeScreens.HostCard
+Host Card	숙주 카드
+# Vocabulary.NodeScreens.CardToSacrifice
+Card to Sacrifice	희생할 카드
+# Vocabulary.NodeScreens.BeginRitual
+Begin Ritual	의식 시작
+# Vocabulary.NodeScreens.SendCardToRest
+Send card to rest by the fire	카드를 모닥불 곁에서 쉬게 하기
+# Vocabulary.NodeScreens.BeginExperiment
+Begin experiment...	실험 시작...
+# Vocabulary.NodeScreens.SelectAPairOf
+Select a pair of cards to fuse together	합칠 카드 한 쌍 선택
+# Vocabulary.NodeScreens.BeginPainting
+Begin painting	그림 그리기 시작
+# Vocabulary.NodeScreens.ChooseACardTo
+Choose a card to receive an artistic rendition of	예술적으로 옮겨 그릴 카드 선택
+# Vocabulary.NodeScreens.ChooseOneCardFrom
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	덱에서 숙주가 될 카드를 고르세요. 덱의 다른 카드를 희생하면 그 도장이 숙주에게 옮겨집니다.
+# Vocabulary.NodeScreens.SelectACardFrom
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	덱에서 모닥불에 데울 카드를 고르세요. 능력치 하나가 영구히 오르지만 위험이 따릅니다...
+# Vocabulary.NodeScreens.ChooseAPairOf
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	덱에서 같은 카드 한 쌍을 골라 하나로 합치세요. 공격력과 체력이 더해지고 두 카드의 도장이 모두 남습니다.
+# Vocabulary.NodeScreens.PickANewWoodcarving
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	배낭에 넣을 새 목각을 고르세요. 친족 머리나 도장 몸통입니다. 머리와 몸통이 모두 있으면 가져갈 토템 조합을 고르세요. 덱에서 친족 머리와 맞는 카드는 토템을 쓰는 동안 토템의 도장을 얻습니다.
+# Vocabulary.NodeScreens.TradeTheTeethYouve
+Trade the teeth you've collected for pelt cards to add to your deck.	모은 이빨을 가죽 카드로 교환해 덱에 넣으세요.
+# Vocabulary.NodeScreens.TradePeltsFromYourDeck
+Trade pelts from your deck for new cards.	덱의 가죽을 새 카드로 교환하세요.
+# Vocabulary.NodeScreens.SelectOneCardFrom
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	덱에서 영구히 제거할 카드를 고르세요. 대가로 뼈의 왕이 선물을 줍니다. 매 전투 시작 때 뼈를 주는 지속 효과입니다.
+# Vocabulary.NodeScreens.SelectOneCardFromYour
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	덱에서 카드 한 장을 고르세요. 그 복사본이 덱에 추가되지만, 조금 다를 수도 있습니다.
+# Vocabulary.NodeScreens.CardToReceiveAn
+card to receive an artistic rendition	예술적으로 옮겨 그릴 카드
+# Vocabulary.NodeScreens.HostCardName
+host card	숙주 카드
+# Vocabulary.NodeScreens.ChosenAsLabelsCardToSacrifice
+card to sacrifice	희생할 카드
+# Vocabulary.NodeScreens.BackpackCannotBeReached
+The backpack cannot be reached right now.	지금은 배낭에 닿을 수 없습니다.
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	배낭. 화살표로 둘러보기, 백스페이스로 목각 선택으로 돌아가기.
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Enter chooses a totem combination.	배낭. 화살표로 둘러보기, 엔터로 토템 조합 선택.
+# Vocabulary.NodeScreens.DeckCannotBeReached
+The deck cannot be reached right now.	지금은 덱에 닿을 수 없습니다.
+# Vocabulary.NodeScreens.CardS
+ {0}, {1} card{2}.	 {0}, 카드 {1}장.
+# Vocabulary.NodeScreens.WoodcarvingSelection
+Woodcarving selection.	목각 선택.
+# Vocabulary.NodeScreens.WithdrawFromTheCampfire
+Withdraw from the campfire.	모닥불에서 물러나기.
+# Vocabulary.NodeScreens.Fire
+the fire	불
+# Vocabulary.NodeScreens.PairOf
+Pair of {0}.	{0} 한 쌍.
+# Vocabulary.NodeScreens.Pluralise
+s	s
+# Vocabulary.NodeScreens.AltarOfTheBoneLord
+Altar of the Bone Lord	뼈의 왕의 제단
+# Vocabulary.NodeScreens.AltarOfTheBone
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	뼈의 왕의 제단. 화살표로 둘러보기, 엔터로 확인.
+# Vocabulary.NodeScreens.TrapperYouAreGifted
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	덫사냥꾼. 토끼 가죽을 받았습니다. 모은 이빨을 가죽 카드로 교환해 덱에 넣으세요.
+# Vocabulary.NodeScreens.TeethWord
+1 tooth	이빨 1개
+# Vocabulary.NodeScreens.TeethWord
+{0} teeth	이빨 {0}개
+# Vocabulary.NodeScreens.KnifeName
+Skinning Knife	가죽 벗기는 칼
+# Vocabulary.NodeScreens.PurchasedForYouHave
+{0} purchased for {1}. You have {2} remaining.{3}	{0} 구매, 가격 {1}. 남은 이빨: {2}.{3}
+# Vocabulary.NodeScreens.YouAreShortFrom
+You are {0} short from buying {1}.{2}	{1} 구매에 {0} 부족합니다.{2}
+# Vocabulary.NodeScreens.NotEnoughTeethRemaining
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 다른 것을 살 이빨이 부족합니다. 백스페이스로 덫사냥꾼을 떠나세요.
+# Vocabulary.NodeScreens.YouHave
+You have {0}.	가진 것: {0}.
+# Vocabulary.NodeScreens.ListOfThree
+, and {0}	, 그리고 {0}
+# Vocabulary.NodeScreens.Sacrificed
+{0} sacrificed.	{0} 희생.
+# Vocabulary.NodeScreens.SigilCount
+sigil	도장
+# Vocabulary.NodeScreens.SigilCount
+sigils	도장
+# Vocabulary.NodeScreens.RitualResult
+{0} gained the {1} {2}.	{0} 카드가 얻은 {2}: {1}.
+# Vocabulary.NodeScreens.BoostPhrase
+its {0} by {1}	{0} {1} 증가
+# Vocabulary.NodeScreens.BoostPhrase
+its {0}	{0}
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise one of its stats	능력치 하나가 영구히 오릅니다
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise {0}	영구히 오르는 능력치: {0}
+# Vocabulary.NodeScreens.CampfireChooseLine
+Choose a card to warm by the campfire. {0}.	모닥불에 데울 카드를 고르세요. {0}.
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting peacefully by the campfire, and raise the stat again.	모닥불 곁에서 평온히 계속 쉬고 능력치를 다시 올립니다.
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting by the campfire, and raise the stat again.	모닥불 곁에서 계속 쉬고 능력치를 다시 올립니다.
+# Vocabulary.NodeScreens.ChosenCard
+the chosen card	선택한 카드
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to peacefully rest by	평온히 쉬도록
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to risk resting by	위험을 무릅쓰고 쉬도록
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire	{0} 카드를 {1} 모닥불로 보내기
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire, permanently raising {2}.	{0} 카드를 {1} 모닥불로 보내 영구히 올리기: {2}.
+# Vocabulary.NodeScreens.ChooseACardToBecome
+Choose a card to become the host.	숙주가 될 카드를 고르세요.
+# Vocabulary.NodeScreens.ChooseACardToSacrifice
+Choose a card to sacrifice.	희생할 카드를 고르세요.
+# Vocabulary.NodeScreens.ChooseACardToWarm
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	모닥불에 데울 카드를 고르세요. 능력치가 오르지만 위험이 따릅니다...
+# Vocabulary.NodeScreens.ChooseACard
+Choose a card.	카드를 고르세요.
+# Vocabulary.NodeScreens.SelectedAs
+{0} selected as {1}.	{0}, 선택: {1}.
+# Vocabulary.NodeScreens.PairOfChosenTo
+Pair of {0} chosen to fuse together. Enter to rechoose.	합칠 {0} 한 쌍을 선택했습니다. 다시 고르려면 엔터.
+# Vocabulary.NodeScreens.ChosenAsEnterTo
+{0} chosen as {1}. Enter to rechoose.	{0}, 선택: {1}. 다시 고르려면 엔터.
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}.	{0}.
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}. {1}	{0}. {1}
+# Vocabulary.NodeScreens.ReceivedBoon
+Received {0}.	받음: {0}.
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+A carved head.	조각된 머리.
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+{0} head.	머리: {0}.
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+A carved sigil body.	조각된 도장 몸통.
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+{0} sigil body.	도장 몸통: {0}.
+# Vocabulary.NodeScreens.TotemYourCardsGain
+Totem: your {0} cards gain {1}.	토템: {0} 친족 카드가 얻는 능력: {1}.
+# Vocabulary.NodeScreens.FinishedTotem
+The finished totem.	완성된 토템.
+# Vocabulary.NodeScreens.OptionOf
+Option {0} of {1}.	선택지 {1}개 중 {0}번째.
+# Vocabulary.NodeScreens.OptionSLeftAnd
+{0}. {1} option{2}. 	{0}. 선택지 {1}개. 
+# Vocabulary.NodeScreens.OptionSLeftAnd
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	좌우 화살표로 둘러보기, 엔터로 선택, 스페이스로 반복, H로 도움말.
+# Vocabulary.NodeScreens.NoOptionSelectedUse
+No option selected. Use left and right arrows to browse.	선택된 선택지가 없습니다. 좌우 화살표로 둘러보세요.
+# Vocabulary.NodeScreens.NoPairIsOn
+No pair is on the stone yet. Choose a pair of cards first.	아직 돌 위에 카드 쌍이 없습니다. 먼저 카드 한 쌍을 고르세요.
+# Vocabulary.NodeScreens.PairOfSelected
+Pair of {0} selected.	{0} 한 쌍 선택됨.
+# Vocabulary.NodeScreens.YouTookThe
+You took the {0}.	가져감: {0}.
+# Vocabulary.NodeScreens.Selected
+{0} selected.	{0} 선택됨.
+# Vocabulary.NodeScreens.NothingToChooseLine
+Nothing to choose here.	여기서는 고를 것이 없습니다.
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0} You have {1} {2} left to trade.	상인. {0} 교환할 {2} {1}개가 남았습니다.
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0}	상인. {0}
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Choosing a card. {0}. 	카드 선택 중. {0}. 
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Arrows browse, Enter chooses, Space repeats your position.	화살표로 둘러보기, 엔터로 선택, 스페이스로 현재 위치 반복.
+# Vocabulary.NodeScreens.ShiftUpDisplaysYour
+Shift Up displays your deck.	시프트와 위 화살표로 덱 보기.
+# Vocabulary.NodeScreens.OpensYourBackpackShift
+A opens your backpack, Shift Up displays your deck. 	A로 배낭 열기, 시프트와 위 화살표로 덱 보기. 
+# Vocabulary.NodeScreens.CountsYourTeethBackspace
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A로 이빨 세기, 백스페이스로 언제든 덫사냥꾼 떠나기. 
+# Vocabulary.NodeScreens.Zero
+zero	영
+# Vocabulary.NodeScreens.SelectOneOfItems
+{0}. Select one of {1} items to add to your backpack. 	{0}. 배낭에 넣을 아이템 {1}개 중 하나를 고르세요. 
+# Vocabulary.NodeScreens.SelectOneOfItems
+I cycles through your current items. R opens the rulebook.	I로 현재 아이템 순환. R로 룰북 열기.
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	화살표로 둘러보기, 엔터로 선택, 백스페이스로 언제든 덫사냥꾼 떠나기, 
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Space repeats your position, A counts your teeth, R opens the rulebook.	스페이스로 현재 위치 반복, A로 이빨 세기, R로 룰북 열기.
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChoosesSpace
+R opens the rulebook.	R로 룰북 열기.
+# Vocabulary.NodeScreens.TotemIsAssembledYour
+The totem is assembled. Your {0} cards will gain {1}. 	토템이 완성되었습니다. {0} 친족 카드가 얻는 능력: {1}. 
+# Vocabulary.NodeScreens.ReceivedNoNewSigils
+{0} received no new sigils.	{0} 카드는 새 도장을 받지 못했습니다.
+# Vocabulary.NodeScreens.Received
+{0} received {1}.	{0} 카드가 받은 것: {1}.
+# Vocabulary.NodeScreens.ReceivedAnd
+{0} received {1} 	{0} 카드가 받은 것: {1} 
+# Vocabulary.NodeScreens.ReceivedAnd
+and {0}.	그리고 {0}.
+# Vocabulary.NodeScreens.CopyCard
+Copy card	복사 카드
+# Vocabulary.CopyCardNode.CorkedGlassBottleSuddenly
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	코르크 마개를 한 유리병이 갑자기 게임 테이블 위로 뛰어오릅니다. 그 옆에 빈 카드가 놓인 작은 이젤 두 개가 떨어집니다.
+# Vocabulary.CopyCardNode.InsideTheGlassBottle
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	유리병 안에는 빛나는 초록 점액이 들어 있습니다. 일그러진 얼굴이 있습니다. 병에는 끝이 빛나는 붓이 달려 있습니다.
+# Vocabulary.ItemPickup.LeshyPresentsYouThe
+Leshy presents you the {0}.	레쉬가 내미는 것: {0}.
+# Vocabulary.Rulebook.CombinationCode
+Combination code: 273.	자물쇠 번호: 273.
+# Vocabulary.Rulebook.ThisPageIsDestroyed
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	잉크로 망가진 페이지입니다. 알아볼 수 있는 단어: 거울... 힘과... 같음... 그... 지닌...
+# Vocabulary.Rulebook.ThisPageIsDestroyedBy
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	잉크로 망가진 페이지입니다. 알아볼 수 있는 단어: 종 울림... 이것이 나타내는 값..... 같음.... 그....
+# Vocabulary.Rulebook.ThisPageIsDestroyedByInk
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	잉크로 망가진 페이지입니다. 알아볼 수 있는 단어: 카드 수.... 나타내는 값.... 같음.... 수....
+# Vocabulary.Rulebook.RulebookIsNotAvailable
+The rulebook is not available here.	여기서는 룰북을 쓸 수 없습니다.
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Opened Rulebook from shelf.	선반에서 룰북을 꺼내 열었습니다.
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Rulebook opened.	룰북을 열었습니다.
+# Vocabulary.Rulebook.LeftAndRightArrows
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} 좌우 화살표로 페이지 넘기기. 백스페이스로 책 닫기.
+# Vocabulary.Rulebook.RulebookClosed
+Rulebook closed.	룰북을 닫았습니다.
+# Vocabulary.Rulebook.RulebookLeftAndRight
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	룰북. 좌우 화살표로 페이지 넘기기. 스페이스로 현재 페이지 반복. 백스페이스나 R로 책 닫기.
+# Vocabulary.Rulebook.VariableStat
+Variable stat	변동 능력치
+# Vocabulary.Rulebook.Boon
+Boon	선물
+# Vocabulary.Rulebook.Item
+Item	아이템
+# Vocabulary.Rulebook.Rule
+Rule	규칙
+# Vocabulary.Rulebook.PageUnavailable
+Page unavailable.	페이지를 볼 수 없습니다.
+# Vocabulary.Rulebook.BlankPageOf
+Blank. Page {0} of {1}.	빈 페이지. {1}쪽 중 {0}쪽.
+# Vocabulary.Rulebook.DescriptionUnavailable
+{0}. Description unavailable.	{0}. 설명을 볼 수 없습니다.
+# Vocabulary.Rulebook.BlankPage
+Blank page.	빈 페이지.
+# Vocabulary.Rulebook.PageOf
+Page {0} of {1}.	{1}쪽 중 {0}쪽.
+# Vocabulary.Rulebook.DescriptionOnThisPage
+{0}. The description on this page is obscured by ink.	{0}. 이 페이지의 설명은 잉크로 가려져 있습니다.
+# Vocabulary.Rulebook.ToTheUser
+To the user: 	사용자에게: 
+# Vocabulary.Surrender.YourOpponent
+Your opponent	상대
+# Vocabulary.Surrender.IsOfferingToSurrender
+{0} is offering to surrender, press Shift and E to accept. 	{0}: 항복을 제안합니다. 받아들이려면 시프트와 E를 누르세요. 
+# Vocabulary.Surrender.OliveBranch
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	레쉬가 올리브 가지를 내밀며 전투를 포기합니다. 항복을 받아들이려면 시프트와 E를 누르세요.
+# Vocabulary.Surrender.NoSurrenderIsBeing
+No surrender is being offered.	항복 제안이 없습니다.
+# Vocabulary.Surrender.ConcedeAccepted
+Concede accepted. Victory.	항복을 받아들였습니다. 승리.
+# Vocabulary.RunEnd.OutcomeLine
+Victory	승리
+# Vocabulary.RunEnd.OutcomeLine
+Defeat	패배
+# Vocabulary.RunEnd.IkmaCannotFindAn
+IKMA cannot find an option on this screen, so it still needs the mouse here.	IKMA가 이 화면에서 선택지를 찾지 못해, 여기서는 아직 마우스가 필요합니다.
+# Vocabulary.RunEnd.ThereIsNoOption
+There is no option to select on this screen.	이 화면에는 선택할 선택지가 없습니다.
+# Vocabulary.RunEnd.RunEndControlsSpace
+Run end controls. Space repeats the screen. Enter takes the option on it. 	런 종료 조작. 스페이스로 화면 반복. 엔터로 선택지 실행. 
+# Vocabulary.LogExport.LogFileCouldNot
+the log file could not be found	로그 파일을 찾을 수 없습니다
+# Vocabulary.LogExport.YourDesktopFolderCould
+your desktop folder could not be found	바탕 화면 폴더를 찾을 수 없습니다
+# Vocabulary.LogExport.FileCouldNotBe
+the file could not be written	파일을 쓸 수 없습니다
+# Vocabulary.DeathCardChoice.Part
+cost	비용
+# Vocabulary.DeathCardChoice.Part
+power and health	공격력과 체력
+# Vocabulary.DeathCardChoice.Screen
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	죽음 카드: 고를 것은 {0}. {1}. 화살표 키로 둘러보기, 엔터로 선택.
+# Vocabulary.DeathCardName.Instructions
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	카드 이름을 최대 10자로 입력하세요. 엔터로 완료. 탭으로 지금까지의 이름 읽기.
+# Vocabulary.DeathCardName.Typed
+space	띄어쓰기
+# Vocabulary.DeathCardName.Typed
+capital {0}	대문자 {0}
+# Vocabulary.DeathCardName.Deleted
+backspace.	백스페이스.
+# Vocabulary.DeathCardName.Full
+Character limit reached.	글자 수 제한에 도달했습니다.
+# Vocabulary.DeathCardName.NameSoFar
+No name yet.	아직 이름이 없습니다.
+# Vocabulary.DeathCardName.EmptyEnter
+Type at least one character first.	먼저 한 글자 이상 입력하세요.
+# Added Session 32 (after the first catalogue): words that were built inside placeholders, and new lines.
+# Vocabulary.TradeTaken
+Pelt	가죽
+# Vocabulary.Menus.ChallengeLocked
+Challenge locked.	잠긴 챌린지입니다.
+# Vocabulary.Map.PathThen
+, then 	, 그다음 
+# Vocabulary.Hotkeys.DrewItGainsAnd (and other name lists)
+ and 	 및 
+# Vocabulary.Board.YourDeckRemainingCard
+ cards	 장
+# Vocabulary.Combat.FliesOverAndAttacks
+ twice	 두 번
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slot	칸
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slots	칸
+# Vocabulary.MultiStrike.BurrowsFromTo
+ to 	 다음 
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+tooth	이빨
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+teeth	이빨
+# Session 34 (Claude draft, unreviewed)
+Gamepad.	게임패드.
+# Session 34 (Claude draft, unreviewed)
+Keyboard.	키보드.
+# Session 34 (Claude draft, unreviewed)
+Dev Log Locked.	개발 로그가 잠겨 있습니다.
+# Session 34 (Claude draft, unreviewed)
+Skipping IKMA version {0}.	IKMA {0} 버전을 건너뜁니다.
+# Session 34 (Claude draft, unreviewed)
+The IKMA update failed its safety check and was not installed.	IKMA 업데이트가 보안 검사를 통과하지 못해 설치되지 않았습니다.
+# Session 34 (Claude draft, unreviewed)
+Card locked	카드 잠김
+# Session 34 (Claude draft, unreviewed)
+Reset with {0}	{0}(으)로 초기화
+# Session 34 (Claude draft, unreviewed)
+Opponent cards in slots 1 through 4 will lose all of their sigils.	1번부터 4번 칸의 상대 카드는 모든 인장을 잃습니다.
+# Session 34 (Claude draft, unreviewed)
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	전투 조작. 왼쪽과 오른쪽 화살표로 손패 탐색. Tab, 손패의 다음 낼 수 있는 카드. 엔터, 카드 내기. E, 종을 울려 턴 종료. R, 규칙서 열기. Shift R, 최근 들은 능력 찾아보기. C, 손패 읽기. U, 상대 대기열 읽기. G, 상대 보드 읽기. Shift G, 내 보드 읽기. B, 보드 전체와 대기열 읽기. A, 저울, 뼈, 기타 게임 정보 읽기. I, 여러 번 눌러 아이템 순환, 엔터로 사용. 뽑기 단계 중: D, 내 덱에서 뽑기, 또는 S, 다람쥐 덱에서 뽑기. H, 도움말.
+# Session 34 (Claude draft, unreviewed)
+{0} is cut in half and {1}.	{0} 카드가 반으로 잘리고 {1}.
+# Session 34 (Claude draft, unreviewed)
+{0} added in {1}.	{0}, {1}에 추가됨.
+# Session 34 (Claude draft, unreviewed)
+Space to repeat, H for help.	스페이스로 반복, H 키로 도움말.
+# Session 34 (Claude draft, unreviewed)
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	덱 시험. 레쉬가 세 가지 조건 중 하나를 고르게 합니다. 현재 덱에서 가장 참일 가능성이 높은 것을 고르세요. 그러면 레쉬가 덱에서 무작위 카드 세 장을 공개합니다. 성공하면 보상을 받습니다. 왼쪽과 오른쪽 화살표로 탐색, 엔터로 카드 뒤집기, Shift 위쪽 화살표로 덱 보기, 스페이스로 반복, H 키로 도움말.
+# Session 34 (Claude draft, unreviewed)
+You take the {0} Kin totem with the {1} Sigil.	{1} 인장이 있는 {0} 혈족 토템을 가져갑니다.
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you. Backspace to return to backpack and reselect.	엔터로 토템 가져가기. 백스페이스로 배낭으로 돌아가 다시 선택.
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you.	엔터로 토템 가져가기.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	레쉬가 화려한 잉크병과 붓을 내밉니다. 잉크병 안: {0}.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a collapsible fan with bird talon feet.	레쉬가 새의 발톱 발이 달린 접이식 부채를 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a rusty pair of pliers.	레쉬가 녹슨 펜치를 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a chipped pair of scissors.	레쉬가 이가 빠진 가위를 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate wooden hourglass.	레쉬가 화려한 나무 모래시계를 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large magnifying glass.	레쉬가 커다란 돋보기를 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a ceramic piggy bank.	레쉬가 도자기 돼지 저금통을 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large curved fish hook.	레쉬가 크게 휘어진 낚싯바늘을 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a razor sharp straight knife.	레쉬가 면도날처럼 날카로운 곧은 칼을 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	레쉬가 일그러진 얼굴이 있는 초록색 점액이 든, 코르크 마개를 한 유리병을 내밉니다.
+# Session 34 (Claude draft, unreviewed)
+Your cards gain temporary {0}.	내 카드가 일시적으로 {0} 능력을 얻습니다.
+# Session 34 (Claude draft, unreviewed)
+Opponent turn skipped due to {0}.	{0} 때문에 상대 턴을 건너뜁니다.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	레쉬가 작은 {0} 카드가 든, 코르크 마개를 한 유리병을 내밉니다.

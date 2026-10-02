@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>IKMAccess</AssemblyName>
+    <RootNamespace>IKMAccess</RootNamespace>
+    <!-- Audit: nullable annotations aren't used anywhere in the codebase; this
+         was the source of the 14 known nullable warnings. -->
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- ===================================================================
+         DEVELOPMENT TOOLS. SET THIS false FOR ANY RELEASE BUILD.
+         Zamar, 0.7.269: the video timecode overlay is "exclusively for
+         debugging and development and should not ever ship with the mod."
+         false removes the IKMA_DEV symbol AND the IMGUI reference below, so
+         VideoTimecode.cs and HotkeyManager.OnGUI are not compiled at all.
+         Named in the M8 release checklist.
+         =================================================================== -->
+    <IKMADevTools>true</IKMADevTools>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IKMADevTools)' == 'true'">
+    <DefineConstants>$(DefineConstants);IKMA_DEV</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Audit: InscryptionAPI reference removed — nothing in the codebase uses it
+         (only the deleted Class1.cs declared a dependency on it), and its hint
+         path pointed into a mod-manager plugin folder layout that can change.
+         Re-add if a future feature patches API-injected members. -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Session 34 - AudioSource.GetOutputData, for the rumble that follows
+         each voice sound (GamepadSupport.cs). -->
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- 0.7.269 — the video timecode overlay only (OnGUI / GUI.Label), and
+         it comes and goes with IKMADevTools above. A release build has
+         neither this reference nor the code that uses it.
+         NOT UnityEngine.TextRenderingModule: GUIStyle.fontStyle and
+         .alignment live there, and a debug readout does not earn a third
+         reference on a DLL players install. fontSize plus a drop shadow
+         reads fine without them. -->
+    <Reference Include="UnityEngine.IMGUIModule" Condition="'$(IKMADevTools)' == 'true'">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\Sirenix.Serialization.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Session 32, auto-update (AutoUpdate.cs): Unity's web requests and
+         its JSON reader, both already in the game. -->
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\Rewired_Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Session 32: tools\ holds separate programs with their own project
+       files (tools\installer is IKMA_Setup.exe). This project picks up
+       every .cs file below its folder by default, so without this line the
+       installer's Program.cs would be compiled into IKMAccess.dll. -->
+  <ItemGroup>
+    <Compile Remove="tools\**" />
+    <None Remove="tools\**" />
+  </ItemGroup>
+
+  <!-- Session 32, localization (Loc.cs): the language files are built INTO
+       IKMAccess.dll, so one DLL carries every language and auto-update
+       carries new translations. Loc reads them as "lang/<Language>.tsv". -->
+  <ItemGroup>
+    <EmbeddedResource Include="lang\*.tsv">
+      <LogicalName>lang/%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- Session 32: package_release.ps1 builds the release DLL with
+       -p:IKMASkipDeploy=true so a release build never overwrites the dev
+       DLL in the game's plugins folder. Normal builds (build.ps1) are
+       unaffected: the property is unset and the copy runs as always. -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(IKMASkipDeploy)' != 'true'">
+    <Copy SourceFiles="$(OutputPath)IKMAccess.dll" DestinationFiles="C:\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\IKMAccess.dll" />
+  </Target>
+
+</Project>

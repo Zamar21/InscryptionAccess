@@ -1,0 +1,64 @@
+<!-- IKMAInstaller.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    IKMA_Manager.exe (renamed from IKMA_Setup.exe, Session 34), the Windows installer (Session 32, DRAFT). Built by
+    package_release.ps1, never by build.ps1:
+
+      dotnet build tools\installer\IKMAInstaller.csproj -c Release
+        -p:PayloadDir=<folder> -p:Version=<IKMA version> -o <out>
+
+    net48 = .NET Framework 4.8, which ships with Windows 10 and 11, so the
+    player installs nothing first. The .NET SDK fetches the 4.8 reference
+    assemblies it needs to BUILD this from NuGet on its own.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>IKMA_Manager</AssemblyName>
+    <RootNamespace>IKMASetup</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <PayloadDir Condition="'$(PayloadDir)' == ''">payload</PayloadDir>
+    <Version Condition="'$(Version)' == ''">0.0.0</Version>
+    <!-- The version the installer prints is the IKMA version it carries. -->
+    <InformationalVersion>$(Version)</InformationalVersion>
+    <!-- Session 33: the .NET SDK appends "+<git commit id>" to the
+         informational version, and Setup printed it on its first line.
+         Players see the plain version only. -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+  </ItemGroup>
+
+  <!--
+    THE PAYLOAD, embedded so the .exe is one file and a signature on it
+    covers everything it installs. FLAT folder on purpose: every file becomes
+    the resource "payload/<name>", which Program.cs reads by name. Expected:
+    bepinex.zip (official BepInEx 5, Windows x86, unmodified),
+    IKMAccess.dll, UniversalSpeech.dll, nvdaControllerClient.dll, and the
+    licence .txt files.
+  -->
+  <ItemGroup>
+    <EmbeddedResource Include="$(PayloadDir)\*">
+      <LogicalName>payload/%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!--
+    SETUP'S OWN LANGUAGE FILES (Session 32): tools\installer\lang\<Language>.tsv,
+    one "English [TAB] translation" per line. Built in as "setup_lang/<name>",
+    a different prefix from "payload/", so they are never installed as files.
+    See SetupLoc.cs.
+  -->
+  <ItemGroup>
+    <EmbeddedResource Include="lang\*.tsv">
+      <LogicalName>setup_lang/%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
+<!-- IKMAInstaller.csproj -->

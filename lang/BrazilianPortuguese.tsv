@@ -1,0 +1,1981 @@
+# BrazilianPortuguese.tsv
+# IKMA language file: Brazilian Portuguese. Translated by Claude (Session 32) following the game's own Brazilian Portuguese terms; no Brazilian Portuguese speaker has checked it yet.
+#status: unreviewed
+# Vocabulary.AndList
+{0} and {1}	{0} e {1}
+# Vocabulary.AndList
+{0}, and {1}	{0} e {1}
+# Vocabulary.HandEmpty
+Hand is empty.	A mão está vazia.
+# Vocabulary.BoardUnavailable
+Board unavailable.	Tabuleiro indisponível.
+# Vocabulary.ItemsUnavailable
+Items unavailable.	Itens indisponíveis.
+# Vocabulary.NoItems
+You have no items.	Você não tem itens.
+# Vocabulary.NoOptions
+No options.	Nenhuma opção.
+# Vocabulary.NoOptionsAvailable
+No options available.	Nenhuma opção disponível.
+# Vocabulary.NoSettingsOnPage
+No settings on this page.	Nenhuma configuração nesta página.
+# Vocabulary.NoPathsAhead
+No paths ahead.	Nenhum caminho à frente.
+# Vocabulary.NothingInFront
+Nothing is directly in front of you.	Não há nada bem na sua frente.
+# Vocabulary.NothingToExamine
+Nothing to examine here.	Nada para examinar aqui.
+# Vocabulary.NothingOnThatKey
+Nothing on {0} from here.	Nada na tecla {0} daqui.
+# Vocabulary.RunEndControls
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Pressione Enter para começar uma nova partida com o mesmo baralho inicial e os mesmos desafios ativados. Backspace para voltar ao menu principal. Espaço para repetir.
+# Vocabulary.NoRunToContinue
+No current run available.	Nenhuma partida em andamento.
+# Vocabulary.MainGameNotSupported
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	O suporte ao jogo principal de Inscryption ainda está em desenvolvimento. Vou terminar, não se preocupe! -Zamar :)
+# Vocabulary.BootPlayButton
+In the center of the screen is a small play button. Press Enter...	No centro da tela há um pequeno botão de jogar. Pressione Enter...
+# Vocabulary.BootStudioLogo
+Daniel Mullins Games.	Daniel Mullins Games.
+# Vocabulary.TitleCardGlitches
+The screen glitches for a second.	A tela falha por um segundo.
+# Vocabulary.VideoLogsNotAvailable
+Video logs not yet available. Coming soon!	Os registros em vídeo ainda não estão disponíveis. Em breve!
+# Vocabulary.BootPublisherLogo
+Devolver Digital.	Devolver Digital.
+# Vocabulary.BaseTitleCard
+Inscryption. Press any button to start.	Inscryption. Pressione um botão para começar.
+# Vocabulary.ModTitleCard
+Inscryption: Kaycee's Mod.	Inscryption: Mod da Kaycee.
+# Vocabulary.RulebookNoPages
+The rulebook has no pages to read.	O manual de regras não tem páginas para ler.
+# Vocabulary.CannotEndTurn
+Cannot end turn right now.	Não é possível encerrar o turno agora.
+# Vocabulary.NoCardSelected
+No card selected.	Nenhuma carta selecionada.
+# Vocabulary.MustSelectCardFirst
+You must first select a card to add to your deck.	Primeiro selecione uma carta para adicionar ao seu baralho.
+# Vocabulary.OptionCouldNotBeSelected
+That option could not be selected.	Não foi possível selecionar essa opção.
+# Vocabulary.SurrenderNotAccepted
+The surrender could not be accepted.	Não foi possível aceitar a rendição.
+# Vocabulary.CouldNotReachTable
+Could not reach the table.	Não foi possível alcançar a mesa.
+# Vocabulary.WoodcarvingCouldNotBeRead
+The woodcarving could not be read.	Não foi possível ler a escultura.
+# Vocabulary.PressHForWhatStillWorks
+Press H for what still works.	Pressione H para saber o que ainda funciona.
+# Vocabulary.SpaceDescribesAhead_
+Space describes what is directly in front of you. 	Espaço descreve o que está bem na sua frente. 
+# Vocabulary.ConversationInProgress
+Conversation in progress, press Space to proceed.	Conversa em andamento, pressione Espaço para continuar.
+# Vocabulary.Scales
+Scales: you lead by {0}.	Balança: você está na frente por {0}.
+# Vocabulary.Scales
+Scales: enemy leads by {0}.	Balança: o inimigo está na frente por {0}.
+# Vocabulary.Scales
+Scales: even.	Balança: empatada.
+# Vocabulary._sigilFlavour
+It resurfaces.	Volta à superfície.
+# Vocabulary._sigilFlavourPlural
+They resurface.	Voltam à superfície.
+# Vocabulary._sigilClause
+, granting four bones.	, concedendo quatro ossos.
+# Vocabulary._sigilClause
+, sending one damage back to its attacker.	, devolvendo um de dano a quem atacou.
+# Vocabulary._sigilClause
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, escolha uma carta do seu baralho para adicionar à sua mão. Setas para navegar, Enter para confirmar.
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers{2}	A habilidade {1} de {0} é ativada{2}
+# Vocabulary.SigilTriggers
+{0}'s {1} ability triggers.	A habilidade {1} de {0} é ativada.
+# Vocabulary.SigilTriggers
+{0}'s {1} abilities trigger.	As habilidades {1} de {0} são ativadas.
+# Vocabulary.OverlayLineText
+Comment line: {0}	Linha de comentário: {0}
+# Vocabulary.TotemGrant
+{0} gains ability: {1}.	{0} ganha a habilidade: {1}.
+# Vocabulary.TotemGrantNegated
+Copy of {0} sigil negated by Kaycee override.	Cópia do selo {0} anulada por regra da Kaycee.
+# Vocabulary.OpponentTotem
+{0}'s totem gives enemy {1} cards {2}.	O totem de {0} dá {2} às cartas inimigas da tribo {1}.
+# Vocabulary.FootagePlaying
+Footage, {0}.	Gravação, {0}.
+# Vocabulary._maskFaces
+It is a rugged face with a bandana wrapped tightly below the eyes.	É um rosto castigado, com uma bandana bem amarrada abaixo dos olhos.
+# Vocabulary._maskFaces
+He has a leathery face with deep wrinkles across his forehead.	Ele tem um rosto curtido, com rugas profundas na testa.
+# Vocabulary._maskFaces
+She has a strong aged face with a patterned headband.	Ela tem um rosto forte e envelhecido, com uma faixa estampada na cabeça.
+# Vocabulary._maskFaces
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	Ele tem olhos fundos sob sobrancelhas pesadas. Vários anzóis atravessam seu lábio inferior.
+# Vocabulary._maskWholeLine
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	Leshy põe a máscara de duas faces dos Micologistas. O rosto do doutor é de um homem de cabelo frisado, com grandes óculos redondos e um espelho frontal. Preso ao pescoço dele há um segundo rosto, menor. O cogumelo tem as mesmas feições, com um cogumelo proporcionalmente grande fundido à cabeça.
+# Vocabulary.DrawPhasePrompt
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Fase de compra. Pressione D para comprar do seu baralho, ou S para comprar do baralho de Esquilos.
+# Vocabulary.WaterborneDive
+{0}'s Waterborne ability triggers. It dives underwater...	A habilidade Aquático de {0} é ativada. Mergulha na água...
+# Vocabulary.Submerged
+Submerged {0}	{0} debaixo d'água
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask.	Leshy põe a máscara de {0}.
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask. {1}	Leshy põe a máscara de {0}. {1}
+# Vocabulary.LeshyMaskOn
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISIONAL: sem descrição de rosto para a máscara de {0}.
+# Vocabulary.LeshyMaskOn
+Leshy puts on the {0} mask...	Leshy põe a máscara de {0}...
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask, it floats away.	Leshy tira a máscara de {0}, e ela sai flutuando.
+# Vocabulary.LeshyMaskOff
+Leshy removes the {0}'s mask.	Leshy tira a máscara de {0}.
+# Vocabulary.LeshyOrbiter
+the {0}	{0}
+# Vocabulary.LeshyOrbiter
+the {0}, and the {1}	{0} e {1}
+# Vocabulary.LeshyOrbiter
+{0} masks circle around Leshy's head: {1}. 	{0} máscaras giram em volta da cabeça de Leshy: {1}. 
+# Vocabulary.LeshyOrbiter
+Behind Leshy is a large bright full moon...	Atrás de Leshy há uma grande e brilhante lua cheia...
+# Vocabulary.LeshyDeathcardPhase
+Leshy takes back a second candle, blocks your board, and calls up the dead.	Leshy retira uma segunda vela, bloqueia o seu tabuleiro e invoca os mortos.
+# Vocabulary.LeshyMoonPhase
+Leshy takes back a last candle. The masks fly away, and Leshy reaches for the moon.	Leshy retira uma última vela. As máscaras voam para longe, e Leshy estende a mão para a lua.
+# Vocabulary.LeshyWearingMask
+Leshy is wearing the {0}'s mask.	Leshy está usando a máscara de {0}.
+# Vocabulary.LeshyNoMask
+Leshy is not wearing a mask.	Leshy não está usando máscara.
+# Vocabulary.LeshyThirdCandle
+Leshy lowers a third candle to the flame and lights it...	Leshy aproxima uma terceira vela da chama e a acende...
+# Vocabulary.PirateMutiny
+the ship	o navio
+# Vocabulary.PirateMutiny
+A {0} jumps off {1} and joins your side in slot {2}.	{0} abandona {1} e passa para o seu lado, no espaço {2}.
+# Vocabulary.PirateMutiny
+{0} {1} jump off {2} and join your side in slots {3}.	{0} cartas {1} abandonam {2} e passam para o seu lado, nos espaços {3}.
+# Vocabulary.PirateShipCrashes
+A massive ship called {0} crashes onto the board. 	Um navio enorme chamado {0} se choca contra o tabuleiro. 
+# Vocabulary.PirateShipCrashes
+It has {0} dancing Skeleton Pirates on board making a ruckus.	Há {0} Piratas Esqueletos dançando a bordo, fazendo algazarra.
+# Vocabulary.PirateSkeletonsOnDeck
+ No Skeleton Pirates remain on deck.	 Não resta nenhum Pirata Esqueleto a bordo.
+# Vocabulary.PirateSkeletonsOnDeck
+ 1 Skeleton Pirate remains on deck.	 Resta 1 Pirata Esqueleto a bordo.
+# Vocabulary.PirateSkeletonsOnDeck
+ {0} Skeleton Pirates remain on deck.	 Restam {0} Piratas Esqueletos a bordo.
+# Vocabulary.ItemModeEntered
+Item menu. {0} 	Menu de itens. {0} 
+# Vocabulary.ItemModeControls
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Setas para navegar, Enter para selecionar, Backspace para voltar à sua mão.
+# Vocabulary.ItemModeWhere
+Item menu. 	Menu de itens. 
+# Vocabulary.ItemModeLeft
+Your hand.	Sua mão.
+# Vocabulary.ItemModeHelp
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Menu de itens. As setas para esquerda e direita percorrem os itens que você carrega. Enter usa o item atual. Shift mais I lê os três espaços, incluindo os vazios. Backspace volta para a sua mão. Shift mais 1, 2 ou 3 usa na hora o item daquele espaço.
+# Vocabulary.PirateSkullRecedes
+The pirate skull fades backwards... Something is coming...	A caveira pirata recua para o fundo... Algo está vindo...
+# Vocabulary.PirateSkullPlaced
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0} coloca na mesa uma caveira com tapa-olho e chapéu de pirata.
+# Vocabulary.PirateSkullEyeGlows
+The eye of the skull begins to glow.	O olho da caveira começa a brilhar.
+# Vocabulary.GiantArrives
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0} ocupa o tabuleiro inimigo, uma só carta em todos os {1} espaços, {2}/{3}.
+# Vocabulary.GiantArrives
+{0} arrives, {1}/{2}.	{0} chega, {1}/{2}.
+# Vocabulary.GiantDestroyed
+{0} is destroyed.	{0} se desfaz.
+# Vocabulary.HookAimed
+{0} aims his hook at your empty slot {1}.	{0} mira o anzol no seu espaço vazio {1}.
+# Vocabulary.HookAimed
+{0} aims his hook at {1} in slot {2}.	{0} mira o anzol em {1}, no espaço {2}.
+# Vocabulary.HookPulled
+{0} hooks your {1} and pulls it to his slot {2}.	{0} fisga {1}, do seu lado, e puxa para o espaço {2} dele.
+# Vocabulary.HookCancelled
+{0} lowers his hook.	{0} abaixa o anzol.
+# Vocabulary.TradeOffered
+{0} on the board and {1} in the queue	{0} no tabuleiro e {1} na fila
+# Vocabulary.TradeOffered
+{0} on the board	{0} no tabuleiro
+# Vocabulary.TradeOffered
+{0} in the queue	{0} na fila
+# Vocabulary.TradeOffered
+cards	cartas
+# Vocabulary.TradeOffered
+{0} offers a trade.	{0} oferece uma troca.
+# Vocabulary.TradeOffered
+{0} gives you a {1} and offers a trade.	{0} dá a você {1} e oferece uma troca.
+# Vocabulary.TradeOffered
+{0} Trade pelts in your hand for one of their cards. 	{0} Troque peles da sua mão por uma das cartas do oponente. 
+# Vocabulary.TradeOffered
+They have {0}. 	Oferta: {0}. 
+# Vocabulary.TradeOffered
+The bell is disabled until you trade at least once. 	O sino fica desativado até você fazer pelo menos uma troca. 
+# Vocabulary.TradeOffered
+Trade pelts from your hand for cards on their board and queue.	Troque peles da sua mão por cartas do tabuleiro e da fila do oponente.
+# Vocabulary.CannonTargetCard
+{0} in slot {1}	{0} no espaço {1}
+# Vocabulary.CannonTargetEmpty
+empty slot {0}	espaço vazio {0}
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side, and {1} on theirs.	Os canhões miram {0} do seu lado, e {1} do lado inimigo.
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on your side.	Os canhões miram {0} do seu lado.
+# Vocabulary.CannonsAimed
+The cannons aim at {0} on their side.	Os canhões miram {0} do lado inimigo.
+# Vocabulary.CannonAimedAtSlot
+The cannons are aimed at slot {0}.	Os canhões estão mirando o espaço {0}.
+# Vocabulary.CannonAimedHere
+The cannons are aimed here.	Os canhões estão mirando aqui.
+# Vocabulary.PirateRodentPhase
+The Pirate Skull opens a pack of cards and calls in their crew.	A Caveira Pirata abre um pacote de cartas e chama a tripulação.
+# Vocabulary.PirateShipPhase
+The Pirate Skull calls their ship. It bears down on the cabin.	A Caveira Pirata chama o navio. Ele avança contra a cabana.
+# Vocabulary.LeshyMaskFlip
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	Leshy tira a máscara, vira de cabeça para baixo e a põe de volta. Ele se torna {0}.
+# Vocabulary.AnglerBaitPhase
+{0} clears his side of the table.	{0} limpa o próprio lado da mesa.
+# Vocabulary.AnglerShark
+A Shark takes the bait's place in slot {0}.	Um Tubarão toma o lugar da isca no espaço {0}.
+# Vocabulary.ActorPossessive
+their	lado inimigo
+# Vocabulary.ActorPossessive
+his	seu
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean.	{0} limpa o próprio lado da mesa.
+# Vocabulary.TrapperPhaseTwo
+pelt	pele
+# Vocabulary.TrapperPhaseTwo
+pelts	peles
+# Vocabulary.TrapperPhaseTwo
+returns	volta
+# Vocabulary.TrapperPhaseTwo
+return	voltam
+# Vocabulary.TrapperPhaseTwo
+{0} sweeps {1} side of the table clean, and 	{0} limpa o próprio lado da mesa, e 
+# Vocabulary.TrapperPhaseTwo
+{0} played {1} {2} to your hand.	{0} {1} do tabuleiro {2} para a sua mão.
+# Vocabulary.GrizzlyPhase
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	A tela falha e os olhos de {0} brilham em vermelho. Uma muralha de Ursos avança sobre você...
+# Vocabulary.GrizzliesFillEverySlot
+Every opposing slot on the board is filled with Grizzlies...	Todos os espaços do inimigo no tabuleiro estão ocupados por Ursos...
+# Vocabulary.TradeScreenOpen
+card	carta
+# Vocabulary.TradeScreenOpen
+Begin trading. 	Comece a trocar. 
+# Vocabulary.TradeScreenOpen
+Trade: {0} {1} to choose from, 	Troca: {0} {1} para escolher, 
+# Vocabulary.TradeScreenOpen
+{0} {1} in hand. 	{0} {1} na mão. 
+# Vocabulary.TradeScreenOpen
+Arrow keys to browse, Enter to trade. Press H for help.	Setas para navegar, Enter para trocar. Pressione H para ajuda.
+# Vocabulary.TradeOption
+in the queue, slot {0}	na fila, espaço {0}
+# Vocabulary.TradeOption
+on the board, slot {0}	no tabuleiro, espaço {0}
+# Vocabulary.TradeOption
+Option {0} of {1}, {2}. {3}	Opção {0} de {1}, {2}. {3}
+# Vocabulary.TradeOptionUnreadable
+Option {0} of {1}. {2}	Opção {0} de {1}. {2}
+# Vocabulary.TradeNoPelt
+You have no pelt to trade with.	Você não tem pele para trocar.
+# Vocabulary.AdjacentSpawnTriggers
+slot {0}	espaço {0}
+# Vocabulary.AdjacentSpawnTriggers
+slot {0} and slot {1}	espaço {0} e espaço {1}
+# Vocabulary.AdjacentSpawnTriggers
+{0}'s {1} ability triggers, placing a {2} in {3}.	A habilidade {1} de {0} é ativada, colocando {2} no {3}.
+# Vocabulary.LooseTailTriggers
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	A habilidade Cauda Solta de {0} é ativada: solta a cauda como isca 
+# Vocabulary.LooseTailTriggers
+and moves to slot {0}.	e se move para o espaço {0}.
+# Vocabulary.AmorphousTriggers
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	A habilidade Amorfo de {0} é ativada: sofre uma mutação e ganha {1}.
+# Vocabulary.TidalLockTriggers
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	A habilidade Rotação Sincronizada de {0} é ativada: puxa {1}, do seu lado, para a órbita, obliterando essa carta.
+# Vocabulary.TrinketBearerTriggers
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	A habilidade Porta-coisas de {0} é ativada: {1} vai para o espaço de item {2}.
+# Vocabulary.BugReportKeyHelp
+Shift L saves a log file to your desktop for a bug report, this command works here and at any point during gameplay.	Shift L salva um arquivo de registro na sua área de trabalho para relatar um bug. Este comando funciona aqui e em qualquer momento do jogo.
+# Vocabulary.LogExported
+Log saved to your desktop as a .txt file. Attach it to your bug report.	Registro salvo na sua área de trabalho como arquivo .txt. Anexe-o ao seu relatório de bug.
+# Vocabulary.LogExportFailed
+The log could not be saved because {0}.	Não foi possível salvar o registro porque {0}.
+# Vocabulary.SigilFizzles
+{0}'s {1} ability fizzles.	A habilidade {1} de {0} falha.
+# Vocabulary.CorpseEaterTriggers
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	A morte de {0} ativa a habilidade Papa-cadáver de {1} na sua mão, 
+# Vocabulary.CorpseEaterTriggers
+playing itself into slot {0}.	que entra em jogo no espaço {0}.
+# Vocabulary.TradeTaken
+{0} traded for {1}.	{0} trocada por {1}.
+# Vocabulary.TradeHelp
+Trade pelts from your hand for cards on their board and queue. 	Troque peles da sua mão por cartas do tabuleiro e da fila do oponente. 
+# Vocabulary.TradeHelp
+Arrow keys browse, Enter trades. 	Setas navegam, Enter troca. 
+# Vocabulary.TradeHelp
+You have {0} {1} in hand. 	Você tem {0} {1} na mão. 
+# Vocabulary.TradeHelp
+Trade until you run out of pelts, then the battle will continue.	Troque até acabarem suas peles; depois, a batalha continua.
+# Vocabulary._containerDeathClause
+the cage is destroyed	a jaula é destruída
+# Vocabulary._containerDeathClause
+the ice is destroyed	o gelo é destruído
+# Vocabulary.DeathClause
+is destroyed	se desfaz
+# Vocabulary.DeathClause
+dies	morre
+# Vocabulary._deathFlavour
+ It quickly snaps shut...	 Ela se fecha de repente...
+# Vocabulary.CaughtInTrapSentence
+{0} gets caught in the {1} and {2}.	{0} cai na {1} e {2}.
+# Vocabulary.DeathTail
+destroyed	se desfaz
+# Vocabulary.NumberWord
+one	uma
+# Vocabulary.NumberWord
+two	duas
+# Vocabulary.NumberWord
+three	três
+# Vocabulary.NumberWord
+four	quatro
+# Vocabulary.NumberWord
+five	cinco
+# Vocabulary.NumberWord
+six	seis
+# Vocabulary.NumberWord
+seven	sete
+# Vocabulary.NumberWord
+eight	oito
+# Vocabulary.Angler
+Angler	Pescador
+# Vocabulary.BoneCount
+1 bone	1 osso
+# Vocabulary.BoneCount
+{0} bones	{0} ossos
+# Vocabulary.BoneLord
+Bone Lord	Lorde Ossário
+# Vocabulary.BoneOrBones
+bone	osso
+# Vocabulary.BoneOrBones
+bones	ossos
+# Vocabulary.BothOrAll
+Both	Ambas as
+# Vocabulary.BothOrAll
+All 	Todas as 
+# Vocabulary.BrowseChooseRepeat_
+Arrows browse, Enter chooses, Space repeats your position. 	Setas navegam, Enter escolhe, Espaço repete sua posição. 
+# Vocabulary.Campfire
+Campfire	Fogueira
+# Vocabulary.CardCouldNotBeRead
+This card could not be read.	Não foi possível ler esta carta.
+# Vocabulary.CardCount
+1 card	1 carta
+# Vocabulary.CardCount
+{0} cards	{0} cartas
+# Vocabulary.DamageCount
+1 damage	1 de dano
+# Vocabulary.DamageCount
+{0} damage	{0} de dano
+# Vocabulary.DeathCard
+Death card	Carta do ocaso
+# Vocabulary.HealthRemainingCount
+1 health remaining	1 de vida restante
+# Vocabulary.HealthRemainingCount
+{0} health remaining	{0} de vida restante
+# Vocabulary.ItemPickupName
+Item pickup	Coleta de item
+# Vocabulary.Kin
+Kin	Tribo
+# Vocabulary.Leshy
+Leshy	Leshy
+# Vocabulary.Mycologists
+Mycologists	Micologistas
+# Vocabulary.OptionOf
+{0} Option {1} of {2}.	{0} Opção {1} de {2}.
+# Vocabulary.Prospector
+Prospector	Garimpeiro
+# Vocabulary.ReceivedBonesLine
+Received {0} {1}.	Você recebeu {0} {1}.
+# Vocabulary.SacrificeStone
+Sacrifice stone	Pedra de sacrifício
+# Vocabulary.Trader
+Trader	Comerciante
+# Vocabulary.Trapper
+Trapper	Caçador
+# Vocabulary.UnnamedOption
+Unnamed option	Opção sem nome
+# Vocabulary.Woodcarver
+Woodcarver	Cinzeladora
+# Vocabulary.YourDeck
+Your deck.	Seu baralho.
+# Vocabulary.Mod.VersionOrUnknown
+unknown	desconhecida
+# Vocabulary.Mod.IkmaVersionLoaded
+IKMA version {0} loaded.	IKMA versão {0} carregado.
+# Vocabulary.Mod.Loading
+Loading.	Carregando.
+# Vocabulary.Mod.UpdateDownloaded
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA versão {0} baixado. Ele será instalado na próxima vez que você iniciar o jogo.
+# Vocabulary.Mod.UpdatedFrom
+Updated from version {0}.	Atualizado da versão {0}.
+# Vocabulary.Mod.UpdateAvailableAsk
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	IKMA versão {0} disponível. Pressione F9 para baixar, ou F10 para pular esta versão.
+# Vocabulary.Mod.UpdateDownloadedAsk
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA versão {0} já baixado. Pressione F9 para instalar na próxima vez que você iniciar o jogo, ou F10 para pular esta versão.
+# Vocabulary.Mod.UpdateDownloading
+Downloading IKMA version {0}.	Baixando IKMA versão {0}.
+# Vocabulary.Mod.UpdateWillInstall
+IKMA version {0} installs the next time you start the game.	IKMA versão {0} será instalado na próxima vez que você iniciar o jogo.
+# Vocabulary.Mod.UpdateDownloadFailed
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	Não foi possível baixar a atualização do IKMA. O IKMA vai oferecê-la de novo na próxima vez que você iniciar o jogo.
+# Vocabulary.Boot.OpeningScreenEnterPresses
+Opening screen. Enter presses the play button. Space repeats the description.	Tela de abertura. Enter pressiona o botão de jogar. Espaço repete a descrição.
+# Vocabulary.Title.OptionFallback
+Option	Opção
+# Vocabulary.Title.NewGame
+New Game	Novo jogo
+# Vocabulary.Title.Continue
+Continue	Continuar
+# Vocabulary.Title.Options
+Options	Opções
+# Vocabulary.Title.Credits
+Credits	Créditos
+# Vocabulary.Title.Quit
+Quit	Sair
+# Vocabulary.Title.CardLibrary
+Card Library	Biblioteca de cartas
+# Vocabulary.Title.EditDeck
+Edit Deck	Editar baralho
+# Vocabulary.Title.KayceesMod
+Kaycee's Mod	Mod da Kaycee
+# Vocabulary.Title.ReturnToStartMenu
+Return To Start Menu	Voltar à tela inicial
+# Vocabulary.Title.EndRun
+End Run	Encerrar partida
+# Vocabulary.Title.Concede
+Concede	Desistir
+# Vocabulary.Title.InscryptionTitleScreenArrows
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Tela de título do Inscryption. Setas para navegar, Enter para confirmar.
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Inscryption title screen. Arrow keys browse the cards. 	Tela de título do Inscryption. As setas percorrem as cartas. 
+# Vocabulary.Title.InscryptionTitleScreenArrow
+Enter chooses the one you are on. Space repeats it. 	Enter escolhe a carta atual. Espaço a repete. 
+# Vocabulary.Menus.InscryptionKayceesModMain
+Inscryption. Kaycee's Mod main menu	Inscryption. Menu principal do Mod da Kaycee
+# Vocabulary.Menus.Unlocks
+Unlocks	Desbloqueios
+# Vocabulary.Menus.CardsUnlocked
+Cards Unlocked	Cartas desbloqueadas
+# Vocabulary.Menus.Cards
+Cards	Cartas
+# Vocabulary.Menus.Challenges
+Challenges	Desafios
+# Vocabulary.Menus.ConfirmChallenges
+Confirm Challenges	Confirmar desafios
+# Vocabulary.Menus.SelectStarterDeck
+Select Starter Deck	Selecionar baralho inicial
+# Vocabulary.Menus.Stats
+Stats	Estatísticas
+# Vocabulary.Menus.RunComplete
+Run Complete	Partida concluída
+# Vocabulary.Menus.Devlog
+Devlog	Blog de desenvolvimento
+# Vocabulary.Menus.NewChallenges
+New Challenges	Novos desafios
+# Vocabulary.Menus.NewStarterDeck
+New Starter Deck	Novo baralho inicial
+# Vocabulary.Menus.StarterDecksUnlocked
+Starter Deck Unlocked	Baralho inicial desbloqueado
+# Vocabulary.Menus.NewRun
+New run	Nova partida
+# Vocabulary.Menus.MenuOrPrettyName
+Menu	Menu
+# Vocabulary.Menus.CoordsExpanded
+coordinates	coordenadas
+# Vocabulary.Menus.EntryLine
+Entry {0}. {1}	Anotação {0}. {1}
+# Vocabulary.Menus.NoOptionsAvailable
+{0}. No options available.	{0}. Nenhuma opção disponível.
+# Vocabulary.Menus.BackspaceToGoBack
+Backspace to go back.	Backspace para voltar.
+# Vocabulary.Menus.ArrowsToNavigate
+Arrows to navigate	Setas para navegar
+# Vocabulary.Menus.AnnounceScreenBackspaceToGo
+, Backspace to go back.	, Backspace para voltar.
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Arrows to navigate, Enter to confirm	Setas para navegar, Enter para confirmar
+# Vocabulary.Menus.ArrowsToNavigateOrEnterToConfirm
+Enter to confirm	Enter para confirmar
+# Vocabulary.Menus.PositionNounFor
+Deck	Baralho
+# Vocabulary.Menus.OfCount
+{0} {1} of {2}.	{0} {1} de {2}.
+# Vocabulary.Menus.OfCount
+{0} of {1}.	{0} de {1}.
+# Vocabulary.Menus.EnabledOrDisabled
+enabled	ativado
+# Vocabulary.Menus.EnabledOrDisabled
+disabled	desativado
+# Vocabulary.Menus.ChallengeFallback
+Challenge	Desafio
+# Vocabulary.Menus.ChallengePointCount
+1 challenge point.	1 ponto de desafio.
+# Vocabulary.Menus.ChallengePointCount
+{0} challenge points.	{0} pontos de desafio.
+# Vocabulary.Menus.OfChallengePoints
+{0} of {1} challenge points.	{0} de {1} pontos de desafio.
+# Vocabulary.Menus.BackPressed
+Back.	Voltar.
+# Vocabulary.Menus.UnknownOption
+unknown option	opção desconhecida
+# Vocabulary.Menus.NumberSign
+number 	número 
+# Vocabulary.Menus.StartRun
+Start Run	Iniciar partida
+# Vocabulary.Menus.LockedStarterDeck
+Locked starter deck	Baralho inicial bloqueado
+# Vocabulary.Menus.StarterDeck
+Starter Deck: {0}.	Baralho inicial: {0}.
+# Vocabulary.Menus.CardOf
+Card {0} of {1}	Carta {0} de {1}
+# Vocabulary.Menus.CardsAndOf
+Cards 	Cartas 
+# Vocabulary.Menus.CardsAndOf
+ and {0} of {1}	 e {0} de {1}
+# Vocabulary.Menus.PreviousPage
+Previous page	Página anterior
+# Vocabulary.Menus.NextPage
+Next page	Próxima página
+# Vocabulary.Menus.PlusChallengePointCount
+plus 1 challenge point	mais 1 ponto de desafio
+# Vocabulary.Menus.PlusChallengePointCount
+plus {0} challenge points	mais {0} pontos de desafio
+# Vocabulary.Menus.ActiveLabel
+Active, 	Ativo, 
+# Vocabulary.Menus.RandomStarterDeck
+Random Starter Deck	Baralho inicial aleatório
+# Vocabulary.Menus.UnlabelledOrText
+unlabelled option	opção sem rótulo
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now full screen	Agora em tela inteira
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display is now windowed	Agora em modo janela
+# Vocabulary.Options.DisplayIsNowOrDisplayResolutionChanged
+Display resolution changed	Resolução da tela alterada
+# Vocabulary.Options.ResolutionChanged
+, {0} by {1}	, {0} por {1}
+# Vocabulary.Options.TextLanguage
+Text Language	Idioma do texto
+# Vocabulary.Options.FullScreenOrWindowed
+Full screen	Tela inteira
+# Vocabulary.Options.FullScreenOrWindowed
+Windowed	Janela
+# Vocabulary.Options.Resolution
+{0} by {1}	{0} por {1}
+# Vocabulary.Options.OnOrOff
+On	Ligado
+# Vocabulary.Options.OnOrOff
+Off	Desligado
+# Vocabulary.Options.GammaZero
+Zero	Zero
+# Vocabulary.Options.DefaultMark
+, default	, padrão
+# Vocabulary.Options.UnnamedSetting
+Unnamed setting.	Configuração sem nome.
+# Vocabulary.Options.English
+English	Inglês
+# Vocabulary.Options.French
+French	Francês
+# Vocabulary.Options.Italian
+Italian	Italiano
+# Vocabulary.Options.German
+German	Alemão
+# Vocabulary.Options.Spanish
+Spanish	Espanhol
+# Vocabulary.Options.BrazilianPortuguese
+Brazilian Portuguese	Português brasileiro
+# Vocabulary.Options.Turkish
+Turkish	Turco
+# Vocabulary.Options.Russian
+Russian	Russo
+# Vocabulary.Options.Japanese
+Japanese	Japonês
+# Vocabulary.Options.Korean
+Korean	Coreano
+# Vocabulary.Options.SimplifiedChinese
+Simplified Chinese	Chinês simplificado
+# Vocabulary.Options.TraditionalChinese
+Traditional Chinese	Chinês tradicional
+# Vocabulary.Options.UnnamedSettingPressEnter
+Unnamed setting. Press Enter to adjust.	Configuração sem nome. Pressione Enter para ajustar.
+# Vocabulary.Options.PressEnterToAdjust
+{0} Press Enter to adjust.	{0} Pressione Enter para ajustar.
+# Vocabulary.Options.OptionsMenu
+Options Menu	Menu de opções
+# Vocabulary.Options.PageOf
+ Page {0} of {1}.	 Página {0} de {1}.
+# Vocabulary.Options.PressHForHelp
+{0}.{1} Press H for help.	{0}.{1} Pressione H para ajuda.
+# Vocabulary.Options.ThatSettingCannotBe
+That setting cannot be changed.	Essa configuração não pode ser alterada.
+# Vocabulary.Options.SettingFallback
+Setting	Configuração
+# Vocabulary.Options.ArrowsToAdjustBackspace
+Arrows to adjust. Backspace to return.	Setas para ajustar. Backspace para voltar.
+# Vocabulary.Options.BackThenRowPrompt
+Back. {0}	Voltar. {0}
+# Vocabulary.Pause.LockedMark
+, locked	, bloqueado
+# Vocabulary.Pause.OptionCount
+1 option	1 opção
+# Vocabulary.Pause.OptionCount
+{0} options	{0} opções
+# Vocabulary.Pause.PauseMenu
+Pause menu. {0}.	Menu de pausa. {0}.
+# Vocabulary.Pause.GameSettings
+Game settings.	Configurações de jogo.
+# Vocabulary.Pause.DisplaySettings
+Display settings.	Configurações de tela.
+# Vocabulary.Pause.AudioSettings
+Audio settings.	Configurações de áudio.
+# Vocabulary.Pause.Page
+Page {0}.	Página {0}.
+# Vocabulary.Pause.NoActiveChallenges
+No active challenges.	Nenhum desafio ativo.
+# Vocabulary.Pause.ActiveChallenges
+Active Challenges. {0}.	Desafios ativos. {0}.
+# Vocabulary.Pause.UnnamedOption
+Unnamed option.	Opção sem nome.
+# Vocabulary.Pause.OptionOf
+{0}. Option {1} of {2}.	{0}. Opção {1} de {2}.
+# Vocabulary.Pause.ThatOptionIsLocked
+That option is locked.	Essa opção está bloqueada.
+# Vocabulary.Pause.OptionsAndSwitchPages
+Options. 1, 2, and 3 switch pages. 	Opções. 1, 2 e 3 mudam de página. 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	Página 1: configurações de jogo; página 2: configurações de tela; página 3: configurações de áudio. 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Arrows browse the settings, Enter selects a setting to adjust, 	As setas percorrem as configurações, Enter seleciona uma para ajustar, 
+# Vocabulary.Pause.OptionsAndSwitchPages
+Backspace returns. 	Backspace volta. 
+# Vocabulary.Pause.TheyAreTheLast
+ They are the last stop past the options.	 Os desafios ficam no fim, depois das opções.
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Pause menu. Arrows browse the options, Enter chooses, 	Menu de pausa. As setas percorrem as opções, Enter escolhe, 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Space repeats your position and the run information, 	Espaço repete sua posição e as informações da partida, 
+# Vocabulary.Pause.PauseMenuArrowsBrowse
+Backspace or Escape closes the menu.	Backspace ou Esc fecha o menu.
+# Vocabulary.Map.Encounter
+Encounter	Encontro
+# Vocabulary.Map.TotemBattle
+Totem battle	Batalha de totem
+# Vocabulary.Map.BossBattle
+Boss battle	Batalha de chefe
+# Vocabulary.Map.CardChoice
+Card choice	Escolha de carta
+# Vocabulary.Map.CardBundleChoice
+Card bundle choice	Escolha de pacote de cartas
+# Vocabulary.Map.RareCardChoice
+Rare card choice	Escolha de carta rara
+# Vocabulary.Map.CardRemoval
+Card removal	Remoção de carta
+# Vocabulary.Map.CardRecycling
+Card recycling	Reciclagem de carta
+# Vocabulary.Map.CardCopying
+Card copying	Cópia de carta
+# Vocabulary.Map.BoulderChoice
+Boulder choice	Escolha de pedregulho
+# Vocabulary.Map.SideDeckChange
+Side deck change	Troca da reserva
+# Vocabulary.Map.DeckTrial
+Deck trial	Ordálio do baralho
+# Vocabulary.Map.VictoryFeast
+Victory feast	Banquete da vitória
+# Vocabulary.Map.RandomChoice
+Random	Aleatória
+# Vocabulary.Map.CostChoice
+Cost	Custo
+# Vocabulary.Map.CannotRightNow
+Cannot {0} right now.	Não é possível {0} agora.
+# Vocabulary.Map.BringYourDeckUp
+bring your deck up	abrir seu baralho
+# Vocabulary.Map.YouAreAlreadyStanding
+You are already standing.	Você já está de pé.
+# Vocabulary.Map.StandUp
+stand up	levantar-se
+# Vocabulary.Map.StandingUpFromThe
+Standing up from the table. Press H for help.	Levantando da mesa. Pressione H para ajuda.
+# Vocabulary.Map.YouAreAt
+You are at {0}.	Local: {0}.
+# Vocabulary.Map.ReturnTo
+return to {0}	voltar para {0}
+# Vocabulary.Map.BackAt
+Back at {0}.	De volta: {0}.
+# Vocabulary.Map.YouAreAtThe
+You are at the map.	Você está no mapa.
+# Vocabulary.Map.ReturnToTheMap
+return to the map	voltar ao mapa
+# Vocabulary.Map.GameMap
+Game map.	Mapa do jogo.
+# Vocabulary.Map.ReturningToTheTable
+Returning to the table.	Voltando à mesa.
+# Vocabulary.Map.YouStepBackPress
+You step back. Press Backspace again to return to the table.	Você dá um passo para trás. Pressione Backspace de novo para voltar à mesa.
+# Vocabulary.Map.Counterclockwise
+counterclockwise	no sentido anti-horário
+# Vocabulary.Map.Clockwise
+clockwise	no sentido horário
+# Vocabulary.Map.TurnedDegrees
+Turned {0} 90 degrees.	Girou 90 graus {0}.
+# Vocabulary.Map.ClockHandTurned
+ turned.	 girado.
+# Vocabulary.Map.ToOclock
+{0} to {1} o'clock.	{0}: {1} horas.
+# Vocabulary.Map.MechanismCracksAndThe
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	O mecanismo estala e a porta do cofre se abre. Dentro há uma grande massa de carne ensanguentada e dilacerada.
+# Vocabulary.Map.YouStepBack
+You step back.	Você dá um passo para trás.
+# Vocabulary.Map.YouStepBackFrom
+You step back from the {0}.	Você se afasta: {0}.
+# Vocabulary.Map.YouFocusInOrYouFocusOn
+You focus on the {0}.	Foco: {0}.
+# Vocabulary.Map.YouFocusIn
+You focus in.	Você olha mais de perto.
+# Vocabulary.Map.RulebookIsNotWithin
+The rulebook is not within reach.	O manual de regras não está ao alcance.
+# Vocabulary.Map.InsideTheSafeIs
+Inside the safe is a large mass of bloodied mangled flesh.	Dentro do cofre há uma grande massa de carne ensanguentada e dilacerada.
+# Vocabulary.Map.Facing
+Facing {0}.	Olhando para {0}.
+# Vocabulary.Map.NothingIsDirectlyIn
+Nothing is directly in front of you. {0}	Não há nada bem na sua frente. {0}
+# Vocabulary.Map.FocusControlsAndExamine
+Focus controls. 	Controles de foco. 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace steps back from your focused object. 	Backspace se afasta do objeto em foco. 
+# Vocabulary.Map.FocusControlsAndExamine
+Backspace again returns you to the game table and opens the map.	Backspace de novo volta à mesa de jogo e abre o mapa.
+# Vocabulary.Map.ExamineKeys_
+1, 2 and 3 examine what is in front of you. 	1, 2 e 3 examinam o que está na sua frente. 
+# Vocabulary.Map.StandingControlsUpArrow
+Standing controls. Up arrow steps forward, down arrow steps back. 	Controles de pé. Seta para cima dá um passo à frente, seta para baixo dá um passo para trás. 
+# Vocabulary.Map.StandingControlsUpArrow
+Left and right arrows step to the side. 	Setas para esquerda e direita dão um passo para o lado. 
+# Vocabulary.Map.StandingControlsUpArrow
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A gira você 90 graus no sentido anti-horário, D gira 90 graus no sentido horário. 
+# Vocabulary.Map.StandingControlsUpArrow
+Backspace returns you to the game table and opens the map.	Backspace volta à mesa de jogo e abre o mapa.
+# Vocabulary.Map.Woodlands
+The Woodlands	Matagal
+# Vocabulary.Map.Wetlands
+The Wetlands	Charneca
+# Vocabulary.Map.SnowLine
+The Snow Line	Linha de Neve
+# Vocabulary.Map.Beach
+The Beach	Praia
+# Vocabulary.Map.PathToTheCabin
+the path to the Cabin	caminho para a Cabana
+# Vocabulary.Map.YouHaveArrivedAt
+You have arrived at {0}	Nova região: {0}
+# Vocabulary.Map.WhereSentenceYouAreAt
+You are at {0}	Local: {0}
+# Vocabulary.Map.PlaceName
+the beginning of a new map	início de um novo mapa
+# Vocabulary.Map.UnknownLocation
+unknown location	local desconhecido
+# Vocabulary.Map.MapReady
+Map ready.	Mapa pronto.
+# Vocabulary.Map.PathCount
+1 path	1 caminho
+# Vocabulary.Map.PathCount
+{0} paths	{0} caminhos
+# Vocabulary.Map.MapAheadArrowsTo
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Mapa. {0}. {1} à frente. Setas para navegar, Espaço para detalhes, Enter para viajar, Shift+Seta para cima para ver o baralho.
+# Vocabulary.Map.MapAwaitingInputPress
+Map. Awaiting input. Press Space for your position, H for help.	Mapa. Aguardando ação. Pressione Espaço para sua posição, H para ajuda.
+# Vocabulary.Map.AwaitingPathSelectionH
+Awaiting path selection. H, for help.	Aguardando escolha de caminho. H, para ajuda.
+# Vocabulary.Map.First
+First	Primeiro
+# Vocabulary.Map.Second
+Second	Segundo
+# Vocabulary.Map.Third
+Third	Terceiro
+# Vocabulary.Map.Fourth
+Fourth	Quarto
+# Vocabulary.Map.Fifth
+Fifth	Quinto
+# Vocabulary.Map.Sixth
+Sixth	Sexto
+# Vocabulary.Map.Seventh
+Seventh	Sétimo
+# Vocabulary.Map.Eighth
+Eighth	Oitavo
+# Vocabulary.Map.PathNumber
+Path {0}	Caminho {0}
+# Vocabulary.Map.PathThen
+{0} path: {1}	{0} caminho: {1}
+# Vocabulary.Map.MorePathsNotRead
+ {0} more paths not read.	 Mais {0} caminhos não lidos.
+# Vocabulary.Map.MapUnavailable
+Map unavailable.	Mapa indisponível.
+# Vocabulary.Map.NoPathsAhead
+{0}. No paths ahead.	{0}. Nenhum caminho à frente.
+# Vocabulary.Map.OptionNode
+Option {0}: {1}	Opção {0}: {1}
+# Vocabulary.Map.YouAreOnOption
+ You are on Option {0} of {1}.	 Você está na opção {0} de {1}.
+# Vocabulary.Map.LeftAndRightArrows
+Left and right arrows to browse, 	Setas para esquerda e direita para navegar, 
+# Vocabulary.Map.AheadEnterToTravel
+{0}. {1} ahead. {2}.{3} 	{0}. {1} à frente. {2}.{3} 
+# Vocabulary.Map.AheadEnterToTravel
+Enter to travel, Shift+Up to display deck.	Enter para viajar, Shift+Seta para cima para ver o baralho.
+# Vocabulary.Map.ArrivedAt
+Arrived at {0}.	Chegada: {0}.
+# Vocabulary.Cabin.Safe
+Safe	Cofre
+# Vocabulary.Cabin.Woodcarving
+woodcarving	escultura
+# Vocabulary.Cabin.LargePictureFrame
+Large Picture Frame	Moldura grande
+# Vocabulary.Cabin.Gramophone
+Gramophone	Gramofone
+# Vocabulary.Cabin.Skull
+skull	caveira
+# Vocabulary.Cabin.SettlerMan
+Settler Man	Colono
+# Vocabulary.Cabin.SettlerWoman
+Settler Woman	Colona
+# Vocabulary.Cabin.Chief
+Chief	Chefe tribal
+# Vocabulary.Cabin.Wildling
+Wildling	Selvagem
+# Vocabulary.Cabin.Enchantress
+Enchantress	Feiticeira
+# Vocabulary.Cabin.Gravedigger
+Gravedigger	Coveiro
+# Vocabulary.Cabin.Robot
+Robot	Robô
+# Vocabulary.Cabin.Head
+head	cabeça
+# Vocabulary.Cabin.Arms
+arms	braços
+# Vocabulary.Cabin.Body
+body	corpo
+# Vocabulary.Cabin.HourHand
+Hour hand	Ponteiro das horas
+# Vocabulary.Cabin.MinuteHand
+Minute hand	Ponteiro dos minutos
+# Vocabulary.Cabin.SecondHand
+Second hand	Ponteiro dos segundos
+# Vocabulary.Hotkeys.NothingHereCanBe
+Nothing here can be read yet. Escape opens the pause menu.	Nada aqui pode ser lido ainda. Esc abre o menu de pausa.
+# Vocabulary.Hotkeys.NoPathSelectedUse
+No path selected. Use left and right arrows to browse paths.	Nenhum caminho selecionado. Use as setas para esquerda e direita para percorrer os caminhos.
+# Vocabulary.Hotkeys.MapIsStillSettling
+The map is still settling. Try again in a moment.	O mapa ainda está se ajustando. Tente de novo em instantes.
+# Vocabulary.Hotkeys.CardPlacementCannotBe
+Card placement cannot be cancelled. Choose a slot.	A colocação da carta não pode ser cancelada. Escolha um espaço.
+# Vocabulary.Hotkeys.YouAreInAn
+You are in an encounter. Press H for help.	Você está em um encontro. Pressione H para ajuda.
+# Vocabulary.Hotkeys.UnableToEndTurn
+Unable to end turn: bell method not found.	Não foi possível encerrar o turno: método do sino não encontrado.
+# Vocabulary.Hotkeys.DrawPilesUnavailable
+Draw piles unavailable.	Pilhas de compra indisponíveis.
+# Vocabulary.Hotkeys.NoCardsRemainingIn
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	Não há mais cartas no seu baralho. Pressione S para comprar do baralho de Esquilos.
+# Vocabulary.Hotkeys.NoCardsRemainingInThe
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	Não há mais cartas no baralho de Esquilos. Pressione D para comprar do seu baralho.
+# Vocabulary.Hotkeys.DrawPileUnavailable
+Draw pile unavailable.	Pilha de compra indisponível.
+# Vocabulary.Hotkeys.Drew
+Drew {0}.	Você comprou {0}.
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Ability	Habilidade de selo
+# Vocabulary.Hotkeys.SigilAbilityCount
+Sigil Abilities	Habilidades de selo
+# Vocabulary.Hotkeys.DrewItGainsAnd
+Drew {0}. It gains {1}: {2}.	Você comprou {0}. A carta ganha {1}: {2}.
+# Vocabulary.Hotkeys.FinishPlacingYourCard
+Finish placing your card before using an item.	Termine de posicionar sua carta antes de usar um item.
+# Vocabulary.Hotkeys.NoItems
+No items.	Nenhum item.
+# Vocabulary.Hotkeys.ItemUnavailable
+Item unavailable.	Item indisponível.
+# Vocabulary.Hotkeys.ItemEmpty
+Item {0}: empty.	Item {0}: vazio.
+# Vocabulary.Hotkeys.ItemLine
+Item {0}: {1}	Item {0}: {1}
+# Vocabulary.Hotkeys.CutUpOneOf
+# Vocabulary.Hotkeys.PlaceAWeightOn
+Place a weight on the scales. The pain is temporary.	Coloca um peso na balança. A dor é temporária.
+# Vocabulary.Hotkeys.HookACardTo
+Hook a card to take it as your own. Card must enter an empty space.	Fisga uma carta para tomá-la para você. A carta precisa ir para um espaço vazio.
+# Vocabulary.Hotkeys.SkinOneOfYour
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	Esfola uma das cartas do oponente. Ela morre e uma carta de pele vai para a sua mão.
+# Vocabulary.Hotkeys.SearchYourDeckFor
+Search your deck for any card and add it into your hand.	Procura qualquer carta no seu baralho e a coloca na sua mão.
+# Vocabulary.Hotkeys.UseToImmediatelyGain
+Use to immediately gain 4 Bones.	Use para ganhar 4 ossos na hora.
+# Vocabulary.Hotkeys.PlaceASignificantWeight
+Place a significant weight on the scales. The pain will linger...	Coloca um peso considerável na balança. A dor vai perdurar...
+# Vocabulary.Hotkeys.ItemIsAlreadyBeing
+An item is already being used.	Um item já está sendo usado.
+# Vocabulary.Hotkeys.ThereIsNoItem
+There is no item {0}.	Não existe item {0}.
+# Vocabulary.Hotkeys.ItemIsEmpty
+Item {0} is empty.	O item {0} está vazio.
+# Vocabulary.Hotkeys.CouldNotBeUsed
+{0} could not be used. Item activation is not yet supported for this slot.	Não foi possível usar {0}. A ativação de itens ainda não funciona para este espaço.
+# Vocabulary.Hotkeys.Using
+Using {0}.	Usando {0}.
+# Vocabulary.Hotkeys.IsStillWaitingFor
+{0} is still waiting for input.	{0} ainda aguarda uma ação.
+# Vocabulary.Hotkeys.WasNotUsed
+{0} was not used.	Item não usado: {0}.
+# Vocabulary.Hotkeys.UsingTheLuckyClover
+Using the Lucky Clover discards all of these cards for new ones. 	Usar o Trevo da Sorte descarta todas estas cartas por novas. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Left and right arrows browse. Enter selects the card. 	Setas para esquerda e direita navegam. Enter seleciona a carta. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+Space repeats the current option. 	Espaço repete a opção atual. 
+# Vocabulary.Hotkeys.LeftAndRightArrows
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R abre o manual de regras. Shift mais seta para cima mostra seu baralho. 
+# Vocabulary.Hotkeys.NoBackOptionOn
+No back option on this screen.	Não há opção de voltar nesta tela.
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Navegação do menu. As setas percorrem as opções. Enter escolhe a opção atual. 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Backspace or Escape goes back. Space repeats the current option. 	Backspace ou Esc volta. Espaço repete a opção atual. 
+# Vocabulary.Hotkeys.MenuNavigationArrowKeys
+Shift R looks up the last ability you heard. 	Shift R consulta a última habilidade que você ouviu. 
+# Vocabulary.Hotkeys.NoValidTargets
+No valid targets.	Nenhum alvo válido.
+# Vocabulary.Hotkeys.ChooseATargetAvailable
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Escolha um alvo. Alvos disponíveis: {0}. {1} Setas para navegar, Enter para selecionar.
+# Vocabulary.Hotkeys.CannotCancelItemUse
+Cannot cancel item use, please choose a target.	Não é possível cancelar o uso do item. Escolha um alvo.
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target.	Escolhendo um alvo.
+# Vocabulary.Hotkeys.ChoosingATargetOrChoosingATarget
+Choosing a target for {0}.	Escolhendo um alvo para {0}.
+# Vocabulary.Hotkeys.ArrowKeysMoveBetween
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} As setas percorrem as cartas que este item pode afetar. Enter seleciona. Um item não pode ser cancelado depois de usado.
+# Vocabulary.Hotkeys.ThatTargetCouldNot
+That target could not be selected.	Não foi possível selecionar esse alvo.
+# Vocabulary.Hotkeys.IsDraggedDownTo
+{0} is dragged down to your side into slot {1}.	{0} desce para o seu lado, no espaço {1}.
+# Vocabulary.Hotkeys.UnknownSlot
+unknown slot.	espaço desconhecido.
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Your slot	Seu espaço
+# Vocabulary.Hotkeys.YourSlotOrOpponentSlot
+Opponent slot	Espaço do oponente
+# Vocabulary.Hotkeys.TargetSlotEmpty
+{0} {1}: empty.	{0} {1}: vazio.
+# Vocabulary.Hotkeys.ThereIsNoIkma
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	Ainda não existe um leitor do IKMA para esta tela, então os controles de sempre não funcionam aqui. 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+Space describes what is in front of you. Space repeats where you are. 	Espaço descreve o que está na sua frente. Espaço repete onde você está. 
+# Vocabulary.Hotkeys.ThereIsNoIkma
+This screen still needs the mouse until a reader is built for it.	Esta tela ainda precisa do mouse até que um leitor seja criado para ela.
+# Vocabulary.Hotkeys.IkmaCannotReadThis
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}O IKMA ainda não consegue ler esta tela. O jogo está esperando por você aqui. 
+# Vocabulary.Hotkeys.MapControlsArrowsBrowse
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Controles do mapa. Setas, percorrer as escolhas à frente. Enter, viajar. Espaço, listar todas as escolhas atuais. B, ler os caminhos à frente. Shift mais seta para cima, ver seu baralho. I, ouvir seus itens atuais. R, abrir o manual de regras. Shift mais seta para baixo, levantar da mesa. H, ajuda.
+# Vocabulary.Hotkeys.PlacingACardLeft
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Posicionando uma carta. Setas para esquerda e direita percorrem os espaços. Enter, confirmar. As teclas de leitura do tabuleiro continuam funcionando. H, ajuda.
+# Vocabulary.Hotkeys.ChoosingSacrificesLeftAnd
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Escolhendo sacrifícios. Setas para esquerda e direita percorrem seu tabuleiro. Enter, sacrificar a carta atual. Um sacrifício não pode ser cancelado depois de começar. As teclas de leitura do tabuleiro continuam funcionando. H, ajuda.
+# Vocabulary.Hotkeys.CannotTravelThere
+Cannot travel there.	Não é possível viajar para lá.
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. {0} returned to hand.	Cancelado. {0} voltou para a mão.
+# Vocabulary.Hotkeys.CancelledReturnedToOrCancelledCardReturned
+Cancelled. Card returned to hand.	Cancelado. A carta voltou para a mão.
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+A sacrifice cannot be cancelled once started.	Um sacrifício não pode ser cancelado depois de começar.
+# Vocabulary.Hotkeys.SacrificeCannotBeOrCannotCancelRight
+Cannot cancel right now.	Não é possível cancelar agora.
+# Vocabulary.Hotkeys.NoCardsToSacrifice
+No cards to sacrifice.	Não há cartas para sacrificar.
+# Vocabulary.Hotkeys.NoSlot
+No slot {0}.	Não existe espaço {0}.
+# Vocabulary.Hotkeys.OnlyInHand
+Only {0} in hand.	Só {0} na mão.
+# Vocabulary.Hotkeys.NoCardsInHand
+No cards in hand are currently playable.	Nenhuma carta na mão pode ser jogada agora.
+# Vocabulary.Hotkeys.CardOrCardWord
+Card	Carta
+# Vocabulary.Hotkeys.GainsFromYourTotem
+{0} gains {1} from your totem.	{0} ganha {1} do seu totem.
+# Vocabulary.Hotkeys.RecentItemCount
+Recent item:	Item recente:
+# Vocabulary.Hotkeys.RecentItemCount
+Recent items:	Itens recentes:
+# Vocabulary.Hotkeys.NoRecentAbilityTo
+No recent ability to look up.	Nenhuma habilidade recente para consultar.
+# Vocabulary.Hotkeys.NoDescriptionAvailableFor
+No description available for that ability.	Nenhuma descrição disponível para essa habilidade.
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent ability:	Habilidade recente:
+# Vocabulary.Hotkeys.RecentAbilityCount
+Recent abilities:	Habilidades recentes:
+# Vocabulary.Hotkeys.CannotPlayACard
+Cannot play a card right now.	Não é possível jogar uma carta agora.
+# Vocabulary.Hotkeys.NoCardSelectedUse
+No card selected. Use left and right arrows to browse your hand first.	Nenhuma carta selecionada. Use as setas para esquerda e direita para percorrer sua mão primeiro.
+# Vocabulary.Hotkeys.ThatCard
+That card	Essa carta
+# Vocabulary.Hotkeys.ThatCardCouldNot
+That card could not be played.	Não foi possível jogar essa carta.
+# Vocabulary.Hotkeys.WasNotPlayed
+{0} was not played.	Carta não jogada: {0}.
+# Vocabulary.Hotkeys.NoCardInThis
+No card in this slot.	Nenhuma carta neste espaço.
+# Vocabulary.Hotkeys.SlotIsOccupiedBy
+Slot {0} is occupied by {1}. Choose an empty slot.	O espaço {0} está ocupado por {1}. Escolha um espaço vazio.
+# Vocabulary.Hotkeys.PlayedInSlot
+{0} played in Slot {1}.	{0} entra em jogo no espaço {1}.
+# Vocabulary.Hotkeys.NoSlotRestrictionsTo
+No slot restrictions to step through.	Não há restrições de espaço para percorrer.
+# Vocabulary.Hotkeys.NoOtherSlotAvailable
+No other slot available for this card.	Nenhum outro espaço disponível para esta carta.
+# Vocabulary.Hotkeys.Ability
+ Ability: {0}.	 Habilidade: {0}.
+# Vocabulary.Hotkeys.AbilitiesAnd
+ Abilities: {0}.	 Habilidades: {0}.
+# Vocabulary.Hotkeys.SlotWithCard
+Slot {0}: {1}, {2}/{3}.{4}{5}	Espaço {0}: {1}, {2}/{3}.{4}{5}
+# Vocabulary.Hotkeys.SlotEmpty
+Slot {0}: empty.{1}	Espaço {0}: vazio.{1}
+# Vocabulary.Hotkeys.ChooseASlotTo
+ Choose a slot to play {0}.	 Escolha um espaço para jogar {0}.
+# Vocabulary.Hotkeys.SlotOccupiedBy
+Slot {0}: occupied by {1}.{2}{3}	Espaço {0}: ocupado por {1}.{2}{3}
+# Vocabulary.Hotkeys.SlotEmptyName
+Slot {0}: empty.{1}{2}	Espaço {0}: vazio.{1}{2}
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifice	sacrifício
+# Vocabulary.PlayFlow.SacrificeCount
+sacrifices	sacrifícios
+# Vocabulary.PlayFlow.CostsBloodChooseLeft
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} custa {1} de sangue. Escolha {2} {3}. Setas para esquerda e direita para navegar, Enter para confirmar. Um sacrifício não pode ser cancelado depois de começar.
+# Vocabulary.PlayFlow.Playing
+Playing {0}. 	Jogando {0}. 
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Escolha um espaço para jogar {1}. Setas para esquerda e direita para navegar, Enter para confirmar.{2}
+# Vocabulary.PlayFlow.ChooseASlotOrChooseASlot
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Escolha um espaço. Setas para esquerda e direita para navegar, Enter para confirmar.{0}
+# Vocabulary.Board.Hand
+Hand: {0}. {1}.	Mão: {0}. {1}.
+# Vocabulary.Board.YourBoard
+Your board	Seu tabuleiro
+# Vocabulary.Board.EnemyBoard
+Enemy board	Tabuleiro inimigo
+# Vocabulary.Board.ResourcesUnavailable
+Resources unavailable.	Recursos indisponíveis.
+# Vocabulary.Board.CandleLitCount
+ 1 candle lit.	 1 vela acesa.
+# Vocabulary.Board.CandleLitCount
+ {0} candles lit.	 {0} velas acesas.
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has 1 candle.	 O inimigo tem 1 vela.
+# Vocabulary.Board.EnemyHasCandleCount
+ Enemy has {0} candles.	 O inimigo tem {0} velas.
+# Vocabulary.Board.WoodcarvingKinTypeSigil
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 Escultura, tribo: {0}, habilidade de selo: {1}.
+# Vocabulary.Board.YourDeckRemainingCard
+ Your deck: {0} remaining.	 Seu baralho: restam {0}.
+# Vocabulary.Board.SquirrelDeckRemainingCard
+ Squirrel deck: {0} remaining.	 Baralho de Esquilos: restam {0}.
+# Vocabulary.Board.ItemEmpty
+empty	vazio
+# Vocabulary.Board.ItemAtCursor
+Item {0}: {1}.	Item {0}: {1}.
+# Vocabulary.Board.OpponentUnavailable
+Opponent unavailable.	Oponente indisponível.
+# Vocabulary.Board.NoCardsQueued
+No cards queued.	Nenhuma carta na fila.
+# Vocabulary.Board.BlockedForSlot
+Blocked for Slot {0}: 	Bloqueado para o espaço {0}: 
+# Vocabulary.Board.EnteringSlot
+Entering Slot {0}: 	Entrando no espaço {0}: 
+# Vocabulary.Board.UpcomingQueue
+Upcoming queue: {0}. {1}.	Fila a seguir: {0}. {1}.
+# Vocabulary.Board.GetHandNamesText
+Your hand: {0}. {1}.	Sua mão: {0}. {1}.
+# Vocabulary.Board.SideEmpty
+{0}: empty	{0}: vazio
+# Vocabulary.Board.SlotsList
+Slots 	Espaços 
+# Vocabulary.Board.SlotNumber
+Slot {0}	Espaço {0}
+# Vocabulary.Board.SlotsOneTo
+Slots 1 to {0}	Espaços 1 a {0}
+# Vocabulary.Board.CurrentlyStats
+currently {0}/{1}.	atualmente {0}/{1}.
+# Vocabulary.Board.SideEmptyCannon
+{0}: empty{1}	{0}: vazio{1}
+# Vocabulary.Board.NumberRange
+{0} to {1}	{0} a {1}
+# Vocabulary.Board.Ability
+. Ability: {0}	. Habilidade: {0}
+# Vocabulary.Board.AbilitiesAnd
+. Abilities: {0}	. Habilidades: {0}
+# Vocabulary.Board.CostsBloodCount
+costs 1 blood	custa 1 de sangue
+# Vocabulary.Board.CostsBloodCount
+costs {0} blood	custa {0} de sangue
+# Vocabulary.Board.CostsBoneCount
+costs 1 bone	custa 1 osso
+# Vocabulary.Board.CostsBoneCount
+costs {0} bones	custa {0} ossos
+# Vocabulary.Board.GetScaleText
+Scales unavailable.	Balança indisponível.
+# Vocabulary.BoardChanges.MovesToSlot
+{0} moves to {1} slot {2}.	{0} se move para {1}, espaço {2}.
+# Vocabulary.BoardChanges.RightOrLeft
+right, 	para a direita, 
+# Vocabulary.BoardChanges.RightOrLeft
+left, 	para a esquerda, 
+# Vocabulary.BoardChanges.MovesFromSlotTo
+{0} {1} moves {2}from slot {3} to slot {4}.	{1} {0} se move {2}do espaço {3} para o espaço {4}.
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+{0} {1} moves {2}	{1} {0} se move {2}
+# Vocabulary.BoardChanges.MovesFromSlotToSlot
+from slot {0} to slot {1}.	do espaço {0} para o espaço {1}.
+# Vocabulary.BoardChanges.MovesDownToSlot
+{0} {1} moves down to slot {2}{3}.	{1} {0} desce para o espaço {2}{3}.
+# Vocabulary.BoardChanges.IsPlayedInSlot
+{0} {1} is played in slot {2}{3}.	{1} {0} entra em jogo no espaço {2}{3}.
+# Vocabulary.BoardChanges.TargetingSlot
+ targeting slot {0}	 mirando o espaço {0}
+# Vocabulary.BoardChanges.EnemyIsQueued
+Enemy {0} is queued{1}.	{0} entra na fila do inimigo{1}.
+# Vocabulary.BoardChanges.HasLeftSlot
+{0} {1} has left slot {2}.	{1} {0} saiu do espaço {2}.
+# Vocabulary.BoardChanges.ProspectorClearsHisQueue
+The Prospector clears his queue.	O Garimpeiro limpa a fila dele.
+# Vocabulary.BoardChanges.ItIsCarryingA
+, it is carrying a pack of cards	, carregando um pacote de cartas
+# Vocabulary.BoardChanges.Possessive
+Your	do seu lado
+# Vocabulary.BoardChanges.Possessive
+Enemy	do inimigo
+# Vocabulary.BoardChanges.SideWord
+your	seu lado
+# Vocabulary.BoardChanges.SideWord
+enemy	lado inimigo
+# Vocabulary.Cards.Fused
+Fused {0}	Fusão de {0}
+# Vocabulary.Cards.GlitchedCardThisCard
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	Carta com falha. Esta carta brilha em branco e falha visualmente. Os atributos são desconhecidos até ela entrar em jogo.
+# Vocabulary.Cards.ShiftPlusRLooks
+Shift plus R looks up the last ability you heard.	Shift mais R consulta a última habilidade que você ouviu.
+# Vocabulary.Cards.AbilityCount
+Ability	Habilidade
+# Vocabulary.Cards.AbilityCount
+Abilities	Habilidades
+# Vocabulary.Cards.SigilAbility
+ Sigil Ability: {0}.	 Habilidade de selo: {0}.
+# Vocabulary.Cards.KinType
+ Kin type: {0}.	 Tribo: {0}.
+# Vocabulary.Cards.KinTypes
+ Kin types: {0}.	 Tribos: {0}.
+# Vocabulary.Cards.StarAttack
+Star	Estrela
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving left.	 Movendo-se para a esquerda.
+# Vocabulary.Cards.MovingLeftOrMovingRight
+ Moving right.	 Movendo-se para a direita.
+# Vocabulary.Cards.Rare
+Rare	Rara
+# Vocabulary.Cards.TerrainBorder
+Terrain border	Borda de terreno
+# Vocabulary.Cards.GlitchedPortrait
+Glitched portrait	Retrato com falha
+# Vocabulary.Cards.FullCardPortrait
+Full-card portrait	Retrato de carta inteira
+# Vocabulary.Cards.AnimatedPortrait
+Animated portrait	Retrato animado
+# Vocabulary.Cards.HologramPortrait
+Hologram portrait	Retrato holográfico
+# Vocabulary.Cards.GoldenGlow
+Golden glow	Brilho dourado
+# Vocabulary.Cards.RedGlow
+Red glow	Brilho vermelho
+# Vocabulary.Cards.BloodiedPortrait
+Bloodied portrait	Retrato ensanguentado
+# Vocabulary.Cards.MoonParticles
+Moon particles	Partículas lunares
+# Vocabulary.Cards.AttackEqualsTheNumber
+ Attack equals the number of ants on its owner's side.	 O poder é igual ao número de formigas do lado do dono.
+# Vocabulary.Cards.AttackIsEqualTo
+ Attack is equal to half the Bones of the owner.	 O poder é igual à metade dos ossos do dono.
+# Vocabulary.Cards.AttackEqualsSacrificesMade
+ Attack equals sacrifices made this turn.	 O poder é igual aos sacrifícios feitos neste turno.
+# Vocabulary.Cards.AttackVariesWithGreen
+ Attack varies with green gems.	 O poder varia com as gemas verdes.
+# Vocabulary.Cards.BloodCount
+1 blood	1 de sangue
+# Vocabulary.Cards.BloodCount
+{0} blood	{0} de sangue
+# Vocabulary.Cards.CostLine
+Cost: {0}.	Custo: {0}.
+# Vocabulary.Cards.CostFree
+Cost: Free.	Custo: grátis.
+# Vocabulary.Combat.ASlot
+a slot	um espaço
+# Vocabulary.Combat.CardInSlot
+{0} in {1}	{0} em {1}
+# Vocabulary.Combat.EmptySlot
+empty {0}	{0} vazio
+# Vocabulary.Combat.TargetListThree
+, and 	, e 
+# Vocabulary.Combat.AttacksTargets
+{0} attacks {1}.	{0} ataca {1}.
+# Vocabulary.Combat.FliesOverAndAttacks
+{0} flies over {1} and attacks directly{2}.	{0} voa sobre {1} e ataca diretamente{2}.
+# Vocabulary.Combat.PassesByAndAttacks
+{0} passes by {1} and attacks directly{2}.	{0} passa por {1} e ataca diretamente{2}.
+# Vocabulary.Combat.Airborne
+Airborne	Aéreo
+# Vocabulary.Combat.MightyLeap
+Mighty Leap	Salto Pujante
+# Vocabulary.Combat.BlocksDueTo
+{0} blocks {1} {2} due to {3}.	Graças a {3}, {0} bloqueia {2}, que tem {1}.
+# Vocabulary.Combat.Attacks
+{0}{1} attacks {2}.	{0}{1} ataca {2}.
+# Vocabulary.Combat.AttacksEmptySlot
+{0}{1} attacks empty Slot {2}.	{0}{1} ataca o espaço vazio {2}.
+# Vocabulary.Combat.AttacksDirectly
+{0}{1} attacks directly.	{0}{1} ataca diretamente.
+# Vocabulary.Combat.InSlotNumber
+ in Slot {0}	 no espaço {0}
+# Vocabulary.Combat.FromYourHand
+ from your hand	 da sua mão
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2} by Ability: {3}.	{0} entra em jogo{1}{2} pela habilidade: {3}.
+# Vocabulary.Combat.PlayedLine
+{0} is played{1}{2}.	{0} entra em jogo{1}{2}.
+# Vocabulary.Combat.DeadlyName
+Touch of Death	Toque da Morte
+# Vocabulary.Combat.WithOne
+ with {0}	 com {0}
+# Vocabulary.Combat.ToDeadly
+ to {0}	 por {0}
+# Vocabulary.Combat.QueuedInSlot
+The {0} queued in slot {1}	{0} na fila do espaço {1}
+# Vocabulary.Combat.Queued
+The {0} queued	{0} na fila
+# Vocabulary.Combat.TakesAnd
+{0} takes {1} and {2}{3}.	{0} sofre {1} e {2}{3}.
+# Vocabulary.Combat.TakesDamage
+{0} takes {1}.	{0} sofre {1}.
+# Vocabulary.Combat.TakesItsAbilityResolves
+{0} takes {1}, {2}. 	{0} sofre {1}, {2}. 
+# Vocabulary.Combat.TakesItsAbilityResolves
+Its {0} ability resolves before it dies.	A habilidade {0} se resolve antes de a carta morrer.
+# Vocabulary.Combat.TakesDamageLeft
+{0} takes {1}, {2}.	{0} sofre {1}, {2}.
+# Vocabulary.Combat.SideQualifiedName
+Your {0}	{0} do seu lado
+# Vocabulary.Combat.SideQualifiedName
+Enemy {0}	{0} do inimigo
+# Vocabulary.Combat.IsSacrificed
+{0} is sacrificed.{1}	Sacrifício: {0}.{1}
+# Vocabulary.Combat.Sacrificed
+{0} sacrificed.{1}	Sacrifícios: {0}.{1}
+# Vocabulary.Combat.PowerAndHealth
+{0} power and {1} health	{0} de poder e {1} de vida
+# Vocabulary.Combat.Power
+{0} power	{0} de poder
+# Vocabulary.Combat.Health
+{0} health	{0} de vida
+# Vocabulary.Combat.MorselFallback
+Morsel	Petisco
+# Vocabulary.Combat.AbilitiesTriggerGains
+{0} {1} abilities trigger, {2} gains {3}.	{0} habilidades {1} são ativadas, {2} ganha {3}.
+# Vocabulary.Combat.MorselGainFor
+{0} gained {1}.	{0} ganhou {1}.
+# Vocabulary.Combat.IsSkinnedAnd
+{0} is skinned and {1}.	{0} tem a pele arrancada e {1}.
+# Vocabulary.Combat.IsCutAnd
+{0} is cut and {1}.	{0} sofre um corte e {1}.
+# Vocabulary.Combat.IsSmashedAnd
+{0} is smashed and {1}.	{0} sofre um golpe esmagador e {1}.
+# Vocabulary.Combat.InSlot
+{0} in Slot {1}	{0} no espaço {1}
+# Vocabulary.Combat.DirectDamageCount
+1 direct damage.	1 de dano direto.
+# Vocabulary.Combat.DirectDamageCount
+{0} direct damage.	{0} de dano direto.
+# Vocabulary.Combat.ScaleHits
+ The scale hits 5...	 A balança chega a 5...
+# Vocabulary.Combat.VolumeWarning
+VOLUME WARNING: 	AVISO DE VOLUME: 
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+Enemy deals {0}{1}	O inimigo causa {0}{1}
+# Vocabulary.Combat.EnemyDealsOrYouDeal
+You deal {0}{1}	Você causa {0}{1}
+# Vocabulary.Combat.ReceivedBoneFromThe
+Received 1 bone from 	Você recebeu 1 osso: 
+# Vocabulary.Combat.TheBoneLordsBoon
+the Bone Lord's boon	benefício do Lorde Ossário
+# Vocabulary.Combat.ReceivedBonesFromThe
+Received 8 bones from 	Você recebeu 8 ossos: 
+# Vocabulary.Combat.ReceivedBonesAtBattle
+Received {0} bones at battle start.	Você recebeu {0} ossos no início da batalha.
+# Vocabulary.MultiStrike.AttacksEachOfYour
+{0} attacks each of your {1} 	{0} ataca cada um dos seus {1} 
+# Vocabulary.MultiStrike.AttacksTimes
+{0} attacks {1} times.	{0} ataca {1} vezes.
+# Vocabulary.MultiStrike.AndDies
+and {0}{1}	e {0}{1}
+# Vocabulary.MultiStrike.InStartSlot
+ in slot {0}	 no espaço {0}
+# Vocabulary.MultiStrike.BurrowsFromTo
+{0} burrows from {1}	{0} se enterra e vai do {1}
+# Vocabulary.MultiStrike.Burrows
+{0}{1} burrows	{0}{1} se enterra
+# Vocabulary.MultiStrike.HopsTakingDies
+{0}, taking {1}, {2}.	{0}, sofrendo {1}, {2}.
+# Vocabulary.MultiStrike.HopsTaking
+{0}, taking {1}.	{0}, sofrendo {1}.
+# Vocabulary.MultiStrike.TakesAndDies
+{0}{1} takes {2} {3}.	{0}{1} sofre {2} {3}.
+# Vocabulary.MultiStrike.TakesStrikes
+{0}{1} takes {2}.	{0}{1} sofre {2}.
+# Vocabulary.MultiStrike.TakesWithOutcome
+{0}{1} takes {2}, {3}.	{0}{1} sofre {2}, {3}.
+# Vocabulary.MultiStrike.AttacksGiant
+{0} attacks {1}	{0} ataca {1}
+# Vocabulary.MultiStrike.AttacksGiantTimes
+{0} attacks {1} {2} times	{0} ataca {1} {2} vezes
+# Vocabulary.MultiStrike.YourCardsAttackTimes
+Your cards attack {0} {1} times	Suas cartas atacam {0} {1} vezes
+# Vocabulary.MultiStrike.GiantDiesFor
+{0} for {1}.	{0}, causando {1}.
+# Vocabulary.MultiStrike.ForHealthRemaining
+{0} for {1}, {2} health remaining.	{0}, causando {1}, restam {2} de vida.
+# Vocabulary.MultiStrike.BrittleFallback
+Brittle	Fragilidade
+# Vocabulary.MultiStrike.SAbilityTriggersAnd
+{0}'s {1} ability triggers, and it dies.{2}	A habilidade {1} de {0} é ativada, e a carta morre.{2}
+# Vocabulary.MultiStrike.InSlots
+{0} in {1} {2}	{0}, espaço {2}
+# Vocabulary.MultiStrike.AbilitiesTriggerDie
+{0} {1} abilities trigger, {2} die.{3}	{0} habilidades {1} são ativadas, {2} morrem.{3}
+# Vocabulary.Turns.YourTurn
+Your turn.	Seu turno.
+# Vocabulary.Turns.EnemyTurn
+Enemy turn.	Turno do inimigo.
+# Vocabulary.Turns.DrawPhaseSkippedDue
+Draw Phase skipped due to no cards remaining in either deck...	Fase de compra pulada: não há cartas em nenhum dos baralhos...
+# Vocabulary.Sigils.GuardianName
+Guardian	Cão de Guarda
+# Vocabulary.Sigils.SAbilityTriggersIt
+{0}'s {1} ability triggers: it is blocked from 	A habilidade {1} de {0} é ativada: a carta não consegue 
+# Vocabulary.Sigils.SAbilityTriggersIt
+moving to slot {0}.	ir para o espaço {0}.
+# Vocabulary.Sigils.SAbilityTriggersItMoves
+{0}'s {1} ability triggers: it moves to slot {2}.	A habilidade {1} de {0} é ativada: a carta vai para o espaço {2}.
+# Vocabulary.Sigils.Burrower
+Burrower	Escavador
+# Vocabulary.Sigils.RightOrLeft
+right	para a direita
+# Vocabulary.Sigils.RightOrLeft
+left	para a esquerda
+# Vocabulary.Sigils.SAbilityTriggersItMovesTo
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	A habilidade {1} de {0} é ativada: a carta se move {2}, para o espaço {3}.
+# Vocabulary.Sigils.Sprinter
+Sprinter	Veloz
+# Vocabulary.Sigils.Bloodlust
+Bloodlust	Sede de Sangue
+# Vocabulary.Sigils.SAbilityTriggersItNow
+{0}'s {1} ability triggers: it now has {2} power.	A habilidade {1} de {0} é ativada: agora a carta tem {2} de poder.
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0}'s {1} ability triggers: it places a {2} in 	A habilidade {1} de {0} é ativada: coloca {2} em 
+# Vocabulary.Sigils.SAbilityTriggersItPlaces
+{0} slot {1}.	{0}, espaço {1}.
+# Vocabulary.Sigils.SAbilityTriggersA
+{0}'s {1} ability triggers: a 	A habilidade {1} de {0} é ativada: 
+# Vocabulary.Sigils.SAbilityTriggersA
+{0} is played in {1} slot {2}.	{0} entra em jogo em {1}, espaço {2}.
+# Vocabulary.Sigils.WithAbilities
+, with 	, com 
+# Vocabulary.Sigils.Enemy
+Enemy 	do inimigo 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+{0}{1}'s {2} ability triggers: 	A habilidade {2} de {1} {0}é ativada: 
+# Vocabulary.Sigils.SAbilityTriggersItBecomes
+it becomes a {0}/{1} {2}{3}.	a carta se torna {2} {0}/{1}{3}.
+# Vocabulary.Sigils.SAbilityFizzlesDue
+{0}'s {1} ability fizzles due to having no empty item slots.	A habilidade {1} de {0} falha: não há espaços de item vazios.
+# Vocabulary.Events.IsCreatedInYour
+{0} is created in your hand.	{0} aparece na sua mão.
+# Vocabulary.Events.AbilityTriggersIsAdded
+{0} ability triggers: {1} {2} is added to your hand.	A habilidade {0} é ativada: {2} vai para a sua mão.
+# Vocabulary.Events.OuroborosComesBackStronger
+ Ouroboros comes back stronger than before...	 Ouroboros volta mais forte do que antes...
+# Vocabulary.Events.ArticleA
+A	Um
+# Vocabulary.Events.AnOrA
+An	Um
+# Vocabulary.Events.CardsAbility
+{0}'s {1}	{1} de {0}
+# Vocabulary.Events.BySourcesAbility
+ by {0}'s {1}	 pela habilidade {1} de {0}
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created in enemy Slot {1}{2}.	{0} aparece no espaço {1} do inimigo{2}.
+# Vocabulary.Events.IsCreatedInOrIsCreatedOn
+{0} is created on the opposing space{1}.	{0} aparece no espaço oposto{1}.
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue, targeting Slot {0}.	O dano excedente passa para a fila, no espaço {0}.
+# Vocabulary.Events.ExcessDamageCarriesOrExcessDamageCarries
+Excess damage carries to the queue.	O dano excedente passa para a fila.
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory. {0} extra {1} received.	Vitória. Dentes extras recebidos: {0}.
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+Victory.	Vitória.
+# Vocabulary.Events.ItemSlotCount
+item slot {0}	no espaço de item {0}
+# Vocabulary.Events.ItemSlotCount
+an item slot	em um espaço de item
+# Vocabulary.Events.Chosen
+{0} chosen.	Escolhido: {0}.
+# Vocabulary.Events.IsCreatedIn
+{0} is created in {1}.	{0} aparece {1}.
+# Vocabulary.Events.Saving
+Saving.	Salvando.
+# Vocabulary.Events.IsAddedToYour
+{0} is added to your hand.	{0} vai para a sua mão.
+# Vocabulary.Dialogue.PirateSkull
+Pirate Skull	Caveira Pirata
+# Vocabulary.Dialogue.None
+None	Nenhum
+# Vocabulary.Bosses.OneOfSCandles
+One of {0}'s {1} candles is blown out.	Uma das {1} velas de {0} se apaga.
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+A candle is blown out.	Uma vela se apaga.
+# Vocabulary.Bosses.CandleIsBlownOrOneOfS
+One of {0}'s candles is blown out.	Uma das velas de {0} se apaga.
+# Vocabulary.Bosses.CandleIsBlownOut
+A candle is blown out. {0} left.	Uma vela se apaga. Velas restantes: {0}.
+# Vocabulary.Bosses.CandleIsBlownOut
+One of {0}'s candles is blown out. {1} left.	Uma das velas de {0} se apaga. Velas restantes: {1}.
+# Vocabulary.Bosses.TheMask
+The {0}	{0}
+# Vocabulary.Bosses.LeshyPutsOnA
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	Leshy põe uma máscara de madeira com um rosto sujo e selvagem, uma grande barba desgrenhada e um dente de ouro torto. Ele segura uma grande picareta com a mão trêmula...
+# Vocabulary.Bosses.CandleCount
+candle	vela acesa
+# Vocabulary.Bosses.CandleCount
+candles	velas acesas
+# Vocabulary.Bosses.PlacesASkullHolding
+{0} places a skull holding {1} lit {2} 	{0} coloca uma caveira com {1} {2} 
+# Vocabulary.Bosses.PlacesASkullHolding
+onto the table.	sobre a mesa.
+# Vocabulary.Bosses.LeshyRelightsYourCandle
+Leshy relights your candle. You now have {0} {1} lit.	Leshy reacende sua vela. Agora você tem {0} {1}.
+# Vocabulary.Bosses.BlowsOutYourLast
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0} apaga sua última vela. A sala escurece enquanto {1} estende as duas mãos por cima da mesa...
+# Vocabulary.Bosses.BlowsOutOneOf
+{0} blows out one of your candles. You have {1} remaining.	{0} apaga uma das suas velas. Velas restantes: {1}.
+# Vocabulary.Bosses.AndAreAddedTo
+{0} are added to your hand.	{0} vão para a sua mão.
+# Vocabulary.Bosses.IsAddedToYourHand
+{0} is added to your hand.{1}	{0} vai para a sua mão.{1}
+# Vocabulary.Bosses.AndAreAddedToYour
+{0} are added to your hand.{1}	{0} vão para a sua mão.{1}
+# Vocabulary.Bosses.ExtraCandleIsLit
+An extra candle is lit.	Uma vela extra é acesa.
+# Vocabulary.ProspectorBoss.ProspectorUsesHisPickaxe
+The Prospector uses his pickaxe to strike all of your creatures, turning them into Gold Nuggets.	O Garimpeiro usa a picareta para golpear todas as suas criaturas, transformando-as em Pepitas de Ouro.
+# Vocabulary.ProspectorBoss.ProspectorClearsHisQueue
+The Prospector clears his queue, 	O Garimpeiro limpa a fila dele, 
+# Vocabulary.PirateSkull.Limoncello
+The Limoncello	Limoncello
+# Vocabulary.PirateSkull.YourTheirSlot
+ slot {0}	 , espaço {0}
+# Vocabulary.PirateSkull.CannonsFireAtIs
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	Os canhões disparam contra {0}: {1} leva uma bala de canhão e {2}.
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	Os canhões disparam contra {0}: {1} leva uma bala de canhão, {2} de vida restante.
+# Vocabulary.PirateSkull.CannonsFireAtOrCannonsFireAt
+Cannons fire at {0}, {1} is hit by cannonball.	Os canhões disparam contra {0}: {1} leva uma bala de canhão.
+# Vocabulary.CardChoices.DeathCard
+Death card.	Carta do ocaso.
+# Vocabulary.CardChoices.BloodCostCard
+{0} blood cost card.	Carta de custo {0} de sangue.
+# Vocabulary.CardChoices.BonesCostCard
+Bones cost card.	Carta de custo em ossos.
+# Vocabulary.CardChoices.KinCard
+{0} kin card.	Carta da tribo {0}.
+# Vocabulary.CardChoices.NewCardsDealt
+New cards dealt.	Novas cartas distribuídas.
+# Vocabulary.CardChoices.UseTheLuckyClover
+ Use the Lucky Clover to discard them all and be dealt new cards.	 Use o Trevo da Sorte para descartar todas e receber novas cartas.
+# Vocabulary.CardChoices.OpeningLine
+Left and right arrows to browse, Enter to turn a card over, 	Setas para esquerda e direita para navegar, Enter para virar uma carta, 
+# Vocabulary.CardChoices.OpeningLine
+Shift Up displays your deck, Space to repeat, H for help.	Shift+Seta para cima mostra seu baralho, Espaço para repetir, H para ajuda.
+# Vocabulary.CardChoices.DeckTrialLeshyPuts
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	Ordálio do baralho. Leshy coloca um arco de pedra cenográfico sobre a mesa, fazendo parecer que seus olhos brilhantes surgem da entrada de uma caverna escura.
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Rare Card Choice	Escolha de carta rara
+# Vocabulary.CardChoices.RareCardChoiceOrCardChoice
+Card Choice	Escolha de carta
+# Vocabulary.CardChoices.FaceDownCardCount
+1 face-down card	1 carta virada para baixo
+# Vocabulary.CardChoices.FaceDownCardCount
+{0} face-down cards	{0} cartas viradas para baixo
+# Vocabulary.CardChoices.FaceDownRareCardCount
+1 face-down rare card	1 carta rara virada para baixo
+# Vocabulary.CardChoices.FaceDownRareCardCount
+{0} face-down rare cards	{0} cartas raras viradas para baixo
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}. Leshy lhe apresenta uma caixa de madeira. Ele abre o cadeado e 
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+opens it, revealing {0}... Choose 1 to add to your deck.	levanta a tampa, revelando {0}... Escolha 1 para adicionar ao seu baralho.
+# Vocabulary.CardChoices.LeshyPresentsYouOrEveryCardIs
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}. Todas as cartas estão viradas para cima. Escolha 1 para adicionar ao seu baralho.
+# Vocabulary.CardChoices.BeforeYouLayOrEveryCardIs
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}. Diante de você: {1}. Escolha 1 para adicionar ao seu baralho.
+# Vocabulary.CardChoices.LuckyCloverDiscardAll
+Lucky Clover. Discard all cards and be dealt new ones.	Trevo da Sorte. Descarte todas as cartas e receba novas.
+# Vocabulary.CardChoices.FaceDown
+Face down.	Virada para baixo.
+# Vocabulary.CardChoices.TrialOf
+Trial of {0}.	Ordálio: {0}.
+# Vocabulary.CardChoices.FaceUpButThe
+Face up, but the card could not be read.	Virada para cima, mas não foi possível ler a carta.
+# Vocabulary.CardChoices.DuplicateOfCardIn
+ Duplicate of card in your deck.	 Você já tem esta carta no baralho.
+# Vocabulary.CardChoices.ArrowKeysToBrowse
+{0}. Arrow keys to browse.	{0}. Setas para navegar.
+# Vocabulary.CardChoices.ThatCardCouldNot
+That card could not be taken.	Não foi possível pegar essa carta.
+# Vocabulary.CardChoices.LuckyCloverCouldNot
+The Lucky Clover could not be used.	Não foi possível usar o Trevo da Sorte.
+# Vocabulary.CardChoices.ThatCardCouldNotBe
+That card could not be selected.	Não foi possível selecionar essa carta.
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+{0} added to your deck.	{0} entra no seu baralho.
+# Vocabulary.CardChoices.AddedToYourOrCardAddedTo
+Card added to your deck.	Carta adicionada ao seu baralho.
+# Vocabulary.CardChoices.PressEnterToAdd
+ Press Enter to add it to your deck.	 Pressione Enter para adicioná-la ao seu baralho.
+# Vocabulary.DeckView.DeckReturned
+Deck returned.	Baralho devolvido.
+# Vocabulary.DeckView.PlaceBelow
+the card choice	a escolha de carta
+# Vocabulary.DeckView.PlaceBelow
+the map	o mapa
+# Vocabulary.DeckView.YourDeck
+Your deck. 	Seu baralho. 
+# Vocabulary.DeckView.LeftAndRightArrows
+Left and right arrows to browse, Space to repeat, A for teeth, I cycles through your items, H for help, Backspace to return to {0}.	Setas para esquerda e direita para navegar, Espaço para repetir, A para dentes, I percorre seus itens, H para ajuda, Backspace para voltar para {0}.
+# Vocabulary.DeckView.YourDeckIsStill
+Your deck is still being laid out.	Seu baralho ainda está sendo disposto.
+# Vocabulary.DeckView.YourDeckName
+Your deck. {0}.	Seu baralho. {0}.
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Left and right arrows browse the cards. Space repeats the card you are on. 	Setas para esquerda e direita percorrem as cartas. Espaço repete a carta atual. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+A reads the amount of teeth collected. I cycles through your items, one per press. 	A informa quantos dentes você coletou. I percorre seus itens, um por vez. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+R opens the rulebook. 	R abre o manual de regras. 
+# Vocabulary.DeckView.LeftAndRightArrowsBrowse
+Backspace closes your deck and returns you to {0}.	Backspace fecha seu baralho e volta para {0}.
+# Vocabulary.DeckView.NoTeethAreShown
+No teeth are shown here.	Nenhum dente é mostrado aqui.
+# Vocabulary.DeckView.ToothCollectedCount
+ 1 tooth collected.	 1 dente coletado.
+# Vocabulary.DeckView.ToothCollectedCount
+ {0} teeth collected.	 {0} dentes coletados.
+# Vocabulary.DeckPick.OpeningLine
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Seu baralho. Escolha uma carta para adicionar à sua mão. Setas para navegar, Enter escolhe. {0}.
+# Vocabulary.DeckPick.HelpLine
+Choose a card from your deck to add to your hand. 	Escolha uma carta do seu baralho para adicionar à sua mão. 
+# Vocabulary.DeckPick.HelpLine
+{0}. G, B and A to read the boardstate.	{0}. G, B e A leem o estado do tabuleiro.
+# Vocabulary.NodeScreens.HostCard
+Host Card	Espécime
+# Vocabulary.NodeScreens.CardToSacrifice
+Card to Sacrifice	Carta a sacrificar
+# Vocabulary.NodeScreens.BeginRitual
+Begin Ritual	Iniciar ritual
+# Vocabulary.NodeScreens.SendCardToRest
+Send card to rest by the fire	Enviar carta para descansar junto ao fogo
+# Vocabulary.NodeScreens.BeginExperiment
+Begin experiment...	Iniciar experimento...
+# Vocabulary.NodeScreens.SelectAPairOf
+Select a pair of cards to fuse together	Selecione um par de cartas para fundir
+# Vocabulary.NodeScreens.BeginPainting
+Begin painting	Começar a pintura
+# Vocabulary.NodeScreens.ChooseACardTo
+Choose a card to receive an artistic rendition of	Escolha uma carta para receber uma versão artística
+# Vocabulary.NodeScreens.ChooseOneCardFrom
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	Escolha uma carta do seu baralho para ser o espécime. Sacrifique outra carta do seu baralho para transferir os selos dela para o espécime.
+# Vocabulary.NodeScreens.SelectACardFrom
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	Selecione uma carta do seu baralho para se aquecer na fogueira. Isso aumentará permanentemente um dos atributos dela, mas envolve riscos...
+# Vocabulary.NodeScreens.ChooseAPairOf
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	Escolha um par de cartas iguais do seu baralho para fundi-las em uma só. O poder e a vida delas são somados, e os selos de ambas são mantidos.
+# Vocabulary.NodeScreens.PickANewWoodcarving
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	Escolha uma nova escultura para adicionar à sua mochila: uma cabeça de tribo ou um corpo de selo. Depois, se tiver uma cabeça e um corpo, escolha uma combinação de totem para levar com você. Cada carta do seu baralho que for da tribo da cabeça ganhará o selo do totem enquanto o totem estiver em uso.
+# Vocabulary.NodeScreens.TradeTheTeethYouve
+Trade the teeth you've collected for pelt cards to add to your deck.	Troque os dentes que você coletou por cartas de pele para adicionar ao seu baralho.
+# Vocabulary.NodeScreens.TradePeltsFromYourDeck
+Trade pelts from your deck for new cards.	Troque peles do seu baralho por novas cartas.
+# Vocabulary.NodeScreens.SelectOneCardFrom
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	Selecione uma carta do seu baralho para ser removida permanentemente. Em troca, o Lorde Ossário oferece um benefício, um efeito passivo que lhe dá ossos no início de cada batalha.
+# Vocabulary.NodeScreens.SelectOneCardFromYour
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	Selecione uma carta do seu baralho. Uma cópia dela será adicionada ao seu baralho, embora possa sair um pouco diferente.
+# Vocabulary.NodeScreens.CardToReceiveAn
+card to receive an artistic rendition	carta para receber uma versão artística
+# Vocabulary.NodeScreens.HostCardName
+host card	espécime
+# Vocabulary.NodeScreens.ChosenAsLabelsCardToSacrifice
+card to sacrifice	carta a sacrificar
+# Vocabulary.NodeScreens.BackpackCannotBeReached
+The backpack cannot be reached right now.	A mochila não pode ser acessada agora.
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Mochila. Setas para navegar, Backspace volta para a seleção de esculturas.
+# Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse
+Backpack. Arrows browse, Enter chooses a totem combination.	Mochila. Setas para navegar, Enter escolhe uma combinação de totem.
+# Vocabulary.NodeScreens.DeckCannotBeReached
+The deck cannot be reached right now.	O baralho não pode ser acessado agora.
+# Vocabulary.NodeScreens.CardS
+ {0}, {1} card{2}.	 {0}, {1} carta{2}.
+# Vocabulary.NodeScreens.WoodcarvingSelection
+Woodcarving selection.	Seleção de esculturas.
+# Vocabulary.NodeScreens.WithdrawFromTheCampfire
+Withdraw from the campfire.	Afastar-se da fogueira.
+# Vocabulary.NodeScreens.Fire
+the fire	o fogo
+# Vocabulary.NodeScreens.PairOf
+Pair of {0}.	Par de {0}.
+# Vocabulary.NodeScreens.Pluralise
+s	​
+# Vocabulary.NodeScreens.AltarOfTheBoneLord
+Altar of the Bone Lord	Altar do Lorde Ossário
+# Vocabulary.NodeScreens.AltarOfTheBone
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Altar do Lorde Ossário. Setas para navegar, Enter para confirmar.
+# Vocabulary.NodeScreens.TrapperYouAreGifted
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	Caçador. Você recebe uma Pele de Coelho. Troque os dentes que você coletou por cartas de pele para adicionar ao seu baralho.
+# Vocabulary.NodeScreens.TeethWord
+1 tooth	1 dente
+# Vocabulary.NodeScreens.TeethWord
+{0} teeth	{0} dentes
+# Vocabulary.NodeScreens.KnifeName
+Skinning Knife	Faca de Esfolamento
+# Vocabulary.NodeScreens.PurchasedForYouHave
+{0} purchased for {1}. You have {2} remaining.{3}	Você comprou {0} por {1}. Dentes restantes: {2}.{3}
+# Vocabulary.NodeScreens.YouAreShortFrom
+You are {0} short from buying {1}.{2}	Você precisa de mais {0} para comprar {1}.{2}
+# Vocabulary.NodeScreens.NotEnoughTeethRemaining
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Não restam dentes suficientes para outra compra. Backspace para deixar o Caçador.
+# Vocabulary.NodeScreens.YouHave
+You have {0}.	Você tem {0}.
+# Vocabulary.NodeScreens.ListOfThree
+, and {0}	 e {0}
+# Vocabulary.NodeScreens.Sacrificed
+{0} sacrificed.	Sacrifício: {0}.
+# Vocabulary.NodeScreens.SigilCount
+sigil	selo
+# Vocabulary.NodeScreens.SigilCount
+sigils	selos
+# Vocabulary.NodeScreens.RitualResult
+{0} gained the {1} {2}.	{0} ganhou {2}: {1}.
+# Vocabulary.NodeScreens.BoostPhrase
+its {0} by {1}	{0} em {1}
+# Vocabulary.NodeScreens.BoostPhrase
+its {0}	{0}
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise one of its stats	Isso aumentará permanentemente um dos atributos dela
+# Vocabulary.NodeScreens.ThisWillPermanentlyOrThisWillPermanently
+This will permanently raise {0}	Isso aumentará permanentemente o atributo {0}
+# Vocabulary.NodeScreens.CampfireChooseLine
+Choose a card to warm by the campfire. {0}.	Escolha uma carta para se aquecer na fogueira. {0}.
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting peacefully by the campfire, and raise the stat again.	Continuar descansando em paz junto à fogueira e aumentar o atributo de novo.
+# Vocabulary.NodeScreens.ContinueRestingPeacefullyOrContinueRestingBy
+Continue resting by the campfire, and raise the stat again.	Continuar descansando junto à fogueira e aumentar o atributo de novo.
+# Vocabulary.NodeScreens.ChosenCard
+the chosen card	a carta escolhida
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to peacefully rest by	para descansar em paz junto
+# Vocabulary.NodeScreens.ToPeacefullyRestOrToRiskResting
+to risk resting by	para arriscar descansar junto
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire	Enviar {0} {1} à fogueira
+# Vocabulary.NodeScreens.SendTheCampfireOrSendTheCampfire
+Send {0} {1} the campfire, permanently raising {2}.	Enviar {0} {1} à fogueira, aumentando permanentemente o atributo {2}.
+# Vocabulary.NodeScreens.ChooseACardToBecome
+Choose a card to become the host.	Escolha uma carta para ser o espécime.
+# Vocabulary.NodeScreens.ChooseACardToSacrifice
+Choose a card to sacrifice.	Escolha uma carta para sacrificar.
+# Vocabulary.NodeScreens.ChooseACardToWarm
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	Escolha uma carta para se aquecer na fogueira. Isso aumentará os atributos dela, mas envolve riscos...
+# Vocabulary.NodeScreens.ChooseACard
+Choose a card.	Escolha uma carta.
+# Vocabulary.NodeScreens.SelectedAs
+{0} selected as {1}.	Seleção: {0} como {1}.
+# Vocabulary.NodeScreens.PairOfChosenTo
+Pair of {0} chosen to fuse together. Enter to rechoose.	Par de {0} escolhido para a fusão. Enter para escolher de novo.
+# Vocabulary.NodeScreens.ChosenAsEnterTo
+{0} chosen as {1}. Enter to rechoose.	Escolha: {0} como {1}. Enter para escolher de novo.
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}.	{0}.
+# Vocabulary.NodeScreens.BoonCardLine
+A {0}. {1}	{0}. {1}
+# Vocabulary.NodeScreens.ReceivedBoon
+Received {0}.	Você recebeu {0}.
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+A carved head.	Uma cabeça esculpida.
+# Vocabulary.NodeScreens.CarvedHeadOrHead
+{0} head.	Cabeça da tribo {0}.
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+A carved sigil body.	Um corpo de selo esculpido.
+# Vocabulary.NodeScreens.CarvedSigilBodyOrSigilBody
+{0} sigil body.	Corpo de selo {0}.
+# Vocabulary.NodeScreens.TotemYourCardsGain
+Totem: your {0} cards gain {1}.	Totem: suas cartas da tribo {0} ganham {1}.
+# Vocabulary.NodeScreens.FinishedTotem
+The finished totem.	O totem finalizado.
+# Vocabulary.NodeScreens.OptionOf
+Option {0} of {1}.	Opção {0} de {1}.
+# Vocabulary.NodeScreens.OptionSLeftAnd
+{0}. {1} option{2}. 	{0}. Opções: {1}. 
+# Vocabulary.NodeScreens.OptionSLeftAnd
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Setas para esquerda e direita para navegar, Enter para escolher, Espaço para repetir, H para ajuda.
+# Vocabulary.NodeScreens.NoOptionSelectedUse
+No option selected. Use left and right arrows to browse.	Nenhuma opção selecionada. Use as setas para esquerda e direita para navegar.
+# Vocabulary.NodeScreens.NoPairIsOn
+No pair is on the stone yet. Choose a pair of cards first.	Ainda não há um par na pedra. Escolha um par de cartas primeiro.
+# Vocabulary.NodeScreens.PairOfSelected
+Pair of {0} selected.	Par de {0} selecionado.
+# Vocabulary.NodeScreens.YouTookThe
+You took the {0}.	Você pegou {0}.
+# Vocabulary.NodeScreens.Selected
+{0} selected.	Selecionado: {0}.
+# Vocabulary.NodeScreens.NothingToChooseLine
+Nothing to choose here.	Não há nada para escolher aqui.
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0} You have {1} {2} left to trade.	Comerciante. {0} Peles restantes para trocar: {1}.
+# Vocabulary.NodeScreens.TraderArrival
+Trader. {0}	Comerciante. {0}
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Choosing a card. {0}. 	Escolhendo uma carta. {0}. 
+# Vocabulary.NodeScreens.ChoosingACardArrows
+Arrows browse, Enter chooses, Space repeats your position.	Setas para navegar, Enter escolhe, Espaço repete sua posição.
+# Vocabulary.NodeScreens.ShiftUpDisplaysYour
+Shift Up displays your deck.	Shift+Seta para cima mostra seu baralho.
+# Vocabulary.NodeScreens.OpensYourBackpackShift
+A opens your backpack, Shift Up displays your deck. 	A abre sua mochila, Shift+Seta para cima mostra seu baralho. 
+# Vocabulary.NodeScreens.CountsYourTeethBackspace
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A conta seus dentes, Backspace sai do Caçador a qualquer momento. 
+# Vocabulary.NodeScreens.Zero
+zero	zero
+# Vocabulary.NodeScreens.SelectOneOfItems
+{0}. Select one of {1} items to add to your backpack. 	{0}. Itens disponíveis: {1}. Selecione um para adicionar à sua mochila. 
+# Vocabulary.NodeScreens.SelectOneOfItems
+I cycles through your current items. R opens the rulebook.	I percorre seus itens atuais. R abre o manual de regras.
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Setas para navegar, Enter escolhe, Backspace sai do Caçador a qualquer momento, 
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChooses
+Space repeats your position, A counts your teeth, R opens the rulebook.	Espaço repete sua posição, A conta seus dentes, R abre o manual de regras.
+# Vocabulary.NodeScreens.ArrowsBrowseEnterChoosesSpace
+R opens the rulebook.	R abre o manual de regras.
+# Vocabulary.NodeScreens.TotemIsAssembledYour
+The totem is assembled. Your {0} cards will gain {1}. 	O totem está montado. Suas cartas da tribo {0} ganharão {1}. 
+# Vocabulary.NodeScreens.ReceivedNoNewSigils
+{0} received no new sigils.	{0} não recebeu nenhum selo novo.
+# Vocabulary.NodeScreens.Received
+{0} received {1}.	{0} recebeu {1}.
+# Vocabulary.NodeScreens.ReceivedAnd
+{0} received {1} 	{0} recebeu {1} 
+# Vocabulary.NodeScreens.ReceivedAnd
+and {0}.	e {0}.
+# Vocabulary.NodeScreens.CopyCard
+Copy card	Cópia de carta
+# Vocabulary.CopyCardNode.CorkedGlassBottleSuddenly
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	Uma garrafa de vidro com rolha pula de repente para a mesa de jogo. Ao lado dela, pousam dois cavaletes de pintura minúsculos com cartas em branco.
+# Vocabulary.CopyCardNode.InsideTheGlassBottle
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	Dentro da garrafa de vidro há uma gosma verde brilhante. Ela tem um rosto disforme. Preso à garrafa há um pincel de ponta brilhante.
+# Vocabulary.ItemPickup.LeshyPresentsYouThe
+Leshy presents you the {0}.	Leshy lhe apresenta {0}.
+# Vocabulary.Rulebook.CombinationCode
+Combination code: 273.	Código da combinação: 273.
+# Vocabulary.Rulebook.ThisPageIsDestroyed
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	Esta página foi destruída pela tinta. Dá para distinguir as seguintes palavras: Espelho... O Poder e... É igual a... o... que possui...
+# Vocabulary.Rulebook.ThisPageIsDestroyedBy
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	Esta página foi destruída pela tinta. Dá para distinguir as seguintes palavras: Toca-sinos... O valor indicado por este..... igual a.... o....
+# Vocabulary.Rulebook.ThisPageIsDestroyedByInk
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	Esta página foi destruída pela tinta. Dá para distinguir as seguintes palavras: Mostra de Cartas.... O valor indica.... igual a.... número de....
+# Vocabulary.Rulebook.RulebookIsNotAvailable
+The rulebook is not available here.	O manual de regras não está disponível aqui.
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Opened Rulebook from shelf.	Manual de regras pego da estante.
+# Vocabulary.Rulebook.OpenedRulebookFromOrRulebookOpened
+Rulebook opened.	Manual de regras aberto.
+# Vocabulary.Rulebook.LeftAndRightArrows
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Setas para esquerda e direita viram as páginas. Backspace fecha o livro.
+# Vocabulary.Rulebook.RulebookClosed
+Rulebook closed.	Manual de regras fechado.
+# Vocabulary.Rulebook.RulebookLeftAndRight
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Manual de regras. Setas para esquerda e direita viram as páginas. Espaço repete a página atual. Backspace ou R fecha o livro.
+# Vocabulary.Rulebook.VariableStat
+Variable stat	Atributo variável
+# Vocabulary.Rulebook.Boon
+Boon	Benefício
+# Vocabulary.Rulebook.Item
+Item	Item
+# Vocabulary.Rulebook.Rule
+Rule	Regra
+# Vocabulary.Rulebook.PageUnavailable
+Page unavailable.	Página indisponível.
+# Vocabulary.Rulebook.BlankPageOf
+Blank. Page {0} of {1}.	Em branco. Página {0} de {1}.
+# Vocabulary.Rulebook.DescriptionUnavailable
+{0}. Description unavailable.	{0}. Descrição indisponível.
+# Vocabulary.Rulebook.BlankPage
+Blank page.	Página em branco.
+# Vocabulary.Rulebook.PageOf
+Page {0} of {1}.	Página {0} de {1}.
+# Vocabulary.Rulebook.DescriptionOnThisPage
+{0}. The description on this page is obscured by ink.	{0}. A descrição desta página está coberta de tinta.
+# Vocabulary.Rulebook.ToTheUser
+To the user: 	Ao usuário: 
+# Vocabulary.Surrender.YourOpponent
+Your opponent	Seu oponente
+# Vocabulary.Surrender.IsOfferingToSurrender
+{0} is offering to surrender, press Shift and E to accept. 	{0} está oferecendo rendição, pressione Shift e E para aceitar. 
+# Vocabulary.Surrender.OliveBranch
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy está oferecendo um ramo de oliveira: ele concede a batalha. Pressione Shift e E para aceitar a rendição dele.
+# Vocabulary.Surrender.NoSurrenderIsBeing
+No surrender is being offered.	Nenhuma rendição está sendo oferecida.
+# Vocabulary.Surrender.ConcedeAccepted
+Concede accepted. Victory.	Rendição aceita. Vitória.
+# Vocabulary.RunEnd.OutcomeLine
+Victory	Vitória
+# Vocabulary.RunEnd.OutcomeLine
+Defeat	Derrota
+# Vocabulary.RunEnd.IkmaCannotFindAn
+IKMA cannot find an option on this screen, so it still needs the mouse here.	O IKMA não consegue encontrar uma opção nesta tela, então ainda precisa do mouse aqui.
+# Vocabulary.RunEnd.ThereIsNoOption
+There is no option to select on this screen.	Não há opção para selecionar nesta tela.
+# Vocabulary.RunEnd.RunEndControlsSpace
+Run end controls. Space repeats the screen. Enter takes the option on it. 	Controles do fim da partida. Espaço repete a tela. Enter escolhe a opção dela. 
+# Vocabulary.LogExport.LogFileCouldNot
+the log file could not be found	o arquivo de registro não foi encontrado
+# Vocabulary.LogExport.YourDesktopFolderCould
+your desktop folder could not be found	a pasta da área de trabalho não foi encontrada
+# Vocabulary.LogExport.FileCouldNotBe
+the file could not be written	não foi possível gravar o arquivo
+# Vocabulary.DeathCardChoice.Part
+cost	o custo
+# Vocabulary.DeathCardChoice.Part
+power and health	o poder e a vida
+# Vocabulary.DeathCardChoice.Screen
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Carta do ocaso: escolha {0}. {1}. Setas para navegar, Enter para escolher.
+# Vocabulary.DeathCardName.Instructions
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	Digite um nome para sua carta, com até 10 caracteres. Enter para concluir. Tab lê o nome digitado até agora.
+# Vocabulary.DeathCardName.Typed
+space	espaço
+# Vocabulary.DeathCardName.Typed
+capital {0}	{0} maiúsculo
+# Vocabulary.DeathCardName.Deleted
+backspace.	backspace.
+# Vocabulary.DeathCardName.Full
+Character limit reached.	Limite de caracteres atingido.
+# Vocabulary.DeathCardName.NameSoFar
+No name yet.	Ainda sem nome.
+# Vocabulary.DeathCardName.EmptyEnter
+Type at least one character first.	Digite pelo menos um caractere primeiro.
+# Added Session 32 (after the first catalogue): words that were built inside placeholders, and new lines.
+# Vocabulary.TradeTaken
+Pelt	Pele
+# Vocabulary.Menus.ChallengeLocked
+Challenge locked.	Desafio bloqueado.
+# Vocabulary.Map.PathThen
+, then 	, depois 
+# Vocabulary.Hotkeys.DrewItGainsAnd (and other name lists)
+ and 	 e 
+# Vocabulary.Board.YourDeckRemainingCard
+ cards	 cartas
+# Vocabulary.Combat.FliesOverAndAttacks
+ twice	 duas vezes
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slot	espaço
+# Vocabulary.MultiStrike.AttacksEachOfYour
+slots	espaços
+# Vocabulary.MultiStrike.BurrowsFromTo
+ to 	 ao 
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+tooth	dente
+# Vocabulary.Events.VictoryExtraReceivedOrVictory
+teeth	dentes
+# Session 34 (Claude draft, unreviewed)
+Gamepad.	Controle.
+# Session 34 (Claude draft, unreviewed)
+Keyboard.	Teclado.
+# Session 34 (Claude draft, unreviewed)
+Dev Log Locked.	Diário de desenvolvimento bloqueado.
+# Session 34 (Claude draft, unreviewed)
+Skipping IKMA version {0}.	Ignorando a versão {0} do IKMA.
+# Session 34 (Claude draft, unreviewed)
+The IKMA update failed its safety check and was not installed.	A atualização do IKMA falhou na verificação de segurança e não foi instalada.
+# Session 34 (Claude draft, unreviewed)
+Card locked	Carta bloqueada
+# Session 34 (Claude draft, unreviewed)
+Reset with {0}	Redefinir em {0}
+# Session 34 (Claude draft, unreviewed)
+Opponent cards in slots 1 through 4 will lose all of their sigils.	As cartas adversárias nos espaços 1 a 4 perderão todos os seus sigilos.
+# Session 34 (Claude draft, unreviewed)
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Controles do confronto. Setas esquerda e direita para navegar pela mão. Tab, próxima carta jogável na sua mão. Enter, jogar a carta. E, tocar o sino para encerrar o turno. R, abrir o livro de regras. Shift R para consultar a última habilidade ouvida. C, ler sua mão. U, ler a fila adversária. G, ler o tabuleiro adversário. Shift G, ler seu tabuleiro. B, ler todo o tabuleiro e a fila. A, ler a balança, os ossos e outras informações do jogo. I, pressione várias vezes para alternar entre seus itens, Enter para usar. Durante sua fase de compra: D, comprar do seu baralho, ou S, comprar do baralho de Esquilos. H, para ajuda.
+# Session 34 (Claude draft, unreviewed)
+{0} is cut in half and {1}.	{0} é cortado ao meio e {1}.
+# Session 34 (Claude draft, unreviewed)
+{0} added in {1}.	{0} adicionado em {1}.
+# Session 34 (Claude draft, unreviewed)
+Space to repeat, H for help.	Espaço para repetir, H para ajuda.
+# Session 34 (Claude draft, unreviewed)
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Teste do baralho. Leshy oferece três condições para você escolher. Escolha a que tem mais chance de ser verdadeira para o seu baralho atual. Depois ele revelará três cartas aleatórias do seu baralho. Se você acertar, receberá uma recompensa. Setas esquerda e direita para navegar, Enter para virar uma carta, Shift Cima mostra seu baralho, Espaço para repetir, H para ajuda.
+# Session 34 (Claude draft, unreviewed)
+You take the {0} Kin totem with the {1} Sigil.	Você pega o totem de parentesco {0} com o sigilo {1}.
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you. Backspace to return to backpack and reselect.	Enter para levar o totem com você. Backspace para voltar à mochila e escolher de novo.
+# Session 34 (Claude draft, unreviewed)
+Enter to take the totem with you.	Enter para levar o totem com você.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	Leshy lhe apresenta um tinteiro ornamentado com {0} dentro e um pincel.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a collapsible fan with bird talon feet.	Leshy lhe apresenta um leque dobrável com pés de garras de pássaro.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a rusty pair of pliers.	Leshy lhe apresenta um alicate enferrujado.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a chipped pair of scissors.	Leshy lhe apresenta uma tesoura lascada.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you an ornate wooden hourglass.	Leshy lhe apresenta uma ampulheta de madeira ornamentada.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large magnifying glass.	Leshy lhe apresenta uma grande lupa.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a ceramic piggy bank.	Leshy lhe apresenta um cofrinho de porquinho de cerâmica.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a large curved fish hook.	Leshy lhe apresenta um grande anzol curvo.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a razor sharp straight knife.	Leshy lhe apresenta uma faca reta afiada como navalha.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	Leshy lhe apresenta uma garrafa de vidro com rolha contendo uma gosma verde com um rosto disforme.
+# Session 34 (Claude draft, unreviewed)
+Your cards gain temporary {0}.	Suas cartas ganham {0} temporariamente.
+# Session 34 (Claude draft, unreviewed)
+Opponent turn skipped due to {0}.	Turno adversário pulado por causa de {0}.
+# Session 34 (Claude draft, unreviewed)
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	Leshy lhe apresenta uma garrafa de vidro com rolha contendo uma pequena carta de {0}.
