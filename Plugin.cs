@@ -9,7 +9,7 @@ using Rewired;
 
 namespace IKMA
 {
-    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.002")]
+    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.003")]
     public class Plugin : BaseUnityPlugin
     {
         // Static log handle so Harmony patch classes can log diagnostics

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
@@ -499,9 +500,11 @@ namespace IKMA
         {
             tag = dllUrl = sigUrl = null;
             dllSize = 0;
+            string text = null;
             try
             {
-                var release = JsonUtility.FromJson<ReleaseJson>(Encoding.UTF8.GetString(json));
+                text = Encoding.UTF8.GetString(json);
+                var release = JsonUtility.FromJson<ReleaseJson>(text);
                 tag = release?.tag_name ?? "?";
                 if (release?.assets != null)
                     foreach (var a in release.assets)
@@ -517,6 +520,25 @@ namespace IKMA
                 return false;
             }
 
+            // THE ASSET LIST CAME BACK EMPTY IN THE GAME. (0.4.8.003, Session 56.)
+            // First real run of the updater: 0.4.8.001 installed, release
+            // v0.4.8.002 on GitHub with both files attached under the right
+            // names, and every start logged "has no signed update". tag_name
+            // read fine, so the reply arrived and parsed; only the nested
+            // assets array came back empty. JsonUtility is the suspect (it
+            // reads top-level strings but not the array of asset objects from
+            // a plugin assembly) - not proven, and it does not matter which:
+            // the links are now read straight out of the text whenever
+            // JsonUtility did not supply them. The size check below is then
+            // skipped (dllSize stays 0); Fetch's MaxDownloadBytes cap still
+            // applies to the download itself, and the signature still decides.
+            if ((dllUrl == null || sigUrl == null) && text != null)
+            {
+                ScanAssetUrls(text, ref dllUrl, ref sigUrl);
+                if (dllUrl != null || sigUrl != null)
+                    _log.LogInfo("IKMA UPDATE: release files read from the reply's text (Unity's JSON reader left the asset list empty).");
+            }
+
             // Only HTTPS links from GitHub. Anything else is not a normal
             // release asset link and is not followed.
             if (!IsGitHub(dllUrl) || !IsGitHub(sigUrl))
@@ -525,6 +547,20 @@ namespace IKMA
                 return false;
             }
             return true;
+        }
+
+        // Every "browser_download_url" in GitHub's release reply, matched on
+        // the file name after the last slash. GitHub does not escape slashes
+        // in these links, and both IKMA file names need no URL-encoding.
+        private static void ScanAssetUrls(string text, ref string dllUrl, ref string sigUrl)
+        {
+            foreach (Match m in Regex.Matches(text, "\"browser_download_url\"\\s*:\\s*\"([^\"]+)\""))
+            {
+                string url  = m.Groups[1].Value;
+                string file = url.Substring(url.LastIndexOf('/') + 1);
+                if (dllUrl == null && file == DllAsset) dllUrl = url;
+                else if (sigUrl == null && file == SigAsset) sigUrl = url;
+            }
         }
 
         private static bool IsGitHub(string url)
