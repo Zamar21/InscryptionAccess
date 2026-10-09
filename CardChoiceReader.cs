@@ -84,6 +84,20 @@ namespace IKMA
         private static SelectableCard _awaitingTake;
         private static bool _takeAnnounced;
 
+        // THE PROSPECTOR'S BOULDER REWARD. (0.4.8.002, Session 56.)
+        // First tester bug report: after the boulder broke and the Prospector
+        // said "keep it", the screen still read three Boulders and Enter did
+        // nothing. BoulderChoiceSequencer.RewardSequence spawns the reward with
+        // SpawnCard(base.transform) into a LOCAL variable - it never enters
+        // selectableCards, so this reader could not see it. The game then
+        // waited for a click on a card IKMA had no way to reach: a softlock.
+        // The reward is found as the one card under the sequencer that is not
+        // a boulder, then handed to the same take path the cost and tribe
+        // nodes use. The deck count when the take line was spoken is kept so
+        // "added to your deck" is said only once the deck actually grew.
+        private static int _deckCountAtOffer = -1;
+        private static float _rewardScanTimer;
+
         // The clover replaced the spread, so the screen is re-announcing itself
         // to a player who has not gone anywhere. Zamar, 0.7.246: "After using
         // Clover, the Card Choice blurb should not repeat."
@@ -145,6 +159,8 @@ namespace IKMA
             _awaitingTake   = null;
             _takeAnnounced  = false;
             _redealt        = false;
+            _deckCountAtOffer = -1;
+            _rewardScanTimer  = 0f;
             ResetIdle();
             _log?.LogInfo("IKMA CHOICE: card selection started.");
 
@@ -167,6 +183,7 @@ namespace IKMA
             _awaitingTake  = null;
             _takeAnnounced = false;
             _redealt       = false;
+            _deckCountAtOffer = -1;
         }
 
         private static List<SelectableCard> Cards()
@@ -1341,6 +1358,17 @@ namespace IKMA
             try { gone = card == null || card.gameObject == null; } catch { }
             if (gone) { AnnounceTaken(); return; }
 
+            // Boulder reward only: nothing patched marks the moment it goes
+            // into the deck (it is a local callback in RewardSequence), so ask
+            // the deck itself. AddCard stores a clone, so it is the COUNT that
+            // answers, not the CardInfo reference.
+            if (_takeAnnounced && _deckCountAtOffer >= 0)
+            {
+                int now = -1;
+                try { now = RunState.DeckList.Count; } catch { }
+                if (now > _deckCountAtOffer) { AnnounceTaken(); return; }
+            }
+
             if (_takeAnnounced) return;
 
             // Say it when there is something to say AND something to press.
@@ -1363,6 +1391,10 @@ namespace IKMA
             if (string.IsNullOrEmpty(line)) return;
 
             _takeAnnounced = true;
+            if (_sequencer is BoulderChoiceSequencer)
+            {
+                try { _deckCountAtOffer = RunState.DeckList.Count; } catch { _deckCountAtOffer = -1; }
+            }
             ResetIdle();
             Speech.Confirm(line);
             _log?.LogInfo($"IKMA CHOICE: reward revealed — {CardReader.CardName(info)}.");
@@ -1465,6 +1497,23 @@ namespace IKMA
             // Ahead of the _announced gate on purpose: a card picked before the
             // arrival line has landed still has to be taken, and a take that is
             // never ticked is the softlock this whole phase exists to stop.
+            if (_awaitingTake == null && _sequencer is BoulderChoiceSequencer)
+            {
+                _rewardScanTimer += deltaTime;
+                if (_rewardScanTimer >= 0.1f)
+                {
+                    _rewardScanTimer = 0f;
+                    var reward = FindBoulderReward();
+                    if (reward != null)
+                    {
+                        _awaitingTake  = reward;
+                        _takeAnnounced = false;
+                        ResetIdle();
+                        _log?.LogInfo("IKMA CHOICE: boulder broken - the Prospector's reward is on the table. Holding the keyboard until it is taken.");
+                    }
+                }
+            }
+
             if (_awaitingTake != null) { TickTake(deltaTime); return; }
 
             if (!_announced) return;
@@ -1546,6 +1595,32 @@ namespace IKMA
         }
 
         private static int _idleGeneration;
+
+        // The one SelectableCard directly under the boulder sequencer that is
+        // not one of the three boulders. Only looked for once the three are in
+        // selectableCards: before that, the boulders themselves are children
+        // the list does not hold yet and would be mistaken for the reward.
+        // Scoped to the sequencer's own children - no scene-wide search.
+        private static SelectableCard FindBoulderReward()
+        {
+            try
+            {
+                var boulders = Cards();
+                if (boulders.Count < 3) return null;
+
+                UnityEngine.Transform root = _sequencer.transform;
+                for (int i = 0; i < root.childCount; i++)
+                {
+                    var sc = root.GetChild(i).GetComponent<SelectableCard>();
+                    if (sc != null && !boulders.Contains(sc)) return sc;
+                }
+            }
+            catch (System.Exception e)
+            {
+                _log?.LogWarning($"IKMA CHOICE: boulder reward scan failed: {e.Message}");
+            }
+            return null;
+        }
     }
 }
 
