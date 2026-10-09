@@ -1,9 +1,9 @@
 ﻿# IKMA_Controls.md
 
 Inscryption Kaycee's Mod Access, control reference.
-Current as of build v0.7.415.
+For IKMA version 0.4.8 (beta). Keyboard reference. The controller reference is IKMA_Controls_Gamepad.md.
 
-Rebuilt from the mod's source (HotkeyManager.cs and the help lines the mod speaks), not from the previous version of this document. Enter always means either Enter key, including the one on the number pad. Shift means either Shift key.
+Please note that this document is long and intended to be all-inclusive. I recommend avoiding this document entirely if possible by pressing the H key at any point in the game to hear the keys for the screen you are on!
 
 ## Keys that work almost everywhere
 
@@ -24,7 +24,7 @@ Rebuilt from the mod's source (HotkeyManager.cs and the help lines the mod speak
 While a character is talking, the game waits for you.
 
 - Space: advance to the next line.
-- Arrows, Enter and R: say "Conversation in progress, press Space to proceed." The rulebook does not open during a conversation (Session 34).
+- Arrows, Enter and R: say "Conversation in progress, press Space to proceed." The rulebook does not open during a conversation.
 - H and Escape still work.
 
 ## The map
@@ -38,6 +38,8 @@ While a character is talking, the game waits for you.
 - I: hear your current items.
 - R: open the rulebook.
 - H: map help.
+
+The number keys do nothing on the map.
 
 ## Standing in the cabin
 
@@ -105,7 +107,7 @@ In the item menu:
 
 When Leshy offers the olive branch, the mod says so after his line and again after each draw.
 
-- Shift+E: accept his surrender.
+- Shift+E: accept his surrender. With no surrender on offer it says "No surrender is being offered."
 
 ## Placing a card
 
@@ -122,7 +124,7 @@ After Enter on a card that needs a slot.
 
 - Left and Right arrows: move across your board.
 - 1, 2, 3, 4: jump straight to that slot.
-- Tab: jump to the next card you can sacrifice.
+- Tab: jump to the next card on your board.
 - Enter: sacrifice the card you are on.
 - Backspace: cancel, where the game allows it. A sacrifice cannot be cancelled once one card has been taken.
 - H: sacrifice help.
@@ -131,6 +133,7 @@ After Enter on a card that needs a slot.
 
 - Arrows: move between the cards the item can affect.
 - Enter: choose the target.
+- 1, 2, 3, 4: jump straight to that slot. A slot with no valid target says "No valid target in that slot."
 - Backspace: says the item cannot be cancelled. Once used, an item must be given a target.
 - H: target help.
 
@@ -236,14 +239,32 @@ In options:
 
 ## Run end screen
 
+When a run is over.
+
 - Space: repeat the screen.
-- Enter: take the option on it.
-- Backspace: back.
+- Enter: start a new run with the same deck and challenges.
+- Backspace: go to the main menu.
+- H: help.
+
+## Victory screen
+
+- Space: repeat the screen.
+- Backspace: go to the main menu.
 - H: help.
 
 ## Credits
 
 - Backspace or Escape: leave the credits.
+
+## Mod Settings
+
+Opened with Control plus M, from anywhere in the game.
+
+- Up and Down arrows, or Left and Right arrows: move.
+- Enter: open a group, or switch a setting.
+- Backspace: back one level.
+- Escape: close Mod Settings.
+- H: help.
 
 ## Screens IKMA cannot read yet
 

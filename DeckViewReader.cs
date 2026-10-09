@@ -202,6 +202,32 @@ namespace IKMA
                 _log?.LogInfo($"IKMA DECK: origin taken from the node screen — {cameFrom}.");
             }
 
+            // ==============================================================
+            // SESSION 46 - A DECK OVER THE MAP SITS ON MapDefault. (0.7.451.)
+            //
+            // Found with the test driver on 0.7.450: lose a run in a battle,
+            // start a new run, and Backspace on the opening deck view stood
+            // the player up from the table. The log:
+            //   IKMA DECK: opened from OpponentQueueCentered (the map), by the game.
+            //   IKMA VIEW: climbing from MapDeckReview to OpponentQueueCentered ...
+            // RunIntroSequencer switches straight to MapDeckReview, so the
+            // "view before" was wherever the camera sat when the LAST run
+            // ended. The climb pressed LookDown past the map looking for a
+            // battle view that was not there, and one of those presses was
+            // the stand-up.
+            //
+            // The line contradicts itself: the place below is "the map" and
+            // the view below is not the map's. With no card choice and no
+            // node screen underneath, what is underneath is the map, and the
+            // map's view is MapDefault whatever the camera was doing before.
+            // ==============================================================
+            if (cameFrom != null && cameFrom != View.MapDefault
+                && !CardChoiceReader.Active && !NodeScreenReader.Active)
+            {
+                _log?.LogInfo($"IKMA DECK: recorded origin {cameFrom} is not a view under the map - using MapDefault.");
+                cameFrom = View.MapDefault;
+            }
+
             // MapArial is NEVER a destination. It is the overhead rung the climb
             // passes through on the way up, and Zamar asked never to be left on
             // it — 0.7.61 recorded it as the origin and Backspace put him right
@@ -228,6 +254,11 @@ namespace IKMA
             // visit left it. A remembered position in a screen the player has
             // left is stale state, and this project has paid for that twice.
             BoardReader.ResetItemCycle();
+
+            // 0.7.455: the cursor starts nowhere on every entry. It used to be
+            // put back only when the opening line was spoken, which the
+            // "already browsing" case in Announce no longer always reaches.
+            _index = -1;
 
             _log?.LogInfo("IKMA DECK: deck view entered.");
         }
@@ -392,6 +423,18 @@ namespace IKMA
 
             _announced = true;
 
+            // Session 47 (0.7.455): a 20-card deck takes seconds to deal, and
+            // this line waits for the count to settle. An arrow pressed in
+            // that time read a card, then this line spoke over it and put the
+            // cursor back to nowhere, so the next arrow read the same card
+            // again. Someone already browsing is not interrupted.
+            if (_index >= 0)
+            {
+                _openingSpoken = false;
+                _log?.LogInfo("IKMA DECK: already browsing when the count settled - the opening line is not spoken and the cursor stays.");
+                return;
+            }
+
             // THE CURSOR STARTS NOWHERE HERE TOO. (0.7.277.)
             //
             // Zamar: "do the nowhere -1 thing here. I dont want to hear Ant
@@ -442,7 +485,11 @@ namespace IKMA
             // broken down — then teeth, then the first card, which is the
             // order the rest of this line already had.
             Speech.Browse(
-                Vocabulary.DeckView.LeftAndRightArrows(lead, CountWord(cards.Count), NodeScreenReader.KinBreakdown(), CurrencyPart(), PlaceBelow));
+                Vocabulary.DeckView.LeftAndRightArrows(lead, CountWord(cards.Count),
+                    // 0.7.433 - Zamar: the Deck Trial's deck view "does not
+                    // need to read the deck kin totals here."
+                    CardChoiceReader.IsDeckTrial ? "" : NodeScreenReader.KinBreakdown(),
+                    CurrencyPart(), PlaceBelow));
 
             // No hover on arrival: the cursor is nowhere, so there is nothing
             // to point at. The first Browse hovers card 1.
@@ -487,6 +534,9 @@ namespace IKMA
             try { info = cards[index].Info; } catch { }
 
             string described = CardReader.DescribeCardInfo(info);
+            // 0.7.433 numbering; 0.7.453: this is the screen that shows the
+            // Ijiraq's red eyes, so here its disguise is "Strange [name]".
+            described = CardReader.DeckDisambiguated(cards, index, described, redEyesShown: true);
 
             // Session 16: no position here. Zamar's general rule — the number of
             // options and which one you are on belong to M and nowhere else.

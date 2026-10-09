@@ -914,6 +914,17 @@ namespace IKMA
         public static void Result(string text)  => Say(text, Provenance.Result);
         public static void Result(Func<string> provider) => Say(provider, Provenance.Result);
 
+        /// <summary>
+        /// A Result the player pressed a key for: it goes to the front of the
+        /// queue instead of the back. (0.7.436.) See
+        /// CombatAnnouncer.EnqueueActionFirst.
+        /// </summary>
+        public static void ResultFirst(string text)
+        {
+            if (HelpList.Capture(text)) return;
+            CombatAnnouncer.EnqueueActionFirst(text);
+        }
+
         /// <summary>Information only. Queues; never interrupts.</summary>
         public static void Commentary(string text) => Say(text, Provenance.Commentary);
         public static void Commentary(Func<string> provider) => Say(provider, Provenance.Commentary);
@@ -948,9 +959,13 @@ namespace IKMA
         /// answers true or <paramref name="maxWaitSeconds"/> runs out (the
         /// multi-strike summary, the Pirate Skull cannon).
         /// </summary>
+        /// <para>0.7.447 - <paramref name="partial"/>, when given, says what has
+        /// happened SO FAR if a character starts talking before the event is
+        /// over. See CombatAnnouncer.FlushPartialBeforeDialogue.</para>
         public static void ResultWhenReady(Func<bool> ready, Func<string> provider,
-                                           float maxWaitSeconds, string label)
-            => CombatAnnouncer.EnqueueActionWhenReady(ready, provider, maxWaitSeconds, label);
+                                           float maxWaitSeconds, string label,
+                                           Func<string> partial = null)
+            => CombatAnnouncer.EnqueueActionWhenReady(ready, provider, maxWaitSeconds, label, partial);
 
         /// <summary>
         /// A prompt that keeps its queue position but may not speak for

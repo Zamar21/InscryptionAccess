@@ -44,6 +44,19 @@
 //                        run ends. Any new command stops the autopilot.
 //   runbg on|off         Application.runInBackground, so the game keeps
 //                        running while its window is not focused.
+//   mute on|off          Session 47: the silent run. Nothing is sent to the
+//                        screen reader and speech is not held in the
+//                        background; each line takes its estimated length.
+//                        Use with runbg when the window cannot be in front.
+//   deck / hand / bones / level / unlocktest
+//                        Session 46: test fixtures, in DevCheats.cs - every
+//                        rare card into the deck, a card into the hand, bones,
+//                        and the menu opened as a won run at a chosen level.
+//
+// TIMING (Session 46). "quiet" counts from the last line IKMA SPOKE, not from
+// the last key. After a key that says nothing it is already satisfied and
+// returns at once, so the next key lands in the same frame. Follow every key
+// with "wait <ms>" and use "quiet" only to let a long line finish.
 //
 // WHAT IT CANNOT PRESS. Keys the GAME reads for itself (its own Rewired
 // input) and the few IKMA reads straight from Unity (AutoUpdate's answer
@@ -258,6 +271,7 @@ namespace IKMA
                             Emit("ERR", id + " unknown key '" + arg + "'");
                             continue;
                         }
+                        KeyIn.DevKeyboardPress = true;   // Session 48: see KeyIn
                         Done(id, arg);
                         return;
 
@@ -306,10 +320,37 @@ namespace IKMA
                         Emit("ERR", id + " autoplay: 'battle [seconds]' or 'run [seconds]'");
                         continue;
 
+                    // Session 46: deck / hand / bones / level / unlocktest - DevCheats.cs.
+                    case "deck":
+                    case "hand":
+                    case "bones":
+                    case "unlocktest":
+                    case "level":
+                    {
+                        string cheatNote, cheatError;
+                        if (DevCheats.Handle(verb, arg, out cheatNote, out cheatError))
+                            Done(id, verb + " " + cheatNote);
+                        else
+                            Emit("ERR", id + " " + verb + ": " + cheatError);
+                        continue;
+                    }
+
                     case "runbg":
                         Application.runInBackground = arg.Equals("on", StringComparison.OrdinalIgnoreCase);
                         Done(id, "runInBackground=" + Application.runInBackground);
                         continue;
+
+                    case "mute":
+                    {
+                        // Session 47 (0.7.456): see SpeechPump.DevSilentRun.
+                        bool silent = arg.Equals("on", StringComparison.OrdinalIgnoreCase);
+                        if (silent) { try { Speech.Silence(); } catch { } }
+                        SpeechPump.DevSilentRun = silent;
+                        Done(id, silent
+                            ? "silent run on - nothing goes to the screen reader, line lengths are estimated"
+                            : "silent run off");
+                        continue;
+                    }
 
                     default:
                         Emit("ERR", id + " unknown verb '" + verb + "'");

@@ -81,6 +81,48 @@ namespace IKMA
             return Loc.F($"{string.Join(", ", items)}, and {last}");
         }
 
+        /// <summary>
+        /// The plural of a card's name, for "They each become 2/4 Elks".
+        /// English only: in any other language the name comes back as it is,
+        /// until that language has a rule of its own. Only the last word
+        /// changes ("Dire Wolf" to "Dire Wolves").
+        /// </summary>
+        // Zamar, Session 48 ("Elks") and Session 49 ("ordinary English
+        // plurals ... whatever if proper"); the rule itself is Claude's.
+        internal static string PluralName(string name)
+        {
+            if (string.IsNullOrEmpty(name)) return name;
+            if (Loc.SpokenLanguage != "English") return name;
+
+            int cut = name.LastIndexOf(' ');
+            string head = cut >= 0 ? name.Substring(0, cut + 1) : "";
+            string word = cut >= 0 ? name.Substring(cut + 1) : name;
+            if (word.Length < 2) return name;
+
+            string lower = word.ToLowerInvariant();
+            switch (lower)
+            {
+                case "wolf":    return head + word.Substring(0, word.Length - 1) + "ves";   // Wolves
+                case "mothman": return head + word.Substring(0, word.Length - 2) + "en";    // Mothmen
+                case "moose":
+                case "deer":
+                case "fish":
+                case "lice":    return name;                                                // the same in the plural
+            }
+
+            char last = lower[lower.Length - 1];
+            char prev = lower[lower.Length - 2];
+
+            if (lower.EndsWith("s") || lower.EndsWith("x") || lower.EndsWith("z") ||
+                lower.EndsWith("ch") || lower.EndsWith("sh"))
+                return name + "es";                                                         // Mantises
+
+            if (last == 'y' && "aeiou".IndexOf(prev) < 0)
+                return head + word.Substring(0, word.Length - 1) + "ies";                   // Mummies
+
+            return name + "s";                                                              // Elks, Ravens
+        }
+
         // Empty and unavailable
         // Claude, 0.7.42 or earlier.
         public static string HandEmpty => Loc.T("Hand is empty.");
@@ -383,6 +425,23 @@ namespace IKMA
             return line;
         }
 
+        // Session 51. Two or more cards of one name whose trigger lines would
+        // be word for word the same, said once. Zamar: "ok" to "Both [card]'s
+        // [ability] abilities trigger." (PROVISIONAL_LINES 3, Session 49: "All"
+        // for three or more). See SigilTriggers.NoteTriggered.
+        // Zamar, 0.7.463.
+        public static string SeveralSigilsTrigger(int count, string cardName, string sigilName)
+            => count == 2 ? Loc.F($"Both {cardName}'s {Loc.Game(sigilName)} abilities trigger.")
+                          : Loc.F($"All {cardName}'s {Loc.Game(sigilName)} abilities trigger.");
+
+        /// <summary>
+        /// True when this sigil's trigger line carries an ending of its own (a
+        /// clause or a flavour sentence): such a line is never grouped.
+        /// </summary>
+        public static bool SigilTriggerHasOwnEnding(string sigilName)
+            => !string.IsNullOrEmpty(sigilName)
+               && (_sigilClause.ContainsKey(sigilName) || _sigilFlavour.ContainsKey(sigilName));
+
         /// <summary>
         /// The same event on several cards at once, as one sentence. One name
         /// falls through to the singular form, so callers never have to choose.
@@ -590,9 +649,10 @@ namespace IKMA
         // ------------------------------------------------------------------
 
         /// <summary>The woodcarving inscribed its sigil on a kin card, and it took.</summary>
-        // Zamar, 0.7.284.
+        // Zamar, 0.7.284. 0.7.432, Zamar on "Wolf gains ability: Airborne.":
+        // Should have said "due to totem".
         public static string TotemGrant(string cardName, string sigil)
-            => Loc.F($"{cardName} gains ability: {Loc.Game(sigil)}.");
+            => Loc.F($"{cardName} gains ability: {Loc.Game(sigil)} due to totem.");
 
         /// <summary>
         /// The woodcarving fired and the card gained nothing, because the
@@ -807,10 +867,29 @@ namespace IKMA
         // true, so it is not said - announce what is true. Asked of the pile
         // itself (CardDrawPiles.Deck.CardsInDeck, as the D key does).
         // Claude, 0.7.42 or earlier; the empty-deck form 0.7.413.
+        // Session 46 (0.7.452). Zamar's sentence for an empty deck: "Your deck
+        // is empty, press S to draw from the Squirrel deck." It replaces the
+        // 0.7.413 form ("Draw phase. Press S to draw from the Squirrel deck.").
+        // The Squirrel half is Claude's mirror of it, as at 0.7.349 - found
+        // with the test driver, where the prompt went on offering S with no
+        // Squirrels left. With both piles empty the game skips the draw and
+        // this prompt is never reached.
         public static string DrawPhasePrompt()
             => MainDeckEmpty()
-               ? Loc.T("Draw phase. Press S to draw from the Squirrel deck.")
+               ? Loc.T("Your deck is empty, press S to draw from the Squirrel deck.")
+               : SideDeckEmpty()
+               ? Loc.T("The Squirrel deck is empty, press D to draw from your deck.")
                : Loc.T("Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.");
+
+        private static bool SideDeckEmpty()
+        {
+            try
+            {
+                var piles = Singleton<CardDrawPiles>.Instance as CardDrawPiles3D;
+                return piles != null && piles.SideDeck != null && piles.SideDeck.CardsInDeck == 0;
+            }
+            catch { return false; }
+        }
 
         private static bool MainDeckEmpty()
         {
@@ -855,6 +934,14 @@ namespace IKMA
         public static string WaterborneDive(string card)
             => Loc.F($"{card}'s Waterborne ability triggers. It dives underwater...");
 
+        // Zamar, Session 43 (0.7.436), on two Kingfishers diving at one turn
+        // end: "Those two should have been grouped. '[Card name] and [card
+        // name]'s Waterborne abilities trigger in slots [x] and [x], they dive
+        // underwater...'" Three or more names or slots go through AndList,
+        // his Oxford-comma rule; that extension is Claude's.
+        public static string WaterborneDiveGroup(string cards, string slots)
+            => Loc.F($"{cards}'s Waterborne abilities trigger in slots {slots}, they dive underwater...");
+
         // Claude, 0.7.262-0.7.281.
         public static string Submerged(PlayableCard card, string name)
         {
@@ -863,7 +950,10 @@ namespace IKMA
             try
             {
                 if (!card.FaceDown) return name;
-                if (!card.HasAbility(Ability.Submerge)) return name;
+                // Session 48 (0.7.457): the Great Kraken's Waterborne is
+                // Ability.SubmergeSquid. Driver log: "passes by Great
+                // Kraken" one battle, "passes by Submerged Hrokkall" the next.
+                if (!card.HasAbility(Ability.Submerge) && !card.HasAbility(Ability.SubmergeSquid)) return name;
             }
             catch { return name; }
 
@@ -963,17 +1053,29 @@ namespace IKMA
         /// Two lives left: stumps on the board, death cards in the queue.
         /// Recast 0.7.218 to name Leshy rather than use a pronoun.
         /// </summary>
-        // Claude, 0.7.217-0.7.221.
+        // Zamar, 0.7.448. Session 45, on the line this replaces ("Leshy takes
+        // back a second candle, blocks your board, and calls up the dead."):
+        // "This line sounds like AI wrote it poorly. Should read 'Leshy blows
+        // out his first of three candles.' And play before his conversation.
+        // Let Leshy do the lore flavor dump here."
         public static string LeshyDeathcardPhase()
-            => Loc.T("Leshy takes back a second candle, blocks your board, and calls up the dead.");
+            => Loc.T("Leshy blows out his first of three candles.");
 
         /// <summary>
         /// One life left: the masks fly away and the moon comes down. Recast
         /// 0.7.218 to name Leshy rather than use a pronoun.
         /// </summary>
-        // Claude, 0.7.217-0.7.221.
+        // Zamar, 0.7.448. Session 45: "This should read 'Leshy blows out the
+        // second of his three candles. The masks float away, and Leshy turns
+        // to face the moon behind him...'"
         public static string LeshyMoonPhase()
-            => Loc.T("Leshy takes back a last candle. The masks fly away, and Leshy reaches for the moon.");
+            => Loc.T("Leshy blows out the second of his three candles. The masks float away, and Leshy turns to face the moon behind him...");
+
+        // Zamar, 0.7.448. Session 45: "After the I wonder line should be a new
+        // line describing what happens. 'Leshy holds up his camera and aims
+        // it at the moon.'"
+        public static string LeshyAimsCamera()
+            => Loc.T("Leshy holds up his camera and aims it at the moon.");
 
         // ------------------------------------------------------------------
         // WHICH FACE IS ON, ASKED ON DEMAND. (0.7.222.) PROVISIONAL.
@@ -1452,6 +1554,13 @@ namespace IKMA
         // Zamar, 0.7.304.
         public static string TrinketBearerTriggers(string card, string item, int slotNumber)
             => Loc.F($"{card}'s Trinket Bearer ability triggers, a {Loc.Game(item)} is added to item slot {slotNumber}.");
+
+        // Zamar, Session 43 (0.7.439): "Collapse to one line similar to an ETB
+        // effect in Magic. 'Pack Rat played in Slot 1. Its Trinket Bearer
+        // ability triggers, a Harpie's Birdleg Fan is added to item slot 1.'"
+        // playedLine is the play confirmation, whole.
+        public static string PlayedThenTrinketBearer(string playedLine, string item, int slotNumber)
+            => playedLine + " " + Loc.F($"Its Trinket Bearer ability triggers, a {Loc.Game(item)} is added to item slot {slotNumber}.");
 
         // ------------------------------------------------------------------
         // THE FIZZLE. (0.7.305.)
@@ -2690,6 +2799,10 @@ namespace IKMA
             // Zamar, 0.7.423. Key: 6|north|2.
             public static string SkullRestsOnShelf => Loc.T("The human skull rests on the shelf.");
 
+            // Space while zoomed on the safe. His words, Session 52 (2026-10-08),
+            // verbatim apart from "knobs" (he first wrote "nobs"). Key: 3|east|1.
+            public static string SafeFocus => Loc.T("You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.");
+
             // Claude, 0.7.110-0.7.206. Key: settlerman.
             public static string SettlerMan => Loc.T("Settler Man");
 
@@ -2889,9 +3002,18 @@ namespace IKMA
             // Claude, 0.7.42 or earlier.
             public static string NoValidTargets => Loc.T("No valid targets.");
 
+            // Session 52, Zamar's words. Spoken when 1-4 is pressed while choosing
+            // an item target and that slot has no valid target.
+            public static string NoValidTargetInSlot => Loc.T("No valid target in that slot.");
+
             // Claude, 0.7.42 or earlier.
             public static string ChooseATargetAvailable(int offered, string describeTargetSlot)
                 => Loc.F($"Choose a target. {offered} available. {describeTargetSlot} Arrows to browse, Enter to select.");
+
+            // Claude, 0.7.431. The sentence above with no slot in it, for
+            // before the first arrow press (the cursor starts nowhere).
+            public static string ChooseATarget(int offered)
+                => Loc.F($"Choose a target. {offered} available. Arrows to browse, Enter to select.");
 
             // Claude, 0.7.42 or earlier.
             public static string CannotCancelItemUse => Loc.T("Cannot cancel item use, please choose a target.");
@@ -3311,6 +3433,11 @@ namespace IKMA
                 => Loc.F($"{possessive} {name} moves down to slot {slotNumber}{pack}.");
 
             // Claude, 0.7.262-0.7.281.
+            // Zamar, Session 43 (0.7.438): "Collapse this to one line. 'Enemy
+            // Bait Bucket is played in slots 2 and 3.'"
+            public static string IsPlayedInSlots(string possessive, string name, string slotNumbers, string pack)
+                => Loc.F($"{possessive} {name} is played in slots {slotNumbers}{pack}.");
+
             public static string IsPlayedInSlot(string possessive, string name, int slotNumber, string pack)
                 => Loc.F($"{possessive} {name} is played in slot {slotNumber}{pack}.");
 
@@ -3347,6 +3474,22 @@ namespace IKMA
             // Claude, 0.7.316-0.7.325.
             public static string Fused(string name)
                 => Loc.F($"Fused {name}");
+
+            // Zamar, Session 47 (0.7.455). Session 46 made it "Strange [card
+            // name]"; then the game's own "Strange Larva" turned up. "Okay
+            // change the Ijiraq from Strange [Card Name] to Unusual [Card
+            // Name]. ... Anywhere that ? is visible should be called Unusual."
+            // And: "Only call it unusual if the sighted indication is also
+            // there. No unfair advantages with our mod."
+            public static string Unusual(string name)
+                => Loc.F($"Unusual {name}");
+
+            // Zamar, Session 47 (0.7.455). Session 46: 'When played, "Strange
+            // [card name] transforms into The Ijiraq."', with Session 47's
+            // word. The first argument already carries "Unusual"; the last
+            // word is the game's name for the card.
+            public static string UnusualTransformsInto(string unusualName, string ijiraqName)
+                => Loc.F($"{unusualName} transforms into The {ijiraqName}.");
 
             // Zamar, 0.7.329.
             public static string GlitchedCardThisCard => Loc.T("Glitched card. This card is glowing white and glitching. Card stats are unknown until played.");
@@ -3426,8 +3569,9 @@ namespace IKMA
             // Claude, 0.7.42 or earlier.
             public static string AttackEqualsTheNumber => Loc.T(" Attack equals the number of ants on its owner's side.");
 
-            // Claude, 0.7.42 or earlier.
-            public static string AttackIsEqualTo => Loc.T(" Attack is equal to half the Bones of the owner.");
+            // Zamar, Session 43 (0.7.436), replacing Claude's "half the Bones of
+            // the owner".
+            public static string AttackIsEqualTo => Loc.T(" Attack is equal to half the number of Bones the owner has.");
 
             // Claude, 0.7.42 or earlier.
             public static string AttackEqualsSacrificesMade => Loc.T(" Attack equals sacrifices made this turn.");
@@ -3505,9 +3649,41 @@ namespace IKMA
             public static string Attacks(string attackerName, string deadlyNote, string targetName)
                 => Loc.F($"{attackerName}{deadlyNote} attacks {targetName}.");
 
+            // Zamar, 0.7.448. Session 45, his pick for a hit the Armored sigil
+            // takes: "Amalgam attacks Skunk. Skunk's Armored ability triggers,
+            // preventing the damage." This is the second sentence; the sigil
+            // name is the game's own.
+            public static string ShieldPrevents(string name, string sigil)
+                => Loc.F($"{name}'s {Loc.Game(sigil)} ability triggers, preventing the damage.");
+
             // Claude, 0.7.110-0.7.206.
+            // Zamar, Session 43 (0.7.439): "Great White attacks Raven, it takes
+            // 4 damage and dies." "X attacks Y, it takes 2 damage, 3 health
+            // remaining." For vanilla combat only: "Leave the complicated
+            // sigil ones as they are." This is his sentence up to "it";
+            // DamageRecord.Compose finishes it.
+            public static string AttacksLead(string attackerName, string targetName)
+                => Loc.F($"{attackerName} attacks {targetName}, it");
+
             public static string AttacksEmptySlot(string attackerName, string swingNote, int number)
                 => Loc.F($"{attackerName}{swingNote} attacks empty Slot {number}.");
+
+            // Zamar, Session 43 (0.7.438): "Bullfrog attacks empty Slot 4,
+            // triggering Mole's Burrower ability. Mole moves right to slot 4
+            // and takes 1 damage, 3 health remaining."
+            //
+            // This is his sentence up to "and". DamageRecord.Compose finishes
+            // it with the same "takes ..." words every damage line uses, so a
+            // Mole that dies reads "... and takes 4 damage and dies."
+            public static string BurrowBlockLead(string attackerName, string swingNote, int number,
+                                                 string mover, string sigil, string dir, int toSlot)
+                => Loc.F($"{attackerName}{swingNote} attacks empty Slot {number}, triggering {mover}'s {Loc.Game(sigil)} ability. {mover} moves {dir} to slot {toSlot} and");
+
+            // The same sentence when no damage followed the move. Claude's
+            // ending; his sentence always had the damage on it.
+            public static string BurrowBlockNoHit(string attackerName, string swingNote, int number,
+                                                  string mover, string sigil, string dir, int toSlot)
+                => Loc.F($"{attackerName}{swingNote} attacks empty Slot {number}, triggering {mover}'s {Loc.Game(sigil)} ability. {mover} moves {dir} to slot {toSlot}.");
 
             // Claude, 0.7.110-0.7.206.
             public static string AttacksDirectly(string attackerName, string swingNote)
@@ -3793,6 +3969,59 @@ namespace IKMA
             public static string SAbilityTriggersItMovesTo(string name, string sigilName, string dir, int nowSlotNumber)
                 => Loc.F($"{name}'s {Loc.Game(sigilName)} ability triggers: it moves {dir} to slot {nowSlotNumber}.");
 
+            // Zamar, 0.7.443. A second sentence after a Sprinter-family move.
+            // Leading space: it is joined to the move line.
+            public static string ItWillMoveNext(bool left)
+                => left ? Loc.T(" It will move left next.") : Loc.T(" It will move right next.");
+
+            // Session 51, with a card in its way: "It will try to move left
+            // next." Leading space, as above.
+            // Zamar, 0.7.463.
+            public static string ItWillTryToMoveNext(bool left)
+                => left ? Loc.T(" It will try to move left next.") : Loc.T(" It will try to move right next.");
+
+            // Zamar, Session 47 (0.7.455). The Long Elk leaves a Vertebrae
+            // card in the slot it sprints out of.
+            public static string ExtendsItsVertebraeInto(string name, int slotNumber)
+                => Loc.F($"{name} extends its vertebrae into slot {slotNumber}.");
+
+            // Zamar, Session 48 (0.7.458). Child 13 given as a sacrifice: it
+            // does not die, and it changes form (0/1, or 2/1 with Airborne).
+            public static string SurvivesTheSacrificeAndTransforms(string name)
+                => Loc.F($"{name} survives the sacrifice and transforms.");
+
+            // Zamar, Session 48 (0.7.458). The Great Kraken coming back up
+            // as one of the three tentacles.
+            public static string Transforms(string name)
+                => Loc.F($"{name} transforms.");
+
+            // Zamar, 0.7.443; second sentence 0.7.444 ("Changed my mind.").
+            // The Curious Egg hatching when it is drawn.
+            public static string HatchesIntoHellishBeast(string name, string sigilName, string newName)
+                => Loc.F($"{name}'s {Loc.Game(sigilName)} ability triggers, it transforms into a hellish beast... A {newName} is added to your hand.");
+
+            // Zamar, 0.7.445. The Glitched card turning into a random card
+            // when it is drawn. article is "a" or "an".
+            public static string DrewGlitchedCard(string article, string newName)
+                => Loc.F($"Drew Glitched card, the screen glitches and {article} {newName} is added to your hand.");
+
+            // Claude, 0.7.445. The same vowel rule as Events.AnOrA, lower
+            // case for the middle of a sentence.
+            public static string AnOrALower(int vowelAt)
+                => vowelAt >= 0 ? Loc.T("an") : Loc.T("a");
+
+            // Zamar, 0.7.443. Joined straight after the sigil's name in a card
+            // read: "Ability: Finical Hatchling, Powers met: 1, 2, and 3,
+            // Health met: 1 and 2, Kins met: 3 of 5".
+            // 0.7.444: "Kins met 3 of 5. update for clarity on how many kin
+            // needed."
+            public static string HatchProgress(string powers, string health, int kins, int kinsNeeded)
+                => Loc.F($", Powers met: {powers}, Health met: {health}, Kins met: {kins} of {kinsNeeded}");
+
+            // Claude, 0.7.443. PROVISIONAL (PROVISIONAL_LINES.md): said in
+            // place of the list when no value from 1 to 5 is met.
+            public static string NoneMet => Loc.T("none");
+
             // Claude, 0.7.110-0.7.206.
             public static string Sprinter => Loc.T("Sprinter");
 
@@ -3813,8 +4042,10 @@ namespace IKMA
                    Loc.F($"{side} slot {capturedNumber}.");
 
             // Zamar, Session 25.
-            public static string SAbilityTriggersA(string capturedCage, string sigil, string freedName, string side, int capturedNumber)
-                => Loc.F($"{capturedCage}'s {Loc.Game(sigil)} ability triggers: a ") +
+            // 0.7.458: "a" or "an" by the freed card's name ("a Opossum" in
+            // the Session 48 driver log).
+            public static string SAbilityTriggersA(string capturedCage, string sigil, string article, string freedName, string side, int capturedNumber)
+                => Loc.F($"{capturedCage}'s {Loc.Game(sigil)} ability triggers: {article} ") +
                    Loc.F($"{freedName} is played in {side} slot {capturedNumber}.");
 
             // Claude, 0.7.110-0.7.206.
@@ -3828,6 +4059,25 @@ namespace IKMA
             public static string SAbilityTriggersItBecomes(string who, string capturedOld, string sigilName, int atk, int hp, string newName, string withClause)
                 => Loc.F($"{who}{capturedOld}'s {Loc.Game(sigilName)} ability triggers: ") +
                    Loc.F($"it becomes a {atk}/{hp} {newName}{withClause}.");
+
+            // Zamar, Session 48 (2026-10-05), on two Elk Fawns evolving in one
+            // upkeep: "Add both or All (for 3+) for multiples and condense the
+            // lines to 1 line. 'All enemy Elk Fawn's Fledgling abilities
+            // trigger.'" and, asked about the second half: "They each become
+            // 2/4 Elks, with Sprinter." His own cards drop "enemy", as his
+            // one-card sentence does. Built 0.7.459.
+            public static string SeveralAbilitiesTriggerTheyEachBecome(bool threeOrMore, bool enemy, string capturedOld, string sigilName, int atk, int hp, string newNamePlural, string withClause)
+            {
+                string first;
+                if (threeOrMore)
+                    first = enemy ? Loc.F($"All enemy {capturedOld}'s {Loc.Game(sigilName)} abilities trigger.")
+                                  : Loc.F($"All {capturedOld}'s {Loc.Game(sigilName)} abilities trigger.");
+                else
+                    first = enemy ? Loc.F($"Both enemy {capturedOld}'s {Loc.Game(sigilName)} abilities trigger.")
+                                  : Loc.F($"Both {capturedOld}'s {Loc.Game(sigilName)} abilities trigger.");
+
+                return first + " " + Loc.F($"They each become {atk}/{hp} {newNamePlural}{withClause}.");
+            }
 
             // Zamar, 0.7.339.
             public static string SAbilityFizzlesDue(string name, string sigil)
@@ -3925,6 +4175,15 @@ namespace IKMA
             // Claude, 0.7.347-0.7.357.
             public static string SpeakerLine(string name, string clean)
                 => $"{name}: {clean}";
+
+            // Zamar, 0.7.449. Session 45, on Leshy's line that is only "...":
+            // "Have this read as 'Leshy waits silently.'"
+            public static string LeshyWaitsSilently => Loc.T("Leshy waits silently.");
+
+            // Session 51, another character's "...": "same with their names
+            // though."
+            // Zamar, 0.7.463.
+            public static string WaitsSilently(string name) => Loc.F($"{name} waits silently.");
         }
 
         /// <summary>Boss candles, skulls and hands.</summary>
@@ -4025,7 +4284,7 @@ namespace IKMA
         public static class ProspectorBoss
         {
             // Claude, 0.7.110-0.7.206.
-            public static string ProspectorUsesHisPickaxe => Loc.T("The Prospector uses his pickaxe to strike all of your creatures, " +
+            public static string ProspectorUsesHisPickaxe => Loc.T("The Prospector uses his pickaxe to strike all of your cards, " +
                 "turning them into Gold Nuggets.");
 
             // Zamar, 0.7.340.
@@ -4235,10 +4494,14 @@ namespace IKMA
             public static string YourDeck => Loc.T("Your deck. ");
 
             // Claude, 0.7.262-0.7.281.
+            // 0.7.434 - I reads all three item slots in one press in every
+            // deck view (Zamar, Session 42), so the sentence no longer says
+            // "cycles". "I for items" is Claude's, modelled on "A for teeth"
+            // beside it; he has not ruled on it.
             public static string LeftAndRightArrows(string lead, string countWord, string kinBreakdown, string currencyPart, string placeBelow)
                 => $"{lead}{countWord}.{kinBreakdown}" +
                    $"{currencyPart} " +
-                   Loc.F($"Left and right arrows to browse, Space to repeat, A for teeth, I cycles through your items, H for help, Backspace to return to {placeBelow}.");
+                   Loc.F($"Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {placeBelow}.");
 
             // Claude, 0.7.53-0.7.109.
             public static string YourDeckIsStill => Loc.T("Your deck is still being laid out.");
@@ -4254,7 +4517,7 @@ namespace IKMA
             public static string LeftAndRightArrowsBrowse(string sizePart, string currencyPart, string shiftRHelp, string placeBelow)
                 => $"{sizePart}{currencyPart} " +
                    Loc.T("Left and right arrows browse the cards. Space repeats the card you are on. ") +
-                   Loc.T("A reads the amount of teeth collected. I cycles through your items, one per press. ") +
+                   Loc.T("A reads the amount of teeth collected. I reads all three item slots including your empty ones. ") +
                    Loc.T("R opens the rulebook. ") + shiftRHelp + " " +
                    Loc.F($"Backspace closes your deck and returns you to {placeBelow}.");
 
@@ -4334,6 +4597,14 @@ namespace IKMA
             // 0.7.334: the Trader sentences cut, his call — "too much info."
             public static string TradeTheTeethYouve => Loc.T("Trade the teeth you've collected for pelt cards to add to your deck.");
 
+            // Zamar, Session 47 (0.7.455). The Trader with no pelts to trade
+            // for hands over teeth (CurrencyBowl.ShowGain). 5 in the game's
+            // code; any other amount is said as a number.
+            public static string TraderGivesTeeth(int amount)
+                => amount == 5
+                    ? Loc.T("The trader generously gives you five teeth...")
+                    : Loc.F($"The trader generously gives you {amount} teeth...");
+
             // Zamar, 0.7.359. Key: Trader. Replaces his Session 25 "Trade pelts
             // for cards." — the Trader's arrival line and both of its H lines
             // describe the screen with this sentence now.
@@ -4376,6 +4647,12 @@ namespace IKMA
 
             // Claude, 0.7.222-0.7.261.
             public static string DeckCannotBeReached => Loc.T("The deck cannot be reached right now.");
+
+            // Zamar, Session 42 (0.7.433): "Bird head. You have [x] Bird Kin
+            // cards in your deck." This is the second sentence; the head line
+            // above it is unchanged.
+            public static string YouHaveKinCards(DiskCardGame.Tribe tribe, int n)
+                => Loc.F($"You have {n} {Loc.Game(tribe.ToString())} Kin card{(n == 1 ? "" : "s")} in your deck.");
 
             // Claude, 0.7.222-0.7.261.
             public static string CardS(DiskCardGame.Tribe t, int n)
@@ -4555,6 +4832,11 @@ namespace IKMA
             public static string ReceivedBoon(string name)
                 => Loc.F($"Received {name}.");
 
+            // Zamar, Session 46: "[Minor Boon of the Bone Lord] card placed on
+            // the altar. Enter to take it."
+            public static string BoonCardPlaced(string name)
+                => Loc.F($"{name} card placed on the altar. Enter to take it.");
+
             // Claude, 0.7.222-0.7.261.
             public static string CarvedHeadOrHead(DiskCardGame.Tribe tribe)
                 => tribe == Tribe.None
@@ -4729,6 +5011,12 @@ namespace IKMA
         /// <summary>The copy card node's introduction.</summary>
         public static class CopyCardNode
         {
+            // Zamar, Session 42 (0.7.433): say "Painted Card" before the card
+            // name when the new copy is read, "just here just this time".
+            // Punctuation confirmed by him: "Painted Card: Wolf".
+            public static string PaintedCard(string described)
+                => Loc.F($"Painted Card: {described}");
+
             // Zamar, 0.7.262-0.7.281.
             public static string CorkedGlassBottleSuddenly => Loc.T("A corked glass bottle suddenly jumps onto the game table. " +
                 "Landing next to it are two tiny painting easels with blank cards on them.");
@@ -4783,6 +5071,14 @@ namespace IKMA
 
             // Zamar, Session 32 (applied Session 34). Key: Failure.
             public static string PresentFailure => Loc.T("Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.");
+
+            // Zamar, 0.7.463 (Session 51). Key: Wiseclock.
+            public static string PresentWiseclock => Loc.T("Leshy presents you a glowing, ornate pocketwatch.");
+
+            // Zamar, 0.7.463 (Session 51). Key: Special Dagger. His words are
+            // "A straight ivory dagger, for when things become grim..."; the
+            // opening is the one every other item line has.
+            public static string PresentSpecialDagger => Loc.T("Leshy presents you a straight ivory dagger, for when things become grim...");
 
             // "presents" is his change to Claude's 0.7.336 "offers".
             // Zamar, 0.7.359.
@@ -4930,10 +5226,44 @@ namespace IKMA
             public static string OutcomeLine(bool victory)
                 => victory ? Loc.T("Victory") : Loc.T("Defeat");
 
-            // Claude, 0.7.53-0.7.109.
-            public static string IkmaCannotFindAn(string outcome, string stats)
-                => $"{outcome}. {stats}" +
-                   Loc.T("IKMA cannot find an option on this screen, so it still needs the mouse here.");
+            // Zamar, 0.7.449. Session 45, the victory screen: "The only two
+            // commands for this screen is Space to re-read the page, and
+            // Backspace to return to the main menu." This is his 0.7.242
+            // controls sentence without the Enter half. It replaces "IKMA
+            // cannot find an option on this screen, so it still needs the
+            // mouse here." - "needs the IKMA Cannot Find An Option callout
+            // removed". The game hides the retry button on a victory.
+            public static string NoRetryControls
+                => Loc.T("Backspace to return to the main menu. Space to repeat.");
+
+            public static string OutcomeStatsNoRetry(string outcome, string stats)
+                => $"{outcome}. {stats}{NoRetryControls}";
+
+            // Zamar, 0.7.449. Session 45: "It should also read as Victory
+            // Screen, not post run screen or whatever it said." His Session 43
+            // help sentence with that name and without the Enter clause.
+            public static string VictoryScreenControlsSpace
+                => Loc.T("Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.");
+
+            // Zamar, Session 47 (0.7.455). After a win that clears the
+            // challenge level the game's back button opens the devlog entry
+            // and the unlock screens, not the main menu: "Can we just change
+            // it to Enter to continue?"
+            public static string ContinueControls
+                => Loc.T("Enter to continue. Space to repeat.");
+
+            public static string OutcomeStatsContinue(string outcome, string stats)
+                => $"{outcome}. {stats}{ContinueControls}";
+
+            // Claude, 0.7.455. His victory help sentence with his "Enter to
+            // continue" standing where the Backspace clause was.
+            public static string VictoryScreenControlsEnter
+                => Loc.T("Victory Screen controls. Space repeats the screen. Enter continues.");
+
+            // Zamar, 0.7.449. Session 45: "Before Victory, it should read
+            // 'Leshy blows out his final candle, the cabin goes dark.'"
+            public static string LeshyFinalCandle
+                => Loc.T("Leshy blows out his final candle, the cabin goes dark.");
 
             // Claude, 0.7.347-0.7.357.
             public static string OutcomeStatsControls(string outcome, string stats)
@@ -4943,12 +5273,10 @@ namespace IKMA
             public static string OutcomeStatsLabelControls(string outcome, string stats, string label)
                 => $"{outcome}. {stats}{label}. {Vocabulary.RunEndControls()}";
 
-            // Claude, 0.7.53-0.7.109.
-            public static string ThereIsNoOption => Loc.T("There is no option to select on this screen.");
-
-            // Claude, 0.7.53-0.7.109.
-            public static string RunEndControlsSpace(string shiftRHelp)
-                => Loc.T("Run end controls. Space repeats the screen. Enter takes the option on it. ") + shiftRHelp;
+            // Zamar, Session 43 (0.7.436), replacing Claude's line: "This is
+            // wrong."
+            public static string RunEndControlsSpace
+                => Loc.T("Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.");
         }
 
         /// <summary>Saving a bug report log.</summary>
@@ -5120,6 +5448,17 @@ namespace IKMA
             public static string FullLogOff => Loc.T("Off: the short log, what IKMA said and anything that went wrong.");
             public static string FullLogOn => Loc.T("On: every diagnostic line, for a bug report. The log gets much longer.");
 
+            // Claude, Session 50 (0.7.462). Zamar, asked what these two rows
+            // should be called: "name it what you would recommend." His to
+            // change. The same words are in IKMA Manager
+            // (tools/installer/Settings.cs and Program.cs); keep them in step.
+            public static string NvdaLineEnd => Loc.T("NVDA line timing");
+            public static string NvdaLineEndOn => Loc.T("Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.");
+            public static string NvdaLineEndOff => Loc.T("Estimated: IKMA guesses how long each line takes to read.");
+            public static string Braille => Loc.T("Braille display");
+            public static string BrailleOn => Loc.T("On: every spoken line is also sent to your braille display, through NVDA or JAWS.");
+            public static string BrailleOff => Loc.T("Off: nothing is sent to a braille display.");
+
             // ---- Session 40: Controller buttons, the Manager's menu in the
             // ---- game too (Zamar: "Exist in both"). The title, the action
             // ---- names, "Default", "Swapped" and the reset line are IKMA
@@ -5163,6 +5502,7 @@ namespace IKMA
                     case "SaveLog":            return Loc.T("Save a bug report log");
                     case "HistoryOlder":       return Loc.T("Review history, older");
                     case "HistoryNewer":       return Loc.T("Review history, newer");
+                    case "HistoryList":        return Loc.T("Review history as a list");   // Claude, 0.7.463, from the help list row
                     case "Silence":            return Loc.T("Silence speech");
                 }
                 return action;
@@ -5182,12 +5522,13 @@ namespace IKMA
             // Claude, 0.7.427.
             public static string ControllerNoButton => Loc.T("no button");
 
-            // The last row. IKMA Manager's wording for its R choice. PROVISIONAL.
-            // Claude, 0.7.427.
-            public static string ControllerResetRow => Loc.T("Put every action back on its default button");
+            // The last row. His words, Session 51.
+            // Zamar, 0.7.463.
+            public static string ControllerResetRow => Loc.T("Reset to Default controls");
 
-            // IKMA Manager's. Claude, 0.7.427.
-            public static string ControllerResetDone => Loc.T("Every action is back on its default button.");
+            // His words, Session 51.
+            // Zamar, 0.7.463.
+            public static string ControllerResetDone => Loc.T("Every action is reset to default controls.");
 
             // Enter on an action. The first sentence pair is theirs, word for
             // word (LISTEN.PRESS_BUTTON + LISTEN.CANCEL_HINT: "Press a
@@ -5197,26 +5538,27 @@ namespace IKMA
             public static string ControllerListen(string current) => Loc.F($"Press a button... {current} to cancel.");
 
             // What theirs has no words for: IKMA's chords, and the way out
-            // for a player with no controller in hand. PROVISIONAL.
-            // Claude, 0.7.427.
+            // for a player with no controller in hand. His edit, Session 51:
+            // "or LB and RB together".
+            // Zamar, 0.7.463.
             public static string ControllerListenChords(string lb, string rb)
-                => Loc.F($"Hold {lb}, {rb}, or both with it for a chord. Backspace on the keyboard also cancels.");
+                => Loc.F($"Hold {lb}, {rb}, or {lb} and {rb} together for a chord. Backspace on the keyboard also cancels.");
 
             // The same for an action with no button, so nothing to press to
-            // cancel. PROVISIONAL.
-            // Claude, 0.7.427.
+            // cancel. Follows his edit above.
+            // Zamar, 0.7.463.
             public static string ControllerListenNoButton(string lb, string rb)
-                => Loc.F($"Press a button... Hold {lb}, {rb}, or both with it for a chord. Backspace on the keyboard cancels.");
+                => Loc.F($"Press a button... Hold {lb}, {rb}, or {lb} and {rb} together for a chord. Backspace on the keyboard cancels.");
 
             // A button the game uses on its own (A, B, the D-pad, Menu, RT)
-            // pressed with no shoulder held. PROVISIONAL.
-            // Claude, 0.7.427.
+            // pressed with no shoulder held. His sentence, Session 51.
+            // Zamar, 0.7.463.
             public static string ControllerGameButton(string button, string lb, string rb)
-                => Loc.F($"{button} is the game's own button. Hold {lb} or {rb} with it, or press another button.");
+                => Loc.T("Button cannot be changed, due to being reserved by the game.");
 
-            // The right stick. PROVISIONAL.
-            // Claude, 0.7.427.
-            public static string ControllerRightStick => Loc.T("The right stick is the game's own. Press another button.");
+            // The right stick. The same sentence, his, Session 51.
+            // Zamar, 0.7.463.
+            public static string ControllerRightStick => Loc.T("Button cannot be changed, due to being reserved by the game.");
 
             // Say the Spire 2, 0.7.427.
             public static string Cancelled => Loc.T("Cancelled");
@@ -5260,27 +5602,32 @@ namespace IKMA
             // Zamar, 0.7.417.
             public static string AlreadyUsedThisTurn(string item) => Loc.F($"{item} already used this turn.");
 
-            // PROVISIONAL.
-            // Claude, 0.7.417.
-            public static string NoTargets(string item) => Loc.F($"{item} has no targets right now.");
+            // His edit, Session 51: "valid".
+            // Zamar, 0.7.463.
+            public static string NoTargets(string item) => Loc.F($"{item} has no valid targets right now.");
 
-            // PROVISIONAL.
+            // OK Zamar, Session 51.
             // Claude, 0.7.417.
             public static string DrawPhase(string item) => Loc.F($"{item} cannot be used during the draw phase.");
 
-            // PROVISIONAL.
+            // OK Zamar, Session 51.
             // Claude, 0.7.417.
             public static string OutsideBattle(string item) => Loc.F($"{item} can only be used during a battle.");
 
-            // PROVISIONAL.
+            // OK Zamar, Session 51.
             // Claude, 0.7.417.
             public static string DeckEmpty(string item) => Loc.F($"{item} cannot be used, your deck is empty.");
 
-            // PROVISIONAL.
-            // Claude, 0.7.417.
-            public static string GiantCard(string item) => Loc.F($"{item} cannot be used while a giant card is on the board.");
+            // His edit, Session 51: the giant card is named ("... while
+            // [giant card name] is on the board."). The old sentence stays for
+            // a card whose name cannot be read.
+            // Zamar, 0.7.463.
+            public static string GiantCard(string item, string giant)
+                => string.IsNullOrEmpty(giant)
+                   ? Loc.F($"{item} cannot be used while a giant card is on the board.")
+                   : Loc.F($"{item} cannot be used while {giant} is on the board.");
 
-            // PROVISIONAL: the shape of his bell line.
+            // The shape of his bell line. OK Zamar, Session 51.
             // Claude, 0.7.417.
             public static string NotNow(string item) => Loc.F($"Now is not the time to use {item}.");
         }

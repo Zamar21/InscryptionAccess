@@ -119,8 +119,8 @@ namespace IKMA
             try { targetIndex = targetSlot.Index; } catch { }
 
             Plugin.Log?.LogInfo(
-                $"IKMA SIGIL: Guardian on '{CardReader.CardName(guardian.Info)}' triggered by " +
-                $"'{CardReader.CardName(otherCard.Info)}' resolving. Target slot " +
+                $"IKMA SIGIL: Guardian on '{CardReader.CardName(guardian)}' triggered by " +
+                $"'{CardReader.CardName(otherCard)}' resolving. Target slot " +
                 $"{targetIndex + 1} occupied at trigger = {blockedAtTrigger}.");
 
             var capturedGuardian = guardian;
@@ -128,17 +128,25 @@ namespace IKMA
             int capturedFrom     = fromSlot;
             bool capturedBlocked = blockedAtTrigger;
 
+            // 0.7.432 - Zamar's sentence names the side: "Enemy Bloodhound's
+            // Guardian ability triggers: it moves to slot 4." Same rule as the
+            // other sigil lines: an opponent's card is "Enemy X", the player's
+            // own card is just its name.
+            bool capturedEnemy = false;
+            try { capturedEnemy = guardian.OpponentCard; } catch { }
+
             using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
             {
                 // The card's CURRENT slot is deliberately not read here any
                 // more. It was the source of the 0.7.188 false callout; see the
                 // note below.
                 string name = null;
-                try { name = CardReader.CardName(capturedGuardian.Info); } catch { }
+                try { name = CardReader.CardName(capturedGuardian); } catch { }
 
                 if (string.IsNullOrEmpty(name)) return null;
 
                 string sigil = GuardianName();
+                string who   = (capturedEnemy ? Vocabulary.Sigils.Enemy : "") + name;
 
                 // ZAMAR'S WORDING, 0.7.182:
                 //
@@ -199,7 +207,7 @@ namespace IKMA
                         $"IKMA SIGIL: Guardian on '{name}' blocked — slot " +
                         $"{capturedTarget + 1} was occupied at trigger.");
                     // 0.7.227 — the one construction. See NoteStrafeMove.
-                    return Vocabulary.Sigils.SAbilityTriggersIt(name, sigil, capturedTarget + 1);
+                    return Vocabulary.Sigils.SAbilityTriggersIt(who, sigil, capturedTarget + 1);
                 }
 
                 if (capturedTarget < 0) return null;
@@ -214,7 +222,7 @@ namespace IKMA
                     $"IKMA SIGIL: Guardian on '{name}' moving from slot " +
                     $"{capturedFrom + 1} to {capturedTarget + 1}.");
                 // 0.7.227 — the one construction. See NoteStrafeMove.
-                return Vocabulary.Sigils.SAbilityTriggersItMoves(name, sigil, capturedTarget + 1);
+                return Vocabulary.Sigils.SAbilityTriggersItMoves(who, sigil, capturedTarget + 1);
             });
         }
 
@@ -321,8 +329,12 @@ namespace IKMA
             // that attack's summary: where it started and where it ended.
             if (MultiStrikeNarrator.TryRecordBurrow(mover, fromSlot, toSlot)) return;
 
+            // 0.7.438 - a single attack into the empty slot: the move is part
+            // of BurrowBlock's one sentence, not a line of its own.
+            if (BurrowBlock.ClaimBurrow(mover, fromSlot, toSlot)) return;
+
             Plugin.Log?.LogInfo(
-                $"IKMA SIGIL: Burrower on '{CardReader.CardName(mover.Info)}' — " +
+                $"IKMA SIGIL: Burrower on '{CardReader.CardName(mover)}' — " +
                 $"slot {fromSlot + 1} -> slot {toSlot + 1} (target slot is the argument).");
 
             var capturedMover = mover;
@@ -334,7 +346,7 @@ namespace IKMA
                 int nowSlot = -1;
                 try
                 {
-                    name    = CardReader.CardName(capturedMover.Info);
+                    name    = CardReader.CardName(capturedMover);
                     nowSlot = capturedMover.Slot != null ? capturedMover.Slot.Index : -1;
                 }
                 catch { }
@@ -427,7 +439,7 @@ namespace IKMA
                 int nowSlot = -1;
                 try
                 {
-                    name    = CardReader.CardName(capturedMover.Info);
+                    name    = CardReader.CardName(capturedMover);
                     nowSlot = capturedMover.Slot != null ? capturedMover.Slot.Index : -1;
                 }
                 catch { }
@@ -522,8 +534,295 @@ namespace IKMA
                 // SkeletonStrafe and SquirrelStrafe each name their own sigil
                 // through behaviour.Ability, so all five change together and
                 // none of them needed a second edit.
-                return Vocabulary.Sigils.SAbilityTriggersItMovesTo(name, sigilName, dir, nowSlot + 1);
+                string moved = Vocabulary.Sigils.SAbilityTriggersItMovesTo(name, sigilName, dir, nowSlot + 1);
+                return moved + NextStrafeDirection(capturedMover, name);
             });
+        }
+
+        // ==================================================================
+        // THE EGG HATCHES. (0.7.443.)
+        //
+        // Zamar's 0.7.442 log: a Curious Egg was dealt into the opening hand,
+        // the deck met its conditions, and it became a Hydra with no line at
+        // all - the hand read simply said "Hydra". "Need a big callout for
+        // when the eggs in the deck hatch and Hydra is added to hand." His
+        // sentence:
+        //
+        //   "Curious Egg's Finical Hatchling ability triggers, it transforms
+        //    into a hellish beast..."
+        //
+        // and, on hearing it in 0.7.443, "Changed my mind": the same sentence
+        // followed by "A Hydra is added to your hand." (0.7.444.) The new
+        // name is the card's own, read after the swap.
+        //
+        // WHY THE GENERIC HOOK NEVER SAW IT. HydraEgg.OnDrawn (PUBLIC
+        // override, HydraEgg.cs:51) lifts the card, shakes it, flips it and
+        // swaps its CardInfo inside the flip. It never calls
+        // PreSuccessfulTriggerSequence, which is the one place SigilTriggers
+        // listens. So it needs a patch of its own.
+        //
+        // OBSERVED, NOT PREDICTED. A patch on a coroutine runs when the
+        // enumerator is CREATED, about a second before the flip. So the
+        // postfix wraps the enumerator, and this watches the card's name
+        // after every step the game takes. The line is spoken at the first
+        // step where the name is no longer the one it started with: the
+        // moment the swap has really happened. If the coroutine ends with
+        // the name unchanged, nothing is said and the log says so.
+        //
+        // The old name is captured before the first step, for the same
+        // reason NoteTransformed captures it: by speak time the card is the
+        // Hydra, and the sentence is about the egg.
+        // ==================================================================
+        internal static System.Collections.IEnumerator WatchHatch(
+            HydraEgg behaviour, System.Collections.IEnumerator inner)
+        {
+            PlayableCard card = null;
+            string oldName = null;
+            try
+            {
+                card    = behaviour.GetComponent<PlayableCard>();
+                oldName = CardReader.CardName(card?.Info);
+            }
+            catch { }
+
+            bool said = false;
+            while (true)
+            {
+                bool more = inner.MoveNext();
+
+                if (!said && card != null && !string.IsNullOrEmpty(oldName))
+                {
+                    string now = null;
+                    try { now = CardReader.CardName(card); } catch { }
+                    if (!string.IsNullOrEmpty(now) && now != oldName)
+                    {
+                        said = true;
+                        NoteDrawLineSaid(card);   // 0.7.445 - no "Drew Hydra." on top of it
+                        SayHatched(oldName, now);
+                    }
+                }
+
+                if (!more) break;
+                yield return inner.Current;
+            }
+
+            if (!said)
+                Plugin.Log?.LogInfo(
+                    $"IKMA SIGIL: the hatch ended and the card still reads '{oldName ?? "?"}' - not spoken.");
+        }
+
+        private static void SayHatched(string oldName, string newName)
+        {
+            string sigil = null;
+            try { sigil = CardReader.GetAbilityName(Ability.HydraEgg); } catch { }
+            if (string.IsNullOrEmpty(sigil)) return;   // an internal id is never a display name
+
+            Plugin.Log?.LogInfo($"IKMA SIGIL: {sigil} hatched '{oldName}' into '{newName}'.");
+            using (Speech.Event(EventKind.Powers))
+                Speech.Result(Vocabulary.Sigils.HatchesIntoHellishBeast(oldName, sigil, newName));
+        }
+
+        // ==================================================================
+        // THE GLITCHED CARD. (0.7.445.)
+        //
+        // Zamar's 0.7.444 log: a Glitched card was dealt into the opening
+        // hand and became a Dire Wolf. IKMA said nothing; the hand read just
+        // listed "Dire Wolf". "When I drew the Glitched card it should have
+        // read what happened." His sentence:
+        //
+        //   "Drew Glitched card, the screen glitches and a [card name] is
+        //    added to your hand."
+        //
+        // WHAT THE GAME DOES. RandomCard.OnDrawn (PUBLIC override,
+        // RandomCard.cs:13) lifts the card, waits half a second, turns the
+        // ScreenGlitchEffect up, plays the "glitch" sound, picks a random
+        // card and calls SetInfo with it. Every Glitched card does this every
+        // time it is drawn, so "the screen glitches" is always true here.
+        //
+        // RandomCard is a SpecialCardBehaviour, not an AbilityBehaviour: it
+        // is not a sigil and no sigil hook can see it. Same method as the egg
+        // above: wrap the enumerator, speak at the first step where the
+        // card's CardInfo is a different object. The Glitched card has no
+        // name to compare (it reads as ''), which is why this one compares
+        // the CardInfo itself.
+        //
+        // CUTS IN ON A DRAW, QUEUES ON THE DEAL. The sentence begins "Drew",
+        // so on a real draw it IS the draw line, and the draw line cuts in
+        // unconditionally by his standing ruling (see AnnounceDrawnCard).
+        // In the opening hand nobody pressed a key and other lines are
+        // waiting their turn, so there it is queued like any result.
+        // ==================================================================
+        internal static System.Collections.IEnumerator WatchGlitch(
+            RandomCard behaviour, System.Collections.IEnumerator inner)
+        {
+            PlayableCard card = null;
+            CardInfo oldInfo = null;
+            try
+            {
+                card    = behaviour.GetComponent<PlayableCard>();
+                oldInfo = card?.Info;
+            }
+            catch { }
+
+            bool said = false;
+            while (true)
+            {
+                bool more = inner.MoveNext();
+
+                if (!said && card != null && oldInfo != null)
+                {
+                    CardInfo now = null;
+                    try { now = card.Info; } catch { }
+                    if (now != null && !ReferenceEquals(now, oldInfo))
+                    {
+                        said = true;
+                        SayGlitched(card, now);
+                    }
+                }
+
+                if (!more) break;
+                yield return inner.Current;
+            }
+
+            if (!said)
+                Plugin.Log?.LogInfo("IKMA GLITCH: the Glitched card's draw ended and the card did not change - not spoken.");
+        }
+
+        private static void SayGlitched(PlayableCard card, CardInfo now)
+        {
+            string newName = null;
+            try { newName = CardReader.CardName(now); } catch { }
+            if (string.IsNullOrEmpty(newName))
+            {
+                Plugin.Log?.LogInfo("IKMA GLITCH: the new card has no name to say - not spoken.");
+                return;
+            }
+
+            string article = Vocabulary.Sigils.AnOrALower("AEIOUaeiou".IndexOf(newName[0]));
+            string line = Vocabulary.Sigils.DrewGlitchedCard(article, newName);
+
+            // The ordinary "Drew X." must not follow this and cut it off.
+            NoteDrawLineSaid(card);
+
+            bool onADraw = false;
+            try { onADraw = HotkeyManager.DrawInFlight; } catch { }
+            Plugin.Log?.LogInfo(
+                $"IKMA GLITCH: the Glitched card became '{newName}' " +
+                (onADraw ? "on a draw - the line cuts in." : "on the deal - the line is queued."));
+
+            using (Speech.Event(EventKind.CardDrawn, EventSource.CurrentPlayer))
+            {
+                if (onADraw)
+                {
+                    Speech.ConsumeConfirmationShield();
+                    Speech.Confirm(line);
+                }
+                else Speech.Result(line);
+            }
+        }
+
+        // ==================================================================
+        // ONE DRAW, ONE DRAW LINE. (0.7.445.)
+        //
+        // PlayerHand.AddCardToHand (PlayerHand.cs) runs the card's Drawn
+        // trigger BEFORE it adds the card to CardsInHand. HotkeyManager's
+        // AnnounceDrawnCard waits for that list to grow and then says "Drew
+        // X." as a Confirmation, which cuts whatever is being spoken. So for
+        // a card that changes when drawn, "Drew Hydra." would arrive a moment
+        // after the hatch line and cut it in half - or, when the trigger
+        // takes longer than that watcher's three seconds, never arrive.
+        // (His 0.7.444 log is the second case: no draw line for the egg.)
+        //
+        // The line that already told the draw marks the card here, and the
+        // watcher asks before it speaks.
+        // ==================================================================
+        private static PlayableCard _drawLineSaidFor;
+
+        internal static void NoteDrawLineSaid(PlayableCard card) { _drawLineSaidFor = card; }
+
+        /// <summary>True once, for the card whose draw has already been told.</summary>
+        internal static bool DrawLineAlreadySaid(PlayableCard card)
+        {
+            if (card == null || !ReferenceEquals(card, _drawLineSaidFor)) return false;
+            _drawLineSaidFor = null;
+            return true;
+        }
+
+        // ==================================================================
+        // WHICH WAY NEXT. (0.7.443.)
+        //
+        // Zamar, Session 44: "When Elk's sprinter ability changes arrow
+        // direction where it will move, that always needs to be called out
+        // as info." His sentence:
+        //
+        //   "Elk's Sprinter ability triggers: it moves [left] to slot 3. It
+        //    will move [right] next."
+        //
+        // and his rule for when: "After every successful move, it should
+        // announce which direction it will move next."
+        //
+        // WHERE THE ANSWER COMES FROM. The arrow is Strafe.movingLeft
+        // (NONPUBLIC, read by CardReader.StrafeMovingLeft). The game sets it
+        // at the START of an attempt and never after the card arrives
+        // (Strafe.DoStrafe, Strafe.cs:30), so straight after a move it still
+        // points the way the card just went. That is the answer in every
+        // case but one: a card that has just arrived at the END of the row.
+        // There is no slot beyond it - BoardManager.GetAdjacent, PUBLIC,
+        // returns null - and all three DoStrafe versions (Strafe, StrafePush,
+        // StrafeSwap) turn the arrow round when that is so. The end of the
+        // row cannot change before the next attempt, so "the other way" is
+        // certain there, although the arrow on screen has not turned yet.
+        //
+        // WHAT IT DOES NOT DO: look at whether the next slot is occupied. A
+        // Sprinter turns round when it is, but that is decided at the next
+        // turn's end from the board as it is THEN, and each sigil in the
+        // family has its own rule for "occupied" (Hefty pushes, Rampager
+        // swaps). Guessing it here would be reimplementing the sigil. So
+        // with a card in the way this says the arrow's direction, and the
+        // next move line says what happened.
+        //
+        // Returns "" when the arrow cannot be read: the move line stands on
+        // its own, as before.
+        // ==================================================================
+        private static string NextStrafeDirection(PlayableCard mover, string name)
+        {
+            try
+            {
+                bool? arrow = CardReader.StrafeMovingLeft(mover);
+                if (arrow == null || mover == null || mover.Slot == null) return "";
+
+                bool nextLeft = arrow.Value;
+
+                var bm = Singleton<BoardManager>.Instance;
+                if (bm == null) return "";
+                CardSlot ahead = bm.GetAdjacent(mover.Slot, nextLeft);
+                bool atEnd = ahead == null;
+                if (atEnd) nextLeft = !nextLeft;
+
+                // Session 51 (0.7.463). With a card standing in the slot it
+                // points at: Zamar, "It will try to move left next." The board
+                // is read as it is NOW; nothing is predicted. Plain Sprinter
+                // movers only - Hefty pushes and Rampager swaps, so a card in
+                // their way does not stop them (StrafePush, StrafeSwap).
+                bool inTheWay = false;
+                try
+                {
+                    CardSlot next = bm.GetAdjacent(mover.Slot, nextLeft);
+                    inTheWay = next != null && next.Card != null
+                               && !mover.HasAbility(Ability.StrafePush)
+                               && !mover.HasAbility(Ability.StrafeSwap);
+                }
+                catch { }
+
+                Plugin.Log?.LogInfo(
+                    $"IKMA SIGIL: '{name}' arrow points {(arrow.Value ? "left" : "right")}" +
+                    (atEnd ? ", at the end of the row - it turns round next." : ".") +
+                    (inTheWay ? " A card is in the way." : ""));
+
+                return inTheWay ? Vocabulary.Sigils.ItWillTryToMoveNext(nextLeft)
+                                : Vocabulary.Sigils.ItWillMoveNext(nextLeft);
+            }
+            catch { return ""; }
         }
 
         // ==================================================================
@@ -569,7 +868,7 @@ namespace IKMA
                 int now = -1;
                 try
                 {
-                    name = CardReader.CardName(captured.Info);
+                    name = CardReader.CardName(captured);
                     now  = captured.Attack;
                 }
                 catch { }
@@ -683,6 +982,10 @@ namespace IKMA
             Plugin.Log?.LogInfo(
                 $"IKMA SIGIL: Corpse Eater on '{eaterName}' triggered by '{deadName}' dying in slot {slotNumber}.");
 
+            // 0.7.438 - this line is the arrival. The death line must not
+            // add its own "is played ... by Ability" clause for the same card.
+            SlotArrival.SuppressArrival(deathSlot);
+
             using (Speech.Event(EventKind.Powers)) Speech.Result(
                 Vocabulary.CorpseEaterTriggers(deadName, eaterName, slotNumber));
         }
@@ -716,7 +1019,7 @@ namespace IKMA
             catch { }
 
             Plugin.Log?.LogInfo(
-                $"IKMA SIGIL: Brood Parasite on '{CardReader.CardName(cuckoo.Info)}' " +
+                $"IKMA SIGIL: Brood Parasite on '{CardReader.CardName(cuckoo)}' " +
                 $"targeting slot {slotIndex + 1} (enemy={enemySide}), occupied at " +
                 $"trigger = {occupiedAtTrigger}.");
 
@@ -753,7 +1056,7 @@ namespace IKMA
             using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
             {
                 string name = null;
-                try { name = CardReader.CardName(capturedCuckoo.Info); } catch { }
+                try { name = CardReader.CardName(capturedCuckoo); } catch { }
                 if (string.IsNullOrEmpty(name)) return null;
 
                 string sigil = null;
@@ -858,7 +1161,7 @@ namespace IKMA
             {
                 slotIndex = slot.Index;
                 enemySide = !slot.IsPlayerSlot;
-                cageName  = CardReader.CardName(cage.Info);
+                cageName  = CardReader.CardName(cage);
             }
             catch { }
 
@@ -867,6 +1170,13 @@ namespace IKMA
             Plugin.Log?.LogInfo(
                 $"IKMA SIGIL: cage '{cageName}' broken in slot {slotIndex + 1} " +
                 $"(enemy={enemySide}).");
+
+            // Session 48 (0.7.458), Zamar, on "...and the ice is destroyed.
+            // Opossum is played in Slot 4." followed by this narrator's own
+            // line: "Just that second line not the first." This line is the
+            // arrival; the death line keeps the attack and the ice and drops
+            // its "is played" sentence. Same door as Corpse Eater (0.7.438).
+            try { SlotArrival.SuppressArrival(slot); } catch { }
 
             var capturedSlot  = slot;
             string capturedCage = cageName;
@@ -885,7 +1195,7 @@ namespace IKMA
                 if (freed == null || ReferenceEquals(freed, capturedCard)) return null;
 
                 string freedName = null;
-                try { freedName = CardReader.CardName(freed.Info); } catch { }
+                try { freedName = CardReader.CardName(freed); } catch { }
                 if (string.IsNullOrEmpty(freedName)) return null;
 
                 string sigil = null;
@@ -904,7 +1214,8 @@ namespace IKMA
                 // the two read as one family until he replaces it.
                 // 0.7.227 — the one construction. See NoteStrafeMove.
                 // Zamar's wording, Session 25.
-                string line = Vocabulary.Sigils.SAbilityTriggersA(capturedCage, sigil, freedName, side, capturedIndex + 1);
+                string article = Vocabulary.Sigils.AnOrALower("AEIOUaeiou".IndexOf(freedName[0]));
+                string line = Vocabulary.Sigils.SAbilityTriggersA(capturedCage, sigil, article, freedName, side, capturedIndex + 1);
 
                 return line;
             });
@@ -940,7 +1251,206 @@ namespace IKMA
         // test for "did it actually transform" — no counter is tracked here and
         // no turn is predicted.
         // ==================================================================
-        internal static void NoteTransformed(Evolve behaviour)
+        // ==================================================================
+        // SESSION 46 - THE IJIRAQ SHOWS ITSELF. (0.7.453.)
+        //
+        // Zamar: 'When played, "Strange [card name] transforms into The
+        // Ijiraq."'
+        //
+        // In the hand the Ijiraq looks exactly like a card from the draw pile
+        // (Shapeshifter.DisguiseInBattle; no red eyes there). When it lands
+        // on the board, Shapeshifter.OnResolveOnBoard - PUBLIC, declared on
+        // Shapeshifter - plays a sound and calls PlayableCard.
+        // TransformIntoCard with the Ijiraq's own card, about half a second
+        // later. Until now IKMA said nothing: the board read simply had a
+        // different card in the slot.
+        //
+        // The prefix runs when that coroutine is CREATED, while the card
+        // still wears its disguise, so the name is taken here. The line
+        // reserves its place now and is spoken once the card's info really is
+        // the Ijiraq's; if that never happens, nothing is said.
+        // ==================================================================
+        private const string IJIRAQ = "Ijiraq";
+        private static PlayableCard _ijiraqLastCard;
+        private static float _ijiraqLastAt = -999f;
+
+        internal static void NoteIjiraqReveal(Shapeshifter behaviour)
+        {
+            if (behaviour == null) return;
+
+            PlayableCard card = null;
+            string disguise = null;
+            try
+            {
+                card = behaviour.GetComponent<PlayableCard>();
+                if (card == null || card.Info == null || card.Info.name == IJIRAQ) return;
+                disguise = CardReader.RevealedDisguiseName(card);
+            }
+            catch { }
+            if (card == null || string.IsNullOrEmpty(disguise)) return;
+
+            // One card, one line: two Shapeshifter components on one card
+            // would both answer the same resolve.
+            if (ReferenceEquals(_ijiraqLastCard, card) && UnityEngine.Time.unscaledTime - _ijiraqLastAt < 10f) return;
+            _ijiraqLastCard = card;
+            _ijiraqLastAt = UnityEngine.Time.unscaledTime;
+
+            var captured = card;
+            string capturedDisguise = disguise;
+            Plugin.Log?.LogInfo($"IKMA IJIRAQ: '{capturedDisguise}' is on the board - the line waits for it to change.");
+
+            using (Speech.Event(EventKind.Powers)) Speech.ResultWhenReady(
+                () =>
+                {
+                    try { return captured == null || captured.Info == null || captured.Info.name == IJIRAQ; }
+                    catch { return true; }
+                },
+                () =>
+                {
+                    try
+                    {
+                        if (captured == null || captured.Info == null || captured.Info.name != IJIRAQ)
+                        {
+                            Plugin.Log?.LogInfo("IKMA IJIRAQ: the card did not change in time - nothing said.");
+                            return null;
+                        }
+                        return Vocabulary.Cards.UnusualTransformsInto(capturedDisguise, CardReader.CardName(captured));
+                    }
+                    catch { return null; }
+                },
+                3f, "Ijiraq reveal");
+        }
+
+        // ==================================================================
+        // SESSION 47 - THE LONG ELK'S VERTEBRAE. (0.7.455.)
+        //
+        // Zamar: "Long Elk extends its vertebrae into slot [1]."
+        //
+        // Strafe.PostSuccessfulMoveSequence(CardSlot oldSlot) - NONPUBLIC,
+        // protected virtual, declared on Strafe - runs straight after a
+        // successful sprint and, for the card named "Snelk" with the old slot
+        // empty, creates a "Snelk_Neck" there. The prefix runs when that
+        // coroutine is created, with the same two facts in hand, so the line
+        // is queued behind the Sprinter line and ahead of "Enemy turn." The
+        // board diff used to find the card later and say "Your Vertebrae is
+        // played in slot 1." inside the enemy's sentence; it now leaves
+        // Snelk_Neck to this line (BoardWatcher).
+        // ==================================================================
+        internal static void NoteVertebrae(Strafe behaviour, CardSlot oldSlot)
+        {
+            if (behaviour == null || oldSlot == null) return;
+
+            try
+            {
+                var mover = behaviour.GetComponent<PlayableCard>();
+                if (mover == null || mover.Info == null || mover.Info.name != "Snelk") return;
+                if (oldSlot.Card != null) return;
+
+                string name = CardReader.CardName(mover);
+                if (string.IsNullOrEmpty(name)) return;
+
+                int slotNumber = oldSlot.Index + 1;
+                Plugin.Log?.LogInfo($"IKMA SIGIL: '{name}' leaves a Vertebrae in slot {slotNumber}.");
+
+                string line = Vocabulary.Sigils.ExtendsItsVertebraeInto(name, slotNumber);
+                using (Speech.Event(EventKind.Powers)) Speech.Result(() => line);
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA SIGIL: vertebrae line failed: {e.Message}");
+            }
+        }
+
+        // ==================================================================
+        // SESSION 48 - CHILD 13 SACRIFICED, AND THE GREAT KRAKEN COMING UP.
+        // (0.7.458.) Both were silent in the Session 48 driver run.
+        //
+        // Zamar: "Child 13 survives the sacrifice and transforms."
+        // JerseyDevil.OnSacrifice (PUBLIC, declared on JerseyDevil) counts the
+        // sacrifices in the NONPUBLIC int sacrificeCount. Below the NONPUBLIC
+        // int MAX_SACRIFICES (13) each one swaps the card between its two
+        // forms; the thirteenth only adds a decal and the fourteenth kills
+        // it. The prefix runs when the coroutine is created, before the count
+        // goes up, so the sentence is said for the first twelve and for
+        // nothing else: the thirteenth does not transform and has no ruling.
+        //
+        // Zamar: "Great Kraken transforms." SubmergeSquid.OnResurface
+        // (NONPUBLIC, protected override void, declared on SubmergeSquid) sets
+        // the card to one of three tentacles. Prefix, so the name read is
+        // still the Kraken's.
+        // dumps/dump_s48_from_decompile.txt.
+        // ==================================================================
+        private static System.Reflection.FieldInfo _jerseyCountField;
+        private static System.Reflection.FieldInfo _jerseyMaxField;
+        private static bool _jerseyFieldsResolved;
+
+        internal static void NoteChild13Sacrificed(JerseyDevil behaviour)
+        {
+            if (behaviour == null) return;
+
+            try
+            {
+                var card = behaviour.GetComponent<PlayableCard>();
+                if (card == null) return;
+
+                if (!_jerseyFieldsResolved)
+                {
+                    _jerseyFieldsResolved = true;
+                    var flags = System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic;
+                    _jerseyCountField = typeof(JerseyDevil).GetField("sacrificeCount", flags);
+                    _jerseyMaxField   = typeof(JerseyDevil).GetField("MAX_SACRIFICES", flags);
+                    if (_jerseyCountField == null || _jerseyMaxField == null)
+                        Plugin.Log?.LogWarning("IKMA SIGIL: JerseyDevil's sacrifice count did not resolve - its sacrifice stays unspoken.");
+                }
+                if (_jerseyCountField == null || _jerseyMaxField == null) return;
+
+                int thisOne = (int)_jerseyCountField.GetValue(behaviour) + 1;
+                int max     = (int)_jerseyMaxField.GetValue(behaviour);
+
+                string name = CardReader.CardName(card);
+                if (string.IsNullOrEmpty(name)) return;
+
+                if (thisOne >= max)
+                {
+                    Plugin.Log?.LogInfo($"IKMA SIGIL: '{name}' sacrifice {thisOne} of {max} - no change of form, not spoken.");
+                    return;
+                }
+
+                Plugin.Log?.LogInfo($"IKMA SIGIL: '{name}' sacrifice {thisOne} of {max} - it survives and changes form.");
+
+                string line = Vocabulary.Sigils.SurvivesTheSacrificeAndTransforms(name);
+                using (Speech.Event(EventKind.Powers)) Speech.Result(() => line);
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA SIGIL: Child 13 sacrifice line failed: {e.Message}");
+            }
+        }
+
+        internal static void NoteKrakenResurface(SubmergeSquid behaviour)
+        {
+            if (behaviour == null) return;
+
+            try
+            {
+                var card = behaviour.GetComponent<PlayableCard>();
+                if (card == null) return;
+
+                string name = CardReader.CardName(card);
+                if (string.IsNullOrEmpty(name)) return;
+
+                Plugin.Log?.LogInfo($"IKMA SIGIL: '{name}' comes back up as a tentacle.");
+
+                string line = Vocabulary.Sigils.Transforms(name);
+                using (Speech.Event(EventKind.Powers)) Speech.Result(() => line);
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA SIGIL: Kraken resurface line failed: {e.Message}");
+            }
+        }
+
+        internal static void NoteTransformed(Evolve behaviour, bool playerUpkeep)
         {
             if (behaviour == null) return;
 
@@ -960,6 +1470,16 @@ namespace IKMA
 
             if (card == null || string.IsNullOrEmpty(oldName)) return;
 
+            // 0.7.459 - two or more of one card evolving in the same upkeep
+            // are one line now. See EvolveBatch below. If the patch that
+            // reports each card's change did not apply, every card keeps its
+            // own line, composed below exactly as before.
+            if (EvolveEndWatched)
+            {
+                EvolveBatch.Note(card, sigil, oldName, isEnemy, playerUpkeep);
+                return;
+            }
+
             var capturedCard = card;
             var capturedSigil = sigil;
             string capturedOld = oldName;
@@ -972,7 +1492,7 @@ namespace IKMA
 
                 try
                 {
-                    newName = CardReader.CardName(capturedCard.Info);
+                    newName = CardReader.CardName(capturedCard);
 
                     // LIVE stats, never CardInfo — the standing rule.
                     atk = capturedCard.Attack;
@@ -1015,6 +1535,315 @@ namespace IKMA
                 // shape; only the join changes. See NoteStrafeMove.
                 return Vocabulary.Sigils.SAbilityTriggersItBecomes(who, capturedOld, sigilName, atk, hp, newName, withClause);
             });
+        }
+
+        /// <summary>
+        /// True once Evolve_OnUpkeep_Patch's Postfix is in place (Plugin sets it
+        /// from TryPatch's answer). Without that patch nothing reports a
+        /// card's change, so EvolveBatch is not used.
+        /// </summary>
+        internal static bool EvolveEndWatched;
+
+        // ==================================================================
+        // SESSION 49 (0.7.459) - SEVERAL OF ONE CARD EVOLVING TOGETHER.
+        //
+        // Zamar, Session 48, on "Enemy Elk Fawn's Fledgling ability triggers:
+        // it becomes a 2/4 Elk, with Sprinter." said twice running: "Add both
+        // or All (for 3+) for multiples and condense the lines to 1 line. 'All
+        // enemy Elk Fawn's Fledgling abilities trigger.'" Asked whether the
+        // second half is dropped: "They each become 2/4 Elks, with Sprinter."
+        //
+        // The game runs Evolve.OnUpkeep for one card at a time, each a second
+        // or more behind the last, so one prefix per card made one line per
+        // card. Now the FIRST card of an upkeep reserves a single place in
+        // the queue, the rest only add themselves to it, and the line is held
+        // until every one of them has settled. SigilTriggers.DiveBatch is the
+        // model.
+        //
+        // WHO ELSE EVOLVES is the game's own answer, asked once when the
+        // place is reserved: Evolve.RespondsToUpkeep (PUBLIC; Transformer
+        // overrides it) for every card on the board, with the playerUpkeep
+        // value the game passed to OnUpkeep.
+        //
+        // WHEN A CARD HAS SETTLED is observed, never timed: WatchEvolve wraps
+        // the enumerator and reports the step on which the card's name has
+        // changed, or the step that ends it with no change. Not the END of
+        // the coroutine: after the change the game calls LearnAbility, which
+        // for an ability the save has not met holds on Leshy's explanation
+        // until the player presses a key.
+        //
+        // Evolve.OnUpkeep runs EVERY upkeep and changes nothing on most of
+        // them. A batch in which no card changed says nothing, and its place
+        // in the queue is not logged.
+        //
+        // ONLY CARDS THAT ENDED UP THE SAME ARE CONDENSED: same side, old
+        // name and sigil, and the same new name, power, health and abilities.
+        // "They each become 2/4 Elks" would be false if one of them were 3/4.
+        // Every other card keeps his one-card sentence.
+        // ==================================================================
+        private static class EvolveBatch
+        {
+            private class Member
+            {
+                internal PlayableCard Card;
+                internal Ability Sigil;
+                internal string OldName;
+                internal bool Enemy;
+                internal bool Settled;
+            }
+
+            private class Group
+            {
+                internal bool Enemy;
+                internal string OldName, SigilName, NewName, WithClause;
+                internal int Attack, Health, Count;
+            }
+
+            private static readonly System.Collections.Generic.List<Member> _members =
+                new System.Collections.Generic.List<Member>();
+            private static System.Collections.Generic.List<PlayableCard> _expected;
+            private static bool _pending;
+            private static float _reservedAt = -99f;
+
+            // The queue gives up waiting after MaxWait and says what it has.
+            // StaleAfter covers a reserved line that was cut from the queue
+            // (the silence key, a scene change) and so never composed.
+            private const float MaxWait = 8f;
+            private const float StaleAfter = 12f;
+
+            internal static void Note(PlayableCard card, Ability sigil, string oldName,
+                                      bool enemy, bool playerUpkeep)
+            {
+                if (_pending && UnityEngine.Time.unscaledTime - _reservedAt > StaleAfter) Reset();
+
+                _members.Add(new Member { Card = card, Sigil = sigil, OldName = oldName, Enemy = enemy });
+                if (_pending) return;
+
+                _pending = true;
+                _reservedAt = UnityEngine.Time.unscaledTime;
+                _expected = ExpectedEvolvers(card, playerUpkeep);
+
+                // No label: this runs every upkeep for every card with the
+                // sigil, and a place in the queue that will say nothing is
+                // not a line for the log.
+                using (Speech.Event(EventKind.Powers)) Speech.ResultWhenReady(
+                    AllSettled, Compose, MaxWait, null);
+            }
+
+            /// <summary>The card has changed, or its upkeep ended unchanged.</summary>
+            internal static void NoteSettled(PlayableCard card)
+            {
+                if (ReferenceEquals(card, null)) return;
+                for (int i = _members.Count - 1; i >= 0; i--)
+                {
+                    if (!ReferenceEquals(_members[i].Card, card)) continue;
+                    _members[i].Settled = true;
+                    return;
+                }
+            }
+
+            /// <summary>Every card the game says evolves in this upkeep.</summary>
+            private static System.Collections.Generic.List<PlayableCard> ExpectedEvolvers(
+                PlayableCard first, bool playerUpkeep)
+            {
+                var expected = new System.Collections.Generic.List<PlayableCard> { first };
+                try
+                {
+                    // Asked once per batch, on an evolving card's own trigger,
+                    // so the board is known to be there.
+                    var board = Singleton<BoardManager>.Instance;
+                    if (board == null) return expected;
+
+                    for (int side = 0; side < 2; side++)
+                    {
+                        foreach (var slot in board.GetSlots(side == 0))
+                        {
+                            var other = slot != null ? slot.Card : null;
+                            if (other == null || other.Dead || expected.Contains(other)) continue;
+
+                            var evolve = other.GetComponent<Evolve>();
+                            if (evolve != null && evolve.RespondsToUpkeep(playerUpkeep)) expected.Add(other);
+                        }
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Plugin.Log?.LogWarning($"IKMA SIGIL: evolve batch - {e.GetType().Name}: {e.Message}");
+                }
+                return expected;
+            }
+
+            private static bool AllSettled()
+            {
+                try
+                {
+                    if (_expected == null) return true;
+                    foreach (var c in _expected)
+                    {
+                        if (c == null || c.Dead) continue;
+
+                        bool settled = false;
+                        for (int i = 0; i < _members.Count; i++)
+                        {
+                            if (ReferenceEquals(_members[i].Card, c) && _members[i].Settled)
+                            {
+                                settled = true;
+                                break;
+                            }
+                        }
+                        if (!settled) return false;
+                    }
+                }
+                catch { }
+                return true;
+            }
+
+            private static string Compose()
+            {
+                var members = new System.Collections.Generic.List<Member>(_members);
+                Reset();
+
+                var groups = new System.Collections.Generic.List<Group>();
+                foreach (var m in members)
+                {
+                    try
+                    {
+                        var c = m.Card;
+
+                        // Gone from the board since its upkeep: left out
+                        // rather than reported as a card that is not there.
+                        if (c == null || c.Dead) continue;
+
+                        string newName = CardReader.CardName(c);
+                        if (string.IsNullOrEmpty(newName)) continue;
+
+                        // Nothing happened this upkeep. The counter has not
+                        // run out yet.
+                        if (newName == m.OldName) continue;
+
+                        string sigilName = CardReader.GetAbilityName(m.Sigil);
+                        if (string.IsNullOrEmpty(sigilName)) continue;
+
+                        // LIVE stats, never CardInfo - the standing rule.
+                        int atk = c.Attack;
+                        int hp  = c.Health;
+
+                        // FormatBareAbilitiesFor returns ", A, B" or "". His
+                        // sentence wants ", with A, B".
+                        string abilities = "";
+                        try { abilities = BoardReader.FormatBareAbilitiesFor(c); } catch { }
+
+                        string withClause = "";
+                        if (!string.IsNullOrEmpty(abilities) && abilities.StartsWith(", "))
+                            withClause = Vocabulary.Sigils.WithAbilities(abilities.Substring(2));
+
+                        // The board diff would otherwise report the new card
+                        // arriving.
+                        try { BoardWatcher.NoteAnnounced(c); } catch { }
+
+                        Group match = null;
+                        foreach (var g in groups)
+                        {
+                            if (g.Enemy == m.Enemy && g.OldName == m.OldName && g.SigilName == sigilName &&
+                                g.NewName == newName && g.Attack == atk && g.Health == hp &&
+                                g.WithClause == withClause)
+                            {
+                                match = g;
+                                break;
+                            }
+                        }
+
+                        if (match != null) { match.Count++; continue; }
+
+                        groups.Add(new Group
+                        {
+                            Enemy = m.Enemy, OldName = m.OldName, SigilName = sigilName,
+                            NewName = newName, WithClause = withClause,
+                            Attack = atk, Health = hp, Count = 1,
+                        });
+                    }
+                    catch { }
+                }
+
+                if (groups.Count == 0) return null;
+
+                var lines = new System.Collections.Generic.List<string>();
+                foreach (var g in groups)
+                {
+                    if (g.Count == 1)
+                    {
+                        // ZAMAR'S ONE-CARD SENTENCE, unchanged (0.7.227).
+                        string who = g.Enemy ? Vocabulary.Sigils.Enemy : "";
+                        lines.Add(Vocabulary.Sigils.SAbilityTriggersItBecomes(
+                            who, g.OldName, g.SigilName, g.Attack, g.Health, g.NewName, g.WithClause));
+                        continue;
+                    }
+
+                    Plugin.Log?.LogInfo(
+                        $"IKMA SIGIL: {g.Count} '{g.OldName}' became '{g.NewName}' in one upkeep - one line.");
+
+                    lines.Add(Vocabulary.Sigils.SeveralAbilitiesTriggerTheyEachBecome(
+                        g.Count >= 3, g.Enemy, g.OldName, g.SigilName, g.Attack, g.Health,
+                        Vocabulary.PluralName(g.NewName), g.WithClause));
+                }
+
+                return string.Join(" ", lines.ToArray());
+            }
+
+            private static void Reset()
+            {
+                _members.Clear();
+                _expected = null;
+                _pending = false;
+            }
+        }
+
+        /// <summary>
+        /// 0.7.459 - wraps Evolve.OnUpkeep's enumerator and tells EvolveBatch
+        /// the step on which the card's name has changed, or the step that
+        /// ends the coroutine with no change. The card is taken when the
+        /// wrapper is made: the Evolve component itself is replaced when the
+        /// card changes.
+        /// </summary>
+        internal static System.Collections.IEnumerator WatchEvolve(
+            Evolve behaviour, System.Collections.IEnumerator inner)
+        {
+            PlayableCard card = null;
+            string oldName = null;
+            try
+            {
+                card    = behaviour.GetComponent<PlayableCard>();
+                oldName = CardReader.CardName(card?.Info);
+            }
+            catch { }
+
+            bool settled = false;
+            while (true)
+            {
+                bool more;
+                try { more = inner.MoveNext(); }
+                catch
+                {
+                    if (!settled) EvolveBatch.NoteSettled(card);
+                    throw;
+                }
+
+                if (!settled && !ReferenceEquals(card, null) && !string.IsNullOrEmpty(oldName))
+                {
+                    string now = null;
+                    try { now = CardReader.CardName(card); } catch { }
+                    if (!string.IsNullOrEmpty(now) && now != oldName)
+                    {
+                        settled = true;
+                        EvolveBatch.NoteSettled(card);
+                    }
+                }
+
+                if (!more) break;
+                yield return inner.Current;
+            }
+
+            if (!settled) EvolveBatch.NoteSettled(card);
         }
 
         // ==================================================================
@@ -1063,6 +1892,32 @@ namespace IKMA
             internal CardSlot FirstSlot;
             internal readonly System.Collections.Generic.List<int> Slots =
                 new System.Collections.Generic.List<int>();
+            // Session 48 (0.7.457): the slots themselves, so the cards that
+            // landed in them can be handed to the board diff.
+            internal readonly System.Collections.Generic.List<CardSlot> SlotRefs =
+                new System.Collections.Generic.List<CardSlot>();
+            internal float OpenedAt;
+            internal bool Composed;
+        }
+
+        // Session 48 (0.7.457) - THE CHIMES ARE THE BELLIST LINE'S. Driver
+        // log: "The Daus's Bellist ability triggers, placing a Chime in slot
+        // 1 and slot 3." and then, a turn boundary later, "Your Chime is
+        // played in slots 1 and 3." Nothing had told the board diff. The
+        // line below notes each card it names; this answers the diff in the
+        // second and a half before that line composes.
+        internal static bool AdjacentSpawnOwns(PlayableCard card)
+        {
+            var batch = _adjacentBatch;
+            if (batch == null || batch.Composed || ReferenceEquals(card, null)) return false;
+            try
+            {
+                if (UnityEngine.Time.unscaledTime - batch.OpenedAt > 10f) return false;
+                for (int i = 0; i < batch.SlotRefs.Count; i++)
+                    if (ReferenceEquals(batch.SlotRefs[i]?.Card, card)) return true;
+            }
+            catch { }
+            return false;
         }
 
         private static AdjacentSpawnBatch _adjacentBatch;
@@ -1079,10 +1934,13 @@ namespace IKMA
             if (card == null || ability == Ability.None) return;
 
             var batch = new AdjacentSpawnBatch { Card = card, Ability = ability };
+            try { batch.OpenedAt = UnityEngine.Time.unscaledTime; } catch { }
             _adjacentBatch = batch;
 
             using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
             {
+                batch.Composed = true;
+
                 string name = null;
                 try { name = CardReader.CardName(batch.Card?.Info); } catch { }
 
@@ -1121,6 +1979,18 @@ namespace IKMA
                 Plugin.Log?.LogInfo(
                     $"IKMA SIGIL: {sigil} on '{name}' placed '{spawned}' in slot(s) {where}.");
 
+                // 0.7.457 - this line names them, so the board diff must not.
+                for (int i = 0; i < batch.SlotRefs.Count; i++)
+                {
+                    try
+                    {
+                        var made = batch.SlotRefs[i]?.Card;
+                        if (!ReferenceEquals(made, null) && !ReferenceEquals(made, batch.Card))
+                            BoardWatcher.NoteAnnounced(made);
+                    }
+                    catch { }
+                }
+
                 return Vocabulary.AdjacentSpawnTriggers(name, sigil, spawned, numbers);
             }, ADJACENT_SETTLE_SECONDS);
         }
@@ -1134,6 +2004,7 @@ namespace IKMA
             {
                 if (batch.Slots.Contains(slot.Index)) return;
                 batch.Slots.Add(slot.Index);
+                batch.SlotRefs.Add(slot);
                 if (batch.FirstSlot == null) batch.FirstSlot = slot;
             }
             catch { }
@@ -1183,7 +2054,7 @@ namespace IKMA
             using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
             {
                 string name = null;
-                try { name = CardReader.CardName(capturedCard.Info); } catch { }
+                try { name = CardReader.CardName(capturedCard); } catch { }
                 if (string.IsNullOrEmpty(name)) return null;
 
                 int now = -1;
@@ -1227,7 +2098,7 @@ namespace IKMA
             if (card == null) return;
 
             string name = null;
-            try { name = CardReader.CardName(card.Info); } catch { }
+            try { name = CardReader.CardName(card); } catch { }
             if (string.IsNullOrEmpty(name)) return;
 
             Ability gained = Ability.None;
@@ -1352,6 +2223,13 @@ namespace IKMA
             var claim = new TrinketClaim { Card = card };
             _trinket = claim;
 
+            // Session 47 (0.7.455): the name is taken NOW. A disguised Ijiraq
+            // fires its disguise's Trinket Bearer and is the Ijiraq by the
+            // time the line below is composed; his log had "Ijiraq's Trinket
+            // Bearer ability fizzles" ahead of the transform line.
+            string nameAtTrigger = null;
+            try { nameAtTrigger = CardReader.RevealedDisguiseName(card); } catch { }
+
             using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
             {
                 // The window closes here whatever the outcome, so a later item
@@ -1359,8 +2237,11 @@ namespace IKMA
                 if (ReferenceEquals(_trinket, claim)) _trinket = null;
                 if (claim.Claimed) return null;
 
-                string name = null;
-                try { name = CardReader.CardName(claim.Card?.Info); } catch { }
+                string name = nameAtTrigger;
+                if (string.IsNullOrEmpty(name))
+                {
+                    try { name = CardReader.CardName(claim.Card?.Info); } catch { }
+                }
 
                 string sigil = null;
                 try { sigil = CardReader.GetAbilityName(Ability.RandomConsumable); } catch { }
@@ -1380,6 +2261,16 @@ namespace IKMA
         /// trigger, and null when it does not — in which case the ordinary
         /// item-created line is spoken exactly as before.
         /// </summary>
+        // 0.7.439 - set when ClaimItemCreation has already spoken the item as
+        // part of the play confirmation; the caller then says nothing more.
+        private static bool _trinketSpokenWithPlay;
+        internal static bool ConsumeSpokenWithPlay()
+        {
+            bool was = _trinketSpokenWithPlay;
+            _trinketSpokenWithPlay = false;
+            return was;
+        }
+
         internal static string ClaimItemCreation(string itemName, int slotNumber)
         {
             var claim = _trinket;
@@ -1395,6 +2286,17 @@ namespace IKMA
 
             Plugin.Log?.LogInfo(
                 $"IKMA SIGIL: Trinket Bearer on '{name}' added '{itemName}' to item slot {slotNumber}.");
+
+            // 0.7.439 - the player just played this card and its confirmation
+            // is being held: one line, spoken as the confirmation it is.
+            string playedLine = PlayConfirmHold.Take(claim.Card);
+            if (playedLine != null)
+            {
+                using (Speech.Event(EventKind.CardPlayed, EventSource.CurrentPlayer))
+                    Speech.Confirm(Vocabulary.PlayedThenTrinketBearer(playedLine, itemName, slotNumber));
+                _trinketSpokenWithPlay = true;
+                return null;
+            }
 
             return Vocabulary.TrinketBearerTriggers(name, itemName, slotNumber);
         }
@@ -1440,12 +2342,106 @@ namespace IKMA
             => SigilNarrator.NoteCageBroken(__instance);
     }
 
+    // The Long Elk leaving a Vertebrae behind (Session 47). Prefix on the
+    // coroutine Strafe runs after a successful move. Registered by TryPatch,
+    // with no HarmonyPatch attribute on it.
+    public class Strafe_PostSuccessfulMoveSequence_Patch
+    {
+        static void Prefix(Strafe __instance, CardSlot oldSlot)
+            => SigilNarrator.NoteVertebrae(__instance, oldSlot);
+    }
+
+    // Child 13 given as a sacrifice (Session 48). Registered by TryPatch,
+    // with no attribute on it.
+    public class JerseyDevil_OnSacrifice_Patch
+    {
+        static void Prefix(JerseyDevil __instance)
+            => SigilNarrator.NoteChild13Sacrificed(__instance);
+    }
+
+    // The Great Kraken coming back up (Session 48). Registered by TryPatch,
+    // with no attribute on it.
+    public class SubmergeSquid_OnResurface_Patch
+    {
+        static void Prefix(SubmergeSquid __instance)
+            => SigilNarrator.NoteKrakenResurface(__instance);
+    }
+
+    // The Ijiraq dropping its disguise (Session 46). Prefix, so the name it
+    // was wearing is captured before it changes. Registered by TryPatch.
+    public class Shapeshifter_OnResolveOnBoard_Patch
+    {
+        static void Prefix(Shapeshifter __instance)
+            => SigilNarrator.NoteIjiraqReveal(__instance);
+    }
+
     // Fledgling and Transformer, from Evolve's one coroutine. Prefix, so the
     // card's name before the change is captured — the whole point of the line.
     public class Evolve_OnUpkeep_Patch
     {
-        static void Prefix(Evolve __instance)
-            => SigilNarrator.NoteTransformed(__instance);
+        // 0.7.459: playerUpkeep is the game's own argument (Evolve.OnUpkeep(bool
+        // playerUpkeep)), passed on so EvolveBatch can ask which other cards
+        // answer the same upkeep.
+        static void Prefix(Evolve __instance, bool playerUpkeep)
+            => SigilNarrator.NoteTransformed(__instance, playerUpkeep);
+
+        /// <summary>
+        /// 0.7.459 - when a card's change has happened. PUBLIC override
+        /// IEnumerator Evolve.OnUpkeep(bool playerUpkeep), Evolve.cs:21
+        /// (dumps\dump_s49_from_decompile.txt). A POSTFIX that wraps the
+        /// enumerator for SigilNarrator.WatchEvolve. Registered by its own
+        /// TryPatch call, and no attribute on this class. 0.7.460: moved here
+        /// from a second class, so one class patches Evolve.OnUpkeep.
+        /// </summary>
+        public static void Postfix(Evolve __instance, ref System.Collections.IEnumerator __result)
+        {
+            try
+            {
+                if (__instance != null && __result != null)
+                    __result = SigilNarrator.WatchEvolve(__instance, __result);
+            }
+            catch { }
+        }
+    }
+
+    /// <summary>
+    /// 0.7.443 - the Curious Egg hatching. PUBLIC override IEnumerator
+    /// HydraEgg.OnDrawn(), HydraEgg.cs:51
+    /// (dumps\dump_hydraegg_from_decompile.txt). A POSTFIX that wraps the
+    /// enumerator, so SigilNarrator.WatchHatch sees each step the game takes.
+    /// Through TryPatch, and no attribute on this class.
+    /// </summary>
+    public static class HydraEgg_OnDrawn_Patch
+    {
+        public static void Postfix(HydraEgg __instance, ref System.Collections.IEnumerator __result)
+        {
+            try
+            {
+                if (__instance != null && __result != null)
+                    __result = SigilNarrator.WatchHatch(__instance, __result);
+            }
+            catch { }
+        }
+    }
+
+    /// <summary>
+    /// 0.7.445 - the Glitched card. PUBLIC override IEnumerator
+    /// RandomCard.OnDrawn(), RandomCard.cs:13
+    /// (dumps\dump_hydraegg_from_decompile.txt). A POSTFIX that wraps the
+    /// enumerator for SigilNarrator.WatchGlitch. Through TryPatch, and no
+    /// attribute on this class.
+    /// </summary>
+    public static class RandomCard_OnDrawn_Patch
+    {
+        public static void Postfix(RandomCard __instance, ref System.Collections.IEnumerator __result)
+        {
+            try
+            {
+                if (__instance != null && __result != null)
+                    __result = SigilNarrator.WatchGlitch(__instance, __result);
+            }
+            catch { }
+        }
     }
 }
 

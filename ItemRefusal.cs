@@ -31,9 +31,39 @@ namespace IKMA
         private static readonly AccessTools.FieldRef<HintsHandler.Hint, int> _attempts =
             AccessTools.FieldRefAccess<HintsHandler.Hint, int>("playDialogueAttempts");
 
+        // Session 51 (0.7.463). Zamar, on Enter on a card he could not pay
+        // for (Leshy's line the first time, nothing on later presses): "can
+        // we re-trigger the Leshy line?" The game plays these hints on the
+        // first try and every Nth after (Hint.playDialogueFrequency 2 or 3);
+        // the presses between get only the card's shake. Putting the hint's
+        // own counter back to zero before the game reads it makes Leshy say
+        // the line on every press - his voice and his text on screen, not
+        // IKMA repeating him. The five hints HintsHandler.
+        // OnNonplayableCardClicked raises in Act 1 (energy and gems are left
+        // alone). Items are not touched: IKMA gives their reason itself.
+        private static readonly System.Collections.Generic.HashSet<string> _cardHints
+            = new System.Collections.Generic.HashSet<string>
+        {
+            "Hint_NotEnoughBlood",
+            "Hint_NotEnoughBloodButSquirrel",
+            "Hint_NotEnoughBloodTerrain",
+            "Hint_NotEnoughBones",
+            "Hint_AllSlotsFull",
+        };
+
         /// <summary>Harmony prefix on HintsHandler.Hint.TryPlayDialogue.</summary>
         internal static void NoteHint(HintsHandler.Hint hint)
         {
+            try
+            {
+                if (hint != null && _cardHints.Contains(hint.dialogueId) && _attempts(hint) != 0)
+                {
+                    _attempts(hint) = 0;
+                    Plugin.Log?.LogInfo($"IKMA HINT: {hint.dialogueId} - Leshy says it again on this press.");
+                }
+            }
+            catch { }
+
             try
             {
                 int attempts = _attempts(hint);
@@ -71,13 +101,33 @@ namespace IKMA
                 case "Hint_ConsumableOutsideOfBattle": return Vocabulary.ItemRefusals.OutsideBattle(name);
                 case "Hint_ConsumableDuringDrawPhase": return Vocabulary.ItemRefusals.DrawPhase(name);
                 case "Hint_MagnifyingGlassNoCards":    return Vocabulary.ItemRefusals.DeckEmpty(name);
-                case "Hint_PocketWatchGiantCard":      return Vocabulary.ItemRefusals.GiantCard(name);
+                case "Hint_PocketWatchGiantCard":      return Vocabulary.ItemRefusals.GiantCard(name, GiantCardName());
                 case "Hint_ScissorsNoTarget":
                 case "Hint_FishhookNoTarget":
                 case "Hint_BleachPotNoTargets":
                 case "Hint_PocketWatchNoCards":        return Vocabulary.ItemRefusals.NoTargets(name);
                 default:                               return Vocabulary.ItemRefusals.NotNow(name);
             }
+        }
+
+        // Session 51. The giant card the Wiseclock is refused for, by the
+        // game's own test (PocketWatchItem.GiantCardOnBoard: an opponent slot
+        // whose card has Trait.Giant). Null when it cannot be read.
+        private static string GiantCardName()
+        {
+            try
+            {
+                var bm = Singleton<BoardManager>.Instance;
+                if (bm == null) return null;
+                foreach (var slot in bm.OpponentSlotsCopy)
+                {
+                    var card = slot?.Card;
+                    if (card != null && card.Info != null && card.Info.HasTrait(Trait.Giant))
+                        return CardReader.CardName(card);
+                }
+            }
+            catch { }
+            return null;
         }
 
         private static string ReasonFromState(object consumable, string name)

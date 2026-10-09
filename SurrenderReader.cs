@@ -201,6 +201,7 @@ namespace IKMA
                 callback();
                 // 0.7.360 — his line on accepting.
                 Speech.Confirm(Vocabulary.Surrender.ConcedeAccepted);
+                EventNarrator.NoteVictoryAlreadySaid();   // 0.7.451 - no second "Victory."
             }
             catch (Exception e)
             {
@@ -291,7 +292,7 @@ namespace IKMA
                 if (ReferenceEquals(card, _last) && now - _lastAt < 3f) return;
                 _last = card; _lastAt = now;
 
-                string name  = CardReader.CardName(card.Info);
+                string name  = CardReader.CardName(card);
                 string sigil = CardReader.GetAbilityName(Ability.Tutor);
                 if (string.IsNullOrEmpty(sigil)) sigil = "Hoarder";
                 Plugin.Log?.LogInfo($"IKMA SIGIL: Hoarder on '{name}' — the deck is empty, the game declined to trigger it.");

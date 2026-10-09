@@ -2871,9 +2871,72 @@ namespace IKMA
                 Vocabulary.Map.StandingControlsUpArrow());
         }
 
+        // ==================================================================
+        // THE NODE MANAGER, HANDED OVER BY THE GAME. (0.7.440.)
+        //
+        // Zamar's 0.7.435 log, 334 times in about three seconds, at the start
+        // of a run between "Deck returned." and the first map line:
+        //
+        //   [Warning: Singleton] Got null in Singleton<DiskCardGame.MapNodeManager>.FindInstance
+        //
+        // MapAvailable() is asked twice a frame by HotkeyManager, and it used
+        // to begin with MapNodeManager.Instance. Singleton<T>.Instance is only
+        // a cheap field read while the instance EXISTS. While it does not, the
+        // getter runs a whole-scene object search and logs a warning, on every
+        // call. In a freshly loaded Part1_Cabin the manager's object is still
+        // switched off until the map is laid out, the search does not see
+        // switched-off objects, and so every frame of that wait cost two
+        // searches and two log lines. This is the same defect as the 0.7.216
+        // TradeReader one, arriving through MapAvailable.
+        //
+        // The cure is the same too: do not poll for the thing, let the game
+        // say when it exists. In Act 1 and Kaycee's Mod, ActiveNode is only
+        // ever given a value by the private MapNodeManager.SetActiveNode, and
+        // the only route to that is the PUBLIC
+        // MapNodeManager.FindAndSetActiveNodeInteractable()
+        // (MapNodeManager.cs:24, called from PaperGameMap each time the map is
+        // shown). A postfix on that call hands its instance to NoteManager.
+        // Until that has happened there cannot be an active node, so "no
+        // manager known" and "map not available" are the same answer and no
+        // search is needed to give it.
+        //
+        // A scene change destroys the manager. Unity makes a destroyed object
+        // compare equal to null, so the remembered one drops out by itself
+        // and nothing has to be cleared on scene load.
+        //
+        // ManagerGateInstalled is false when the patch did not go on. Then
+        // MapAvailable asks the Singleton as it always did: a noisy log is a
+        // defect, a map that never answers is a softlock.
+        //
+        // NOT COVERED: the chessboard map (ChessboardMap.cs:27,
+        // ChessboardMapNode.cs:25) assigns ActiveNode directly and never
+        // calls FindAndSetActiveNodeInteractable. When that map gets a
+        // reader, it needs its own NoteManager call.
+        // ==================================================================
+        public static bool ManagerGateInstalled;
+        private static MapNodeManager _knownManager;
+
+        /// <summary>The game has just set the map up on this manager.</summary>
+        public static void NoteManager(MapNodeManager mgr)
+        {
+            _knownManager = mgr;
+        }
+
         public static bool MapAvailable()
         {
-            var mgr = MapNodeManager.Instance;
+            MapNodeManager mgr;
+            if (ManagerGateInstalled)
+            {
+                // A plain field read. Null before the game's first set-up
+                // call in this scene, and null again (to Unity's ==) once the
+                // scene that owned it has gone.
+                mgr = _knownManager;
+                if (mgr == null) return false;
+            }
+            else
+            {
+                mgr = MapNodeManager.Instance;
+            }
             if (mgr == null || mgr.ActiveNode == null || mgr.MovingNodes) return false;
 
             // AND THE BOARD HAS TO BE SWITCHED ON. (0.7.247.)
@@ -3766,6 +3829,22 @@ namespace IKMA
 
             Speech.Browse(
                 Vocabulary.Map.AheadEnterToTravel(where, pathWord, parts, standingOn, browse));
+        }
+    }
+
+    /// <summary>
+    /// 0.7.440 - the game saying "the map is set up". PUBLIC void
+    /// MapNodeManager.FindAndSetActiveNodeInteractable(), MapNodeManager.cs:24
+    /// (dumps\dump_mapnodemanager_from_decompile.txt). A POSTFIX, so the
+    /// active node has been assigned by the time MapReader is told. It only
+    /// remembers the instance; it speaks nothing. Through TryPatch, and no
+    /// attribute on this class.
+    /// </summary>
+    public static class MapNodeManager_FindAndSetActiveNodeInteractable_Patch
+    {
+        public static void Postfix(MapNodeManager __instance)
+        {
+            try { MapReader.NoteManager(__instance); } catch { }
         }
     }
 }

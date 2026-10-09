@@ -127,6 +127,14 @@ namespace IKMA
                 try { remaining = opponent.NumLives; }
                 catch { remaining = -1; }
 
+                // 0.7.448 - LESHY'S CANDLES ARE SAID BY LESHY'S OWN LINES.
+                // Zamar, Session 45: "Leshy blows out his first of three
+                // candles." / "Leshy blows out the second of his three
+                // candles. ..." (LeshyNarrator.OnPhaseChange, which the game
+                // reaches whenever a life is left). Saying this line as well
+                // would be one candle told twice.
+                if (opponent is LeshyBossOpponent && remaining > 0) return null;
+
                 int starting = -1;
                 try { starting = opponent.StartingLives; }
                 catch { starting = -1; }
@@ -1062,6 +1070,9 @@ namespace IKMA
 
             Plugin.Log?.LogInfo($"IKMA HAND: card spawned to hand — '{name ?? "?"}'.");
 
+            // Session 47 (0.7.455): see DisguisedIjiraqName.
+            try { if (info.name == "Ijiraq") { _ijiraqSpawnedAt = Now(); _ijiraqSpawnName = name; } } catch { }
+
             if (string.IsNullOrEmpty(name)) return;
 
             // DEALT, NOT GIVEN. (0.7.194.)
@@ -1332,11 +1343,41 @@ namespace IKMA
 
         private const float SUPPRESS_WINDOW_SECONDS = 3f;
 
+        // Session 47 (0.7.455). An Ijiraq spawned straight into the hand is
+        // named here before the game disguises it, so the line said "Ijiraq
+        // is added to your hand." and the hand then held a Pack Rat - the
+        // line told the player what the card really was. By the time the
+        // gathered line is spoken the disguise is on; the name is read off
+        // the card in the hand then, and it is the disguise's plain name
+        // (0.7.456: no mark is shown in the hand, so no "Unusual").
+        private static float _ijiraqSpawnedAt = -99f;
+        private static string _ijiraqSpawnName;
+
+        private static string DisguisedIjiraqName(string gathered)
+        {
+            if (_ijiraqSpawnName == null || gathered != _ijiraqSpawnName) return gathered;
+            if (Now() - _ijiraqSpawnedAt > 5f) return gathered;
+
+            try
+            {
+                var hand = Singleton<PlayerHand>.Instance;
+                if (hand?.CardsInHand == null) return gathered;
+                for (int i = hand.CardsInHand.Count - 1; i >= 0; i--)
+                    if (CardReader.IsDisguisedIjiraq(hand.CardsInHand[i]))
+                        return CardReader.CardName(hand.CardsInHand[i]);
+            }
+            catch { }
+            return gathered;
+        }
+
         /// <summary>Driven from HotkeyManager.Update, beside the other tickers.</summary>
         internal static void Tick()
         {
             if (_gathering.Count == 0) return;
             if (Now() < _gatherUntil) return;
+
+            for (int gi = 0; gi < _gathering.Count; gi++)
+                _gathering[gi] = DisguisedIjiraqName(_gathering[gi]);
 
             string line;
             if (_gathering.Count == 1)

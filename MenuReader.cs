@@ -207,6 +207,10 @@ namespace IKMA
         /// </remarks>
         public static void TickMouseSuppression()
         {
+            // Session 52: when the mouse is off for the whole game (every
+            // packaged build) MouseGate holds it, and this menu-only toggle
+            // would only fight it and log "restored" on every menu exit.
+            if (MouseGate.Off) return;
             SetMouseInteraction(!MenuActive() && !TitleScreenReader.Active);
         }
 
@@ -827,6 +831,12 @@ namespace IKMA
         // ------------------------------------------------------------------
         private static string _pendingEntryText;
 
+        // Session 47 (0.7.455): the entry as it was spoken, and the screen it
+        // was spoken on, so Space can say it again. Space used to answer
+        // "Back. Option 1 of 1." on the one screen that exists to be read.
+        private static string _entryLine;
+        private static string _entryScreen;
+
         internal static void SetPendingEntry(int entryId, string bodyText)
         {
             if (string.IsNullOrEmpty(bodyText)) { _pendingEntryText = null; return; }
@@ -940,9 +950,14 @@ namespace IKMA
             // All three are the UNLOCKS records. The screens where a run is
             // actually configured — AscensionChallengeScreen,
             // AscensionChooseStarterDeckScreen — keep their Enter.
+            //   Card Unlocks, Unlock      Session 51 (0.7.463). Found by the
+            //   Starter Deck              test driver: both said "Enter to
+            //                             confirm" and Enter on a card there
+            //                             does nothing. Zamar: drop it.
             bool readoutScreen = IsStatsScreen()
                               || IsUnlockedChallengesScreen()
-                              || IsStarterDeckSummaryScreen();
+                              || IsStarterDeckSummaryScreen()
+                              || IsNewUnlockScreen();
 
             string controls;
             if (backOnly)
@@ -966,7 +981,9 @@ namespace IKMA
             {
                 string entry = _pendingEntryText;
                 _pendingEntryText = null;
-                Speech.Browse(Vocabulary.Menus.ScreenEntryControls(ScreenName(), entry, controls));
+                _entryScreen = ScreenName();
+                _entryLine = Vocabulary.Menus.ScreenEntryControls(_entryScreen, entry, controls);
+                Speech.Browse(_entryLine);
                 return;
             }
 
@@ -1223,7 +1240,18 @@ namespace IKMA
             // If menus are snappy and the hand still hitches, that rules a whole
             // half of the codebase out.
             long tLabel = Perf.Now();
-            string spoken = Sentence(LabelFor(items, _index));
+            string rawLabel = LabelFor(items, _index);
+            string spoken = Sentence(rawLabel);
+
+            // Session 47 (0.7.455): a row of locked items said one identical
+            // line seven times. A locked item carries its position, in the
+            // words Space already uses for it.
+            if (IsLockedLabel(rawLabel))
+            {
+                int lockedIndex, lockedCount;
+                PositionOf(items, _index, out lockedIndex, out lockedCount);
+                spoken = InsertPosition(spoken, PositionNounFor(items[_index]), lockedIndex, lockedCount);
+            }
             double composeMs = Perf.MsSince(tLabel);
 
             HoverMenuItem(previous, items[_index]);
@@ -1262,6 +1290,32 @@ namespace IKMA
             return label.Substring(0, cut + 1) + " " + position + label.Substring(cut + 1);
         }
 
+        // Session 47 (0.7.455). The position AnnounceCurrent speaks, for the
+        // locked items read while browsing: a starter deck counts decks only.
+        private static void PositionOf(List<MainInputInteractable> items, int here, out int posIndex, out int posCount)
+        {
+            posIndex = here + 1; posCount = items.Count;
+            if (!(items[here] is AscensionStarterDeckIcon)) return;
+
+            posIndex = 0; posCount = 0;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (!(items[i] is AscensionStarterDeckIcon)) continue;
+                posCount++;
+                if (i <= here) posIndex++;
+            }
+        }
+
+        private static bool IsLockedLabel(string label)
+        {
+            if (string.IsNullOrEmpty(label)) return false;
+            char[] ends = { '.', ' ' };
+            string bare = label.TrimEnd(ends);
+            return bare == Vocabulary.Menus.LockedStarterDeck.TrimEnd(ends)
+                || bare == Vocabulary.Menus.LockedCard.TrimEnd(ends)
+                || bare == Vocabulary.Menus.ChallengeLocked.TrimEnd(ends);
+        }
+
         public static void JumpEdge(bool toStart)
         {
             var items = GetItems();
@@ -1281,6 +1335,15 @@ namespace IKMA
             // Space answers for the option arrival named while the cursor is
             // still NOWHERE, and does NOT commit the cursor there — repeating
             // where you are must never be a move.
+            // Session 47 (0.7.455): on a devlog entry Space repeats the entry.
+            if (_entryLine != null)
+            {
+                string onScreen = null;
+                try { onScreen = ScreenName(); } catch { }
+                if (onScreen == _entryScreen) { Speech.Browse(_entryLine); return; }
+                _entryLine = null;
+            }
+
             int here = (_index == NOWHERE || _index >= items.Count) ? DefaultIndex(items) : _index;
             // Session 13: the screen name is spoken ON ENTRY and nowhere else.
             // M used to lead with it, so every repeat began by telling the
@@ -1778,6 +1841,17 @@ namespace IKMA
 
         private static bool IsStarterDeckSelectScreen()
             => (_activeScreen?.gameObject?.name ?? "") == "AscensionStarterDeckScreen";
+
+        /// <summary>
+        /// The two screens after a won run that show what was just unlocked:
+        /// new cards and a new starter deck. Object names from the Session 48
+        /// driver log ("IKMA MENU: screen active").
+        /// </summary>
+        private static bool IsNewUnlockScreen()
+        {
+            string n = _activeScreen?.gameObject?.name ?? "";
+            return n == "AscensionCardUnlocksScreen" || n == "AscensionUnlockStarterDeckScreen";
+        }
 
         private static bool IsStarterDeckSummaryScreen()
             => (_activeScreen?.gameObject?.name ?? "") == "AscensionStarterDeckSummaryScreen";

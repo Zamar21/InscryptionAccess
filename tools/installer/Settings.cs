@@ -37,6 +37,8 @@ namespace IKMASetup
     /// key it writes, so this file and the mod stay in step:
     ///   Updates       [Updates] Mode         AutoUpdate.cs
     ///   Speech engine [Speech] Backend       SpeechBackend.cs
+    ///   NVDA line timing [Speech] NvdaLineEnd   SpeechBackend.cs / NvdaDirect.cs (Session 50)
+    ///   Braille display  [Speech] Braille       SpeechBackend.cs (Session 50)
     ///   Language      [Language] Language    (localization, Session 32)
     ///   Full log      [Diagnostics] Show     DiagnosticGate.cs
     ///   Vibration     [Gamepad] VibrationLevel  GamepadSupport.cs (Session 34)
@@ -85,6 +87,28 @@ namespace IKMASetup
                     new Option("Auto",        L.T("Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.")),
                     new Option("NVDA",        L.T("Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.")),
                     new Option("LinuxBridge", L.T("Always the IKMA speech helper, for Steam Deck and Linux.")),
+                },
+            },
+            // Session 50 (0.7.462): the two [Speech] switches. BepInEx writes a
+            // true / false setting as the words "true" and "false". Wording:
+            // Claude's (Zamar: "name it what you would recommend"), the same
+            // as the game's Mod Settings (Vocabulary.ModSettings).
+            new Setting
+            {
+                Section = "Speech", Key = "NvdaLineEnd", Title = Text.SettingNvdaTiming, Default = "true",
+                Options = new[]
+                {
+                    new Option("true",  L.T("Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.")),
+                    new Option("false", L.T("Estimated: IKMA guesses how long each line takes to read.")),
+                },
+            },
+            new Setting
+            {
+                Section = "Speech", Key = "Braille", Title = Text.SettingBraille, Default = "true",
+                Options = new[]
+                {
+                    new Option("true",  L.T("On: every spoken line is also sent to your braille display, through NVDA or JAWS.")),
+                    new Option("false", L.T("Off: nothing is sent to a braille display.")),
                 },
             },
             // Session 34: v0.5 is English only (Loc.LocalizationShipped), so

@@ -55,7 +55,8 @@
     See SetupLoc.cs.
   -->
   <ItemGroup>
-    <EmbeddedResource Include="lang\*.tsv">
+    <!-- Zamar, Session 54: English only until languages ship. -->
+    <EmbeddedResource Include="lang\English.tsv">
       <LogicalName>setup_lang/%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>

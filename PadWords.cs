@@ -126,10 +126,44 @@ namespace IKMA
         {
             foreach (var b in KeyIn.Map)
             {
-                if (b.Key != key || b.Shift != shift) continue;
+                // Session 46: a Control chord is its own key. Without this
+                // a plain "M" or a plain Up arrow could be answered with the
+                // button that sends Control plus M or Control plus Up.
+                if (b.Key != key || b.Shift != shift || b.Ctrl) continue;
                 return Gesture(b.Chord, b.Button);
             }
             return null;
+        }
+
+        /// <summary>
+        /// Session 46. The spoken pad gesture for a key pressed with Control
+        /// (review history, Mod Settings), or null if no button does it.
+        /// </summary>
+        internal static string ForKey(KeyCode key, bool shift, bool ctrl)
+        {
+            if (!ctrl) return ForKey(key, shift);
+            foreach (var b in KeyIn.Map)
+            {
+                if (b.Key != key || b.Shift != shift || !b.Ctrl) continue;
+                return Gesture(b.Chord, b.Button);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Session 46. "LB plus RB plus D-pad up" and "LB plus RB plus D-pad
+        /// down" said as one gesture, "LB plus RB plus D-pad up or down", when
+        /// they differ only in the last word; otherwise both, joined by "or".
+        /// Null when either has no button, so the keyboard words are kept.
+        /// </summary>
+        private static string UpOrDown(string up, string down)
+        {
+            if (up == null || down == null) return null;
+            const string U = " up", D = " down";
+            if (up.EndsWith(U, System.StringComparison.Ordinal) && down.EndsWith(D, System.StringComparison.Ordinal)
+                && up.Substring(0, up.Length - U.Length) == down.Substring(0, down.Length - D.Length))
+                return up + " or down";
+            return up + " or " + down;
         }
 
         /// <summary>
@@ -198,7 +232,25 @@ namespace IKMA
             // Session 35 (found with the test driver): not card POSITIONS.
             // "Starter Deck: Eggs. Cards 1, 2, and 3 of 3" was spoken as
             // "Cards RB plus D-pad up, right, and down of 3".
-            @"|(?<nums>(?<!Cards )\b1, 2,? (?<conj>and|or) 3\b(?! of\b))" +
+            //
+            // Session 46 (found with the test driver, 0.7.450, on the pad):
+            // not a list of SLOTS either. "Kingfisher, Kingfisher, and River
+            // Otter's Waterborne abilities trigger in slots 1, 2, and 3" was
+            // spoken as "trigger in slots RB plus D-pad up, right, and down",
+            // and the Curious Egg's "Powers met: 1, 2, and 3" would have gone
+            // the same way. Shutting out one wrong neighbour at a time is the
+            // wrong way round: the ONLY line that names the number keys as a
+            // bare list is the cabin's "1, 2 and 3 examine what is in front
+            // of you", so the list is rewritten there and nowhere else.
+            @"|(?<nums>\b1, 2,? (?<conj>and|or) 3(?= examine\b))" +
+            // Session 46 (same driver run): the review history and Mod
+            // Settings are Control chords on the keyboard. "Control plus Up
+            // or Down arrow scrolls the log history" was spoken on the pad as
+            // "Control plus Up or D-pad down". The pad's own gesture is read
+            // from the map in use, so a moved action is named where it is.
+            @"|(?<hist>Control plus Up or Down arrow)" +
+            @"|(?<carrow>Control plus (?<cdir>Up|Down) arrow)" +
+            @"|(?<cletter>Control plus (?<cl>[A-Z])\b)" +
             @"|(?<turn>\b(?<tk>[AD]) turns you\b)" +
             @"|(?<sarrow>Shift(?: plus | and |\+| )(?<sdir>Up|Down|Left|Right)(?: arrow)?)" +
             @"|(?<sletter>Shift(?: plus | and |\+| )(?<sl>[A-Z])\b)" +
@@ -206,6 +258,9 @@ namespace IKMA
             @"|(?<ud>[Uu]p and down arrows)(?<v2> " + Verbs + @")?" +
             @"|(?<onearrow>\b(?<adir>[Uu]p|[Dd]own|[Ll]eft|[Rr]ight) arrow\b)" +
             @"|(?<arrows>\bArrow keys\b|\bArrows\b|\barrows\b)(?<v3> " + Verbs + @")?" +
+            // Session 51: the help list row "Review history as a list, Y."
+            // The list has a button now (KeyIn: HistoryList).
+            @"|(?<histlist>(?<=as a list, )Y\b)" +
             @"|(?<named>\b(?:Enter|Space|Backspace|Escape|Tab)\b)" +
             @"|(?<=\b[Pp]ress )(?<pressed>[A-Z0-9])\b" +
             @"|\b(?<letter>[A-Z])\b(?=(?: to\b| for\b|, | and\b| or\b| opens\b| cycles\b| reads\b| counts\b| closes\b| looks\b))",
@@ -410,6 +465,13 @@ namespace IKMA
                       + ButtonName(PadInput.PadButton.LB) + " goes to the next page left";
                 else if (m.Groups["nums"].Success)
                     r = ButtonName(PadInput.PadButton.RB) + " plus D-pad up, right, " + m.Groups["conj"].Value + " down";
+                else if (m.Groups["hist"].Success)
+                    r = UpOrDown(ForKey(KeyCode.UpArrow, shift: false, ctrl: true),
+                                 ForKey(KeyCode.DownArrow, shift: false, ctrl: true));
+                else if (m.Groups["carrow"].Success)
+                    r = ForKey(Arrow(m.Groups["cdir"].Value), shift: false, ctrl: true);
+                else if (m.Groups["cletter"].Success)
+                    r = ForKey(Letter(m.Groups["cl"].Value), shift: false, ctrl: true);
                 else if (m.Groups["turn"].Success)
                 {
                     string stick = ForKey(m.Groups["tk"].Value == "A" ? KeyCode.LeftArrow : KeyCode.RightArrow, shift: true);
@@ -427,6 +489,8 @@ namespace IKMA
                     r = "D-pad " + m.Groups["adir"].Value.ToLowerInvariant();
                 else if (m.Groups["arrows"].Success)
                     r = "D-pad" + Singular(m.Groups["v3"]);
+                else if (m.Groups["histlist"].Success)
+                    r = ForKey(KeyCode.Y, shift: false);
                 else if (m.Groups["named"].Success)
                     r = ForKey(Named(m.Groups["named"].Value), shift: false);
                 else if (m.Groups["pressed"].Success)

@@ -69,6 +69,7 @@ namespace IKMASetup
             new Action("SaveLog",            L.T("Save a bug report log"),                    "LB+RB+View"),
             new Action("HistoryOlder",       L.T("Review history, older"),                    "LB+RB+DpadDown"),   // Session 35, provisional
             new Action("HistoryNewer",       L.T("Review history, newer"),                    "LB+RB+DpadUp"),     // Session 35, provisional
+            new Action("HistoryList",        L.T("Review history as a list"),                 "LB+R3"),            // Session 51 (0.7.463), provisional name
             new Action("Silence",            L.T("Silence speech"),                           "R3"),               // Session 36, provisional
         };
 

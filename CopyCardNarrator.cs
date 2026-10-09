@@ -1,4 +1,4 @@
-// CopyCardNarrator.cs
+﻿// CopyCardNarrator.cs
 
 using DiskCardGame;
 
@@ -139,7 +139,8 @@ namespace IKMA
                     }
 
                     Plugin.Log?.LogInfo($"IKMA COPY CARD: the copy is {described}");
-                    return described;
+                    // 0.7.433 - his lead-in, approved: "Painted Card: Wolf..."
+                    return Vocabulary.CopyCardNode.PaintedCard(described);
                 }, EASEL_TURN_SECONDS);
             }
             catch (System.Exception e)

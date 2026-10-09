@@ -154,7 +154,7 @@ namespace IKMA
             try
             {
                 Plugin.Log?.LogInfo(
-                    $"IKMA BOARDDIFF: noted '{CardReader.CardName(card.Info)}' as already " +
+                    $"IKMA BOARDDIFF: noted '{CardReader.CardName(card)}' as already " +
                     $"announced at slot {slotIndex + 1} — a destination it has not reached yet " +
                     $"({_announced.Count} held).");
             }
@@ -222,7 +222,7 @@ namespace IKMA
                     try
                     {
                         Plugin.Log?.LogInfo(
-                            $"IKMA BOARDDIFF: '{CardReader.CardName(card.Info)}' noted again — held slot now {again + 1}.");
+                            $"IKMA BOARDDIFF: '{CardReader.CardName(card)}' noted again — held slot now {again + 1}.");
                     }
                     catch { }
                     return;
@@ -247,7 +247,7 @@ namespace IKMA
             try
             {
                 Plugin.Log?.LogInfo(
-                    $"IKMA BOARDDIFF: noted '{CardReader.CardName(card.Info)}' as already announced " +
+                    $"IKMA BOARDDIFF: noted '{CardReader.CardName(card)}' as already announced " +
                     $"({_announced.Count} held).");
             }
             catch { }
@@ -325,6 +325,7 @@ namespace IKMA
             _previousQueue.Clear();
             _previous.Clear();
             _announced.Clear();
+            _sweptCards.Clear();
             _grizzlyWipe = false;
             _haveSnapshot = false;
             _orderProbed  = false;
@@ -454,6 +455,7 @@ namespace IKMA
 
             var moves    = new List<string>();
             var appeared = new List<string>();
+            var playGroups = new List<PlayGroup>();   // 0.7.438
             var vanished = new List<string>();
 
             // 0.7.340 — the Prospector's wipe. See ProspectorNarrator.
@@ -619,6 +621,27 @@ namespace IKMA
                 }
                 catch { }
 
+                // 0.7.455 - THE LONG ELK'S VERTEBRAE IS THE SPRINT'S. Zamar,
+                // Session 47: "Long Elk extends its vertebrae into slot [1]."
+                // Snelk_Neck reaches the board only through Strafe.
+                // PostSuccessfulMoveSequence, and SigilNarrator.NoteVertebrae
+                // says it there, on the turn it happens.
+                try
+                {
+                    if (current[i].Card?.Info?.name == "Snelk_Neck")
+                        continue;
+                }
+                catch { }
+
+                // 0.7.457 - a Chime or a Dam whose own line is still on its
+                // way. See SigilNarrator.AdjacentSpawnOwns.
+                if (SigilNarrator.AdjacentSpawnOwns(current[i].Card))
+                {
+                    Plugin.Log?.LogInfo(
+                        $"IKMA BOARDDIFF: '{name}' in slot {current[i].SlotIndex + 1} left out - its sigil's line names it.");
+                    continue;
+                }
+
                 if (WasAnnounced(current[i].Card))
                 {
                     int noted = AnnouncedInSlot(current[i].Card);
@@ -659,6 +682,15 @@ namespace IKMA
                 // the question — a name check would break the moment a mod or a
                 // later act reuses the behaviour.
                 string pack = PackNote(current[i].Card);
+
+                // 0.7.438 - Session 43, Zamar: "Enemy Bait Bucket is played in
+                // slot 2. Enemy Bait Bucket is played in slot 3." - "Collapse
+                // this to one line."
+                if (!fromQueue)
+                {
+                    AddPlay(appeared, playGroups, current[i].PlayerSide, name, current[i].SlotIndex + 1, pack);
+                    continue;
+                }
 
                 appeared.Add(fromQueue
                     ? Vocabulary.BoardChanges.MovesDownToSlot(Possessive(current[i].PlayerSide), name, current[i].SlotIndex + 1, pack)
@@ -785,6 +817,16 @@ namespace IKMA
                 // it falls back to the plain departure line for anything else.
                 string killed = ItemTargetOutcome.DeathLineFor(_previous[i].Card, name);
                 if (killed != null) { vanished.Add(killed); continue; }
+
+                // 0.7.437 - and so does a clear whose cards were named ahead
+                // of time. See SuppressDeparturesOf.
+                if (SweptAway(_previous[i].Card))
+                {
+                    Plugin.Log?.LogInfo(
+                        $"IKMA BOARDDIFF: '{name}' leaving slot {_previous[i].SlotIndex + 1} " +
+                        $"not announced — {_sweptReason}.");
+                    continue;
+                }
 
                 // A PHASE THAT CLEARS THE BOARD SPEAKS FOR EVERY CARD ON IT.
                 // (0.7.314.) See SuppressDeparturesFor.
@@ -1024,6 +1066,45 @@ namespace IKMA
 
         private static string Possessive(bool playerSide) => Vocabulary.BoardChanges.Possessive(playerSide);
 
+        // One group per side + name + pack note, holding its place in the
+        // arrival list so the order of everything else is untouched.
+        private sealed class PlayGroup
+        {
+            internal bool PlayerSide;
+            internal string Name;
+            internal string Pack;
+            internal int At;
+            internal readonly List<int> Slots = new List<int>();
+        }
+
+        private static void AddPlay(List<string> appeared, List<PlayGroup> groups,
+                                    bool playerSide, string name, int slotNumber, string pack)
+        {
+            PlayGroup g = null;
+            foreach (var x in groups)
+                if (x.PlayerSide == playerSide && x.Name == name && x.Pack == pack) { g = x; break; }
+
+            if (g == null)
+            {
+                g = new PlayGroup { PlayerSide = playerSide, Name = name, Pack = pack, At = appeared.Count };
+                groups.Add(g);
+                appeared.Add(null);
+            }
+            g.Slots.Add(slotNumber);
+
+            if (g.Slots.Count == 1)
+            {
+                appeared[g.At] = Vocabulary.BoardChanges.IsPlayedInSlot(Possessive(playerSide), name, slotNumber, pack);
+                return;
+            }
+
+            var head = new List<string>();
+            for (int i = 0; i < g.Slots.Count - 1; i++) head.Add(g.Slots[i].ToString());
+            appeared[g.At] = Vocabulary.BoardChanges.IsPlayedInSlots(
+                Possessive(playerSide), name,
+                Vocabulary.AndList(head, g.Slots[g.Slots.Count - 1].ToString()), pack);
+        }
+
         private static string SideWord(bool playerSide) => Vocabulary.BoardChanges.SideWord(playerSide);
         // ==================================================================
         // A BOARD WIPE IS ONE EVENT, NOT ONE PER CARD. (0.7.314.)
@@ -1045,6 +1126,43 @@ namespace IKMA
         // ==================================================================
         private static float _departuresSilentUntil = -99f;
         private static string _departureReason;
+
+        // ==================================================================
+        // THE SAME RULE, BY CARD INSTEAD OF BY CLOCK. (0.7.437, Session 43.)
+        //
+        // Zamar, on the Angler's bait phase: "Enemy Kingfisher has left slot
+        // 4. Enemy Bait Bucket is played in slot 2..." - "I dont need this
+        // leaving call out it was handled earlier with the clears board line.
+        // Just the plays here."
+        //
+        // A window cannot do this one. "GO FISH." is a conversation the player
+        // advances, and the differ does not run until after it, so the gap
+        // between the clear and the diff is however long he takes to press
+        // Space. The caller hands over the cards that are about to be cleared
+        // and each is left out once, whenever the differ gets to it.
+        // ==================================================================
+        private static readonly List<PlayableCard> _sweptCards = new List<PlayableCard>();
+        private static string _sweptReason;
+
+        internal static void SuppressDeparturesOf(List<PlayableCard> cards, string reason)
+        {
+            if (cards == null || cards.Count == 0) return;
+            _sweptCards.Clear();
+            _sweptCards.AddRange(cards);
+            _sweptReason = reason;
+            Plugin.Log?.LogInfo($"IKMA BOARDDIFF: {cards.Count} card(s) will leave unannounced — {reason}.");
+        }
+
+        private static bool SweptAway(PlayableCard card)
+        {
+            for (int i = 0; i < _sweptCards.Count; i++)
+                if (ReferenceEquals(_sweptCards[i], card))
+                {
+                    _sweptCards.RemoveAt(i);
+                    return true;
+                }
+            return false;
+        }
 
         internal static void SuppressDeparturesFor(float seconds, string reason)
         {

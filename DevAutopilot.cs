@@ -314,7 +314,7 @@ namespace IKMA
                         if (sc < bestScore)
                         {
                             bestScore = sc;
-                            best = new Plan { HandIndex = i, Name = CardReader.CardName(c.Info), Sacs = new List<int>(sac), Slot = s };
+                            best = new Plan { HandIndex = i, Name = CardReader.CardName(c), Sacs = new List<int>(sac), Slot = s };
                         }
                     }
                 }

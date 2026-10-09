@@ -122,6 +122,17 @@ namespace IKMA
         internal static ConfigEntry<SpeechBackendChoice> Choice;
         internal static ConfigEntry<int> BridgePort;
 
+        // 0.7.459 (Session 49) - Zamar, 2026-10-06: "add the braiile display
+        // option to v.5". BrailleOn is the copy the speech worker reads: a
+        // plain volatile bool, so the worker never touches a ConfigEntry.
+        internal static ConfigEntry<bool> Braille;
+        internal static volatile bool BrailleOn = true;
+
+        // 0.7.461 (Session 50) - Zamar, 2026-10-06, on IKMA knowing when
+        // NVDA has finished a line: "I want that for v.5". The switch for
+        // it; NvdaDirect reads its own plain copy. See NvdaDirect.cs.
+        internal static ConfigEntry<bool> NvdaLineEnd;
+
         /// <summary>
         /// Bind the two [Speech] settings. BepInEx creates them in the .cfg file
         /// with these defaults the first time the game runs with this build,
@@ -139,6 +150,30 @@ namespace IKMA
                     "Port on 127.0.0.1 where the IKMA speech helper listens. Must match the helper's --port. " +
                     "Only used when speech goes to the helper.",
                     new AcceptableValueRange<int>(1024, 65535)));
+
+            // UNVERIFIED AS OF 0.7.459: built from the library's source and
+            // NVDA's documentation. Nobody with a braille display has tried it.
+            Braille = config.Bind("Speech", "Braille", true,
+                "Also send every spoken line to a braille display, through the screen reader (NVDA or JAWS). " +
+                "Does nothing when no braille display is attached. Not yet confirmed by a braille reader.");
+            BrailleOn = Braille.Value;
+            Braille.SettingChanged += (sender, args) => { BrailleOn = Braille.Value; };
+
+            // OFF BY DEFAULT FROM 0.7.464 (Session 52). Heard once, with NVDA
+            // 2026.2: NVDA went completely silent at the first encounter. NVDA's
+            // own log shows why - "OrderedDict mutated during iteration" in the
+            // oneCore synth callback. NVDA's speakSsml, asked to wait, unregisters
+            // its synthDoneSpeaking handler on the RPC thread while the synth
+            // thread is still notifying; the race breaks NVDA's speech queue.
+            // It is NVDA's bug, but IKMA's waiting call is what triggers it, so
+            // the feature stays off until NVDA fixes it or another way to learn
+            // the end of a line exists. See NvdaDirect.cs.
+            NvdaLineEnd = config.Bind("Speech", "NvdaLineEnd", false,
+                "OFF by default: with NVDA 2026.2, asking NVDA when each line has finished can crash NVDA's own speech (a fault in NVDA). " +
+                "When true and NVDA is 2024.1 or later, ask NVDA when each line has finished instead of estimating how long it takes to read. " +
+                "No effect with other screen readers or with older NVDA.");
+            NvdaDirect.SettingOn = NvdaLineEnd.Value;
+            NvdaLineEnd.SettingChanged += (sender, args) => { NvdaDirect.SettingOn = NvdaLineEnd.Value; };
         }
 
         /// <summary>

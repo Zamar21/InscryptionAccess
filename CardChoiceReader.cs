@@ -127,6 +127,9 @@ namespace IKMA
         /// <summary>True while the reward screen owns the keyboard.</summary>
         public static bool Active => _sequencer != null;
 
+        /// <summary>True while the card choice on the table is a Deck Trial.</summary>
+        internal static bool IsDeckTrial => _sequencer is DeckTrialSequencer;
+
         // ------------------------------------------------------------------
         // Handed the live sequencer by the patch. Nothing is announced yet:
         // CardSelectionSequence is a coroutine and the Prefix fires at
@@ -1096,6 +1099,7 @@ namespace IKMA
             {
                 ResetIdle();
                 var clover = Reroll();
+                Speech.Silence();   // Enter stomps the stale read here too (0.7.430)
                 try
                 {
                     clover.CursorEnter();
@@ -1138,6 +1142,43 @@ namespace IKMA
             // click; the record of it was written after the fact.
             int clicked = _index;
             var card = cards[clicked];
+
+            // 0.7.450 - SOFTLOCK CLASS: A CARD THE GAME HAS NOT SWITCHED ON
+            // YET. Found by the dev driver, Session 45, pressing Enter while
+            // the boss's rare-card box was still opening. The game deals the
+            // three cards with SetEnabled(false), plays the two-second box
+            // animation, and only then does
+            //     SetCollidersEnabled(true); chosenReward = null;
+            //     yield return new WaitUntil(() => chosenReward != null);
+            // A mouse cannot click a card whose collider is off. IKMA's Enter
+            // calls CursorSelectStart directly, so it could: the card was
+            // turned over and taken inside those two seconds, chosenReward was
+            // set, the game then cleared it and waited for a choice that had
+            // already been made. No map, no save, nothing to press.
+            //
+            // InteractableBase.Enabled is PUBLIC and is the collider's own
+            // state - the same question the map's Enter asks of a node
+            // (0.7.442). Nothing is said: the screen's own announcement
+            // arrives when the cards are ready. An unreadable answer counts
+            // as "on", so this can never lock a card choice by itself.
+            bool switchedOn = true;
+            try { switchedOn = card.Enabled; } catch { switchedOn = true; }
+            if (!switchedOn)
+            {
+                _log?.LogInfo($"IKMA CHOICE: Enter held - the game has not switched card {clicked + 1} on yet.");
+                return;
+            }
+
+            // ENTER STOMPS WHAT IS STILL BEING READ. (0.7.430, Session 41.)
+            //
+            // Zamar, at the Deck Trial, with the H help line still reading when
+            // he turned a trial card over: "Hitting Enter should have stomped
+            // this line". Leshy's answer to the flip is dialogue, and dialogue
+            // queues behind whatever is in the air - so he sat through the rest
+            // of a help read he had already acted on. Same primitive the map
+            // uses when a node is clicked: the line belongs to the moment
+            // before the press.
+            Speech.Silence();
 
             try
             {

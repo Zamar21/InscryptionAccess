@@ -1,9 +1,11 @@
 ﻿# IKMA_Controls_Gamepad.md
 
 Inscryption Kaycee's Mod Access, control reference.
-Current as of build v0.7.415.
+For IKMA version 0.4.8 (beta). Controller reference. The keyboard reference is IKMA_Controls.md.
 
-The controller version of IKMA_Controls.md, GENERATED from it (Session 34) with the same key-to-button rules the mod uses when it speaks (PadWords.cs), so the two cannot disagree. Button names are Xbox; PlayStation, Steam Deck and Switch use their own names for the same positions (docs/GAMEPAD_MAP.md). Hold LB for the information buttons, hold RB for the action buttons. Rumble follows the controller; it is off while you are using the keyboard.
+This document is extensive and intended to be all inclusive. I recommend avoiding it altogether and instead pressing the View button at any point in game to hear a list of your current screen's buttons. 
+
+Button names here are Xbox. PlayStation and Switch pads use their own names for the same positions, and the mod speaks the names for the pad you are using (listed at the end). Hold LB for the information buttons. Hold RB for the action buttons. Vibration follows the controller, and is off while you are using the keyboard. Press View in the game at any time to hear the buttons for the screen you are on.
 
 ## Keys that work almost everywhere
 
@@ -16,6 +18,7 @@ The controller version of IKMA_Controls.md, GENERATED from it (Session 34) with 
 - LB plus View: the help list. The same help as View, one line at a time: D-pad Up and Down move, B, Menu or LB plus View closes it.
 - LB plus Menu: Mod Settings. Events lists every kind of announcement IKMA makes on its own; each can be switched off, or kept only in the review history. D-pad Up and Down move, A opens or switches, B goes back.
 - R3: silences speech, the line being read and everything waiting behind it.
+- LB plus R3: the review history as a list.
 - LB plus RB plus D-pad Up and Down: step through the review history, newer and older.
 
 ## Conversations
@@ -37,6 +40,8 @@ While a character is talking, the game waits for you.
 - RB plus X: hear your current items.
 - Y: open the rulebook.
 - View: map help.
+
+RB plus the D-pad does nothing on the map.
 
 ## Standing in the cabin
 
@@ -104,7 +109,7 @@ In the item menu:
 
 When Leshy offers the olive branch, the mod says so after his line and again after each draw.
 
-- RB plus Y: accept his surrender.
+- RB plus Y: accept his surrender. With no surrender on offer it says "No surrender is being offered."
 
 ## Placing a card
 
@@ -121,7 +126,7 @@ After A on a card that needs a slot.
 
 - D-pad left and right: move across your board.
 - RB plus D-pad up, right, down, left: jump straight to that slot.
-- LT: jump to the next card you can sacrifice.
+- LT: jump to the next card on your board.
 - A: sacrifice the card you are on.
 - B: cancel, where the game allows it. A sacrifice cannot be cancelled once one card has been taken.
 - View: sacrifice help.
@@ -130,6 +135,7 @@ After A on a card that needs a slot.
 
 - D-pad: move between the cards the item can affect.
 - A: choose the target.
+- RB plus D-pad up, right, down, left: jump straight to slot 1, 2, 3, 4. A slot with no valid target says "No valid target in that slot."
 - B: says the item cannot be cancelled. Once used, an item must be given a target.
 - View: target help.
 
@@ -193,7 +199,7 @@ Opened with right stick up.
 - LB plus A: how many teeth you have.
 - RB plus X: cycle through your items, one per press.
 - Y: open the rulebook.
-- B, RB plus A or right stick up: close your deck.
+- B or right stick up: close your deck. RB plus A also closes it.
 - View: help.
 
 ## The rulebook
@@ -235,14 +241,45 @@ In options:
 
 ## Run end screen
 
+When a run is over.
+
 - X: repeat the screen.
-- A: take the option on it.
-- B: back.
+- A: start a new run with the same deck and challenges.
+- B: go to the main menu.
+- View: help.
+
+## Victory screen
+
+- X: repeat the screen.
+- B: go to the main menu.
 - View: help.
 
 ## Credits
 
 - B or Menu: leave the credits.
+
+## Mod Settings
+
+Opened with LB plus Menu, from anywhere in the game.
+
+- D-pad: move.
+- A: open a group, or switch a setting.
+- B: back one level.
+- Menu: close Mod Settings.
+- View: help.
+
+## Button names on other controllers
+
+The mod says these names when it reads a button out, once it sees which controller you are using.
+
+Face buttons are listed in the order bottom, right, left, top.
+
+- Xbox: A, B, X, Y, LB, RB, LT, RT, View, Menu.
+- PlayStation: Cross, Circle, Square, Triangle, L1, R1, L2, R2, Create (Share on a PS4 pad), Options.
+- Switch: B, A, Y, X, L, R, ZL, ZR, Minus, Plus. Nintendo's face letters sit in different places from Xbox's, so the bottom button is B.
+- Stick clicks are L3 and R3 on all of them (left stick press and right stick press on Switch).
+
+If Steam Input makes your controller look like another type, IKMA follows what Steam reports. The Gamepad setting ButtonNames in the config file overrides this. See the install guide.
 
 ## Screens IKMA cannot read yet
 

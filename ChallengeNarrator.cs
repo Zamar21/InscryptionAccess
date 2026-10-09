@@ -261,7 +261,7 @@ namespace IKMA
                 }
                 if (granted?.abilities == null || granted.abilities.Count == 0) return;
 
-                string cardName = CardReader.CardName(card.Info);
+                string cardName = CardReader.CardName(card);
                 if (string.IsNullOrEmpty(cardName)) return;
 
                 foreach (var ability in granted.abilities)

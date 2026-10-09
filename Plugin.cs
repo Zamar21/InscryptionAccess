@@ -9,7 +9,7 @@ using Rewired;
 
 namespace IKMA
 {
-    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.7.429")]
+    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.001")]
     public class Plugin : BaseUnityPlugin
     {
         // Static log handle so Harmony patch classes can log diagnostics
@@ -45,12 +45,46 @@ namespace IKMA
             {
                 try
                 {
+                    // Session 50 (0.7.460) - THE VERSION AS IT IS TYPED.
+                    // BepInEx keeps the attribute's version as a
+                    // System.Version, and that prints a last number of 000
+                    // as 0 and 012 as 12. The Manager, the update files and
+                    // the download names all carry the typed text, so the
+                    // mod says the typed text too: one build, one name.
+                    string typed = TypedVersion();
+                    if (typed != null) return typed;
+
                     var attr = (BepInPlugin)System.Attribute.GetCustomAttribute(
                         typeof(Plugin), typeof(BepInPlugin));
                     return Vocabulary.Mod.VersionOrUnknown(attr?.Version?.ToString());
                 }
                 catch { return Vocabulary.Mod.UnknownVersion; }
             }
+        }
+
+        // The third argument of the BepInPlugin attribute on this class,
+        // exactly as written in the source. Read from the attribute's stored
+        // constructor arguments (CustomAttributeData), which is the only place
+        // the typed text survives. Read once. Null if it cannot be read; the
+        // caller then falls back to BepInEx's parsed copy, as before 0.7.460.
+        private static string _typedVersion;
+        private static bool _typedVersionRead;
+        private static string TypedVersion()
+        {
+            if (_typedVersionRead) return _typedVersion;
+            _typedVersionRead = true;
+            try
+            {
+                foreach (var data in System.Reflection.CustomAttributeData.GetCustomAttributes(typeof(Plugin)))
+                {
+                    if (data.Constructor == null || data.Constructor.DeclaringType != typeof(BepInPlugin)) continue;
+                    if (data.ConstructorArguments.Count < 3) continue;
+                    string v = data.ConstructorArguments[2].Value as string;
+                    if (!string.IsNullOrEmpty(v)) { _typedVersion = v.Trim(); break; }
+                }
+            }
+            catch { _typedVersion = null; }
+            return _typedVersion;
         }
 
         private void Awake()
@@ -62,6 +96,9 @@ namespace IKMA
             // startup included. Neither speaks, so nothing is lost by running
             // them before the speech pump. See DiagnosticGate.cs.
             DiagnosticGate.BindConfig(Config);
+#if IKMA_DEV
+            MouseGate.BindDevConfig(Config);
+#endif
             EventSettings.BindConfig(Config);   // Session 37, M9
             ReviewHistory.BindConfig(Config);   // Session 38
             VerboseDiagnostics = DiagnosticGate.ShowAll;
@@ -159,6 +196,12 @@ namespace IKMA
             // Session 34 - the controller map. While IKMA drives the pad the
             // game is told no pad button is down, so it never switches to
             // its console cursor. See KeyIn.cs.
+            // Session 52 - the mouse is off in every packaged build. See MouseGate.cs.
+            TryPatch(harmony,
+                "mouse off (packaged builds)",
+                AccessTools.Method(typeof(InteractionCursor), "ManagedUpdate"),
+                typeof(InteractionCursor_ManagedUpdate_Patch), "Prefix");
+
             TryPatch(harmony,
                 "controller: keep the game in keyboard mode",
                 AccessTools.Method(typeof(InputButtons), "AnyGamepadButton"),
@@ -200,6 +243,16 @@ namespace IKMA
                 AccessTools.Method(typeof(HintsHandler.Hint), "TryPlayDialogue"),
                 typeof(HintsHandler_Hint_TryPlayDialogue_Patch), "Prefix");
 
+            // Session 51 (0.7.463) - a card placed with the mouse gets the
+            // same "X played in Slot N." a keyboard or pad placement gets.
+            // PlayerHand.PlayCardOnSlot is PUBLIC (IEnumerator; PlayableCard,
+            // CardSlot), declared on PlayerHand
+            // (dumps/dump_s51_from_decompile.txt). See MousePlay.cs.
+            TryPatch(harmony,
+                "card played without IKMA's keys (mouse)",
+                AccessTools.Method(typeof(PlayerHand), "PlayCardOnSlot"),
+                typeof(PlayerHand_PlayCardOnSlot_Patch), "Prefix");
+
             // Session 34 - a rumble pattern per item (see Rumble.Item).
             TryPatch(harmony,
                 "controller: rumble on item use",
@@ -210,6 +263,17 @@ namespace IKMA
                 "devlog entry",
                 AccessTools.Method(typeof(AscensionJournalEntryScreen), "InitializeWithEntry"),
                 typeof(AscensionJournalEntryScreen_InitializeWithEntry_Patch), "Postfix");
+
+#if IKMA_DEV
+            // Session 46. Dev builds only: the test driver's "unlocktest"
+            // must never put an achievement on his Steam account. See
+            // DevCheats.cs.
+            TryPatch(harmony,
+                "dev: no achievements after an unlock test",
+                // By name: the class is not public (the method is).
+                AccessTools.Method(AccessTools.TypeByName("AchievementManager"), "Unlock"),
+                typeof(AchievementManager_Unlock_DevPatch), "Prefix");
+#endif
 
             // THE CABIN SURVEY. (Session 17.) Log only — speaks nothing.
             //
@@ -662,6 +726,23 @@ namespace IKMA
                 AccessTools.Method(typeof(DeckTrialSequencer), "ReturnToMap"),
                 typeof(DeckTrialSequencer_ReturnToMap_Patch), "Postfix");
 
+            // THE DECK TRIAL'S REWARD CARDS TURNED OVER IN SILENCE. (0.7.430.)
+            //
+            // Zamar, Session 41: "Flipping these cards face up didnt read what
+            // they were. I had to rehover over them to hear it."
+            //
+            // The flip patch above is on CardSingleChoicesSequencer.OnCardFlipped.
+            // The Deck Trial hands its reward cards a different callback,
+            // DeckTrialSequencer.OnRewardCardFlipped (protected virtual, one
+            // SelectableCard argument, empty body - _gamesource
+            // DeckTrialSequencer.cs), so that patch never ran here.
+            // FinaleDeckTrialSequencer overrides it without calling the base and
+            // answers with Leshy's own dialogue; that override is left alone.
+            TryPatch(harmony,
+                "deck trial reward flip",
+                AccessTools.Method(typeof(DeckTrialSequencer), "OnRewardCardFlipped"),
+                typeof(DeckTrialSequencer_OnRewardCardFlipped_Patch), "Postfix");
+
             // Bone Lord card removal. sacrificeSlot (SelectCardFromDeckSlot) +
             // confirmStone (ConfirmStoneButton) — the sacrifice stone's exact
             // shape, so the node reader drives it unchanged.
@@ -809,6 +890,64 @@ namespace IKMA
                 "transform (Evolve / Transformer)",
                 AccessTools.Method(typeof(Evolve), "OnUpkeep"),
                 typeof(Evolve_OnUpkeep_Patch), "Prefix");
+
+            // 0.7.459 (Session 49) - WHEN each card's change has happened, so
+            // two or more of one card evolving in the same upkeep can be said
+            // as one line (Zamar, Session 48: "Both enemy Elk Fawn's Fledgling
+            // abilities trigger. They each become 2/4 Elks, with Sprinter.").
+            // Same method, a Postfix that wraps the enumerator. If this does
+            // not apply, every card keeps its own line as before. See
+            // SigilNarrator.EvolveBatch. 0.7.460: the Postfix lives in the
+            // same class as the Prefix above (one class per patched method,
+            // the pre-build doublePatch warning); still its own TryPatch call.
+            SigilNarrator.EvolveEndWatched = TryPatch(harmony,
+                "transform, several at once (Evolve / Transformer)",
+                AccessTools.Method(typeof(Evolve), "OnUpkeep"),
+                typeof(Evolve_OnUpkeep_Patch), "Postfix");
+
+            // Session 46 (0.7.453): the Ijiraq dropping its disguise when it
+            // is played. Shapeshifter.OnResolveOnBoard is PUBLIC and declared
+            // on Shapeshifter (dumps/dump_shapeshifter_from_decompile.txt).
+            TryPatch(harmony,
+                "Ijiraq reveal",
+                AccessTools.Method(typeof(Shapeshifter), "OnResolveOnBoard"),
+                typeof(Shapeshifter_OnResolveOnBoard_Patch), "Prefix");
+
+            // Session 47 (0.7.455). Strafe.PostSuccessfulMoveSequence is
+            // NONPUBLIC (protected virtual IEnumerator, one CardSlot), declared
+            // on Strafe. TradePeltsSequencer.NoPeltsSequence is NONPUBLIC
+            // (private IEnumerator, one bool). CurrencyBowl.ShowGain is PUBLIC
+            // (IEnumerator; int, bool, bool). All three confirmed in
+            // dumps/dump_s47_from_decompile.txt.
+            TryPatch(harmony,
+                "Long Elk vertebrae",
+                AccessTools.Method(typeof(Strafe), "PostSuccessfulMoveSequence"),
+                typeof(Strafe_PostSuccessfulMoveSequence_Patch), "Prefix");
+
+            TryPatch(harmony,
+                "Trader with no pelts",
+                AccessTools.Method(typeof(TradePeltsSequencer), "NoPeltsSequence"),
+                typeof(TradePeltsSequencer_NoPeltsSequence_Patch), "Prefix");
+
+            TryPatch(harmony,
+                "Trader teeth gift",
+                AccessTools.Method(typeof(CurrencyBowl), "ShowGain"),
+                typeof(CurrencyBowl_ShowGain_Patch), "Prefix");
+
+            // Session 48 (0.7.458). JerseyDevil.OnSacrifice is PUBLIC
+            // (override IEnumerator, no arguments), declared on JerseyDevil.
+            // SubmergeSquid.OnResurface is NONPUBLIC (protected override void,
+            // no arguments), declared on SubmergeSquid. Both confirmed in
+            // dumps/dump_s48_from_decompile.txt.
+            TryPatch(harmony,
+                "Child 13 sacrificed",
+                AccessTools.Method(typeof(JerseyDevil), "OnSacrifice"),
+                typeof(JerseyDevil_OnSacrifice_Patch), "Prefix");
+
+            TryPatch(harmony,
+                "Great Kraken resurfaces",
+                AccessTools.Method(typeof(SubmergeSquid), "OnResurface"),
+                typeof(SubmergeSquid_OnResurface_Patch), "Prefix");
 
             // THE CAGE BREAKS — the Caged Wolf releasing its Wolf. (0.7.196.)
             // IceCube.OnDie is declared on IceCube as an override of
@@ -1292,6 +1431,15 @@ namespace IKMA
                 AccessTools.Method(typeof(LeshyBossOpponent), "StartNewPhaseSequence"),
                 typeof(LeshyBossOpponent_StartNewPhaseSequence_Patch), "Prefix");
 
+            // 0.7.448 - NONPUBLIC void StartMoonPhaseAudio(). StartMoonPhase
+            // calls it on the line after the "I WONDER..." conversation
+            // returns and on the line before the arm plays "takephoto_high".
+            // Not a coroutine, so a prefix runs at that moment.
+            TryPatch(harmony,
+                "Leshy aims the camera",
+                AccessTools.Method(typeof(LeshyBossOpponent), "StartMoonPhaseAudio"),
+                typeof(LeshyBossOpponent_StartMoonPhaseAudio_Patch), "Prefix");
+
             // A CARD THAT LIES ACROSS MORE THAN ONE SLOT. (0.7.212.)
             // GiantCardNarrator.cs — shared, because Leshy's moon and the
             // Pirate Skull's ship are the same mechanism. Three patches: the
@@ -1486,6 +1634,12 @@ namespace IKMA
                 AccessTools.Method(typeof(TurnManager), "SetupPhase"),
                 typeof(TurnManager_SetupPhase_Patch), "Prefix");
 
+            // 0.7.431 - "Victory." when a battle is won with no spare damage.
+            TryPatch(harmony,
+                "battle cleanup (Victory with no excess damage)",
+                AccessTools.Method(typeof(TurnManager), "CleanupPhase"),
+                typeof(TurnManager_CleanupPhase_Patch), "Prefix");
+
             // 0.7.360 — the olive branch line, when the offer sequence ends.
             TryPatch(harmony,
                 "surrender offer ended (Opponent)",
@@ -1613,6 +1767,32 @@ namespace IKMA
                 "opponent totem line",
                 AccessTools.Method(typeof(TotemOpponent), "IntroSequence"),
                 typeof(TotemOpponent_IntroSequence_Patch), "Prefix");
+
+            // 0.7.440 - the map's node manager is handed to MapReader by the
+            // game's own "the map is set up" call, so MapAvailable never has
+            // to ask the Singleton for a manager that is not there. If this
+            // patch does not go on, MapReader keeps asking the old way. See
+            // MapReader.NoteManager.
+            MapReader.ManagerGateInstalled = TryPatch(harmony,
+                "map: node manager known from the game's own call",
+                AccessTools.Method(typeof(MapNodeManager), "FindAndSetActiveNodeInteractable"),
+                typeof(MapNodeManager_FindAndSetActiveNodeInteractable_Patch), "Postfix");
+
+            // 0.7.443 - the Curious Egg hatching into a Hydra when drawn. Its
+            // behaviour never calls PreSuccessfulTriggerSequence, so the one
+            // generic sigil hook does not see it. See SigilNarrator.WatchHatch.
+            TryPatch(harmony,
+                "curious egg hatch line",
+                AccessTools.Method(typeof(HydraEgg), "OnDrawn"),
+                typeof(HydraEgg_OnDrawn_Patch), "Postfix");
+
+            // 0.7.445 - the Glitched card becoming a random card when drawn.
+            // A SpecialCardBehaviour, not a sigil, so no sigil hook sees it.
+            // See SigilNarrator.WatchGlitch.
+            TryPatch(harmony,
+                "glitched card draw line",
+                AccessTools.Method(typeof(RandomCard), "OnDrawn"),
+                typeof(RandomCard_OnDrawn_Patch), "Postfix");
 
             // Session 9: any scene change is a transition. Whatever was queued
             // describes a place the player has already left, so drop it rather
@@ -1898,14 +2078,17 @@ namespace IKMA
         }
 
         // Apply one patch on its own, logging success or failure by name.
-        private void TryPatch(Harmony harmony, string featureName,
+        // Returns true when the patch went on (0.7.440), for the one caller
+        // that must fall back to older behaviour when it did not. Every
+        // other caller ignores the answer, as before.
+        private bool TryPatch(Harmony harmony, string featureName,
                               System.Reflection.MethodBase target,
                               System.Type patchClass, string patchMethodName)
         {
             if (target == null)
             {
                 Logger.LogError($"IKMA: {featureName} — target method not found. Feature disabled.");
-                return;
+                return false;
             }
 
             // Session 13: this was a plain GetMethod(name), which searches
@@ -1929,7 +2112,7 @@ namespace IKMA
             if (found == null)
             {
                 Logger.LogError($"IKMA: {featureName} — patch method '{patchMethodName}' not found on {patchClass.Name}. Feature disabled.");
-                return;
+                return false;
             }
 
             try
@@ -1941,10 +2124,12 @@ namespace IKMA
                     harmony.Patch(target, postfix: patchMethod);
 
                 Logger.LogInfo($"IKMA: {featureName} patch applied.");
+                return true;
             }
             catch (System.Exception e)
             {
                 Logger.LogError($"IKMA: {featureName} patch FAILED — feature disabled. {e.Message}");
+                return false;
             }
         }
 
@@ -2095,7 +2280,7 @@ namespace IKMA
                 // in its slot, and this line announced one as a target.
                 var occupant = BoardReader.LiveCard(t);
                 parts.Add(occupant?.Info != null
-                    ? Vocabulary.Combat.CardInSlot(CardReader.CardName(occupant.Info), slotWord)
+                    ? Vocabulary.Combat.CardInSlot(CardReader.CardName(occupant), slotWord)
                     : Vocabulary.Combat.EmptySlot(slotWord));
             }
             if (parts.Count == 0) return;
@@ -2118,12 +2303,12 @@ namespace IKMA
             // which slots the game aimed at.
             if (MultiStrikeNarrator.Begin(card, targets.Count))
             {
-                Plugin.Log?.LogInfo($"IKMA MULTI: {CardReader.CardName(card.Info)} aims at {targetList}.");
+                Plugin.Log?.LogInfo($"IKMA MULTI: {CardReader.CardName(card)} aims at {targetList}.");
             }
             else
             {
                 using (Speech.Event(EventKind.Attacks, EventTag.Side(card))) Speech.Result(
-                    Vocabulary.Combat.AttacksTargets(card, CardReader.CardName(card.Info), targetList));
+                    Vocabulary.Combat.AttacksTargets(card, CardReader.CardName(card), targetList));
             }
             SuppressCount = targets.Count;
         }
@@ -2166,8 +2351,8 @@ namespace IKMA
 
                 bool overTheTop = card.HasAbility(Ability.Flying) && !blocker.HasAbility(Ability.Reach);
 
-                string attackerName = DamageDeathMerger.CombatLineName(card, CardReader.CardName(card.Info));
-                string targetName   = DamageDeathMerger.CombatLineName(blocker, CardReader.CardName(blocker.Info));
+                string attackerName = DamageDeathMerger.CombatLineName(card, CardReader.CardName(card));
+                string targetName   = DamageDeathMerger.CombatLineName(blocker, CardReader.CardName(blocker));
 
                 DamageRecord.NoteAttacker(card);
                 Plugin.Log?.LogInfo(
@@ -2203,7 +2388,7 @@ namespace IKMA
 
             if (attackingSlot?.Card?.Info == null) return;
             string attackerName = DamageDeathMerger.CombatLineName(
-                attackingSlot.Card, CardReader.CardName(attackingSlot.Card.Info));
+                attackingSlot.Card, CardReader.CardName(attackingSlot.Card));
 
             // Session 13: the DEFENDER goes through LiveCard so a destroyed card
             // cannot be announced as blocking. The attacker does not — it is
@@ -2221,7 +2406,7 @@ namespace IKMA
             if (defender?.Info != null)
             {
                 string targetName = DamageDeathMerger.CombatLineName(
-                    defender, CardReader.CardName(defender.Info));
+                    defender, CardReader.CardName(defender));
 
                 // Session 9 fix: an Airborne attacker flies PAST the card in
                 // front of it and hits the scales — announcing "Sparrow attacks
@@ -2314,8 +2499,17 @@ namespace IKMA
                         Vocabulary.Combat.BlocksDueTo(targetName, air, attackerName, leap));
                 }
                 else
+                {
+                    // 0.7.439 - VANILLA COMBAT IS ONE LINE. Session 43, Zamar:
+                    // "Great White attacks Raven, it takes 4 damage and dies."
+                    // Only this plain branch with no attack sigil to name;
+                    // every other attack shape above is left as it was.
+                    string deadlyNote = DamageRecord.DeadlyNote(attackingSlot.Card);
+                    if (deadlyNote.Length > 0
+                        || !PlainAttack.TryOpen(attackingSlot, opposingSlot.Card, attackerName, targetName))
                     using (Speech.Event(EventKind.Attacks, EventTag.Side(attackingSlot.IsPlayerSlot))) Speech.Result(
-                        Vocabulary.Combat.Attacks(attackerName, DamageRecord.DeadlyNote(attackingSlot.Card), targetName));
+                        Vocabulary.Combat.Attacks(attackerName, deadlyNote, targetName));
+                }
             }
             else
             {
@@ -2352,6 +2546,11 @@ namespace IKMA
                 // construction covers both — "X with Touch of Death attacks".
                 string swingNote = DamageRecord.DeadlyNote(attackingSlot.Card);
 
+                // 0.7.438 - "ATTACKS EMPTY SLOT" WAS MISLEADING WHEN A BURROWER
+                // IS ABOUT TO FILL IT. Session 43, Zamar. The game is asked its
+                // own question first; if a Burrower will answer, BurrowBlock
+                // holds this line and speaks his one collapsed sentence.
+                if (idx < 0 || !BurrowBlock.TryOpen(attackingSlot, opposingSlot, attackerName, swingNote, idx))
                 using (Speech.Event(EventKind.Attacks, EventTag.Side(attackingSlot.IsPlayerSlot))) Speech.Result(idx >= 0
                     ? Vocabulary.Combat.AttacksEmptySlot(attackerName, swingNote, idx + 1)
                     : Vocabulary.Combat.AttacksDirectly(attackerName, swingNote));
@@ -2629,7 +2828,42 @@ namespace IKMA
         }
 
         /// <summary>Drops every pending suppression. Called when a battle ends.</summary>
-        internal static void ResetSuppressions() => _causeKnown.Clear();
+        internal static void ResetSuppressions() { _causeKnown.Clear(); _arrivalOwned.Clear(); _arrivalOwnedAt.Clear(); }
+
+        // 0.7.438 - THE WHOLE ARRIVAL CLAUSE BELONGS TO ANOTHER NARRATOR.
+        // Session 43, Zamar: "The Corpse Maggot getting played callout happened
+        // twice. The first one was wrong and should be removed, the second one
+        // was correct." The first was this clause on the death line ("Corpse
+        // Maggots is played from your hand in Slot 3 by Ability: Corpse
+        // Eater."); the second is SigilNarrator.NoteCorpseEater's own line.
+        // Timed, so a claim nobody collected cannot swallow a later arrival.
+        private static readonly System.Collections.Generic.List<CardSlot> _arrivalOwned =
+            new System.Collections.Generic.List<CardSlot>();
+        private static readonly System.Collections.Generic.List<float> _arrivalOwnedAt =
+            new System.Collections.Generic.List<float>();
+        private const float ARRIVAL_OWNED_SECONDS = 8f;
+
+        internal static void SuppressArrival(CardSlot slot)
+        {
+            if (slot == null) return;
+            _arrivalOwned.Add(slot);
+            _arrivalOwnedAt.Add(UnityEngine.Time.unscaledTime);
+        }
+
+        private static bool TakeArrivalSuppression(CardSlot slot)
+        {
+            if (slot == null) return false;
+            for (int i = _arrivalOwned.Count - 1; i >= 0; i--)
+            {
+                bool stale = UnityEngine.Time.unscaledTime - _arrivalOwnedAt[i] > ARRIVAL_OWNED_SECONDS;
+                bool match = ReferenceEquals(_arrivalOwned[i], slot);
+                if (!stale && !match) continue;
+                _arrivalOwned.RemoveAt(i);
+                _arrivalOwnedAt.RemoveAt(i);
+                if (match && !stale) return true;
+            }
+            return false;
+        }
 
         private static bool TakeSuppression(CardSlot slot)
         {
@@ -2687,19 +2921,28 @@ namespace IKMA
             // finished leaving yet. Nothing arrived.
             if (ReferenceEquals(arrival, previous)) return null;
 
+            if (TakeArrivalSuppression(slot))
+            {
+                Plugin.Log?.LogInfo(
+                    $"IKMA ARRIVAL: '{CardReader.CardName(arrival)}' not added to the death line — " +
+                    "another narrator speaks its arrival.");
+                BoardWatcher.NoteAnnounced(arrival);
+                return null;
+            }
+
             if (queuedBefore != null)
             {
                 for (int i = 0; i < queuedBefore.Count; i++)
                 {
                     if (!ReferenceEquals(queuedBefore[i], arrival)) continue;
                     Plugin.Log?.LogInfo(
-                        $"IKMA ARRIVAL: '{CardReader.CardName(arrival.Info)}' came from the queue, " +
+                        $"IKMA ARRIVAL: '{CardReader.CardName(arrival)}' came from the queue, " +
                         "not from this death — left to the board diff.");
                     return null;
                 }
             }
 
-            string name = CardReader.CardName(arrival.Info);
+            string name = CardReader.CardName(arrival);
 
             string where = "";
             var bm = Singleton<BoardManager>.Instance;
@@ -2726,6 +2969,17 @@ namespace IKMA
             // dropped for that arrival. See SuppressInferredCause.
             string cause = null;
             bool causeIsKnownElsewhere = TakeSuppression(slot);
+
+            // Session 46 (0.7.452) - STARVATION. His 0.7.450 log, both decks
+            // empty: "River Otter dies. Starvation is played in Slot 3 by
+            // Ability: Repulsive." The same false clause as the Angler's
+            // shark (0.7.262): Repulsive is how the card fights, not why it
+            // is there. CardDrawPiles.ExhaustedSequence puts it there, by
+            // this name, and when the enemy row is full it kills a random
+            // enemy card first to make room - so the death half of that
+            // line is true and stays. His ruling for the shark applies:
+            // "Just remove 'by ability waterborne'. No need to explain why."
+            try { if (arrival.Info.name == "Starvation") causeIsKnownElsewhere = true; } catch { }
             try
             {
                 var abilities = arrival.Info?.Abilities;
@@ -2900,6 +3154,10 @@ namespace IKMA
         // See PlayableCard_TakeDamage_Patch.CaptureHealth. (0.7.348.)
         internal int HealthAfter = int.MinValue;
 
+        // 0.7.438 - words that stand in for the card's name at the start of
+        // the line. Set by BurrowBlock; null everywhere else.
+        internal string Lead;
+
         // ------------------------------------------------------------------
         // A CARD HIT WHILE STILL IN THE QUEUE. (0.7.175.)
         //
@@ -2996,9 +3254,9 @@ namespace IKMA
             // front of it, the pronoun points at the wrong thing. If that turns
             // up in a log, the fix is to name the card it is behind rather than
             // to drop the clause — the clarity is the point.
-            string who = Name;
+            string who = Lead ?? Name;
             int queuedSlot = OpponentQueueSlot(Card);
-            if (queuedSlot != -1)
+            if (queuedSlot != -1 && Lead == null)
             {
                 // "behind it" REMOVED. (0.7.185.) He added it, heard it in
                 // play, and took it back out: "remove that Behind It decision I
@@ -3165,7 +3423,7 @@ namespace IKMA
                 {
                     var other = s?.Card;
                     if (other == null || ReferenceEquals(other, card)) continue;
-                    if (CardReader.CardName(other.Info) != name) continue;
+                    if (CardReader.CardName(other) != name) continue;
 
                     int idx = sameSide.IndexOf(slot);
                     return idx >= 0 ? qualified + Vocabulary.Combat.InSlotNumber(idx + 1) : qualified;
@@ -3206,7 +3464,7 @@ namespace IKMA
                 {
                     var other = s?.Card;
                     if (other == null || ReferenceEquals(other, card)) continue;
-                    if (CardReader.CardName(other.Info) != name) continue;
+                    if (CardReader.CardName(other) != name) continue;
 
                     return Vocabulary.Combat.SideQualifiedName(mine, name);
                 }
@@ -3826,7 +4084,7 @@ namespace IKMA
             {
                 var card = target != null ? target.Card : null;
                 if (card?.Info == null) return;
-                string name = CardReader.CardName(card.Info);
+                string name = CardReader.CardName(card);
                 BoardWatcher.NoteAnnounced(card);
                 Plugin.Log?.LogInfo($"IKMA ITEM: '{name}' skinned — the card is destroyed without dying.");
                 using (Speech.Event(EventKind.Death, EventTag.Side(card))) Speech.Result(Vocabulary.Combat.IsSkinnedAnd(name, card.Info));
@@ -3904,6 +4162,13 @@ namespace IKMA
             // 0.7.350 — a cannonball has its own line, without the number.
             if (PirateSkullNarrator.TryCannonHit(__instance, attacker, ref __result)) return;
 
+            // 0.7.448 - ARMORED. The game's TakeDamage begins "if (HasShield())
+            // { lostShield = true; ... yield break; }": the hit does nothing.
+            // Every path below assumed the damage landed, and Zamar's 0.7.447
+            // log has "Amalgam attacks Skunk, it takes 2 damage, 3 health
+            // remaining." for a hit the shield took. ShieldNarrator.cs.
+            if (ShieldNarrator.TryAbsorb(__instance, attacker)) return;
+
             // 0.7.348 — a hit on a giant inside a volley is summed there.
             if (GiantVolley.TryRecordHit(__instance, damage)) return;
 
@@ -3911,7 +4176,13 @@ namespace IKMA
             if (MultiStrikeNarrator.TryRecordHit(__instance, damage)) return;
 
             var record = DamageDeathMerger.Open(
-                __instance, CardReader.CardName(__instance.Info), damage);
+                __instance, CardReader.CardName(__instance), damage);
+            // 0.7.438 - a Burrower that moved in to block: its damage is the
+            // end of BurrowBlock's sentence, not a line of its own.
+            // 0.7.441 - a multi-strike attacker hit back by Sharp Quills: its
+            // damage is said inside that attack's summary, not after it.
+            if (!BurrowBlock.TryAttach(__instance, record) && !PlainAttack.TryAttach(__instance, attacker, record)
+                && !MultiStrikeNarrator.TryAttachQuillDamage(__instance, record))
             using (Speech.Event(EventTag.DamageOrDeath(record, __instance))) Speech.Result(record.Compose);
 
             if (__result != null) __result = CaptureHealth(__result, record);
@@ -3956,7 +4227,7 @@ namespace IKMA
         static void Prefix(PlayableCard __instance, bool wasSacrifice, PlayableCard killer)
         {
             if (__instance?.Info == null) return;
-            string name = CardReader.CardName(__instance.Info);
+            string name = CardReader.CardName(__instance);
 
             // 0.7.348 — a giant dying mid-volley closes the volley first, so
             // the strikes that killed it are said before it is.
@@ -4009,7 +4280,7 @@ namespace IKMA
                         if (receiver?.Info != null)
                         {
                             record.Receiver      = receiver;
-                            record.ReceiverName  = CardReader.CardName(receiver.Info);
+                            record.ReceiverName  = CardReader.CardName(receiver);
                             record.AttackBefore  = receiver.Attack;
                             record.HealthBefore  = receiver.Health;
                             record.MorselSource  = name;
@@ -4125,7 +4396,7 @@ namespace IKMA
             {
                 if (killer != null && killer.Info != null &&
                     killer.Info.HasAbility(Ability.SteelTrap))
-                    trapName = CardReader.CardName(killer.Info);
+                    trapName = CardReader.CardName(killer);
             }
             catch { }
 
@@ -4415,7 +4686,9 @@ namespace IKMA
                 // ==================================================================
                 if (atEdge)
                 {
-                    CombatAnnouncer.ClearQueue();
+                    // Session 46 (0.7.452): was ClearQueue. Still cut, no
+                    // longer lost - see CombatAnnouncer.QuietQueueIntoHistory.
+                    CombatAnnouncer.QuietQueueIntoHistory();
                     using (Speech.Event(EventKind.HpChanges, EventTag.Side(toPlayer))) Speech.Confirm(damageLine);
                 }
                 else
@@ -5045,6 +5318,18 @@ namespace IKMA
                     name = Prettify(rawSpeaker);
                 spoken = name == _lastSpeakerName ? clean : Vocabulary.Dialogue.SpeakerLine(name, clean);
                 _lastSpeakerName = name;
+
+                // 0.7.449 - A LINE THAT IS ONLY DOTS. Zamar, Session 45, on
+                // Leshy's "..." before "GO ON." in the last fight: "Have this
+                // read as 'Leshy waits silently.'" A speech engine reads the
+                // dots as nothing or as "dot dot dot"; on screen it is a pause.
+                // 0.7.463 - Session 51, Zamar, asked about the other
+                // characters' "..." lines: "same with their names though."
+                string dots = clean.Trim();
+                if (dots.Length > 0 && dots.Trim('.', '\u2026', ' ').Length == 0)
+                    spoken = name == Vocabulary.Leshy
+                        ? Vocabulary.Dialogue.LeshyWaitsSilently
+                        : Vocabulary.Dialogue.WaitsSilently(name);
             }
 
             // 0.7.360 — THE CONCEDE LINE ALWAYS NAMES LESHY. Zamar: "This should
@@ -5089,7 +5374,12 @@ namespace IKMA
 
         // How long an attributed line waits so the character's voice sting can
         // play first. Internal since Session 32: the talking cards use it too.
-        internal const float CHARACTER_VOICE_DELAY = 1.0f;
+        // Session 52 (0.7.464), Zamar: "remove the delay from Leshy's speech"
+        // - he wants it snappier. This was 1.0 from Session 11, held so the
+        // words did not land on top of the voice sting. At 0 the line is
+        // spoken as soon as it is queued (still ahead of commentary, still
+        // never over a combat result). Put 1.0f back to restore the wait.
+        internal const float CHARACTER_VOICE_DELAY = 0f;
 
         /// <summary>
         /// Game dialogue text made speakable. Moved out of Postfix in Session
@@ -5620,6 +5910,17 @@ namespace IKMA
         }
     }
 
+    // A Deck Trial reward card was turned over. Same reader call as the
+    // ordinary card choice flip, so the line and its dedupe are shared.
+    // Registered through Plugin.TryPatch. No HarmonyPatch attribute.
+    public class DeckTrialSequencer_OnRewardCardFlipped_Patch
+    {
+        public static void Postfix(SelectableCard rewardCard)
+        {
+            CardChoiceReader.OnFlipped(rewardCard);
+        }
+    }
+
     public class CardRemoveSequencer_RemoveSequence_Patch
     {
         public static void Prefix(CardRemoveSequencer __instance)
@@ -5847,7 +6148,7 @@ namespace IKMA
             // queued. BoardManager.CurrentSacrificeDemandingCard is the game's
             // own answer to "am I still waiting for sacrifices for this card".
             string sacrificeMessage =
-                Vocabulary.PlayFlow.CostsBloodChooseLeft(CardReader.CardName(card.Info), cost, sacrificeWord);
+                Vocabulary.PlayFlow.CostsBloodChooseLeft(CardReader.CardName(card), cost, sacrificeWord);
             var demanding = card;
 
             // Session 14: Prompt tier. It was already deferred and already
@@ -6139,7 +6440,7 @@ namespace IKMA
                 var owner = OwnerCard(__instance);
                 if (owner == null) return;
 
-                string cardName = CardReader.CardName(owner.Info);
+                string cardName = CardReader.CardName(owner);
                 string ability  = CardReader.GetAbilityName(__instance.Ability);
 
                 if (string.IsNullOrEmpty(cardName) || string.IsNullOrEmpty(ability)) return;
@@ -6242,6 +6543,51 @@ namespace IKMA
             catch (System.Exception e)
             {
                 Plugin.Log?.LogWarning($"IKMA: victory prefix threw {e.GetType().Name}.");
+            }
+        }
+    }
+
+    // =========================================================================
+    // THE BATTLE IS OVER. (0.7.431.)
+    //
+    // TurnManager.CleanupPhase() - NONPUBLIC, no parameters, IEnumerator.
+    // GameSequence calls it once after its loop ends, so this prefix fires at
+    // the moment the game has decided the battle is finished. Registered
+    // through TryPatch; no attribute on this class.
+    //
+    // PlayerIsWinner() - NONPUBLIC, no parameters, bool - is the same question
+    // CleanupPhase asks on its own first line to set PlayerWon. Asked here
+    // directly rather than reading PlayerWon back, which is not set until the
+    // coroutine body starts.
+    //
+    // Both confirmed in dumps\dump_battle_cleanup_from_decompile.txt.
+    // =========================================================================
+    public static class TurnManager_CleanupPhase_Patch
+    {
+        private static System.Reflection.MethodInfo _playerIsWinner;
+        private static bool _looked;
+
+        public static void Prefix(TurnManager __instance)
+        {
+            try
+            {
+                if (!_looked)
+                {
+                    _looked = true;
+                    _playerIsWinner = AccessTools.Method(typeof(TurnManager), "PlayerIsWinner");
+                    if (_playerIsWinner == null)
+                        Plugin.Log?.LogWarning("IKMA: TurnManager.PlayerIsWinner not found - a win with no spare damage stays silent.");
+                }
+
+                bool won = false;
+                if (_playerIsWinner != null && __instance != null)
+                    won = (bool)_playerIsWinner.Invoke(__instance, null);
+
+                EventNarrator.NoteBattleCleanup(won);
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA: battle cleanup prefix threw {e.GetType().Name}.");
             }
         }
     }

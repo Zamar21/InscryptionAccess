@@ -43,8 +43,8 @@ namespace IKMA
                 if (card?.Info == null) continue;
                 string costPart = FormatCost(card.Info);
                 parts.Add(costPart != null
-                    ? Vocabulary.Board.HandCardWithCost(CardReader.CardName(card.Info), costPart)
-                    : CardReader.CardName(card.Info));
+                    ? Vocabulary.Board.HandCardWithCost(CardReader.CardName(card), costPart)
+                    : CardReader.CardName(card));
             }
 
             int count = parts.Count;
@@ -706,7 +706,7 @@ namespace IKMA
             var names = new List<string>();
             foreach (var card in hand.CardsInHand)
                 if (card?.Info != null)
-                    names.Add(CardReader.HandDisambiguated(card, CardReader.CardName(card.Info)));
+                    names.Add(CardReader.HandDisambiguated(card, CardReader.CardName(card)));
 
             if (names.Count == 0) return null;
             string countWord = Vocabulary.CardCount(names.Count);
@@ -925,6 +925,16 @@ namespace IKMA
                 string statNote = varies
                     ? CardReader.DescribeSpecialStat(info.SpecialStatIcon)
                     : "";
+
+                // Session 48 (0.7.457): "Slot 2: Mirror Tentacle, currently
+                // 0/3.. Slot 4" (driver log). The stats and the note each end
+                // in a stop and so does whatever joins this part to the next.
+                // One stop: the last one comes off here.
+                if (varies)
+                {
+                    stats = (stats + statNote).TrimEnd('.');
+                    statNote = "";
+                }
 
                 // 0.7.264 — the board read is a live read by this file's own
                 // rule ("if a read describes a LIVE card, every part of it comes

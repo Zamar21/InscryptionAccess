@@ -84,21 +84,23 @@ namespace IKMASetup
         }
         internal static string MainMenu(Program.Status s)
             => s == Program.Status.Off
-                ? L.T("Main menu. Press Enter alone to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.")
-                : L.T("Main menu. Press Enter alone to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.");
-        internal static string NotAChoice => L.T("That is not one of the choices.");
+                ? L.T("Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.")
+                : L.T("Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.");
+        internal static string NotAChoice => L.T("Invalid choice.");
         internal static string NotInstalledNothingToDo => L.T("IKMA is not installed, so there is nothing to turn off.");
-        internal static string TurnedOff => L.T("IKMA is turned off. Inscryption starts without it. BepInEx and your other mods are unchanged, and IKMA's settings are kept.");
-        internal static string TurnedOn => L.T("IKMA is turned back on. It starts with the game.");
+        internal static string TurnedOff => L.T("IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.");
+        internal static string TurnedOn => L.T("IKMA is turned back on. Please restart the game.");
         internal static string TurnedBackOnByInstall => L.T("IKMA was turned off. Installing turned it back on.");
-        internal static string SettingsMenu => L.T("Settings. Type a number, then press Enter to change it. Press Enter alone to go back to the main menu. Changes take effect the next time you start the game.");
+        internal static string SettingsMenu => L.T("Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.");
         internal static string SettingLine(int n, string title, string current) => L.F($"{n}, {title}: {current}");
-        internal static string ChooseFor(string title) => L.F($"{title}. Type a number, then press Enter. Press Enter alone to keep it as it is.");
+        internal static string ChooseFor(string title) => L.F($"{title}. Type a number, then press Enter. Press Enter to keep it as it is.");
         internal static string OptionLine(int n, string name, bool current) => current ? L.F($"{n}, {name} This is the current setting.") : $"{n}, {name}";
         internal static string SettingSaved(string title, string name) => L.F($"{title} set to: {name}");
         internal static string CustomValue(string raw) => L.F($"a custom value, {raw}.");
         internal static string SettingUpdates => L.T("Updates");
         internal static string SettingSpeech => L.T("Speech engine");
+        internal static string SettingNvdaTiming => L.T("NVDA line timing");   // Claude, Session 50
+        internal static string SettingBraille => L.T("Braille display");      // Claude, Session 50
         internal static string SettingLanguage => L.T("Language");
         internal static string SettingFullLog => L.T("Full log for bug reports");
         internal static string SettingVibration => L.T("Controller vibration");   // Claude, Session 34; OK Zamar, Session 35
@@ -124,9 +126,9 @@ namespace IKMASetup
         internal static string ThisAction => L.T("this action");
         internal static string Swapped(string name, string gesture, string other, string otherGesture) => L.F($"Swapped. {name} is now on {gesture}, and {other} is now on {otherGesture}.");
         internal static string Plus => L.T(" plus ");
-        internal static string CloseGame => L.T("Inscryption is running. Close the game, then press Enter.");
+        internal static string CloseGame => L.T("Inscryption is running. Please close the game, then press Enter.");
         internal static string WrongArch => L.T("This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.");
-        internal static string BepInExKept => L.T("BepInEx is already installed. Kept as it is.");
+        internal static string BepInExKept => L.T("BepInEx is already installed.");
         internal static string BepInExInstalled => L.T("Installed BepInEx, the mod loader.");
         internal static string IkmaInstalled => L.T("Installed IKMA and its speech files.");
         internal static string Done => L.T("Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.");
@@ -139,7 +141,7 @@ namespace IKMASetup
 
         // Session 32 - an existing mod setup (Zamar: "There's a chance they
         // already have bepinex though from other mods ... nothing breaks").
-        internal static string BepInExKeptVersion(string v) => L.F($"BepInEx {v} is already installed for your other mods. Kept exactly as it is.");
+        internal static string BepInExKeptVersion(string v) => L.F($"BepInEx {v} is already installed.");
         internal static string BepInEx6 => L.T("This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.");
         internal static string OtherLoader(string name) => L.F($"This game has another mod loader installed ({name}). Adding BepInEx beside it could break your other mods. Nothing was changed.");
         internal static string BepInEx64 => L.T("The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.");

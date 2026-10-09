@@ -592,7 +592,7 @@ namespace IKMA
 
             try
             {
-                cardName = CardReader.CardName(card.Info);
+                cardName = CardReader.CardName(card);
 
                 var after = new List<Ability>();
                 var abilities = card.Info?.Abilities;

@@ -417,6 +417,7 @@ namespace IKMA
             switch (slotDigitKey)
             {
                 case "6|north|2": return Vocabulary.Cabin.SkullRestsOnShelf;
+                case "3|east|1":  return Vocabulary.Cabin.SafeFocus;   // Session 52
                 default:          return null;
             }
         }

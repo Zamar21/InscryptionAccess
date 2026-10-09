@@ -294,7 +294,17 @@ namespace IKMA
                 Speech.Quiet(ScreenLine());
                 return;
             }
-            Speech.Browse(ScreenLine());
+
+            // 0.7.449 - Zamar, Session 45: "Before Victory, it should read
+            // 'Leshy blows out his final candle, the cabin goes dark.'" Said
+            // once, on arrival; Space re-reads the page without it. A Kaycee's
+            // Mod victory is only ever reached through Part1BossOpponent.
+            // TransitionFromFinalBoss (called by LeshyBossOpponent alone),
+            // which blows out the last candle and blacks the screen three
+            // seconds before it loads this scene.
+            string line = ScreenLine();
+            if (_victory) line = Vocabulary.RunEnd.LeshyFinalCandle + " " + line;
+            Speech.Browse(line);
         }
 
         /// <summary>
@@ -533,8 +543,17 @@ namespace IKMA
             var button = Retry();
             if (button == null)
             {
-                _log?.LogWarning("IKMA RUNEND: no active button on this screen.");
-                return Vocabulary.RunEnd.IkmaCannotFindAn(outcome, stats);
+                // 0.7.449 - NOT A FAILURE. AscensionRunEndScreen.Start switches
+                // retryButton off when isVictory is true, so on a victory there
+                // is nothing to find and nothing that needs the mouse. Zamar,
+                // Session 45: "This victory screen is a mess. Needs the Enter
+                // option removed, needs the no options callouts removed, needs
+                // the IKMA Cannot Find An Option callout removed."
+                _log?.LogInfo("IKMA RUNEND: no retry button on this screen (the game hides it on a victory).");
+                // Session 47 (0.7.455): after a win that clears the level
+                // the back button leads on to the unlock screens.
+                if (LeadsOnward()) return Vocabulary.RunEnd.OutcomeStatsContinue(outcome, stats);
+                return Vocabulary.RunEnd.OutcomeStatsNoRetry(outcome, stats);
             }
 
             string label = Tidy(TextOn(button));
@@ -569,7 +588,18 @@ namespace IKMA
             var button = Retry();
             if (button == null)
             {
-                Speech.Browse(Vocabulary.RunEnd.ThereIsNoOption);
+                // 0.7.449 - Enter has nothing to press here and says nothing:
+                // his call, "needs the no options callouts removed".
+                // Session 47 (0.7.455), Zamar: "Can we just change it to
+                // Enter to continue?" Enter presses the screen's own back
+                // button when that button leads on to the unlock screens.
+                if (LeadsOnward())
+                {
+                    _log?.LogInfo("IKMA RUNEND: Enter continues - the back button leads on to the unlock screens.");
+                    Back();
+                    return;
+                }
+                _log?.LogInfo("IKMA RUNEND: Enter, but this screen has no retry button. Nothing pressed.");
                 return;
             }
 
@@ -588,11 +618,59 @@ namespace IKMA
             }
         }
 
+        // ------------------------------------------------------------------
+        // SESSION 47 - WHERE THE BACK BUTTON GOES. (0.7.455.)
+        //
+        // AscensionMenuScreens.ConfigurePostGameScreens points the run end
+        // screen's back button at the devlog entry, the new cards, the new
+        // starter deck or the new challenge when the win cleared the
+        // challenge level, and leaves it on Start otherwise.
+        // AscensionMenuBackButton.screenToReturnTo is PUBLIC. "Backspace to
+        // return to the main menu." was false in the first case.
+        // ------------------------------------------------------------------
+        internal static bool LeadsOnward()
+        {
+            try
+            {
+                // Session 48 (0.7.457): asked of the button whether or not it
+                // is switched on yet. The game points it in
+                // AscensionMenuScreens.Start and only shows it once the
+                // stats have counted up, so the screen's FIRST read found no
+                // active button and said "Backspace to return to the main
+                // menu." while Space, a moment later, said "Enter to
+                // continue." (driver log, Session 48).
+                var button = BackButtonAnyState();
+                return button != null && button.screenToReturnTo != AscensionMenuScreens.Screen.Start;
+            }
+            catch { return false; }
+        }
+
+        // The run end screen's back button, shown or not. Only for reading
+        // where it leads; pressing it still goes through BackButton().
+        private static AscensionMenuBackButton BackButtonAnyState()
+        {
+            try
+            {
+                var screens = Singleton<AscensionMenuScreens>.Instance;
+                if (screens == null) return null;
+
+                var field = typeof(AscensionMenuScreens).GetField(
+                    "runEndBackButton",
+                    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+                return field?.GetValue(screens) as AscensionMenuBackButton;
+            }
+            catch { return null; }
+        }
+
         public static void SpeakHelp()
         {
             ResetIdle();
-            Speech.Browse(
-                Vocabulary.RunEnd.RunEndControlsSpace(CardReader.ShiftRHelp));
+            // 0.7.449 - the victory screen has its own name and no Enter.
+            Speech.Browse(_victory
+                ? (LeadsOnward() ? Vocabulary.RunEnd.VictoryScreenControlsEnter
+                                 : Vocabulary.RunEnd.VictoryScreenControlsSpace)
+                : Vocabulary.RunEnd.RunEndControlsSpace);
         }
 
         // ------------------------------------------------------------------
@@ -632,7 +710,10 @@ namespace IKMA
                 // the same shape as every other instructing line in the mod.
                 // Session 37, note D9 - Zamar: the repeat is the controls only;
                 // Space still reads the whole screen (AnnounceCurrent).
-                return _screen == null ? null : Vocabulary.RunEndControls();
+                if (_screen == null) return null;
+                // 0.7.449 - no Enter in the idle prompt when there is no retry button.
+                if (Retry() != null) return Vocabulary.RunEndControls();
+                return LeadsOnward() ? Vocabulary.RunEnd.ContinueControls : Vocabulary.RunEnd.NoRetryControls;
             });
         }
 

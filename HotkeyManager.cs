@@ -494,6 +494,20 @@ namespace IKMA
 
                     if (!answered)
                     {
+                        // Session 46 (0.7.451): H while a character waits on
+                        // Space, on a screen with no reader of its own, said
+                        // "Nothing here can be read yet." There IS something
+                        // to do, and the line for it exists: the one every
+                        // other locked key gets.
+                        bool characterWaiting = false;
+                        try { characterWaiting = DialogueAdvancer.ConversationHolding(); } catch { }
+                        if (characterWaiting)
+                        {
+                            Plugin.Log?.LogInfo(
+                                "IKMA HELP: H reached no reader during a conversation - the conversation line answers it.");
+                            Speech.Browse(Vocabulary.ConversationInProgress);
+                        }
+                        else
                         if (IsBattleActive())
                         {
                             Plugin.Log?.LogWarning(
@@ -633,7 +647,13 @@ namespace IKMA
             // hold released only by an event that might not fire is exactly the
             // stranded-state bug this project has already paid for twice.
             // SetBackgroundHold returns immediately when nothing changed.
+#if IKMA_DEV
+            // 0.7.456: the driver's silent run keeps the pump going in the
+            // background (SpeechPump.DevSilentRun).
+            SpeechPump.SetBackgroundHold(!Application.isFocused && !SpeechPump.DevSilentRun);
+#else
             SpeechPump.SetBackgroundHold(!Application.isFocused);
+#endif
 
             // THE REVIEW HISTORY (Session 35, MASTER_PLAN M9). Ctrl+Up/Down
             // anywhere, ahead of every reader, and the frame ends here so no
@@ -1155,6 +1175,21 @@ namespace IKMA
                 return;
             }
 
+            // SESSION 47 - THE READING KEYS ARE LOCKED TOO. (0.7.455.)
+            //
+            // Zamar, Session 18: "When a conversation is happening the only
+            // things that should work are the H key, and Space key." The list
+            // above only ever held Enter, the arrows and R; in a battle C, G,
+            // I and A all answered while Leshy's line was holding, and I
+            // opened the item menu. Escape, Backspace, the Control chords and
+            // IKMA's own L, M and Y keys are left as they were.
+            if (talking && ConversationLockedKeyDown())
+            {
+                Plugin.Log?.LogInfo("IKMA DIALOGUE: reading key swallowed — a conversation is in progress.");
+                Speech.Browse(Vocabulary.ConversationInProgress);
+                return;
+            }
+
             // A MAP EVENT SCREEN OWNS THE KEYBOARD WHILE IT IS UP.
             //
             // Above the map layer, which is what Zamar hit: "The H key on
@@ -1426,9 +1461,17 @@ namespace IKMA
 
             // 0.7.360 — Shift+E, his choice (was T). Above the E bell handler,
             // and returns, so Shift+E never also rings the bell.
+            //
+            // Session 46 (0.7.451) - AND IT DID RING THE BELL. This asked for
+            // an offer to be standing before it took the key, so with no
+            // offer on the table Shift+E (RB plus Y on the pad) fell through
+            // to the plain E handler below and ended the turn - found with
+            // the test driver. In a battle the key is now always taken here:
+            // TryAccept already has the line for it, "No surrender is being
+            // offered." Outside a battle nothing changes.
             if (KeyIn.Down(KeyCode.E)
                 && (KeyIn.Held(KeyCode.LeftShift) || KeyIn.Held(KeyCode.RightShift))
-                && SurrenderReader.OfferStanding())
+                && (SurrenderReader.OfferStanding() || IsBattleActive()))
             {
                 SurrenderReader.TryAccept();
                 return;
@@ -1975,6 +2018,65 @@ namespace IKMA
                         if (!MapReader.MapAvailable())
                         {
                             Plugin.Log?.LogInfo("IKMA MAP: Enter held — the map is still settling.");
+                            Speech.Browse(Vocabulary.Hotkeys.MapIsStillSettling);
+                            return;
+                        }
+
+                        // ======================================================
+                        // THE NODE HAS TO BE SWITCHED ON TOO. (0.7.442.)
+                        //
+                        // Zamar, 0.7.441, after the Trapper: "The mod
+                        // completely broke the gamestate by being able to
+                        // advance to that first card choice before the
+                        // conversation played out." His log:
+                        //
+                        //   DIALOGUE: line advanced.            (LET ME THINK...)
+                        //   MAP: node clicked (Card choice Random).
+                        //   QUEUE (dialogue): YOU BEHELD THE BEAUTY OF THE DAWN...
+                        //   CHOICE: card selection started.
+                        //   ...
+                        //   WATCHDOG: SOFTLOCK CAUGHT
+                        //
+                        // PaperGameMap.CompleteRegionSequence (PaperGameMap.cs:51)
+                        // unrolls the new map, which sets the active node, and
+                        // on the next line calls SetAllNodesInteractable(false).
+                        // It then waits a second, plays the region's lines, and
+                        // only after them calls FindAndSetActiveNodeInteractable
+                        // again. For that whole stretch ActiveNode is set,
+                        // nothing is moving and the Nodes object is on, so
+                        // MapAvailable says yes - and in the second before the
+                        // region's first line there is no conversation lock
+                        // either.
+                        //
+                        // A mouse cannot click a node there: MapNode.SetActive
+                        // (MapNode.cs:36) turns the node's collider off, and
+                        // the cursor only finds colliders. IKMA calls
+                        // CursorSelectStart on the node directly, which no
+                        // collider guards. So the game's own answer is asked
+                        // first: InteractableBase.Enabled, PUBLIC, is that
+                        // collider's enabled flag. PaperGameMap.ChangingRegion,
+                        // PUBLIC, covers the few frames between the unroll and
+                        // the switch-off.
+                        //
+                        // Asked on the key press, never per frame. If either
+                        // question throws, the click goes through as it did
+                        // before: a map that never answers is the worse fault.
+                        // ======================================================
+                        bool nodeOff = false;
+                        try { nodeOff = !node.Enabled; } catch { nodeOff = false; }
+                        bool changingRegion = false;
+                        try
+                        {
+                            var paper = PaperGameMap.Instance;
+                            changingRegion = paper != null && paper.ChangingRegion;
+                        }
+                        catch { changingRegion = false; }
+
+                        if (nodeOff || changingRegion)
+                        {
+                            Plugin.Log?.LogInfo(
+                                $"IKMA MAP: Enter held — the game has not opened '{destination}' yet " +
+                                $"(node switched off={nodeOff}, changing region={changingRegion}).");
                             Speech.Browse(Vocabulary.Hotkeys.MapIsStillSettling);
                             return;
                         }
@@ -2688,6 +2790,18 @@ namespace IKMA
             bool drawPhase = false;
             try { drawPhase = Singleton<TurnManager>.Instance != null && Singleton<TurnManager>.Instance.IsPlayerDrawPhase; } catch { }
 
+            // Session 46 (0.7.452) - BOTH PILES EMPTY. His 0.7.450 log, while
+            // starving: S answered "No cards remaining in the Squirrel deck.
+            // Press D to draw from your deck." - and the deck was empty too.
+            // Each line below sends him to the OTHER pile, so neither is true
+            // here. The line that is true already exists: the one the turn
+            // opened with.
+            if (drawPhase && mainLeft == 0 && sideLeft == 0)
+            {
+                Speech.Browse(Vocabulary.Turns.DrawPhaseSkippedDue);
+                return;
+            }
+
             if (drawPhase && !sideDeck && mainLeft == 0)
             {
                 Speech.Browse(Vocabulary.Hotkeys.NoCardsRemainingIn);
@@ -2723,6 +2837,33 @@ namespace IKMA
             pile.CursorSelectStart();
             pile.CursorSelectEnd();
             Plugin.Log?.LogInfo($"IKMA DRAW: {(sideDeck ? "side" : "main")} pile clicked via CursorSelectStart/End.");
+
+            // ==================================================================
+            // THE DRAW ITSELF STOPS THE PROMPT. (0.7.445.)
+            //
+            // Zamar, Session 42: "drawing any card should stomp the 'Draw
+            // Phase...' line". It was the "Drew X." line that did the
+            // stomping, about half a second after the key. His 0.7.444 log
+            // shows where that fails: he drew the Curious Egg, the egg's
+            // hatch held the card out of the hand for longer than the draw
+            // watcher waits, no "Drew" line ever came, and "Draw phase. Press
+            // D to draw from your deck..." was read to the end after he had
+            // already pressed D. "This should have been stomped."
+            //
+            // So the key press cuts it, and only it: the cut happens when
+            // the draw prompt is the last line that was handed to the speech
+            // engine and nothing is waiting behind it there. A combat result
+            // still being read is left to the draw line, exactly as before.
+            // ==================================================================
+            try
+            {
+                if (CardReader.LastSpokenWas(Vocabulary.DrawPhasePrompt()) && SpeechPump.PendingCount == 0)
+                {
+                    Plugin.Log?.LogInfo("IKMA DRAW: the draw prompt was the line in the air - cut by the draw.");
+                    Speech.Silence();
+                }
+            }
+            catch { }
             try { Rumble.Draw(squirrel: sideDeck); } catch { }   // Session 34
 
             StartCoroutine(AnnounceDrawnCard(handCountBefore));
@@ -2749,7 +2890,7 @@ namespace IKMA
         // instead.
         private static string ComposeDrawLine(PlayableCard drawn)
         {
-            string name = CardReader.CardName(drawn.Info);
+            string name = CardReader.CardName(drawn);
 
             var granted = new List<string>();
             var seen = new HashSet<Ability>();
@@ -2817,7 +2958,17 @@ namespace IKMA
                 if (cards != null && cards.Count > handCountBefore)
                 {
                     var drawn = cards[cards.Count - 1];
-                    if (drawn?.Info != null)
+                    // 0.7.445 - a card that changed as it was drawn (the
+                    // Curious Egg, the Glitched card) has already had its
+                    // draw told by that line. "Drew X." on top would cut it.
+                    // See SigilNarrator.DrawLineAlreadySaid.
+                    if (SigilNarrator.DrawLineAlreadySaid(drawn))
+                    {
+                        Plugin.Log?.LogInfo("IKMA DRAW: no \"Drew\" line - the card's own line told this draw.");
+                        SurrenderReader.SpeakOfferWhenQuiet("after the draw");
+                        StartCoroutine(WatchForGrantedAbilities(drawn));
+                    }
+                    else if (drawn?.Info != null)
                     {
                         // Session 9 note 3: a totem grant lands on the drawn card
                         // a beat after it reaches the hand, announced in-game only
@@ -3654,6 +3805,26 @@ namespace IKMA
         // arrow key would either repeat the same option forever or say "1 of 1",
         // and both are noise. M repeats, Enter takes it, H says so.
         // ----------------------------------------------------------------------
+        // Session 47 (0.7.455). The letter, number and Tab keys a conversation
+        // locks. Only asked while a conversation is holding.
+        private static bool ConversationLockedKeyDown()
+        {
+            if (KeyIn.Held(KeyCode.LeftControl) || KeyIn.Held(KeyCode.RightControl)) return false;
+
+            for (KeyCode k = KeyCode.A; k <= KeyCode.Z; k++)
+            {
+                if (k == KeyCode.H || k == KeyCode.L || k == KeyCode.M || k == KeyCode.Y) continue;
+                if (KeyIn.Down(k)) return true;
+            }
+
+            if (KeyIn.Down(KeyCode.Tab)) return true;
+
+            for (KeyCode k = KeyCode.Alpha0; k <= KeyCode.Alpha9; k++)
+                if (KeyIn.Down(k)) return true;
+
+            return false;
+        }
+
         private void HandleRunEndKeys()
         {
             if (KeyIn.Down(KeyCode.Space)) { RunEndReader.AnnounceCurrent(); return; }
@@ -3713,7 +3884,12 @@ namespace IKMA
             // 0.7.275 — CYCLES here, where the arrows belong to the deck and
             // there is no other key to browse items with. Everywhere else I
             // stays a full read. See BoardReader.ReadNextItem.
-            if (KeyIn.Down(KeyCode.I)) { BoardReader.ReadNextItem();          return; }
+            // 0.7.434 - ONE PRESS READS ALL THREE, IN EVERY DECK VIEW.
+            // Zamar, Session 42, at the Deck Trial: "pressing I on that
+            // screen should just read all 3 item slots including empty", and
+            // then: "This should also be true for every Shift+Up deck view."
+            // That replaces the one-per-press cycle 0.7.275 put here.
+            if (KeyIn.Down(KeyCode.I)) { BoardReader.ReadItems(); return; }
             if (KeyIn.Down(KeyCode.H)) { DeckViewReader.SpeakHelp(); return; }
             if (KeyIn.Down(KeyCode.R)) { RulebookReader.Open(); return; }
 
@@ -3894,12 +4070,17 @@ namespace IKMA
             }
 
             _targetSlots = usable;
-            _targetIndex = 0;
-            _targeting = true;
 
-            // Put the game's cursor on the first target straight away, so the
-            // screen agrees with the narration before the player touches a key.
-            HoverTargetSlot(null, usable[0]);
+            // THE CURSOR STARTS NOWHERE HERE TOO. (0.7.431.) Zamar, Session 41:
+            // "Fish hook targeting needs the -1 default thing."
+            //
+            // This reader was the last one still standing on its first option
+            // at arrival, so the first arrow stepped PAST the only target the
+            // prompt had named. Arrival now names no target and hovers none;
+            // the first arrow, either direction, lands ON target one, and the
+            // game's cursor moves with it as before.
+            _targetIndex = -1;
+            _targeting = true;
 
             Plugin.Log?.LogInfo($"IKMA TARGET: choosing among {usable.Count} valid target(s).");
 
@@ -3952,8 +4133,10 @@ namespace IKMA
                     return null;
                 }
 
+                // 0.7.431 - nothing browsed yet, so no slot is named.
                 int idx = _targetIndex;
-                if (idx < 0 || idx >= _targetSlots.Count) idx = 0;
+                if (idx < 0 || idx >= _targetSlots.Count)
+                    return Vocabulary.Hotkeys.ChooseATarget(offered);
 
                 return Vocabulary.Hotkeys.ChooseATargetAvailable(offered, DescribeTargetSlot(_targetSlots[idx]));
             }, TARGET_PROMPT_SETTLE);
@@ -3963,7 +4146,7 @@ namespace IKMA
         {
             _targeting = false;
             _targetSlots = null;
-            _targetIndex = 0;
+            _targetIndex = -1;
         }
 
         /// <summary>Returns true if the key was consumed by targeting.</summary>
@@ -4004,6 +4187,25 @@ namespace IKMA
             if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { ConfirmTarget(); return true; }
 
+            // QUICK TARGET. (Session 52, 0.7.464.) Zamar: "can we have 1/2/3/4
+            // work as a quick target? if pressing a button without a valid
+            // target say that." The number is the slot's number on the side
+            // the item aims at. Every target item aims at ONE side (Fish Hook,
+            // Scissors, Trapper Knife the opponent's, Hammer your own), so a
+            // slot number names exactly one slot. It aims AND fires, like
+            // arrow-then-Enter, and like Enter it cannot be taken back. Shift
+            // is left alone: Shift+1/2/3 are the item keys, not targets.
+            bool shiftDown = KeyIn.Held(KeyCode.LeftShift) || KeyIn.Held(KeyCode.RightShift);
+            if (!shiftDown)
+            {
+                int quick = -1;
+                if      (KeyIn.Down(KeyCode.Alpha1) || KeyIn.Down(KeyCode.Keypad1)) quick = 0;
+                else if (KeyIn.Down(KeyCode.Alpha2) || KeyIn.Down(KeyCode.Keypad2)) quick = 1;
+                else if (KeyIn.Down(KeyCode.Alpha3) || KeyIn.Down(KeyCode.Keypad3)) quick = 2;
+                else if (KeyIn.Down(KeyCode.Alpha4) || KeyIn.Down(KeyCode.Keypad4)) quick = 3;
+                if (quick >= 0) { QuickTarget(quick); return true; }
+            }
+
             if (KeyIn.Down(KeyCode.H))
             {
                 // Session 11: help said "this item" without ever naming it. If
@@ -4024,11 +4226,51 @@ namespace IKMA
             return true; // Swallow everything else; the game is blocked here.
         }
 
+        // Session 52. Aim at the valid target in slot number slotIndex+1, then
+        // fire. The aim (hover) and the fire (select) are one frame apart: the
+        // item aims at whatever the game's cursor is hovering (Session 11's Fish
+        // Hook lesson), and a hover and a select in the same frame can race.
+        private void QuickTarget(int slotIndex)
+        {
+            int at = -1;
+            for (int i = 0; i < _targetSlots.Count; i++)
+                if (_targetSlots[i] != null && _targetSlots[i].Index == slotIndex) { at = i; break; }
+
+            if (at < 0)
+            {
+                Plugin.Log?.LogInfo($"IKMA TARGET: quick target {slotIndex + 1} - no valid target in that slot.");
+                Speech.Browse(Vocabulary.Hotkeys.NoValidTargetInSlot);
+                return;
+            }
+
+            bool onATarget = _targetIndex >= 0 && _targetIndex < _targetSlots.Count;
+            CardSlot previous = onATarget ? _targetSlots[_targetIndex] : null;
+            _targetIndex = at;
+            HoverTargetSlot(previous, _targetSlots[at]);
+            Plugin.Log?.LogInfo($"IKMA TARGET: quick target {slotIndex + 1} - aimed, firing next frame.");
+            StartCoroutine(QuickTargetFire(_targetSlots[at]));
+        }
+
+        private System.Collections.IEnumerator QuickTargetFire(CardSlot aimed)
+        {
+            yield return null;
+            // Still choosing, and still aimed where the key sent it.
+            if (!_targeting || _targetSlots == null) yield break;
+            if (_targetIndex < 0 || _targetIndex >= _targetSlots.Count) yield break;
+            if (_targetSlots[_targetIndex] != aimed) yield break;
+            ConfirmTarget();
+        }
+
         private void BrowseTargets(int direction)
         {
-            var previous = _targetSlots[_targetIndex];
+            // 0.7.431 - from NOWHERE (-1) the first press lands on target one
+            // whichever arrow it was, and there is no slot to leave.
+            bool onATarget = _targetIndex >= 0 && _targetIndex < _targetSlots.Count;
+            CardSlot previous = onATarget ? _targetSlots[_targetIndex] : null;
 
-            _targetIndex = (_targetIndex + direction + _targetSlots.Count) % _targetSlots.Count;
+            _targetIndex = onATarget
+                ? (_targetIndex + direction + _targetSlots.Count) % _targetSlots.Count
+                : 0;
             var slot = _targetSlots[_targetIndex];
 
             // Session 11: move the GAME'S hover, not just ours.
@@ -4141,6 +4383,16 @@ namespace IKMA
 
         private void ConfirmTarget()
         {
+            // 0.7.431 - Enter before any arrow. Nothing is under the cursor,
+            // so nothing is clicked; the prompt is said again rather than
+            // leaving a dead key.
+            if (_targetIndex < 0 || _targetIndex >= _targetSlots.Count)
+            {
+                Plugin.Log?.LogInfo("IKMA TARGET: Enter at NOWHERE - no target browsed yet, prompt repeated.");
+                Speech.Browse(Vocabulary.Hotkeys.ChooseATarget(_targetSlots.Count));
+                return;
+            }
+
             var slot = _targetSlots[_targetIndex];
             if (slot == null) { EndTargeting(); return; }
 
@@ -4225,7 +4477,14 @@ namespace IKMA
                                 // The watcher is told, exactly as the play and
                                 // death paths tell it.
                                 BoardWatcher.NoteAnnounced(card);
-                                Speech.Commentary(Vocabulary.Hotkeys.IsDraggedDownTo(name, i + 1));
+                                // 0.7.431 - Zamar, Session 41: the slot read he
+                                // had just browsed "should have been stomped
+                                // by" this line. It was Commentary, which
+                                // waits its turn; the card changing sides is
+                                // the state moving, and a Result cuts a stale
+                                // browse read while still never cutting
+                                // another queued line.
+                                Speech.Result(Vocabulary.Hotkeys.IsDraggedDownTo(name, i + 1));
                                 yield break;
                             }
                         }
@@ -4261,7 +4520,7 @@ namespace IKMA
             // comparing several slots and the labels dominate the line.
             string targetAbilities = BoardReader.FormatBareAbilitiesFor(card);
 
-            return Vocabulary.Hotkeys.TargetSlotCard(side, number, CardReader.CardName(card.Info), card.Attack, card.Health, targetAbilities);
+            return Vocabulary.Hotkeys.TargetSlotCard(side, number, CardReader.CardName(card), card.Attack, card.Health, targetAbilities);
         }
 
         // ----------------------------------------------------------------------
@@ -4376,6 +4635,31 @@ namespace IKMA
         {
             // Still loading. The incoming context announces itself.
             if (Plugin.LoadingAnnounced) { ClearUnreadableScreen(); return; }
+
+            // ==================================================================
+            // SESSION 46 - A CHARACTER WAITING ON SPACE IS NOT AN UNREAD
+            // SCREEN. (0.7.451.)
+            //
+            // Found with the test driver on 0.7.450. After the Prospector's
+            // rare card, Leshy says one line and the game waits on Space
+            // before the map changes. Left alone for a few seconds, IKMA said
+            //   "Boss battle: Prospector. IKMA cannot read this screen yet.
+            //    The game is waiting for you here."
+            // The quiet test below only knows how long ago the line was SHOWN,
+            // so a line the player has not answered yet looked like silence.
+            // The game is waiting on the conversation, and the conversation
+            // has its own prompt. ConversationHolding is the question the key
+            // lock already asks.
+            // ==================================================================
+            bool characterWaiting = false;
+            try { characterWaiting = DialogueAdvancer.ConversationHolding(); } catch { }
+            if (characterWaiting)
+            {
+                ClearUnreadableScreen();
+                _unreadableTimer     = 0f;
+                _unreadableSeenSince = Time.unscaledTime;
+                return;
+            }
 
             // The game is talking, or IKMA still has lines to say. Either way
             // something is happening and this is not a dead end yet.
@@ -4872,7 +5156,7 @@ namespace IKMA
                     var card = slots[i]?.Card;
                     if (card?.Info == null) continue;
 
-                    string name = CardReader.CardName(card.Info);
+                    string name = CardReader.CardName(card);
                     var flags = new List<string>();
 
                     foreach (var f in card.GetType().GetFields(any))
@@ -4977,6 +5261,14 @@ namespace IKMA
             try { if (card.Dead) return false; }
             catch { }
 
+            // ALREADY MARKED. (Session 51, 0.7.463.) A marked card is not Dead
+            // until the whole cost is chosen, so after the twelve frames below
+            // it read like any other ("Slot 1: Geck, 1/1.") and Enter on it
+            // would have un-marked it. Zamar: "can we just skip a marked card
+            // in the browse and tabs since it's already on its way?" The
+            // game's own list of marked slots is the answer.
+            if (IsMarkedForSacrifice(slot)) return false;
+
             // JUST INJECTED. Dead has not been set yet, but IKMA pressed this
             // slot a moment ago and the game has not had a frame to act on it.
             int frame;
@@ -4992,6 +5284,38 @@ namespace IKMA
 
             try { return list.Contains(slot); }
             catch { return true; }
+        }
+
+        // BoardManager.currentSacrifices: NONPUBLIC (protected List<CardSlot>),
+        // declared on BoardManager. OnSlotSelected adds a slot when its card
+        // is marked and removes it when it is un-marked; ChooseSacrificesForCard
+        // clears it when the sequence ends (dumps/dump_s51_from_decompile.txt).
+        // Read only, never written.
+        private static FieldInfo _currentSacrificesField;
+        private static bool _currentSacrificesResolved;
+
+        private static bool IsMarkedForSacrifice(CardSlot slot)
+        {
+            try
+            {
+                if (!_currentSacrificesResolved)
+                {
+                    _currentSacrificesResolved = true;
+                    _currentSacrificesField = typeof(BoardManager).GetField(
+                        "currentSacrifices", BindingFlags.Instance | BindingFlags.NonPublic);
+                    if (_currentSacrificesField == null)
+                        Plugin.Log?.LogWarning(
+                            "IKMA SACRIFICE: BoardManager.currentSacrifices did not resolve - a marked card can still be browsed.");
+                }
+                if (_currentSacrificesField == null || slot == null) return false;
+
+                var bm = Singleton<BoardManager>.Instance;
+                if (bm == null || !bm.ChoosingSacrifices) return false;
+
+                var marked = _currentSacrificesField.GetValue(bm) as List<CardSlot>;
+                return marked != null && marked.Contains(slot);
+            }
+            catch { return false; }
         }
 
         private void NavigateSlot(BoardManager bm, int direction, bool choosingSacrifices)
@@ -5043,7 +5367,7 @@ namespace IKMA
                 {
                     int probe = idx + step * i;
                     if (probe < 0 || probe >= slots.Count) break;
-                    if (slots[probe].Card != null) { idx = probe; found = true; break; }
+                    if (IsSacrificeCandidate(slots[probe])) { idx = probe; found = true; break; }
                 }
                 if (!found)
                 {
@@ -5232,7 +5556,7 @@ namespace IKMA
 
                 if (gained.Count > 0)
                 {
-                    string name = Vocabulary.Hotkeys.CardOrCardWord(CardReader.CardName(card.Info));
+                    string name = Vocabulary.Hotkeys.CardOrCardWord(CardReader.CardName(card));
                     using (Speech.Event(EventKind.Challenges)) Speech.Quiet(Vocabulary.Hotkeys.GainsFromYourTotem(name, gained));
                     yield break;
                 }
@@ -5288,7 +5612,7 @@ namespace IKMA
                     Plugin.Log?.LogInfo($"IKMA ABILITY: explaining {itemParts.Count} item(s) on request.");
                     string itemLine = $"{itemLead} {string.Join(" ", itemParts.ToArray())}";
                     CardReader.MarkNextLineAsAbilityLookup(itemLine);
-                    Speech.Result(itemLine);
+                    Speech.ResultFirst(itemLine);   // 0.7.436 - ahead of what is waiting
                     return;
                 }
             }
@@ -5388,7 +5712,11 @@ namespace IKMA
             // lookup displacing a death is not.
             string line = $"{lead} {string.Join(" ", parts)}";
             CardReader.MarkNextLineAsAbilityLookup(line);
-            Speech.Result(line);
+
+            // 0.7.436 - AND AHEAD OF THE QUEUE. Session 43: the answer about
+            // the enemy totem's Fledgling waited behind "Your turn", the
+            // upcoming queue and the hand read. Zamar: "Jump ahead."
+            Speech.ResultFirst(line);
         }
 
         // Is the game refusing player actions right now? PlayerHand.PlayingLocked
@@ -5502,7 +5830,7 @@ namespace IKMA
             // prompts that can follow name the card themselves, and this line
             // used to be cut off mid-word by them every time. Plugin's
             // ChooseSlot patch leads with "Playing X." as one continuous line.
-            string cardName = Vocabulary.Hotkeys.ThatCard(CardReader.CardName(card.Info));
+            string cardName = Vocabulary.Hotkeys.ThatCard(CardReader.CardName(card));
             float dialogueMark = TextDisplayer_ShowMessage_Patch.LastLineTime;
 
             // Session 13, from the 0.7.24 log. Leshy refused Corpse Maggots
@@ -6504,6 +6832,28 @@ namespace IKMA
                 // the click (the game's GetValueOfSacrifices: Worthy Sacrifice = 3).
                 int sacWorth = 1;
                 try { if (slot.Card != null && slot.Card.HasAbility(Ability.TripleBlood)) sacWorth = 3; } catch { }
+
+                // ==================================================================
+                // SESSION 46 - "SACRIFICED" FOR A CARD THE GAME REFUSED. (0.7.451.)
+                //
+                // Found with the test driver on 0.7.450, twice: with two blood
+                // to pay, Enter on a Boulder and later on a Rabbit Pelt said
+                //   "Rabbit Pelt in slot 2 sacrificed. Choose 1 additional
+                //    sacrifice."
+                // and then Leshy's own "A RABBIT PELT DOES NOT BLEED." The card
+                // was never marked. The line below was said for the PRESS, not
+                // for what the game did with it - announcing what was attempted
+                // rather than what is true.
+                //
+                // The game decides this in BoardManager.OnSlotSelected, and it
+                // asks one PUBLIC property to do it: PlayableCard.
+                // CanBeSacrificed (terrain, pelts and face-down cards are not).
+                // Same question, asked before the click because the click may
+                // change the board. When the answer is no, IKMA says nothing:
+                // the game has a voice for the refusal.
+                // ==================================================================
+                bool gameTakesSacrifice = true;
+                try { if (slot.Card != null) gameTakesSacrifice = slot.Card.CanBeSacrificed; } catch { }
                 int bloodBefore = SacrificeProgress.Value < 0 ? 0 : SacrificeProgress.Value;
                 int sacSlot = _slotIndex + 1;
 
@@ -6563,14 +6913,18 @@ namespace IKMA
                 // more blood is still wanted, say which card was marked and how
                 // many more; the last press is answered by the sacrifice line.
                 int more = SacrificeProgress.Cost - (bloodBefore + sacWorth);
-                if (SacrificeProgress.Cost > 0 && more > 0 && !string.IsNullOrEmpty(sacName))
+                if (!gameTakesSacrifice)
+                    Plugin.Log?.LogInfo(
+                        $"IKMA PLAY: '{sacName ?? "?"}' cannot be sacrificed (the game's CanBeSacrificed) - " +
+                        "no \"sacrificed\" line; the game answers the press itself.");
+                else if (SacrificeProgress.Cost > 0 && more > 0 && !string.IsNullOrEmpty(sacName))
                     Speech.Confirm(Vocabulary.Hotkeys.SacrificedChooseMore(sacName, sacSlot, more));
             }
             else if (choosingSlot)
             {
                 if (slot.Card != null)
                 {
-                    Speech.Browse(Vocabulary.Hotkeys.SlotIsOccupiedBy(_slotIndex + 1, CardReader.CardName(slot.Card.Info)));
+                    Speech.Browse(Vocabulary.Hotkeys.SlotIsOccupiedBy(_slotIndex + 1, CardReader.CardName(slot.Card)));
                     return;
                 }
                 // THE GATE COMES BEFORE THE ANNOUNCEMENT. Same gate as the
@@ -6610,7 +6964,12 @@ namespace IKMA
                 SlotPromptState.NotePlaced();
                 _handArrowFromStart = true;   // Session 37, note D6
 
-                using (Speech.Event(EventKind.CardPlayed, EventSource.CurrentPlayer)) Speech.Confirm(Vocabulary.Hotkeys.PlayedInSlot(cardName, _slotIndex + 1));
+                // 0.7.439 - a card whose Trinket Bearer is about to hand over
+                // an item: the confirmation waits a moment and is spoken as
+                // one line with the item. See PlayConfirmHold.
+                string playedLine = Vocabulary.Hotkeys.PlayedInSlot(cardName, _slotIndex + 1);
+                if (!PlayConfirmHold.TryHold(placing, playedLine))
+                using (Speech.Event(EventKind.CardPlayed, EventSource.CurrentPlayer)) Speech.Confirm(playedLine);
 
                 // 0.7.193 — the card is down; put the camera back once the board
                 // has finished reacting. See TickViewRestore.
@@ -6622,8 +6981,29 @@ namespace IKMA
                 // about it at the next turn boundary.
                 BoardWatcher.NoteAnnounced(placing);
 
+                // Session 51: this placement is IKMA's and has been spoken.
+                // MousePlay.cs speaks the same line for one that is not.
+                _injectedPlacement = placing;
+                _injectedPlacementAt = Time.unscaledTime;
+
                 bm.OnSlotSelected(slot);
             }
+        }
+
+        private static PlayableCard _injectedPlacement;
+        private static float _injectedPlacementAt;
+
+        /// <summary>
+        /// Session 51. True when IKMA itself placed this card a moment ago
+        /// (and so has already said "X played in Slot N."). Asked once per
+        /// placement by MousePlay.cs.
+        /// </summary>
+        internal static bool TakeInjectedPlacement(PlayableCard card)
+        {
+            bool mine = card != null && ReferenceEquals(card, _injectedPlacement)
+                        && Time.unscaledTime - _injectedPlacementAt < 3f;
+            _injectedPlacement = null;
+            return mine;
         }
 
         // ----------------------------------------------------------------------
@@ -6701,7 +7081,7 @@ namespace IKMA
                     if (beside == null || beside.Info == null) continue;
                     if (!beside.HasAbility(Ability.BuffNeighbours)) continue;
                     sources.Add(Vocabulary.Hotkeys.LeaderSource(
-                        CardReader.CardName(beside.Info), adjacent.Index + 1));
+                        CardReader.CardName(beside), adjacent.Index + 1));
                 }
                 if (sources.Count == 0) return null;
 
@@ -6767,7 +7147,7 @@ namespace IKMA
                         : "";
 
                     Speech.Browse(
-                        Vocabulary.Hotkeys.SlotWithCard(slotNum, CardReader.CardName(card.Info), card.Attack, card.Health, sigilPart, CannonHere(slot)));
+                        Vocabulary.Hotkeys.SlotWithCard(slotNum, CardReader.CardName(card), card.Attack, card.Health, sigilPart, CannonHere(slot)));
                 }
                 else
                 {
@@ -6788,7 +7168,7 @@ namespace IKMA
 
                 var occupant = BoardReader.LiveCard(slot);
                 if (occupant?.Info != null)
-                    Speech.Browse(Vocabulary.Hotkeys.SlotOccupiedBy(slotNum, CardReader.CardName(occupant.Info), CannonHere(slot), reminder));
+                    Speech.Browse(Vocabulary.Hotkeys.SlotOccupiedBy(slotNum, CardReader.CardName(occupant), CannonHere(slot), reminder));
                 else
                 {
                     // 0.7.425 — LEADER. Zamar: "When highlighting a slot being

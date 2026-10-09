@@ -190,6 +190,26 @@ namespace IKMA
         // ==================================================================
         private static volatile bool _backgroundHold;
 
+#if IKMA_DEV
+        // ==================================================================
+        // SESSION 47 - THE DRIVER'S SILENT RUN. (0.7.456, dev builds only.)
+        //
+        // Zamar: "I cannot keep the inscryption window in front during these
+        // runs ... so adjust the mod if you need to temporarily for these
+        // tests." With the window in the background the pump holds every
+        // line, so a driver run filled the queue to its cap 400 times and
+        // nothing in it had real timing.
+        //
+        // While this is on (driver verb "mute on") the background hold is not
+        // applied and NOTHING is sent to the screen reader. Each line instead
+        // takes as long as Speech.EstimateSpeechSeconds says it would, so the
+        // queue drains and EngineBusy answers the way it does with a voice.
+        // Off by default at every launch.
+        // ==================================================================
+        internal static volatile bool DevSilentRun;
+        private static int _simBusyUntil;
+#endif
+
         private static volatile bool _silencedForHold;
 
         internal static void SetBackgroundHold(bool hold)
@@ -478,10 +498,32 @@ namespace IKMA
 
         private static void PollBusy()
         {
+#if IKMA_DEV
+            if (DevSilentRun)
+            {
+                _busyState = unchecked(Environment.TickCount - _simBusyUntil) < 0 ? 1 : 0;
+                return;
+            }
+#endif
             if (unchecked(Environment.TickCount - _busyGraceUntil) < 0) return;
             try { _busyState = _backend.QueryBusy(); }
             catch { _busyState = -1; }
         }
+
+#if IKMA_DEV
+        // The silent run's stand-in for the screen reader. An interrupting
+        // line replaces what was "in the air"; any other line follows it.
+        private static void SimulateSay(string text, bool interrupt)
+        {
+            int now = Environment.TickCount;
+            int ms = string.IsNullOrEmpty(text) ? 0 : (int)(Speech.EstimateSpeechSeconds(text) * 1000f);
+
+            if (interrupt || unchecked(now - _simBusyUntil) >= 0) _simBusyUntil = now + ms;
+            else _simBusyUntil += ms;
+
+            _busyState = unchecked(now - _simBusyUntil) < 0 ? 1 : 0;
+        }
+#endif
 
         private static void WorkerLoop()
         {
@@ -540,6 +582,9 @@ namespace IKMA
                         _queueFilledTick = Environment.TickCount;
                     }
 
+#if IKMA_DEV
+                    if (DevSilentRun) { SimulateSay(item.Text, item.Interrupt); continue; }
+#endif
                     _backend.Maintain();
                     SayInline(item.Text, item.Interrupt);
                     _backend.AfterSay();

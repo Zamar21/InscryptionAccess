@@ -72,7 +72,7 @@ namespace IKMA
             {
                 var card = target != null ? target.Card : null;
                 if (card?.Info == null) return;
-                string name = CardReader.CardName(card.Info);
+                string name = CardReader.CardName(card);
                 BoardWatcher.NoteAnnounced(card);
                 Plugin.Log?.LogInfo($"IKMA ITEM: '{name}' cut by the Scissors - destroyed without dying.");
                 using (Speech.Event(EventKind.Death, EventTag.Side(card))) Speech.Result(Vocabulary.Combat.IsCutInHalfAnd(name, card.Info));

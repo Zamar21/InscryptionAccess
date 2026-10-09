@@ -52,9 +52,33 @@ namespace IKMA
     /// final. The finish is known exactly: the postfix wraps the enumerator
     /// and marks it done when the game has run the last instruction.
     ///
-    /// WHAT IT DOES NOT TAKE OVER: damage to the ATTACKER (Sharp Quills) or to
-    /// any card on the attacker's own side, and damage to a card still in the
-    /// queue. Those keep their own lines, after this one.
+    /// WHAT IT DOES NOT TAKE OVER: damage to any other card on the attacker's
+    /// own side, and damage to a card still in the queue. Those keep their own
+    /// lines, after this one.
+    ///
+    /// SHARP QUILLS IS IN THE LINE. (0.7.441.) Until then the attacker's own
+    /// damage was left out too, and Zamar's 0.7.439 log read:
+    ///
+    ///   Mantis attacks 2 times. Raven Egg takes 1 damage, 1 health remaining.
+    ///     Porcupine takes 1 damage, 1 health remaining. Received 1 bone.
+    ///   Porcupine's Sharp Quills ability triggers, sending one damage back to
+    ///     its attacker.
+    ///   Mantis takes 1 damage and dies.
+    ///
+    /// The bone was the Mantis's own, paid when the quills killed it, and it
+    /// was spoken two lines before the death that paid it. "collapse this
+    /// sequence", his sentence:
+    ///
+    ///   "Mantis attacks 2 times. Raven Egg takes 1 damage, 1 health remaining.
+    ///    Porcupine takes 1 damage, 1 health remaining. Porcupine's Sharp
+    ///    Quills ability triggers, sending one damage back to its attacker.
+    ///    Mantis takes 1 damage and dies. Received 1 bone."
+    ///
+    /// No new words: the Sharp Quills sentence and the attacker's damage
+    /// sentence are the same two lines as before, composed by the same code
+    /// (SigilTriggers' closure, DamageRecord.Compose), and placed after the
+    /// target clauses and before the bones. With more than one answer from
+    /// quills they follow each other in the order they happened.
     /// </remarks>
     internal static class MultiStrikeNarrator
     {
@@ -69,6 +93,14 @@ namespace IKMA
             internal bool Burrowed;
             internal readonly List<int> Path = new List<int>();   // 0-based slots, start first
             internal bool Died;
+
+            // 0.7.447 - this card's clause has been spoken already, in a line
+            // said early because a character started talking mid-attack. It
+            // is left out of what follows unless it is hit again.
+            internal bool Said;
+
+            // 0.7.448 - its Armored sigil took one of the strikes.
+            internal bool Shielded;
         }
 
         private class Attack
@@ -81,9 +113,23 @@ namespace IKMA
             internal bool AttackerIsGiant;
             internal bool Finished;
             internal bool Wrapped;
+            internal bool OpeningSaid;   // 0.7.447 - "X attacks N times." already spoken
             internal readonly List<Target> Targets = new List<Target>();
             internal readonly List<string> DefenderNamesAtStart = new List<string>();
+
+            // 0.7.441 - sentences said after the target clauses, in the order
+            // they happened: a defender's Sharp Quills line, then the
+            // attacker's damage from it. Each is composed when the summary
+            // is, so health and a death are final by then.
+            internal readonly List<System.Func<string>> Tail = new List<System.Func<string>>();
+            internal readonly List<DamageRecord> AttackerRecords = new List<DamageRecord>();
+            internal int Quills;
+            internal float FinishedAt = -1f;
         }
+
+        // A lethal quill hit is followed by Die inside the same attack
+        // sequence, so this is a safety net, not the normal path.
+        private const float AttackerDeathSettle = 0.75f;
 
         private static Attack _current;
 
@@ -102,7 +148,7 @@ namespace IKMA
             var a = new Attack
             {
                 Attacker = attacker,
-                AttackerName = Vocabulary.Submerged(attacker, CardReader.CardName(attacker.Info))
+                AttackerName = Vocabulary.Submerged(attacker, CardReader.CardName(attacker))
                                + DamageRecord.DeadlyNote(attacker),
                 Strikes = strikes,
             };
@@ -119,7 +165,7 @@ namespace IKMA
                     foreach (var s in side)
                     {
                         var c = BoardReader.LiveCard(s);
-                        if (c?.Info != null) a.DefenderNamesAtStart.Add(CardReader.CardName(c.Info));
+                        if (c?.Info != null) a.DefenderNamesAtStart.Add(CardReader.CardName(c));
                     }
             }
             catch { }
@@ -127,10 +173,11 @@ namespace IKMA
             _current = a;
 
             using (Speech.Event(EventKind.Attacks)) Speech.ResultWhenReady(
-                () => a.Finished,
-                () => Compose(a),
+                () => a.Finished && AttackerSettled(a),
+                () => Compose(a, false),
                 15f,
-                $"[multi-strike summary: {CardReader.CardName(attacker.Info)}, {strikes} strikes]");
+                $"[multi-strike summary: {CardReader.CardName(attacker)}, {strikes} strikes]",
+                () => Compose(a, true));   // 0.7.447 - what has landed so far, if a character cuts in
             return true;
         }
 
@@ -171,7 +218,63 @@ namespace IKMA
             }
 
             a.Finished = true;
+            try { a.FinishedAt = UnityEngine.Time.unscaledTime; } catch { }
             if (ReferenceEquals(_current, a)) _current = null;
+        }
+
+        /// <summary>
+        /// True once every quill hit on the attacker has its outcome: it
+        /// died, or it has health left, or long enough has passed since the
+        /// attack ended that no death is coming. (0.7.441.)
+        /// </summary>
+        private static bool AttackerSettled(Attack a)
+        {
+            if (a.AttackerRecords.Count == 0) return true;
+            float now = 0f;
+            try { now = UnityEngine.Time.unscaledTime; } catch { return true; }
+            bool waitedOut = a.FinishedAt >= 0f && now - a.FinishedAt > AttackerDeathSettle;
+            foreach (var r in a.AttackerRecords)
+            {
+                if (r.Died) continue;
+                if (r.HealthAfter != int.MinValue && r.HealthAfter > 0) continue;
+                if (!waitedOut) return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// SigilTriggers, for Sharp Quills only. True = the summary says this
+        /// trigger line, no line of its own. (0.7.441.) The card must be one
+        /// this attack is striking: the other side, on the board.
+        /// </summary>
+        internal static bool TryFoldQuills(PlayableCard card, System.Func<string> line)
+        {
+            var a = _current;
+            if (a == null || a.Finished || line == null || !IsDefender(a, card)) return false;
+
+            a.Quills++;
+            a.Tail.Add(line);
+            Plugin.Log?.LogInfo("IKMA MULTI: Sharp Quills answers - said in the attack's line.");
+            return true;
+        }
+
+        /// <summary>
+        /// TakeDamage postfix, for the ATTACKER. True = the summary says this
+        /// damage, no line of its own. (0.7.441.) Only after a Sharp Quills
+        /// line has been folded: damage to the attacker from anything else
+        /// keeps its own line, as before.
+        /// </summary>
+        internal static bool TryAttachQuillDamage(PlayableCard card, DamageRecord record)
+        {
+            var a = _current;
+            if (a == null || a.Finished || record == null || a.Quills == 0) return false;
+            if (!ReferenceEquals(card, a.Attacker)) return false;
+
+            a.AttackerRecords.Add(record);
+            a.Tail.Add(record.Compose);
+            Plugin.Log?.LogInfo(
+                $"IKMA MULTI: '{a.AttackerName}' hit back for {record.Damage} - said in the attack's line.");
+            return true;
         }
 
         private static bool IsDefender(Attack a, PlayableCard card)
@@ -192,7 +295,7 @@ namespace IKMA
 
             var nt = new Target { Card = card, StartSlot = startSlot, EndSlot = startSlot };
             nt.Path.Add(startSlot);
-            try { nt.Info = card.Info; nt.Name = CardReader.CardName(card.Info); } catch { }
+            try { nt.Info = card.Info; nt.Name = CardReader.CardName(card); } catch { }
             a.Targets.Add(nt);
             return nt;
         }
@@ -206,6 +309,7 @@ namespace IKMA
             int slot = -1;
             try { slot = card.Slot.Index; } catch { }
             var t = Touch(a, card, slot);
+            t.Said = false;   // 0.7.447 - hit again after an early line: it is news again
             t.Damage += damage;
 
             Plugin.Log?.LogInfo(
@@ -221,12 +325,32 @@ namespace IKMA
             if (a == null || a.Finished || !IsDefender(a, card)) return false;
 
             var t = Touch(a, card, fromSlot);
+            t.Said = false;   // 0.7.447
             t.Burrowed = true;
             t.EndSlot = toSlot;
             t.Path.Add(toSlot);
 
             Plugin.Log?.LogInfo(
                 $"IKMA MULTI: '{t.Name}' burrows slot {fromSlot + 1} -> {toSlot + 1}.");
+            return true;
+        }
+
+        /// <summary>
+        /// 0.7.448 - TakeDamage postfix, a strike the target's Armored sigil
+        /// takes. True = the summary says it, in the target's place in the line.
+        /// </summary>
+        internal static bool TryRecordShield(PlayableCard card)
+        {
+            var a = _current;
+            if (a == null || a.Finished || !IsDefender(a, card)) return false;
+
+            int slot = -1;
+            try { slot = card.Slot.Index; } catch { }
+            var t = Touch(a, card, slot);
+            t.Said = false;
+            t.Shielded = true;
+
+            Plugin.Log?.LogInfo($"IKMA MULTI: '{t.Name}' in slot {slot + 1} - the shield took the strike.");
             return true;
         }
 
@@ -254,6 +378,10 @@ namespace IKMA
             foreach (var t in a.Targets)
             {
                 if (!ReferenceEquals(t.Card, card)) continue;
+                // 0.7.447 - its clause was already said and it has not been
+                // hit since: this death is not the attack's, so it gets its
+                // own line by the ordinary path.
+                if (t.Said) return false;
                 t.Died = true;
                 try { if (card.Slot != null) t.EndSlot = card.Slot.Index; } catch { }
                 Plugin.Log?.LogInfo($"IKMA MULTI: '{t.Name}' dies in slot {t.EndSlot + 1}.");
@@ -280,35 +408,82 @@ namespace IKMA
                     {
                         var c = BoardReader.LiveCard(s);
                         if (c?.Info == null || ReferenceEquals(c, t.Card)) continue;
-                        if (CardReader.CardName(c.Info) == t.Name) return true;
+                        if (CardReader.CardName(c) == t.Name) return true;
                     }
             }
             catch { }
             return false;
         }
 
-        private static string Compose(Attack a)
+        // 0.7.447 - TWO LINES WHEN A CHARACTER CUTS IN. Zamar's 0.7.446 log,
+        // the Prospector: Hydra's five strikes, the Pack Mule dead on the
+        // second, "DAAAG NAB IT!" holding the attack until Space, the Wolf
+        // dead on the third. His ruling: the Mule and the pack before the
+        // boss line, then after Space the rest of the attack -
+        //   "Hydra attacks 5 times. Pack Mule takes 6 damage and dies."
+        //   "Wolf takes 3 damage and dies."
+        // No new words: the second line is the same clauses without the
+        // opening sentence. early = the line said before the character;
+        // it marks what it said so the closing line leaves it out.
+        private static string Compose(Attack a, bool early)
         {
             if (a == null) return null;
 
+            if (early)
+            {
+                bool anything = a.Tail.Count > 0 || a.Bones > 0;
+                foreach (var t in a.Targets)
+                    if (!t.Said && !string.IsNullOrEmpty(t.Name)) { anything = true; break; }
+                if (!anything) return null;
+            }
+
             var sb = new System.Text.StringBuilder();
+            if (!a.OpeningSaid)
 
             // 0.7.349 — A GIANT HITS EVERY CARD YOU HAVE. Zamar's wording:
             // "The Limoncello attacks each of your [one,two,three,four]
             // slot[s]." Omni Strike aims once at each occupied slot, so the
             // strike count IS the number of slots.
-            if (a.AttackerIsGiant)
-                sb.Append(Vocabulary.MultiStrike.AttacksEachOfYour(a.AttackerName, a.Strikes));
-            else
-                sb.Append(Vocabulary.MultiStrike.AttacksTimes(a.AttackerName, a.Strikes));
+            {
+                if (a.AttackerIsGiant)
+                    sb.Append(Vocabulary.MultiStrike.AttacksEachOfYour(a.AttackerName, a.Strikes));
+                else
+                    sb.Append(Vocabulary.MultiStrike.AttacksTimes(a.AttackerName, a.Strikes));
+            }
 
             foreach (var t in a.Targets)
             {
                 if (string.IsNullOrEmpty(t.Name)) continue;
+                if (t.Said) continue;   // 0.7.447 - spoken in the early line
+
+                // 0.7.442 - THE SLOT IS SAID ONCE. Zamar's 0.7.441 log, two
+                // Leaping Traps on one side:
+                //   "Mantis attacks 2 times. Leaping Trap in Slot 3 in slot 3
+                //    takes 1 damage and is destroyed."
+                // CombatLineName (Session 32) adds the slot for a same-side
+                // twin, and so does inSlot below. When this line is going to
+                // say the START slot itself, the name takes the side only.
+                bool ambiguous = Ambiguous(a, t) && t.StartSlot >= 0;
 
                 string name = t.Name;
-                // Session 32: CombatLineName - side AND, for a same-side twin, slot.
-                try { name = DamageDeathMerger.CombatLineName(t.Card, t.Name); } catch { }
+                try
+                {
+                    name = ambiguous
+                        ? DamageDeathMerger.SideQualifiedName(t.Card, t.Name)
+                        : DamageDeathMerger.CombatLineName(t.Card, t.Name);
+                }
+                catch { }
+
+                // 0.7.448 - Armored first, because it happened first: the
+                // shield takes the first strike and any later one lands.
+                if (t.Shielded)
+                {
+                    string shieldName = t.Name;
+                    try { shieldName = DamageDeathMerger.CombatLineName(t.Card, t.Name); } catch { }
+                    string shield = ShieldNarrator.Sentence(shieldName);
+                    if (shield != null) sb.Append(' ').Append(shield);
+                    if (t.Damage <= 0 && !t.Died && !t.Burrowed) continue;
+                }
 
                 string dmg = Vocabulary.DamageCount(t.Damage);
 
@@ -326,7 +501,7 @@ namespace IKMA
                     outcome = h < 0 ? null : (Vocabulary.HealthRemainingCount(h));
                 }
 
-                string inSlot = Ambiguous(a, t) && t.StartSlot >= 0 ? Vocabulary.MultiStrike.InStartSlot(t.StartSlot + 1) : "";
+                string inSlot = ambiguous ? Vocabulary.MultiStrike.InStartSlot(t.StartSlot + 1) : "";
 
                 string clause;
                 if (t.Burrowed)
@@ -352,10 +527,50 @@ namespace IKMA
                 sb.Append(' ').Append(clause);
             }
 
+            // 0.7.441 - Sharp Quills and what it did to the attacker, after the
+            // cards the attacker hit and before the bones (a bone here can be
+            // the attacker's own, paid by the death this tail reports).
+            foreach (var part in a.Tail)
+            {
+                string said = null;
+                try { said = part(); } catch { }
+                if (!string.IsNullOrEmpty(said)) sb.Append(' ').Append(said);
+            }
+
             if (a.Bones > 0)
                 sb.Append(Vocabulary.ReceivedBones(a.Bones));
 
-            return sb.ToString();
+            if (early)
+            {
+                // Everything in this line has now been said once. A card hit
+                // again later starts a fresh clause from where it stands.
+                a.OpeningSaid = true;
+                a.Tail.Clear();
+                a.Bones = 0;
+                foreach (var t in a.Targets)
+                {
+                    if (t.Said) continue;
+                    t.Said = true;
+                    if (t.Burrowed)
+                    {
+                        // As Finish does: the board diff must not report the move again.
+                        try { BoardWatcher.NoteAnnounced(t.Card); } catch { }
+                    }
+                    int at = t.EndSlot;
+                    try { if (!t.Died && t.Card?.Slot != null) at = t.Card.Slot.Index; } catch { }
+                    t.Damage = 0;
+                    t.Shielded = false;
+                    t.Burrowed = false;
+                    t.StartSlot = at;
+                    t.EndSlot = at;
+                    t.Path.Clear();
+                    t.Path.Add(at);
+                }
+                Plugin.Log?.LogInfo("IKMA MULTI: early line composed - a character cut in mid-attack.");
+            }
+
+            string line = sb.ToString().Trim();
+            return line.Length == 0 ? null : line;
         }
 
         /// <summary>A battle ended or the scene changed.</summary>
@@ -442,7 +657,7 @@ namespace IKMA
             {
                 if (v != null) v.Finished = true;
                 v = new Volley { Giant = defender };
-                try { v.GiantName = CardReader.CardName(defender.Info); } catch { }
+                try { v.GiantName = CardReader.CardName(defender); } catch { }
                 _current = v;
 
                 var captured = v;
@@ -456,7 +671,7 @@ namespace IKMA
             v.Strikes++;
             if (!v.Attackers.Contains(attacker)) v.Attackers.Add(attacker);
             Plugin.Log?.LogInfo(
-                $"IKMA VOLLEY: {CardReader.CardName(attacker.Info)} strikes {v.GiantName} " +
+                $"IKMA VOLLEY: {CardReader.CardName(attacker)} strikes {v.GiantName} " +
                 $"(strike {v.Strikes}).");
             return true;
         }
@@ -595,10 +810,10 @@ namespace IKMA
             int slot = -1;
             try { slot = card.Slot != null ? card.Slot.Index + 1 : -1; } catch { }
             g.Cards.Add(card);
-            g.Names.Add(CardReader.CardName(card.Info));
+            g.Names.Add(CardReader.CardName(card));
             g.Slots.Add(slot);
             g.Died.Add(false);
-            Plugin.Log?.LogInfo($"IKMA BRITTLE: {CardReader.CardName(card.Info)} in slot {slot}.");
+            Plugin.Log?.LogInfo($"IKMA BRITTLE: {CardReader.CardName(card)} in slot {slot}.");
         }
 
         /// <summary>Die prefix. True = this death is the group's to say.</summary>

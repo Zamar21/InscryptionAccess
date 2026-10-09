@@ -95,6 +95,22 @@ namespace IKMA
             internal Func<bool> Ready;
             internal float ReadyDeadline;
 
+            // 0.7.447 - A HELD LINE AND A CONVERSATION. Three things, all for
+            // one case: a character starts talking in the MIDDLE of the event
+            // this line is waiting on (the Pack Mule dying to a Hydra's second
+            // strike, "DAAAG NAB IT!", three strikes still to come).
+            //
+            //   Partial   - says what has happened so far. Zamar, Session 45:
+            //               the Mule's death and the pack go BEFORE the boss
+            //               line, the rest of the attack after Space.
+            //   MaxWait   - the wait this line was given, so its clock can be
+            //               started again (see Update).
+            //   HeldSince - when it was queued; the clock is never pushed
+            //               back for longer than MaxHeldSeconds in all.
+            internal Func<string> Partial;
+            internal float MaxWait;
+            internal float HeldSince;
+
             // The silence key was pressed while this line waited (Session 36).
             // It is still composed at its normal moment, and written to the
             // review history instead of spoken. SilenceKey.cs.
@@ -134,6 +150,67 @@ namespace IKMA
             return n;
         }
 
+        // ==================================================================
+        // SESSION 46 - THE KILLING BLOW KEEPS WHAT IT CUTS. (0.7.452.)
+        //
+        // When the scale reaches its stop the damage line cuts everything
+        // still waiting (0.7.120: the swing-by-swing of a turn that is now
+        // over). That used ClearQueue, which throws the lines away. Found
+        // with the test driver on a LOST battle: the last two attacks, a
+        // death and its bone were never said and were nowhere to be found
+        // afterwards - "QUEUE: cleared 3 message(s) on transition".
+        //
+        // Zamar: "It should appear in the log so they can scroll back and
+        // read exactly what killed them, but Im fine with it getting
+        // stomped." So they are still not spoken, and they are kept: each
+        // waiting game event is composed now, in order, and written to the
+        // review history and the log ahead of the damage line that follows
+        // this call. Prompts and dialogue are dropped, as the silence key
+        // drops them. A line still waiting on an event that has not
+        // finished gives what has happened so far if it can (its Partial),
+        // and is otherwise dropped: nothing here may wait, because the
+        // candle and the character's line are next.
+        // ==================================================================
+        public static void QuietQueueIntoHistory()
+        {
+            _preInitBuffer.Clear();
+            if (Instance == null) return;
+
+            int kept = 0, dropped = 0;
+            foreach (var e in Instance._queue)
+            {
+                if (e == null || e.IsPrompt || e.IsDialogue) { dropped++; continue; }
+
+                bool finished = true;
+                if (e.Ready != null && Time.unscaledTime < e.ReadyDeadline)
+                    try { finished = e.Ready(); } catch { finished = true; }
+
+                string text = null;
+                try
+                {
+                    var source = finished ? e.Provider : e.Partial;
+                    text = source != null ? source() : null;
+                }
+                catch { text = null; }
+                if (string.IsNullOrEmpty(text)) { dropped++; continue; }
+
+                bool drop, speak, keep;
+                EventSettings.Decide(Speech.Resolve(e.Tag), true, out drop, out speak, out keep);
+                if (!keep || drop) { dropped++; continue; }
+
+                ReviewHistory.Add(text);
+                _log?.LogInfo($"IKMA HISTORY (not spoken): {text}");
+                kept++;
+            }
+
+            Instance._queue.Clear();
+            Instance._timer = 0f;
+            Instance._holdoffActive = false;
+            Speech.ForgetOutsideSpeech();
+            if (kept + dropped > 0)
+                _log?.LogInfo($"IKMA QUEUE: the final blow cut {kept + dropped} waiting line(s); {kept} kept in the review history.");
+        }
+
         // Silenced lines at the front of the queue go straight to the history,
         // in order, each at the moment it would have been composed.
         private void FlushSilenced()
@@ -158,7 +235,13 @@ namespace IKMA
                     {
                         bool drop, speak, keep;
                         EventSettings.Decide(Speech.Resolve(e.Tag), true, out drop, out speak, out keep);
-                        if (keep && !drop) ReviewHistory.Add(text);
+                        if (keep && !drop)
+                        {
+                            ReviewHistory.Add(text);
+                            // Session 46: and in the log file, so a bug report
+                            // holds what the history holds.
+                            _log?.LogInfo($"IKMA HISTORY (not spoken): {text}");
+                        }
                     }
                 }
                 node = next;
@@ -211,6 +294,27 @@ namespace IKMA
         /// slow, it is false, and it puts a stale model in the player's head.
         /// </summary>
         public static void EnqueueAction(string message) => Add(message, isAction: true);
+
+        /// <summary>
+        /// A line the player asked for, put at the FRONT of the queue.
+        /// (0.7.436, Session 43.) Zamar pressed Shift+R after the enemy totem
+        /// line and the answer waited behind "Your turn", the upcoming queue
+        /// and the hand read; asked whether a Shift+R answer should jump ahead
+        /// of queued lines: "Jump ahead."
+        ///
+        /// It goes ahead of what is WAITING. It does not cut the line being
+        /// spoken, and nothing behind it is dropped - those lines follow it.
+        /// </summary>
+        public static void EnqueueActionFirst(string message)
+        {
+            if (string.IsNullOrEmpty(message)) return;
+            var entry = new Entry { Provider = () => message, IsAction = true };
+            if (Instance == null) { _preInitBuffer.Enqueue(entry); return; }
+
+            Instance.CancelHoldoffInternal();
+            _log?.LogInfo($"IKMA QUEUE (action, ahead of {Instance._queue.Count} waiting): {message}");
+            Instance._queue.AddFirst(entry);
+        }
 
         /// <summary>
         /// Queue an Info line to be composed when it reaches the front of the
@@ -286,7 +390,8 @@ namespace IKMA
         /// character's voice sting. (Session 13.)
         /// </summary>
         public static void EnqueueActionWhenReady(Func<bool> ready, Func<string> provider,
-                                                  float maxWaitSeconds, string label)
+                                                  float maxWaitSeconds, string label,
+                                                  Func<string> partial = null)
         {
             if (ready == null || provider == null) return;
             var entry = new Entry
@@ -295,6 +400,9 @@ namespace IKMA
                 IsAction      = true,
                 Ready         = ready,
                 ReadyDeadline = Time.unscaledTime + maxWaitSeconds,
+                Partial       = partial,
+                MaxWait       = maxWaitSeconds,
+                HeldSince     = Time.unscaledTime,
             };
             if (Instance == null) { _preInitBuffer.Enqueue(entry); return; }
             Instance.CancelHoldoffInternal();
@@ -591,8 +699,30 @@ namespace IKMA
             // are not documented thread-safe and this project treats the log as
             // a player-facing artifact) and reports a stall. (Session 15.)
             SpeechPump.Tick();
+            PlayConfirmHold.Tick();   // 0.7.439 - every frame, ahead of the empty-queue return
 
             if (_queue.Count == 0) return;
+
+            // 0.7.447 - A HELD LINE'S CLOCK STOPS WHILE THE GAME WAITS ON THE
+            // PLAYER. Zamar's 0.7.446 log: the Hydra's five-strike summary was
+            // given fifteen seconds; the Pack Mule died on strike two, the
+            // Prospector's line held the attack until Space, the fifteen
+            // seconds ran out during that wait, and the summary went out with
+            // only the Mule in it. The Wolf died on strike three and nothing
+            // was ever said about it. The deadline is there for a coroutine
+            // that never finishes, not for a player who has not pressed Space
+            // yet. HoldingUntilInput is a plain bool - no Singleton is asked.
+            if (DialogueAdvancer.HoldingUntilInput)
+            {
+                float now = Time.unscaledTime;
+                foreach (var held in _queue)
+                {
+                    if (held.Ready == null || held.MaxWait <= 0f) continue;
+                    if (now - held.HeldSince > MaxHeldSeconds) continue;
+                    if (held.ReadyDeadline < now + held.MaxWait)
+                        held.ReadyDeadline = now + held.MaxWait;
+                }
+            }
 
             FlushSilenced();   // Session 36
             if (_queue.Count == 0) return;
@@ -618,7 +748,27 @@ namespace IKMA
             {
                 bool ready = true;
                 try { ready = head.Ready(); } catch { ready = true; }
-                if (!ready) return;
+                if (!ready)
+                {
+                    // 0.7.437 - A CHARACTER'S LINE DOES NOT WAIT BEHIND A HELD
+                    // LINE. THIS WAS A SOFTLOCK. Session 43, at the Angler:
+                    // Zamar's Mantis broke a Bait Bucket and "GO FISH." opened
+                    // mid-attack. The multi-strike summary held the head of the
+                    // queue until the attack finished; the attack could not
+                    // finish until the conversation was advanced; Space is
+                    // refused while a character's line is still unspoken; and
+                    // that line sat behind the summary. He had to left click.
+                    //
+                    // A held line waits on the game. A conversation makes the
+                    // game wait on the player. So the conversation goes first,
+                    // and the held line keeps its place for everything else.
+                    //
+                    // 0.7.447 - unless the held line can say what has happened
+                    // so far. Then THAT goes first, and the character after it.
+                    if (FlushPartialBeforeDialogue()) return;
+                    SpeakDialogueBehindHeldHead();
+                    return;
+                }
             }
 
             _holdoffActive = false;
@@ -658,6 +808,90 @@ namespace IKMA
         /// exit regardless. This is tidiness rather than a requirement: it gives
         /// the pump a chance to finish the line in its hand. (Session 15.)
         /// </summary>
+        /// <summary>
+        /// The first character line waiting behind a held head, spoken now.
+        /// (0.7.437.) See the note in Update.
+        /// </summary>
+        private void SpeakDialogueBehindHeldHead()
+        {
+            LinkedListNode<Entry> node = _queue.First != null ? _queue.First.Next : null;
+            while (node != null && !(node.Value.IsDialogue && !node.Value.Silenced))
+                node = node.Next;
+            if (node == null) return;
+
+            var entry = node.Value;
+            if (entry.NotBefore > 0f && Time.unscaledTime < entry.NotBefore) return;
+            if (!Speech.QueueHeadMayGo(false, true, false)) return;
+
+            _queue.Remove(node);
+            _log?.LogInfo("IKMA QUEUE: a character's line goes ahead of a held line - the game is waiting on the conversation.");
+
+            string message;
+            try { message = entry.Provider != null ? entry.Provider() : null; }
+            catch (System.Exception e)
+            {
+                _log?.LogWarning($"IKMA QUEUE: deferred message failed: {e.Message}");
+                return;
+            }
+            if (string.IsNullOrEmpty(message)) return;
+
+            if (!Speech.HandOverFromQueue(message, entry.IsAction, entry.IsDialogue, entry.IsPrompt, entry.Tag))
+                return;
+            _timer = ANNOUNCE_INTERVAL;
+        }
+
+        // A held line's clock is not pushed back for longer than this in
+        // all, so a conversation flag that never clears cannot hold the queue.
+        private const float MaxHeldSeconds = 120f;
+
+        /// <summary>
+        /// 0.7.447 - a character has started talking while the line at the head
+        /// of the queue is still waiting on its event. If that line can say
+        /// what has happened so far, it does so now, and what is left of it
+        /// moves to just behind the character's line. Zamar, Session 45, asked
+        /// where the Mule's death and the pack belong when "DAAAG NAB IT!"
+        /// opens mid-attack: "Before the boss line", the rest of the attack
+        /// after Space.
+        ///
+        /// Lines queued between the two (the pack's cards) keep their place,
+        /// so they are also said before the character. Space stays refused
+        /// until the character's line has been handed over
+        /// (DialoguePending), and nothing ahead of it waits on the attack any
+        /// more, so this cannot bring back the 0.7.437 softlock.
+        /// </summary>
+        private bool FlushPartialBeforeDialogue()
+        {
+            var headNode = _queue.First;
+            var head = headNode != null ? headNode.Value : null;
+            if (head == null || head.Partial == null || head.Silenced) return false;
+
+            LinkedListNode<Entry> node = headNode.Next;
+            while (node != null && !(node.Value.IsDialogue && !node.Value.Silenced))
+                node = node.Next;
+            if (node == null) return false;
+
+            _queue.RemoveFirst();
+            _queue.AddAfter(node, headNode);
+            if (head.ReadyDeadline < Time.unscaledTime + head.MaxWait)
+                head.ReadyDeadline = Time.unscaledTime + head.MaxWait;
+
+            string message = null;
+            try { message = head.Partial(); }
+            catch (System.Exception e)
+            {
+                _log?.LogWarning($"IKMA QUEUE: partial line failed: {e.Message}");
+            }
+
+            _log?.LogInfo(string.IsNullOrEmpty(message)
+                ? "IKMA QUEUE: a character speaks mid-event - the held line had nothing to say yet and now waits behind the conversation."
+                : "IKMA QUEUE: a character speaks mid-event - what has happened so far is said first; the rest waits behind the conversation.");
+
+            if (string.IsNullOrEmpty(message)) return true;
+            if (!Speech.HandOverFromQueue(message, true, false, false, head.Tag)) return true;
+            _timer = ANNOUNCE_INTERVAL;
+            return true;
+        }
+
         private void OnApplicationQuit()
         {
             SpeechPump.Shutdown();

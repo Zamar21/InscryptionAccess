@@ -218,6 +218,16 @@ namespace IKMA
         // ------------------------------------------------------------------
         internal static void OnMaskOff(LeshyBossOpponent leshy)
         {
+            // 0.7.448 - THE PICKAXE WINDOW CLOSES WHEN THE MASK COMES OFF.
+            // The Prospector's own fight closes it at ClearQueue. Leshy's
+            // mask turn has no ClearQueue, so the window stayed open: Zamar's
+            // 0.7.447 log paid the wipe's three bones (and a fourth from a
+            // later death it swallowed) a full turn late, as "Received 4
+            // bones." in the middle of Leshy's next conversation. This runs
+            // when CleanUpCurrentMask's enumerator is created, which is after
+            // ActivateProspector has finished every strike.
+            try { ProspectorNarrator.CloseWipeWindow(); } catch { }
+
             try
             {
                 Resolve();
@@ -312,16 +322,37 @@ namespace IKMA
                 // that has flown away.
                 if (lives == 1) BossNarrator.SetMaskIdentity(null);
 
+                // 0.7.449 - Zamar, Session 45, on "Enemy Mantis has left slot
+                // 4." after the moon came down: "Remove these left lines. The
+                // moon fills the enemy board line fulfills this already."
+                // StartMoonPhase opens with ClearBoard, so every card on
+                // Leshy's side now is about to go; the differ is handed them,
+                // as the Angler's bait phase does (0.7.437).
+                if (lives == 1)
+                {
+                    var cleared = new System.Collections.Generic.List<PlayableCard>();
+                    try
+                    {
+                        var opp = Singleton<BoardManager>.Instance?.OpponentSlotsCopy;
+                        if (opp != null)
+                            for (int i = 0; i < opp.Count; i++)
+                                if (opp[i]?.Card != null) cleared.Add(opp[i].Card);
+                    }
+                    catch { }
+                    BoardWatcher.SuppressDeparturesOf(cleared, "the Moon line covers Leshy clearing his side");
+                }
+
                 if (lives == 2)
                 {
-                    Plugin.Log?.LogInfo("IKMA PROVISIONAL: Leshy deathcard phase.");
+                    // 0.7.448 - his line now, and the only candle line: the
+                    // generic "One of Leshy's three candles is blown out."
+                    // stands down for Leshy (BossNarrator), one event, one line.
                     using (Speech.Event(EventKind.Bosses)) Speech.Result(Vocabulary.LeshyDeathcardPhase());
                     return;
                 }
 
                 if (lives == 1)
                 {
-                    Plugin.Log?.LogInfo("IKMA PROVISIONAL: Leshy moon phase.");
                     using (Speech.Event(EventKind.Bosses)) Speech.Result(Vocabulary.LeshyMoonPhase());
                 }
             }
@@ -561,7 +592,7 @@ namespace IKMA
                     if (displaced != null)
                     {
                         Plugin.Log?.LogInfo(
-                            $"IKMA ANGLER: '{CardReader.CardName(displaced.Info)}' is pushed off " +
+                            $"IKMA ANGLER: '{CardReader.CardName(displaced)}' is pushed off " +
                             $"slot {landingIndex + 1} to make room — its departure rides the hook line.");
                         BoardWatcher.NoteAnnounced(displaced);
                     }
@@ -645,7 +676,7 @@ namespace IKMA
                             {
                                 if (c?.Info == null) continue;
                                 if (!c.Info.HasTrait(Trait.Pelt)) continue;
-                                peltName = CardReader.CardName(c.Info);
+                                peltName = CardReader.CardName(c);
                                 break;
                             }
                     }
@@ -743,6 +774,24 @@ namespace IKMA
     {
         public static void Prefix(LeshyBossOpponent __instance)
             => LeshyNarrator.OnPhaseChange(__instance);
+    }
+
+    // 0.7.448 - the camera, between "I WONDER..." and the moon coming down.
+    // No HarmonyPatch attribute: registered through Plugin.TryPatch.
+    public static class LeshyBossOpponent_StartMoonPhaseAudio_Patch
+    {
+        public static void Prefix()
+        {
+            try
+            {
+                Plugin.Log?.LogInfo("IKMA LESHY: the camera comes up.");
+                using (Speech.Event(EventKind.Bosses)) Speech.Result(Vocabulary.LeshyAimsCamera());
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA LESHY: camera - {e.GetType().Name}: {e.Message}");
+            }
+        }
     }
 
     public static class LeshyBossOpponent_ActivateCurrentMask_Patch

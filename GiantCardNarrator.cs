@@ -71,7 +71,7 @@ namespace IKMA
                         try { card = giant != null ? giant.GetComponent<PlayableCard>() : null; } catch { }
                         if (card == null || card.Info == null) return null;
 
-                        string name = CardReader.CardName(card.Info);
+                        string name = CardReader.CardName(card);
                         if (string.IsNullOrEmpty(name)) return null;
 
                         var held = SlotsHeldBy(card);

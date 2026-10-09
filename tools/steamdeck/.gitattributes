@@ -1,8 +1,0 @@
-# .gitattributes
-# Session 32. These files run on Linux (the Steam Deck). A Windows checkout
-# with core.autocrlf=true would give them CRLF line endings, and bash
-# refuses a script whose lines end in CR ("bad interpreter"). eol=lf keeps
-# them LF on every machine, Windows included.
-*.sh text eol=lf
-*.py text eol=lf
-*.service text eol=lf

@@ -50,15 +50,24 @@ namespace IKMA
             try
             {
                 int willPlace = 0;
+
+                // 0.7.437 - the cards on his side right now are the ones the
+                // clear takes. The "clears his side" line below speaks for
+                // them, so the differ is told not to say each one has left.
+                var cleared = new System.Collections.Generic.List<PlayableCard>();
                 try
                 {
                     var bm = Singleton<BoardManager>.Instance;
                     var opp = bm?.OpponentSlotsCopy;
                     if (opp != null)
                         for (int i = 0; i < opp.Count; i++)
+                        {
                             if (opp[i]?.opposingSlot?.Card != null) willPlace++;
+                            if (opp[i]?.Card != null) cleared.Add(opp[i].Card);
+                        }
                 }
                 catch { }
+                BoardWatcher.SuppressDeparturesOf(cleared, "the Angler cleared his side for the bait");
 
                 string who = BossNarrator.ActorName();
 

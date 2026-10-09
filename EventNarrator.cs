@@ -110,7 +110,7 @@ namespace IKMA
                 try
                 {
                     Plugin.Log?.LogInfo(
-                        $"IKMA HAND: '{CardReader.CardName(card.Info)}' arrived inside a " +
+                        $"IKMA HAND: '{CardReader.CardName(card)}' arrived inside a " +
                         "pack batch — not announced separately.");
                 }
                 catch { }
@@ -198,7 +198,7 @@ namespace IKMA
             if (causeAtArrival != null && TrapCatchNarrator.TryFold(() =>
                 {
                     string n;
-                    try { n = CardReader.CardName(card.Info); }
+                    try { n = CardReader.CardName(card); }
                     catch { return null; }
                     if (string.IsNullOrEmpty(n)) return null;
                     return Vocabulary.Events.AIsAddedToYourHand(Article(n), n) + HandFollowUps.Take(n);
@@ -214,7 +214,7 @@ namespace IKMA
             ProspectorNarrator.EnqueueAfterWipeLine(() =>
             {
                 string name;
-                try { name = CardReader.CardName(card.Info); }
+                try { name = CardReader.CardName(card); }
                 catch { return null; }
 
                 if (string.IsNullOrEmpty(name)) return null;
@@ -427,7 +427,7 @@ namespace IKMA
             try { before = opposing.Card; } catch { }
 
             string sourceName = null;
-            try { sourceName = CardReader.CardName(source.Info); } catch { }
+            try { sourceName = CardReader.CardName(source); } catch { }
 
             int slotNumber = -1;
             try { slotNumber = opposing.Index + 1; } catch { }
@@ -443,7 +443,7 @@ namespace IKMA
                 if (after == null || ReferenceEquals(after, before)) return null;
 
                 string laid = null;
-                try { laid = CardReader.CardName(after.Info); } catch { }
+                try { laid = CardReader.CardName(after); } catch { }
                 if (string.IsNullOrEmpty(laid)) return null;
 
                 string by = (string.IsNullOrEmpty(sourceName) || string.IsNullOrEmpty(abilityName))
@@ -576,7 +576,7 @@ namespace IKMA
             _overkillVictim = null;
 
             string name = null;
-            try { name = CardReader.CardName(victim.Info); } catch { }
+            try { name = CardReader.CardName(victim); } catch { }
             if (string.IsNullOrEmpty(name)) return;
 
             using (Speech.Event(EventKind.HpChanges)) Speech.Commentary(() =>
@@ -682,10 +682,52 @@ namespace IKMA
         // ======================================================================
         internal static void NoteVictory(int excessDamage)
         {
+            _victorySpoken = true;
             Plugin.Log?.LogInfo($"IKMA VICTORY: excess lethal damage {excessDamage}.");
 
             using (Speech.Event(EventKind.Teeth, EventSource.CurrentPlayer)) Speech.Result(
                 Vocabulary.Events.VictoryExtraReceivedOrVictory(excessDamage));
+        }
+
+        // ----------------------------------------------------------------------
+        // A WIN WITH NOTHING SPARE WAS SILENT. (0.7.431.)
+        //
+        // Zamar, Session 41: "I expected to hear Victory after the scale hits 5
+        // and didnt." CombatPhaseManager.DoCombatPhase only calls
+        // VisualizeExcessLethalDamage when excessDamage > 0 (and the opponent
+        // is on its last life and pays teeth), so a win by exactly enough never
+        // reached NoteVictory - and neither did any win the game pays no teeth
+        // for.
+        //
+        // The other half hangs off TurnManager.CleanupPhase, which the game
+        // runs once when a battle is over, win or lose. The patch asks the
+        // game's own PlayerIsWinner() and passes the answer here. If the teeth
+        // line already said "Victory." for this battle, nothing more is said.
+        // ----------------------------------------------------------------------
+        private static bool _victorySpoken;
+
+        /// <summary>
+        /// Session 46 (0.7.451). Accepting a surrender says "Concede accepted.
+        /// Victory." - his line, 0.7.360 - and the battle cleanup then said
+        /// "Victory." a second time (found with the test driver). The accept
+        /// line counts as this battle's Victory.
+        /// </summary>
+        internal static void NoteVictoryAlreadySaid() => _victorySpoken = true;
+
+        internal static void NoteBattleCleanup(bool playerWon)
+        {
+            bool already = _victorySpoken;
+            _victorySpoken = false;
+
+            if (!playerWon) return;
+            if (already)
+            {
+                Plugin.Log?.LogInfo("IKMA VICTORY: battle cleanup - already spoken with the teeth.");
+                return;
+            }
+
+            NoteVictory(0);
+            _victorySpoken = false;
         }
 
         // ----------------------------------------------------------------------
@@ -787,6 +829,7 @@ namespace IKMA
             // quiet — the two orders are not guaranteed.
             string trinket = null;
             try { trinket = SigilNarrator.ClaimItemCreation(name, number); } catch { }
+            if (SigilNarrator.ConsumeSpokenWithPlay()) return;   // 0.7.439 - said with the play confirmation
             if (!string.IsNullOrEmpty(trinket))
             {
                 using (Speech.Event(EventKind.ItemObtained, EventSource.CurrentPlayer)) Speech.Result(trinket);

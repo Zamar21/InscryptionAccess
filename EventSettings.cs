@@ -134,7 +134,7 @@ namespace IKMA
 
             // Cards
             new EventDef { Kind = EventKind.CardDrawn,    Key = "CardDrawn",    Group = "Cards", Label = "Card Drawn" },
-            new EventDef { Kind = EventKind.CardPlayed,   Key = "CardPlayed",   Group = "Cards", Label = "Card Played",   AllowCurrentPlayer = true, DefaultCurrentPlayer = false },
+            new EventDef { Kind = EventKind.CardPlayed,   Key = "CardPlayed",   Group = "Cards", Label = "Card Played",   AllowCurrentPlayer = true },   // 0.7.433, Zamar: on by default (theirs: off). "In STS2 you play WAY more cards than you do in Inscryption. I'd like the play confirmation for us."
             new EventDef { Kind = EventKind.CardObtained, Key = "CardObtained", Group = "Cards", Label = "Card Obtained", AllowCurrentPlayer = true },
 
             // Resources
@@ -188,13 +188,21 @@ namespace IKMA
             var d = Get(tag.Kind);
             if (d == null || d.Announce == null) return;
 
+            // 0.7.432 - A SOURCE WITH NO SWITCH CANNOT BE OFF. Zamar, Session
+            // 42: "When I draw a squirrel or any card, I should hear 'Drew
+            // [card name]'. I didnt." The draw line is tagged Card Drawn /
+            // CurrentPlayer, Card Drawn has no source switches, and this test
+            // used to drop any line whose source the event does not list - so
+            // "Drew X." was never spoken, with nothing in the menu that could
+            // turn it back on. A line is dropped only when its source has a
+            // switch and that switch is off.
             if (tag.Source == EventSource.CurrentPlayer)
             {
-                if (!d.AllowCurrentPlayer || (d.CurrentPlayer != null && !d.CurrentPlayer.Value)) { drop = true; speak = false; keep = false; return; }
+                if (d.CurrentPlayer != null && !d.CurrentPlayer.Value) { drop = true; speak = false; keep = false; return; }
             }
             else if (tag.Source == EventSource.Enemies)
             {
-                if (!d.AllowEnemies || (d.Enemies != null && !d.Enemies.Value)) { drop = true; speak = false; keep = false; return; }
+                if (d.Enemies != null && !d.Enemies.Value) { drop = true; speak = false; keep = false; return; }
             }
 
             speak = d.Announce.Value;

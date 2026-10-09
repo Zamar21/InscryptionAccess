@@ -2647,7 +2647,8 @@ namespace IKMA
             CardInfo info = null;
             try { info = cards[index].Info; } catch { }
 
-            return Vocabulary.CardOrUnreadable(CardReader.DescribeCardInfo(info));
+            // 0.7.433 - two cards of one name in the layout are numbered.
+            return Vocabulary.CardOrUnreadable(CardReader.DeckDisambiguated(cards, index, CardReader.DescribeCardInfo(info)));
         }
 
         /// <summary>
@@ -3115,7 +3116,7 @@ namespace IKMA
                 SelectableCard held = null;
                 try { held = slot.Card; } catch { }
                 if (held == null) continue;
-                try { _sacrificedName = CardReader.CardName(held.Info); } catch { }
+                try { _sacrificedName = CardReader.CardName(held); } catch { }
                 _log?.LogInfo($"IKMA NODE: '{_sacrificedName ?? "?"}' is on the Bone Lord's altar.");
                 return;
             }
@@ -3135,6 +3136,17 @@ namespace IKMA
 
                 _sacrificeAnnounced = true;
                 using (Speech.Event(EventKind.NodeResults)) Speech.Result(Vocabulary.NodeScreens.Sacrificed(_sacrificedName));
+
+                // Session 46 (0.7.452). Found with the test driver: after
+                // "[card] sacrificed." the boon card sat on the altar waiting
+                // for Enter and nothing said so. Zamar's line; the name is the
+                // game's, from the boon asset, as on the card read.
+                string boonName = null;
+                try { boonName = CardReader.BoonName(info.boon); } catch { }
+                if (!string.IsNullOrEmpty(boonName))
+                    using (Speech.Event(EventKind.NodeResults)) Speech.Result(Vocabulary.NodeScreens.BoonCardPlaced(boonName));
+                else
+                    _log?.LogInfo($"IKMA NODE: boon card of type {info.boon} landed with no displayed name - the placed line was not said.");
                 return;
             }
         }
@@ -3159,7 +3171,7 @@ namespace IKMA
                 if (held == null) continue;
 
                 _ritualHost = held;
-                try { _ritualHostName = CardReader.CardName(held.Info); } catch { }
+                try { _ritualHostName = CardReader.CardName(held); } catch { }
                 _ritualHostSigils = SigilsOf(held);
 
                 _log?.LogInfo($"IKMA NODE: ritual host '{_ritualHostName ?? "?"}' " +
@@ -3542,7 +3554,7 @@ namespace IKMA
                 foreach (var slot in _sequencer.GetComponentsInChildren<SelectCardFromDeckSlot>(true))
                 {
                     if (slot?.Card?.Info == null) continue;
-                    string n = CardReader.CardName(slot.Card.Info);
+                    string n = CardReader.CardName(slot.Card);
                     if (!string.IsNullOrEmpty(n)) return n;
                 }
             }
@@ -3837,6 +3849,13 @@ namespace IKMA
             if (_screenName == Vocabulary.Trader)
                 return Vocabulary.NodeScreens.TraderArrival(PeltsOnTable());
 
+            // 0.7.446 - COPY CARD HAS ITS ANSWER. Zamar, Session 42: the Copy
+            // card pick prompt (the game's own text, then "Choose a card.") is
+            // "fine for now". The warning below is the worklist of prompts he
+            // has not ruled on; this one he has, so it no longer logs here.
+            if (_screenName == Vocabulary.NodeScreens.CopyCard)
+                return Vocabulary.NodeScreens.ChooseACard;
+
             _log?.LogWarning(
                 $"IKMA NODE: no card prompt written for slot '{_slotBeingFilled ?? "<none>"}' " +
                 $"on screen '{_screenName ?? "<none>"}'. Ask Zamar for a line.");
@@ -3898,7 +3917,7 @@ namespace IKMA
             // pending commentary, because taking a game action outranks whatever
             // was still being said about the screen you were reading.
             string chosen = null;
-            try { chosen = CardReader.CardName(card.Info); } catch { }
+            try { chosen = CardReader.CardName(card); } catch { }
 
             // THE CUT IS NOT CONDITIONAL ON HAVING A SENTENCE. (0.7.318.)
             //
@@ -4023,7 +4042,17 @@ namespace IKMA
 
             HoverCurrent(parts, reassert: true);
 
-            Speech.Browse(DescribePart(parts[_index]));
+            // Session 51 (0.7.463): "Host Card", "Card to Sacrifice" and
+            // "Begin Ritual" were spoken with no stop after them. Zamar: a
+            // stop after each.
+            Speech.Browse(WithStop(DescribePart(parts[_index])));
+        }
+
+        private static string WithStop(string line)
+        {
+            if (string.IsNullOrEmpty(line)) return line;
+            char last = line[line.Length - 1];
+            return (last == '.' || last == '!' || last == '?' || last == ':' || last == '\u2026') ? line : line + ".";
         }
 
         /// <summary>
@@ -4054,7 +4083,7 @@ namespace IKMA
             // Item.Data is public, and BuildTotemSequencer itself branches on
             // exactly these two casts to decide what it just handed the player.
             string piece = TotemPieceLine(it as SelectableItemSlot);
-            if (!string.IsNullOrEmpty(piece)) return piece;
+            if (!string.IsNullOrEmpty(piece)) return piece + TotemHeadDeckCount(it as SelectableItemSlot);
 
             string ware = TrapperWareLine(it);
             if (!string.IsNullOrEmpty(ware)) return ware;
@@ -4277,6 +4306,44 @@ namespace IKMA
         /// .tribe and TotemBottomData.effectParams.ability and nothing else, so
         /// there is no fourth thing about a piece that is being held back.
         /// </remarks>
+        /// <summary>
+        /// " You have 3 Bird Kin cards in your deck." after a totem head's own
+        /// line, "" for anything that is not a head with a kin.
+        /// </summary>
+        /// <remarks>
+        /// 0.7.433. Zamar, Session 41: "on all the head hovers, can we have it
+        /// say how many cards of that kin type are in your deck right away?"
+        /// and, Session 42, the sentence. Counted with the game's own
+        /// CardInfo.IsOfTribe over RunState.DeckList. Added at the hover only:
+        /// the "You took the Bird head." line is built from TotemPieceLine
+        /// and must not carry it.
+        /// </remarks>
+        private static string TotemHeadDeckCount(SelectableItemSlot slot)
+        {
+            try
+            {
+                var top = slot?.Item?.Data as TotemTopData;
+                if (top == null) return "";
+
+                Tribe tribe = top.prerequisites.tribe;
+                if (tribe == Tribe.None) return "";
+
+                var deck = RunState.DeckList;
+                if (deck == null) return "";
+
+                int n = 0;
+                foreach (var card in deck)
+                    if (card != null && card.IsOfTribe(tribe)) n++;
+
+                return " " + Vocabulary.NodeScreens.YouHaveKinCards(tribe, n);
+            }
+            catch (System.Exception e)
+            {
+                _log?.LogWarning($"IKMA NODE: counting the deck for a totem head threw {e.GetType().Name}.");
+                return "";
+            }
+        }
+
         private static string TotemPieceLine(SelectableItemSlot slot)
         {
             if (slot == null) return "";
@@ -4426,9 +4493,18 @@ namespace IKMA
             // 0.7.424 - a plain card on the table (the rat's Pack Rat) is a
             // card, not an unnamed part: asking PartName for it logged "no
             // approved name... Ask Zamar for a word" for a card the game names.
+            //
+            // 0.7.446 - the same for a carving. A Woodcarver slot is spoken as
+            // the piece in it (TotemPieceLine), never by its Unity name, so the
+            // "no approved name for 'ItemSlot_Left'" warning asked Zamar for a
+            // word nobody would ever hear. The name below is only logged and
+            // compared; a carving slot is not a SelectCardFromDeckSlot.
+            string carving = TotemPieceLine(target as SelectableItemSlot);
             string name = PlainCardLine(target) != null
                 ? (CardReader.BaseCardName((target as SelectableCard)?.Info) ?? "?")
-                : (PartName(target) ?? "?");
+                : !string.IsNullOrEmpty(carving)
+                    ? carving
+                    : (PartName(target) ?? "?");
             _log?.LogInfo($"IKMA NODE: activating '{name}' on {_screenName}.");
 
             // 0.7.361 — CONFIRMING STOMPS THE OPTION LINE. Zamar, at the
@@ -4492,6 +4568,16 @@ namespace IKMA
             // before the click for the same reason the carving line is: the
             // click hands the pair to the slot and the part stops being what
             // it was.
+            // 0.7.435 - THE LIST CHANGES UNDER THE CURSOR HERE, TWICE.
+            // Session 43, Zamar, at the Mycologists: "the pair selection needs
+            // the -1 default thing. Bat should have been first on right arrow."
+            // Pressing the slot swaps the parts for the pairs, and choosing a
+            // pair swaps them back, while _index kept pointing into the old
+            // list: the cursor sat on pair one without saying so and the first
+            // arrow skipped it. Noted before the click, applied after it.
+            bool mycologistsListChanges = _screenName == Vocabulary.Mycologists
+                && (target is SelectCardPairFromDeckSlot || target is SelectableCardPair);
+
             string pairChosenLine = null;
             if (_screenName == Vocabulary.Mycologists && target is SelectableCardPair)
             {
@@ -4541,6 +4627,10 @@ namespace IKMA
                 _log?.LogInfo($"IKMA NODE: {pairChosenLine}");
                 Speech.Confirm(pairChosenLine);
             }
+
+            // 0.7.435 - the standing -1 rule (0.7.249), as for the carving
+            // pick above: a new list starts with the cursor nowhere.
+            if (mycologistsListChanges) _index = NOWHERE;
         }
 
         /// <summary>

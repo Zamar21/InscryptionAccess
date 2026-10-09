@@ -58,6 +58,10 @@ namespace IKMA
     /// </summary>
     internal static class ModSettingsMenu
     {
+        // Not a const on purpose: a constant false would make the compiler
+        // warn that the line below it is unreachable.
+        private static readonly bool NvdaLineEndOffered = false;
+
         private sealed class Node
         {
             internal string Label;
@@ -276,6 +280,22 @@ namespace IKMA
                 root.Children.Add(Choice(Vocabulary.ModSettings.SpeechEngine, SpeechBackends.Choice, true,
                     new[] { SpeechBackendChoice.Auto, SpeechBackendChoice.NVDA, SpeechBackendChoice.LinuxBridge },
                     new[] { Vocabulary.ModSettings.SpeechAuto, Vocabulary.ModSettings.SpeechNvda, Vocabulary.ModSettings.SpeechLinux }));
+            // Session 50 (0.7.462): the two [Speech] switches that were in the
+            // config file only. Both take effect at once: each setting's
+            // SettingChanged handler updates the flag the speech thread reads.
+            // 0.7.464 (Session 52), Zamar: "hide the feature until it is fixed by
+            // NVDA. We dont ship a broken feature, especially not one outside
+            // our control." NVDA 2026.2 loses its speech when IKMA asks it for
+            // the end of a line (see NvdaDirect.cs), so the switch is not
+            // offered in-game. To bring it back, set NvdaLineEndOffered to true.
+            if (NvdaLineEndOffered && SpeechBackends.NvdaLineEnd != null)
+                root.Children.Add(Choice(Vocabulary.ModSettings.NvdaLineEnd, SpeechBackends.NvdaLineEnd, false,
+                    new[] { true, false },
+                    new[] { Vocabulary.ModSettings.NvdaLineEndOn, Vocabulary.ModSettings.NvdaLineEndOff }));
+            if (SpeechBackends.Braille != null)
+                root.Children.Add(Choice(Vocabulary.ModSettings.Braille, SpeechBackends.Braille, false,
+                    new[] { true, false },
+                    new[] { Vocabulary.ModSettings.BrailleOn, Vocabulary.ModSettings.BrailleOff }));
             if (Loc.Setting != null)
             {
                 var langs = new List<IkmaLanguage> { IkmaLanguage.Game };
@@ -303,7 +323,15 @@ namespace IKMA
             if (KeyIn.PadOwned)
             {
                 var pad = Category(Vocabulary.ModSettings.ControllerButtons);
-                foreach (var d in KeyIn.MovableDefaults)
+                // Session 51 (0.7.463), Zamar: the actions in the same order as
+                // every other Mod Settings list ("match other mods settings
+                // lists"), which is by name. The reset row stays last.
+                var movable = new List<KeyIn.Binding>(KeyIn.MovableDefaults);
+                movable.Sort((a, b) => string.Compare(
+                    Vocabulary.ModSettings.ControllerActionName(a.Action),
+                    Vocabulary.ModSettings.ControllerActionName(b.Action),
+                    System.StringComparison.CurrentCulture));
+                foreach (var d in movable)
                 {
                     string action = d.Action;
                     pad.Children.Add(new Node { LabelNow = () => ControllerRow(action), Run = () => StartListening(action) });

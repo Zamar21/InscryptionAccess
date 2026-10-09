@@ -240,7 +240,7 @@ namespace IKMA
             try
             {
                 var pc = ship != null ? ship.GetComponent<PlayableCard>() : null;
-                if (pc?.Info != null) _mutinyShipName = CardReader.CardName(pc.Info);
+                if (pc?.Info != null) _mutinyShipName = CardReader.CardName(pc);
                 foreach (var s in Singleton<BoardManager>.Instance.PlayerSlotsCopy)
                 {
                     var c = BoardReader.LiveCard(s);
@@ -313,7 +313,7 @@ namespace IKMA
                     var c = BoardReader.LiveCard(s);
                     var ship = c != null ? c.GetComponent<GiantShip>() : null;
                     if (ship == null) continue;
-                    name = CardReader.CardName(c.Info);
+                    name = CardReader.CardName(c);
                     int left = SkeletonsOnDeck(ship);
                     if (left >= 0) onDeck = left;
                     break;
@@ -344,7 +344,7 @@ namespace IKMA
                     if (c?.Info == null || before.Contains(c)) continue;
                     if (c.Info.name != "SkeletonPirate") continue;
                     slots.Add(i + 1);
-                    if (name == null) name = CardReader.CardName(c.Info);
+                    if (name == null) name = CardReader.CardName(c);
                     BoardWatcher.NoteAnnounced(c);
                 }
             }

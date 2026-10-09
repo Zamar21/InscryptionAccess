@@ -292,6 +292,24 @@ namespace IKMA
             NoteFirstSighting(ability, silent);
             if (silent || card == null) return;
 
+            // Session 51 (0.7.463). "Hrokkall's Battery Bearer ability
+            // triggers." with nothing after it. Zamar: "I dont believe this
+            // ability triggers, it just adds an extra charge for tech decks so
+            // saying it triggers sounds incorrect to me." GainBattery adds an
+            // energy cell, and only Act 3's table shows energy
+            // (Part3ResourcesManager); anywhere else there is nothing to see,
+            // so nothing is said.
+            try
+            {
+                if (ability == Ability.GainBattery
+                    && !(Singleton<ResourcesManager>.Instance is Part3ResourcesManager))
+                {
+                    Plugin.Log?.LogInfo("IKMA SIGIL: Battery Bearer outside Act 3 - not spoken (no energy is shown).");
+                    return;
+                }
+            }
+            catch { }
+
             // The same sigil on the same card inside the window is one event.
             float now = 0f;
             try { now = Time.time; } catch { }
@@ -385,7 +403,7 @@ namespace IKMA
             System.Func<string> line = () =>
             {
                 string name = null;
-                try { name = CardReader.CardName(capturedCard.Info); } catch { }
+                try { name = CardReader.CardName(capturedCard); } catch { }
                 if (string.IsNullOrEmpty(name)) return null;
 
                 string sigil = SigilName(capturedAbility);
@@ -533,8 +551,85 @@ namespace IKMA
                 return;
             }
 
-            using (Speech.Event(EventKind.Powers)) Speech.Result(line);
+            // 0.7.441 - Sharp Quills answering a multi-strike attack is said
+            // inside that attack's summary line. Same words, composed by the
+            // same closure; only where they are spoken changes. See
+            // MultiStrikeNarrator.TryFoldQuills.
+            if (capturedAbility == Ability.Sharp &&
+                MultiStrikeNarrator.TryFoldQuills(capturedCard, line))
+                return;
+
+            // ==================================================================
+            // TWO IDENTICAL TRIGGER LINES ARE ONE LINE. (Session 51, 0.7.463.)
+            //
+            // Zamar, "ok" to PROVISIONAL_LINES 3: any ability whose two lines
+            // would be word for word the same is said once, "Both [card]'s
+            // [ability] abilities trigger." ("All" for three or more).
+            //
+            // NOTHING IS HELD BACK TO DO IT. The first card's line is queued as
+            // it always was. If a second card of the same name fires the same
+            // sigil while that line is still WAITING in the queue, the second
+            // joins it and the one line says "Both". If the first has already
+            // been composed, the second is said on its own, exactly as before.
+            // So no line is later than it was (his word on the fizzle version:
+            // "Those can be individual if the timing is different").
+            //
+            // Only the bare "X's Y ability triggers." line: one with a clause
+            // or a flavour sentence has an ending of its own and stays single.
+            // ==================================================================
+            string groupName = null;
+            try { groupName = CardReader.CardName(capturedCard); } catch { }
+            bool plain = !string.IsNullOrEmpty(groupName)
+                         && !Vocabulary.SigilTriggerHasOwnEnding(SigilName(capturedAbility));
+
+            var open = _openGroup;
+            if (plain && open != null && !open.Composed
+                && open.Ability == capturedAbility && open.Name == groupName
+                && UnityEngine.Time.unscaledTime - open.OpenedAt < GROUP_JOIN_SECONDS)
+            {
+                open.Count++;
+                Plugin.Log?.LogInfo(
+                    $"IKMA SIGIL: a second '{groupName}' fired {SigilName(capturedAbility)} while the first line was waiting - one line for {open.Count}.");
+                return;
+            }
+
+            TriggerGroup mine = plain
+                ? new TriggerGroup { Ability = capturedAbility, Name = groupName, OpenedAt = UnityEngine.Time.unscaledTime }
+                : null;
+            _openGroup = mine;
+
+            var single = line;
+            using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
+            {
+                if (mine != null)
+                {
+                    mine.Composed = true;
+                    if (mine.Count >= 2)
+                    {
+                        string sigil = SigilName(mine.Ability);
+                        if (!string.IsNullOrEmpty(sigil))
+                            return Vocabulary.SeveralSigilsTrigger(mine.Count, mine.Name, sigil);
+                    }
+                }
+                return single();
+            });
         }
+
+        // See the block above. A waiting line can be joined for this long; a
+        // line that never reaches the front (its event switched off) must not
+        // swallow every later trigger of the same kind.
+        private const float GROUP_JOIN_SECONDS = 4f;
+
+        private sealed class TriggerGroup
+        {
+            public Ability Ability;
+            public string  Name;
+            public int     Count = 1;
+            public bool    Composed;
+            public float   OpenedAt;
+        }
+
+        private static TriggerGroup _openGroup;
 
         /// <summary>
         /// Sigils whose line belongs with the turn's result rather than with the
@@ -672,23 +767,16 @@ namespace IKMA
                 if (card == null) return;
 
                 string name = null;
-                try { name = CardReader.CardName(card.Info); } catch { }
+                try { name = CardReader.CardName(card); } catch { }
                 if (string.IsNullOrEmpty(name)) return;
 
                 Plugin.Log?.LogInfo($"IKMA SIGIL: '{name}' dives (Submerge.OnTurnEnd).");
 
-                var captured = card;
-                string captuedName = name;
-                using (Speech.Event(EventKind.Powers)) Speech.Result(delegate
-                {
-                    // Gone from the board between the dive starting and this
-                    // line reaching the front of the queue: say nothing rather
-                    // than report a card that is not there.
-                    try { if (captured == null || captured.Dead) return null; }
-                    catch { return null; }
-
-                    return Vocabulary.WaterborneDive(captuedName);
-                });
+                // 0.7.436 - ONE LINE PER TURN END, NOT ONE PER CARD. Session 43,
+                // Zamar, on two Kingfishers: "Those two should have been
+                // grouped." The line is reserved by the first diver and held
+                // until every diver is under. See DiveBatch below.
+                DiveBatch.Note(card, name);
             }
             catch (System.Exception e)
             {
@@ -696,6 +784,163 @@ namespace IKMA
             }
         }
     }
+
+    // =========================================================================
+    // THE DIVE, GROUPED. (0.7.436, Session 43.)
+    //
+    // Zamar: "Those two should have been grouped. '[Card name] and [card
+    // name]'s Waterborne abilities trigger in slots [x] and [x], they dive
+    // underwater...'"
+    //
+    // The game dives its cards one after another at turn end, each coroutine
+    // about half a second behind the last, so one prefix per card made one
+    // line per card. Now the FIRST diver reserves a single queue slot and the
+    // rest only add their names to it.
+    //
+    // WHO ELSE IS GOING UNDER is the game's own answer, asked once when the
+    // slot is reserved: Submerge.RespondsToTurnEnd (PUBLIC) for every card on
+    // the same side. The line is held until each of those is face down or
+    // gone, which is after every one of their prefixes has run. Nothing is
+    // asked of a Singleton per frame - the cards are held by reference.
+    //
+    // One diver still says his 0.7.266 sentence, unchanged.
+    // =========================================================================
+    internal static class DiveBatch
+    {
+        private static readonly List<PlayableCard> _divers = new List<PlayableCard>();
+        private static readonly List<string> _names = new List<string>();
+        private static List<PlayableCard> _expected;
+        private static bool _pending;
+        private static float _reservedAt = -99f;
+
+        // The queue gives up waiting after MaxWait and speaks what it has.
+        // StaleAfter is longer, and covers a reserved line that was cut from
+        // the queue (the silence key, a scene change) and so never composed:
+        // without it the batch would stay open and no dive would speak again.
+        private const float MaxWait = 6f;
+        private const float StaleAfter = 10f;
+
+        internal static void Note(PlayableCard card, string name)
+        {
+            if (_pending && Time.unscaledTime - _reservedAt > StaleAfter) Reset();
+
+            _divers.Add(card);
+            _names.Add(name);
+            if (_pending) return;
+
+            _pending = true;
+            _reservedAt = Time.unscaledTime;
+            _expected = ExpectedDivers(card);
+
+            using (Speech.Event(EventKind.Powers)) Speech.ResultWhenReady(
+                AllUnder, Compose, MaxWait,
+                "[Waterborne dive - held until every diving card is under]");
+        }
+
+        /// <summary>Every card on this card's side the game says dives now.</summary>
+        private static List<PlayableCard> ExpectedDivers(PlayableCard first)
+        {
+            var expected = new List<PlayableCard> { first };
+            try
+            {
+                // Asked once per turn end, on a diving card's own trigger, so
+                // the board is known to be there.
+                var board = Singleton<BoardManager>.Instance;
+                if (board == null) return expected;
+
+                bool playerSide = !first.OpponentCard;
+                foreach (var slot in board.GetSlots(playerSide))
+                {
+                    var other = slot != null ? slot.Card : null;
+                    if (other == null || other == first || other.Dead) continue;
+
+                    var dive = other.GetComponent<Submerge>();
+                    if (dive != null && dive.RespondsToTurnEnd(playerSide)) expected.Add(other);
+                }
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA SIGIL: dive batch - {e.GetType().Name}: {e.Message}");
+            }
+            return expected;
+        }
+
+        private static bool AllUnder()
+        {
+            try
+            {
+                if (_expected == null) return true;
+                foreach (var c in _expected)
+                {
+                    if (c == null || c.Dead) continue;
+                    if (!c.FaceDown) return false;
+                }
+            }
+            catch { }
+            return true;
+        }
+
+        private static string Compose()
+        {
+            var cards = new List<PlayableCard>(_divers);
+            var names = new List<string>(_names);
+            Reset();
+
+            // Gone from the board between the dive starting and this line
+            // reaching the front of the queue: left out rather than reported
+            // as a card that is not there.
+            var slots = new List<int>();
+            var kept  = new List<string>();
+            for (int i = 0; i < cards.Count; i++)
+            {
+                try
+                {
+                    var c = cards[i];
+                    if (c == null || c.Dead) continue;
+
+                    // Kept in slot order, left to right.
+                    int slot = c.Slot != null ? c.Slot.Index + 1 : 0;
+                    int at = 0;
+                    while (at < slots.Count && slots[at] <= slot) at++;
+                    slots.Insert(at, slot);
+                    kept.Insert(at, names[i]);
+                }
+                catch { }
+            }
+
+            if (kept.Count == 0) return null;
+            if (kept.Count == 1 || slots.Contains(0)) 
+            {
+                // One diver, or a slot that could not be read: his one-card
+                // sentence, once per card, which names no slot.
+                if (kept.Count == 1) return Vocabulary.WaterborneDive(kept[0]);
+                var each = new List<string>();
+                foreach (var n in kept) each.Add(Vocabulary.WaterborneDive(n));
+                return string.Join(" ", each.ToArray());
+            }
+
+            var slotWords = new List<string>();
+            foreach (int s in slots) slotWords.Add(s.ToString());
+
+            string lastName = kept[kept.Count - 1];
+            string lastSlot = slotWords[slotWords.Count - 1];
+            kept.RemoveAt(kept.Count - 1);
+            slotWords.RemoveAt(slotWords.Count - 1);
+
+            return Vocabulary.WaterborneDiveGroup(
+                Vocabulary.AndList(kept, lastName),
+                Vocabulary.AndList(slotWords, lastSlot));
+        }
+
+        private static void Reset()
+        {
+            _divers.Clear();
+            _names.Clear();
+            _expected = null;
+            _pending = false;
+        }
+    }
+
     /// <summary>
     /// Which sigil is resolving, and whether the game negated it. (0.7.305.)
     /// </summary>

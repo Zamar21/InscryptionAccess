@@ -139,6 +139,33 @@ namespace IKMA
             try { name = info.DisplayedNameLocalized; } catch { }
             if (string.IsNullOrEmpty(name)) return name;
 
+            // ==================================================================
+            // SESSION 46 - THE IJIRAQ IN DISGUISE AT A CARD CHOICE. (0.7.453.)
+            //
+            // The game's Shapeshifter shows the Ijiraq at a card choice as
+            // another rare card: red glowing eyes, and a name with a question
+            // mark on the end ("Mole Man?") from a card mod whose singletonId
+            // is Shapeshifter.MOD_ID (PUBLIC const). That mod is the game's own
+            // mark, and a sighted player reads it off the card. Zamar's word
+            // for it: "Strange Mole Man".
+            // ==================================================================
+            // Session 47 (0.7.455), Zamar: "Anywhere that ? is visible should
+            // be called Unusual." The game prints the question mark in two
+            // places: the card choice mark above, and the card the unlock
+            // screens show for the Ijiraq (Ijiraq_UnlockScreen, displayedName
+            // "Mole Man?").
+            try
+            {
+                if (HasShapeshifterMark(info) || info.name == IJIRAQ_UNLOCK_CARD)
+                {
+                    string plain = name.EndsWith("?", System.StringComparison.Ordinal)
+                        ? name.Substring(0, name.Length - 1).TrimEnd()
+                        : name;
+                    return Vocabulary.Cards.Unusual(plain);
+                }
+            }
+            catch { }
+
             bool fused = false;
             try
             {
@@ -243,6 +270,155 @@ namespace IKMA
             return string.IsNullOrEmpty(desc) ? null : desc;
         }
 
+        // ======================================================================
+        // THE SAME NUMBERS IN A DECK VIEW. (0.7.433.)
+        //
+        // Zamar, Session 42: "I have two Mantis gods and two pack rats. Can we
+        // also add the numbering system here for some extra clarity? Pack Rat
+        // 1, Pack Rat 2, Pack Rat 3, etc. Only when there's more than one card
+        // name in your deck views."
+        //
+        // Same rule as the hand: a lone card keeps its plain name, and the
+        // number is the card's place among its namesakes in the order the
+        // arrows reach them. Counted from the list being browsed, every read.
+        // The number goes straight after the name at the front of the one
+        // composer's sentence, so "Pack Rat. Cost..." becomes "Pack Rat 2.
+        // Cost..." and nothing else about the read changes.
+        // ======================================================================
+        // ======================================================================
+        // SESSION 46 - THE IJIRAQ IN DISGUISE IN THE DECK VIEW. (0.7.453.)
+        //
+        // In the deck view the Ijiraq is drawn as one of the OTHER cards in the
+        // deck, with red glowing eyes (Shapeshifter.OnShownInDeckReview). The
+        // card object then carries that other card's own CardInfo, so nothing
+        // in the info says which of two "Moles" is the impostor. What does is
+        // the Shapeshifter component the game leaves on the card object while
+        // its info is no longer the Ijiraq's. GetComponent on a card already in
+        // hand, never a scene search.
+        //
+        // ONLY WHERE A SIGHTED PLAYER CAN SEE IT. The red eyes are shown in the
+        // deck view and at a card choice. A card list that picks a card for a
+        // node (campfire, altar, the stones) disguises it WITHOUT the eyes, and
+        // in the hand during a battle there is no mark at all - there the
+        // disguise is the point of the card, and IKMA reads what is shown.
+        // ======================================================================
+        internal static bool IsDisguisedIjiraq(Card card)
+        {
+            try
+            {
+                if (card == null || card.Info == null) return false;
+                if (card.Info.name == "Ijiraq") return false;
+                return card.GetComponent<Shapeshifter>() != null;
+            }
+            catch { return false; }
+        }
+
+        private const string IJIRAQ_UNLOCK_CARD = "Ijiraq_UnlockScreen";
+
+        internal static bool HasShapeshifterMark(CardInfo info)
+        {
+            try
+            {
+                var marks = info?.Mods;
+                if (marks == null) return false;
+                for (int i = 0; i < marks.Count; i++)
+                    if (marks[i] != null && marks[i].singletonId == Shapeshifter.MOD_ID) return true;
+            }
+            catch { }
+            return false;
+        }
+
+        // ======================================================================
+        // SESSION 47 - A CARD'S NAME, ASKED OF THE CARD. (0.7.455, 0.7.456.)
+        //
+        // 0.7.455 made a disguised Ijiraq "Unusual [name]" wherever a card
+        // object was named - the hand, the draw and play lines, the node pick
+        // lists. Zamar, the same day: "Incorrect. Only call it unusual if the
+        // sighted indication is also there. No unfair advantages with our
+        // mod." So this overload says exactly what CardName(CardInfo) says.
+        // It stays because 88 call sites now hand it the card, and the card is
+        // the only thing that can tell a disguise from the real one.
+        //
+        // WHERE THE MARK IS SHOWN, and "Unusual" is said:
+        //   the deck view (red eyes)       DeckDisambiguated(redEyesShown: true)
+        //   a card choice (red eyes, "?")  CardName(CardInfo), the card mod
+        //   the unlock screens ("?")       CardName(CardInfo), Ijiraq_UnlockScreen
+        //   the moment it is played        RevealedDisguiseName, below
+        //
+        // ReferenceEquals, not ==: a card Unity has destroyed still has its
+        // Info, and death lines name cards after they are gone.
+        // ======================================================================
+        public static string CardName(Card card)
+        {
+            if (ReferenceEquals(card, null)) return null;
+
+            CardInfo info = null;
+            try { info = card.Info; } catch { }
+
+            return CardName(info);
+        }
+
+        /// <summary>
+        /// "Unusual [name]" for a disguised Ijiraq, the plain name for any
+        /// other card. ONLY for the two lines spoken as the disguise comes
+        /// off on the board: the transform line (his Session 46 sentence) and
+        /// a sigil of the disguise firing in that same moment (his Session 47
+        /// answer, "Strange pack rat").
+        /// </summary>
+        internal static string RevealedDisguiseName(Card card)
+        {
+            string name = CardName(card);
+            if (string.IsNullOrEmpty(name)) return name;
+
+            try
+            {
+                if (IsDisguisedIjiraq(card) && !HasShapeshifterMark(card.Info))
+                    return Vocabulary.Cards.Unusual(name);
+            }
+            catch { }
+            return name;
+        }
+
+        internal static string DeckDisambiguated(System.Collections.Generic.List<SelectableCard> cards, int index, string described,
+                                                 bool redEyesShown = false)
+        {
+            if (cards == null || index < 0 || index >= cards.Count || string.IsNullOrEmpty(described))
+                return described;
+
+            try
+            {
+                CardInfo own = null;
+                try { own = cards[index].Info; } catch { }
+
+                string name = CardName(own);
+                if (string.IsNullOrEmpty(name) || !described.StartsWith(name, System.StringComparison.Ordinal))
+                    return described;
+
+                // Session 46: in the deck view the impostor is "Strange Mole",
+                // and it is not one of the Moles being numbered.
+                if (redEyesShown && IsDisguisedIjiraq(cards[index]))
+                    return Vocabulary.Cards.Unusual(name) + described.Substring(name.Length);
+
+                int total = 0;
+                int mine  = 0;
+
+                for (int i = 0; i < cards.Count; i++)
+                {
+                    CardInfo info = null;
+                    try { info = cards[i].Info; } catch { }
+                    if (info == null || CardName(info) != name) continue;
+                    if (redEyesShown && IsDisguisedIjiraq(cards[i])) continue;
+
+                    total++;
+                    if (i == index) mine = total;
+                }
+
+                if (total < 2 || mine == 0) return described;
+                return name + " " + mine + described.Substring(name.Length);
+            }
+            catch { return described; }
+        }
+
         internal static string HandDisambiguated(PlayableCard card, string name)
         {
             if (card == null || string.IsNullOrEmpty(name)) return name;
@@ -260,7 +436,7 @@ namespace IKMA
                 foreach (var c in hand.CardsInHand)
                 {
                     if (c?.Info == null) continue;
-                    if (CardReader.CardName(c.Info) != name) continue;
+                    if (CardReader.CardName(c) != name) continue;
 
                     total++;
                     if (ReferenceEquals(c, card)) mine = total;
@@ -345,7 +521,7 @@ namespace IKMA
             EnsureCacheReady();
 
             var info = card.Info;
-            string name = HandDisambiguated(card, CardReader.CardName(info));
+            string name = HandDisambiguated(card, CardReader.CardName(card));
 
             // Session 9 (ability matrix): read stats off the LIVE PlayableCard,
             // not off CardInfo. CardInfo.Attack is the printed base value; it
@@ -400,6 +576,7 @@ namespace IKMA
                     if (!NegatedOnCard(card, ability) && seenAbilities.Add(ability))
                     {
                         string n = AbilityNameWithDirection(ability, card);
+                        n = WithHatchProgress(ability, n);   // 0.7.443
                         if (n != null) baseSigils.Add(n);
                     }
                 }
@@ -546,6 +723,7 @@ namespace IKMA
                     // The three reads that DO have a live card go through
                     // AbilityNameWithDirection.
                     string n = GetAbilityName(ability);
+                    n = WithHatchProgress(ability, n);   // 0.7.443
                     if (n != null) sigils.Add(n);
                 }
             }
@@ -737,6 +915,100 @@ namespace IKMA
             return names;
         }
 
+        // ----------------------------------------------------------------------
+        // THE CURIOUS EGG'S LIGHTS. (0.7.443.)
+        //
+        // Zamar, Session 44, on "Curious Egg. Rare. Cost: 1 bone. 2, 1.
+        // Ability: Finical Hatchling.": "Update it to '... Ability: Finical
+        // Hatchling, Powers met: [x], [x], and [x], Health met: [x] and [x],
+        // Kins met: [x]'. I want the call out to read the deck's current
+        // progress towards these milestones."
+        //
+        // A SIGHTED PLAYER SEES THIS ON THE CARD. The egg's portrait is a
+        // HydraEggPortrait (HydraEggPortrait.cs:17): five lights for power,
+        // five for health, and a row for kin, each switched on by the same
+        // three PUBLIC static questions asked here:
+        //   HydraEgg.PowerStatInDeck(n)   n = 1..5   HydraEgg.cs:11
+        //   HydraEgg.HealthStatInDeck(n)  n = 1..5   HydraEgg.cs:16
+        //   HydraEgg.GetNumTribesInDeck()            HydraEgg.cs:21
+        // and they are the same three the sigil itself asks before it
+        // hatches (RespondsToDrawn, HydraEgg.cs:39). So nothing is worked out
+        // here: which powers and healths are lit, and HOW MANY kin lights.
+        // The game does not say which kins, only the count, so the count is
+        // what is spoken.
+        //
+        // IN THE TWO FULL CARD READS ONLY (a live card, and a CardInfo: the
+        // hand, the deck view, the choice screens). The short board and
+        // queue reads keep the bare sigil name. Outside a run the questions
+        // throw (there is no deck) and the name is returned as it was.
+        // ----------------------------------------------------------------------
+        // How many kins the egg needs. A literal in the game, not a reading:
+        // HydraEgg.RespondsToDrawn ends "return GetNumTribesInDeck() >= 5;"
+        // (HydraEgg.cs:49), and the portrait has five kin lights. If that
+        // ever becomes a variable, read it instead.
+        private const int HatchKinsNeeded = 5;
+
+        internal static string WithHatchProgress(Ability ability, string name)
+        {
+            if (ability != Ability.HydraEgg || string.IsNullOrEmpty(name)) return name;
+
+            try
+            {
+                var powers = new List<string>();
+                var health = new List<string>();
+                for (int i = 1; i <= 5; i++)
+                {
+                    if (HydraEgg.PowerStatInDeck(i))  powers.Add(i.ToString());
+                    if (HydraEgg.HealthStatInDeck(i)) health.Add(i.ToString());
+                }
+                int kins = HydraEgg.GetNumTribesInDeck();
+
+                return name + Vocabulary.Sigils.HatchProgress(
+                    MetList(powers), MetList(health), kins, HatchKinsNeeded);
+            }
+            catch { return name; }
+        }
+
+        // "1", "1 and 2", "1, 2, and 3" - the one list joiner - or the
+        // provisional "none".
+        private static string MetList(List<string> items)
+        {
+            if (items.Count == 0) return Vocabulary.Sigils.NoneMet;
+            string last = items[items.Count - 1];
+            items.RemoveAt(items.Count - 1);
+            return Vocabulary.AndList(items, last);
+        }
+
+        /// <summary>
+        /// The Sprinter family's arrow as the game holds it: true = left,
+        /// false = right, null = no such sigil on this card or the field did
+        /// not resolve. (0.7.443.) Same field DescribeMoveDirection reads;
+        /// that one returns words for a card read, this one the bare answer.
+        /// </summary>
+        internal static bool? StrafeMovingLeft(PlayableCard card)
+        {
+            if (card == null) return null;
+            try
+            {
+                var strafe = card.GetComponent<Strafe>();
+                if (strafe == null) return null;
+
+                if (!_movingLeftResolved)
+                {
+                    _movingLeftResolved = true;
+                    _movingLeftField = typeof(Strafe).GetField(
+                        "movingLeft", BindingFlags.Instance | BindingFlags.NonPublic);
+
+                    if (_movingLeftField == null)
+                        _log?.LogInfo("IKMA MOVE: Strafe.movingLeft did not resolve — direction stays silent.");
+                }
+                if (_movingLeftField == null) return null;
+
+                return (bool)_movingLeftField.GetValue(strafe);
+            }
+            catch { return null; }
+        }
+
         internal static string DescribeMoveDirection(PlayableCard card)
         {
             if (card == null) return "";
@@ -766,6 +1038,22 @@ namespace IKMA
                 if (_movingLeftField == null) return "";
 
                 bool movingLeft = (bool)_movingLeftField.GetValue(strafe);
+
+                // Session 48 (0.7.458). The move line said "It will move left
+                // next." and this read said "moving right" for the same card
+                // at the end of the row, because the game only turns its
+                // arrow when the next move starts. Zamar: "Make it whichever
+                // is actually accurate." With no slot beyond it the card can
+                // only go the other way (Strafe.DoStrafe), so that is what is
+                // said - the same test SigilNarrator.NextStrafeDirection makes.
+                try
+                {
+                    var bm = Singleton<BoardManager>.Instance;
+                    if (bm != null && bm.GetAdjacent(card.Slot, movingLeft) == null)
+                        movingLeft = !movingLeft;
+                }
+                catch { }
+
                 return Vocabulary.Cards.MovingLeftOrMovingRight(movingLeft);
             }
             catch (System.Exception e)
@@ -793,7 +1081,7 @@ namespace IKMA
                 {
                     _strafeRouteWarned = true;
                     _log?.LogInfo(
-                        $"IKMA MOVE: {CardReader.CardName(card.Info)} prints a strafe sigil but no Strafe " +
+                        $"IKMA MOVE: {CardReader.CardName(card)} prints a strafe sigil but no Strafe " +
                         "component was found on it — GetComponent is the wrong route.");
                     return;
                 }
@@ -1440,6 +1728,15 @@ namespace IKMA
         {
             try
             {
+                // 0.7.448 - A SPENT SHIELD IS NOT ON THE CARD ANY MORE. Once
+                // Armored has taken its one hit, PlayableCard.
+                // UpdateFaceUpOnBoardEffects adds DeathShield to
+                // Status.hiddenAbilities and re-renders: the icon is gone for
+                // a sighted player. Zamar's 0.7.447 log still read "Stinky and
+                // Armored and Fecundity" off the Skunk that had lost it.
+                if (ability == Ability.DeathShield && card?.Status?.hiddenAbilities != null
+                    && card.Status.hiddenAbilities.Contains(Ability.DeathShield)) return true;
+
                 var mods = card?.TemporaryMods;
                 if (mods == null) return false;
                 foreach (var m in mods)
@@ -1469,6 +1766,15 @@ namespace IKMA
             SpeechPump.Say(string.Empty, true);
             InterruptCount++;
             Speech.NoteInterrupted();
+
+            // 0.7.435 - A CUT EXPLANATION IS NOT "STILL THE LAST THING SAID".
+            // Session 43: Zamar pressed Shift+R after the enemy totem line; the
+            // answer was queued behind the turn-start lines, he pressed Ctrl,
+            // and every Shift+R after that was refused by the repeat guard -
+            // which only another spoken line used to clear. The guard exists
+            // so a repeat press cannot cut the explanation off; once speech
+            // has been cut there is no explanation in the air to protect.
+            _lastLineWasAbilityLookup = false;
         }
 
         /// <summary>

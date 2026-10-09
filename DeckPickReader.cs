@@ -274,7 +274,7 @@ namespace IKMA
             }
 
             string name = "?";
-            try { name = CardReader.CardName(card.Info); } catch { }
+            try { name = CardReader.CardName(card); } catch { }
             Plugin.Log?.LogInfo($"IKMA DECKPICK: choosing '{name}' (card {_index + 1} of {cards.Count}).");
 
             ReleaseHover();
@@ -289,7 +289,7 @@ namespace IKMA
         {
             CardInfo info = null;
             try { info = cards[index].Info; } catch { }
-            return Vocabulary.CardOrUnreadable(CardReader.DescribeCardInfo(info));
+            return Vocabulary.CardOrUnreadable(CardReader.DeckDisambiguated(cards, index, CardReader.DescribeCardInfo(info)));   // 0.7.433
         }
 
         // Visual sync: the raised card is the one being read.

@@ -133,6 +133,9 @@ namespace IKMA
         /// Starts false: IKMA speaks keyboard keys until a pad is used.
         /// </summary>
         public static bool LastWasPad { get; private set; }
+#if IKMA_DEV
+        internal static bool DevKeyboardPress;
+#endif
 
         // ------------------------------------------------------------------
         // ZAMAR'S MAP - IKMAccess\docs\GAMEPAD_MAP.md (decided Session 33,
@@ -247,6 +250,13 @@ namespace IKMA
             // free in this map.
             new Binding(Chord.Both, PadInput.PadButton.Down, KeyCode.DownArrow, ctrl: true, action: "HistoryOlder"),
             new Binding(Chord.Both, PadInput.PadButton.Up,   KeyCode.UpArrow,   ctrl: true, action: "HistoryNewer"),
+
+            // Session 51 (0.7.463), Zamar: the review history as a list (Y on
+            // the keyboard) had no button. "give it an empty one. not on the
+            // RB chord though. Can go on the LB + RB chord if needed, like the
+            // log send, but ideally it's easier to get to." LB + R3 was empty,
+            // and R3 alone is Silence, so a missed chord only silences speech.
+            new Binding(Chord.LB, PadInput.PadButton.R3, KeyCode.Y, action: "HistoryList"),
 
             // Session 36, Zamar: R3 is the silence key (the keyboard's is a
             // Ctrl tap, SilenceKey.cs). R3 arrives as a token key.
@@ -487,8 +497,17 @@ namespace IKMA
             // a queued line came out with key names. So the keyboard is asked
             // key by key, and only on a frame where something went down.)
             bool wasPad = LastWasPad;
+#if IKMA_DEV
+            // Session 48: the test driver's "key" verb is a keyboard press
+            // too. Without this a driver run that had pressed one pad button
+            // stayed on pad words for good.
+            bool devKey = DevKeyboardPress;
+            DevKeyboardPress = false;
+#else
+            const bool devKey = false;
+#endif
             if (PadInput.AnyPressed) LastWasPad = true;
-            else if (Input.anyKeyDown && KeyboardKeyDown()) LastWasPad = false;
+            else if (devKey || (Input.anyKeyDown && KeyboardKeyDown())) LastWasPad = false;
 
             // THE SWITCH IS SPOKEN. (Session 34, Zamar: "When changing to
             // gamepad controls say 'Gamepad.' When changing to keyboard from

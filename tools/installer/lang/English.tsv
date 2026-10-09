@@ -146,3 +146,9 @@ Review history, older
 # ControllerMap.ControllerMap (added by sync_lang_keys.py)
 Review history, newer	
 Silence speech	
+NVDA line timing	
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	
+Estimated: IKMA guesses how long each line takes to read.	
+Braille display	
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	
+Off: nothing is sent to a braille display.	

@@ -359,7 +359,15 @@ namespace IKMA
             if (_settle < ANNOUNCE_SETTLE) return;
 
             _announced = true;
-            _index = 0;
+
+            // THE CURSOR STARTS NOWHERE HERE TOO. (0.7.442.) Zamar, Session
+            // 44: "the trader sequence in the boss fight needs the -1 default
+            // option." His log: Left arrow first, and it read "Option 8 of 8";
+            // after each trade, Right read option 2 and he had to go back for
+            // option 1. The cursor was sitting on option 1 without having
+            // said so. From -1 the first arrow, either way, lands on option 1
+            // (Browse below), and it goes back to -1 after every trade.
+            _index = -1;
 
             var options = Options();
             Plugin.Log?.LogInfo(
@@ -387,8 +395,22 @@ namespace IKMA
         {
             var options = Options();
             if (options.Count == 0) { Speech.Browse(Vocabulary.NoOptions); return; }
-            if (_index < 0) _index = 0;
+
+            // 0.7.442 - Space with nothing browsed names the screen and leaves
+            // the cursor nowhere, the same as every other reader.
+            if (_index < 0 || _index >= options.Count)
+            {
+                _index = -1;
+                SpeakScreen();
+                return;
+            }
             SpeakAt(_index, options);
+        }
+
+        /// <summary>The opening line again, with live counts. (0.7.442.)</summary>
+        private static void SpeakScreen()
+        {
+            Speech.Browse(Vocabulary.TradeScreenOpen(Options().Count, PeltsInHand()));
         }
 
         private static void SpeakAt(int index, List<HighlightedInteractable> options)
@@ -438,7 +460,16 @@ namespace IKMA
         {
             var options = Options();
             if (options.Count == 0) { Speech.Browse(Vocabulary.NoOptions); return; }
-            if (_index < 0 || _index >= options.Count) { _index = 0; }
+
+            // 0.7.442 - Enter with nothing browsed trades nothing. It used to
+            // take option 1, a card the player had not been read.
+            if (_index < 0 || _index >= options.Count)
+            {
+                _index = -1;
+                Plugin.Log?.LogInfo("IKMA TRADE: Enter at NOWHERE - no card browsed yet, prompt repeated.");
+                SpeakScreen();
+                return;
+            }
 
             bool queued;
             int slotNumber;
@@ -477,9 +508,9 @@ namespace IKMA
             if (!string.IsNullOrEmpty(name))
                 using (Speech.Event(EventKind.CardObtained, EventSource.CurrentPlayer)) Speech.Confirm(Vocabulary.TradeTaken(peltName, name));
 
-            // The list shrinks under us; step back so the next arrow lands on
-            // a neighbour rather than past the end.
-            if (_index > 0) _index--;
+            // 0.7.442 - back to nowhere after a trade, so the next arrow reads
+            // option 1 of the shorter list. (It used to step back one place.)
+            _index = -1;
         }
 
         internal static void SpeakHelp()

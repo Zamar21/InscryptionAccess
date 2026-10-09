@@ -49,7 +49,7 @@ namespace IKMA
             { "Magickal Bleach", Vocabulary.ItemPickup.LeshyOffersYouAn },
             // His lines, Session 32, applied Session 34. Keys are the game's
             // rulebookName (data\consumables\*.asset). Wiseclock and Special
-            // Dagger are still NEED TO SEE and keep the fallback.
+            // Dagger: his lines, Session 51 (0.7.463), further down.
             { "Harpie's Birdleg Fan", Vocabulary.ItemPickup.PresentBirdlegFan },
             { "Squirrel In A Bottle", Vocabulary.ItemPickup.PresentSquirrelBottle },
             { "Black Goat Bottle", Vocabulary.ItemPickup.PresentGoatBottle },
@@ -63,6 +63,8 @@ namespace IKMA
             { "Fish Hook", Vocabulary.ItemPickup.PresentFishHook },
             { "Skinning Knife", Vocabulary.ItemPickup.PresentSkinningKnife },
             { "Failure", Vocabulary.ItemPickup.PresentFailure },
+            { "Wiseclock", Vocabulary.ItemPickup.PresentWiseclock },
+            { "Special Dagger", Vocabulary.ItemPickup.PresentSpecialDagger },
         };
         private static Dictionary<string, string> _presentLinesCache;
         private static string _presentLinesLanguage;
@@ -144,6 +146,34 @@ namespace IKMA
                 }
                 yield return inner.Current;
             }
+
+            // 0.7.459 - Zamar, Session 48, on nothing saying the card was his
+            // after Leshy's "A PACK RAT... ALWAYS USEFUL.": "Add the line".
+            // The sequence's last statement is RunState.Run.playerDeck.AddCard(
+            // fullConsumablesReward), so once the enumerator has run out the
+            // card IS in the deck (dumps\dump_s49_from_decompile.txt). Said
+            // only if the rat came out in this run of the sequence.
+            if (said) AnnounceAdded(seq);
+        }
+
+        private static void AnnounceAdded(GainConsumablesSequencer seq)
+        {
+            string name = null;
+            try { name = CardReader.BaseCardName(_rewardField?.GetValue(seq) as CardInfo); } catch { }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                Plugin.Log?.LogWarning("IKMA ITEM PICKUP: the rat's card was taken but could not be read - not spoken.");
+                return;
+            }
+
+            Plugin.Log?.LogInfo($"IKMA ITEM PICKUP: {name} taken from the rat - it is in the deck.");
+
+            // The card choice's own sentence, from the same Vocabulary member,
+            // so the two can never disagree. A Result, not a Confirm: Leshy's
+            // line has just been advanced, so there is nothing to cut.
+            using (Speech.Event(EventKind.CardObtained, EventSource.CurrentPlayer))
+                Speech.Result(Vocabulary.CardChoices.AddedToYourOrCardAddedTo(name));
         }
 
         private static bool RatIsOut(GainConsumablesSequencer seq)

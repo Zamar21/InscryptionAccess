@@ -47,23 +47,181 @@ namespace IKMA
         internal UniversalSpeechBackend(Action<string> log)
         {
             _logSink = log;
+            NvdaDirect.LogSink = log;   // 0.7.461: its lines go out the same worker-safe way
         }
 
         public string Name { get { return "UniversalSpeech"; } }
 
         // Was SpeechPump.TryPinEngine(), called at worker start and before each line.
-        public void Maintain() { TryPinEngine(); }
+        // 0.7.461: then NvdaDirect decides whether the next line is its own
+        // (the engine is NVDA and that NVDA reports the end of a line), and
+        // any line it could not speak is spoken here instead.
+        public void Maintain()
+        {
+            TryPinEngine();
+            NvdaDirect.Maintain(EngineIsNvda());
+            SpeakHandBack();
+        }
+
+        // =================================================================
+        // NVDA LINES THAT REPORT THEIR OWN END. (0.7.461, Session 50.)
+        //
+        // See NvdaDirect.cs. When the pinned engine is NVDA and that NVDA is
+        // 2024.1 or later, a line goes to NVDA's own DLL through NvdaDirect
+        // instead of through speechSay, so IKMA learns when it has finished.
+        // Everything else - the pin, the roll call, braille, the bug-report
+        // engine name - still goes through UniversalSpeech, on this thread.
+        //
+        // ONE THREAD IN UNIVERSALSPEECH, STILL. NvdaDirect has a thread of
+        // its own, but it only ever calls nvdaControllerClient.dll. A line
+        // it cannot speak comes back through TakeHandBack and is spoken
+        // HERE, on the pump worker, with speechSay.
+        // =================================================================
+        private static int _nvdaAskedFor = -3;
+        private static bool _engineIsNvda;
+
+        private static bool EngineIsNvda()
+        {
+            if (_nvdaAskedFor != _lastEngineSeen)
+            {
+                _nvdaAskedFor = _lastEngineSeen;
+                _engineIsNvda = _lastEngineSeen >= 0 && EngineName(_lastEngineSeen) == "NVDA";
+            }
+            return _engineIsNvda;
+        }
+
+        private static void SpeakHandBack()
+        {
+            string[] lines = NvdaDirect.TakeHandBack();
+            if (lines == null) return;
+            foreach (string line in lines)
+            {
+                try { speechSay(line, false); }
+                catch (Exception e) { Log($"IKMA SPEECH: speechSay threw: {e.Message}"); }
+            }
+        }
 
         // Was the body of SpeechPump.SayInline's try block. Exceptions are
         // deliberately NOT caught here: SpeechPump catches them and logs
         // "IKMA SPEECH: speechSay threw", exactly as before.
         public void Say(string text, bool interrupt)
         {
-            speechSay(text ?? string.Empty, interrupt);
+            // 0.7.461: NVDA 2024.1 or later takes the line itself.
+            if (NvdaDirect.Takes)
+            {
+                NvdaDirect.Say(text ?? string.Empty, interrupt);
+                _brailleText = text;
+                return;
+            }
+            // Not NvdaDirect's line. Keep the order: an interrupting line
+            // drops whatever NvdaDirect still held; any other line follows
+            // the lines NvdaDirect handed back.
+            if (interrupt) NvdaDirect.CutForOtherPath();
+            else SpeakHandBack();
+
+            // 0.7.464 (Session 52), Zamar: NVDA kept saying "blank". The empty
+            // line is IKMA's "stop talking", and speechSay("") hands NVDA an
+            // empty string to SPEAK - NVDA reads that aloud as "blank". It
+            // happened on every silence and every cut line whenever the line
+            // did not go through NvdaDirect (NvdaLineEnd = false, older NVDA).
+            // speechStop is the library's real stop: it cancels speech and
+            // speaks nothing. NvdaDirect's own path already did this.
+            if (string.IsNullOrEmpty(text))
+            {
+                speechStop();
+                _brailleText = null;
+                return;
+            }
+
+            speechSay(text, interrupt);
+            _brailleText = text;   // 0.7.459 - sent by AfterSay, outside the speechSay timing
         }
 
         // Was SpeechPump.NoteEngineChange(), called after each line.
-        public void AfterSay() { NoteEngineChange(); }
+        // 0.7.459: then the same line to the braille display.
+        public void AfterSay() { NoteEngineChange(); SendBraille(); }
+
+        // =================================================================
+        // BRAILLE. (0.7.459, Session 49.)
+        //
+        // Zamar, 2026-10-06: "add the braiile display option to v.5". Every
+        // line IKMA speaks is also handed to the screen reader's braille
+        // display. Until now a braille reader got nothing from IKMA: the
+        // screen reader is told to SPEAK a line, and that call does not put
+        // it on the display.
+        //
+        // THE CALL IS THE LIBRARY'S OWN. brailleDisplay is exported by
+        // UniversalSpeech (src/UniversalSpeech.c, "export int brailleDisplay
+        // (const wchar_t* str)") and for NVDA ends in
+        // nvdaController_brailleMessage (src/windows/nvda.c), one of the four
+        // functions in the nvdaControllerClient.dll IKMA already ships.
+        //
+        // ON THE WORKER, AFTER THE LINE IS SPOKEN. AfterSay runs on the same
+        // thread as speechSay, straight after it, so the one-thread rule
+        // holds. It is NOT inside Say, so "IKMA PERF: speechSay took" still
+        // measures what it always measured; a slow braille call gets its own
+        // PERF line.
+        //
+        // ONLY FOR ENGINES THAT HAVE BRAILLE. The library's engine table
+        // (src/windows/engines.c) gives a real braille function to Jaws,
+        // Windows eye, NVDA, System access and Cobra, and a do-nothing stub
+        // to the rest, SAPI included. The stub is never called from here.
+        //
+        // IT CAN NEVER COST SPEECH. Any exception switches braille off for
+        // the rest of the run, says so once in the log, and speech goes on.
+        //
+        // UNVERIFIED. Read from the library's source and NVDA's own
+        // documentation; nobody with a braille display has tried it. NVDA
+        // shows the line as a braille MESSAGE, so each new line replaces the
+        // one before it: in a run of quick lines the display shows the
+        // newest. The review history is how a braille reader steps back.
+        // =================================================================
+        [DllImport("UniversalSpeech", CharSet = CharSet.Unicode)]
+        private static extern int brailleDisplay(
+            [MarshalAs(UnmanagedType.LPWStr)] string text);
+
+        private static readonly string[] BRAILLE_ENGINES =
+            { "NVDA", "Jaws", "Windows eye", "System access", "Cobra" };
+
+        private static string _brailleText;         // the line Say just handed over
+        private static int _brailleAskedFor = -3;   // the engine index the answer below is for
+        private static bool _brailleEngineHasIt;
+        private static bool _brailleDead;
+
+        private static void SendBraille()
+        {
+            string text = _brailleText;
+            _brailleText = null;
+
+            // The empty line is "stop talking". There is nothing to show.
+            if (string.IsNullOrEmpty(text) || _brailleDead) return;
+            if (!SpeechBackends.BrailleOn) return;
+
+            try
+            {
+                if (_brailleAskedFor != _lastEngineSeen)
+                {
+                    _brailleAskedFor = _lastEngineSeen;
+                    string engine = _lastEngineSeen < 0 ? null : EngineName(_lastEngineSeen);
+                    _brailleEngineHasIt = engine != null && Array.IndexOf(BRAILLE_ENGINES, engine) >= 0;
+                    Log(_brailleEngineHasIt
+                        ? $"IKMA SPEECH: braille on. Each spoken line also goes to the braille display through \"{engine}\"."
+                        : $"IKMA SPEECH: braille is on, but \"{engine ?? "?"}\" has no braille output. Nothing is sent.");
+                }
+                if (!_brailleEngineHasIt) return;
+
+                long t = System.Diagnostics.Stopwatch.GetTimestamp();
+                brailleDisplay(text);
+                double ms = (System.Diagnostics.Stopwatch.GetTimestamp() - t) * 1000.0 /
+                            System.Diagnostics.Stopwatch.Frequency;
+                if (ms >= 250.0) Log($"IKMA PERF: brailleDisplay took {ms:F1}ms.");
+            }
+            catch (Exception e)
+            {
+                _brailleDead = true;
+                Log($"IKMA SPEECH: braille failed and is off for the rest of this run ({e.GetType().Name}: {e.Message}). Speech is not affected.");
+            }
+        }
 
         // Was the try block of SpeechPump.PollBusy(). The 250ms "just handed a
         // line over" grace stays in SpeechPump: it is about timing, and it
@@ -72,6 +230,13 @@ namespace IKMA
         {
             try
             {
+                // 0.7.461: while NvdaDirect is speaking for NVDA it knows the
+                // answer. This runs every 100 ms while the pump idles, which
+                // is also what keeps NvdaDirect's watchdog and the hand-back
+                // moving.
+                SpeakHandBack();
+                if (NvdaDirect.Engaged) return NvdaDirect.QueryBusy();
+
                 if (_busySupportedFor != _lastEngineSeen)
                 {
                     _busySupportedFor = _lastEngineSeen;
@@ -86,8 +251,8 @@ namespace IKMA
         public string CurrentEngineName() { return CurrentEngineNameStatic(); }
 
         // Nothing to release. The DLL stays loaded for the life of the
-        // process, as it always did.
-        public void Shutdown() { }
+        // process, as it always did. 0.7.461: NvdaDirect's waiter is told to stop.
+        public void Shutdown() { NvdaDirect.Shutdown(); }
 
         // =================================================================
         // Below: moved verbatim from SpeechPump.cs (0.7.365).
@@ -97,6 +262,11 @@ namespace IKMA
         private static extern int speechSay(
             [MarshalAs(UnmanagedType.LPWStr)] string text,
             bool interrupt);
+
+        // The library's stop: cancels what is being said and says nothing.
+        // 0.7.464 - see Say, where the empty line used to go to speechSay.
+        [DllImport("UniversalSpeech")]
+        private static extern int speechStop();
 
         [DllImport("UniversalSpeech")]
         private static extern int speechGetValue(int what);
