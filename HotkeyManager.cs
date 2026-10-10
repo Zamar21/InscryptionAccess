@@ -559,6 +559,11 @@ namespace IKMA
 
         // Session 36: the dev autopilot reads which hand card IKMA is on.
         internal static HotkeyManager Current;
+
+        // 0.4.8.007 - the last frame the map branch ran: the map is what the
+        // player is on, so Ctrl+arrows drive the map preview (Buffers.cs).
+        internal static int MapFrame = -100;
+        internal static bool MapFocused => Time.frameCount - MapFrame <= 2;
         internal int HandIndexNow => _handIndex;
 
         private void Update()
@@ -696,10 +701,25 @@ namespace IKMA
             }
             // THE MOD SETTINGS MENU (Session 37, M9) - Ctrl+M / LB+Start from
             // anywhere; every key is its own while it is open. ModSettingsMenu.cs.
+            // 0.4.8.010 - a key that Mod Settings, the help list, the history
+            // or the buffers take is still the player at the keyboard. Those
+            // return before the map and node screens see the key, so their idle
+            // prompts fired mid-browse (his 2026-10-10 log: "Awaiting path
+            // selection" between map preview presses).
+            if (KeyIn.AnyDown)
+            {
+                _mapIdleTimer = 0f;
+                _mapIdleInterval = MAP_IDLE_REPEAT;
+                NodeScreenReader.NoteKeyPressed();
+            }
             if (!DeathCardNameReader.Active && ModSettingsMenu.HandleKeys()) return;
             // THE HELP LIST (Session 37, M9) - F1 / LB+View. HelpList.cs.
             if (!DeathCardNameReader.Active && HelpList.HandleKeys()) return;
             if (!DeathCardNameReader.Active && ReviewHistory.HandleKeys()) return;
+            // 0.4.8.007 - the buffers (Ctrl+arrows; on the map, the map preview
+            // and Ctrl+Space) and the Ctrl+letter reads. Buffers.cs, ResourceKeys.cs.
+            if (!DeathCardNameReader.Active && Buffers.HandleKeys()) return;
+            if (!DeathCardNameReader.Active && ResourceKeys.HandleKeys()) return;
 
             // Session 37, note D8 - Zamar: Space pressed after a character has
             // started talking but before IKMA has said the line (it is held for
@@ -870,6 +890,9 @@ namespace IKMA
 
                     if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
                     { OptionsReader.Browse(1);  return; }
+                    // 0.4.8.012 - Home / End, a beta tester's ask. See OptionsReader.Jump.
+                    if (KeyIn.Down(KeyCode.Home)) { OptionsReader.Jump(false); return; }
+                    if (KeyIn.Down(KeyCode.End))  { OptionsReader.Jump(true);  return; }
 
                     if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
                     { OptionsReader.Activate(); return; }
@@ -918,6 +941,8 @@ namespace IKMA
 
                 if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
                 { PauseMenuReader.Browse(1);  return; }
+                // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                { int jump = ListStep.JumpKey(); if (jump != 0) { PauseMenuReader.Browse(jump); return; } }
 
                 if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
                 { PauseMenuReader.Activate(); return; }
@@ -1266,6 +1291,8 @@ namespace IKMA
 
                 if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
                 { DeckPickReader.Browse(1);  return; }
+                // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                { int jump = ListStep.JumpKey(); if (jump != 0) { DeckPickReader.Browse(jump); return; } }
 
                 if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
                 { DeckPickReader.Choose(); return; }
@@ -1309,6 +1336,8 @@ namespace IKMA
 
                 if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
                 { TradeReader.Browse(1);  return; }
+                // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                { int jump = ListStep.JumpKey(); if (jump != 0) { TradeReader.Browse(jump); return; } }
 
                 if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
                 { TradeReader.Select(); return; }
@@ -1413,6 +1442,8 @@ namespace IKMA
 
                 if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
                 { NodeScreenReader.Browse(1);  return; }
+                // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                { int jump = ListStep.JumpKey(); if (jump != 0) { NodeScreenReader.Browse(jump); return; } }
 
                 if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
                 { NodeScreenReader.Activate(); return; }
@@ -1943,6 +1974,7 @@ namespace IKMA
             {
                 if (MapReader.MapAvailable())
                 {
+                    MapFrame = Time.frameCount;   // 0.4.8.007 - Ctrl+arrows are the map preview's here (Buffers.cs)
                     // 0.4.8.006 - held (not dropped) while the region changes
                     // or a character is talking, so it never lands mid-intro.
                     if (_mapReturnPending && !MapReader.ArrivalMustWait())
@@ -1964,7 +1996,11 @@ namespace IKMA
                         _mapIdleTimer = 0f;
                         _mapIdleInterval = MAP_IDLE_REPEAT;
                     }
-                    else
+                    // 0.4.8.010 - the clock stops while the game is in the
+                    // background: speech is held there, and his 2026-10-10 log
+                    // stacked four "Awaiting path selection" lines that all
+                    // played on his return. (The driver's runbg mode still ticks.)
+                    else if (NodeScreenReader.IdleClockRuns)
                     {
                         _mapIdleTimer += Time.deltaTime;
                         if (_mapIdleTimer >= _mapIdleInterval)
@@ -2008,6 +2044,8 @@ namespace IKMA
 
                     if (KeyIn.Down(KeyCode.UpArrow))    { MapReader.BrowseChoices(-1); return; }
                     if (KeyIn.Down(KeyCode.DownArrow))  { MapReader.BrowseChoices(1);  return; }
+                    // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                    { int jump = ListStep.JumpKey(); if (jump != 0) { MapReader.BrowseChoices(jump); return; } }
 
                     // BACKSPACE IS DEAD ON THE MAP, on purpose. Zamar:
                     // "Backspace on the map selection should be disabled."
@@ -2035,6 +2073,8 @@ namespace IKMA
                     if (KeyIn.Down(KeyCode.R))          { RulebookReader.Open(); return; }
                     if (KeyIn.Down(KeyCode.LeftArrow))  { MapReader.BrowseChoices(-1); return; }
                     if (KeyIn.Down(KeyCode.RightArrow)) { MapReader.BrowseChoices(1);  return; }
+                    // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                    { int jump = ListStep.JumpKey(); if (jump != 0) { MapReader.BrowseChoices(jump); return; } }
                     if (KeyIn.Down(KeyCode.Space))          { MapReader.AnnouncePosition(); return; }
 
                     if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
@@ -2318,6 +2358,8 @@ namespace IKMA
                 // arrows would take anyway a moment later.
                 if (KeyIn.Down(KeyCode.LeftArrow))  { BrowseHand(-1); return; }
                 if (KeyIn.Down(KeyCode.RightArrow)) { BrowseHand(1);  return; }
+                // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+                { int jump = ListStep.JumpKey(); if (jump != 0) { BrowseHand(jump); return; } }
 
                 return;
             }
@@ -2365,6 +2407,8 @@ namespace IKMA
                 else            BrowseHand(1);
                 return;
             }
+            // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+            { int jump = ListStep.JumpKey(); if (jump != 0) { if (inPlayFlow) NavigateSlot(bm, jump, choosingSacrifices); else BrowseHand(jump); return; } }
 
             // Home/End removed Session 10; number-key jumps removed Session 11.
             // JumpSlotEdge, JumpHandEdge, JumpToSlot and JumpToHandCard are kept
@@ -3256,6 +3300,7 @@ namespace IKMA
             // next playable card, which speaks for itself.
             if (KeyIn.Down(KeyCode.LeftArrow))  { BrowseItems(-1); return true; }
             if (KeyIn.Down(KeyCode.RightArrow)) { BrowseItems(1);  return true; }
+            { int jump = ListStep.JumpKey(); if (jump != 0) { BrowseItems(jump); return true; } }   // 0.4.8.012 - Home / End
 
             if (KeyIn.Down(KeyCode.Backspace))
             {
@@ -3352,19 +3397,22 @@ namespace IKMA
 
             // From NOWHERE the first tap lands ON the item the entry line
             // named, rather than stepping past it.
-            if (_itemIndex == NO_ITEM)
+            if (_itemIndex == NO_ITEM && !ListStep.IsJump(direction))
             {
                 _itemIndex = FirstHeldItemIndex(slots);
                 Speech.Browse(DescribeItemSlot(slots, _itemIndex));
                 return;
             }
 
+            // 0.4.8.007 - stops at the ends: the next held item that way, or
+            // nothing said at all (Zamar, Session 58: every list).
             int index = _itemIndex;
-            for (int i = 0; i < slots.Count; i++)
-            {
-                index = (index + direction + slots.Count) % slots.Count;
-                if (BoardReader.GetConsumable(slots[index]) != null) break;
-            }
+            int dir = direction;
+            ListStep.JumpToScan(ref index, ref dir);   // 0.4.8.012 - Home / End
+            bool heldFound = false;
+            while (ListStep.Step(ref index, dir, slots.Count))
+                if (BoardReader.GetConsumable(slots[index]) != null) { heldFound = true; break; }
+            if (!heldFound) return;
 
             _itemIndex = index;
             Speech.Browse(DescribeItemSlot(slots, _itemIndex));
@@ -3708,6 +3756,8 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.RightArrow) || KeyIn.Down(KeyCode.DownArrow))
             { RulebookReader.Turn(1); return; }
+            // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+            { int jump = ListStep.JumpKey(); if (jump != 0) { RulebookReader.Turn(jump); return; } }
 
             if (KeyIn.Down(KeyCode.Backspace) || KeyIn.Down(KeyCode.R))
             { RulebookReader.Close(); return; }
@@ -3763,6 +3813,8 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.RightArrow) || KeyIn.Down(KeyCode.DownArrow))
             { CardChoiceReader.Browse(1); return; }
+            // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+            { int jump = ListStep.JumpKey(); if (jump != 0) { CardChoiceReader.Browse(jump); return; } }
 
             if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { CardChoiceReader.Select(); return; }
@@ -3931,6 +3983,8 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.RightArrow) || KeyIn.Down(KeyCode.DownArrow))
             { DeckViewReader.Browse(1); return; }
+            // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+            { int jump = ListStep.JumpKey(); if (jump != 0) { DeckViewReader.Browse(jump); return; } }
 
             if (KeyIn.Down(KeyCode.Space)) { DeckViewReader.AnnounceCurrent(); return; }
             if (KeyIn.Down(KeyCode.A)) { DeckViewReader.AnnounceResources(); return; }
@@ -4002,6 +4056,9 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
             { OptionsReader.Browse(1);  return; }
+            // 0.4.8.012 - Home / End, a beta tester's ask. See OptionsReader.Jump.
+            if (KeyIn.Down(KeyCode.Home)) { OptionsReader.Jump(false); return; }
+            if (KeyIn.Down(KeyCode.End))  { OptionsReader.Jump(true);  return; }
 
             if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { OptionsReader.Activate(); return; }
@@ -4032,6 +4089,8 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
             { TitleScreenReader.Browse(1); return; }
+            // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+            { int jump = ListStep.JumpKey(); if (jump != 0) { TitleScreenReader.Browse(jump); return; } }
 
             if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { TitleScreenReader.Activate(); return; }
@@ -4052,6 +4111,8 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.DownArrow) || KeyIn.Down(KeyCode.RightArrow))
             { MenuReader.Browse(1); return; }
+            // 0.4.8.012 - Home / End jump to the ends (Zamar: "That should work everywhere").
+            { int jump = ListStep.JumpKey(); if (jump != 0) { MenuReader.Browse(jump); return; } }
 
             if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { MenuReader.Activate(); return; }
@@ -4236,6 +4297,7 @@ namespace IKMA
 
             if (KeyIn.Down(KeyCode.RightArrow) || KeyIn.Down(KeyCode.DownArrow))
             { BrowseTargets(1); return true; }
+            { int jump = ListStep.JumpKey(); if (jump != 0) { BrowseTargets(jump); return true; } }   // 0.4.8.012 - Home / End
 
             if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { ConfirmTarget(); return true; }
@@ -4321,9 +4383,8 @@ namespace IKMA
             bool onATarget = _targetIndex >= 0 && _targetIndex < _targetSlots.Count;
             CardSlot previous = onATarget ? _targetSlots[_targetIndex] : null;
 
-            _targetIndex = onATarget
-                ? (_targetIndex + direction + _targetSlots.Count) % _targetSlots.Count
-                : 0;
+            if (!onATarget && !ListStep.IsJump(direction)) _targetIndex = 0;
+            else if (!ListStep.Step(ref _targetIndex, direction, _targetSlots.Count)) return;   // 0.4.8.007 - stops at the ends
             var slot = _targetSlots[_targetIndex];
 
             // Session 11: move the GAME'S hover, not just ours.
@@ -4966,7 +5027,7 @@ namespace IKMA
         // ----------------------------------------------------------------------
         // STATIC since 0.7.266: the post-boss latch's stand-down test needs it
         // and that test is static. The body never touched instance state.
-        private static bool IsBattleActive()
+        internal static bool IsBattleActive()
         {
             var tm = Singleton<TurnManager>.Instance;
             return tm != null && tm.Opponent != null && !tm.GameEnded;
@@ -5390,23 +5451,26 @@ namespace IKMA
 
             if (choosingSacrifices)
             {
-                int startIndex = _slotIndex;
-                for (int i = 0; i < slots.Count; i++)
+                // 0.4.8.007 - stops at the ends. Nothing more that way says
+                // nothing; nothing to sacrifice anywhere still says so.
+                int probe = _slotIndex;
+                int dir = direction;
+                ListStep.JumpToScan(ref probe, ref dir);   // 0.4.8.012 - Home / End
+                bool candidateFound = false;
+                while (ListStep.Step(ref probe, dir, slots.Count))
+                    if (IsSacrificeCandidate(slots[probe])) { candidateFound = true; break; }
+                if (!candidateFound)
                 {
-                    _slotIndex = (_slotIndex + direction + slots.Count) % slots.Count;
-                    if (IsSacrificeCandidate(slots[_slotIndex]))
-                        break;
-                }
-                if (!IsSacrificeCandidate(slots[_slotIndex]))
-                {
-                    _slotIndex = startIndex;
-                    Speech.Browse(Vocabulary.Hotkeys.NoCardsToSacrifice);
+                    bool anyCandidate = false;
+                    foreach (var s in slots) if (IsSacrificeCandidate(s)) { anyCandidate = true; break; }
+                    if (!anyCandidate) Speech.Browse(Vocabulary.Hotkeys.NoCardsToSacrifice);
                     return;
                 }
+                _slotIndex = probe;
             }
             else
             {
-                _slotIndex = (_slotIndex + direction + slots.Count) % slots.Count;
+                if (!ListStep.Step(ref _slotIndex, direction, slots.Count)) return;   // 0.4.8.007 - stops at the ends
             }
 
             AnnounceCurrentSlot(bm, choosingSacrifices);
@@ -5827,9 +5891,10 @@ namespace IKMA
             // Session 37, note D6 - Zamar: after a card is played the first
             // arrow lands on card 1; Enter with no arrow still plays the card
             // in the old spot, so the index itself is kept until an arrow.
-            if (_handArrowFromStart) { _handArrowFromStart = false; _handIndex = 0; }
+            if (ListStep.IsJump(direction)) { _handArrowFromStart = false; ListStep.Step(ref _handIndex, direction, count); }   // 0.4.8.012
+            else if (_handArrowFromStart) { _handArrowFromStart = false; _handIndex = 0; }
             else if (_handIndex < 0) _handIndex = 0;
-            else _handIndex = (_handIndex + direction + count) % count;
+            else if (!ListStep.Step(ref _handIndex, direction, count)) return;   // 0.4.8.007 - stops at the ends
 
             ReadHandCardAt(hand.CardsInHand[_handIndex]);
         }

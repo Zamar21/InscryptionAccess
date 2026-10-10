@@ -1230,10 +1230,10 @@ namespace IKMA
             // From NOWHERE, the first press lands ON the option arrival named
             // (forwards) or on the last one (backwards) — it does not step past
             // them. Everywhere else, move and wrap as before.
-            if (_index == NOWHERE || _index >= items.Count)
+            if ((_index == NOWHERE || _index >= items.Count) && !ListStep.IsJump(direction))
                 _index = direction >= 0 ? DefaultIndex(items) : items.Count - 1;
             else
-                _index = (_index + direction + items.Count) % items.Count;
+            { if (!ListStep.Step(ref _index, direction, items.Count)) return; }   // 0.4.8.007 - stops at the ends
 
             // Menu browse is timed separately from the battle path: the two
             // share almost no code, and the 0.7.30 caching fix was aimed here.

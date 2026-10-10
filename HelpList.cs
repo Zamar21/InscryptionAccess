@@ -12,7 +12,7 @@ namespace IKMA
     /// implementation and choices instead of asking me for my opinion."
     /// Theirs is UI/Screens/HelpScreen.cs + Help/HelpScreenBuilder.cs:
     ///   - F1 opens it anywhere (their pad chord is LT+Back; IKMA's hold
-    ///     button is LB, so LB+View). H / View keep IKMA's spoken paragraph.
+    ///     button is LB, so LB+View). 0.4.8.007: H / View open it too.
     ///   - Rows: the screen's own explanation first, then this screen's
     ///     controls, then the controls that work everywhere; no row twice.
     ///   - Opening names the list ("Help") and reads the first row; every
@@ -65,7 +65,10 @@ namespace IKMA
                 // opens once they have spoken (or after a few quiet frames).
                 int frames = Time.frameCount - _captureStartFrame;
                 if (frames < 2) return false;
-                if (_captured.Count == 0 && frames < 6) return false;
+                // 0.4.8.007 - wait out H's no-reader fallback (HotkeyManager,
+                // 12 frames) so a screen with no reader of its own still gets
+                // its fallback rows instead of an empty list and a line on top.
+                if (_captured.Count == 0 && frames < 16) return false;
                 _capturing = false;
                 Build();
                 _open = true;
@@ -75,7 +78,13 @@ namespace IKMA
                 return true;
             }
 
-            bool f1 = KeyIn.Down(KeyCode.F1);
+            // 0.4.8.007 - H (View on the pad) opens and closes the list too.
+            // Zamar, Session 58, from a tester: H as one long string is
+            // painful; help "should conform and work how it does for those
+            // other games" (Say the Spire 2, Guildrun: help is a list).
+            // 0.4.8.008 - not in the Original control template: H speaks the
+            // paragraph there, as before 0.4.8.007; F1 opens the list.
+            bool f1 = KeyIn.Down(KeyCode.F1) || (!Buffers.Original && KeyIn.Down(KeyCode.H));
 
             if (!_open)
             {
@@ -91,7 +100,7 @@ namespace IKMA
             {
                 _open = false;
                 Plugin.Log?.LogInfo("IKMA HELP LIST: closed.");
-                Speech.Browse(Vocabulary.ModSettings.Closed);
+                Speech.BrowseNoFocus(Vocabulary.ModSettings.Closed);
                 return true;
             }
 
@@ -113,7 +122,7 @@ namespace IKMA
             // Theirs joins with ", " and drops trailing punctuation.
             string row = _rows[_focus].TrimEnd('.');
             string pos = Vocabulary.ModSettings.Position(_focus + 1, _rows.Count);
-            Speech.Browse(withListName
+            Speech.BrowseNoFocus(withListName
                 ? Vocabulary.ModSettings.Join(Vocabulary.HelpListWords.Help, row, pos)
                 : Vocabulary.ModSettings.Join(row, pos));
         }
@@ -130,6 +139,10 @@ namespace IKMA
                     string row = part.Trim();
                     if (row.Length > 0 && seen.Add(row)) _rows.Add(row);
                 }
+            // 0.4.8.007 - on the map, Say the Spire 2's map rows come next.
+            if (!Buffers.Original && HotkeyManager.MapFocused)   // 0.4.8.008 - no map preview in Original
+                foreach (string row in Vocabulary.HelpListWords.Map())
+                    if (seen.Add(row)) _rows.Add(row);
             foreach (string row in Vocabulary.HelpListWords.Everywhere())
                 if (seen.Add(row)) _rows.Add(row);
         }

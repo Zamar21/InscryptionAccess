@@ -148,7 +148,7 @@ namespace IKMA
             _listenAction = null;
             _stack.Clear();
             Plugin.Log?.LogInfo("IKMA SETTINGS: mod settings closed.");
-            Speech.Browse(Vocabulary.ModSettings.Closed);
+            Speech.BrowseNoFocus(Vocabulary.ModSettings.Closed);
         }
 
         private static void Back()
@@ -157,7 +157,7 @@ namespace IKMA
             if (_stack.Count == 0)
             {
                 Plugin.Log?.LogInfo("IKMA SETTINGS: mod settings closed.");
-                Speech.Browse(Vocabulary.ModSettings.Closed);
+                Speech.BrowseNoFocus(Vocabulary.ModSettings.Closed);
                 return;
             }
             SpeakFocus(true);
@@ -198,7 +198,7 @@ namespace IKMA
         private static void SpeakFocus(bool withListName)
         {
             var level = _stack[_stack.Count - 1];
-            if (level.Children.Count == 0) { Speech.Browse(level.Label); return; }
+            if (level.Children.Count == 0) { Speech.BrowseNoFocus(level.Label); return; }
             var node = level.Children[level.Focus];
 
             var parts = new List<string>();
@@ -213,7 +213,7 @@ namespace IKMA
                     ? Vocabulary.ModSettings.Checked : Vocabulary.ModSettings.Unchecked);
             }
             parts.Add(Vocabulary.ModSettings.Position(level.Focus + 1, level.Children.Count));
-            Speech.Browse(Vocabulary.ModSettings.Join(parts.ToArray()));
+            Speech.BrowseNoFocus(Vocabulary.ModSettings.Join(parts.ToArray()));
         }
 
         // ------------------------------------------------------------------
@@ -317,6 +317,12 @@ namespace IKMA
                             GamepadSupport.VibrationLevel.Medium, GamepadSupport.VibrationLevel.High },
                     new[] { Vocabulary.ModSettings.Off, Vocabulary.ModSettings.Low,
                             Vocabulary.ModSettings.Medium, Vocabulary.ModSettings.High }));
+            // 0.4.8.008 - Zamar, Session 59: two control templates, "Default"
+            // and "Original"; the row is "Control template". Takes effect at once.
+            if (Buffers.Template != null)
+                root.Children.Add(Choice(Vocabulary.ModSettings.ControlTemplate, Buffers.Template, false,
+                    new[] { ControlTemplate.Default, ControlTemplate.Original },
+                    new[] { Vocabulary.ModSettings.TemplateDefault, Vocabulary.ModSettings.TemplateOriginal }));
             // Session 40: Controller buttons. Not offered when IKMA is not
             // the one reading the controller ([Gamepad] IKMADrivesPad off):
             // the game's own layout is in use then and nothing here applies.

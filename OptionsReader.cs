@@ -131,6 +131,10 @@ namespace IKMA
 
         public static void Reset()
         {
+            // 0.4.8.012 - a setting let go by anything but Backspace is worth
+            // one log line; it is how a page switch under a held setting
+            // showed up.
+            if (_adjusting) _log?.LogInfo("IKMA OPTIONS: reset while a setting was held.");
             _index = NOWHERE;
             _announced = false;
             _adjusting = false;
@@ -1162,17 +1166,31 @@ namespace IKMA
             // From NOWHERE the first press lands ON the row arrival named
             // (forwards) or on the last one (backwards); it does not step past
             // them. See the NOWHERE note at the top.
-            if (_index == NOWHERE || _index >= rows.Count)
-            {
-                _index = direction >= 0 ? 0 : rows.Count - 1;
-            }
-            else
-            {
-                _index += direction;
-                if (_index < 0) _index = rows.Count - 1;
-                if (_index >= rows.Count) _index = 0;
-            }
+            //
+            // 0.4.8.012 - STOPS AT THE ENDS, silent there. Session 58's rule
+            // ("every arrow list stops at its ends") reached every list but
+            // this one; the options pages still wrapped.
+            if (!ListStep.Step(ref _index, direction, rows.Count)) return;
 
+            Hover(rows[_index]);
+
+            CombatAnnouncer.DropCommentary("options browse");
+            Speech.Browse(RowPrompt(rows[_index]));
+        }
+
+        /// <summary>
+        /// 0.4.8.012 - Home and End. A beta tester: "one thing I would love when
+        /// going through options would be home and end key navigation." Home
+        /// lands on the first row, End on the last, and the row is read the
+        /// way an arrow reads it - the same keys the Ctrl+M menu, the help
+        /// list and the history already take.
+        /// </summary>
+        public static void Jump(bool toEnd)
+        {
+            var rows = Rows();
+            if (rows.Count == 0) { Speech.Browse(Vocabulary.NoSettingsOnPage); return; }
+
+            _index = toEnd ? rows.Count - 1 : 0;
             Hover(rows[_index]);
 
             CombatAnnouncer.DropCommentary("options browse");
@@ -1531,6 +1549,43 @@ namespace IKMA
             {
                 _log?.LogWarning($"IKMA OPTIONS: closing threw {e.GetType().Name}.");
             }
+        }
+    }
+
+    /// <summary>
+    /// 0.4.8.012 - THE GAME'S OWN PAGE KEYS. A beta tester: "when you hit enter
+    /// on the audio page, for example, and change the master volume, then
+    /// press 1 or 2, it jumps to the general or video category. I do not think
+    /// that should be allowed while you are still changing the selected
+    /// setting."
+    ///
+    /// IKMA already swallowed every other key while a setting is held. The
+    /// digits got through anyway because the GAME listens for them itself:
+    /// each option tab is a GBC.GenericUIButton with its own inputKey
+    /// (OptionsUI.prefab: Tab_1..Tab_4 carry KeyCode 49..52), polled in
+    /// GenericUIButton.UpdateInputKey (NONPUBLIC, void, no parameters -
+    /// _gamesource\code\GBC\GenericUIButton.cs). The page turned under the
+    /// held setting while IKMA still thought the player held a row of the
+    /// old page.
+    ///
+    /// While a setting is held the tabs' hotkeys are skipped, for the
+    /// keyboard and the screen alike. Nothing else is touched: other buttons,
+    /// and the tabs whenever no setting is held, run as the game wrote them.
+    ///
+    /// Registered through Plugin.TryPatch, not PatchAll.
+    /// </summary>
+    public static class GenericUIButton_UpdateInputKey_Patch
+    {
+        public static bool Prefix(GBC.GenericUIButton __instance)
+        {
+            if (!OptionsReader.Adjusting) return true;
+            try
+            {
+                string nm = __instance != null ? __instance.gameObject.name : null;
+                if (nm != null && nm.StartsWith("Tab_")) return false;
+            }
+            catch { }
+            return true;
         }
     }
 }

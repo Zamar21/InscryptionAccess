@@ -430,10 +430,10 @@ namespace IKMA
                 return;
             }
 
-            if (_index == NOWHERE || _index >= cards.Count)
+            if ((_index == NOWHERE || _index >= cards.Count) && !ListStep.IsJump(direction))
                 _index = direction >= 0 ? 0 : cards.Count - 1;
             else
-                _index = (_index + direction + cards.Count) % cards.Count;
+            { if (!ListStep.Step(ref _index, direction, cards.Count)) return; }   // 0.4.8.007 - stops at the ends
 
             HoverCard(cards[_index]);
             Speech.Browse(Describe(cards[_index]));

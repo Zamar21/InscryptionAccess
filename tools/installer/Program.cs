@@ -104,6 +104,7 @@ namespace IKMASetup
         internal static string SettingLanguage => L.T("Language");
         internal static string SettingFullLog => L.T("Full log for bug reports");
         internal static string SettingVibration => L.T("Controller vibration");   // Claude, Session 34; OK Zamar, Session 35
+        internal static string SettingControlTemplate => L.T("Control template");   // Zamar, Session 59
         // Controller buttons menu (ControllerMap.cs). Claude, Session 34, ALL PROVISIONAL.
         internal static string SettingController => L.T("Controller buttons");
         internal static string ControllerSummary(int moved) => moved == 0 ? L.T("every action on its default button") : L.F($"{moved} moved");

@@ -385,8 +385,8 @@ namespace IKMA
             var options = Options();
             if (options.Count == 0) { Speech.Browse(Vocabulary.NoOptions); return; }
 
-            if (_index < 0) _index = 0;
-            else _index = (_index + direction + options.Count) % options.Count;
+            if (_index < 0 && !ListStep.IsJump(direction)) _index = 0;
+            else if (!ListStep.Step(ref _index, direction, options.Count)) return;   // 0.4.8.007 - stops at the ends
 
             SpeakAt(_index, options);
         }

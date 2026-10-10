@@ -228,7 +228,7 @@ namespace IKMA
         // Either one missing drops the whole line rather than speaking half of
         // it.
         // ----------------------------------------------------------------------
-        private static string GetWoodcarvingText()
+        internal static string GetWoodcarvingText()
         {
             try
             {
@@ -261,7 +261,7 @@ namespace IKMA
         // " Your deck: 12 cards. Squirrel deck: 8 cards." (leading space for
         // direct concatenation). Empty string if anything fails to resolve.
         // ----------------------------------------------------------------------
-        private static string GetDeckCountsText()
+        internal static string GetDeckCountsText()
         {
             try
             {
@@ -1038,7 +1038,7 @@ namespace IKMA
         //
         // Sign convention unchanged: positive is player favour.
         // ----------------------------------------------------------------------
-        private static string GetScaleText()
+        internal static string GetScaleText()
         {
             var lm = LifeManager.Instance;
             if (lm == null) return Vocabulary.Board.GetScaleText;

@@ -193,29 +193,35 @@ namespace IKMA
                 return true;
             }
 
-            if (!ctrlHeld) return false;
+            // 0.4.8.007 - Ctrl+Up / Ctrl+Down moved to Buffers.cs (Zamar,
+            // Session 58: conform to Say the Spire 2's buffers). The history
+            // is the History buffer and steps through Step below.
+            return false;
+        }
 
-            bool older = KeyIn.Down(KeyCode.DownArrow);
-            bool newer = KeyIn.Down(KeyCode.UpArrow);
-            if (!older && !newer) return false;
+        internal static int Count => _lines.Count;
 
-            if (_lines.Count == 0)
-            {
-                Speech.BrowseUnrecorded(Vocabulary.HistoryEmpty);
-                return true;
-            }
-
+        /// <summary>
+        /// The History buffer's step: +1 newer, -1 older, 0 the line it is on
+        /// (the newest when not browsing). At either end the end line again.
+        /// Null when the history is empty.
+        /// </summary>
+        internal static string Step(int direction)
+        {
+            if (_lines.Count == 0) return null;
             int last = _lines.Count - 1;
             if (_position < 0 || _position > last)
-                _position = last;                                   // at the newest: read it
-            else if (older)
+                _position = last;                                   // not browsing: the newest
+            else if (direction < 0)
                 _position = System.Math.Max(0, _position - 1);      // at the oldest: read it again
-            else
+            else if (direction > 0)
                 _position = System.Math.Min(last, _position + 1);   // at the newest: read it again
-
-            Speech.BrowseUnrecorded(_lines[_position]);
-            return true;
+            return _lines[_position];
         }
+
+        /// <summary>Switching to History lands on the newest line (Say the
+        /// Spire 2's events buffer, FollowLatest).</summary>
+        internal static void FollowLatest() { if (!_open) _position = -1; }
 
         private static bool _open;
 

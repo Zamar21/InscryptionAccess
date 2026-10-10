@@ -564,8 +564,8 @@ namespace IKMA
             // Same first-press rule as the map paths: the first arrow READS
             // where the cursor already is rather than moving off it, so card 1
             // is reachable without going all the way round.
-            if (_index < 0) _index = 0;
-            else _index = (_index + direction + cards.Count) % cards.Count;
+            if (_index < 0 && !ListStep.IsJump(direction)) _index = 0;
+            else if (!ListStep.Step(ref _index, direction, cards.Count)) return;   // 0.4.8.007 - stops at the ends
 
             Hover(cards, _index);
             Speech.Browse(Describe(cards, _index));
@@ -652,7 +652,7 @@ namespace IKMA
         // bowl is on the table; if it is not, the number is not on offer to
         // anyone and IKMA does not read it either.
         // ------------------------------------------------------------------
-        private static string CurrencyPart()
+        internal static string CurrencyPart()
         {
             try
             {

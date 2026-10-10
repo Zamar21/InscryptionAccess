@@ -2996,7 +2996,7 @@ namespace IKMA
         /// leaves the game's own order untouched rather than shuffling nodes
         /// against an unknown.
         /// </summary>
-        private static float NodeX(MapNode node)
+        internal static float NodeX(MapNode node)
         {
             try { return node.transform.position.x; }
             catch { return 0f; }
@@ -3272,7 +3272,7 @@ namespace IKMA
                 return;
             }
 
-            if (!_choiceHeard)
+            if (!_choiceHeard && !ListStep.IsJump(direction))
             {
                 // Read the cursor's own position; do not move it.
                 _choiceHeard = true;
@@ -3280,7 +3280,10 @@ namespace IKMA
             }
             else
             {
-                _choiceIndex = ((_choiceIndex + direction) % choices.Count + choices.Count) % choices.Count;
+                _choiceHeard = true;   // 0.4.8.012 - a Home / End before any arrow
+                // 0.4.8.007 - stops at the ends. Zamar's tester: "I thought I had
+                // multiple encounters when I only had one option."
+                if (!ListStep.Step(ref _choiceIndex, direction, choices.Count)) return;
             }
 
             // Session 16: the position is NOT spoken while browsing. Zamar's
@@ -3290,6 +3293,7 @@ namespace IKMA
             // else; M says where in the list you are.
             var node = choices[_choiceIndex];
             HoverNode(node);
+            MapReview.StartAt(node);   // 0.4.8.007 - the preview starts from the path you are on
             Speech.Browse($"{GetNodeFriendlyName(node)}.");
         }
 
@@ -3364,6 +3368,7 @@ namespace IKMA
         /// </summary>
         public static void ResetChoiceIndex()
         {
+            MapReview.Reset();   // 0.4.8.007
             _choiceHeard = false;
             _choiceIndex = 0;
             ClearHover();
@@ -3489,9 +3494,14 @@ namespace IKMA
         /// waited its turn, the provider returns null and the announcer drops it
         /// silently rather than describing a map they have left.
         /// </summary>
+        // 0.4.8.010 - one idle prompt in the queue at a time.
+        private static bool _idleQueued;
+
         public static void AnnounceIdlePrompt()
         {
-            Speech.Commentary(() => ReviewHistory.AsPrompt(ComposeIdlePrompt()));   // a prompt: kept while History > Prompts is on (Session 38)
+            if (_idleQueued) return;
+            _idleQueued = true;
+            Speech.Commentary(() => { _idleQueued = false; return ReviewHistory.AsPrompt(ComposeIdlePrompt()); });   // a prompt: kept while History > Prompts is on (Session 38)
         }
 
         private static string ComposeIdlePrompt()
@@ -3599,7 +3609,7 @@ namespace IKMA
         // a paragraph nobody can hold in their head; when it bites, the line
         // says so rather than quietly truncating.
         // ==================================================================
-        private const int PATH_DEPTH     = 4;
+        internal const int PATH_DEPTH    = 4;
         private const int MAX_PATHS_READ = 6;
 
         // Session 32: rebuilt when the spoken language changes (Loc.PerLanguage),

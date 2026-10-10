@@ -684,7 +684,13 @@ namespace IKMA
             // needed to be, which is a real cost to anyone reading the log with
             // a screen reader. One log line per utterance, at the point of
             // speech, in Speak.
-            Speak(text, interrupt: true);
+            //
+            // 0.4.8.012 - THROUGH Speech.Browse, as every other read. Calling
+            // Speak directly skipped the two things Browse adds: the review
+            // history (Session 38: card reads are kept) and the Card buffer
+            // (0.4.8.007: what the player is on). Zamar's playtest log showed
+            // it - after arrowing his hand, Ctrl+Right said "Card: Closed".
+            Speech.Browse(text);
         }
 
         /// <summary>
@@ -1575,6 +1581,11 @@ namespace IKMA
         /// <summary>Sigils named in the most recently spoken line, in order.</summary>
         public static List<Ability> LastSpokenAbilities => _abilitiesLastSpoken;
 
+        /// <summary>0.4.8.007 - the line Speak was last given named sigils / items
+        /// (Buffers.BindFocus reads these right after a Browse line).</summary>
+        internal static bool LatchedAbilitiesThisLine;
+        internal static bool LatchedItemsThisLine;
+
         // ==================================================================
         // ITEMS FOR SHIFT+R. (0.7.344.)
         //
@@ -1891,6 +1902,9 @@ namespace IKMA
             // ones Shift+R should explain. Latched here, at the moment of
             // speech, so the memory always matches what the player last heard.
             // 0.7.344 — items latch the same way; see NoteItemInLine.
+            // 0.4.8.007 - and whether THIS line latched any, for the Card buffer.
+            LatchedItemsThisLine     = _itemsThisLine.Count > 0;
+            LatchedAbilitiesThisLine = _abilitiesThisLine.Count > 0;
             if (_itemsThisLine.Count > 0)
             {
                 _itemsLastSpoken = new List<ConsumableItemData>(_itemsThisLine);

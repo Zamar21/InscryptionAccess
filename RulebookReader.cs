@@ -541,7 +541,7 @@ namespace IKMA
                 }
             }
 
-            if (announce) Speech.Browse(Vocabulary.Rulebook.RulebookClosed);
+            if (announce) Speech.BrowseNoFocus(Vocabulary.Rulebook.RulebookClosed);
         }
 
         /// <summary>
@@ -586,7 +586,8 @@ namespace IKMA
             // arithmetic PageFlipper.WrapIndex performs, so this is a
             // reproduction of the game's rule rather than a guess at it — and
             // Tick() below checks the book agrees once the dust settles.
-            _index = ((_index + direction) % pages.Count + pages.Count) % pages.Count;
+            // 0.4.8.007 - stops at the ends (Zamar, Session 58: every list).
+            if (!ListStep.Step(ref _index, direction, pages.Count)) return;
 
             // Speak now. The paper catches up.
             Speech.Browse(ComposePage(_index));

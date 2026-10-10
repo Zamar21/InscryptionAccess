@@ -239,8 +239,8 @@ namespace IKMA
             if (!_opened || cards.Count == 0) return;
 
             // First press reads where you are, same as the deck view.
-            if (_index < 0) _index = 0;
-            else _index = (_index + direction + cards.Count) % cards.Count;
+            if (_index < 0 && !ListStep.IsJump(direction)) _index = 0;
+            else if (!ListStep.Step(ref _index, direction, cards.Count)) return;   // 0.4.8.007 - stops at the ends
 
             Hover(cards, _index);
             Speech.Browse(Describe(cards, _index));

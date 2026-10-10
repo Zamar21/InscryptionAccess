@@ -273,6 +273,10 @@ namespace IKMA
                     // (Mod Settings > History > Reads), except the history's
                     // own reads and mod messages (BrowseUnrecorded).
                     if (!_browseUnrecorded) ReviewHistory.Consider(text, ReviewHistory.ReadsOn);
+                    // 0.4.8.007 - a read the player asked for is what they are
+                    // on: it becomes the Card buffer (Buffers.cs).
+                    // 0.4.8.012 - not for the lists' own lines (BrowseNoFocus).
+                    if (!_browseUnrecorded && !_browseNoFocus) Buffers.BindFocus(text);
                     return;
 
                 case Provenance.Confirmation:
@@ -902,6 +906,22 @@ namespace IKMA
             _browseUnrecorded = true;
             try { Say(text, Provenance.Browse); }
             finally { _browseUnrecorded = false; }
+        }
+
+        // 0.4.8.012 - A READ THAT IS NOT WHAT THE PLAYER IS ON. Zamar's
+        // playtest: "Im not sure why I kept hearing so many Closed". The help
+        // list's "Closed" was a Browse, so it became the Card buffer, and every
+        // Ctrl+Up after that said "Closed" again. The help list's rows, Mod
+        // Settings' rows and their "Closed", "Rulebook closed" and the
+        // Ctrl+letter reads (Say the Spire 2's announce keys, which never move
+        // focus) are spoken and kept in the history as before, but leave the
+        // Card buffer on the card.
+        private static bool _browseNoFocus;
+        internal static void BrowseNoFocus(string text)
+        {
+            _browseNoFocus = true;
+            try { Say(text, Provenance.Browse); }
+            finally { _browseNoFocus = false; }
         }
 
         /// <summary>A keypress changed the game. Interrupts, then is protected.</summary>

@@ -9,7 +9,7 @@ using Rewired;
 
 namespace IKMA
 {
-    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.006")]
+    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.013")]
     public class Plugin : BaseUnityPlugin
     {
         // Static log handle so Harmony patch classes can log diagnostics
@@ -101,6 +101,7 @@ namespace IKMA
 #endif
             EventSettings.BindConfig(Config);   // Session 37, M9
             ReviewHistory.BindConfig(Config);   // Session 38
+            Buffers.BindConfig(Config);         // 0.4.8.008 - control templates
             VerboseDiagnostics = DiagnosticGate.ShowAll;
             LogFilter.Init(Logger);
             LogFilter.Install();
@@ -197,6 +198,13 @@ namespace IKMA
             // game is told no pad button is down, so it never switches to
             // its console cursor. See KeyIn.cs.
             // Session 52 - the mouse is off in every packaged build. See MouseGate.cs.
+            // 0.4.8.012 - the options tabs' own 1-4 hotkeys held while a
+            // setting is held. See OptionsReader.cs.
+            TryPatch(harmony,
+                "options: page keys held while a setting is held",
+                AccessTools.Method(typeof(GBC.GenericUIButton), "UpdateInputKey"),
+                typeof(GenericUIButton_UpdateInputKey_Patch), "Prefix");
+
             TryPatch(harmony,
                 "mouse off (packaged builds)",
                 AccessTools.Method(typeof(InteractionCursor), "ManagedUpdate"),

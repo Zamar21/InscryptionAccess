@@ -1041,7 +1041,8 @@ namespace IKMA
 
             ResetIdle();
             int count = OptionCount(cards);
-            _index = _index < 0 ? 0 : (_index + direction + count) % count;
+            if (_index < 0 && !ListStep.IsJump(direction)) _index = 0;
+            else if (!ListStep.Step(ref _index, direction, count)) return;   // 0.4.8.007 - stops at the ends
 
             Hover(cards, _index);
             Speech.Browse(Describe(cards, _index));

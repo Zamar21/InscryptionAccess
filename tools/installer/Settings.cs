@@ -42,6 +42,7 @@ namespace IKMASetup
     ///   Language      [Language] Language    (localization, Session 32)
     ///   Full log      [Diagnostics] Show     DiagnosticGate.cs
     ///   Vibration     [Gamepad] VibrationLevel  GamepadSupport.cs (Session 34)
+    ///   Control template [Controls] Template  Buffers.cs (Session 59, 0.4.8.008)
     ///   Controller buttons  [ControllerMap] *   ControllerMap.cs / KeyIn.cs (Session 34)
     /// </remarks>
     internal static class Settings
@@ -151,6 +152,17 @@ namespace IKMASetup
                     new Option("Low",    L.T("Low")),
                     new Option("Medium", L.T("Medium")),
                     new Option("High",   L.T("High")),
+                },
+            },
+            // Session 59 (0.4.8.008), Zamar: two control templates, "Default"
+            // and "Original". Values match ControlTemplate in the mod (Buffers.cs).
+            new Setting
+            {
+                Section = "Controls", Key = "Template", Title = Text.SettingControlTemplate, Default = "Default",
+                Options = new[]
+                {
+                    new Option("Default",  L.T("Default")),
+                    new Option("Original", L.T("Original")),
                 },
             },
             new Setting

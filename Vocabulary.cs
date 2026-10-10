@@ -1,6 +1,7 @@
 ﻿// Vocabulary.cs
 
 using DiskCardGame;
+using System.Linq;
 
 namespace IKMA
 {
@@ -764,6 +765,11 @@ namespace IKMA
                 System.StringComparer.OrdinalIgnoreCase)
         {
             { "Trader", "It is a rugged face with a bandana wrapped tightly below the eyes." },
+
+            // Zamar, Session 60 (0.4.8.013), after a tester heard only "Leshy
+            // puts on the Prospector mask...". "unkept" in his message spelled
+            // "unkempt" here (his spell-check rule).
+            { "Prospector", "He has a large hat, a heavy unkempt beard, and crooked teeth." },
 
             // Zamar, 0.7.301, amended 0.7.310 to "They". The Trapper is NOT
             // an exception to the no-gendered-pronouns sweep of 0.7.220 — the
@@ -1608,10 +1614,16 @@ namespace IKMA
         // ZAMAR'S WORDING, 0.7.308, verbatim — no longer provisional.
         // 0.7.423 - his rewrite, verbatim, adding the history keys.
         // Zamar, 0.7.423.
+        // 0.4.8.010 - Zamar, Session 59, on the history clause under the
+        // Default control template (Ctrl+Up reads the Card buffer first):
+        // "remove it if it's no longer true." Kept in Original, where it is.
         public static string BugReportKeyHelp()
-            => Loc.T("Shift L saves a log file to your desktop for a bug report, " +
+            => Buffers.Original
+            ? Loc.T("Shift L saves a log file to your desktop for a bug report, " +
                "and Control plus Up or Down arrow scrolls the log history. " +
-               "Those commands work here and at any point during gameplay.");
+               "Those commands work here and at any point during gameplay.")
+            : Loc.T("Shift L saves a log file to your desktop for a bug report. " +
+               "That command works here and at any point during gameplay.");
 
         // 0.7.312, Zamar: the file name is a version, a date and a time read
         // out digit by digit, and it tells the player nothing they need —
@@ -3093,7 +3105,7 @@ namespace IKMA
             // play keys first, then the reads, then items, then the draw
             // phase), and "At the start of your turn only" is his "During your
             // Draw Phase". The pad hears it through PadWords.
-            public static string EncounterControlsLeftAnd => Loc.T("Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.");
+            public static string EncounterControlsLeftAnd => Loc.T("Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.");
 
             // Claude, 0.7.110-0.7.206.
             public static string PlacingACardLeft => Loc.T("Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.");
@@ -5492,6 +5504,11 @@ namespace IKMA
             public static string Medium => Loc.T("Medium");
             public static string High => Loc.T("High");
 
+            // Zamar, Session 59.
+            public static string ControlTemplate => Loc.T("Control template");
+            public static string TemplateDefault => Loc.T("Default");
+            public static string TemplateOriginal => Loc.T("Original");
+
             public static string FullLog => Loc.T("Full log for bug reports");
             public static string FullLogOff => Loc.T("Off: the short log, what IKMA said and anything that went wrong.");
             public static string FullLogOn => Loc.T("On: every diagnostic line, for a bug report. The log gets much longer.");
@@ -5697,11 +5714,78 @@ namespace IKMA
             {
                 Loc.T("Help list, F1."),
                 Loc.T("Mod Settings, Control plus M."),
+            }
+            // 0.4.8.008 - the Original control template keeps the old history rows.
+            .Concat(Buffers.Original ? new[]
+            {
                 Loc.T("Review history, older, Control plus Down arrow."),
                 Loc.T("Review history, newer, Control plus Up arrow."),
+            } : new[]
+            {
+                // 0.4.8.007 - the buffer keys, Say the Spire 2's names.
+                Loc.T("Next buffer item, Control plus Up arrow."),
+                Loc.T("Previous buffer item, Control plus Down arrow."),
+                Loc.T("Next buffer, Control plus Right arrow."),
+                Loc.T("Previous buffer, Control plus Left arrow."),
+            })
+            .Concat(new[]
+            {
                 Loc.T("Review history as a list, Y."),
                 Loc.T("Silence speech, tap Control."),
+                // 0.4.8.007 - Zamar's letters (Session 58, "Initials"), Say
+                // the Spire 2's "Announce" row shape.
+                Loc.T("Announce scales, Control plus S."),
+                Loc.T("Announce bones, Control plus B."),
+                Loc.T("Announce candles, Control plus C."),
+                Loc.T("Announce woodcarving, Control plus W."),
+                Loc.T("Announce deck counts, Control plus D."),
+                Loc.T("Announce teeth, Control plus T."),
+            }).ToArray();
+
+            // 0.4.8.007 - the map's own rows, Say the Spire 2's (MapScreen help).
+            public static string[] Map() => new[]
+            {
+                Loc.T("Map navigation uses buffer controls, Control plus the arrow keys. Buffer controls are remapped on this screen."),
+                Loc.T("Route summary, Control plus Space."),
             };
+        }
+
+        /// <summary>
+        /// The buffers and the map preview. (0.4.8.007, Session 58.)
+        /// Say the Spire 2's words (Zamar's Session 37 rule: match theirs)
+        /// except where marked as his.
+        /// </summary>
+        public static class BufferWords
+        {
+            // Zamar, Session 58: the focused-item buffer is "Card".
+            public static string Card => Loc.T("Card");
+            // Zamar's word for the review history.
+            public static string History => Loc.T("History");
+            // Say the Spire 2, BUFFERS.CURRENT.
+            public static string Current(string buffer, string item) => Loc.F($"{buffer}: {item}");
+            // Say the Spire 2, BUFFERS.EMPTY.
+            public static string Empty(string buffer) => Loc.F($"{buffer}: empty");
+            // Say the Spire 2, BUFFERS.NO_BUFFERS.
+            public static string NoBuffers => Loc.T("No buffers available");
+            // Say the Spire 2, BUFFERS.NO_BUFFER_SELECTED.
+            public static string NoBufferSelected => Loc.T("No buffer selected");
+
+            // Say the Spire 2, map_nav NAV.CHOICE.
+            public static string Choice => Loc.T("choice");
+            // Say the Spire 2, NAV.NO_FORWARD / NAV.NO_BACKWARD.
+            public static string NoPathForward => Loc.T("No path forward.");
+            // 0.4.8.012 - Zamar: 'Change No Path Backward to "Cannot go backwards."'
+            public static string NoPathBackward => Loc.T("Cannot go backwards.");
+            // Zamar, Session 58: the four rows a sighted player can see end here.
+            public static string PathOutOfSight => Loc.T("Path continues out of sight.");
+            // Say the Spire 2, ROUTES.TYPE_RANGE / ROUTES.TYPE_EXACT.
+            public static string TypeRange(string type, int min, int max) => Loc.F($"{type} {min} to {max}");
+            public static string TypeExact(string type, int count) => Loc.F($"{type} {count}");
+
+            // Zamar, Session 58.
+            public static string NotInEncounter => Loc.T("Not in an encounter.");
+            // Zamar, Session 58.
+            public static string NoWoodcarving => Loc.T("You have no woodcarving.");
         }
     }
 }

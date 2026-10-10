@@ -168,6 +168,8 @@ namespace IKMA
             { key = true; Browse(cards, -1); }
             else if (KeyIn.Down(KeyCode.RightArrow) || KeyIn.Down(KeyCode.DownArrow))
             { key = true; Browse(cards, 1); }
+            else if (ListStep.JumpKey() is int jump && jump != 0)   // 0.4.8.012 - Home / End
+            { key = true; Browse(cards, jump); }
             else if (KeyIn.Down(KeyCode.Return) || KeyIn.Down(KeyCode.KeypadEnter))
             { key = true; Choose(cards); }
             else if (KeyIn.Down(KeyCode.Space))
@@ -197,7 +199,8 @@ namespace IKMA
         private static void Browse(List<SelectableCard> cards, int direction)
         {
             int count = cards.Count;
-            _index = _index < 0 ? 0 : (_index + direction + count) % count;
+            if (_index < 0 && !ListStep.IsJump(direction)) _index = 0;
+            else if (!ListStep.Step(ref _index, direction, count)) return;   // 0.4.8.007 - stops at the ends
             Hover(cards[_index]);
             Speech.Browse(CardChoiceReader.DescribeCard(cards[_index]));
         }

@@ -637,15 +637,13 @@ namespace IKMA
             // The challenge row is one past the last card.
             int stops = opts.Count + (HasChallengeRow ? 1 : 0);
 
-            int next;
-            if (_index == NOWHERE || _index >= stops)
+            // 0.4.8.012 - stops at the ends (Zamar, Session 58: every list),
+            // and Home / End jump (ListStep).
+            int next = _index;
+            if ((_index == NOWHERE || _index >= stops) && !ListStep.IsJump(direction))
                 next = direction >= 0 ? 0 : stops - 1;
-            else
-            {
-                next = _index + direction;
-                if (next < 0) next = stops - 1;
-                if (next >= stops) next = 0;
-            }
+            else if (!ListStep.Step(ref next, direction, stops))
+                return;
 
             if (next >= opts.Count)
             {

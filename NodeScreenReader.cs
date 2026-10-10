@@ -1931,6 +1931,24 @@ namespace IKMA
         private static bool  _idlePending;
         private static int   _idleGeneration;
 
+        /// <summary>
+        /// 0.4.8.010 - idle clocks run only while the game window is in front
+        /// (speech is held in the background) or during a dev driver run.
+        /// </summary>
+        internal static bool IdleClockRuns
+        {
+            get
+            {
+#if IKMA_DEV
+                if (SpeechPump.DevSilentRun) return true;
+#endif
+                return UnityEngine.Application.isFocused;
+            }
+        }
+
+        /// <summary>0.4.8.010 - any key: the idle clock starts again (HotkeyManager).</summary>
+        internal static void NoteKeyPressed() => _idleTimer = 0f;
+
         internal static void ResetIdle()
         {
             _idleTimer = 0f;
@@ -1950,6 +1968,8 @@ namespace IKMA
         {
             bool waiting = open || partCount > 0 || (BackpackAvailable && InBackpackView);
             if (!waiting || IdleQuiet()) { _idleTimer = 0f; return; }
+            // 0.4.8.010 - no idle clock while the game is in the background (see HotkeyManager's map idle).
+            if (!IdleClockRuns) return;
 
             _idleTimer += Time.unscaledDeltaTime;
             if (_idleTimer < (_idleSpokenOnce ? IDLE_REPEAT : IDLE_FIRST)) return;
@@ -2899,6 +2919,32 @@ namespace IKMA
         }
         internal static bool CampfireActive => Active && _screenName == Vocabulary.Campfire;   // Session 34
 
+        // 0.4.8.009 - CardStatBoostSequencer.stakeRingParent (private
+        // [SerializeField] GameObject). StatBoostSequence switches it on once
+        // the campfire is laid out and off only at the very end, after the
+        // pile is cleared, so it is up for the whole screen. A beta tester
+        // (0.4.8.003 log) spaced quickly through the campfire's opening lines
+        // and the reader let go before the card slot came back: the gaps
+        // between lines added up past SCREEN_OVER_SECONDS, the same shape as
+        // the 0.4.8.005 item pickup. The keyboard fell to the unreadable-screen
+        // line with the game waiting on the slot. The game's own answer to
+        // "is the campfire still up" is the stake ring. See the release test
+        // in Tick.
+        private static readonly System.Reflection.FieldInfo _campfireRingField =
+            HarmonyLib.AccessTools.Field(typeof(CardStatBoostSequencer), "stakeRingParent");
+
+        private static bool CampfireRingUp()
+        {
+            var seq = _sequencer as CardStatBoostSequencer;
+            if (seq == null) return false;
+            try
+            {
+                var ring = _campfireRingField?.GetValue(seq) as GameObject;
+                return ring != null && ring.activeSelf;
+            }
+            catch { return false; }
+        }
+
         /// <summary>
         /// Session 34. A card choice ran inside this screen (the Mycologists'
         /// no-pairs path). The screen's own parts may never appear, so the
@@ -3410,7 +3456,7 @@ namespace IKMA
             // which is why it never showed up before. The game's own answer to
             // "is this screen still up" is its backpack: ReplenishConsumables
             // switches it on first and off last.
-            if (tickParts.Count > 0 || _donePartsPresent > 0 || (BackpackAvailable && InBackpackView) || ItemPickupBackpackUp()) { _partsSeen = true; _emptyFor = 0f; }
+            if (tickParts.Count > 0 || _donePartsPresent > 0 || (BackpackAvailable && InBackpackView) || ItemPickupBackpackUp() || CampfireRingUp()) { _partsSeen = true; _emptyFor = 0f; }
             else if (_partsSeen && !open && !DialogueWaiting())
             {
                 _emptyFor += Time.deltaTime;
@@ -4043,7 +4089,7 @@ namespace IKMA
 
             if (_cardIndex >= cards.Count) _cardIndex = NOWHERE;
 
-            if (_cardIndex == NOWHERE && _tradeGap != NOWHERE)
+            if (_cardIndex == NOWHERE && _tradeGap != NOWHERE && !ListStep.IsJump(direction))
             {
                 int g = _tradeGap;
                 _tradeGap = NOWHERE;
@@ -4051,14 +4097,12 @@ namespace IKMA
                 if (_cardIndex < 0) _cardIndex = cards.Count - 1;
                 if (_cardIndex >= cards.Count) _cardIndex = 0;
             }
-            else if (_cardIndex == NOWHERE)
+            else if (_cardIndex == NOWHERE && !ListStep.IsJump(direction))
                 _cardIndex = direction >= 0 ? 0 : cards.Count - 1;
-            else
-            {
-                _cardIndex += direction;
-                if (_cardIndex < 0) _cardIndex = cards.Count - 1;
-                if (_cardIndex >= cards.Count) _cardIndex = 0;
-            }
+            // 0.4.8.012 - stops at the ends (Session 58: every list); Home / End.
+            // At an end the cards still own the key: nothing said, nothing else moves.
+            else if (!ListStep.Step(ref _cardIndex, direction, cards.Count))
+                return true;
 
             HoverCard(cards);
             Speech.Browse(DescribeCard(cards, _cardIndex));
@@ -4235,14 +4279,11 @@ namespace IKMA
             // rather than past it. Same shape as BrowseCards above.
             if (_index >= parts.Count) _index = NOWHERE;
 
-            if (_index == NOWHERE)
+            if (_index == NOWHERE && !ListStep.IsJump(direction))
                 _index = direction >= 0 ? 0 : parts.Count - 1;
-            else
-            {
-                _index += direction;
-                if (_index < 0) _index = parts.Count - 1;
-                if (_index >= parts.Count) _index = 0;
-            }
+            // 0.4.8.012 - stops at the ends (Session 58: every list); Home / End.
+            else if (!ListStep.Step(ref _index, direction, parts.Count))
+                return;
 
             HoverCurrent(parts, reassert: true);
 
