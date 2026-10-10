@@ -1,4 +1,4 @@
-// MultiStrikeNarrator.cs
+﻿// MultiStrikeNarrator.cs
 
 using System.Collections.Generic;
 using DiskCardGame;
@@ -125,6 +125,11 @@ namespace IKMA
             internal readonly List<DamageRecord> AttackerRecords = new List<DamageRecord>();
             internal int Quills;
             internal float FinishedAt = -1f;
+            // 0.4.8.004 - the game's own running total of direct damage this
+            // phase (TurnManager.DamageDealtThisTurn), read at the first strike
+            // and at the last. The difference is what this attacker sent past.
+            internal int DirectAtStart = -1;
+            internal int Direct;
         }
 
         // A lethal quill hit is followed by Die inside the same attack
@@ -154,6 +159,7 @@ namespace IKMA
             };
             try { a.AttackerIsOpponent = attacker.OpponentCard; } catch { }
             a.AttackerIsGiant = GiantVolley.IsGiant(attacker);
+            try { a.DirectAtStart = TurnManager.Instance != null ? TurnManager.Instance.DamageDealtThisTurn : -1; } catch { a.DirectAtStart = -1; }
 
             // Names on the defending side before any strike: a card that dies
             // mid-attack still made its name ambiguous.
@@ -217,6 +223,12 @@ namespace IKMA
                 }
             }
 
+            try
+            {
+                if (a.DirectAtStart >= 0 && TurnManager.Instance != null)
+                    a.Direct = System.Math.Max(0, TurnManager.Instance.DamageDealtThisTurn - a.DirectAtStart);
+            }
+            catch { }
             a.Finished = true;
             try { a.FinishedAt = UnityEngine.Time.unscaledTime; } catch { }
             if (ReferenceEquals(_current, a)) _current = null;
@@ -526,6 +538,17 @@ namespace IKMA
 
                 sb.Append(' ').Append(clause);
             }
+
+            // 0.4.8.004 - DIRECT DAMAGE IS IN THE SUMMARY. Zamar, Session 56,
+            // on Hydra's five strikes read as five lines: "damage to cards
+            // then direct damage, all summarized." His wording: "3 direct
+            // damage." The phase's own total line still follows as before.
+            // 0.4.8.006 - Zamar, Session 57 (Angler, the shark landing
+            // mid-attack): after a character cut in, the rest of the attack
+            // does not repeat direct damage - "You deal N direct damage."
+            // follows at once. Card hits after the cut still read. ("Drop it.")
+            if (!early && !a.OpeningSaid && a.Direct > 0)
+                sb.Append(' ').Append(Vocabulary.Combat.DirectDamageCount(a.Direct));
 
             // 0.7.441 - Sharp Quills and what it did to the attacker, after the
             // cards the attacker hit and before the bones (a bone here can be

@@ -275,7 +275,10 @@ namespace IKMA
             var opts = Options();
             _index = NOWHERE;
 
-            string countWord = Vocabulary.Pause.OptionCount(opts.Count);
+            // 0.4.8.004 - Zamar, Session 56: "Pause menu. 3 options." while the
+            // arrows stop four times. "make it four then" - the Active
+            // Challenges row is counted wherever it is one of the stops.
+            string countWord = Vocabulary.Pause.OptionCount(opts.Count + (HasChallengeRow ? 1 : 0));
 
             // HIS LINE, Session 17: "Pause menu. 3 options. Map 3. Last saved 1
             // second ago." — the screen named, its size, then what the run info
@@ -703,7 +706,7 @@ namespace IKMA
             string label = Vocabulary.PartNameOrUnnamed(Label(opts[here]));
             string info  = InfoBarText();
 
-            string line = Vocabulary.Pause.OptionOf(label, here + 1, opts.Count, string.IsNullOrEmpty(info), info);
+            string line = Vocabulary.Pause.OptionOf(label, here + 1, opts.Count + (HasChallengeRow ? 1 : 0), string.IsNullOrEmpty(info), info);
             Speech.Browse(line);
         }
 

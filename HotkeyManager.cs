@@ -134,6 +134,17 @@ namespace IKMA
         private bool _wasBattleActive = false;
         private bool _mapReturnPending = false;
 
+        // 0.4.8.006 - THE MAP SAYS WHERE YOU ARE EVERY TIME IT COMES BACK.
+        // Until now only the end of a battle armed the map line, so a run
+        // started from the menu and every non-battle node returned to a
+        // silent map (Session 57 driver findings, and the long-standing
+        // "no map line after non-battle nodes"). Now the map going away and
+        // coming back arms it too, and so does a node or card-choice screen
+        // letting go.
+        private bool _mapWasHidden = true;
+        private static bool _armFromScreen;
+        internal static void ArmMapReturn() => _armFromScreen = true;
+
         // Idle map prompt. (Session 11.)
         //
         // Loading into the map, the music starts and nothing indicates the game
@@ -393,6 +404,14 @@ namespace IKMA
             {
                 var tm = TurnManager.Instance;
                 if (tm == null || !tm.IsPlayerTurn || tm.IsSetupPhase) return false;
+
+                // 0.4.8.004 (Session 56 driver run). The game leaves
+                // IsPlayerTurn set while the battle ends: after "The scale hits
+                // 5..." on a loss, X / Space during the candle and the boss's
+                // parting line repeated "Draw phase. Press A to draw..." for a
+                // turn that will never come. GameEnding is the game's own flag
+                // for that window.
+                if (tm.GameEnding || tm.GameEnded) return false;
 
                 var hand = Singleton<PlayerHand>.Instance;
                 if (hand == null) return false;
@@ -1089,6 +1108,23 @@ namespace IKMA
             if (KeyIn.Down(KeyCode.Space) && DialogueAdvancer.TryAdvance())
                 return;
 
+            // 0.4.8.006 - SPACE BETWEEN TWO LINES STAYS WITH THE DIALOGUE.
+            // Session 57 driver run: a Space pressed after a line advanced but
+            // before the next arrived read the screen underneath. Also held
+            // while the region changes (PaperGameMap.ChangingRegion, PUBLIC)
+            // and while the Mycologists fuse a pair: the game waits on
+            // nothing there. Swallowed silently, as Space in dialogue is.
+            if (KeyIn.Down(KeyCode.Space))
+            {
+                bool gap = false;
+                try { gap = DialogueAdvancer.InAdvanceGap() || MycologistResult.Busy || MapReader.ChangingRegion(); } catch { }
+                if (gap)
+                {
+                    Plugin.Log?.LogInfo("IKMA DIALOGUE: Space swallowed - between two lines of a sequence.");
+                    return;
+                }
+            }
+
             // ENTER IS SWALLOWED WHILE A CHARACTER IS TALKING. (0.7.129.)
             //
             // Zamar asked for the "Conversation in progress" line on Enter as
@@ -1329,6 +1365,8 @@ namespace IKMA
             {
                 // Notice the deck appearing before any key is judged.
                 NodeScreenReader.Tick();
+                // 0.4.8.006 - any key restarts the node screen's idle prompt.
+                if (KeyIn.AnyDown) NodeScreenReader.ResetIdle();
 
                 // 0.7.359 — THE CAMERA WATCHER TICKS HERE TOO. This branch ends
                 // in a bare return, so UpdateInner, and the
@@ -1885,6 +1923,19 @@ namespace IKMA
             // announced properly the moment the reward screen finishes. The old
             // behaviour lost nothing except its timing.
             // ==================================================================
+            // 0.4.8.006 - see _mapWasHidden.
+            if (_armFromScreen) { _armFromScreen = false; _mapWasHidden = true; }
+            if (!battleActive)
+            {
+                bool mapUp = MapReader.MapAvailable();
+                if (!mapUp && !MapReader.MapMoving()) _mapWasHidden = true;
+                else if (mapUp && _mapWasHidden)
+                {
+                    _mapWasHidden = false;
+                    _mapReturnPending = true;
+                }
+            }
+
             if (_mapReturnPending && PostBattleScreenPending())
                 return;
 
@@ -1892,7 +1943,9 @@ namespace IKMA
             {
                 if (MapReader.MapAvailable())
                 {
-                    if (_mapReturnPending)
+                    // 0.4.8.006 - held (not dropped) while the region changes
+                    // or a character is talking, so it never lands mid-intro.
+                    if (_mapReturnPending && !MapReader.ArrivalMustWait())
                     {
                         _mapReturnPending = false;
                         _mapIdleTimer = 0f;
@@ -4799,7 +4852,19 @@ namespace IKMA
                 // read here describes where the player WAS.
                 if (mgr.MovingNodes) return null;
 
+                // 0.4.8.004 - THE NODE STOOD ON, NOT THE NODE LEFT. A beta
+                // tester's log said "Trader. IKMA cannot read this screen yet."
+                // at the Woodcarver. MapNodeManager.ActiveNode is only set by
+                // FindAndSetActiveNodeInteractable when the map comes back, so
+                // on a node screen it still names the node the player came
+                // from. The game's own record of where the player is,
+                // RunState.Run.currentNodeId, is written once the travel
+                // finishes (MapNodeManager.DoMoveToNewNode). No match, no name:
+                // a wrong place is worse than none.
+                int here = RunState.Run.currentNodeId;
                 var node = mgr.ActiveNode;
+                if (node == null || node.nodeId != here)
+                    node = mgr.nodes?.Find(n => n != null && n.nodeId == here);
                 if (node == null) return null;
                 return MapReader.GetNodeFriendlyName(node);
             }

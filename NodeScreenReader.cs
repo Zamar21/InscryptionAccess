@@ -693,7 +693,31 @@ namespace IKMA
             // "Backpack", not "Your backpack" — 0.7.275, his call. Every other
             // line on this screen already belongs to the player; the possessive
             // was a word that earned nothing.
-            Speech.Browse(Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse(BackspaceLeavesBackpack()));
+            Speech.Browse(EmptyBackpackShowing()
+                ? Vocabulary.NodeScreens.BackpackEmpty
+                : Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse(BackspaceLeavesBackpack()));
+        }
+
+        /// <summary>
+        /// 0.4.8.004. The backpack is on show, a carving is still to be picked,
+        /// and the run owns no carvings yet. Zamar allowed the view (the game
+        /// lets a sighted player scroll up to the empty log) and wrote its line.
+        /// While picking, the backpack holds exactly RunState's totem tops and
+        /// bottoms (BuildTotemSequencer.FillInventorySlots), so the game's own
+        /// lists answer it.
+        /// </summary>
+        internal static bool EmptyBackpackShowing()
+        {
+            if (!BackpackAvailable || !InBackpackView) return false;
+            if (CarvingsRemaining() <= 0) return false;
+            try
+            {
+                var run = RunState.Run;
+                if (run == null) return false;
+                int owned = (run.totemTops?.Count ?? 0) + (run.totemBottoms?.Count ?? 0);
+                return owned == 0;
+            }
+            catch { return false; }
         }
 
         /// <summary>
@@ -1368,6 +1392,9 @@ namespace IKMA
             ReleaseHover();
             ReleaseCardHover();
             _cardIndex  = NOWHERE;
+            _tradeGap   = NOWHERE;   // 0.4.8.006
+            ResetIdle();             // 0.4.8.006
+            HotkeyManager.ArmMapReturn();   // 0.4.8.006 - the map says where you are when it is back
             _sequencer  = null;
             _screenName = null;
             _hovered    = null;
@@ -1887,6 +1914,82 @@ namespace IKMA
         }
 
         private static bool _arrivalPending;
+
+        // ==================================================================
+        // 0.4.8.006 - NODE SCREENS GET THE IDLE PROMPT. The project rule: any
+        // state where the game waits on the player needs an audible prompt,
+        // 5.5 s then every 15 s, full controls every time. Node screens had
+        // none (Session 57 driver run: the sacrifice stone and the Woodcarver
+        // sat silent until Space). The line is the one Space already says
+        // there, so no new words. Lowest tier, composed at speak time, and
+        // withdrawn if the player pressed anything or a character is talking.
+        // ==================================================================
+        private const float IDLE_FIRST  = 5.5f;
+        private const float IDLE_REPEAT = 15f;
+        private static float _idleTimer;
+        private static bool  _idleSpokenOnce;
+        private static bool  _idlePending;
+        private static int   _idleGeneration;
+
+        internal static void ResetIdle()
+        {
+            _idleTimer = 0f;
+            _idleSpokenOnce = false;
+            _idleGeneration++;
+        }
+
+        private static bool IdleQuiet()
+        {
+            if (_arrivalPending || DialogueWaiting()) return true;
+            try { if (DialogueAdvancer.ConversationRunning()) return true; } catch { }
+            try { if (MycologistResult.Busy) return true; } catch { }
+            return false;
+        }
+
+        private static void TickIdle(int partCount, bool open)
+        {
+            bool waiting = open || partCount > 0 || (BackpackAvailable && InBackpackView);
+            if (!waiting || IdleQuiet()) { _idleTimer = 0f; return; }
+
+            _idleTimer += Time.unscaledDeltaTime;
+            if (_idleTimer < (_idleSpokenOnce ? IDLE_REPEAT : IDLE_FIRST)) return;
+            _idleTimer = 0f;
+            _idleSpokenOnce = true;
+
+            if (_idlePending) return;
+            _idlePending = true;
+            int generation = _idleGeneration;
+            Speech.Commentary(() =>
+            {
+                _idlePending = false;
+                if (_sequencer == null || generation != _idleGeneration || IdleQuiet()) return null;
+                string line = null;
+                try { line = IdleLine(); } catch { }
+                return string.IsNullOrEmpty(line) ? null : ReviewHistory.AsPrompt(line);
+            });
+        }
+
+        /// <summary>What Space says with nothing browsed, plus the card layout's H line.</summary>
+        private static string IdleLine()
+        {
+            var openCards = OpenCards();
+            if (openCards.Count > 0)
+                return _screenName == Vocabulary.Trader
+                    ? Vocabulary.NodeScreens.TraderHelp(PeltsOnTable())
+                    : Vocabulary.NodeScreens.ChoosingACardArrows(Vocabulary.CardCount(openCards.Count));
+            if (BackpackAvailable && InBackpackView) return BackpackLine();
+            var parts = Parts();
+            if (parts.Count == 0) return null;
+            if (_screenName == Vocabulary.Woodcarver && !string.IsNullOrEmpty(LastTotemAssembledLine) && FinishedTotemShowing(parts))
+                return LastTotemAssembledLine;
+            return Vocabulary.NodeScreens.OptionSLeftAnd(ScreenTitle(), parts.Count);
+        }
+
+        /// <summary>The backpack's own line: said on A, on H, and as its idle prompt.</summary>
+        private static string BackpackLine()
+            => EmptyBackpackShowing()
+                ? Vocabulary.NodeScreens.BackpackEmpty
+                : Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse(BackspaceLeavesBackpack());
 
         private static void SpeakArrivalWhenReady(int partCount)
         {
@@ -2453,6 +2556,12 @@ namespace IKMA
         private const int NOWHERE = -1;
 
         private static int _cardIndex = NOWHERE;
+
+        // 0.4.8.006 - WHERE THE LAST TRADE WAS. Session 57 driver run: after
+        // each trade the cursor went back to option 1. The traded card leaves
+        // the list, so the next arrow carries on from the gap it left: right
+        // lands on the card that took its place, left on the one before.
+        private static int _tradeGap = NOWHERE;
         private static string _slotBeingFilled;
         private static SelectableCard _hoveredCard;
 
@@ -2768,6 +2877,26 @@ namespace IKMA
 
         // 0.7.337 — the item pickup screen, for its I key and its help line.
         internal static bool ItemPickupActive => Active && _screenName == Vocabulary.ItemPickupName;
+
+        // 0.4.8.005 - GainConsumablesSequencer.backpack (private
+        // [SerializeField] GameObject). ReplenishConsumables sets it active
+        // before the first item and inactive 0.25 s after the last, so it is
+        // up for the whole pickup, every round of it. See the release test
+        // in Tick.
+        private static readonly System.Reflection.FieldInfo _pickupBackpackField =
+            HarmonyLib.AccessTools.Field(typeof(GainConsumablesSequencer), "backpack");
+
+        private static bool ItemPickupBackpackUp()
+        {
+            var seq = _sequencer as GainConsumablesSequencer;
+            if (seq == null) return false;
+            try
+            {
+                var pack = _pickupBackpackField?.GetValue(seq) as GameObject;
+                return pack != null && pack.activeSelf;
+            }
+            catch { return false; }
+        }
         internal static bool CampfireActive => Active && _screenName == Vocabulary.Campfire;   // Session 34
 
         /// <summary>
@@ -3255,8 +3384,33 @@ namespace IKMA
 
             // Has the screen finished with itself?
             var tickParts = Parts();
+            if (_focusConfirmSince > 0f) TryFocusBeginExperiment(tickParts);
             SpeakArrivalWhenReady(tickParts.Count);
-            if (tickParts.Count > 0 || _donePartsPresent > 0) { _partsSeen = true; _emptyFor = 0f; }
+            TickIdle(tickParts.Count, open);   // 0.4.8.006
+            // 0.4.8.004 - AN EMPTY BACKPACK IS NOT AN EMPTY SCREEN. A beta tester
+            // opened the backpack (A) at his first Woodcarver, before he owned a
+            // single carving. In the backpack view the game turns the three
+            // carving slots' colliders off (BuildTotemSequencer.OnViewChanged ->
+            // SetSlotCollidersEnabled(false)) and every backpack slot is empty,
+            // so Parts() read zero, this test called the screen over after 1.25 s
+            // and released the reader. Backspace and the arrows died with it, the
+            // unreadable-screen line took over, and only the mouse could scroll
+            // back down. The game is still holding the screen while its view is
+            // the backpack, so that is the question asked here.
+            // 0.4.8.005 - THE ITEM PICKUP IS UP WHILE ITS BACKPACK IS. A beta
+            // tester with two free item slots took his first item, a second set
+            // came out, and Leshy introduced two items he had never seen. In
+            // that second round the game keeps the slot colliders off until every
+            // item has been shown (GainConsumablesSequencer.RegularGainConsumables
+            // calls SetSlotCollidersEnabled(true) only after the loop), so Parts()
+            // read zero. The gaps between Leshy's lines added up past
+            // SCREEN_OVER_SECONDS, the reader let go mid-screen, and the second
+            // choice fell to the unreadable-screen line. On a save that knows
+            // every item there is no dialogue and the gap stays under the limit,
+            // which is why it never showed up before. The game's own answer to
+            // "is this screen still up" is its backpack: ReplenishConsumables
+            // switches it on first and off last.
+            if (tickParts.Count > 0 || _donePartsPresent > 0 || (BackpackAvailable && InBackpackView) || ItemPickupBackpackUp()) { _partsSeen = true; _emptyFor = 0f; }
             else if (_partsSeen && !open && !DialogueWaiting())
             {
                 _emptyFor += Time.deltaTime;
@@ -3379,6 +3533,7 @@ namespace IKMA
             {
                 ReleaseCardHover();
                 _cardIndex = NOWHERE;
+                _tradeGap  = NOWHERE;
                 _log?.LogInfo("IKMA NODE: card layout closed.");
             }
         }
@@ -3888,7 +4043,15 @@ namespace IKMA
 
             if (_cardIndex >= cards.Count) _cardIndex = NOWHERE;
 
-            if (_cardIndex == NOWHERE)
+            if (_cardIndex == NOWHERE && _tradeGap != NOWHERE)
+            {
+                int g = _tradeGap;
+                _tradeGap = NOWHERE;
+                _cardIndex = direction >= 0 ? g : g - 1;
+                if (_cardIndex < 0) _cardIndex = cards.Count - 1;
+                if (_cardIndex >= cards.Count) _cardIndex = 0;
+            }
+            else if (_cardIndex == NOWHERE)
                 _cardIndex = direction >= 0 ? 0 : cards.Count - 1;
             else
             {
@@ -4002,7 +4165,10 @@ namespace IKMA
             {
                 var offers = SequencerCardList("tradeCards", ref _tradeCardsField);
                 if (offers != null && !offers.Contains(card))
+                {
                     using (Speech.Event(EventKind.CardObtained, EventSource.CurrentPlayer)) Speech.Confirm(Vocabulary.TradeTaken(peltName, chosen));
+                    _tradeGap = _cardIndex;   // 0.4.8.006
+                }
                 else
                     _log?.LogInfo("IKMA NODE: Enter on a Trader offer, and the game did not take the trade.");
             }
@@ -4012,10 +4178,48 @@ namespace IKMA
             return true;
         }
 
+        // ------------------------------------------------------------------
+        // AFTER A PAIR IS CHOSEN, THE CURSOR GOES TO BEGIN EXPERIMENT.
+        // (0.4.8.004, Session 56.) The 2026-10-09 driver run left the cursor
+        // nowhere after "Pair of Amalgams selected.", and nothing said the
+        // next step was one arrow away. Zamar's pick: move the cursor there
+        // and let it read itself. Waits for the game: the pair is on the stone
+        // (SelectedPair) and the confirm button is among the parts. Gives up
+        // after ten seconds rather than grabbing the cursor later.
+        // ------------------------------------------------------------------
+        private static float _focusConfirmSince;
+
+        private static void TryFocusBeginExperiment(List<MainInputInteractable> parts)
+        {
+            if (_screenName != Vocabulary.Mycologists ||
+                UnityEngine.Time.unscaledTime - _focusConfirmSince > 10f)
+            {
+                _focusConfirmSince = 0f;
+                return;
+            }
+            if (DialogueWaiting() || OpenCards().Count > 0) return;
+            if (!PairIsOnTheStone()) return;
+            for (int i = 0; i < parts.Count; i++)
+            {
+                string said = null;
+                try { said = DescribePart(parts[i]); } catch { }
+                if (said != Vocabulary.NodeScreens.BeginExperiment) continue;
+                _focusConfirmSince = 0f;
+                _index = i;
+                HoverCurrent(parts, reassert: true);
+                _log?.LogInfo("IKMA NODE: pair on the stone - cursor moved to Begin experiment.");
+                Speech.Browse(WithStop(said));
+                return;
+            }
+        }
+
         public static void Browse(int direction)
         {
             // Cards on the table? They own the arrows.
             if (BrowseCards(direction)) return;
+
+            // 0.4.8.004 - an empty backpack answers the arrows with its line.
+            if (EmptyBackpackShowing()) { Speech.Browse(Vocabulary.NodeScreens.BackpackEmpty); return; }
 
             var parts = Parts();
             if (parts.Count == 0)
@@ -4414,6 +4618,9 @@ namespace IKMA
                 return;
             }
 
+            // 0.4.8.004 - Space in an empty backpack repeats its line.
+            if (EmptyBackpackShowing()) { Speech.Browse(Vocabulary.NodeScreens.BackpackEmpty); return; }
+
             var parts = Parts();
             if (parts.Count == 0) { Speech.Browse(NothingToChooseLine()); return; }
 
@@ -4481,6 +4688,16 @@ namespace IKMA
             // 0.7.242 still holds on every screen still asking its question.
             if ((_index < 0 || _index >= parts.Count) && parts.Count == 1 && StoneConfirmed())
                 _index = 0;
+
+            // 0.4.8.006 - "Enter to take the totem with you." means Enter.
+            // Session 57 driver run: with the finished totem on its stand and
+            // nothing browsed, Enter said "No option selected." The line
+            // offers the key, so the key takes the totem.
+            if ((_index < 0 || _index >= parts.Count) && _screenName == Vocabulary.Woodcarver && !InBackpackView)
+            {
+                int t = parts.FindIndex(p => { try { return (p as SelectableItemSlot)?.Item?.Data is TotemItemData; } catch { return false; } });
+                if (t >= 0) _index = t;
+            }
 
             if (_index < 0 || _index >= parts.Count)
             {
@@ -4626,6 +4843,11 @@ namespace IKMA
             {
                 _log?.LogInfo($"IKMA NODE: {pairChosenLine}");
                 Speech.Confirm(pairChosenLine);
+
+                // 0.4.8.004 - Zamar, Session 56: once the pair is on the stone
+                // the cursor moves to Begin experiment by itself. Applied in
+                // Tick, when the pair has landed and the button is a part.
+                _focusConfirmSince = UnityEngine.Time.unscaledTime;
             }
 
             // 0.7.435 - the standing -1 rule (0.7.249), as for the carving
@@ -4753,6 +4975,11 @@ namespace IKMA
 
         public static void SpeakHelp()
         {
+            // 0.4.8.006 - H in the backpack is the backpack's line, not the
+            // Woodcarver's (Session 57 driver run: it said "A opens your
+            // backpack" from inside it).
+            if (BackpackAvailable && InBackpackView) { Speech.Browse(BackpackLine()); return; }
+
             var openCards = OpenCards();
             if (openCards.Count > 0)
             {
@@ -4791,6 +5018,12 @@ namespace IKMA
             string blurb;
             if (!_screenBlurbs.TryGetValue(_screenName ?? "", out blurb))
                 blurb = countWord == null ? "" : countWord + ".";
+
+            // 0.4.8.004 - at the push-your-luck question the first stage's
+            // "Select a card from your deck..." is no longer what the screen
+            // wants. Zamar, Session 56: use the two choices.
+            if (_screenName == Vocabulary.Campfire && _boostApplied)
+                blurb = Vocabulary.NodeScreens.CampfirePushHelp(SurvivorsDead());
 
             string deckKey = DeckViewAvailable ? Vocabulary.NodeScreens.ShiftUpDisplaysYour + " " : "";
 

@@ -533,7 +533,7 @@ namespace IKMA
             // placement confirmation arrived. One entry cannot be split.
             if (fromSacrifice && SacrificeBoneMerger.LinePending)
             {
-                SacrificeRecord.AddMorselLine(line());
+                SacrificeRecord.AddMorselLine(line(), capturedAbility == Ability.QuadrupleBones);
                 return;
             }
 

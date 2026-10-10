@@ -217,6 +217,20 @@ namespace IKMA
         /// </summary>
         internal static readonly bool LocalizationShipped = false;   // readonly, not const: a const false makes the rest unreachable (warning CS0162)
 
+        /// <summary>
+        /// 0.4.8.006 - true when the game's own text comes out in the language
+        /// IKMA is speaking. A French tester heard Squirrel In A Bottle's
+        /// description in French inside English lines: the game's
+        /// ParseCardDefinition translates into the game's language, and the
+        /// beta speaks English only. Unknown (options not loaded) counts as a
+        /// match, as before.
+        /// </summary>
+        internal static bool GameTextMatchesSpeech()
+        {
+            string g = ReadGameLanguage();
+            return g == null || g == CurrentLanguage();
+        }
+
         private static string ReadLanguage()
         {
             if (!LocalizationShipped) return "English";

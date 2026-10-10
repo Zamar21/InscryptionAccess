@@ -660,9 +660,22 @@ namespace IKMA
             // moving right thing should be directly after Sprinter, before
             // other sigils."
 
+            // 0.4.8.004 - MIRROR OFF THE BOARD READS "Star". Zamar, Session 56,
+            // on Mirror Tentacle reading "Star, 3" at the card choice and "0, 3"
+            // in hand: "Should also be Star in hand for that one specifically
+            // since it doesnt get a value until on the board." Mirror only; the
+            // other variable stats keep their live value off the board.
+            string atkText = atk.ToString();
+            try
+            {
+                if (!onBoard && info.SpecialStatIcon == SpecialStatIcon.Mirror)
+                    atkText = Vocabulary.Cards.StarAttack;
+            }
+            catch { }
+
             string text = includeCost
-                ? Vocabulary.Cards.CardWithCost(name, lookPart, costPart, atk, hp, statNote, abilityPart, tribePart)
-                : Vocabulary.Cards.CardWithoutCost(name, lookPart, atk, hp, statNote, abilityPart);
+                ? Vocabulary.Cards.CardWithCost(name, lookPart, costPart, atkText, hp, statNote, abilityPart, tribePart)
+                : Vocabulary.Cards.CardWithoutCost(name, lookPart, atkText, hp, statNote, abilityPart);
 
             // Session 11: this used to log the composed line here and then hand
             // the identical string to Speak, which logged it again. Every

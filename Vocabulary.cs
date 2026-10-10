@@ -396,7 +396,11 @@ namespace IKMA
             = new System.Collections.Generic.Dictionary<string, string>(
                 System.StringComparer.OrdinalIgnoreCase)
         {
-            { "Bone King",    ", granting four bones." },
+            // 0.4.8.004 - Bone King's clause REMOVED. Zamar, Session 56, on
+            // "The Smoke in Slot 1 is sacrificed. Received 4 bones. The Smoke's
+            // Bone King ability triggers, granting four bones.": "Only the
+            // trigger should be there. Bone King ability triggers. Received 4
+            // bones." The bones are said once, by the bones line, after it.
             { "Sharp Quills", ", sending one damage back to its attacker." },
 
             // 0.7.304, Zamar's wording. Tutor.RespondsToResolveOnBoard is
@@ -1625,6 +1629,13 @@ namespace IKMA
         // 0.7.360: "ability fizzles.", his rewording (was "does nothing.").
         public static string SigilFizzles(string cardName, string sigilName)
             => Loc.F($"{cardName}'s {Loc.Game(sigilName)} ability fizzles.");
+
+        // Zamar, Session 56 (0.4.8.004): two Elks on one side, and the Sprinter
+        // lines did not say which. "Match the Waterborne ones" - the slot
+        // follows "ability triggers"/"fizzles", as in "...abilities trigger in
+        // slots 1 and 2". Only when another card on that side shares the name.
+        public static string SigilFizzlesInSlot(string cardName, string sigilName, int slotNumber)
+            => Loc.F($"{cardName}'s {Loc.Game(sigilName)} ability fizzles in slot {slotNumber}.");
 
         // Zamar, 0.7.304.
         public static string CorpseEaterTriggers(string deadCard, string eater, int slotNumber)
@@ -3518,11 +3529,11 @@ namespace IKMA
                 => Loc.F($" Kin types: {string.Join(", ", tribeNames)}.");
 
             // Claude, 0.7.347-0.7.357.
-            public static string CardWithCost(string name, string lookPart, string costPart, int atk, int hp, string statNote, string abilityPart, string tribePart)
+            public static string CardWithCost(string name, string lookPart, string costPart, string atk, int hp, string statNote, string abilityPart, string tribePart)
                 => $"{name}.{lookPart}{costPart} {atk}, {hp}.{statNote}{abilityPart}{tribePart}";
 
             // Claude, 0.7.347-0.7.357.
-            public static string CardWithoutCost(string name, string lookPart, int atk, int hp, string statNote, string abilityPart)
+            public static string CardWithoutCost(string name, string lookPart, string atk, int hp, string statNote, string abilityPart)
                 => $"{name}.{lookPart} {atk}, {hp}.{statNote}{abilityPart}";
 
             // Claude, 0.7.42 or earlier.
@@ -3969,6 +3980,10 @@ namespace IKMA
             public static string SAbilityTriggersItMovesTo(string name, string sigilName, string dir, int nowSlotNumber)
                 => Loc.F($"{name}'s {Loc.Game(sigilName)} ability triggers: it moves {dir} to slot {nowSlotNumber}.");
 
+            // Zamar, Session 56 (0.4.8.004). See Vocabulary.SigilFizzlesInSlot.
+            public static string SAbilityTriggersInSlotItMovesTo(string name, string sigilName, int fromSlotNumber, string dir, int nowSlotNumber)
+                => Loc.F($"{name}'s {Loc.Game(sigilName)} ability triggers in slot {fromSlotNumber}: it moves {dir} to slot {nowSlotNumber}.");
+
             // Zamar, 0.7.443. A second sentence after a Sprinter-family move.
             // Leading space: it is joined to the move line.
             public static string ItWillMoveNext(bool left)
@@ -4054,6 +4069,12 @@ namespace IKMA
 
             // Claude, 0.7.110-0.7.206.
             public static string Enemy => Loc.T("Enemy ");
+
+            // Zamar, Session 57 (0.4.8.006): the slot, when a same-name card is
+            // on that side - his Sprinter shape (SAbilityTriggersInSlotItMovesTo).
+            public static string SAbilityTriggersInSlotItBecomes(string who, string capturedOld, string sigilName, int slotNumber, int atk, int hp, string newName, string withClause)
+                => Loc.F($"{who}{capturedOld}'s {Loc.Game(sigilName)} ability triggers in slot {slotNumber}: ") +
+                   Loc.F($"it becomes a {atk}/{hp} {newName}{withClause}.");
 
             // Zamar, 0.7.222-0.7.261.
             public static string SAbilityTriggersItBecomes(string who, string capturedOld, string sigilName, int atk, int hp, string newName, string withClause)
@@ -4576,6 +4597,21 @@ namespace IKMA
             public static string ChooseOneCardFrom => Loc.T("Choose one card from your deck to be the host. " +
                 "Sacrifice another card from your deck to transfer its sigils to the host.");
 
+            // Zamar, Session 56 (0.4.8.004): help at the push-your-luck
+            // question, built from the two choices' own lines (his pick).
+            public static string CampfirePushHelp(bool safe)
+                => safe
+                   ? Loc.T("Continue resting peacefully by the campfire and raise the stat again, or withdraw from the campfire.")
+                   : Loc.T("Continue resting by the campfire and raise the stat again, or withdraw from the campfire.");
+
+            // Zamar, Session 56 (0.4.8.004). After the Mycologists' result line.
+            public static string FusedIsAddedToYourDeck(string cardName)
+                => Loc.F($"Fused {cardName} is added to your deck.");
+
+            // The fused card's numbers, in the card read's own shape.
+            public static string FusedStats(string attack, int health)
+                => Loc.F($" {attack}, {health}.");
+
             // Zamar, Session 18. Key: Campfire.
             public static string SelectACardFrom => Loc.T("Select a card from your deck to warm by the campfire. " +
                 "Doing so will permanently raise one of its stats, but comes with risk...");
@@ -4644,6 +4680,11 @@ namespace IKMA
                 => backspaceLeavesBackpack
                    ? Loc.T("Backpack. Arrows browse, Backspace returns to woodcarving selection.")
                    : Loc.T("Backpack. Arrows browse, Enter chooses a totem combination.");
+
+            // Zamar, Session 57 (0.4.8.004): the backpack opened at a
+            // Woodcarver before any carving is owned. Also what the arrows and
+            // Space say there.
+            public static string BackpackEmpty => Loc.T("Your backpack is empty. Press Backspace to return to woodcarving selection.");
 
             // Claude, 0.7.222-0.7.261.
             public static string DeckCannotBeReached => Loc.T("The deck cannot be reached right now.");
@@ -5094,6 +5135,13 @@ namespace IKMA
         /// <summary>The rulebook.</summary>
         public static class Rulebook
         {
+            // 0.4.8.006 - the game's own English sentence for [define:X]
+            // (RuleBookPage.ParseCardDefinition), said when the game's
+            // language differs from IKMA's. The game already says it this way
+            // in English; nothing new is heard on an English game.
+            public static string CardIsDefinedAs(string name, int attack, int health, string sigils)
+                => Loc.F($"A {name} is defined as: {attack} Power, {health} Health{sigils}.");
+
             // Zamar, Session 11. His transcription of the page. Key: Reach.
             public static string CombinationCode => Loc.T("Combination code: 273.");
 

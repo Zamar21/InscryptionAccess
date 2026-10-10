@@ -175,6 +175,7 @@ namespace IKMA
         {
             if (_sequencer == null) return;
             _log?.LogInfo($"IKMA CHOICE: card selection ended ({reason}).");
+            HotkeyManager.ArmMapReturn();   // 0.4.8.006 - the map says where you are when it is back
             _sequencer  = null;
             _index      = -1;
             _announced  = false;
@@ -1071,7 +1072,12 @@ namespace IKMA
             if (_index < 0)
             {
                 ResetIdle();
-                string what = Vocabulary.CardChoices.RareCardChoiceOrCardChoice(_sequencer is RareCardChoicesSequencer);
+                // 0.4.8.006 - the Deck Trial names itself. Session 57 driver
+                // run: X before any arrow said "Card Choice. D-pad to browse."
+                // on the Deck Trial. His title for the screen, from its idle line.
+                string what = InTrialSelection()
+                    ? Vocabulary.CardChoices.DeckTrialTitle.TrimEnd('.')
+                    : Vocabulary.CardChoices.RareCardChoiceOrCardChoice(_sequencer is RareCardChoicesSequencer);
                 _log?.LogInfo($"IKMA CHOICE: Space at NOWHERE — naming the screen ({what}).");
                 Speech.Browse(Vocabulary.CardChoices.ArrowKeysToBrowse(what));
                 return;

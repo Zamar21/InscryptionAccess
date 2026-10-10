@@ -265,6 +265,9 @@ namespace IKMA
             return -1;
         }
 
+        /// <summary>Whether a narrator has already announced this card. (0.4.8.004.)</summary>
+        internal static bool IsAnnounced(PlayableCard card) => WasAnnounced(card);
+
         private static bool WasAnnounced(PlayableCard card)
         {
             for (int i = 0; i < _announced.Count; i++)

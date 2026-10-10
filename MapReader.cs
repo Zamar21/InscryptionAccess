@@ -2922,6 +2922,32 @@ namespace IKMA
             _knownManager = mgr;
         }
 
+        /// <summary>0.4.8.006 - the piece is sliding between nodes.</summary>
+        public static bool MapMoving()
+        {
+            try
+            {
+                var mgr = ManagerGateInstalled ? _knownManager : MapNodeManager.Instance;
+                return mgr != null && mgr.MovingNodes;
+            }
+            catch { return false; }
+        }
+
+        /// <summary>0.4.8.006 - PaperGameMap.ChangingRegion, PUBLIC: the region intro is running.</summary>
+        public static bool ChangingRegion()
+        {
+            if (ManagerGateInstalled && _knownManager == null) return false;
+            try { var p = PaperGameMap.Instance; return p != null && p.ChangingRegion; }
+            catch { return false; }
+        }
+
+        /// <summary>0.4.8.006 - the map line waits for the region intro and for dialogue.</summary>
+        public static bool ArrivalMustWait()
+        {
+            if (ChangingRegion()) return true;
+            try { return DialogueAdvancer.ConversationHolding(); } catch { return false; }
+        }
+
         public static bool MapAvailable()
         {
             MapNodeManager mgr;

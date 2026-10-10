@@ -72,6 +72,29 @@ namespace IKMA
     internal static class SigilNarrator
     {
         /// <summary>
+        /// Another live card on this card's side with the same spoken name.
+        /// (0.4.8.004.) Read when the line is composed, so it describes the
+        /// board the player is hearing about.
+        /// </summary>
+        private static bool HasTwinOnSide(PlayableCard card, string name)
+        {
+            try
+            {
+                var bm = Singleton<BoardManager>.Instance;
+                if (bm == null || card == null) return false;
+                var side = card.OpponentCard ? bm.OpponentSlotsCopy : bm.PlayerSlotsCopy;
+                foreach (var s in side)
+                {
+                    var c = BoardReader.LiveCard(s);
+                    if (c?.Info == null || ReferenceEquals(c, card)) continue;
+                    if (CardReader.CardName(c) == name) return true;
+                }
+            }
+            catch { }
+            return false;
+        }
+
+        /// <summary>
         /// The sigil's own name, from the game. Falls back to the word on the
         /// rulebook page only if the lookup fails outright.
         /// </summary>
@@ -483,7 +506,9 @@ namespace IKMA
                         $"{capturedFrom + 1}.");
 
                     // ZAMAR'S WORDING, approved 2026-09-12.
-                    return Vocabulary.SigilFizzles(name, sigilName);
+                    return HasTwinOnSide(capturedMover, name)
+                        ? Vocabulary.SigilFizzlesInSlot(name, sigilName, capturedFrom + 1)
+                        : Vocabulary.SigilFizzles(name, sigilName);
                 }
 
                 // Direction from the slot numbers actually travelled, not from
@@ -534,7 +559,9 @@ namespace IKMA
                 // SkeletonStrafe and SquirrelStrafe each name their own sigil
                 // through behaviour.Ability, so all five change together and
                 // none of them needed a second edit.
-                string moved = Vocabulary.Sigils.SAbilityTriggersItMovesTo(name, sigilName, dir, nowSlot + 1);
+                string moved = HasTwinOnSide(capturedMover, name)
+                    ? Vocabulary.Sigils.SAbilityTriggersInSlotItMovesTo(name, sigilName, capturedFrom + 1, dir, nowSlot + 1)
+                    : Vocabulary.Sigils.SAbilityTriggersItMovesTo(name, sigilName, dir, nowSlot + 1);
                 return moved + NextStrafeDirection(capturedMover, name);
             });
         }
@@ -1533,6 +1560,12 @@ namespace IKMA
                 // 0.7.227 — comma to colon, "transforming" to "it becomes".
                 // His 2026-09-13 sentence carried the same facts in the older
                 // shape; only the join changes. See NoteStrafeMove.
+                // 0.4.8.006 - Zamar, Session 57: the slot when a same-name card
+                // is on that side ("Add the slot").
+                int evSlot = -1;
+                try { evSlot = capturedCard.Slot != null ? capturedCard.Slot.Index + 1 : -1; } catch { }
+                if (evSlot > 0 && HasTwinOnSide(capturedCard, capturedOld))
+                    return Vocabulary.Sigils.SAbilityTriggersInSlotItBecomes(who, capturedOld, sigilName, evSlot, atk, hp, newName, withClause);
                 return Vocabulary.Sigils.SAbilityTriggersItBecomes(who, capturedOld, sigilName, atk, hp, newName, withClause);
             });
         }
@@ -1597,6 +1630,13 @@ namespace IKMA
                 internal bool Enemy;
                 internal string OldName, SigilName, NewName, WithClause;
                 internal int Attack, Health, Count;
+                internal int Slot;     // 0.4.8.006
+                internal bool Twin;    // 0.4.8.006 - a same-name card stays on that side
+            }
+
+            private static int SlotNumber(PlayableCard c)
+            {
+                try { return c?.Slot != null ? c.Slot.Index + 1 : -1; } catch { return -1; }
             }
 
             private static readonly System.Collections.Generic.List<Member> _members =
@@ -1760,6 +1800,7 @@ namespace IKMA
                             Enemy = m.Enemy, OldName = m.OldName, SigilName = sigilName,
                             NewName = newName, WithClause = withClause,
                             Attack = atk, Health = hp, Count = 1,
+                            Slot = SlotNumber(c), Twin = HasTwinOnSide(c, m.OldName),
                         });
                     }
                     catch { }
@@ -1774,7 +1815,11 @@ namespace IKMA
                     {
                         // ZAMAR'S ONE-CARD SENTENCE, unchanged (0.7.227).
                         string who = g.Enemy ? Vocabulary.Sigils.Enemy : "";
-                        lines.Add(Vocabulary.Sigils.SAbilityTriggersItBecomes(
+                        // 0.4.8.006 - Zamar, Session 57: the slot when a twin stays.
+                        lines.Add(g.Twin && g.Slot > 0
+                            ? Vocabulary.Sigils.SAbilityTriggersInSlotItBecomes(
+                                who, g.OldName, g.SigilName, g.Slot, g.Attack, g.Health, g.NewName, g.WithClause)
+                            : Vocabulary.Sigils.SAbilityTriggersItBecomes(
                             who, g.OldName, g.SigilName, g.Attack, g.Health, g.NewName, g.WithClause));
                         continue;
                     }

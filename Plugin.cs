@@ -9,7 +9,7 @@ using Rewired;
 
 namespace IKMA
 {
-    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.003")]
+    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.4.8.006")]
     public class Plugin : BaseUnityPlugin
     {
         // Static log handle so Harmony patch classes can log diagnostics
@@ -1273,6 +1273,20 @@ namespace IKMA
                 AccessTools.Method(typeof(AnglerBattleSequencer), "OnOtherCardDie"),
                 typeof(AnglerBattleSequencer_OnOtherCardDie_Patch), "Prefix");
 
+            // 0.4.8.004 - the Great White's arrival, spoken when it lands.
+            // See AnglerNarrator.WrapSharkArrival.
+            TryPatch(harmony,
+                "angler shark arrival",
+                AccessTools.Method(typeof(AnglerBattleSequencer), "OnOtherCardDie"),
+                typeof(AnglerBattleSequencer_OnOtherCardDie_Arrival_Patch), "Postfix");
+
+            // 0.4.8.004 - the Mycologists' result. NONPUBLIC IEnumerator
+            // DuplicateMergeSequencer.CombinePair(SelectableCardPair pair).
+            TryPatch(harmony,
+                "mycologists result",
+                AccessTools.Method(typeof(DuplicateMergeSequencer), "CombinePair"),
+                typeof(DuplicateMergeSequencer_CombinePair_Patch), "Postfix");
+
             // NONPUBLIC IEnumerator
             // TrapperTraderBossOpponent.ClearBoardAndReturnPlayedPelts().
             // The pelt count is read at creation for the same reason: by the
@@ -2258,8 +2272,15 @@ namespace IKMA
                 {
                     // 0.7.359 — unless both strikes are the same strike. See
                     // RepeatedDirectLine below.
-                    if (RepeatedDirectLine(card, targets)) SuppressCount = targets.Count;
-                    return;
+                    if (RepeatedDirectLine(card, targets)) { SuppressCount = targets.Count; return; }
+
+                    // 0.4.8.004 - NO LONGER STANDS DOWN. Zamar, Session 56:
+                    // a multi-strike that sends some strikes past a card is
+                    // summarised like any other, cards hit first, then
+                    // "N direct damage." (MultiStrikeNarrator). The summary
+                    // only names cards that really took a hit, so a strike
+                    // that flew past is not described as a hit.
+                    break;
                 }
             }
 
@@ -3728,9 +3749,15 @@ namespace IKMA
             // Name is the fallback for the case the slot could not be read at
             // death time; a bare name is still a true subject.
             string subject = Subjects.Count == 1 ? Subjects[0] : Name;
+
+            // 0.4.8.004 - A BONE TRIGGER GOES BEFORE THE BONES. Zamar, Session
+            // 56: "Bone King ability triggers. Received 4 bones." The bones
+            // line is the total, so it comes after the trigger that added to it.
+            bool bonesLast = HasBonesFirstTrigger() && bonePart.Length > 0;
             string line = Subjects.Count <= 1
-                ? Vocabulary.Combat.IsSacrificed(subject, bonePart)
-                : Vocabulary.Combat.Sacrificed(JoinSubjects(), bonePart);
+                ? Vocabulary.Combat.IsSacrificed(subject, bonesLast ? "" : bonePart)
+                : Vocabulary.Combat.Sacrificed(JoinSubjects(), bonesLast ? "" : bonePart);
+            if (bonesLast) return line + TakeMorselLines() + bonePart;
 
             // 0.7.152: the spoken blood count is GONE at his request ("We
             // don't need to call out the 2 of 2 blood thing, remove that.").
@@ -3843,14 +3870,24 @@ namespace IKMA
             internal string Receiver;
             internal int Atk;
             internal int Hp;
+            // 0.4.8.004 - Bone King: said before the sacrifice line's bones.
+            internal bool BonesFirst;
+        }
+
+        private static bool HasBonesFirstTrigger()
+        {
+            float now = Time.unscaledTime;
+            foreach (var h in _pendingMorsel)
+                if (h.BonesFirst && now - h.At <= 5f) return true;
+            return false;
         }
 
         private static readonly List<HeldTriggerLine> _pendingMorsel = new List<HeldTriggerLine>();
 
-        internal static void AddMorselLine(string line)
+        internal static void AddMorselLine(string line, bool bonesFirst = false)
         {
             if (string.IsNullOrEmpty(line)) return;
-            _pendingMorsel.Add(new HeldTriggerLine { Line = line, At = Time.unscaledTime });
+            _pendingMorsel.Add(new HeldTriggerLine { Line = line, At = Time.unscaledTime, BonesFirst = bonesFirst });
             Plugin.Log?.LogInfo($"IKMA SACRIFICE: trigger held for the sacrifice line — \"{line}\"");
         }
 
@@ -4688,7 +4725,8 @@ namespace IKMA
                 {
                     // Session 46 (0.7.452): was ClearQueue. Still cut, no
                     // longer lost - see CombatAnnouncer.QuietQueueIntoHistory.
-                    CombatAnnouncer.QuietQueueIntoHistory();
+                    string finalBlow = CombatAnnouncer.QuietQueueIntoHistory();
+                    if (!string.IsNullOrEmpty(finalBlow)) damageLine = finalBlow + " " + damageLine;
                     using (Speech.Event(EventKind.HpChanges, EventTag.Side(toPlayer))) Speech.Confirm(damageLine);
                 }
                 else

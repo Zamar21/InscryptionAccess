@@ -446,8 +446,24 @@ namespace IKMA
 
             Plugin.Log?.LogInfo($"IKMA PROSPECTOR: board wipe — {_cardsStruck} card(s) struck.");
 
-            using (Speech.Event(EventKind.Bosses)) Speech.Result(
-                Vocabulary.ProspectorBoss.ProspectorUsesHisPickaxe);
+            // 0.4.8.004 - THE BONES ARE IN THIS LINE. Zamar, Session 56, on a
+            // bare "Received 1 bone." after the GOLD line: "Add to strike
+            // line". The struck cards die a moment after the last strike, so
+            // the line waits (up to a second) for their bones, then takes them
+            // out of the wipe total so CloseWipeWindow does not say them again.
+            float queuedAt = UnityEngine.Time.unscaledTime;
+            int struck = _cardsStruck;
+            using (Speech.Event(EventKind.Bosses)) Speech.ResultWhenReady(
+                () => _bonesDuringWipe >= struck || UnityEngine.Time.unscaledTime - queuedAt > 1f,
+                () =>
+                {
+                    int bones = _bonesDuringWipe;
+                    _bonesDuringWipe = 0;
+                    return Vocabulary.ProspectorBoss.ProspectorUsesHisPickaxe
+                           + (bones > 0 ? Vocabulary.ReceivedBones(bones) : "");
+                },
+                3f,
+                "[prospector wipe line, with its bones]");
             ReleaseHeldForWipe();
         }
 

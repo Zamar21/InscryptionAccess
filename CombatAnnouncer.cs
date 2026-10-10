@@ -171,11 +171,20 @@ namespace IKMA
         // and is otherwise dropped: nothing here may wait, because the
         // candle and the character's line are next.
         // ==================================================================
-        public static void QuietQueueIntoHistory()
+        // 0.4.8.004 - THE BLOW THAT TIPPED IT IS READ. Zamar, Session 56,
+        // after the driver run cut "Long Elk passes by Submerged Hrokkall and
+        // attacks directly." ahead of "You deal 3 direct damage. The scale
+        // hits 5...": "I think the final damage that is the final blow should
+        // be read." The LAST attack line still waiting is returned instead of
+        // going to the history, and the caller speaks it with the damage line.
+        // Everything else waiting is still cut and kept, as before.
+        public static string QuietQueueIntoHistory()
         {
             _preInitBuffer.Clear();
-            if (Instance == null) return;
+            if (Instance == null) return null;
 
+            var keptLines = new List<string>();
+            int finalBlow = -1;
             int kept = 0, dropped = 0;
             foreach (var e in Instance._queue)
             {
@@ -198,10 +207,23 @@ namespace IKMA
                 EventSettings.Decide(Speech.Resolve(e.Tag), true, out drop, out speak, out keep);
                 if (!keep || drop) { dropped++; continue; }
 
-                ReviewHistory.Add(text);
-                _log?.LogInfo($"IKMA HISTORY (not spoken): {text}");
+                EventTag resolved = null;
+                try { resolved = Speech.Resolve(e.Tag); } catch { }
+                if (speak && resolved != null && resolved.Kind == EventKind.Attacks)
+                    finalBlow = keptLines.Count;
+                keptLines.Add(text);
+            }
+
+            string blowLine = null;
+            for (int i = 0; i < keptLines.Count; i++)
+            {
+                if (i == finalBlow) { blowLine = keptLines[i]; continue; }
+                ReviewHistory.Add(keptLines[i]);
+                _log?.LogInfo($"IKMA HISTORY (not spoken): {keptLines[i]}");
                 kept++;
             }
+            if (blowLine != null)
+                _log?.LogInfo($"IKMA QUEUE: the final blow is read with the damage line - \"{blowLine}\"");
 
             Instance._queue.Clear();
             Instance._timer = 0f;
@@ -209,6 +231,7 @@ namespace IKMA
             Speech.ForgetOutsideSpeech();
             if (kept + dropped > 0)
                 _log?.LogInfo($"IKMA QUEUE: the final blow cut {kept + dropped} waiting line(s); {kept} kept in the review history.");
+            return blowLine;
         }
 
         // Silenced lines at the front of the queue go straight to the history,

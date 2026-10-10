@@ -169,6 +169,7 @@ namespace IKMA
                 // of it. Silence here is the correct answer, and the log is
                 // where the verification lives.
                 ClearUntilInputHold("the player advanced");
+                _advancedAt = Time.unscaledTime;   // 0.4.8.006 - see InAdvanceGap
 
                 CombatAnnouncer.Instance?.StartCoroutine(WatchAdvance());
                 return true;
@@ -585,6 +586,25 @@ namespace IKMA
         // successful advance, when the line stops waiting, and on Reset, so it
         // can never strand.
         private static bool _promptedForThisLine;
+
+        // ------------------------------------------------------------------
+        // 0.4.8.006 - THE GAP BETWEEN TWO LINES IS STILL THE CONVERSATION.
+        // Session 57 driver run, twice: Space pressed just after a line was
+        // advanced, before the game put up the next one, fell through to the
+        // screen underneath - "Mycologists. 1 option..." between AVERT YOUR
+        // EYES and WHAT HAVE WE DONE, and the map line read in the middle of
+        // the Snow Line intro. A press that close behind an advance is the
+        // player still clicking through dialogue, so it is swallowed.
+        // ------------------------------------------------------------------
+        private static float _advancedAt = -100f;
+        private const float ADVANCE_GAP_SECONDS = 1.5f;
+
+        /// <summary>True for a moment after Space advanced a line, while the next has not arrived.</summary>
+        internal static bool InAdvanceGap()
+        {
+            if (Time.unscaledTime - _advancedAt >= ADVANCE_GAP_SECONDS) return false;
+            return !AwaitingInput();
+        }
 
         internal static void Reset()
         {

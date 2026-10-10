@@ -1351,6 +1351,10 @@ namespace IKMA
         private static string ExpandCardDefinitions(string raw)
         {
             if (string.IsNullOrEmpty(raw)) return raw;
+            // 0.4.8.006 - the game's expansion speaks the game's language. When
+            // that is not IKMA's, expand in IKMA's own words instead. See
+            // Loc.GameTextMatchesSpeech.
+            if (!Loc.GameTextMatchesSpeech()) return ExpandDefinitionsInSpeech(raw);
             try { return RuleBookPage.ParseCardDefinition(raw) ?? raw; }
             catch (System.Exception e)
             {
@@ -1363,6 +1367,34 @@ namespace IKMA
         // internal, not private, since 0.7.324 — the Bone Lord's boon card
         // reads the same BoonData text and a second stripper would be a second
         // thing to keep in step.
+        private static string ExpandDefinitionsInSpeech(string text)
+        {
+            try
+            {
+                for (int guard = 0; guard < 8; guard++)
+                {
+                    int i = text.IndexOf("[define:");
+                    if (i < 0) break;
+                    int j = text.IndexOf(']', i);
+                    if (j < 0) break;
+                    string token = text.Substring(i, j - i + 1);
+                    string name = token.Substring(8, token.Length - 9);
+                    CardInfo ci = CardLoader.GetCardByName(name);
+                    string sigils = "";
+                    foreach (var a in ci.DefaultAbilities)
+                        sigils += ", " + Loc.Game(AbilitiesUtil.GetInfo(a).rulebookName);
+                    text = text.Replace(token,
+                        Vocabulary.Rulebook.CardIsDefinedAs(Loc.Game(ci.DisplayedNameEnglish), ci.Attack, ci.Health, sigils));
+                }
+            }
+            catch (System.Exception e)
+            {
+                if (_seenTokens.Add("__expandInSpeech"))
+                    _log?.LogWarning($"IKMA RULEBOOK: definition expand failed: {e.Message}");
+            }
+            return text;
+        }
+
         internal static string Clean(string raw)
         {
             if (string.IsNullOrEmpty(raw)) return "";

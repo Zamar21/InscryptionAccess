@@ -145,7 +145,79 @@ namespace IKMA
                 Plugin.Log?.LogWarning($"IKMA ANGLER: shark — {e.GetType().Name}: {e.Message}");
             }
         }
+        // ------------------------------------------------------------------
+        // THE GREAT WHITE IS NAMED WHEN IT LANDS. (0.4.8.004, Session 56.)
+        //
+        // The arrival used to ride on the bait bucket's death line as its
+        // arrival clause (SlotArrival.Describe). That only works when the
+        // death line composes AFTER the shark is in the slot, and the game
+        // waits 0.2 s before CreateCardInSlot. In the Session 56 driver run
+        // every death line composed first, so no arrival was spoken at all:
+        // Mantis God's strike named "Great White in slot 2" as a target before
+        // anything had said a Great White was there, and the board differ
+        // only reported "Enemy Great White is played in slots 1, 2, and 3" on
+        // the enemy's turn.
+        //
+        // Now the coroutine is wrapped, and the step after CreateCardInSlot
+        // returns speaks the board differ's own line for it (his wording,
+        // 0.7.263: "Enemy Bait Bucket is played in slot 3.") and notes the
+        // card so the differ does not say it again. The death line's clause is
+        // dropped for that slot through SlotArrival.SuppressArrival, so it is
+        // one event, one line. If the death line got there first and already
+        // said it, the card is noted and nothing more is spoken.
+        // ------------------------------------------------------------------
+        internal static System.Collections.IEnumerator WrapSharkArrival(
+            System.Collections.IEnumerator inner, CardSlot deathSlot)
+        {
+            bool done = false;
+            while (true)
+            {
+                object current;
+                try
+                {
+                    if (!inner.MoveNext()) break;
+                    current = inner.Current;
+                }
+                catch (System.Exception e)
+                {
+                    Plugin.Log?.LogWarning($"IKMA ANGLER: shark coroutine threw {e.GetType().Name}: {e.Message}");
+                    yield break;
+                }
+                if (!done) done = TrySpeakSharkArrival(deathSlot);
+                yield return current;
+            }
+            if (!done) TrySpeakSharkArrival(deathSlot);
+        }
+
+        private static bool TrySpeakSharkArrival(CardSlot slot)
+        {
+            try
+            {
+                if (slot == null) return true;
+                var card = BoardReader.LiveCard(slot);
+                if (card?.Info == null) return false;
+                if (BoardWatcher.IsAnnounced(card))
+                {
+                    Plugin.Log?.LogInfo("IKMA ANGLER: shark arrival already spoken by the death line.");
+                    return true;
+                }
+                SlotArrival.SuppressArrival(slot);
+                BoardWatcher.NoteAnnounced(card);
+                string line = Vocabulary.BoardChanges.IsPlayedInSlot(
+                    Vocabulary.BoardChanges.Possessive(false),
+                    CardReader.CardName(card), slot.Index + 1, "");
+                Plugin.Log?.LogInfo($"IKMA ANGLER: shark landed in slot {slot.Index + 1} - \"{line}\"");
+                using (Speech.Event(EventKind.Bosses)) Speech.Result(line);
+                return true;
+            }
+            catch (System.Exception e)
+            {
+                Plugin.Log?.LogWarning($"IKMA ANGLER: shark arrival - {e.GetType().Name}: {e.Message}");
+                return true;
+            }
+        }
     }
+
 
     // Registered by Plugin.TryPatch. No [HarmonyPatch] attribute — CHECK 1
     // fails a class that carries both.
@@ -159,6 +231,12 @@ namespace IKMA
     {
         public static void Prefix(PlayableCard card, CardSlot deathSlot)
             => AnglerNarrator.OnSharkFromBait(card, deathSlot);
+    }
+
+    public static class AnglerBattleSequencer_OnOtherCardDie_Arrival_Patch
+    {
+        public static void Postfix(CardSlot deathSlot, ref System.Collections.IEnumerator __result)
+            => __result = AnglerNarrator.WrapSharkArrival(__result, deathSlot);
     }
 }
 
