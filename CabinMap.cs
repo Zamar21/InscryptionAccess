@@ -684,6 +684,13 @@ namespace IKMA
             // change the music without focusing in on it." The fallback was
             // handing 1 to BarrelShelf because it sorts first.
             { "7|east|1", "GramophoneInteractable" },
+            // 0.4.8.014 - the picture frame. Tester, Session 61: "when pressing 1,
+            // at the picture, it says Nothing on 1 from here." His description
+            // promises the key and _zoomNamesByDigit already names 3|south|1;
+            // the pairing was never written here, so since 0.7.219 (unmapped
+            // digits do nothing) 1 did nothing. LargePictureFrame is the name
+            // from his sweep (see _zoomNames).
+            { "3|south|1", "LargePictureFrame" },
 
             // The shelf: 1 spins the globe, 2 inspects the skull. His order,
             // which is not the order the objects happen to register in.

@@ -1673,6 +1673,15 @@ namespace IKMA
                 if (KeyIn.Down(KeyCode.Alpha2))    { MapReader.ExamineAhead(2);              return; }
                 if (KeyIn.Down(KeyCode.Alpha3))    { MapReader.ExamineAhead(3);              return; }
 
+                // 0.4.8.014 - FOCUSED: NO TURNING, NO WALKING. Tester, Session 61:
+                // "I am focused on a skull right now, but I can still press a and d
+                // and get the feedback about turning." Zamar: "Need to disable
+                // controls like that during focus." The focus layer's keys are
+                // H, Space, 1-3 and Backspace (Map.FocusControlsAndExamine), all
+                // handled above. Turning and the arrows are swallowed here,
+                // silently, like every other key this layer does not bind.
+                if (MapReader.Focused()) return;
+
                 // TURNING. A quarter turn per press, so GetKeyDown — a held key
                 // would spin. Three ways in for counterclockwise and clockwise,
                 // and only A and D are named in the help: Zamar asked for the

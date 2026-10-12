@@ -314,7 +314,7 @@ namespace IKMA
             if (approved)
             {
                 _log.LogInfo("IKMA PROVISIONAL: the update-downloaded line (wording is Claude's, not Zamar's).");
-                Speech.Quiet(Vocabulary.Mod.UpdateDownloaded(version));
+                Speech.Alert(Vocabulary.Mod.UpdateDownloaded(version));   // 0.4.8.014: Zamar, "non-stompable"
             }
             else Ask(Question.Install, version);
         }
@@ -443,7 +443,7 @@ namespace IKMA
                 if (!_safetyFailureSpoken) Speech.Quiet(Vocabulary.Mod.UpdateDownloadFailed);
                 yield break;
             }
-            Speech.Quiet(Vocabulary.Mod.UpdateDownloaded(version));
+            Speech.Alert(Vocabulary.Mod.UpdateDownloaded(version));   // 0.4.8.014: Zamar, "non-stompable"
         }
 
         // .pending -> .update: the patcher installs it at the next start.

@@ -1348,6 +1348,13 @@ namespace IKMA
                 return;
             }
 
+            // 0.4.8.014 - a screen whose scene was unloaded under it is released
+            // first, so nothing from it carries into this one. See End.
+            if (!ReferenceEquals(_sequencer, null) && _sequencer == null) End();
+            _partsSeen     = false;
+            _emptyFor      = 0f;
+            _cardsWereOpen = false;
+
             _carvingSlotsField    = null;
             _carvingSlotsResolved = false;
 
@@ -1387,14 +1394,29 @@ namespace IKMA
 
         public static void End()
         {
-            if (_sequencer == null) return;
-            _log?.LogInfo($"IKMA NODE: {_screenName} — reader released.");
+            // 0.4.8.014 - THE SCREEN WAS LEFT THROUGH THE PAUSE MENU. A tester
+            // (0.4.8.013 log) chose END RUN while the campfire, and later the
+            // sacrifice stone, was up, then CONTINUE RUN. The scene reload
+            // destroyed the sequencer before NodeProbe.Reset called this, and a
+            // destroyed Unity object compares equal to null - so this returned
+            // at once and reset nothing. _partsSeen stayed true from the old
+            // screen (Tick, which would clear it, only runs while a screen is
+            // Active, and Begin did not clear it). The next node screen then
+            // counted its opening dialogue as "parts gone", released itself
+            // after SCREEN_OVER_SECONDS, and fell to "IKMA cannot read this
+            // screen yet". Twice at the campfire, once at the Woodcarver.
+            // ReferenceEquals asks whether IKMA still HOLDS a screen, which is
+            // the question that decides whether there is state to clear.
+            if (ReferenceEquals(_sequencer, null)) return;
+            bool sceneGone = _sequencer == null;   // destroyed, not finished
+            _log?.LogInfo($"IKMA NODE: {_screenName} — reader released{(sceneGone ? " (its scene was unloaded)" : "")}.");
             ReleaseHover();
             ReleaseCardHover();
             _cardIndex  = NOWHERE;
             _tradeGap   = NOWHERE;   // 0.4.8.006
             ResetIdle();             // 0.4.8.006
-            HotkeyManager.ArmMapReturn();   // 0.4.8.006 - the map says where you are when it is back
+            // 0.4.8.014 - not after a scene unload: the reloaded map speaks for itself.
+            if (!sceneGone) HotkeyManager.ArmMapReturn();   // 0.4.8.006 - the map says where you are when it is back
             _sequencer  = null;
             _screenName = null;
             _hovered    = null;
@@ -1408,6 +1430,7 @@ namespace IKMA
             _arrivalPending     = false;
             _boostApplied     = false;
             _campfireIsAttackMod = null;
+            _cardsWereOpen = false;   // 0.4.8.014
             _loggedCandidates.Clear();
         }
 
