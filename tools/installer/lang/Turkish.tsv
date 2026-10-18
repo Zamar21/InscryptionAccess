@@ -1,0 +1,169 @@
+# Turkish.tsv
+#status: unreviewed
+# IKMA Manager. Drafted by Claude (Session 32), the game-side Turkish file's words, and ChatGPT for the lines added since; no Turkish speaker has checked it yet. English [TAB] translation.
+Open the rulebook	Kural kitabını aç
+Help	Yardım
+Repeat, describe, or advance a conversation	Tekrarla, betimle veya konuşmayı ilerlet
+Next playable card, slot, or sacrifice	Sonraki oynanabilir kart, yuva veya kurban
+Rulebook for the last heard abilities	Son duyulan yetenekler için kural kitabı
+Read your hand	Elini oku
+Read the enemy queue	Rakip sırasını oku
+Read the enemy board	Rakip tahtasını oku
+Read your board	Kendi tahtanı oku
+Game info: scales, bones, and teeth	Oyun bilgileri: terazi, kemikler ve dişler
+Full board and queue	Tüm tahta ve sıra
+All three item slots	Üç eşya yuvası da
+Rulebook for the last heard abilities, second button	Son duyulan yetenekler için kural kitabı, ikinci düğme
+Mod Settings	Mod Ayarları
+Help list	Yardım listesi
+Draw from your deck	Destenden çek
+Draw from the Squirrel deck	Sincap destesinden çek
+Item menu	Eşya menüsü
+Accept surrender	Teslimiyeti kabul et
+Number 1	Sayı 1
+Number 2	Sayı 2
+Number 3	Sayı 3
+Number 4	Sayı 4
+Save a bug report log	Hata bildirimi günlüğü kaydet
+Review history, older	Geçmişi incele, daha eski
+Review history, newer	Geçmişi incele, daha yeni
+Review history as a list	Geçmişi liste olarak incele
+Next buffer	Sonraki arabellek
+Previous buffer	Önceki arabellek
+Silence speech	Konuşmayı sustur
+Announce	Duyur
+Add to history	Geçmişe ekle
+Current Player	Mevcut oyuncu
+Enemies	Düşmanlar
+Card Drawn	Kart çekildi
+Card Obtained	Kart elde edildi
+Card Played	Kart oynandı
+Attacks	Saldırılar
+Bosses	Bölüm sonu düşmanları
+Challenges and Totems	Meydan okumalar ve totemler
+Death	Ölüm
+Enemy Moves	Düşman hareketleri
+HP Changes	Can değişimleri
+Powers	Güçler
+Turns	Turlar
+Player Turn Start	Oyuncu turu başlangıcı
+Enemy Turn Start	Düşman turu başlangıcı
+Your Turn	Senin turun
+Dialogue	Diyalog
+Node Entered	Düğüme girildi
+Node Results	Düğüm sonuçları
+Saving	Kaydetme
+Bones	Kemikler
+Item Obtained	Eşya elde edildi
+Item Used	Eşya kullanıldı
+Teeth	Dişler
+History	Geçmiş
+Reads	Okumalar
+Prompts	Yönergeler
+{0}: {1}	{0}: {1}
+Cards	Kartlar
+Combat	Savaş
+Other	Diğer
+Resources	Kaynaklar
+IKMA Manager, version {0}.	IKMA Manager, sürüm {0}.
+Looking for Inscryption in your Steam library.	Steam kütüphanende Inscryption aranıyor.
+Found Inscryption at {0}.	Inscryption şurada bulundu: {0}.
+Inscryption was not found in your Steam library.	Inscryption, Steam kütüphanende bulunamadı.
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	Inscryption klasörünün tam yolunu yaz ya da yapıştır, sonra Enter'a bas. Ya da çıkmak için yalnızca Enter'a bas.
+That folder does not contain Inscryption.exe.	Bu klasörde Inscryption.exe yok.
+IKMA version {0} is installed and turned on.	IKMA sürüm {0} kurulu ve açık.
+IKMA is installed and turned on.	IKMA kurulu ve açık.
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA sürüm {0} kurulu ama kapalı. Inscryption onsuz başlar.
+IKMA is installed but turned off. Inscryption starts without it.	IKMA kurulu ama kapalı. Inscryption onsuz başlar.
+IKMA is not installed in this game folder.	IKMA bu oyun klasöründe kurulu değil.
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	Ana menü. IKMA'yı yüklemek veya güncellemek için Enter tuşuna bas. Ya da bir sayı yazıp Enter tuşuna bas. 1, yükle veya güncelle. 2, ayarlar. 3, IKMA'yı yeniden etkinleştir. 4, kaldır. 5, çık.
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	Ana menü. IKMA'yı yüklemek veya güncellemek için Enter tuşuna bas. Ya da bir sayı yazıp Enter tuşuna bas. 1, yükle veya güncelle. 2, ayarlar. 3, IKMA'yı devre dışı bırak. 4, kaldır. 5, çık.
+Invalid choice.	Geçersiz seçim.
+IKMA is not installed, so there is nothing to turn off.	IKMA kurulu değil, bu yüzden kapatılacak bir şey yok.
+IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.	IKMA devre dışı bırakıldı. Inscryption, IKMA olmadan başlar. BepInEx ve diğer modlar değişmez, IKMA ayarları korunur.
+IKMA is turned back on. Please restart the game.	IKMA yeniden etkinleştirildi. Lütfen oyunu yeniden başlat.
+IKMA was turned off. Installing turned it back on.	IKMA kapalıydı. Kurulum onu yeniden açtı.
+Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.	Ayarlar. Bir ayarı değiştirmek için sayısını yazıp Enter tuşuna bas. Ana menüye dönmek için Enter tuşuna bas. Değişiklikler oyunu bir sonraki başlatışında geçerli olur.
+{0}, {1}: {2}	{0}, {1}: {2}
+{0}. Type a number, then press Enter. Press Enter to keep it as it is.	{0}. Bir sayı yazıp Enter tuşuna bas. Olduğu gibi bırakmak için Enter tuşuna bas.
+{0}, {1} This is the current setting.	{0}, {1} Şu anki ayar bu.
+{0} set to: {1}	{0} şuna ayarlandı: {1}
+a custom value, {0}.	özel bir değer, {0}.
+Updates	Güncellemeler
+Speech engine	Konuşma motoru
+NVDA line timing	NVDA satır zamanlaması
+Braille display	Braille ekranı
+Language	Dil
+Full log for bug reports	Hata raporları için tam günlük
+Controller vibration	Kontrolcü titreşimi
+Control template	Kontrol şablonu
+Controller buttons	Kontrolcü düğmeleri
+every action on its default button	her eylem varsayılan düğmesinde
+{0} moved	düğmesi değiştirilen eylem sayısı: {0}
+Controller buttons. Type a number, then press Enter to move that action to another button. Type R, then press Enter, to put every action back on its default button. Press Enter alone to go back to settings.	Kontrolcü düğmeleri. Bir eylemi başka bir düğmeye atamak için sayısını yazıp Enter tuşuna bas. Her eylemi varsayılan düğmesine döndürmek için R yazıp Enter tuşuna bas. Ayarlara dönmek için yalnızca Enter tuşuna bas.
+{0}, {1}: {2}. Default {3}.	{0}, {1}: {2}. Varsayılan: {3}.
+Every action is back on its default button.	Her eylem varsayılan düğmesine döndürüldü.
+Events	Olaylar
+every event at its default	her olay varsayılan ayarında
+{0} changed	değiştirilen olay sayısı: {0}
+Events. Type a number, then press Enter to change that event. Press Enter alone to go back to settings.	Olaylar. Bir olayı değiştirmek için sayısını yazıp Enter tuşuna bas. Ayarlara dönmek için yalnızca Enter tuşuna bas.
+{0}, {1}, {2}	{0}, {1}, {2}
+{0}. Type a number, then press Enter to switch it. Press Enter alone to go back to the events.	{0}. Bir seçeneği değiştirmek için sayısını yazıp Enter tuşuna bas. Olaylara dönmek için yalnızca Enter tuşuna bas.
+{0}, {1}: checked	{0}, {1}: işaretli
+{0}, {1}: unchecked	{0}, {1}: işaretli değil
+checked	işaretli
+unchecked	işaretsiz
+{0}, now on {1}. Which shoulder buttons are held with it? Type a number, then press Enter. 1, none. 2, LB. 3, RB. 4, LB and RB together. Press Enter alone to keep it as it is.	{0}, şu anda {1} düğmesinde. Bununla birlikte hangi omuz düğmeleri basılı tutulacak? Bir sayı yazıp Enter tuşuna bas. 1, hiçbiri. 2, LB. 3, RB. 4, LB ve RB birlikte. Olduğu gibi bırakmak için yalnızca Enter tuşuna bas.
+Which button for {0}? Type a number, then press Enter. Press Enter alone to keep it as it is.	{0} için hangi düğme? Bir sayı yazıp Enter tuşuna bas. Olduğu gibi bırakmak için yalnızca Enter tuşuna bas.
+{0}, {1}, used by {2}.	{0}, {1}, kullanan: {2}.
+this action	bu eylem
+Swapped. {0} is now on {1}, and {2} is now on {3}.	Yer değiştirildi. {0} artık {1} üzerinde, {2} ise {3} üzerinde.
+ plus 	 artı 
+Inscryption is running. Please close the game, then press Enter.	Inscryption çalışıyor. Lütfen oyunu kapatıp Enter tuşuna bas.
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	Bu Inscryption, bu kurulum programının yapıldığı 32 bit sürüm değil. Hiçbir şey değiştirilmedi.
+BepInEx is already installed.	BepInEx zaten yüklü.
+Installed BepInEx, the mod loader.	Mod yükleyicisi BepInEx kuruldu.
+Installed IKMA and its speech files.	IKMA ve konuşma dosyaları kuruldu.
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	Bitti. Inscryption'ı her zamanki gibi Steam'den başlat. IKMA başlık ekranında konuşacak.
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA kaldırıldı. Başka modlar kullanabileceği için BepInEx yerinde bırakıldı.
+IKMA was not installed in this folder.	IKMA bu klasörde kurulu değildi.
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows, kurulum programının oyun klasörüne yazmasına izin vermedi. Bu pencereyi kapat, IKMA_Manager'a sağ tıkla ve Yönetici olarak çalıştır'ı seç.
+This installer is incomplete: a file it carries is missing. Download it again.	Bu kurulum programı eksik: içinde olması gereken bir dosya yok. Yeniden indir.
+Something went wrong, and the install stopped: {0}	Bir şeyler ters gitti ve kurulum durdu: {0}
+Press Enter to close.	Kapatmak için Enter'a bas.
+BepInEx {0} is already installed.	BepInEx {0} zaten yüklü.
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	Bu oyunda BepInEx 6 kurulu. IKMA'nın BepInEx 5'e ihtiyacı var ve onu değiştirmek diğer modlarını bozar. Hiçbir şey değiştirilmedi.
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	Bu oyunda başka bir mod yükleyicisi kurulu ({0}). Yanına BepInEx eklemek diğer modlarını bozabilir. Hiçbir şey değiştirilmedi.
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	Bu oyun klasöründeki BepInEx 64 bit sürüm ve bu 32 bit oyunda yüklenemez. Hiçbir şey değiştirilmedi; 32 bit BepInEx gerekiyor.
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx burada, ama onu oyunla başlatan dosya (winhttp.dll) eksik. Eklemek için Y yaz ve Enter'a bas. Her şeyi olduğu gibi bırakmak için yalnızca Enter'a bas.
+Added the file that starts BepInEx.	BepInEx'i başlatan dosya eklendi.
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx olduğu gibi bırakıldı. IKMA kurulu ama BepInEx oyunla başlayana kadar yüklenmeyecek.
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	Not: BepInEx, doorstop_config.ini içinde kapalı (enabled=false). Açılana kadar IKMA yüklenmeyecek. Kurulum programı bunu değiştirmedi.
+Found an earlier IKMA at {0}. Updated it there.	Daha eski bir IKMA şurada bulundu: {0}. Orada güncellendi.
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	Birden fazla IKMA kopyası kurulu: {0}. Biri hariç hepsini kaldır, sonra bunu yeniden çalıştır. Hiçbir şey değiştirilmedi.
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	Başka bir moda ait {0}, {1}.before-IKMA olarak saklandı. IKMA'yı kaldırmak onu geri koyar.
+Put back the earlier {0}.	Önceki {0} geri kondu.
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	Not: Bu bilgisayarda Inscryption için bir mod yöneticisi (r2modman ya da Thunderstore) kurulu. Oyunu mod yöneticisinden başlatıyorsan IKMA'yı o profile de ekle; bu kurulum programı Steam'den başlatılan oyunu kurdu.
+Automatic: new versions download and install with no question.	Otomatik: yeni sürümler sormadan indirilir ve kurulur.
+Download, then ask before installing.	İndir, sonra kurmadan önce sor.
+Ask before downloading.	İndirmeden önce sor.
+Off: IKMA never connects to the internet.	Kapalı: IKMA internete hiç bağlanmaz.
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	Otomatik: Windows'ta ekran okuyucun, Steam Deck'te IKMA konuşma yardımcısı.
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	Her zaman ekran okuyucun, UniversalSpeech üzerinden: NVDA, JAWS ya da Windows sesi.
+Always the IKMA speech helper, for Steam Deck and Linux.	Her zaman IKMA konuşma yardımcısı, Steam Deck ve Linux için.
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	Kesin: IKMA her satırın ne zaman bittiğini NVDA'ya sorar. NVDA 2024.1 veya sonrası gerekir.
+Estimated: IKMA guesses how long each line takes to read.	Tahmini: IKMA her satırın okunma süresini tahmin eder.
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	Açık: söylenen her satır NVDA veya JAWS üzerinden braille ekranına da gönderilir.
+Off: nothing is sent to a braille display.	Kapalı: braille ekranına hiçbir şey gönderilmez.
+Follow the game's language setting.	Oyunun dil ayarını izle.
+Off	Kapalı
+Low	Düşük
+Medium	Orta
+High	Yüksek
+Default	Varsayılan
+Original	Orijinal
+Off: the short log, what IKMA said and anything that went wrong.	Kapalı: kısa günlük, IKMA'nın söyledikleri ve ters giden her şey.
+On: every diagnostic line, for a bug report. The log gets much longer.	Açık: her tanılama satırı, bir hata raporu için. Günlük çok daha uzun olur.
+Feature coming soon.	Özellik yakında geliyor.
+
+# Turkish.tsv

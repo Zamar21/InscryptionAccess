@@ -1,4 +1,4 @@
-// SetupLoc.cs
+﻿// SetupLoc.cs
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -65,9 +65,8 @@ namespace IKMASetup
                     asked = args[i + 1];
 
             _language = Match(asked) ?? FromWindows(CultureInfo.CurrentUICulture);
-            // Session 34, Zamar: v0.5 is English only, the Manager too, until
-            // every language is supported. --language still works for testing.
-            if (asked == null) _language = "English";
+            // Session 65: the Manager speaks every language now (Session 34's
+            // English-only rule lifted). --language still overrides Windows.
             _table = _language == "English" ? null : Load(_language);
 
             if (_table != null)

@@ -1,0 +1,169 @@
+# Japanese.tsv
+#status: unreviewed
+# IKMA Manager. Drafted by Claude (Session 32), the game-side Japanese file's words, and ChatGPT for the lines added since; no Japanese speaker has checked it yet. English [TAB] translation.
+Open the rulebook	ルールブックを開く
+Help	ヘルプ
+Repeat, describe, or advance a conversation	繰り返し、説明、または会話を進める
+Next playable card, slot, or sacrifice	次のプレイ可能なカード、スロット、または生け贄
+Rulebook for the last heard abilities	最後に聞いた能力のルールブック
+Read your hand	手札を読む
+Read the enemy queue	相手の待機列を読む
+Read the enemy board	相手の盤面を読む
+Read your board	自分の盤面を読む
+Game info: scales, bones, and teeth	ゲーム情報：天秤、骨、歯
+Full board and queue	盤面全体と待機列
+All three item slots	3つすべてのアイテムスロット
+Rulebook for the last heard abilities, second button	最後に聞いた能力のルールブック、2つ目のボタン
+Mod Settings	Mod設定
+Help list	ヘルプ一覧
+Draw from your deck	自分のデッキから引く
+Draw from the Squirrel deck	リスのデッキから引く
+Item menu	アイテムメニュー
+Accept surrender	降参を受け入れる
+Number 1	数字1
+Number 2	数字2
+Number 3	数字3
+Number 4	数字4
+Save a bug report log	バグ報告用のログを保存
+Review history, older	履歴を確認、古い項目
+Review history, newer	履歴を確認、新しい項目
+Review history as a list	履歴を一覧で確認
+Next buffer	次のバッファー
+Previous buffer	前のバッファー
+Silence speech	読み上げを停止
+Announce	読み上げ
+Add to history	履歴に追加
+Current Player	現在のプレイヤー
+Enemies	敵
+Card Drawn	カードを引いた
+Card Obtained	カードを入手
+Card Played	カードを出した
+Attacks	攻撃
+Bosses	ボス
+Challenges and Totems	チャレンジとトーテム
+Death	死亡
+Enemy Moves	敵の移動
+HP Changes	体力の変化
+Powers	能力
+Turns	ターン
+Player Turn Start	プレイヤーのターン開始
+Enemy Turn Start	敵のターン開始
+Your Turn	あなたのターン
+Dialogue	会話
+Node Entered	ノードに入った
+Node Results	ノードの結果
+Saving	保存
+Bones	骨
+Item Obtained	アイテムを入手
+Item Used	アイテムを使用
+Teeth	歯
+History	履歴
+Reads	読み取り
+Prompts	操作案内
+{0}: {1}	{0}：{1}
+Cards	カード
+Combat	戦闘
+Other	その他
+Resources	資源
+IKMA Manager, version {0}.	IKMA Manager、バージョン {0}。
+Looking for Inscryption in your Steam library.	Steam ライブラリから Inscryption を探しています。
+Found Inscryption at {0}.	Inscryption が見つかりました: {0}。
+Inscryption was not found in your Steam library.	Steam ライブラリに Inscryption が見つかりませんでした。
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	Inscryption フォルダーのフルパスを入力するか貼り付けて、Enter キーを押してください。終了するには Enter キーだけを押してください。
+That folder does not contain Inscryption.exe.	そのフォルダーには Inscryption.exe がありません。
+IKMA version {0} is installed and turned on.	IKMA バージョン {0} はインストール済みで、オンになっています。
+IKMA is installed and turned on.	IKMA はインストール済みで、オンになっています。
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA バージョン {0} はインストール済みですが、オフになっています。Inscryption は IKMA なしで起動します。
+IKMA is installed but turned off. Inscryption starts without it.	IKMA はインストール済みですが、オフになっています。Inscryption は IKMA なしで起動します。
+IKMA is not installed in this game folder.	このゲームフォルダーに IKMA はインストールされていません。
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	メインメニュー。Enter キーで IKMA をインストールまたは更新します。数字を入力してから Enter キーを押すこともできます。1、インストールまたは更新。2、設定。3、IKMA を再び有効にする。4、アンインストール。5、終了。
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	メインメニュー。Enter キーで IKMA をインストールまたは更新します。数字を入力してから Enter キーを押すこともできます。1、インストールまたは更新。2、設定。3、IKMA を無効にする。4、アンインストール。5、終了。
+Invalid choice.	無効な選択です。
+IKMA is not installed, so there is nothing to turn off.	IKMA はインストールされていないので、オフにするものはありません。
+IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.	IKMA は無効になっています。Inscryption は IKMA なしで起動します。BepInEx と他の Mod は変更されず、IKMA の設定は保持されます。
+IKMA is turned back on. Please restart the game.	IKMA を再び有効にしました。ゲームを再起動してください。
+IKMA was turned off. Installing turned it back on.	IKMA はオフになっていました。インストールによってオンに戻りました。
+Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.	設定。数字を入力してから Enter キーを押すと、その設定を変更できます。Enter キーだけを押すとメインメニューに戻ります。変更は次回のゲーム起動時に反映されます。
+{0}, {1}: {2}	{0}、{1}: {2}
+{0}. Type a number, then press Enter. Press Enter to keep it as it is.	{0}。数字を入力してから Enter キーを押してください。Enter キーだけを押すと変更せずに戻ります。
+{0}, {1} This is the current setting.	{0}、{1} これが現在の設定です。
+{0} set to: {1}	{0} を次に設定しました: {1}
+a custom value, {0}.	カスタム値、{0}。
+Updates	アップデート
+Speech engine	音声エンジン
+NVDA line timing	NVDAの行の読み上げ時間
+Braille display	点字ディスプレイ
+Language	言語
+Full log for bug reports	バグ報告用の完全なログ
+Controller vibration	コントローラーの振動
+Control template	操作テンプレート
+Controller buttons	コントローラーのボタン
+every action on its default button	すべての操作が既定のボタンに割り当てられています
+{0} moved	ボタンを変更した操作：{0}
+Controller buttons. Type a number, then press Enter to move that action to another button. Type R, then press Enter, to put every action back on its default button. Press Enter alone to go back to settings.	コントローラーのボタン。数字を入力してから Enter キーを押すと、その操作を別のボタンに割り当てられます。R を入力してから Enter キーを押すと、すべての操作を既定のボタンに戻します。Enter キーだけを押すと設定に戻ります。
+{0}, {1}: {2}. Default {3}.	{0}、{1}：{2}。既定：{3}。
+Every action is back on its default button.	すべての操作を既定のボタンに戻しました。
+Events	イベント
+every event at its default	すべてのイベントが既定の設定になっています
+{0} changed	変更したイベント：{0}
+Events. Type a number, then press Enter to change that event. Press Enter alone to go back to settings.	イベント。数字を入力してから Enter キーを押すと、そのイベントを変更できます。Enter キーだけを押すと設定に戻ります。
+{0}, {1}, {2}	{0}、{1}、{2}
+{0}. Type a number, then press Enter to switch it. Press Enter alone to go back to the events.	{0}。数字を入力してから Enter キーを押すと、その項目を切り替えます。Enter キーだけを押すとイベントに戻ります。
+{0}, {1}: checked	{0}、{1}：チェックあり
+{0}, {1}: unchecked	{0}、{1}：チェックなし
+checked	チェックあり
+unchecked	チェックなし
+{0}, now on {1}. Which shoulder buttons are held with it? Type a number, then press Enter. 1, none. 2, LB. 3, RB. 4, LB and RB together. Press Enter alone to keep it as it is.	{0}、現在は{1}に割り当てられています。どのショルダーボタンを一緒に押し続けますか？数字を入力してから Enter キーを押してください。1、なし。2、LB。3、RB。4、LB と RB の両方。Enter キーだけを押すと変更せずに戻ります。
+Which button for {0}? Type a number, then press Enter. Press Enter alone to keep it as it is.	{0}にどのボタンを割り当てますか？数字を入力してから Enter キーを押してください。Enter キーだけを押すと変更せずに戻ります。
+{0}, {1}, used by {2}.	{0}、{1}、{2}で使用中。
+this action	この操作
+Swapped. {0} is now on {1}, and {2} is now on {3}.	入れ替えました。{0}は{1}に、{2}は{3}になりました。
+ plus 	 プラス 
+Inscryption is running. Please close the game, then press Enter.	Inscryption が起動しています。ゲームを終了してから Enter キーを押してください。
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	この Inscryption は、このインストーラーが対象とする 32 ビット版ではありません。何も変更していません。
+BepInEx is already installed.	BepInEx はすでにインストールされています。
+Installed BepInEx, the mod loader.	MOD ローダーの BepInEx をインストールしました。
+Installed IKMA and its speech files.	IKMA と音声ファイルをインストールしました。
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	完了しました。いつもどおり Steam から Inscryption を起動してください。IKMA はタイトル画面で話します。
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA をアンインストールしました。他の MOD が使う可能性があるため、BepInEx は残してあります。
+IKMA was not installed in this folder.	このフォルダーに IKMA はインストールされていませんでした。
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows がインストーラーにゲームフォルダーへの書き込みを許可しませんでした。このウィンドウを閉じ、IKMA_Manager を右クリックして「管理者として実行」を選んでください。
+This installer is incomplete: a file it carries is missing. Download it again.	このインストーラーは不完全です。含まれているはずのファイルがありません。もう一度ダウンロードしてください。
+Something went wrong, and the install stopped: {0}	問題が発生したため、インストールを中止しました: {0}
+Press Enter to close.	閉じるには Enter キーを押してください。
+BepInEx {0} is already installed.	BepInEx {0} はすでにインストールされています。
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	このゲームには BepInEx 6 がインストールされています。IKMA には BepInEx 5 が必要ですが、置き換えると他の MOD が動かなくなります。何も変更していません。
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	このゲームには別の MOD ローダーがインストールされています ({0})。その横に BepInEx を追加すると他の MOD が動かなくなるおそれがあります。何も変更していません。
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	このゲームフォルダーの BepInEx は 64 ビット版で、この 32 ビット版のゲームでは読み込めません。何も変更していません。32 ビット版の BepInEx が必要です。
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx はありますが、ゲームと一緒に BepInEx を起動するファイル (winhttp.dll) がありません。追加するには Y と入力して Enter キーを押してください。すべてそのままにするには Enter キーだけを押してください。
+Added the file that starts BepInEx.	BepInEx を起動するファイルを追加しました。
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx はそのままにしました。IKMA はインストール済みですが、BepInEx がゲームと一緒に起動するまで読み込まれません。
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	注意: doorstop_config.ini で BepInEx がオフになっています (enabled=false)。オンにするまで IKMA は読み込まれません。インストーラーはこの設定を変更していません。
+Found an earlier IKMA at {0}. Updated it there.	以前の IKMA が見つかりました: {0}。その場所で更新しました。
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	IKMA のコピーが複数インストールされています: {0}。1 つを残して削除してから、もう一度実行してください。何も変更していません。
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	別の MOD の {0} を {1}.before-IKMA として保存しました。IKMA をアンインストールすると元に戻ります。
+Put back the earlier {0}.	以前の {0} を元に戻しました。
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	注意: この PC には Inscryption 用の MOD マネージャー (r2modman または Thunderstore) が設定されています。MOD マネージャーからゲームを起動する場合は、そのプロファイルにも IKMA を追加してください。このインストーラーは Steam から起動するゲームを設定しました。
+Automatic: new versions download and install with no question.	自動: 新しいバージョンを確認なしでダウンロードしてインストールします。
+Download, then ask before installing.	ダウンロードしてから、インストール前に確認します。
+Ask before downloading.	ダウンロード前に確認します。
+Off: IKMA never connects to the internet.	オフ: IKMA はインターネットに一切接続しません。
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	自動: Windows ではスクリーンリーダー、Steam Deck では IKMA 音声ヘルパー。
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	常にスクリーンリーダー (UniversalSpeech 経由): NVDA、JAWS、または Windows の音声。
+Always the IKMA speech helper, for Steam Deck and Linux.	常に IKMA 音声ヘルパー (Steam Deck と Linux 用)。
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	正確：IKMAが各行の終了をNVDAに問い合わせます。NVDA 2024.1以降が必要です。
+Estimated: IKMA guesses how long each line takes to read.	推定：IKMAが各行の読み上げ時間を推定します。
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	オン：読み上げる各行をNVDAまたはJAWS経由で点字ディスプレイにも送ります。
+Off: nothing is sent to a braille display.	オフ：点字ディスプレイには何も送りません。
+Follow the game's language setting.	ゲームの言語設定に従います。
+Off	オフ
+Low	弱
+Medium	中
+High	強
+Default	標準
+Original	オリジナル
+Off: the short log, what IKMA said and anything that went wrong.	オフ: 短いログ。IKMA が話した内容と、うまくいかなかったことだけ。
+On: every diagnostic line, for a bug report. The log gets much longer.	オン: すべての診断行 (バグ報告用)。ログがかなり長くなります。
+Feature coming soon.	この機能は近日公開です。
+
+# Japanese.tsv

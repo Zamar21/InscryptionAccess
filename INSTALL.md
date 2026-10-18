@@ -103,7 +103,7 @@ Most settings can be changed in the game: press Control plus M for Mod Settings 
 - Mode: Automatic, DownloadThenAsk, AskFirst or Off. Off means IKMA never connects to the internet. When IKMA asks a question, answer in the game: F9 for yes, F10 for no.
 
 [Language]
-- Language: Game follows the game's own language. English is the only language in this version.
+- Language: Game, English or French. Game follows the game's own language; any language other than French speaks English.
 
 [History]
 - Reads and Prompts: whether the review history keeps what you read and the prompts you hear.

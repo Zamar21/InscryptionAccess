@@ -1050,14 +1050,18 @@ namespace IKMA
 
         /// <summary>
         /// A row while BROWSING. His line: "Dialogue Text speed. Press Enter to
-        /// adjust." The value is deliberately not here — he did not ask for it
-        /// and a browse should stay short. Space reads it.
+        /// adjust." 0.4.8.016: the row's current value goes in after the name,
+        /// in his settled Describe shape ("Dialogue text speed 6."). A beta
+        /// tester: the menu "doesn't read the status of the option before you
+        /// modify it". Say the Spire 2 speaks label then status on focus
+        /// (ProxyCheckbox / ProxySlider), and his Session 37 rule defers to it.
+        /// A sighted player sees the value printed on the row.
         /// </summary>
         private static string RowPrompt(Row row)
         {
             string label = row?.Label;
             if (string.IsNullOrEmpty(label)) return Vocabulary.Options.UnnamedSettingPressEnter;
-            return Vocabulary.Options.PressEnterToAdjust(Sentence(label));
+            return Vocabulary.Options.PressEnterToAdjust(Describe(row));
         }
 
         public static void Announce()

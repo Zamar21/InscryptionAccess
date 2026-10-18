@@ -49,7 +49,8 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 ### Keyboard, no mouse
 
 - Every screen is played from the keyboard. The mouse is turned off in the game while IKMA is installed: it does not hover and does not click.
-- At any time, the H key gives the keys for the screen you are on. F1 gives the same help as a list you can step through.
+- At any time, the H key opens a list of the keys for the screen you are on, one line at a time. F1 does the same. Under the Original control template, H reads them all at once.
+- Every list you browse with the arrow keys stops at its first and last item. Home and End jump straight there.
 - Space bar repeats your current selection, provides context, or describes where you are, almost everywhere. Space is used to advance conversations, but will never perform a game action.
 - During a conversation only Space (next line), H and Escape work. Other keys answer "Conversation in progress, press Space to proceed."
 - If you are ever lost, press the H key to hear your options.
@@ -75,6 +76,7 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 
 - Arrow keys browse the paths ahead. Each stop on the game map is named. Enter key travels.
 - From the map you can view your current deck. Press H to hear how. 
+- The map preview looks further down the paths without travelling: Control plus Up and Down walk along a path, Control plus Left and Right switch between the stops at a split, and Control plus Space sums up the routes ahead. It sees four rows, as far as the screen shows.
 - You can stand up from the table and sit back down. More on this later. 
 
 ### Battles: reading the table
@@ -116,18 +118,21 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 - The standing mode in Kaycee's Mod is an optional mostly scenic mode, but will give you a taste of the escape room style puzzles you will encounter in the main story mode later next year with version 1.0!  
 
 
-### Review history and silence 
+### Buffers, review history and silence 
 
-- Review speech history with Control and Up or Down arrows.
+- Buffers let you step through lines without moving from where you are. Control plus Up and Down step through the current buffer. Control plus Left and Right switch buffers.
+- The Card buffer holds whatever you last had read to you, one sentence per line, then what each ability or item named in it does. The History buffer holds everything IKMA has said, newest first.
+- Control plus S, B, C, W, D and T announce the scales, bones, candles, woodcarving, deck counts and teeth.
 - Tap Control to silence the current line and everything queued.
+- Prefer the earlier controls? Mod Settings > Control template > Original brings back Control plus Up and Down for the review history only, H reading the whole help at once, and no map preview.
 
 ### Mod Settings
 
 - Opened in the game with Control plus M. It navigates like the game's own menus.
 - Events: twenty kinds of announcements, each with its own switch for being spoken and for being kept in the history. Some also split into your side and the enemy's. The groups are Combat (Death, HP Changes, Enemy Moves, Turns, Powers, Attacks, Your Turn, Challenges and Totems, Bosses), Cards (Card Drawn, Card Played, Card Obtained), Resources (Teeth, Bones, Item Obtained, Item Used) and Other (Dialogue, Node Entered, Node Results, Saving).
 - History: whether reads and prompts are kept.
-- Also: Updates, Speech engine, Braille display, Controller vibration, Controller buttons, and Full log for bug reports.
-- Language says "Feature coming soon." and will be added to the mod later. 
+- Also: Updates, Speech engine, Braille display, Controller vibration, Controller buttons, Control template, and Full log for bug reports.
+- Language: follow the game's language, English, or French.
 - The same settings are in IKMA Manager.
 
 ### IKMA Manager and updates
@@ -174,7 +179,7 @@ The full lists are in IKMA_Controls.md and IKMA_Controls_Gamepad.md. Press H (ke
 - Confirm and go back: Enter and Backspace, or A and B.
 - Rulebook: R, or Y. The entry for what you just heard: Shift plus R, or L3.
 - In a battle: C reads your hand, G the enemy board, Shift plus G your board, U the queue, B the full board, A the scales and bones. D and S draw. E rings the bell. On a controller these are LB or RB with another button.
-- Review history: Control plus Up and Control plus Down.
+- Buffers: Control plus Up and Down step through, Control plus Left and Right switch. On a controller, hold LB plus RB with the D-pad.
 - Silence: tap Control, or R3.
 - Mod Settings: Control plus M, or LB plus Menu. Help as a list: F1.
 - Save a log for a bug report: Shift plus L.
@@ -198,12 +203,12 @@ At any point during gameplay, press Shift plus L (LB plus RB plus View on a cont
 
 ## Language
 
-This version is English only. The game's own text, such as card and ability names, supports additional languages. Other languages are planned for support! 
+IKMA speaks English and French. With the game set to French, IKMA's own lines are in French too; card names, abilities and dialogue always come from the game's own text. The French lines were translated by Claude and have not yet been checked by a French speaker, so please report anything that sounds wrong. Every other game language gets English from IKMA for now. More languages are planned! 
 
 ## Not in this version
 
 - The story acts (Acts 1, 2 and 3). This version is Kaycee's Mod only.
-- Languages other than English.
+- Languages other than English and French.
 
 ## Known issues
 

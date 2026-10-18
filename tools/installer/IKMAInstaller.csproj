@@ -1,4 +1,4 @@
-<!-- IKMAInstaller.csproj -->
+﻿<!-- IKMAInstaller.csproj -->
 <Project Sdk="Microsoft.NET.Sdk">
 
   <!--
@@ -55,8 +55,8 @@
     See SetupLoc.cs.
   -->
   <ItemGroup>
-    <!-- Zamar, Session 54: English only until languages ship. -->
-    <EmbeddedResource Include="lang\English.tsv">
+    <!-- Session 65, Zamar: "Let's get this translated too." Every language built in. -->
+    <EmbeddedResource Include="lang\*.tsv">
       <LogicalName>setup_lang/%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>

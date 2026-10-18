@@ -1,0 +1,169 @@
+# Italian.tsv
+#status: unreviewed
+# IKMA Manager. Drafted by Claude (Session 32), the game-side Italian file's words, and ChatGPT for the lines added since; no Italian speaker has checked it yet. English [TAB] translation.
+Open the rulebook	Apri il regolamento
+Help	Aiuto
+Repeat, describe, or advance a conversation	Ripeti, descrivi o avanza una conversazione
+Next playable card, slot, or sacrifice	Prossima carta giocabile, spazio o sacrificio
+Rulebook for the last heard abilities	Regolamento delle ultime abilità sentite
+Read your hand	Leggi la tua mano
+Read the enemy queue	Leggi la coda avversaria
+Read the enemy board	Leggi il tabellone avversario
+Read your board	Leggi il tuo tabellone
+Game info: scales, bones, and teeth	Informazioni di gioco: bilancia, ossa e denti
+Full board and queue	Tabellone completo e coda
+All three item slots	Tutti e tre gli spazi oggetto
+Rulebook for the last heard abilities, second button	Regolamento delle ultime abilità sentite, secondo pulsante
+Mod Settings	Impostazioni della mod
+Help list	Elenco di aiuto
+Draw from your deck	Pesca dal tuo mazzo
+Draw from the Squirrel deck	Pesca dal mazzo degli Scoiattoli
+Item menu	Menu degli oggetti
+Accept surrender	Accetta la resa
+Number 1	Numero 1
+Number 2	Numero 2
+Number 3	Numero 3
+Number 4	Numero 4
+Save a bug report log	Salva un log per una segnalazione di bug
+Review history, older	Consulta la cronologia, precedente
+Review history, newer	Consulta la cronologia, successivo
+Review history as a list	Consulta la cronologia come elenco
+Next buffer	Buffer successivo
+Previous buffer	Buffer precedente
+Silence speech	Interrompi la voce
+Announce	Annuncia
+Add to history	Aggiungi alla cronologia
+Current Player	Giocatore attuale
+Enemies	Nemici
+Card Drawn	Carta pescata
+Card Obtained	Carta ottenuta
+Card Played	Carta giocata
+Attacks	Attacchi
+Bosses	Boss
+Challenges and Totems	Sfide e totem
+Death	Morte
+Enemy Moves	Movimenti nemici
+HP Changes	Variazioni di salute
+Powers	Poteri
+Turns	Turni
+Player Turn Start	Inizio del turno del giocatore
+Enemy Turn Start	Inizio del turno nemico
+Your Turn	Il tuo turno
+Dialogue	Dialogo
+Node Entered	Nodo raggiunto
+Node Results	Risultati del nodo
+Saving	Salvataggio
+Bones	Ossa
+Item Obtained	Oggetto ottenuto
+Item Used	Oggetto usato
+Teeth	Denti
+History	Cronologia
+Reads	Letture
+Prompts	Istruzioni
+{0}: {1}	{0}: {1}
+Cards	Carte
+Combat	Combattimento
+Other	Altro
+Resources	Risorse
+IKMA Manager, version {0}.	IKMA Manager, versione {0}.
+Looking for Inscryption in your Steam library.	Ricerca di Inscryption nella tua libreria di Steam.
+Found Inscryption at {0}.	Inscryption trovato in {0}.
+Inscryption was not found in your Steam library.	Inscryption non è stato trovato nella tua libreria di Steam.
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	Digita o incolla il percorso completo della cartella di Inscryption, poi premi Invio. Oppure premi solo Invio per uscire.
+That folder does not contain Inscryption.exe.	Quella cartella non contiene Inscryption.exe.
+IKMA version {0} is installed and turned on.	IKMA versione {0} è installato e attivo.
+IKMA is installed and turned on.	IKMA è installato e attivo.
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA versione {0} è installato ma disattivato. Inscryption si avvia senza di esso.
+IKMA is installed but turned off. Inscryption starts without it.	IKMA è installato ma disattivato. Inscryption si avvia senza di esso.
+IKMA is not installed in this game folder.	IKMA non è installato in questa cartella del gioco.
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	Menu principale. Premi Invio per installare o aggiornare IKMA. Oppure digita un numero e premi Invio. 1, installa o aggiorna. 2, impostazioni. 3, riattiva IKMA. 4, disinstalla. 5, esci.
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	Menu principale. Premi Invio per installare o aggiornare IKMA. Oppure digita un numero e premi Invio. 1, installa o aggiorna. 2, impostazioni. 3, disattiva IKMA. 4, disinstalla. 5, esci.
+Invalid choice.	Scelta non valida.
+IKMA is not installed, so there is nothing to turn off.	IKMA non è installato, quindi non c'è niente da disattivare.
+IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.	IKMA è disattivato. Inscryption si avvia senza IKMA. BepInEx e le altre mod restano invariati e le impostazioni di IKMA vengono conservate.
+IKMA is turned back on. Please restart the game.	IKMA è stato riattivato. Riavvia il gioco.
+IKMA was turned off. Installing turned it back on.	IKMA era disattivato. L'installazione l'ha riattivato.
+Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.	Impostazioni. Digita un numero e premi Invio per modificare l'impostazione corrispondente. Premi Invio per tornare al menu principale. Le modifiche avranno effetto al prossimo avvio del gioco.
+{0}, {1}: {2}	{0}, {1}: {2}
+{0}. Type a number, then press Enter. Press Enter to keep it as it is.	{0}. Digita un numero e premi Invio. Premi Invio per lasciare tutto com'è.
+{0}, {1} This is the current setting.	{0}, {1} Questa è l'impostazione attuale.
+{0} set to: {1}	{0} impostato su: {1}
+a custom value, {0}.	un valore personalizzato, {0}.
+Updates	Aggiornamenti
+Speech engine	Motore vocale
+NVDA line timing	Temporizzazione delle righe di NVDA
+Braille display	Display braille
+Language	Lingua
+Full log for bug reports	Registro completo per le segnalazioni di bug
+Controller vibration	Vibrazione del controller
+Control template	Schema dei comandi
+Controller buttons	Pulsanti del controller
+every action on its default button	ogni azione sul pulsante predefinito
+{0} moved	azioni riassegnate: {0}
+Controller buttons. Type a number, then press Enter to move that action to another button. Type R, then press Enter, to put every action back on its default button. Press Enter alone to go back to settings.	Pulsanti del controller. Digita un numero e premi Invio per assegnare l'azione a un altro pulsante. Digita R e premi Invio per riportare ogni azione al pulsante predefinito. Premi solo Invio per tornare alle impostazioni.
+{0}, {1}: {2}. Default {3}.	{0}, {1}: {2}. Predefinito: {3}.
+Every action is back on its default button.	Ogni azione è tornata al pulsante predefinito.
+Events	Eventi
+every event at its default	ogni evento con l'impostazione predefinita
+{0} changed	eventi modificati: {0}
+Events. Type a number, then press Enter to change that event. Press Enter alone to go back to settings.	Eventi. Digita un numero e premi Invio per modificare l'evento corrispondente. Premi solo Invio per tornare alle impostazioni.
+{0}, {1}, {2}	{0}, {1}, {2}
+{0}. Type a number, then press Enter to switch it. Press Enter alone to go back to the events.	{0}. Digita un numero e premi Invio per cambiare lo stato dell'opzione corrispondente. Premi solo Invio per tornare agli eventi.
+{0}, {1}: checked	{0}, {1}: selezionato
+{0}, {1}: unchecked	{0}, {1}: non selezionato
+checked	selezionata
+unchecked	non selezionata
+{0}, now on {1}. Which shoulder buttons are held with it? Type a number, then press Enter. 1, none. 2, LB. 3, RB. 4, LB and RB together. Press Enter alone to keep it as it is.	{0}, attualmente su {1}. Quali pulsanti dorsali vanno tenuti premuti insieme? Digita un numero e premi Invio. 1, nessuno. 2, LB. 3, RB. 4, LB e RB insieme. Premi solo Invio per lasciare tutto com'è.
+Which button for {0}? Type a number, then press Enter. Press Enter alone to keep it as it is.	Quale pulsante per {0}? Digita un numero e premi Invio. Premi solo Invio per lasciare tutto com'è.
+{0}, {1}, used by {2}.	{0}, {1}, usato da {2}.
+this action	questa azione
+Swapped. {0} is now on {1}, and {2} is now on {3}.	Scambiati. {0} ora è su {1}, e {2} ora è su {3}.
+ plus 	 più 
+Inscryption is running. Please close the game, then press Enter.	Inscryption è in esecuzione. Chiudi il gioco e premi Invio.
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	Questo Inscryption non è la versione a 32 bit per cui è stato creato questo programma di installazione. Non è stato modificato nulla.
+BepInEx is already installed.	BepInEx è già installato.
+Installed BepInEx, the mod loader.	È stato installato BepInEx, il caricatore di mod.
+Installed IKMA and its speech files.	Sono stati installati IKMA e i suoi file vocali.
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	Fatto. Avvia Inscryption da Steam come al solito. IKMA parlerà nella schermata del titolo.
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA è disinstallato. BepInEx è stato lasciato al suo posto, perché altre mod potrebbero usarlo.
+IKMA was not installed in this folder.	IKMA non era installato in questa cartella.
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows non ha permesso al programma di installazione di scrivere nella cartella del gioco. Chiudi questa finestra, fai clic destro su IKMA_Manager e scegli Esegui come amministratore.
+This installer is incomplete: a file it carries is missing. Download it again.	Questo programma di installazione è incompleto: manca un file che dovrebbe contenere. Scaricalo di nuovo.
+Something went wrong, and the install stopped: {0}	Qualcosa è andato storto e l'installazione si è interrotta: {0}
+Press Enter to close.	Premi Invio per chiudere.
+BepInEx {0} is already installed.	BepInEx {0} è già installato.
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	Questo gioco ha BepInEx 6 installato. IKMA ha bisogno di BepInEx 5, e sostituirlo danneggerebbe le altre mod. Non è stato modificato nulla.
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	Questo gioco ha un altro caricatore di mod installato ({0}). Aggiungere BepInEx accanto potrebbe danneggiare le altre mod. Non è stato modificato nulla.
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	Il BepInEx in questa cartella del gioco è la versione a 64 bit, che non può caricarsi in questo gioco a 32 bit. Non è stato modificato nulla; serve il BepInEx a 32 bit.
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx è presente, ma manca il file che lo avvia con il gioco (winhttp.dll). Digita Y e premi Invio per aggiungerlo. Premi solo Invio per lasciare tutto com'è.
+Added the file that starts BepInEx.	È stato aggiunto il file che avvia BepInEx.
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx è stato lasciato com'è. IKMA è installato ma non si caricherà finché BepInEx non si avvia con il gioco.
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	Nota: BepInEx è disattivato in doorstop_config.ini (enabled=false). IKMA non si caricherà finché non viene riattivato. Il programma di installazione non l'ha modificato.
+Found an earlier IKMA at {0}. Updated it there.	Trovata una versione precedente di IKMA in {0}. Aggiornata lì.
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	È installata più di una copia di IKMA: {0}. Rimuovile tutte tranne una, poi esegui di nuovo questo programma. Non è stato modificato nulla.
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	{0} di un'altra mod è stato salvato come {1}.before-IKMA. Disinstallando IKMA viene ripristinato.
+Put back the earlier {0}.	Ripristinato il {0} precedente.
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	Nota: su questo PC è configurato un gestore di mod (r2modman o Thunderstore) per Inscryption. Se avvii il gioco dal gestore di mod, aggiungi IKMA anche a quel profilo; questo programma di installazione ha configurato il gioco avviato da Steam.
+Automatic: new versions download and install with no question.	Automatico: le nuove versioni si scaricano e si installano senza chiedere.
+Download, then ask before installing.	Scarica, poi chiedi prima di installare.
+Ask before downloading.	Chiedi prima di scaricare.
+Off: IKMA never connects to the internet.	Disattivato: IKMA non si connette mai a Internet.
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	Automatico: il tuo lettore di schermo su Windows, l'assistente vocale di IKMA su Steam Deck.
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	Sempre il tuo lettore di schermo, tramite UniversalSpeech: NVDA, JAWS o la voce di Windows.
+Always the IKMA speech helper, for Steam Deck and Linux.	Sempre l'assistente vocale di IKMA, per Steam Deck e Linux.
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	Esatta: IKMA chiede a NVDA quando ogni riga è terminata. Richiede NVDA 2024.1 o successivo.
+Estimated: IKMA guesses how long each line takes to read.	Stimata: IKMA stima quanto tempo serve per leggere ogni riga.
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	Attivato: ogni riga pronunciata viene anche inviata al tuo display braille, tramite NVDA o JAWS.
+Off: nothing is sent to a braille display.	Disattivato: non viene inviato nulla a un display braille.
+Follow the game's language setting.	Segui l'impostazione della lingua del gioco.
+Off	Disattivato
+Low	Bassa
+Medium	Media
+High	Alta
+Default	Predefinito
+Original	Originale
+Off: the short log, what IKMA said and anything that went wrong.	Disattivato: il registro breve, ciò che IKMA ha detto e qualsiasi cosa sia andata storta.
+On: every diagnostic line, for a bug report. The log gets much longer.	Attivato: ogni riga di diagnostica, per una segnalazione di bug. Il registro diventa molto più lungo.
+Feature coming soon.	Funzione in arrivo.
+
+# Italian.tsv

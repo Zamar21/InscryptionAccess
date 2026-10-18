@@ -96,6 +96,8 @@ obj/
 .vs/
 .vscode/
 .cursor/
+__pycache__/
+*.pyc
 
 # =====================================================================
 # WORKING NOTES - remove these lines if you want them public

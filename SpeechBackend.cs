@@ -60,6 +60,17 @@ namespace IKMA
     }
 
     /// <summary>
+    /// Session 63. The Piper speaker the Linux helper reads English with,
+    /// [Speech] SteamDeckVoice. Female is libritts_r speaker 14, Male speaker
+    /// 3; the helper owns that mapping (PIPER_SPEAKERS).
+    /// </summary>
+    internal enum HelperVoice
+    {
+        Female,
+        Male,
+    }
+
+    /// <summary>
     /// One way of turning text into sound. See the block comment above.
     /// </summary>
     internal interface ISpeechBackend
@@ -133,6 +144,39 @@ namespace IKMA
         // it; NvdaDirect reads its own plain copy. See NvdaDirect.cs.
         internal static ConfigEntry<bool> NvdaLineEnd;
 
+        // Session 63 - Zamar, on the Steam Deck voice: "We should have a way in
+        // game (maybe in the mod menus) to adjust either the Piper or Proton
+        // speech settings if possible." The helper's voice, rate and volume.
+        // Female (Piper speaker 14) is the default, Zamar: "actually default
+        // to 3 female". Rate follows Say the Spire 2's SAPI setting: -10..10
+        // on SAPI's scale (10 = three times normal speed, -10 = a third).
+        // Rate 0 is the speed Zamar heard and picked the voice at.
+        // Volume, Session 64, Zamar: "We cant have the volume for the voice go
+        // to 0 or else it becomes impossible to use." then "the volume should
+        // default to 10 (100%) and have a minimum of 1 (10%)". So Volume is
+        // 1..10, each step 10% of the helper's volume. The key is unchanged:
+        // a percentage saved by 0.4.8.019-.021 (0..100) is read back clamped
+        // to 1..10, so any old value of 10 or more becomes 10 (full).
+        internal static ConfigEntry<HelperVoice> SteamDeckVoice;
+        internal static ConfigEntry<int> SteamDeckRate;
+        internal static ConfigEntry<int> SteamDeckVolume;
+        internal const int SteamDeckVolumeMin = 1;
+        internal const int SteamDeckVolumeMax = 10;
+
+        // The copies LinuxBridgeBackend reads on the speech worker, in the
+        // helper's own terms (see ikma_speech_helper.py).
+        internal static volatile string HelperVoiceWord = "female";
+        internal static volatile int HelperRatePercent = 100;
+        internal static volatile int HelperVolumePercent = 100;
+
+        /// <summary>True when speech can reach the Linux helper at all, so its
+        /// settings are worth showing in the mod menu.</summary>
+        internal static bool HelperPossible;
+
+        /// <summary>SAPI's rate scale: each step is a tenth of a power of three.</summary>
+        internal static int RateToPercent(int rate)
+            => (int)Math.Round(100.0 * Math.Pow(3.0, Math.Max(-10, Math.Min(10, rate)) / 10.0));
+
         /// <summary>
         /// Bind the two [Speech] settings. BepInEx creates them in the .cfg file
         /// with these defaults the first time the game runs with this build,
@@ -174,6 +218,34 @@ namespace IKMA
                 "No effect with other screen readers or with older NVDA.");
             NvdaDirect.SettingOn = NvdaLineEnd.Value;
             NvdaLineEnd.SettingChanged += (sender, args) => { NvdaDirect.SettingOn = NvdaLineEnd.Value; };
+
+            SteamDeckVoice = config.Bind("Speech", "SteamDeckVoice", HelperVoice.Female,
+                "Steam Deck and Linux only: the voice the IKMA speech helper reads English with (Piper). Female or Male.");
+            SteamDeckRate = config.Bind("Speech", "SteamDeckRate", 0,
+                new ConfigDescription(
+                    "Steam Deck and Linux only: how fast the IKMA speech helper speaks, -10 to 10. " +
+                    "0 is normal, 10 is three times as fast, -10 a third as fast.",
+                    new AcceptableValueRange<int>(-10, 10)));
+            SteamDeckVolume = config.Bind("Speech", "SteamDeckVolume", SteamDeckVolumeMax,
+                new ConfigDescription(
+                    "Steam Deck and Linux only: the IKMA speech helper's volume, 1 to 10. 10 is full volume, 1 is a tenth.",
+                    new AcceptableValueRange<int>(SteamDeckVolumeMin, SteamDeckVolumeMax)));
+            CopyHelperSettings();
+            SteamDeckVoice.SettingChanged += (sender, args) => CopyHelperSettings();
+            SteamDeckRate.SettingChanged += (sender, args) => CopyHelperSettings();
+            SteamDeckVolume.SettingChanged += (sender, args) => CopyHelperSettings();
+
+            PlatformID os = Environment.OSVersion.Platform;
+            HelperPossible = os == PlatformID.Unix || os == PlatformID.MacOSX
+                || Choice.Value == SpeechBackendChoice.LinuxBridge
+                || RunningUnderWine(out _);
+        }
+
+        private static void CopyHelperSettings()
+        {
+            HelperVoiceWord = SteamDeckVoice.Value == HelperVoice.Male ? "male" : "female";
+            HelperRatePercent = RateToPercent(SteamDeckRate.Value);
+            HelperVolumePercent = 10 * Math.Max(SteamDeckVolumeMin, Math.Min(SteamDeckVolumeMax, SteamDeckVolume.Value));
         }
 
         /// <summary>

@@ -70,8 +70,18 @@ namespace IKMA
             catch { return "unreadable"; }
         }
 
+        // SESSION 64 (driver run, 0.4.8.023): Space during the last candle and
+        // Leshy's reach said "Draw phase. Press D to draw..." - the game was
+        // still in the draw phase of a battle already lost. Zamar: "I think it
+        // could just be silent?" From the loss until the next battle's setup
+        // (BoardWatcher.ResetForNewBattle), the draw phase's Space says nothing.
+        internal static float LostAt = -999f;
+        internal static bool BattleLost
+            => LostAt >= 0f && UnityEngine.Time.unscaledTime - LostAt < 120f;
+
         internal static void OnBattleLost(Opponent opponent)
         {
+            LostAt = UnityEngine.Time.unscaledTime;
             try
             {
                 string who = "?";

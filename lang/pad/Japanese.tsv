@@ -1,0 +1,131 @@
+﻿# lang/pad/Japanese.tsv - controller versions (English line<TAB>Japanese with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	[[1]]で、同じ初期デッキとチャレンジで新しいランを始めます。[[2]]でメインメニューに戻ります。[[3]]でもう一度聞けます。
+In the center of the screen is a small play button. Press Enter...	画面の中央に小さなプレイボタンがあります。[[1]]を押してください…
+Press H for what still works.	[[1]]で、まだ使える操作を確認できます。
+Space describes what is directly in front of you. 	[[1]]で正面にあるものを説明。 
+Conversation in progress, press Space to proceed.	会話中です。[[1]]で進めてください。
+Your deck is empty, press S to draw from the Squirrel deck.	デッキが空です。[[1]]でリスのデッキから引いてください。
+The Squirrel deck is empty, press D to draw from your deck.	リスのデッキが空です。[[1]]で自分のデッキから引いてください。
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	ドローフェイズ。[[1]]で自分のデッキから、[[2]]でリスのデッキから引きます。
+Arrows to Browse, Enter to select, Backspace to return to your hand.	十字キーで選択、[[1]]で決定、[[2]]で手札に戻る。
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	アイテムメニュー。十字キーの左右で所持アイテムを選択。[[1]]で選択中のアイテムを使用。[[2]]で、空きを含む3つのスロットすべてを読み上げ。[[3]]で手札に戻る。[[4]]と十字キーの上、右、下のいずれかで、そのスロットのアイテムをすぐに使用。
+Arrow keys to browse, Enter to trade. Press H for help.	十字キーで選択、[[1]]で交換。[[2]]でヘルプ。
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]]で、バグ報告用のログファイルをデスクトップに保存します。[[2]]でログ履歴をたどります。これらの操作はここでも、ゲーム中いつでも使えます。
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]]で、バグ報告用のログファイルをデスクトップに保存します。この操作はここでも、ゲーム中いつでも使えます。
+Arrow keys browse, Enter trades. 	十字キーで選択、[[1]]で交換。 
+Arrows browse, Enter chooses, Space repeats your position. 	十字キーで選択、[[1]]で決定、[[2]]で現在位置を繰り返し。 
+Opening screen. Enter presses the play button. Space repeats the description.	オープニング画面。[[1]]でプレイボタンを押します。[[2]]で説明を繰り返します。
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption タイトル画面。十字キーで選択、[[1]]で決定。
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption タイトル画面。十字キーでカードを選択。 
+Enter chooses the one you are on. Space repeats it. 	[[1]]で選択中のものに決定、[[2]]で繰り返し。 
+Backspace to go back.	[[1]]で戻る。
+Arrows to navigate	十字キーで選択
+, Backspace to go back.	、[[1]]で戻る。
+Arrows to navigate, Enter to confirm	十字キーで選択、[[1]]で決定
+Enter to confirm	[[1]]で決定
+Unnamed setting. Press Enter to adjust.	名前のない設定。[[1]]で調整します。
+{0} Press Enter to adjust.	{0} [[1]]で調整します。
+{0}.{1} Press H for help.	{0}。{1} [[1]]でヘルプ。
+Arrows to adjust. Backspace to return.	十字キーで調整、[[1]]で戻る。
+Options. 1, 2, and 3 switch pages. 	オプション。[[1]]で右の次のページへ、[[2]]で左の次のページへ移動。 
+Arrows browse the settings, Enter selects a setting to adjust, 	十字キーで設定を選択、[[1]]で選んだ設定を調整、 
+Backspace returns. 	[[1]]で戻る。 
+Pause menu. Arrows browse the options, Enter chooses, 	ポーズメニュー。十字キーで選択肢を選択、[[1]]で決定、 
+Space repeats your position and the run information, 	[[1]]で現在位置とランの情報を繰り返し、 
+Backspace or Escape closes the menu.	[[1]]または [[2]]でメニューを閉じる。
+Standing up from the table. Press H for help.	テーブルから立ち上がりました。[[1]]でヘルプ。
+You step back. Press Backspace again to return to the table.	一歩下がりました。もう一度 [[1]]を押すとテーブルに戻ります。
+Backspace steps back from your focused object. 	[[1]]で、注目している物から一歩下がる。 
+Backspace again returns you to the game table and opens the map.	もう一度 [[1]]を押すと、ゲームテーブルに戻ってマップを開く。
+1, 2 and 3 examine what is in front of you. 	[[1]]と十字キーの上、右、下で正面にあるものを調べる。 
+Standing controls. Up arrow steps forward, down arrow steps back. 	立っているときの操作。十字キーの上で前進、十字キーの下で後退。 
+Left and right arrows step to the side. 	十字キーの左右で横に移動。 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]]で反時計回りに90度、[[2]]で時計回りに90度回転。 
+Backspace returns you to the game table and opens the map.	[[1]]でゲームテーブルに戻ってマップを開く。
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	マップ。{0}。この先に{1}があります。十字キーで選択、[[1]]で詳細、[[2]]で移動、[[3]]でデッキを表示。
+Map. Awaiting input. Press Space for your position, H for help.	マップ。入力待ちです。[[1]]で現在位置、[[2]]でヘルプ。
+Awaiting path selection. H, for help.	道の選択を待っています。[[1]]でヘルプ。
+Left and right arrows to browse, 	十字キーの左右で選択、 
+Enter to travel, Shift+Up to display deck.	[[1]]で移動、[[2]]でデッキを表示。
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	金庫に注目しています。大きな丸いダイヤルが3つあり、それぞれに0から9の目盛りがあります。[[1]]と十字キーの上、右、下でダイヤルを操作、[[2]]で一歩下がります。
+Nothing here can be read yet. Escape opens the pause menu.	まだ読み取れるものがありません。[[1]]でポーズメニューを開きます。
+No path selected. Use left and right arrows to browse paths.	道が選択されていません。十字キーの左右で道を選んでください。
+You are in an encounter. Press H for help.	バトル中です。[[1]]でヘルプ。
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	デッキにカードが残っていません。[[1]]でリスのデッキから引いてください。
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	リスのデッキにカードが残っていません。[[1]]で自分のデッキから引いてください。
+Left and right arrows browse. Enter selects the card. 	十字キーの左右で選択、[[1]]でカードを選ぶ。 
+Space repeats the current option. 	[[1]]で現在の選択肢を繰り返し。 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]]でルールブックを開く。[[2]]でデッキを表示。 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	メニュー操作。十字キーで選択肢を選択、[[1]]で選択中のものに決定。 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]]または [[2]]で戻る。[[3]]で現在の選択肢を繰り返し。 
+Shift R looks up the last ability you heard. 	[[1]]で、最後に聞いた能力を調べる。 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	対象を選んでください。候補は{0}個。{1} 十字キーで選択、[[1]]で決定。
+Choose a target. {0} available. Arrows to browse, Enter to select.	対象を選んでください。選べる対象は{0}。十字キーで選択、[[1]]で決定。
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 十字キーで、このアイテムの対象にできるカードを移動。[[1]]で決定。アイテムは一度使うとキャンセルできません。
+Space describes what is in front of you. Space repeats where you are. 	[[1]]で正面にあるものを説明。[[2]]で現在位置を繰り返し。 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	マップの操作。十字キー：この先の選択肢を選択。[[1]]：移動。[[2]]：現在の選択肢をすべて読み上げ。[[3]]：この先の道を読み上げ。[[4]]：デッキを表示。[[5]]：現在のアイテムを確認。[[6]]：ルールブックを開く。[[7]]：テーブルから立ち上がる。[[8]]：ヘルプ。
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	戦闘の操作。十字キーの左右で手札を選択。[[1]]で手札の次にプレイできるカード。[[2]]でカードをプレイ。[[3]]でベルを鳴らしてターン終了。[[4]]でルールブックを開く。[[5]]で最近聞いた能力を調べる。[[6]]で手札を読む。[[7]]で相手の待機列を読む。[[8]]で相手の盤面を読む。[[9]]で自分の盤面を読む。[[10]]で盤面全体と待機列を読む。[[11]]で天秤、骨、その他のゲーム情報を読む。[[12]]を繰り返し押してアイテムを切り替え、[[13]]で使用。アイテムを使う前にカードを引く必要があります。ドローフェイズ中は、[[14]]で自分のデッキから、[[15]]でリスのデッキから引きます。[[16]]でヘルプ。
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	カードの配置中。十字キーの左右：スロットを移動。[[1]]：決定。ボードの読み上げボタンも使えます。[[2]]：ヘルプ。
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	生贄の選択中。十字キーの左右：自分のボードを移動。[[1]]：選択中のカードを捧げる。生贄は一度始めるとキャンセルできません。ボードの読み上げボタンも使えます。[[2]]：ヘルプ。
+No card selected. Use left and right arrows to browse your hand first.	カードが選択されていません。まず十字キーの左右で手札を選んでください。
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}のコストは{1}の血。{3}を{2}体選んでください。十字キーの左右で移動、[[1]]で決定。生贄は一度始めるとキャンセルできません。
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}{1}を出すスロットを選んでください。十字キーの左右で移動、[[1]]で決定。{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	スロットを選んでください。十字キーの左右で移動、[[1]]で決定。{0}
+Shift plus R looks up the last ability you heard.	[[1]]で、最後に聞いた能力を調べます。
+Left and right arrows to browse, Enter to turn a card over, 	十字キーの左右で選択、[[1]]でカードをめくる、 
+Space to repeat, H for help.	[[1]]でリピート、[[2]]でヘルプ。
+Shift Up displays your deck, Space to repeat, H for help.	[[1]]でデッキを表示、[[2]]で繰り返し、[[3]]でヘルプ。
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	デッキの試練。レシーは三つの条件から一つを選ばせます。今のデッキで最も成り立ちそうなものを選んでください。その後、デッキからランダムに三枚のカードが公開されます。成功すれば報酬がもらえます。十字キーの左右で選択、[[1]]でカードをめくる、[[2]]でデッキを表示、[[3]]でリピート、[[4]]でヘルプ。
+{0}. Arrow keys to browse.	{0}。十字キーで選択。
+ Press Enter to add it to your deck.	 [[1]]でデッキに加えます。
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	十字キーの左右で選択、[[1]]で繰り返し、[[2]]で歯の数、[[3]]でアイテム、[[4]]でヘルプ、[[5]]で{0}に戻る。
+Left and right arrows browse the cards. Space repeats the card you are on. 	十字キーの左右でカードを選択。[[1]]で選択中のカードを繰り返し。 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]]で集めた歯の数を読み上げます。[[2]]で、空のものも含めた3つすべてのアイテムスロットを読み上げます。 
+R opens the rulebook. 	[[1]]でルールブックを開く。 
+Backspace closes your deck and returns you to {0}.	[[1]]でデッキを閉じ、{0}に戻る。
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	あなたのデッキ。手札に加えるカードを選んでください。十字キーで選択、[[1]]で決定。{0}。
+{0}. G, B and A to read the boardstate.	{0}。[[1]]、[[2]]、[[3]]で盤面を読み上げ。
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	カバン。十字キーで選択、[[1]]で木彫りの選択に戻る。
+Backpack. Arrows browse, Enter chooses a totem combination.	カバン。十字キーで選択、[[1]]でトーテムの組み合わせを決定。
+Your backpack is empty. Press Backspace to return to woodcarving selection.	カバンが空です。[[1]]で木彫りの選択に戻ります。
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	骨の王の祭壇。十字キーで選択、[[1]]で決定。
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 次の購入に必要な歯が足りません。[[1]]で罠猟師のもとを離れます。
+Pair of {0} chosen to fuse together. Enter to rechoose.	融合させる{0}のペアを選びました。[[1]]で選び直し。
+{0} chosen as {1}. Enter to rechoose.	{0}を{1}に選びました。[[1]]で選び直し。
+{0} card placed on the altar. Enter to take it.	カード{0}が祭壇に置かれています。[[1]]で取る。
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	十字キーの左右で選択、[[1]]で決定、[[2]]で繰り返し、[[3]]でヘルプ。
+No option selected. Use left and right arrows to browse.	選択肢が選ばれていません。十字キーの左右で選んでください。
+Arrows browse, Enter chooses, Space repeats your position.	十字キーで選択、[[1]]で決定、[[2]]で現在位置を繰り返し。
+Shift Up displays your deck.	[[1]]でデッキを表示。
+A opens your backpack, Shift Up displays your deck. 	[[1]]でカバンを開く、[[2]]でデッキを表示。 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]]で歯の数を確認、[[2]]でいつでも罠猟師のもとを離れる。 
+I cycles through your current items. R opens the rulebook.	[[1]]で現在のアイテムを切り替え。[[2]]でルールブックを開く。
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	十字キーで選択、[[1]]で決定、[[2]]でいつでも罠猟師のもとを離れる、 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]]で現在位置を繰り返し、[[2]]で歯の数を確認、[[3]]でルールブックを開く。
+R opens the rulebook.	[[1]]でルールブックを開く。
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]]でトーテムを持っていく。[[2]]でバックパックに戻って選び直す。
+Enter to take the totem with you.	[[1]]でトーテムを持っていく。
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	大きなネズミが、テーブルに置かれたカバンの後ろから走り出てきます。カード{0}を差し出しています。十字キーで選択。
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} 十字キーの左右でページをめくる。[[1]]で本を閉じる。
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	ルールブック。十字キーの左右でページをめくる。[[1]]で現在のページを繰り返し。[[2]]または [[3]]で本を閉じる。
+{0} is offering to surrender, press Shift and E to accept. 	{0}が降参を申し出ています。[[1]]で受け入れます。 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	レシーが和解を申し出ています。バトルを降参するそうです。[[1]]で降参を受け入れます。
+Backspace to return to the main menu. Space to repeat.	[[1]]でメインメニューに戻る。[[2]]で繰り返し。
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	勝利画面の操作。[[1]]で画面を繰り返し。[[2]]でメインメニューに戻る。
+Enter to continue. Space to repeat.	[[1]]で続行。[[2]]で繰り返し。
+Victory Screen controls. Space repeats the screen. Enter continues.	勝利画面の操作。[[1]]で画面を繰り返し。[[2]]で続行。
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	ラン終了時の操作。[[1]]で画面を繰り返し。[[2]]で同じスターターデッキと有効なチャレンジを使って新しいランを始める。[[3]]でメインメニューに戻る。
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	死のカード。{0}を選んでください。{1}。十字キーで選択、[[1]]で決定。
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Mod設定。十字キーで選択、[[1]]で開くか変更、[[2]]で1つ上に戻る、[[3]]で閉じる。
+Help list, F1.	ヘルプ一覧、[[1]]。
+Mod Settings, Control plus M.	Mod設定、[[1]]。
+Review history, older, Control plus Down arrow.	履歴を確認、古い項目、[[1]]。
+Review history, newer, Control plus Up arrow.	履歴を確認、新しい項目、[[1]]。
+Next buffer item, Control plus Up arrow.	次のバッファー項目、[[1]]。
+Previous buffer item, Control plus Down arrow.	前のバッファー項目、[[1]]。
+Next buffer, Control plus Right arrow.	次のバッファー、[[1]]。
+Previous buffer, Control plus Left arrow.	前のバッファー、[[1]]。
+Review history as a list, Y.	履歴を一覧で確認、[[1]]。
+Silence speech, tap Control.	読み上げを停止、[[1]]。
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	します。デッキから手札に加えるカードを1枚選んでください。十字キーで選び、[[1]]で決定します。

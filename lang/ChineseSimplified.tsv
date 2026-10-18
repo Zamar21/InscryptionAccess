@@ -1,0 +1,1254 @@
+﻿# ChineseSimplified.tsv
+# IKMA language file: Simplified Chinese. Translated by Claude (Session 32) and ChatGPT (the lines added since, Session 64), following the game's own Simplified Chinese terms; no Simplified Chinese speaker has checked it yet.
+#status: unreviewed
+
+ and 	 和 
+{0} or {1}	{0}或{1}
+{0} plus {1}	{0}加{1}
+Cross	叉
+Circle	圆圈
+Square	方块
+Triangle	三角
+Minus	减号
+Plus	加号
+left stick press	按下左摇杆
+right stick press	按下右摇杆
+D-pad up	十字键上
+D-pad down	十字键下
+D-pad left	十字键左
+D-pad right	十字键右
+right stick up	右摇杆向上
+right stick down	右摇杆向下
+right stick left	右摇杆向左
+right stick right	右摇杆向右
+{0} and {1}	{0}和{1}
+{0}, and {1}	{0}和{1}
+Hand is empty.	手牌为空。
+Board unavailable.	无法读取牌桌。
+Items unavailable.	无法读取道具。
+You have no items.	你没有道具。
+No options.	没有选项。
+No options available.	没有可用选项。
+No settings on this page.	本页没有设置项。
+No paths ahead.	前方没有道路。
+Nothing is directly in front of you.	你正前方什么都没有。
+Nothing to examine here.	这里没有可查看的东西。
+Nothing on {0} from here.	在这里，{0}键没有对应的东西。
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	按回车键，以相同的初始牌组和已启用的挑战开始新的冒险。按退格键返回主菜单。按空格键重复。
+No current run available.	当前没有可继续的冒险。
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	Inscryption 主游戏的支持仍在开发中。我一定会做完，别担心！——Zamar :)
+In the center of the screen is a small play button. Press Enter...	屏幕中央有一个小小的播放按钮。按回车键……
+Daniel Mullins Games.	Daniel Mullins Games。
+The screen glitches for a second.	画面短暂地出现了故障。
+Video logs not yet available. Coming soon!	录像日志暂未开放。敬请期待！
+Devolver Digital.	Devolver Digital。
+Inscryption. Press any button to start.	Inscryption。按任意键开始。
+Inscryption: Kaycee's Mod.	Inscryption：凯茜模组。
+The rulebook has no pages to read.	规则书没有可读的页面。
+Now is not the time to ring the bell.	现在不是敲铃的时候。
+No card selected.	未选择卡牌。
+History: empty.	历史：空。
+History: {0}	历史：{0}
+History closed.	历史已关闭。
+Gamepad.	手柄。
+Keyboard.	键盘。
+Dev Log Locked.	开发日志已锁定。
+You must first select a card to add to your deck.	你必须先选择一张卡牌加入牌组。
+That option could not be selected.	无法选择该选项。
+The surrender could not be accepted.	无法接受投降。
+Could not reach the table.	无法回到牌桌前。
+The woodcarving could not be read.	无法读取木雕。
+Press H for what still works.	按H键了解哪些功能仍可用。
+Space describes what is directly in front of you. 	空格键描述你正前方的东西。 
+Conversation in progress, press Space to proceed.	对话进行中，按空格键继续。
+Scales: you lead by {0}.	天平：你领先{0}。
+Scales: enemy leads by {0}.	天平：敌方领先{0}。
+Scales: even.	天平：持平。
+{0}'s {1} ability triggers{2}	{0}的{1}能力触发{2}
+{0}'s {1} ability triggers.	{0}的{1}能力触发。
+Both {0}'s {1} abilities trigger.	{0}的两个{1}能力均已触发。
+All {0}'s {1} abilities trigger.	{0}的所有{1}能力均已触发。
+{0}'s {1} abilities trigger.	{0}的{1}能力触发。
+Comment line: {0}	注释行：{0}
+{0} gains ability: {1} due to totem.	{0}因图腾获得能力：{1}。
+Copy of {0} sigil negated by Kaycee override.	重复的{0}印记被凯茜模组规则取消。
+{0}'s totem gives enemy {1} cards {2}.	{0}的图腾让敌方{1}卡牌获得{2}。
+Footage, {0}.	录像，{0}。
+Your deck is empty, press S to draw from the Squirrel deck.	你的牌组已空，按S键从松鼠牌组抽牌。
+The Squirrel deck is empty, press D to draw from your deck.	松鼠牌组已空，按D键从你的牌组抽牌。
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	抽牌阶段。按D键从你的牌组抽牌，或按S键从松鼠牌组抽牌。
+{0}'s Waterborne ability triggers. It dives underwater...	{0}的水袭能力触发。它潜入了水下……
+{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}的水袭能力在卡槽{1}触发，它们潜入水中...
+Submerged {0}	潜入水下的{0}
+Leshy puts on the {0} mask.	莱西戴上了{0}面具。
+Leshy puts on the {0} mask. {1}	莱西戴上了{0}面具。{1}
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISIONAL: {0}面具没有面部描述。
+Leshy puts on the {0} mask...	莱西戴上了{0}面具……
+Leshy removes the {0}'s mask, it floats away.	莱西摘下了{0}的面具，面具飘走了。
+Leshy removes the {0}'s mask.	莱西摘下了{0}的面具。
+the {0}	{0}
+the {0}, and the {1}	{0}和{1}
+{0} masks circle around Leshy's head: {1}. 	{0}个面具环绕在莱西头部周围：{1}。 
+Behind Leshy is a large bright full moon...	莱西身后是一轮又大又亮的满月……
+Leshy blows out his first of three candles.	莱西吹灭了三根蜡烛中的第一根。
+Leshy blows out the second of his three candles. The masks float away, and Leshy turns to face the moon behind him...	莱西吹灭了三根蜡烛中的第二根。面具纷纷飞走，莱西转身面向身后的月亮...
+Leshy holds up his camera and aims it at the moon.	莱西举起相机，对准月亮。
+Leshy is wearing the {0}'s mask.	莱西戴着{0}的面具。
+Leshy is not wearing a mask.	莱西没有戴面具。
+Leshy lowers a third candle to the flame and lights it...	莱西把第三根蜡烛凑近火焰，将它点燃……
+the ship	船
+A {0} jumps off {1} and joins your side in slot {2}.	{0}跳下{1}，加入你方{2}号位。
+{0} {1} jump off {2} and join your side in slots {3}.	{0}只{1}跳下{2}，加入你方{3}号位。
+A massive ship called {0} crashes onto the board. 	一艘名为{0}的巨船撞上了牌桌。 
+It has {0} dancing Skeleton Pirates on board making a ruckus.	船上有{0}个跳着舞的骷髅海盗在喧闹。
+ No Skeleton Pirates remain on deck.	 甲板上已没有骷髅海盗。
+ 1 Skeleton Pirate remains on deck.	 甲板上还剩1个骷髅海盗。
+ {0} Skeleton Pirates remain on deck.	 甲板上还剩{0}个骷髅海盗。
+Item menu. {0} 	道具菜单。{0} 
+Arrows to Browse, Enter to select, Backspace to return to your hand.	方向键浏览，回车键选择，退格键返回手牌。
+Item menu. 	道具菜单。 
+Your hand.	你的手牌。
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	道具菜单。左右方向键浏览你携带的道具。回车键使用当前道具。Shift加I键读出全部三个栏位，包括空栏位。退格键返回手牌。Shift加1、2或3键可快速使用对应栏位的道具。
+The pirate skull fades backwards... Something is coming...	海盗头骨向后隐去……有什么东西要来了……
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0}把一个戴着眼罩和海盗帽的头骨放到桌上。
+The eye of the skull begins to glow.	头骨的眼睛开始发光。
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0}占满了敌方牌桌，一张卡牌横跨全部{1}个位置，力量{2}，生命{3}。
+{0} arrives, {1}/{2}.	{0}登场，力量{1}，生命{2}。
+{0} is destroyed.	{0}被摧毁了。
+{0} aims his hook at your empty slot {1}.	{0}把鱼钩瞄准了你方空着的{1}号位。
+{0} aims his hook at {1} in slot {2}.	{0}把鱼钩瞄准了{2}号位的{1}。
+{0} hooks your {1} and pulls it to his slot {2}.	{0}钩住了你的{1}，把它拉到了他那边的{2}号位。
+{0} lowers his hook.	{0}放下了鱼钩。
+{0} on the board and {1} in the queue	牌桌上{0}张，队列中{1}张
+{0} on the board	牌桌上{0}张
+{0} in the queue	队列中{0}张
+cards	卡牌
+{0} offers a trade.	{0}提出交易。
+{0} gives you a {1} and offers a trade.	{0}给了你一张{1}，并提出交易。
+{0} Trade pelts in your hand for one of their cards. 	{0}用你手中的毛皮换取对方的一张卡牌。 
+They have {0}. 	对方可交易的有：{0}。 
+The bell is disabled until you trade at least once. 	至少交易一次后才能敲铃。 
+Trade pelts from your hand for cards on their board and queue.	用手中的毛皮换取对方牌桌和队列中的卡牌。
+{0} in slot {1}	{1}号位的{0}
+empty slot {0}	空着的{0}号位
+The cannons aim at {0} on your side, and {1} on theirs.	大炮瞄准了你方的{0}，以及对方的{1}。
+The cannons aim at {0} on your side.	大炮瞄准了你方的{0}。
+The cannons aim at {0} on their side.	大炮瞄准了对方的{0}。
+The cannons are aimed at slot {0}.	大炮瞄准了{0}号位。
+The cannons are aimed here.	大炮瞄准了这里。
+The Pirate Skull opens a pack of cards and calls in their crew.	海盗头骨打开一包卡牌，召来了船员。
+The Pirate Skull calls their ship. It bears down on the cabin.	海盗头骨召来了船只。船朝木屋直逼而来。
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	莱西摘下面具，把它倒过来，又戴了回去。他变成了{0}。
+{0} clears his side of the table.	{0}清空了自己那一侧的牌桌。
+A Shark takes the bait's place in slot {0}.	一条鲨鱼取代了{0}号位的鱼饵。
+their	对方
+his	他的
+{0} sweeps {1} side of the table clean.	{0}把自己那一侧的牌桌清扫一空。
+pelt	毛皮
+pelts	毛皮
+returns	返回
+return	返回
+{0} sweeps {1} side of the table clean, and 	{0}把自己那一侧的牌桌清扫一空， 
+{0} played {1} {2} to your hand.	已打出的{0}张{1}回到了你的手牌。
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	画面出现故障，{0}的双眼发出红光。一大群灰熊向你涌来……
+Every opposing slot on the board is filled with Grizzlies...	牌桌上敌方的每个位置都被灰熊占满了……
+card	卡牌
+Begin trading. 	开始交易。 
+Trade: {0} {1} to choose from, 	交易：可选{0}张卡牌， 
+{0} {1} in hand. 	手中有{0}张毛皮。 
+Arrow keys to browse, Enter to trade. Press H for help.	方向键浏览，回车键交易。按H键获取帮助。
+in the queue, slot {0}	队列中，{0}号位
+on the board, slot {0}	牌桌上，{0}号位
+Option {0} of {1}, {2}. {3}	第{0}项，共{1}项，{2}。{3}
+Option {0} of {1}. {2}	第{0}项，共{1}项。{2}
+You have no pelt to trade with.	你没有可用于交易的毛皮。
+slot {0}	{0}号位
+slot {0} and slot {1}	{0}号位和{1}号位
+{0}'s {1} ability triggers, placing a {2} in {3}.	{0}的{1}能力触发，在{3}放置了{2}。
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	{0}的断尾求生能力触发，它甩下尾巴作为诱饵， 
+and moves to slot {0}.	并移动到{0}号位。
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	{0}的无形之物能力触发，它发生变异，获得了{1}。
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	{0}的潮汐锁定能力触发，把你的{1}拉入轨道，将其彻底消灭。
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	{0}的道具商能力触发，{1}被放入{2}号道具栏。
+Its Trinket Bearer ability triggers, a {0} is added to item slot {1}.	其道具商能力触发，{0}被放入道具槽{1}。
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	按Shift加L键可将日志文件保存到桌面，用于提交错误报告，Control加上或下方向键可浏览日志历史。这些命令在这里及游戏中的任何时候都可用。
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	按Shift加L键可将日志文件保存到桌面，用于提交错误报告。此命令在这里及游戏中的任何时候都可用。
+Log saved to your desktop as a .txt file. Attach it to your bug report.	日志已作为 .txt 文件保存到桌面。请将它附在错误报告中。
+The log could not be saved because {0}.	无法保存日志，原因是{0}。
+{0}'s {1} ability fizzles.	{0}的{1}能力没有生效。
+{0}'s {1} ability fizzles in slot {2}.	{0}的{1}能力在卡槽{2}未能生效。
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	{0}死亡，触发了你手牌中{1}的食尸鬼能力， 
+playing itself into slot {0}.	它自行打出到{0}号位。
+{0} traded for {1}.	用{0}换来了{1}。
+Pelt	毛皮
+Trade pelts from your hand for cards on their board and queue. 	用手中的毛皮换取对方牌桌和队列中的卡牌。 
+Arrow keys browse, Enter trades. 	方向键浏览，回车键交易。 
+You have {0} {1} in hand. 	你手中有{0}张毛皮。 
+Trade until you run out of pelts, then the battle will continue.	交易到毛皮用完为止，之后战斗将继续。
+is destroyed	被摧毁了
+dies	死亡
+{0} gets caught in the {1} and {2}.	{0}被{1}夹住，{2}。
+{0} {1}, its ability {2} triggers.	{0} {1}，其{2}能力触发。
+destroyed	被摧毁
+one	一
+two	两
+three	三
+four	四
+five	五
+six	六
+seven	七
+eight	八
+Angler	钓鱼人
+1 bone	1根骨头
+{0} bones	{0}根骨头
+Bone Lord	骨王
+bone	骨头
+bones	骨头
+Both	两者
+All 	全部 
+Arrows browse, Enter chooses, Space repeats your position. 	方向键浏览，回车键选择，空格键重复当前位置。 
+Campfire	篝火
+This card could not be read.	无法读取这张卡牌。
+1 card	1张卡牌
+{0} cards	{0}张卡牌
+1 damage	1点伤害
+{0} damage	{0}点伤害
+Death card	死亡卡
+1 health remaining	剩余1点生命
+{0} health remaining	剩余{0}点生命
+Item pickup	拾取道具
+Kin	族群
+Leshy	莱西
+Mycologists	菌学家
+{0} Option {1} of {2}.	{0} 第{1}项，共{2}项。
+Prospector	矿工
+Received {0} {1}.	获得了{0}根骨头。
+Sacrifice stone	献祭石
+Trader	毛皮商
+Trapper	猎人
+Unnamed option	未命名选项
+Woodcarver	木雕师
+Your deck.	你的牌组。
+unknown	未知
+IKMA version {0} loaded.	IKMA {0} 版已加载。
+Loading.	正在加载。
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA {0} 版已下载，将在下次启动游戏时安装。
+Updated from version {0}.	已从 {0} 版更新。
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	IKMA {0} 版现已推出。按F9下载，或按F10跳过此版本。
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA {0} 版已下载。按F9在下次启动游戏时安装，或按F10跳过此版本。
+Downloading IKMA version {0}.	正在下载 IKMA {0} 版。
+IKMA version {0} installs the next time you start the game.	IKMA {0} 版将在下次启动游戏时安装。
+Skipping IKMA version {0}.	跳过 IKMA 版本 {0}。
+The IKMA update failed its safety check and was not installed.	IKMA 更新未通过安全检查，未安装。
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	无法下载 IKMA 更新。下次启动游戏时 IKMA 会再次提示。
+Opening screen. Enter presses the play button. Space repeats the description.	开场画面。回车键按下播放按钮。空格键重复描述。
+Option	选项
+New Game	新游戏
+Continue	继续
+Options	选项
+Credits	制作团队
+Quit	退出
+Card Library	卡牌库
+Edit Deck	编辑牌组
+Kaycee's Mod	凯茜模组
+Return To Start Menu	返回开始画面
+End Run	终止冒险
+Concede	认输
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption 标题画面。方向键导航，回车键确认。
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption 标题画面。方向键浏览卡牌。 
+Enter chooses the one you are on. Space repeats it. 	回车键选择当前卡牌。空格键重复。 
+Inscryption. Kaycee's Mod main menu	Inscryption。凯茜模组主菜单
+Unlocks	已解锁内容
+Cards Unlocked	已解锁卡牌
+Cards	卡牌
+Challenges	挑战
+Confirm Challenges	确认挑战
+Select Starter Deck	选择初始牌组
+Stats	状态
+Run Complete	冒险完成
+Devlog	开发日志
+New Challenges	新挑战
+New Starter Deck	新初始牌组
+Starter Deck Unlocked	初始牌组已解锁
+New run	新的冒险
+Menu	菜单
+coordinates	坐标
+Entry {0}. {1}	第{0}篇日志。{1}
+{0}. No options available.	{0}。没有可用选项。
+Backspace to go back.	退格键返回。
+Arrows to navigate	方向键导航
+, Backspace to go back.	，退格键返回。
+Arrows to navigate, Enter to confirm	方向键导航，回车键确认
+Enter to confirm	回车键确认
+Deck	牌组
+{0} {1} of {2}.	第{1}个{0}，共{2}个。
+{0} of {1}.	第{0}个，共{1}个。
+enabled	已启用
+disabled	已禁用
+Challenge	挑战
+1 challenge point.	1挑战点数。
+{0} challenge points.	{0}挑战点数。
+{0} of {1} challenge points.	挑战点数：{0}，共需{1}。
+Back.	返回。
+unknown option	未知选项
+number 	编号 
+Start Run	开始运行
+Locked starter deck	未解锁的初始牌组
+Starter Deck: {0}.	初始牌组：{0}。
+Card {0} of {1}	第{0}张卡牌，共{1}张
+Cards 	第 
+ and {0} of {1}	 和{0}张卡牌，共{1}张
+Previous page	上一页
+Next page	下一页
+Card locked	卡牌已锁定
+Challenge locked.	挑战已锁定。
+plus 1 challenge point	加1挑战点数
+plus {0} challenge points	加{0}挑战点数
+Challenge complete.	挑战完成。
+Challenge level {0}.	挑战等级{0}。
+All challenge levels cleared.	所有挑战等级均已通关。
+Active, 	已启用， 
+Random Starter Deck	随机初始牌组
+unlabelled option	无标签选项
+Display is now full screen	已切换为全屏模式
+Display is now windowed	已切换为窗口模式
+Display resolution changed	分辨率已更改
+, {0} by {1}	，{0}乘{1}
+Text Language	文本语言
+Reset with {0}	以{0}重置
+Full screen	全屏模式
+Windowed	窗口模式
+{0} by {1}	{0}乘{1}
+On	开
+Off	关
+Zero	零
+, default	，默认
+Unnamed setting.	未命名设置。
+English	英文
+French	法语
+Italian	意大利语
+German	德语
+Spanish	西语
+Brazilian Portuguese	葡萄牙语（巴西）
+Turkish	土耳其语
+Russian	俄语
+Japanese	日语
+Korean	韩语
+Simplified Chinese	简体中文
+Traditional Chinese	繁体中文
+Unnamed setting. Press Enter to adjust.	未命名设置。按回车键调整。
+{0} Press Enter to adjust.	{0} 按回车键调整。
+Options Menu	选项菜单
+ Page {0} of {1}.	 第{0}页，共{1}页。
+{0}.{1} Press H for help.	{0}。{1} 按H键获取帮助。
+That setting cannot be changed.	该设置无法更改。
+Setting	设置
+Arrows to adjust. Backspace to return.	方向键调整。退格键返回。
+Back. {0}	返回。{0}
+, locked	，已锁定
+1 option	1个选项
+{0} options	{0}个选项
+Pause menu. {0}.	暂停菜单。{0}。
+Game settings.	游戏设置。
+Display settings.	显示设置。
+Audio settings.	音频设置。
+Page {0}.	第{0}页。
+No active challenges.	没有已启用的挑战。
+Active Challenges. {0}.	已启用的挑战。{0}。
+Unnamed option.	未命名选项。
+{0}. Option {1} of {2}.	{0}。第{1}项，共{2}项。
+That option is locked.	该选项已锁定。
+Options. 1, 2, and 3 switch pages. 	选项。1、2、3键切换页面。 
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	第1页为游戏设置，第2页为显示设置，第3页为音频设置。 
+Arrows browse the settings, Enter selects a setting to adjust, 	方向键浏览设置，回车键选择要调整的设置， 
+Backspace returns. 	退格键返回。 
+ They are the last stop past the options.	 它们位于所有选项之后。
+Pause menu. Arrows browse the options, Enter chooses, 	暂停菜单。方向键浏览选项，回车键选择， 
+Space repeats your position and the run information, 	空格键重复当前位置和本次冒险的信息， 
+Backspace or Escape closes the menu.	退格键或Esc键关闭菜单。
+Encounter	遭遇战
+Totem battle	图腾战
+Boss battle	头目战
+Card choice	选择卡牌
+Card bundle choice	选择卡牌包
+Rare card choice	选择稀有卡牌
+Card removal	移除卡牌
+Card recycling	回收卡牌
+Card copying	复制卡牌
+Boulder choice	选择磐石
+Side deck change	更换副牌组
+Deck trial	牌组试炼
+Victory feast	胜利宴席
+Random	随机
+Cost	费用
+Cannot {0} right now.	现在无法{0}。
+bring your deck up	调出牌组
+You are already standing.	你已经站起来了。
+stand up	站起来
+Standing up from the table. Press H for help.	从桌前站起。按H键获取帮助。
+You are at {0}.	你位于{0}。
+return to {0}	返回{0}
+Back at {0}.	回到了{0}。
+You are at the map.	你在地图前。
+return to the map	返回地图
+Game map.	游戏地图。
+Returning to the table.	正在回到牌桌前。
+You step back. Press Backspace again to return to the table.	你退后一步。再按一次退格键回到牌桌前。
+counterclockwise	逆时针
+clockwise	顺时针
+Turned {0} 90 degrees.	{0}转了90度。
+ turned.	 已转动。
+{0} to {1} o'clock.	{0}指向{1}点。
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	机关咔嚓一声，保险箱门打开了。里面是一大团血淋淋、支离破碎的肉块。
+You step back.	你退后一步。
+You step back from the {0}.	你从{0}前退开。
+You focus on the {0}.	你仔细查看{0}。
+You focus in.	你仔细查看。
+The rulebook is not within reach.	够不到规则书。
+Inside the safe is a large mass of bloodied mangled flesh.	保险箱里是一大团血淋淋、支离破碎的肉块。
+Facing {0}.	面朝{0}。
+Nothing is directly in front of you. {0}	你正前方什么都没有。{0}
+Focus controls. 	查看模式操作。 
+Backspace steps back from your focused object. 	退格键从当前查看的物体前退开。 
+Backspace again returns you to the game table and opens the map.	再按退格键回到牌桌前并打开地图。
+1, 2 and 3 examine what is in front of you. 	1、2、3键查看你前方的东西。 
+Standing controls. Up arrow steps forward, down arrow steps back. 	站立操作。上方向键向前走，下方向键向后退。 
+Left and right arrows step to the side. 	左右方向键向侧面移动。 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A键逆时针转90度，D键顺时针转90度。 
+Backspace returns you to the game table and opens the map.	退格键回到牌桌前并打开地图。
+The Woodlands	林地
+The Wetlands	湿地
+The Snow Line	雪线
+The Beach	海滩
+the path to the Cabin	通往木屋的小路
+You have arrived at {0}	你已到达{0}
+You are at {0}	你位于{0}
+the beginning of a new map	新地图的起点
+unknown location	未知位置
+Map ready.	地图已就绪。
+1 path	1条路
+{0} paths	{0}条路
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	地图。{0}。前方有{1}。方向键浏览，空格键查看详情，回车键前往，Shift+上方向键显示牌组。
+Map. Awaiting input. Press Space for your position, H for help.	地图。等待操作。按空格键了解当前位置，按H键获取帮助。
+Awaiting path selection. H, for help.	等待选择道路。H键，获取帮助。
+First	第一
+Second	第二
+Third	第三
+Fourth	第四
+Fifth	第五
+Sixth	第六
+Seventh	第七
+Eighth	第八
+Path {0}	第{0}条路
+{0} path: {1}	{0}条路：{1}
+, then 	，然后 
+ {0} more paths not read.	 还有{0}条路未读出。
+Map unavailable.	无法读取地图。
+{0}. No paths ahead.	{0}。前方没有道路。
+Option {0}: {1}	选项{0}：{1}
+ You are on Option {0} of {1}.	 你在第{0}项，共{1}项。
+Left and right arrows to browse, 	左右方向键浏览， 
+{0}. {1} ahead. {2}.{3} 	{0}。前方有{1}。{2}。{3} 
+Enter to travel, Shift+Up to display deck.	回车键前往，Shift+上方向键显示牌组。
+Arrived at {0}.	已到达{0}。
+Safe	保险箱
+woodcarving	木雕
+Large Picture Frame	大画框
+Gramophone	留声机
+skull	头骨
+The human skull rests on the shelf.	人类头骨放在架子上。
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	你正查看保险箱。上面有三个大圆形旋钮，每个旋钮都标有0至9的刻度。按1、2、3键操作旋钮，退格键退开。
+Settler Man	男拓荒者
+Settler Woman	女拓荒者
+Chief	酋长
+Wildling	野人
+Enchantress	女魔法师
+Gravedigger	掘墓人
+Robot	机器人
+head	头部
+arms	手臂
+body	身体
+Hour hand	时针
+Minute hand	分针
+Second hand	秒针
+Nothing here can be read yet. Escape opens the pause menu.	这里暂时没有可读取的内容。Esc键打开暂停菜单。
+No path selected. Use left and right arrows to browse paths.	未选择道路。请用左右方向键浏览道路。
+The map is still settling. Try again in a moment.	地图还未就绪。请稍后再试。
+Card placement cannot be cancelled. Choose a slot.	无法取消放置卡牌。请选择一个位置。
+You are in an encounter. Press H for help.	你正处于战斗中。按H键获取帮助。
+Unable to end turn: bell method not found.	无法结束回合：找不到敲铃的方法。
+Draw piles unavailable.	无法读取牌堆。
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	你的牌组中没有剩余卡牌。按S键从松鼠牌组抽牌。
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	松鼠牌组中没有剩余卡牌。按D键从你的牌组抽牌。
+Draw pile unavailable.	无法读取该牌堆。
+Drew {0}.	抽到了{0}。
+Sigil Ability	印记能力
+Sigil Abilities	印记能力
+Drew {0}. It gains {1}: {2}.	抽到了{0}。它获得了{1}：{2}。
+Finish placing your card before using an item.	请先放置好卡牌，再使用道具。
+No items.	没有道具。
+Item unavailable.	该道具不可用。
+Item {0}: empty.	{0}号道具栏：空。
+Item {0}: {1}	{0}号道具栏：{1}
+Cut up one of your adversary's cards. It is destroyed.	剪碎对手的一张牌。该牌被摧毁。
+Place a weight on the scales. The pain is temporary.	在天平上给对手加些筹码。疼也只疼那一下子。
+Hook a card to take it as your own. Card must enter an empty space.	钩走一张卡牌，占为己有。该卡牌必须进入一个空位。
+Your cards gain temporary {0}.	你的卡牌暂时获得{0}。
+Opponent turn skipped due to {0}.	因{0}，对手的回合被跳过。
+Opponent cards in slots 1 through 4 will lose all of their sigils.	对手在第1至4格的卡牌将失去所有印记。
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	给对手的一张卡牌剥皮。该卡牌会死亡，一张毛皮卡会加入你的手牌。
+Search your deck for any card and add it into your hand.	在牌组中搜索任意一张卡牌并加入手牌。
+Use to immediately gain 4 Bones.	使用后立刻获得4根骨头。
+Place a significant weight on the scales. The pain will linger...	在天平上给对手加一大块筹码。疼痛会持续下去……
+An item is already being used.	已经有道具正在使用中。
+There is no item {0}.	没有{0}号道具。
+Item {0} is empty.	{0}号道具栏是空的。
+{0} could not be used. Item activation is not yet supported for this slot.	无法使用{0}。暂不支持使用该栏位的道具。
+Using {0}.	正在使用{0}。
+{0} is still waiting for input.	{0}仍在等待操作。
+{0} was not used.	未使用{0}。
+Using the Lucky Clover discards all of these cards for new ones. 	使用幸运三叶草会弃掉所有这些卡牌，换成新的卡牌。 
+Left and right arrows browse. Enter selects the card. 	左右方向键浏览。回车键选择卡牌。 
+Space repeats the current option. 	空格键重复当前选项。 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R键打开规则书。Shift+上方向键显示你的牌组。 
+No back option on this screen.	此画面没有返回选项。
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	菜单导航。方向键浏览选项。回车键选择当前选项。 
+Backspace or Escape goes back. Space repeats the current option. 	退格键或Esc键返回。空格键重复当前选项。 
+Shift R looks up the last ability you heard. 	Shift加R键查询你最后听到的能力。 
+No valid targets.	没有有效目标。
+No valid target in that slot.	该卡槽没有有效目标。
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	选择一个目标。有{0}个可选。{1} 方向键浏览，回车键选择。
+Choose a target. {0} available. Arrows to browse, Enter to select.	选择目标。可选目标：{0}。方向键浏览，回车键选择。
+Cannot cancel item use, please choose a target.	无法取消使用道具，请选择一个目标。
+Choosing a target.	正在选择目标。
+Choosing a target for {0}.	正在为{0}选择目标。
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 方向键在此道具可作用的卡牌之间移动。回车键选择。道具一经使用便无法取消。
+That target could not be selected.	无法选择该目标。
+{0} is dragged down to your side into slot {1}.	{0}被拉到你这一侧的{1}号位。
+unknown slot.	未知位置。
+Your slot	你方位置
+Opponent slot	对方位置
+{0} {1}: empty.	{0}{1}：空。
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	IKMA 目前还无法读取此画面，因此常规操作在这里不适用。 
+Space describes what is in front of you. Space repeats where you are. 	空格键描述你前方的东西。空格键重复你所在的位置。 
+This screen still needs the mouse until a reader is built for it.	在为此画面制作好读取功能之前，仍需使用鼠标操作。
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}IKMA 暂时无法读取此画面。游戏正在这里等待你的操作。 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	地图操作。方向键，浏览前方的选择。回车键，前往。空格键，列出当前所有选择。B键，读出前方的道路。Shift+上方向键，浏览你的牌组。I键，听取你当前的道具。R键，打开规则书。Shift+下方向键，从桌前站起。H键，获取帮助。
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	战斗操作。左右方向键浏览手牌。Tab键，手牌中下一张可出的牌。回车键，出牌。E键，敲铃结束回合。R键，打开规则书。Shift R键，查询最近听到的能力。C键，读手牌。U键，读敌方队列。G键，读敌方场面。Shift G键，读你的场面。B键，读整个场面和队列。A键，读天平、骨头及其他游戏信息。I键，重复按下以切换道具，回车键使用。你必须先抽一张牌才能使用道具。在你的抽牌阶段：D键，从你的牌组抽牌，或S键，从松鼠牌组抽牌。H键，获取帮助。
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	正在放置卡牌。左右方向键切换位置。回车键，确认。读取牌桌的按键仍然可用。H键，获取帮助。
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	正在选择祭品。左右方向键在你的牌桌上移动。回车键，献祭当前所在的卡牌。献祭一旦开始便无法取消。读取牌桌的按键仍然可用。H键，获取帮助。
+Cannot travel there.	无法前往那里。
+Cancelled. {0} returned to hand.	已取消。{0}已返回手牌。
+Cancelled. Card returned to hand.	已取消。卡牌已返回手牌。
+A sacrifice cannot be cancelled once started.	献祭一旦开始便无法取消。
+Cannot cancel right now.	现在无法取消。
+No cards to sacrifice.	没有可献祭的卡牌。
+No slot {0}.	没有{0}号位。
+Only {0} in hand.	手中只有{0}。
+No cards in hand are currently playable.	手牌中目前没有可打出的卡牌。
+Card	卡牌
+{0} gains {1} from your totem.	{0}从你的图腾获得了{1}。
+Recent item:	最近的道具：
+Recent items:	最近的道具：
+No recent ability to look up.	没有可查询的最近能力。
+No description available for that ability.	该能力没有可用的描述。
+Recent ability:	最近的能力：
+Recent abilities:	最近的能力：
+Cannot play a card right now.	现在无法打出卡牌。
+No card selected. Use left and right arrows to browse your hand first.	未选择卡牌。请先用左右方向键浏览手牌。
+That card	该卡牌
+That card could not be played.	无法打出该卡牌。
+{0} was not played.	未打出{0}。
+No card in this slot.	此位置没有卡牌。
+{0} already chosen to sacrifice.	{0}已被选为祭品。
+Slot {0} is occupied by {1}. Choose an empty slot.	{0}号位已被{1}占据。请选择一个空位。
+{0} in slot {1} sacrificed. Choose {2} additional sacrifice.	已献祭卡槽{1}中的{0}。再选择{2}个祭品。
+{0} in slot {1} sacrificed. Choose {2} additional sacrifices.	已献祭卡槽{1}中的{0}。再选择{2}个祭品。
+{0} played in Slot {1}.	{0}已打出到{1}号位。
+No slot restrictions to step through.	没有需要逐个切换的位置限制。
+No other slot available for this card.	这张卡牌没有其他可用位置。
+ Ability: {0}.	 能力：{0}。
+ Abilities: {0}.	 能力：{0}。
+Slot {0}: {1}, {2}/{3}.{4}{5}	{0}号位：{1}，力量{2}，生命{3}。{4}{5}
+Slot {0}: empty.{1}	{0}号位：空。{1}
+ Choose a slot to play {0}.	 选择一个位置来打出{0}。
+Slot {0}: occupied by {1}.{2}{3}	{0}号位：已被{1}占据。{2}{3}
+Slot {0}: empty.{1}{2}	{0}号位：空。{1}{2}
+{0} Enhanced Slot {1}: empty.{2} Cards played in this slot will gain {3}.{4}	由{0}强化的卡槽{1}：空。{2}在此卡槽打出的牌将获得{3}。{4}
++{0} power from {1}	来自{1}的力量+{0}
+{0} in adjacent slot {1}	相邻卡槽{1}中的{0}
+sacrifice	祭品
+sacrifices	祭品
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}消耗{1}点鲜血。选择{2}个{3}。左右方向键移动，回车键确认。献祭一旦开始便无法取消。
+Playing {0}. 	正在打出{0}。 
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}选择一个位置来打出{1}。左右方向键移动，回车键确认。{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	选择一个位置。左右方向键移动，回车键确认。{0}
+Hand: {0}. {1}.	手牌：{0}。{1}。
+Your board	你方牌桌
+Enemy board	敌方牌桌
+Resources unavailable.	资源不可用。
+ 1 candle lit.	 点燃了1根蜡烛。
+ {0} candles lit.	 点燃了{0}根蜡烛。
+ Enemy has 1 candle.	 敌方有1根蜡烛。
+ Enemy has {0} candles.	 敌方有{0}根蜡烛。
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 木雕，同族类型：{0}，印记能力：{1}。
+ Your deck: {0} remaining.	 你的牌组：剩余{0}。
+ cards	 张卡牌
+ Squirrel deck: {0} remaining.	 松鼠牌组：剩余{0}。
+empty	空
+Item {0}: {1}.	道具{0}：{1}。
+Opponent unavailable.	对手不可用。
+No cards queued.	没有排队的卡牌。
+Blocked for Slot {0}: 	{0}号位被阻挡： 
+Entering Slot {0}: 	进入{0}号位： 
+Upcoming queue: {0}. {1}.	即将登场：{0}。{1}。
+{0}: empty	{0}：空
+Slots 	号位 
+Slot {0}	{0}号位
+Slots 1 to {0}	1至{0}号位
+currently {0}/{1}.	当前{0}/{1}。
+{0}: empty{1}	{0}：空{1}
+{0} to {1}	{0}至{1}
+. Ability: {0}	。能力：{0}
+. Abilities: {0}	。能力：{0}
+costs 1 blood	消耗1点鲜血
+costs {0} blood	消耗{0}点鲜血
+costs 1 bone	消耗1根骨头
+costs {0} bones	消耗{0}根骨头
+Scales unavailable.	天平不可用。
+{0} moves to {1} slot {2}.	{0}移动到{1}{2}号位。
+right, 	向右， 
+left, 	向左， 
+{0} {1} moves {2}from slot {3} to slot {4}.	{0}{1}{2}从{3}号位移动到{4}号位。
+{0} {1} moves {2}	{0}{1}{2}
+from slot {0} to slot {1}.	从{0}号位移动到{1}号位。
+{0} {1} moves down to slot {2}{3}.	{0}{1}下移到{2}号位{3}。
+{0} {1} is played in slots {2}{3}.	{0} {1}在卡槽{2}{3}出场。
+{0} {1} is played in slot {2}{3}.	{0}{1}被打出在{2}号位{3}。
+ targeting slot {0}	 ，瞄准{0}号位
+Enemy {0} is queued{1}.	敌方{0}已排队{1}。
+{0} {1} has left slot {2}.	{0}{1}离开了{2}号位。
+The Prospector clears his queue.	矿工清空了他的队列。
+, it is carrying a pack of cards	，它背着一叠卡牌
+Your	你方
+Enemy	敌方
+your	你方
+enemy	敌方
+Fused {0}	融合的{0}
+Unusual {0}	异常的{0}
+{0} transforms into The {1}.	{0}变成了{1}。
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	故障卡牌。这张卡牌发着白光并不断闪烁。打出前无法得知其数值。
+Shift plus R looks up the last ability you heard.	Shift加R查询你最近听到的能力。
+Ability	能力
+Abilities	能力
+ Sigil Ability: {0}.	 印记能力：{0}。
+ Kin type: {0}.	 同族类型：{0}。
+ Kin types: {0}.	 同族类型：{0}。
+Star	星
+ Moving left.	 向左移动。
+ Moving right.	 向右移动。
+Rare	稀有
+Terrain border	地形边框
+Glitched portrait	故障肖像
+Full-card portrait	全卡肖像
+Animated portrait	动态肖像
+Hologram portrait	全息肖像
+Golden glow	金色光芒
+Red glow	红色光芒
+Bloodied portrait	染血肖像
+Moon particles	月亮粒子
+ Attack equals the number of ants on its owner's side.	 攻击力等于其所属方的蚂蚁数量。
+ Attack is equal to half the number of Bones the owner has.	 攻击力等于所属方骨头数量的一半。
+ Attack equals sacrifices made this turn.	 攻击力等于本回合献祭的次数。
+ Attack varies with green gems.	 攻击力随绿色宝石变化。
+1 blood	1点鲜血
+{0} blood	{0}点鲜血
+Cost: {0}.	费用：{0}。
+Cost: Free.	费用：免费。
+a slot	一个位置
+{0} in {1}	{1}的{0}
+empty {0}	空的{0}
+, and 	，以及 
+{0} attacks {1}.	{0}攻击{1}。
+{0} flies over {1} and attacks directly{2}.	{0}飞越{1}，直接攻击{2}。
+ twice	 两次
+{0} passes by {1} and attacks directly{2}.	{0}越过{1}，直接攻击{2}。
+Airborne	空袭
+Mighty Leap	高跳
+{0} blocks {1} {2} due to {3}.	{0}凭借{3}挡住了{1}{2}。
+{0}{1} attacks {2}.	{0}{1}攻击{2}。
+{0}'s {1} ability triggers, preventing the damage.	{0}的{1}能力触发，抵挡了伤害。
+{0} attacks {1}, it	{0}攻击{1}，后者
+{0}{1} attacks empty Slot {2}.	{0}{1}攻击空的{2}号位。
+{0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1}攻击空卡槽{2}，触发了{3}的{4}能力。{5}向{6}移动到卡槽{7}，并且
+{0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1}攻击空卡槽{2}，触发了{3}的{4}能力。{5}向{6}移动到卡槽{7}。
+{0}{1} attacks directly.	{0}{1}直接攻击。
+ in Slot {0}	 在{0}号位
+ from your hand	 从你的手牌
+{0} is played{1}{2} by Ability: {3}.	{0}{1}{2}被能力打出：{3}。
+{0} is played{1}{2}.	{0}{1}{2}被打出。
+Touch of Death	死神之触
+ with {0}	 带有{0}
+ to {0}	 因{0}
+The {0} queued in slot {1}	排在{1}号位的{0}
+The {0} queued	已排队的{0}
+{0} takes {1} and {2}{3}.	{0}受到{1}，{2}{3}。
+{0} takes {1}.	{0}受到{1}。
+{0} takes {1}, {2}. 	{0}受到{1}，{2}。 
+Its {0} ability resolves before it dies.	其{0}能力在死亡前生效。
+{0} takes {1}, {2}.	{0}受到{1}，{2}。
+Your {0}	你方{0}
+Enemy {0}	敌方{0}
+{0} is sacrificed.{1}	{0}被献祭。{1}
+{0} sacrificed.{1}	{0}已献祭。{1}
+{0} power and {1} health	{0}点攻击力和{1}点生命值
+{0} power	{0}点攻击力
+{0} health	{0}点生命值
+Morsel	一口之量
+{0} {1} abilities trigger, {2} gains {3}.	{0}{1}能力触发，{2}获得{3}。
+{0} gained {1}.	{0}获得了{1}。
+{0} is skinned and {1}.	{0}被剥皮，{1}。
+{0} is cut in half and {1}.	{0}被剪成两半，{1}。
+{0} is cut and {1}.	{0}被剪开，{1}。
+{0} is smashed and {1}.	{0}被砸碎，{1}。
+{0} in Slot {1}	{1}号位的{0}
+1 direct damage.	1点直接伤害。
+{0} direct damage.	{0}点直接伤害。
+ The scale hits 5...	 天平倾斜到5……
+VOLUME WARNING: 	音量警告： 
+Enemy deals {0}{1}	敌方造成{0}{1}
+You deal {0}{1}	你造成{0}{1}
+Received 1 bone from 	获得1根骨头，来自 
+the Bone Lord's boon	骨王的恩惠
+Received 8 bones from 	获得8根骨头，来自 
+Received {0} bones at battle start.	战斗开始时获得{0}根骨头。
+{0} attacks each of your {1} 	{0}逐一攻击你的{1}个 
+slot	号位
+slots	号位
+{0} attacks {1} times.	{0}攻击{1}次。
+and {0}{1}	并且{0}{1}
+ in slot {0}	 在{0}号位
+{0} burrows from {1}	{0}从{1}钻地移动
+ to 	 到 
+{0}{1} burrows	{0}{1}钻地移动
+{0}, taking {1}, {2}.	{0}，受到{1}，{2}。
+{0}, taking {1}.	{0}，受到{1}。
+{0}{1} takes {2} {3}.	{0}{1}受到{2}，{3}。
+{0}{1} takes {2}.	{0}{1}受到{2}。
+{0}{1} takes {2}, {3}.	{0}{1}受到{2}，{3}。
+{0} attacks {1}	{0}攻击{1}
+{0} attacks {1} {2} times	{0}攻击{1}{2}次
+Your cards attack {0} {1} times	你的卡牌攻击{0}{1}次
+{0} for {1}.	{0}：{1}。
+{0} for {1}, {2} health remaining.	{0}：{1}，剩余{2}点生命值。
+Brittle	脆骨
+{0}'s {1} ability triggers, and it dies.{2}	{0}的{1}能力触发，它随之死亡。{2}
+{0} in {1} {2}	{1}{2}的{0}
+{0} {1} abilities trigger, {2} die.{3}	{0}{1}能力触发，{2}死亡。{3}
+Your turn.	你的回合。
+Enemy turn.	敌方回合。
+Draw Phase skipped due to no cards remaining in either deck...	双方牌组都已无牌，跳过抽牌阶段……
+Guardian	守护者
+{0}'s {1} ability triggers: it is blocked from 	{0}的{1}能力触发：它被阻止 
+moving to slot {0}.	移动到{0}号位。
+{0}'s {1} ability triggers: it moves to slot {2}.	{0}的{1}能力触发：它移动到{2}号位。
+Burrower	钻地龙
+right	向右
+left	向左
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	{0}的{1}能力触发：它{2}移动到{3}号位。
+{0}'s {1} ability triggers in slot {2}: it moves {3} to slot {4}.	{0}的{1}能力在卡槽{2}触发：向{3}移动到卡槽{4}。
+ It will move left next.	 接下来会向左移动。
+ It will move right next.	 接下来会向右移动。
+ It will try to move left next.	 接下来会尝试向左移动。
+ It will try to move right next.	 接下来会尝试向右移动。
+{0} extends its vertebrae into slot {1}.	{0}将脊椎延伸到卡槽{1}。
+{0} survives the sacrifice and transforms.	{0}在献祭后存活并变形。
+{0} transforms.	{0}变形了。
+{0}'s {1} ability triggers, it transforms into a hellish beast... A {2} is added to your hand.	{0}的{1}能力触发，它变成了一头地狱猛兽...{2}加入你的手牌。
+Drew Glitched card, the screen glitches and {0} {1} is added to your hand.	抽到了乱码牌，屏幕出现故障，{0}{1}加入你的手牌。
+an	一张
+a	一张
+, Powers met: {0}, Health met: {1}, Kins met: {2} of {3}	，力量达标：{0}，生命达标：{1}，同族达标：{2}/{3}
+none	无
+Sprinter	冲刺能手
+Bloodlust	嗜血狂热
+{0}'s {1} ability triggers: it now has {2} power.	{0}的{1}能力触发：它现在有{2}点攻击力。
+{0}'s {1} ability triggers: it places a {2} in 	{0}的{1}能力触发：它将{2}放在 
+{0} slot {1}.	{0}{1}号位。
+{0}'s {1} ability triggers: {2} 	{0}的{1}能力触发：{2} 
+{0} is played in {1} slot {2}.	{0}被打出在{1}{2}号位。
+, with 	，带有 
+Enemy 	敌方 
+{0}{1}'s {2} ability triggers in slot {3}: 	{0}{1}的{2}能力在卡槽{3}触发： 
+it becomes a {0}/{1} {2}{3}.	它变为{0}/{1}的{2}{3}。
+{0}{1}'s {2} ability triggers: 	{0}{1}的{2}能力触发： 
+All enemy {0}'s {1} abilities trigger.	敌方{0}的所有{1}能力均已触发。
+Both enemy {0}'s {1} abilities trigger.	敌方{0}的两个{1}能力均已触发。
+They each become {0}/{1} {2}{3}.	它们各自变成{0}/{1}的{2}{3}。
+{0}'s {1} ability fizzles due to having no empty item slots.	{0}的{1}能力失效，因为没有空的道具栏。
+{0} is created in your hand.	{0}在你的手牌中生成。
+{0} ability triggers: {1} {2} is added to your hand.	{0}能力触发：{2}加入你的手牌。
+{0} {1} is added to your hand.	{0}{1}加入你的手牌。
+ Ouroboros comes back stronger than before...	 衔尾蛇回来了，比以前更强……
+A	一张
+An	一张
+{0}'s {1}	{0}的{1}
+ by {0}'s {1}	 由{0}的{1}
+{0} is created in enemy Slot {1}{2}.	{0}在敌方{1}号位生成{2}。
+{0} is created on the opposing space{1}.	{0}在对面的位置生成{1}。
+Excess damage carries to the queue, targeting Slot {0}.	溢出伤害传递到队列，瞄准{0}号位。
+Excess damage carries to the queue.	溢出伤害传递到队列。
+Victory. {0} extra {1} received.	胜利。额外获得{0}个{1}。
+tooth	牙齿
+teeth	牙齿
+Victory.	胜利。
+{0} added in {1}.	{0}已添加到{1}。
+item slot {0}	道具栏{0}
+an item slot	一个道具栏
+{0} chosen.	已选择{0}。
+{0} is created in {1}.	{0}在{1}生成。
+Saving.	正在保存。
+{0} is added to your hand.	{0}加入你的手牌。
+Pirate Skull	海盗骷髅
+None	无
+Leshy waits silently.	莱西静静等待。
+{0} waits silently.	{0}静静等待。
+One of {0}'s {1} candles is blown out.	{0}的{1}根蜡烛中有一根被吹灭。
+A candle is blown out.	一根蜡烛被吹灭。
+One of {0}'s candles is blown out.	{0}的一根蜡烛被吹灭。
+A candle is blown out. {0} left.	一根蜡烛被吹灭。剩余{0}根。
+One of {0}'s candles is blown out. {1} left.	{0}的一根蜡烛被吹灭。剩余{1}根。
+The {0}	{0}
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	莱西戴上一副木面具，面容肮脏狂野，留着凌乱的大胡子，还有一颗歪斜的金牙。他颤抖的手里握着一把大镐……
+candle	蜡烛
+candles	蜡烛
+{0} places a skull holding {1} lit {2} 	{0}把一个托着{1}根点燃的{2}的头骨 
+onto the table.	放到桌上。
+Leshy relights your candle. You now have {0} {1} lit.	莱西重新点燃了你的蜡烛。你现在有{0}根{1}亮着。
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0}吹灭了你最后一根蜡烛。房间陷入黑暗，{1}的双手越过桌子伸了过来……
+{0} blows out one of your candles. You have {1} remaining.	{0}吹灭了你的一根蜡烛。你还剩{1}根。
+{0} are added to your hand.	{0}加入你的手牌。
+{0} is added to your hand.{1}	{0}加入你的手牌。{1}
+{0} are added to your hand.{1}	{0}加入你的手牌。{1}
+An extra candle is lit.	又点燃了一根蜡烛。
+The Prospector uses his pickaxe to strike all of your cards, turning them into Gold Nuggets.	矿工用他的镐砸向你所有的卡牌，把它们变成了金块。
+The Prospector clears his queue, 	矿工清空了他的队列， 
+The Limoncello	柠檬酒号
+ slot {0}	 {0}号位
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	大炮向{0}开火，{1}被炮弹击中，{2}。
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	大炮向{0}开火，{1}被炮弹击中，剩余{2}点生命值。
+Cannons fire at {0}, {1} is hit by cannonball.	大炮向{0}开火，{1}被炮弹击中。
+Death card.	死亡卡。
+{0} blood cost card.	{0}点鲜血费用的卡牌。
+Bones cost card.	骨头费用的卡牌。
+{0} kin card.	{0}同族卡牌。
+New cards dealt.	已发新牌。
+ Use the Lucky Clover to discard them all and be dealt new cards.	 使用幸运三叶草可弃掉所有卡牌并换发新牌。
+Left and right arrows to browse, Enter to turn a card over, 	左右方向键浏览，回车键翻开卡牌， 
+Space to repeat, H for help.	空格键重复，按H键获取帮助。
+Shift Up displays your deck, Space to repeat, H for help.	Shift加上方向键显示牌组，空格键重复，H键帮助。
+Mycologist Card Selection. 	菌学家选牌。 
+Before you lay 1 face-down duplicate card. 	你面前有1张背面朝上的重复牌。 
+Before you lay {0} face-down duplicate cards. 	你面前有{0}张背面朝上的重复牌。 
+Choose 1 to add to your deck.	选择1张加入你的牌组。
+Every card is face up. 	所有牌都已翻开。 
+Each one is a copy of a card already in your deck. Choose 1 to add to your deck.	每张都是你牌组中已有卡牌的复制品。选择1张加入你的牌组。
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	牌组试炼。莱西给你三个条件供选择。选出对你当前牌组最可能成立的那个。然后他会从你的牌组中随机翻开三张牌。如果成功，你将获得奖励。左右方向键浏览，回车键翻开一张牌，Shift 上方向键显示你的牌组，空格键重复，按H键获取帮助。
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	牌组试炼。莱西在桌上放了一座石拱道具，让他发光的双眼看起来像是从漆黑的洞口望出来。
+Deck Trial.	牌组试炼。
+Rare Card Choice	稀有卡牌选择
+Card Choice	卡牌选择
+1 face-down card	1张背面朝上的卡牌
+{0} face-down cards	{0}张背面朝上的卡牌
+1 face-down rare card	1张背面朝上的稀有卡牌
+{0} face-down rare cards	{0}张背面朝上的稀有卡牌
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}。莱西递给你一个木盒。他打开锁扣， 
+opens it, revealing {0}... Choose 1 to add to your deck.	掀开盒盖，里面是{0}……选择1张加入你的牌组。
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}。所有卡牌都正面朝上。选择1张加入你的牌组。
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}。你面前摆着{1}。选择1张加入你的牌组。
+Lucky Clover. Discard all cards and be dealt new ones.	幸运三叶草。弃掉所有卡牌并换发新牌。
+Face down.	背面朝上。
+Trial of {0}.	{0}试炼。
+Your 3 cards require {0} combined Power.	你的3张牌需要合计{0}点力量。
+Your 3 cards require {0} combined Health.	你的3张牌需要合计{0}点生命。
+Your 3 cards require {0} combined sigils.	你的3张牌需要合计{0}个印记。
+Your 3 cards require {0} combined Blood cost.	你的3张牌需要合计{0}点鲜血成本。
+Your 3 cards require {0} combined Bone cost.	你的3张牌需要合计{0}根骨头成本。
+{0} of your 3 cards must be the same kin type.	你的3张牌中必须有{0}张属于同族。
+Face up, but the card could not be read.	已翻开，但无法读取这张卡牌。
+ Duplicate of card in your deck.	 你的牌组中已有这张卡牌。
+{0}. Arrow keys to browse.	{0}。方向键浏览。
+That card could not be taken.	无法拿取这张卡牌。
+The Lucky Clover could not be used.	无法使用幸运三叶草。
+That card could not be selected.	无法选择这张卡牌。
+{0} added to your deck.	{0}已加入你的牌组。
+Card added to your deck.	卡牌已加入你的牌组。
+ Press Enter to add it to your deck.	 按回车键将其加入你的牌组。
+Deck returned.	牌组已放回。
+the card choice	卡牌选择
+the map	地图
+Your deck. 	你的牌组。 
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	左右方向键浏览，空格键重复，A键查看牙齿，I键查看道具，H键帮助，退格键返回{0}。
+Your deck is still being laid out.	你的牌组还在摆放中。
+Your deck. {0}.	你的牌组。{0}。
+Left and right arrows browse the cards. Space repeats the card you are on. 	左右方向键浏览卡牌。空格键重复当前卡牌。 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	A键读出已收集的牙齿数量。I键读出全部三个道具槽，包括空槽。 
+R opens the rulebook. 	R键打开规则书。 
+Backspace closes your deck and returns you to {0}.	退格键关闭牌组，返回{0}。
+No teeth are shown here.	这里不显示牙齿。
+ 1 tooth collected.	 已收集1颗牙齿。
+ {0} teeth collected.	 已收集{0}颗牙齿。
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	你的牌组。选择一张卡牌加入手牌。方向键浏览，回车键选择。{0}。
+Choose a card from your deck to add to your hand. 	从你的牌组中选择一张卡牌加入手牌。 
+{0}. G, B and A to read the boardstate.	{0}。G、B、A键读出牌桌状态。
+Host Card	宿主卡牌
+Card to Sacrifice	献祭卡牌
+Begin Ritual	开始仪式
+Send card to rest by the fire	让卡牌在火边休息
+Begin experiment...	开始实验……
+Select a pair of cards to fuse together	选择一对要融合的卡牌
+Begin painting	开始作画
+Choose a card to receive an artistic rendition of	选择一张卡牌来接受艺术再现
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	从你的牌组中选择一张卡牌作为宿主。献祭牌组中的另一张卡牌，将其印记转移给宿主。
+Continue resting peacefully by the campfire and raise the stat again, or withdraw from the campfire.	继续在营火旁安稳休息，再次提升属性，或离开营火。
+Continue resting by the campfire and raise the stat again, or withdraw from the campfire.	继续在营火旁休息，再次提升属性，或离开营火。
+Fused {0} is added to your deck.	融合后的{0}加入你的牌组。
+ {0}, {1}.	 {0}，{1}。
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	从你的牌组中选择一张卡牌在篝火旁取暖。这会永久提升它的一项数值，但也有风险……
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	从你的牌组中选择一对相同的卡牌融合为一张。攻击力和生命值相加，两者的印记都会保留。
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	挑选一个新木雕放进背包：同族头部或印记身体。如果头部和身体都有了，就选择一个图腾组合随身携带。只要图腾在使用中，你牌组中与同族头部相符的每张卡牌都会获得图腾的印记。
+Trade the teeth you've collected for pelt cards to add to your deck.	用你收集的牙齿换取毛皮卡牌加入牌组。
+The trader generously gives you five teeth...	毛皮商慷慨地给了你五颗牙齿...
+The trader generously gives you {0} teeth...	毛皮商慷慨地给了你{0}颗牙齿...
+Trade pelts from your deck for new cards.	用牌组中的毛皮换取新卡牌。
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	从你的牌组中选择一张卡牌永久移除。作为回报，骨王会赐予一份恩惠：每场战斗开始时给你骨头的被动效果。
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	从你的牌组中选择一张卡牌。它的复制品会加入你的牌组，不过可能会有些偏差。
+card to receive an artistic rendition	接受艺术再现的卡牌
+card to risk resting by the campfire	冒险在营火旁休息的牌
+host card	宿主卡牌
+card to sacrifice	献祭卡牌
+The backpack cannot be reached right now.	现在无法打开背包。
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	背包。方向键浏览，退格键返回木雕选择。
+Backpack. Arrows browse, Enter chooses a totem combination.	背包。方向键浏览，回车键选择图腾组合。
+Your backpack is empty. Press Backspace to return to woodcarving selection.	你的背包已空。按退格键返回木雕选择。
+The deck cannot be reached right now.	现在无法打开牌组。
+You have {0} {1} Kin card{2} in your deck.	你的牌组中有{0}张{1}同族牌{2}。
+ {0}, {1} card{2}.	 {0}，{1}张卡牌。
+Woodcarving selection.	木雕选择。
+Withdraw from the campfire.	离开篝火。
+the fire	火
+Pair of {0}.	一对{0}。
+s	s
+Altar of the Bone Lord	骨王的祭坛
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	骨王的祭坛。方向键浏览，回车键确认。
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	猎人。你获得了一张兔皮。用你收集的牙齿换取毛皮卡牌加入牌组。
+1 tooth	1颗牙齿
+{0} teeth	{0}颗牙齿
+Skinning Knife	剥皮刀
+{0} purchased for {1}. You have {2} remaining.{3}	以{1}购买了{0}。你还剩{2}。{3}
+You are {0} short from buying {1}.{2}	购买{1}还差{0}。{2}
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 牙齿不够再购买了。退格键离开猎人。
+You have {0}.	你有{0}。
+, and {0}	，以及{0}
+{0} sacrificed.	{0}已献祭。
+sigil	印记
+sigils	印记
+{0} gained the {1} {2}.	{0}获得了{2}：{1}。
+its {0} by {1}	{0}提升{1}
+its {0}	{0}
+This will permanently raise one of its stats	这会永久提升它的一项数值
+This will permanently raise {0}	这会永久提升{0}
+Choose a card to warm by the campfire. {0}.	选择一张卡牌在篝火旁取暖。{0}。
+Continue resting peacefully by the campfire, and raise the stat again.	继续在篝火旁安心休息，再次提升数值。
+Continue resting by the campfire, and raise the stat again.	继续在篝火旁休息，再次提升数值。
+the chosen card	所选卡牌
+to peacefully rest by	安心休息于
+to risk resting by	冒险休息于
+Send {0} {1} the campfire	让{0}{1}篝火旁
+Send {0} {1} the campfire, permanently raising {2}.	让{0}{1}篝火旁，永久提升{2}。
+Choose a card to become the host.	选择一张卡牌作为宿主。
+Choose a card to sacrifice.	选择一张卡牌献祭。
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	选择一张卡牌在篝火旁取暖。这会提升它的数值，但也有风险……
+{0}'s {1} rose by {2}.	{0}的{1}增加了{2}。
+Choose a card.	选择一张卡牌。
+{0} selected as {1}.	已选择{0}作为{1}。
+Pair of {0} chosen to fuse together. Enter to rechoose.	已选择一对{0}进行融合。按回车键重新选择。
+{0} chosen as {1}. Enter to rechoose.	已选择{0}作为{1}。按回车键重新选择。
+A {0}.	{0}。
+A {0}. {1}	{0}。{1}
+Received {0}.	获得了{0}。
+{0} card placed on the altar. Enter to take it.	{0}卡牌已放在祭坛上。回车键拿取。
+A carved head.	一个雕刻的头部。
+{0} head.	{0}头部。
+A carved sigil body.	一个雕刻的印记身体。
+{0} sigil body.	{0}印记身体。
+Totem: your {0} cards gain {1}.	图腾：你的{0}卡牌获得{1}。
+The finished totem.	完成的图腾。
+Option {0} of {1}.	第{0}个选项，共{1}个。
+{0}. {1} option{2}. 	{0}。{1}个选项。 
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	左右方向键浏览，回车键选择，空格键重复，H键帮助。
+No option selected. Use left and right arrows to browse.	未选择选项。用左右方向键浏览。
+No pair is on the stone yet. Choose a pair of cards first.	石头上还没有卡牌对。请先选择一对卡牌。
+Pair of {0} selected.	已选择一对{0}。
+You take the {0} Kin totem with the {1} Sigil.	你拿取了带有{1}印记的{0}族图腾。
+You took the {0}.	你拿走了{0}。
+{0} selected.	已选择{0}。
+Nothing to choose here.	这里没有可选择的。
+Trader. {0} You have {1} {2} left to trade.	毛皮商。{0}你还有{1}{2}可以交易。
+Trader. {0}	毛皮商。{0}
+Choosing a card. {0}. 	正在选择卡牌。{0}。 
+Arrows browse, Enter chooses, Space repeats your position.	方向键浏览，回车键选择，空格键重复你的位置。
+Shift Up displays your deck.	Shift加上方向键显示牌组。
+A opens your backpack, Shift Up displays your deck. 	A键打开背包，Shift加上方向键显示牌组。 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A键数牙齿，退格键随时离开猎人。 
+zero	零
+{0}. Item slots full. 	{0}。道具槽已满。 
+I cycles through your current items. R opens the rulebook.	I键切换当前道具。R键打开规则书。
+{0}. Select one of {1} items to add to your backpack. 	{0}。从{1}个道具中选一个放进背包。 
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	方向键浏览，回车键选择，退格键随时离开猎人， 
+Space repeats your position, A counts your teeth, R opens the rulebook.	空格键重复你的位置，A键数牙齿，R键打开规则书。
+R opens the rulebook.	R键打开规则书。
+The totem is assembled. Your {0} cards will gain {1}. 	图腾已组装完成。你的{0}卡牌将获得{1}。 
+Enter to take the totem with you. Backspace to return to backpack and reselect.	回车键带走图腾。退格键返回背包重新选择。
+Enter to take the totem with you.	回车键带走图腾。
+{0} received no new sigils.	{0}没有获得新的印记。
+{0} received {1}.	{0}获得了{1}。
+{0} received {1} 	{0}获得了{1} 
+and {0}.	和{0}。
+Copy card	复制卡牌
+Painted Card: {0}	绘制的牌：{0}
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	一个带软木塞的玻璃瓶突然跳上游戏桌。旁边落下两个小小的画架，上面放着空白卡牌。
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	玻璃瓶里是发光的绿色黏液，有一张畸形的脸。瓶子上系着一支笔尖发光的画笔。
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	莱西向你呈上一个华丽的墨水瓶，里面装着{0}，还有一支画笔。
+Leshy presents you a collapsible fan with bird talon feet.	莱西向你呈上一把长着鸟爪脚的折扇。
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	莱西向你呈上一个塞着软木塞的玻璃瓶，里面有一张小小的{0}卡牌。
+Leshy presents you a rusty pair of pliers.	莱西向你呈上一把生锈的钳子。
+Leshy presents you a chipped pair of scissors.	莱西向你呈上一把有缺口的剪刀。
+Leshy presents you an ornate wooden hourglass.	莱西向你呈上一个华丽的木制沙漏。
+Leshy presents you a large magnifying glass.	莱西向你呈上一个大放大镜。
+Leshy presents you a ceramic piggy bank.	莱西向你呈上一个陶瓷小猪存钱罐。
+Leshy presents you a large curved fish hook.	莱西向你呈上一个弯曲的大鱼钩。
+Leshy presents you a razor sharp straight knife.	莱西向你呈上一把锋利如剃刀的直刀。
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	莱西向你呈上一个塞着软木塞的玻璃瓶，里面是一团带着畸形面孔的绿色黏液。
+Leshy presents you a glowing, ornate pocketwatch.	莱西向你展示一块发光的华丽怀表。
+Leshy presents you a straight ivory dagger, for when things become grim...	莱西向你展示一把笔直的象牙匕首，以备形势危急时使用...
+Leshy presents you the {0}.	莱西向你展示{0}。
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	一只大老鼠从桌上的背包后面窜出。它向你提供一张{0}牌。方向键浏览。
+A {0} is defined as: {1} Power, {2} Health{3}.	{0}的定义为：{1}点力量，{2}点生命{3}。
+Combination code: 273.	密码：273。
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	这一页被墨水毁掉了。你能辨认出这些字：镜子……力量与……等于……那……带有……
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	这一页被墨水毁掉了。你能辨认出这些字：响铃……此所代表的数值……等于……那……
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	这一页被墨水毁掉了。你能辨认出这些字：卡牌计数……所代表的数值……等于……数量……
+The rulebook is not available here.	这里无法使用规则书。
+Opened Rulebook from shelf.	从书架上拿出规则书并打开。
+Rulebook opened.	规则书已打开。
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0}{1}左右方向键翻页。退格键合上书。
+Rulebook closed.	规则书已合上。
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	规则书。左右方向键翻页。空格键重复当前页。退格键或R键合上书。
+Variable stat	可变数值
+Boon	恩惠
+Item	道具
+Rule	规则
+Page unavailable.	页面不可用。
+Blank. Page {0} of {1}.	空白。第{0}页，共{1}页。
+{0}. Description unavailable.	{0}。描述不可用。
+Blank page.	空白页。
+Page {0} of {1}.	第{0}页，共{1}页。
+{0}. The description on this page is obscured by ink.	{0}。此页的描述被墨水遮住了。
+To the user: 	致用户： 
+Your opponent	你的对手
+{0} is offering to surrender, press Shift and E to accept. 	{0}提出投降，按Shift加E接受。 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	莱西递出橄榄枝，认输了这场战斗。按Shift加E接受他的投降。
+No surrender is being offered.	没有投降提议。
+Concede accepted. Victory.	已接受投降。胜利。
+Victory	胜利
+Defeat	失败
+Backspace to return to the main menu. Space to repeat.	退格键返回主菜单。空格键重复。
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	胜利画面操作。空格键重复画面。退格键返回主菜单。
+Enter to continue. Space to repeat.	回车键继续。空格键重复。
+Victory Screen controls. Space repeats the screen. Enter continues.	胜利画面操作。空格键重复画面。回车键继续。
+Leshy blows out his final candle, the cabin goes dark.	莱西吹灭了最后一根蜡烛，小屋陷入黑暗。
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	结局画面操作。空格键重复画面。回车键使用相同的初始牌组和已启用的挑战开始新一局。退格键返回主菜单。
+the log file could not be found	找不到日志文件
+your desktop folder could not be found	找不到你的桌面文件夹
+the file could not be written	无法写入文件
+cost	费用
+power and health	攻击力和生命值
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	死亡卡，选择它的{0}。{1}。方向键浏览，回车键选择。
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	为你的卡牌输入名字，最多10个字符。回车键完成。Tab键读出目前的名字。
+space	空格
+capital {0}	大写{0}
+backspace.	退格。
+Character limit reached.	已达到字符上限。
+No name yet.	还没有名字。
+Type at least one character first.	请先输入至少一个字符。
+Mod Settings	模组设置
+Events	事件
+button	按钮
+checkbox	复选框
+checked	已选中
+unchecked	未选中
+{0} of {1}	{0}/{1}
+Closed	已关闭
+Announce	播报
+Add to history	添加到历史
+Sources	来源
+Current Player	当前玩家
+Enemies	敌人
+History	历史
+Reads	朗读
+Prompts	提示
+Updates	更新
+Automatic: new versions download and install with no question.	自动：下载并安装新版本，无需询问。
+Download, then ask before installing.	先下载，安装前询问。
+Ask before downloading.	下载前询问。
+Off: IKMA never connects to the internet.	关闭：IKMA从不连接互联网。
+Speech engine	语音引擎
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	自动：在Windows上使用你的屏幕阅读器，在Steam Deck上使用IKMA语音助手。
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	始终通过UniversalSpeech使用你的屏幕阅读器：NVDA、JAWS或Windows语音。
+Always the IKMA speech helper, for Steam Deck and Linux.	始终使用IKMA语音助手，适用于Steam Deck和Linux。
+Language	语言
+Follow the game's language setting.	跟随游戏的语言设置。
+Controller vibration	手柄震动
+Low	低
+Medium	中
+High	高
+Control template	操作模板
+Default	默认
+Original	原始
+Full log for bug reports	用于错误报告的完整日志
+Off: the short log, what IKMA said and anything that went wrong.	关闭：简短日志，记录IKMA说过的内容和发生的错误。
+On: every diagnostic line, for a bug report. The log gets much longer.	开启：记录所有诊断行，用于错误报告。日志会长得多。
+NVDA line timing	NVDA逐行计时
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	精确：IKMA询问NVDA每行何时读完。需要NVDA 2024.1或更新版本。
+Estimated: IKMA guesses how long each line takes to read.	估算：IKMA估计每行的朗读时长。
+Braille display	盲文显示器
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	开启：每行语音也会通过NVDA或JAWS发送到你的盲文显示器。
+Off: nothing is sent to a braille display.	关闭：不向盲文显示器发送任何内容。
+Steam Deck speech	Steam Deck语音
+Voice	声音
+Female	女声
+Male	男声
+Rate	语速
+Volume	音量
+Controller buttons	手柄按钮
+Open the rulebook	打开规则书
+Help	帮助
+Repeat, describe, or advance a conversation	重复、描述或推进对话
+Next playable card, slot, or sacrifice	下一张可出的牌、下一个卡槽或祭品
+Rulebook for the last heard abilities	查询最近听到的能力的规则书
+Read your hand	读手牌
+Read the enemy queue	读敌方队列
+Read the enemy board	读敌方场面
+Read your board	读你的场面
+Game info: scales, bones, and teeth	游戏信息：天平、骨头和牙齿
+Full board and queue	整个场面和队列
+All three item slots	全部三个道具槽
+Rulebook for the last heard abilities, second button	查询最近听到的能力的规则书，第二个按钮
+Help list	帮助列表
+Draw from your deck	从你的牌组抽牌
+Draw from the Squirrel deck	从松鼠牌组抽牌
+Item menu	道具菜单
+Accept surrender	接受投降
+Number 1	数字1
+Number 2	数字2
+Number 3	数字3
+Number 4	数字4
+Save a bug report log	保存错误报告日志
+Review history, older	查看历史，更早
+Review history, newer	查看历史，更新
+Review history as a list	以列表形式查看历史
+Next buffer	下一个缓冲区
+Previous buffer	上一个缓冲区
+Silence speech	停止语音
+{0}: {1}	{0}：{1}
+{0}: {1}. Default {2}.	{0}：{1}。默认：{2}。
+no button	无按钮
+Reset to Default controls	恢复默认操作
+Every action is reset to default controls.	所有操作均已恢复为默认按键。
+Press a button... {0} to cancel.	按一个按钮...按{0}取消。
+Hold {0}, {1}, or {2} and {3} together for a chord. Backspace on the keyboard also cancels.	同时按住{0}、{1}或{2}之一和{3}可组成组合键。键盘上的退格键也可取消。
+Press a button... Hold {0}, {1}, or {2} and {3} together for a chord. Backspace on the keyboard cancels.	按一个按钮...同时按住{0}、{1}或{2}之一和{3}可组成组合键。键盘上的退格键可取消。
+Button cannot be changed, due to being reserved by the game.	该按钮被游戏保留，无法更改。
+Cancelled	已取消
+Bound to {0}	已绑定到{0}
+Swapped. {0} is now on {1}, and {2} is now on {3}.	已交换。{0}现在使用{1}，{2}现在使用{3}。
+Changes the next time you start the game.	下次启动游戏时生效。
+Feature coming soon.	此功能即将推出。
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	模组设置。方向键浏览，回车键打开或更改，退格键返回上一级，Esc键关闭。
+{0} already used this turn.	本回合已使用过{0}。
+{0} has no valid targets right now.	{0}目前没有有效目标。
+{0} cannot be used during the draw phase.	抽牌阶段无法使用{0}。
+{0} can only be used during a battle.	{0}只能在战斗中使用。
+{0} cannot be used, your deck is empty.	无法使用{0}，你的牌组已空。
+{0} cannot be used while a giant card is on the board.	场上有巨型卡牌时无法使用{0}。
+{0} cannot be used while {1} is on the board.	场上有{1}时无法使用{0}。
+Now is not the time to use {0}.	现在不是使用{0}的时候。
+Help list, F1.	帮助列表，F1键。
+Mod Settings, Control plus M.	模组设置，Control加M键。
+Review history, older, Control plus Down arrow.	查看历史，更早，Control加下方向键。
+Review history, newer, Control plus Up arrow.	查看历史，更新，Control加上方向键。
+Next buffer item, Control plus Up arrow.	下一个缓冲区条目，Control加上方向键。
+Previous buffer item, Control plus Down arrow.	上一个缓冲区条目，Control加下方向键。
+Next buffer, Control plus Right arrow.	下一个缓冲区，Control加右方向键。
+Previous buffer, Control plus Left arrow.	上一个缓冲区，Control加左方向键。
+Review history as a list, Y.	以列表形式查看历史，Y键。
+Silence speech, tap Control.	停止语音，轻按Control键。
+Announce scales, Control plus S.	播报天平，Control加S键。
+Announce bones, Control plus B.	播报骨头，Control加B键。
+Announce candles, Control plus C.	播报蜡烛，Control加C键。
+Announce woodcarving, Control plus W.	播报木雕，Control加W键。
+Announce deck counts, Control plus D.	播报各牌组的卡牌数量，Control加D键。
+Announce teeth, Control plus T.	播报牙齿，Control加T键。
+Map navigation uses buffer controls, Control plus the arrow keys. Buffer controls are remapped on this screen.	地图导航使用缓冲区操作，即Control加方向键。此画面会重新映射缓冲区操作。
+Route summary, Control plus Space.	路线概览，Control加空格键。
+No buffers available	没有可用的缓冲区
+No buffer selected	未选择缓冲区
+choice	选择
+No path forward.	前方无路。
+Cannot go backwards.	无法后退。
+Path continues out of sight.	路径继续延伸到视野之外。
+{0} {1} to {2}	{0} {1}至{2}
+{0} {1}	{0} {1}
+Not in an encounter.	当前不在战斗中。
+You have no woodcarving.	你没有木雕。
+It resurfaces.	它浮出了水面。
+They resurface.	它们浮出了水面。
+, sending one damage back to its attacker.	，对攻击者反弹一点伤害。
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	，请从牌组中选一张卡牌加入手牌。方向键浏览，回车键确认。
+It is a rugged face with a bandana wrapped tightly below the eyes.	这是一张粗犷的脸，眼睛以下紧紧蒙着一条方巾。
+He has a large hat, a heavy unkempt beard, and crooked teeth.	他戴着大帽子，留着浓密凌乱的胡须，牙齿歪斜。
+He has a leathery face with deep wrinkles across his forehead.	他的脸如皮革般粗糙，额头上布满深深的皱纹。
+She has a strong aged face with a patterned headband.	她有一张坚毅而苍老的脸，戴着带花纹的头带。
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	他浓眉下是一双深陷的眼睛。好几枚鱼钩穿透了他的下唇。
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	莱西戴上了双面的菌学家面具. 医生的脸是一个头发卷曲的男人，戴着又大又圆的眼镜和额镜。他的脖子上连着第二张较小的脸。蘑菇那张脸五官相同，头上长着一个按比例来说很大的蘑菇。
+the cage is destroyed	笼子被摧毁了
+the ice is destroyed	冰块被摧毁了
+ It quickly snaps shut...	 它迅速啪地合上了……
+Combat	战斗
+Death	死亡
+HP Changes	生命变化
+Enemy Moves	敌方移动
+Turns	回合
+Player Turn Start	玩家回合开始
+Enemy Turn Start	敌方回合开始
+Powers	能力
+Attacks	攻击
+Your Turn	你的回合
+Challenges and Totems	挑战与图腾
+Bosses	首领
+Card Drawn	抽到卡牌
+Card Played	打出卡牌
+Card Obtained	获得卡牌
+Resources	资源
+Teeth	牙齿
+Bones	骨头
+Item Obtained	获得道具
+Item Used	使用道具
+Other	其他
+Dialogue	对话
+Node Entered	进入节点
+Node Results	节点结果
+Saving	保存
+
+# ChineseSimplified.tsv

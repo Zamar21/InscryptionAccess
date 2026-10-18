@@ -1,0 +1,169 @@
+# ChineseTraditional.tsv
+#status: unreviewed
+# IKMA Manager. Drafted by Claude (Session 32), the game-side ChineseTraditional file's words, and ChatGPT for the lines added since; no Traditional Chinese speaker has checked it yet. English [TAB] translation.
+Open the rulebook	開啟規則書
+Help	說明
+Repeat, describe, or advance a conversation	重複、描述或推進對話
+Next playable card, slot, or sacrifice	下一張可出的卡、下一個卡槽或祭品
+Rulebook for the last heard abilities	查詢最近聽到的能力的規則書
+Read your hand	讀手牌
+Read the enemy queue	讀敵方佇列
+Read the enemy board	讀敵方場面
+Read your board	讀你的場面
+Game info: scales, bones, and teeth	遊戲資訊：天秤、骨頭和獸齒
+Full board and queue	整個場面和佇列
+All three item slots	全部三個道具欄位
+Rulebook for the last heard abilities, second button	查詢最近聽到的能力的規則書，第二個按鈕
+Mod Settings	模組設定
+Help list	說明清單
+Draw from your deck	從你的牌組抽卡
+Draw from the Squirrel deck	從松鼠牌組抽卡
+Item menu	道具選單
+Accept surrender	接受投降
+Number 1	數字 1
+Number 2	數字 2
+Number 3	數字 3
+Number 4	數字 4
+Save a bug report log	儲存錯誤回報記錄
+Review history, older	檢視歷史，較早
+Review history, newer	檢視歷史，較新
+Review history as a list	以清單形式檢視歷史
+Next buffer	下一個緩衝區
+Previous buffer	上一個緩衝區
+Silence speech	停止語音
+Announce	播報
+Add to history	加入歷史
+Current Player	目前玩家
+Enemies	敵人
+Card Drawn	抽到卡片
+Card Obtained	獲得卡片
+Card Played	打出卡片
+Attacks	攻擊
+Bosses	首領
+Challenges and Totems	挑戰與圖騰
+Death	死亡
+Enemy Moves	敵方移動
+HP Changes	生命力變化
+Powers	能力
+Turns	回合
+Player Turn Start	玩家回合開始
+Enemy Turn Start	敵方回合開始
+Your Turn	你的回合
+Dialogue	對話
+Node Entered	進入節點
+Node Results	節點結果
+Saving	儲存
+Bones	骨頭
+Item Obtained	獲得道具
+Item Used	使用道具
+Teeth	獸齒
+History	歷史
+Reads	朗讀
+Prompts	提示
+{0}: {1}	{0}：{1}
+Cards	卡牌
+Combat	戰鬥
+Other	其他
+Resources	資源
+IKMA Manager, version {0}.	IKMA Manager，版本 {0}。
+Looking for Inscryption in your Steam library.	正在你的 Steam 收藏庫中尋找 Inscryption。
+Found Inscryption at {0}.	已找到 Inscryption：{0}。
+Inscryption was not found in your Steam library.	在你的 Steam 收藏庫中找不到 Inscryption。
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	輸入或貼上 Inscryption 資料夾的完整路徑，然後按 Enter 鍵。或者只按 Enter 鍵結束。
+That folder does not contain Inscryption.exe.	該資料夾中沒有 Inscryption.exe。
+IKMA version {0} is installed and turned on.	IKMA 版本 {0} 已安裝並已開啟。
+IKMA is installed and turned on.	IKMA 已安裝並已開啟。
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA 版本 {0} 已安裝，但已關閉。Inscryption 會在沒有它的情況下啟動。
+IKMA is installed but turned off. Inscryption starts without it.	IKMA 已安裝，但已關閉。Inscryption 會在沒有它的情況下啟動。
+IKMA is not installed in this game folder.	此遊戲資料夾中未安裝 IKMA。
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	主選單。按 Enter 鍵安裝或更新 IKMA。也可以輸入數字後按 Enter 鍵。1，安裝或更新。2，設定。3，重新啟用 IKMA。4，解除安裝。5，離開。
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	主選單。按 Enter 鍵安裝或更新 IKMA。也可以輸入數字後按 Enter 鍵。1，安裝或更新。2，設定。3，停用 IKMA。4，解除安裝。5，離開。
+Invalid choice.	無效的選擇。
+IKMA is not installed, so there is nothing to turn off.	IKMA 未安裝，所以沒有可以關閉的東西。
+IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.	IKMA 已停用。Inscryption 啟動時將不載入 IKMA。BepInEx 和其他模組維持不變，IKMA 的設定也會保留。
+IKMA is turned back on. Please restart the game.	IKMA 已重新啟用。請重新啟動遊戲。
+IKMA was turned off. Installing turned it back on.	IKMA 先前已關閉。安裝時已將它重新開啟。
+Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.	設定。輸入數字後按 Enter 鍵可變更對應設定。直接按 Enter 鍵返回主選單。變更會在下次啟動遊戲時生效。
+{0}, {1}: {2}	{0}，{1}：{2}
+{0}. Type a number, then press Enter. Press Enter to keep it as it is.	{0}。輸入數字後按 Enter 鍵。直接按 Enter 鍵維持原樣。
+{0}, {1} This is the current setting.	{0}，{1} 這是目前的設定。
+{0} set to: {1}	{0} 已設為：{1}
+a custom value, {0}.	自訂值，{0}。
+Updates	更新
+Speech engine	語音引擎
+NVDA line timing	NVDA 逐行計時
+Braille display	點字顯示器
+Language	語言
+Full log for bug reports	用於錯誤回報的完整記錄檔
+Controller vibration	控制器震動
+Control template	操作範本
+Controller buttons	控制器按鈕
+every action on its default button	所有操作都使用預設按鈕
+{0} moved	已重新指派按鈕的操作：{0}
+Controller buttons. Type a number, then press Enter to move that action to another button. Type R, then press Enter, to put every action back on its default button. Press Enter alone to go back to settings.	控制器按鈕。輸入數字後按 Enter 鍵，將對應操作指派到其他按鈕。輸入 R 後按 Enter 鍵，將所有操作恢復為預設按鈕。只按 Enter 鍵返回設定。
+{0}, {1}: {2}. Default {3}.	{0}，{1}：{2}。預設：{3}。
+Every action is back on its default button.	所有操作都已恢復為預設按鈕。
+Events	事件
+every event at its default	所有事件都使用預設設定
+{0} changed	已變更的事件：{0}
+Events. Type a number, then press Enter to change that event. Press Enter alone to go back to settings.	事件。輸入數字後按 Enter 鍵可變更對應事件。只按 Enter 鍵返回設定。
+{0}, {1}, {2}	{0}，{1}，{2}
+{0}. Type a number, then press Enter to switch it. Press Enter alone to go back to the events.	{0}。輸入數字後按 Enter 鍵可切換對應選項。只按 Enter 鍵返回事件清單。
+{0}, {1}: checked	{0}，{1}：已勾選
+{0}, {1}: unchecked	{0}，{1}：未勾選
+checked	已勾選
+unchecked	未勾選
+{0}, now on {1}. Which shoulder buttons are held with it? Type a number, then press Enter. 1, none. 2, LB. 3, RB. 4, LB and RB together. Press Enter alone to keep it as it is.	{0}，目前指派到{1}。需要同時按住哪些肩鍵？輸入數字後按 Enter 鍵。1，無。2，LB。3，RB。4，同時按住 LB 和 RB。只按 Enter 鍵維持原樣。
+Which button for {0}? Type a number, then press Enter. Press Enter alone to keep it as it is.	要為{0}指派哪個按鈕？輸入數字後按 Enter 鍵。只按 Enter 鍵維持原樣。
+{0}, {1}, used by {2}.	{0}，{1}，由{2}使用。
+this action	此操作
+Swapped. {0} is now on {1}, and {2} is now on {3}.	已交換。{0}現在使用{1}，{2}現在使用{3}。
+ plus 	 加 
+Inscryption is running. Please close the game, then press Enter.	Inscryption 正在執行。請關閉遊戲，然後按 Enter 鍵。
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	此 Inscryption 不是本安裝程式所針對的 32 位元版本。未做任何變更。
+BepInEx is already installed.	BepInEx 已安裝。
+Installed BepInEx, the mod loader.	已安裝模組載入器 BepInEx。
+Installed IKMA and its speech files.	已安裝 IKMA 及其語音檔案。
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	完成。像平常一樣從 Steam 啟動 Inscryption。IKMA 會在標題畫面開始說話。
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA 已解除安裝。BepInEx 保留在原處，因為其他模組可能會用到它。
+IKMA was not installed in this folder.	此資料夾中沒有安裝 IKMA。
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows 不允許安裝程式寫入遊戲資料夾。請關閉此視窗，在 IKMA_Manager 上按滑鼠右鍵，然後選擇「以系統管理員身分執行」。
+This installer is incomplete: a file it carries is missing. Download it again.	此安裝程式不完整：缺少它應包含的一個檔案。請重新下載。
+Something went wrong, and the install stopped: {0}	發生問題，安裝已停止：{0}
+Press Enter to close.	按 Enter 鍵關閉。
+BepInEx {0} is already installed.	BepInEx {0} 已安裝。
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	此遊戲安裝了 BepInEx 6。IKMA 需要 BepInEx 5，取代它會破壞你的其他模組。未做任何變更。
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	此遊戲安裝了另一個模組載入器（{0}）。在旁邊加入 BepInEx 可能會破壞你的其他模組。未做任何變更。
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	此遊戲資料夾中的 BepInEx 是 64 位元版本，無法在這個 32 位元遊戲中載入。未做任何變更；需要 32 位元的 BepInEx。
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx 已存在，但缺少讓它隨遊戲啟動的檔案（winhttp.dll）。輸入 Y 並按 Enter 鍵加入它。只按 Enter 鍵則一切維持不變。
+Added the file that starts BepInEx.	已加入啟動 BepInEx 的檔案。
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx 維持原樣。IKMA 已安裝，但在 BepInEx 隨遊戲啟動之前不會載入。
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	注意：doorstop_config.ini 中關閉了 BepInEx（enabled=false）。在它開啟之前，IKMA 不會載入。安裝程式沒有變更它。
+Found an earlier IKMA at {0}. Updated it there.	在 {0} 找到了較早的 IKMA，已在原位置更新。
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	安裝了多個 IKMA 副本：{0}。請只保留一個，刪除其餘副本，然後重新執行本程式。未做任何變更。
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	來自其他模組的 {0} 已另存為 {1}.before-IKMA。解除安裝 IKMA 時會把它放回原處。
+Put back the earlier {0}.	已把先前的 {0} 放回原處。
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	注意：這台電腦上為 Inscryption 設定了模組管理器（r2modman 或 Thunderstore）。如果你從模組管理器啟動遊戲，也請把 IKMA 加入那個設定檔；本安裝程式設定的是從 Steam 啟動的遊戲。
+Automatic: new versions download and install with no question.	自動：新版本會直接下載並安裝，不再詢問。
+Download, then ask before installing.	下載，然後在安裝前詢問。
+Ask before downloading.	在下載前詢問。
+Off: IKMA never connects to the internet.	關閉：IKMA 從不連線到網際網路。
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	自動：在 Windows 上使用你的螢幕閱讀器，在 Steam Deck 上使用 IKMA 語音小幫手。
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	一律使用你的螢幕閱讀器，透過 UniversalSpeech：NVDA、JAWS 或 Windows 語音。
+Always the IKMA speech helper, for Steam Deck and Linux.	一律使用 IKMA 語音小幫手，適用於 Steam Deck 和 Linux。
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	精確：IKMA 詢問 NVDA 每行何時讀完。需要 NVDA 2024.1 或更新版本。
+Estimated: IKMA guesses how long each line takes to read.	估算：IKMA 估計每行的朗讀時間。
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	開啟：每行語音也會透過 NVDA 或 JAWS 傳送到你的點字顯示器。
+Off: nothing is sent to a braille display.	關閉：不向點字顯示器傳送任何內容。
+Follow the game's language setting.	跟隨遊戲的語言設定。
+Off	關
+Low	低
+Medium	中
+High	高
+Default	預設
+Original	原始
+Off: the short log, what IKMA said and anything that went wrong.	關閉：簡短記錄檔，只有 IKMA 說過的話和出錯的內容。
+On: every diagnostic line, for a bug report. The log gets much longer.	開啟：所有診斷行，用於錯誤回報。記錄檔會變得長很多。
+Feature coming soon.	此功能即將推出。
+
+# ChineseTraditional.tsv

@@ -103,9 +103,14 @@
        IKMAccess.dll, so one DLL carries every language and auto-update
        carries new translations. Loc reads them as "lang/<Language>.tsv". -->
   <ItemGroup>
-    <!-- Zamar, Session 54: English only until languages ship; no non-English files go out. -->
-    <EmbeddedResource Include="lang\English.tsv">
+    <!-- Zamar, Session 54: English only until languages ship. Session 62: French ships for v0.5 (Loc.ShippedLanguages). -->
+    <!-- Session 64: the other 10 ship too (Zamar: "All 10"). -->
+    <EmbeddedResource Include="lang\*.tsv">
       <LogicalName>lang/%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+    <!-- Session 64: pad versions of the key lines, the ten languages after French (PadWords). -->
+    <EmbeddedResource Include="lang\pad\*.tsv">
+      <LogicalName>lang/pad/%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 

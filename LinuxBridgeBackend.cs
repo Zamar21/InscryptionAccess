@@ -29,8 +29,8 @@ namespace IKMA
     /// THE PROTOCOL - one line of UTF-8 text per message, ending in "\n":
     ///   HELLO 1              IKMA -> helper, once per connection.
     ///   OK ikma-speech 1 X   helper -> IKMA, the only thing the helper ever
-    ///                        sends. X names the engine it found (spd-say,
-    ///                        espeak-ng, espeak, or none).
+    ///                        sends. X names the engine it found (piper,
+    ///                        spd-say, espeak-ng, espeak, or none).
     ///   SAY text             speak after whatever is already queued.
     ///   INTERRUPT text       stop now, drop the helper's queue, speak this.
     ///   STOP                 stop now, drop the queue, say nothing.
@@ -39,6 +39,9 @@ namespace IKMA
     ///                        connection and again whenever it changes, so the
     ///                        helper reads each line with a voice for its
     ///                        language. No reply; an older helper ignores it.
+    ///   VOICE female|male    (Session 63) the [Speech] SteamDeck settings:
+    ///   RATE percent         the Piper voice, the speed as a percentage of
+    ///   VOLUME percent       normal, and the volume 10-100 (the setting's 1-10, times 10). Sent like LANG.
     /// Newlines inside a spoken line are turned into spaces, because a newline
     /// is what ends a message. The helper's side lives in
     /// tools/steamdeck/ikma_speech_helper.py and must be kept in step.
@@ -92,6 +95,10 @@ namespace IKMA
         // yet told. Touched only on SpeechPump's worker, like the socket.
         private string _sentLanguage;
 
+        // Session 63: the voice settings last told to the helper on THIS
+        // connection, as the exact messages sent; null = not yet told.
+        private string _sentVoice, _sentRate, _sentVolume;
+
         internal LinuxBridgeBackend(int port, Action<string> log)
         {
             _port = port;
@@ -139,13 +146,35 @@ namespace IKMA
             }
 
             if (!TryConnect()) return false;
-            if (SendLanguage() && Send(message)) return true;
+            if (SendLanguage() && SendVoiceSettings() && Send(message)) return true;
 
             // The helper may have restarted since the last line: the old
             // connection is dead but a new one might work. One fresh attempt,
             // straight away, ignoring the retry wait - then give up on this line.
             _attempted = false;
-            return TryConnect() && SendLanguage() && Send(message);
+            return TryConnect() && SendLanguage() && SendVoiceSettings() && Send(message);
+        }
+
+        /// <summary>
+        /// Session 63. Tell the helper the [Speech] SteamDeck voice, rate and
+        /// volume, each only when this connection has not had it yet or it has
+        /// changed. A setting changed in the mod menu therefore applies from
+        /// the very next line. SpeechBackends keeps plain copies for this
+        /// thread. A helper older than Session 63 ignores all three.
+        /// </summary>
+        private bool SendVoiceSettings()
+        {
+            return SendIfChanged("VOICE " + SpeechBackends.HelperVoiceWord, ref _sentVoice)
+                && SendIfChanged("RATE " + SpeechBackends.HelperRatePercent, ref _sentRate)
+                && SendIfChanged("VOLUME " + SpeechBackends.HelperVolumePercent, ref _sentVolume);
+        }
+
+        private bool SendIfChanged(string message, ref string sent)
+        {
+            if (message == sent) return true;
+            if (!Send(message)) return false;
+            sent = message;
+            return true;
         }
 
         /// <summary>
@@ -244,6 +273,7 @@ namespace IKMA
                 _socket = s;
                 _connected = true;
                 _sentLanguage = null;   // a new connection is told again
+                _sentVoice = _sentRate = _sentVolume = null;
                 _downLogged = false;
                 _log($"IKMA SPEECH: Linux bridge connected on 127.0.0.1:{_port} (helper engine: {_helperEngine ?? "unknown"}).");
                 if (_helperEngine == "none")

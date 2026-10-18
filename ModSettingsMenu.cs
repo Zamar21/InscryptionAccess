@@ -292,6 +292,25 @@ namespace IKMA
                 root.Children.Add(Choice(Vocabulary.ModSettings.NvdaLineEnd, SpeechBackends.NvdaLineEnd, false,
                     new[] { true, false },
                     new[] { Vocabulary.ModSettings.NvdaLineEndOn, Vocabulary.ModSettings.NvdaLineEndOff }));
+            // Session 63: the Linux helper's voice, rate and volume, as Say the
+            // Spire 2's SAPI category (Rate -10..10). Volume 1..10, default 10
+            // (Session 64, Zamar): no 0, because at 0 the menu can't be heard. Only
+            // where speech can reach the helper. Each takes effect from the
+            // next line spoken, so "checked" is already in the new setting.
+            if (SpeechBackends.HelperPossible && SpeechBackends.SteamDeckVoice != null)
+            {
+                var deck = Category(Vocabulary.ModSettings.SteamDeckSpeech);
+                deck.Children.Add(Choice(Vocabulary.ModSettings.SteamDeckVoice, SpeechBackends.SteamDeckVoice, false,
+                    new[] { HelperVoice.Female, HelperVoice.Male },
+                    new[] { Vocabulary.ModSettings.SteamDeckVoiceFemale, Vocabulary.ModSettings.SteamDeckVoiceMale }));
+                deck.Children.Add(Choice(Vocabulary.ModSettings.SteamDeckRate, SpeechBackends.SteamDeckRate, false,
+                    Steps(-10, 10, 1), Steps(-10, 10, 1).Select(v => v.ToString()).ToArray()));
+                deck.Children.Add(Choice(Vocabulary.ModSettings.SteamDeckVolume, SpeechBackends.SteamDeckVolume, false,
+                    Steps(SpeechBackends.SteamDeckVolumeMin, SpeechBackends.SteamDeckVolumeMax, 1),
+                    Steps(SpeechBackends.SteamDeckVolumeMin, SpeechBackends.SteamDeckVolumeMax, 1).Select(v => v.ToString()).ToArray()));
+                Sort(deck);
+                root.Children.Add(deck);
+            }
             if (SpeechBackends.Braille != null)
                 root.Children.Add(Choice(Vocabulary.ModSettings.Braille, SpeechBackends.Braille, false,
                     new[] { true, false },
@@ -303,6 +322,7 @@ namespace IKMA
                 var all = (IkmaLanguage[])Enum.GetValues(typeof(IkmaLanguage));
                 for (int i = 1; i < all.Length && i - 1 < Vocabulary.ModSettings.LanguageNames.Length; i++)
                 {
+                    if (!Loc.IsShipped(all[i])) continue;   // 0.4.8.017 - only the languages IKMA speaks
                     langs.Add(all[i]);
                     names.Add(Vocabulary.ModSettings.LanguageNames[i - 1]);
                 }
@@ -541,6 +561,13 @@ namespace IKMA
                 });
             }
             return node;
+        }
+
+        private static int[] Steps(int from, int to, int step)
+        {
+            var values = new List<int>();
+            for (int v = from; v <= to; v += step) values.Add(v);
+            return values.ToArray();
         }
 
         private static Node Category(string label)

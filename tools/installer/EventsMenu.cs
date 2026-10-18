@@ -110,7 +110,10 @@ namespace IKMASetup
         {
             var parts = new List<string>();
             foreach (Switch s in HistoryEv.Switches)
-                parts.Add(s.Label + ": " + (Value(path, HistoryEv, s) ? Text.Checked : Text.Unchecked));
+            {
+                string state = Value(path, HistoryEv, s) ? Text.Checked : Text.Unchecked;
+                parts.Add(L.F($"{s.Label}: {state}"));   // through L so French gets " : "
+            }
             return string.Join(", ", parts.ToArray());
         }
 

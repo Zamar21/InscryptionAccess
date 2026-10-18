@@ -39,7 +39,10 @@ namespace IKMA
             bool ctrlHeld = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
             bool ctrlUp   = Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl);
 
-            if (ctrlDown) _ctrlClean = true;
+            // Session 64: a key that went down in the SAME frame as Ctrl makes
+            // it a chord too. A Steam Deck grip (R4, Control plus Space) sends
+            // both at once; without this its release cut the route summary.
+            if (ctrlDown) _ctrlClean = !KeyIn.KeyboardKeyDownBesidesControl();
             // Any other key while Ctrl is down makes it a chord, not a tap.
             else if (ctrlHeld && Input.anyKeyDown) _ctrlClean = false;
 

@@ -3496,12 +3496,31 @@ namespace IKMA
         /// </summary>
         // 0.4.8.010 - one idle prompt in the queue at a time.
         private static bool _idleQueued;
+        // Session 64: a queued line can be dropped unspoken (the queue is
+        // cleared on a transition), and then the flag never cleared and the
+        // map had no idle prompt again (NodeScreenReader had the same hole).
+        // One that has waited a full repeat interval is written off; the
+        // generation makes it say nothing if it does run late.
+        private static float _idleQueuedSince;
+        private static int _idleGeneration;
 
         public static void AnnounceIdlePrompt()
         {
-            if (_idleQueued) return;
+            if (_idleQueued && UnityEngine.Time.unscaledTime - _idleQueuedSince < 15f) return;
+            if (_idleQueued)
+            {
+                _idleGeneration++;
+                _log?.LogInfo("IKMA MAP: the last idle prompt was dropped unspoken - queuing a new one.");
+            }
             _idleQueued = true;
-            Speech.Commentary(() => { _idleQueued = false; return ReviewHistory.AsPrompt(ComposeIdlePrompt()); });   // a prompt: kept while History > Prompts is on (Session 38)
+            _idleQueuedSince = UnityEngine.Time.unscaledTime;
+            int generation = _idleGeneration;
+            Speech.Commentary(() =>
+            {
+                if (generation != _idleGeneration) return null;
+                _idleQueued = false;
+                return ReviewHistory.AsPrompt(ComposeIdlePrompt());   // a prompt: kept while History > Prompts is on (Session 38)
+            });
         }
 
         private static string ComposeIdlePrompt()

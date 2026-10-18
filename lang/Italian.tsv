@@ -1,0 +1,1254 @@
+﻿# Italian.tsv
+# IKMA language file: Italian. Translated by Claude (Session 32) and ChatGPT (the lines added since, Session 64), following the game's own Italian terms; no Italian speaker has checked it yet.
+#status: unreviewed
+
+ and 	 e 
+{0} or {1}	{0} o {1}
+{0} plus {1}	{0} più {1}
+Cross	Croce
+Circle	Cerchio
+Square	Quadrato
+Triangle	Triangolo
+Minus	Meno
+Plus	Più
+left stick press	pressione della levetta sinistra
+right stick press	pressione della levetta destra
+D-pad up	croce direzionale in su
+D-pad down	croce direzionale in giù
+D-pad left	croce direzionale a sinistra
+D-pad right	croce direzionale a destra
+right stick up	levetta destra in su
+right stick down	levetta destra in giù
+right stick left	levetta destra a sinistra
+right stick right	levetta destra a destra
+{0} and {1}	{0} e {1}
+{0}, and {1}	{0} e {1}
+Hand is empty.	La mano è vuota.
+Board unavailable.	Tavolo non disponibile.
+Items unavailable.	Oggetti non disponibili.
+You have no items.	Non hai oggetti.
+No options.	Nessuna opzione.
+No options available.	Nessuna opzione disponibile.
+No settings on this page.	Nessuna impostazione in questa pagina.
+No paths ahead.	Nessun sentiero davanti.
+Nothing is directly in front of you.	Non c'è niente proprio davanti a te.
+Nothing to examine here.	Niente da esaminare qui.
+Nothing on {0} from here.	Niente sul tasto {0} da qui.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Premi Invio per iniziare una nuova sessione con lo stesso mazzo iniziale e le stesse sfide attive. Backspace per tornare al menu principale. Spazio per ripetere.
+No current run available.	Nessuna sessione in corso.
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	Il supporto al gioco principale di Inscryption è ancora in sviluppo. Ce la farò, non preoccuparti! -Zamar :)
+In the center of the screen is a small play button. Press Enter...	Al centro dello schermo c'è un piccolo pulsante di avvio. Premi Invio...
+Daniel Mullins Games.	Daniel Mullins Games.
+The screen glitches for a second.	Lo schermo ha un disturbo per un secondo.
+Video logs not yet available. Coming soon!	I filmati non sono ancora disponibili. In arrivo!
+Devolver Digital.	Devolver Digital.
+Inscryption. Press any button to start.	Inscryption. Premi un pulsante per iniziare.
+Inscryption: Kaycee's Mod.	Inscryption: Mod di Kaycee.
+The rulebook has no pages to read.	Il regolamento non ha pagine da leggere.
+Now is not the time to ring the bell.	Non è il momento di suonare la campana.
+No card selected.	Nessuna carta selezionata.
+History: empty.	Cronologia: vuota.
+History: {0}	Cronologia: {0}
+History closed.	Cronologia chiusa.
+Gamepad.	Controller.
+Keyboard.	Tastiera.
+Dev Log Locked.	Diario di sviluppo bloccato.
+You must first select a card to add to your deck.	Prima devi selezionare una carta da aggiungere al tuo mazzo.
+That option could not be selected.	Impossibile selezionare questa opzione.
+The surrender could not be accepted.	Impossibile accettare la resa.
+Could not reach the table.	Impossibile raggiungere il tavolo.
+The woodcarving could not be read.	Impossibile leggere la scultura.
+Press H for what still works.	Premi H per sapere cosa funziona ancora.
+Space describes what is directly in front of you. 	Spazio descrive ciò che hai proprio davanti. 
+Conversation in progress, press Space to proceed.	Conversazione in corso, premi Spazio per proseguire.
+Scales: you lead by {0}.	Bilancia: sei in vantaggio di {0}.
+Scales: enemy leads by {0}.	Bilancia: il nemico è in vantaggio di {0}.
+Scales: even.	Bilancia: in parità.
+{0}'s {1} ability triggers{2}	L'abilità {1} di {0} si attiva{2}
+{0}'s {1} ability triggers.	L'abilità {1} di {0} si attiva.
+Both {0}'s {1} abilities trigger.	Si attivano entrambe le abilità {1} di {0}.
+All {0}'s {1} abilities trigger.	Si attivano tutte le abilità {1} di {0}.
+{0}'s {1} abilities trigger.	Le abilità {1} di {0} si attivano.
+Comment line: {0}	Riga di commento: {0}
+{0} gains ability: {1} due to totem.	{0} ottiene l'abilità: {1} grazie al totem.
+Copy of {0} sigil negated by Kaycee override.	Copia del sigillo {0} annullata dalla regola di Kaycee.
+{0}'s totem gives enemy {1} cards {2}.	Il totem di {0} dà {2} alle carte {1} nemiche.
+Footage, {0}.	Filmato, {0}.
+Your deck is empty, press S to draw from the Squirrel deck.	Il tuo mazzo è vuoto, premi S per pescare dal mazzo degli Scoiattoli.
+The Squirrel deck is empty, press D to draw from your deck.	Il mazzo degli Scoiattoli è vuoto, premi D per pescare dal tuo mazzo.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Fase di pesca. Premi D per pescare dal tuo mazzo, o S per pescare dal mazzo degli Scoiattoli.
+{0}'s Waterborne ability triggers. It dives underwater...	L'abilità Acquatico di {0} si attiva. Si immerge sott'acqua...
+{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	Le abilità Acquatico di {0} si attivano negli spazi {1}, le creature si immergono...
+Submerged {0}	{0}, sott'acqua
+Leshy puts on the {0} mask.	Leshy indossa la maschera: {0}.
+Leshy puts on the {0} mask. {1}	Leshy indossa la maschera: {0}. {1}
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVVISORIO: nessuna descrizione del volto per la maschera {0}.
+Leshy puts on the {0} mask...	Leshy indossa la maschera: {0}...
+Leshy removes the {0}'s mask, it floats away.	Leshy si toglie la maschera ({0}), che fluttua via.
+Leshy removes the {0}'s mask.	Leshy si toglie la maschera ({0}).
+the {0}	{0}
+the {0}, and the {1}	{0} e {1}
+{0} masks circle around Leshy's head: {1}. 	{0} maschere ruotano attorno alla testa di Leshy: {1}. 
+Behind Leshy is a large bright full moon...	Dietro Leshy c'è una grande luna piena e luminosa...
+Leshy blows out his first of three candles.	Leshy spegne la prima delle sue tre candele.
+Leshy blows out the second of his three candles. The masks float away, and Leshy turns to face the moon behind him...	Leshy spegne la seconda delle sue tre candele. Le maschere volano via e Leshy si volta verso la luna alle sue spalle...
+Leshy holds up his camera and aims it at the moon.	Leshy alza la macchina fotografica e la punta verso la luna.
+Leshy is wearing the {0}'s mask.	Leshy indossa la maschera: {0}.
+Leshy is not wearing a mask.	Leshy non indossa nessuna maschera.
+Leshy lowers a third candle to the flame and lights it...	Leshy avvicina una terza candela alla fiamma e la accende...
+the ship	la nave
+A {0} jumps off {1} and joins your side in slot {2}.	{0} abbandona {1} e si unisce a te nello spazio {2}.
+{0} {1} jump off {2} and join your side in slots {3}.	{0} {1} abbandonano {2} e si uniscono a te negli spazi {3}.
+A massive ship called {0} crashes onto the board. 	Un'enorme nave chiamata {0} si schianta sul tavolo. 
+It has {0} dancing Skeleton Pirates on board making a ruckus.	A bordo ci sono {0} scheletri pirata che ballano e fanno baccano.
+ No Skeleton Pirates remain on deck.	 Non restano scheletri pirata a bordo.
+ 1 Skeleton Pirate remains on deck.	 Resta 1 scheletro pirata a bordo.
+ {0} Skeleton Pirates remain on deck.	 Restano {0} scheletri pirata a bordo.
+Item menu. {0} 	Menu oggetti. {0} 
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Frecce per scorrere, Invio per selezionare, Backspace per tornare alla tua mano.
+Item menu. 	Menu oggetti. 
+Your hand.	La tua mano.
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Menu oggetti. Le frecce sinistra e destra scorrono gli oggetti che porti con te. Invio usa l'oggetto selezionato. Maiusc più I legge tutti e tre gli spazi, compresi quelli vuoti. Backspace ti riporta alla tua mano. Maiusc più 1, 2 o 3 usa subito l'oggetto in quello spazio.
+The pirate skull fades backwards... Something is coming...	Il teschio pirata svanisce all'indietro... Qualcosa si avvicina...
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0} mette sul tavolo un teschio con una benda sull'occhio e un cappello da pirata.
+The eye of the skull begins to glow.	L'occhio del teschio inizia a brillare.
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0} riempie il lato nemico del tavolo: una sola carta su tutti i {1} spazi, {2}/{3}.
+{0} arrives, {1}/{2}.	Arriva {0}, {1}/{2}.
+{0} is destroyed.	{0} viene distrutto.
+{0} aims his hook at your empty slot {1}.	{0} punta il suo amo sul tuo spazio vuoto {1}.
+{0} aims his hook at {1} in slot {2}.	{0} punta il suo amo su {1}, spazio {2}.
+{0} hooks your {1} and pulls it to his slot {2}.	{0} aggancia {1} dal tuo lato: ora è nel suo spazio {2}.
+{0} lowers his hook.	{0} abbassa il suo amo.
+{0} on the board and {1} in the queue	{0} sul tavolo e {1} in coda
+{0} on the board	{0} sul tavolo
+{0} in the queue	{0} in coda
+cards	delle carte
+{0} offers a trade.	{0} propone uno scambio.
+{0} gives you a {1} and offers a trade.	{0} ti dà {1} e propone uno scambio.
+{0} Trade pelts in your hand for one of their cards. 	{0} Scambia le pelli nella tua mano con una delle sue carte. 
+They have {0}. 	Ci sono {0}. 
+The bell is disabled until you trade at least once. 	La campana è disattivata finché non fai almeno uno scambio. 
+Trade pelts from your hand for cards on their board and queue.	Scambia le pelli nella tua mano con le carte sul suo lato del tavolo e in coda.
+{0} in slot {1}	{0}, spazio {1}
+empty slot {0}	spazio vuoto {0}
+The cannons aim at {0} on your side, and {1} on theirs.	I cannoni puntano {0} sul tuo lato e {1} sul lato avversario.
+The cannons aim at {0} on your side.	I cannoni puntano {0} sul tuo lato.
+The cannons aim at {0} on their side.	I cannoni puntano {0} sul lato avversario.
+The cannons are aimed at slot {0}.	I cannoni puntano lo spazio {0}.
+The cannons are aimed here.	I cannoni puntano questo spazio.
+The Pirate Skull opens a pack of cards and calls in their crew.	Il teschio pirata apre un pacchetto di carte e chiama la sua ciurma.
+The Pirate Skull calls their ship. It bears down on the cabin.	Il teschio pirata chiama la sua nave. Si dirige verso la capanna.
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	Leshy si toglie la maschera, la capovolge e la rimette. Leshy diventa: {0}.
+{0} clears his side of the table.	{0} sgombra il suo lato del tavolo.
+A Shark takes the bait's place in slot {0}.	Uno squalo prende il posto dell'esca nello spazio {0}.
+their	sul lato avversario
+his	sul suo lato
+{0} sweeps {1} side of the table clean.	{0} fa piazza pulita {1}.
+pelt	pelle
+pelts	pelli
+returns	torna
+return	tornano
+{0} sweeps {1} side of the table clean, and 	{0} fa piazza pulita {1}, e 
+{0} played {1} {2} to your hand.	{0} {1} {2} nella tua mano.
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	Lo schermo ha un disturbo e gli occhi di {0} diventano rossi. Un muro di Grizzly ti travolge...
+Every opposing slot on the board is filled with Grizzlies...	Tutti gli spazi avversari sul tavolo sono occupati da Grizzly...
+card	carta
+Begin trading. 	Inizio degli scambi. 
+Trade: {0} {1} to choose from, 	Scambio: {0} {1} tra cui scegliere, 
+{0} {1} in hand. 	{0} {1} in mano. 
+Arrow keys to browse, Enter to trade. Press H for help.	Frecce per scorrere, Invio per scambiare. Premi H per l'aiuto.
+in the queue, slot {0}	in coda, spazio {0}
+on the board, slot {0}	sul tavolo, spazio {0}
+Option {0} of {1}, {2}. {3}	Opzione {0} di {1}, {2}. {3}
+Option {0} of {1}. {2}	Opzione {0} di {1}. {2}
+You have no pelt to trade with.	Non hai pelli da scambiare.
+slot {0}	spazio {0}
+slot {0} and slot {1}	spazi {0} e {1}
+{0}'s {1} ability triggers, placing a {2} in {3}.	L'abilità {1} di {0} si attiva e mette {2}, {3}.
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	L'abilità Coda sciolta di {0} si attiva: lascia la coda come esca 
+and moves to slot {0}.	e si sposta nello spazio {0}.
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	L'abilità Informe di {0} si attiva: muta e ottiene {1}.
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	L'abilità Corrente avvinghiante di {0} si attiva: trascina {1} dal tuo lato nella sua orbita e lo annienta.
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	L'abilità Amante dei ninnoli di {0} si attiva: {1} arriva nello spazio oggetto {2}.
+Its Trinket Bearer ability triggers, a {0} is added to item slot {1}.	Si attiva l'abilità Amante dei ninnoli: {0} viene aggiunto allo spazio oggetto {1}.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	Maiusc L salva un file di log sul desktop per una segnalazione di bug, e Control più freccia su o giù scorre la cronologia del log. Questi comandi funzionano qui e in qualsiasi momento del gioco.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	Maiusc L salva un file di log sul desktop per una segnalazione di bug. Questo comando funziona qui e in qualsiasi momento del gioco.
+Log saved to your desktop as a .txt file. Attach it to your bug report.	Log salvato sul desktop come file .txt. Allegalo alla tua segnalazione di bug.
+The log could not be saved because {0}.	Impossibile salvare il log: {0}.
+{0}'s {1} ability fizzles.	L'abilità {1} di {0} fallisce.
+{0}'s {1} ability fizzles in slot {2}.	L'abilità {1} di {0} fallisce nello spazio {2}.
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	La morte di {0} attiva dalla tua mano l'abilità Mangiacadaveri di {1}, 
+playing itself into slot {0}.	che entra in gioco nello spazio {0}.
+{0} traded for {1}.	Scambio: {0} per {1}.
+Pelt	Pelle
+Trade pelts from your hand for cards on their board and queue. 	Scambia le pelli nella tua mano con le carte sul suo lato del tavolo e in coda. 
+Arrow keys browse, Enter trades. 	Frecce per scorrere, Invio per scambiare. 
+You have {0} {1} in hand. 	Hai {0} {1} in mano. 
+Trade until you run out of pelts, then the battle will continue.	Scambia finché non finisci le pelli, poi la battaglia continuerà.
+is destroyed	viene distrutto
+dies	muore
+{0} gets caught in the {1} and {2}.	{0} finisce in {1} e {2}.
+{0} {1}, its ability {2} triggers.	{0} {1}, si attiva la sua abilità {2}.
+destroyed	viene distrutto
+one	una
+two	due
+three	tre
+four	quattro
+five	cinque
+six	sei
+seven	sette
+eight	otto
+Angler	Il Pescatore
+1 bone	1 osso
+{0} bones	{0} ossa
+Bone Lord	Signore delle ossa
+bone	osso
+bones	ossa
+Both	Entrambe
+All 	Tutte e 
+Arrows browse, Enter chooses, Space repeats your position. 	Frecce per scorrere, Invio per scegliere, Spazio per ripetere la tua posizione. 
+Campfire	Falò
+This card could not be read.	Impossibile leggere questa carta.
+1 card	1 carta
+{0} cards	{0} carte
+1 damage	1 danno
+{0} damage	{0} danni
+Death card	Carta della morte
+1 health remaining	1 punto di salute rimasto
+{0} health remaining	{0} punti di salute rimasti
+Item pickup	Raccolta oggetti
+Kin	Tribù
+Leshy	Leshy
+Mycologists	I Micologi
+{0} Option {1} of {2}.	{0} Opzione {1} di {2}.
+Prospector	Il Prospettore
+Received {0} {1}.	Hai ricevuto {0} {1}.
+Sacrifice stone	Pietra del sacrificio
+Trader	La Commerciante
+Trapper	Il Cacciatore
+Unnamed option	Opzione senza nome
+Woodcarver	L'Intagliatrice
+Your deck.	Il tuo mazzo.
+unknown	sconosciuta
+IKMA version {0} loaded.	IKMA versione {0} caricata.
+Loading.	Caricamento.
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA versione {0} scaricata. Verrà installata al prossimo avvio del gioco.
+Updated from version {0}.	Aggiornata dalla versione {0}.
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	È disponibile IKMA versione {0}. Premi F9 per scaricarla, o F10 per saltare questa versione.
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA versione {0} è stata scaricata. Premi F9 per installarla al prossimo avvio del gioco, o F10 per saltare questa versione.
+Downloading IKMA version {0}.	Download di IKMA versione {0} in corso.
+IKMA version {0} installs the next time you start the game.	IKMA versione {0} verrà installata al prossimo avvio del gioco.
+Skipping IKMA version {0}.	Versione {0} di IKMA saltata.
+The IKMA update failed its safety check and was not installed.	L'aggiornamento di IKMA non ha superato il controllo di sicurezza e non è stato installato.
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	Impossibile scaricare l'aggiornamento di IKMA. IKMA lo proporrà di nuovo al prossimo avvio del gioco.
+Opening screen. Enter presses the play button. Space repeats the description.	Schermata iniziale. Invio preme il pulsante di avvio. Spazio ripete la descrizione.
+Option	Opzione
+New Game	Nuova partita
+Continue	Continua
+Options	Opzioni
+Credits	Riconoscimenti
+Quit	Esci
+Card Library	Libreria delle carte
+Edit Deck	Modifica mazzo
+Kaycee's Mod	Mod di Kaycee
+Return To Start Menu	Torna al menu iniziale
+End Run	Finisci sessione
+Concede	Arrenditi
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Schermata del titolo di Inscryption. Frecce per scorrere, Invio per confermare.
+Inscryption title screen. Arrow keys browse the cards. 	Schermata del titolo di Inscryption. Le frecce scorrono le carte. 
+Enter chooses the one you are on. Space repeats it. 	Invio sceglie quella su cui ti trovi. Spazio la ripete. 
+Inscryption. Kaycee's Mod main menu	Inscryption. Menu principale della Mod di Kaycee
+Unlocks	Oggetti sbloccati
+Cards Unlocked	Carte sbloccate
+Cards	Carte
+Challenges	Sfide
+Confirm Challenges	Conferma sfide
+Select Starter Deck	Seleziona mazzo iniziale
+Stats	Statistiche
+Run Complete	Sessione completata
+Devlog	Devlog
+New Challenges	Nuove sfide
+New Starter Deck	Nuovo mazzo iniziale
+Starter Deck Unlocked	Mazzo iniziale sbloccato
+New run	Nuova sessione
+Menu	Menu
+coordinates	coordinate
+Entry {0}. {1}	Voce {0}. {1}
+{0}. No options available.	{0}. Nessuna opzione disponibile.
+Backspace to go back.	Backspace per tornare indietro.
+Arrows to navigate	Frecce per scorrere
+, Backspace to go back.	, Backspace per tornare indietro.
+Arrows to navigate, Enter to confirm	Frecce per scorrere, Invio per confermare
+Enter to confirm	Invio per confermare
+Deck	Mazzo
+{0} {1} of {2}.	{0} {1} di {2}.
+{0} of {1}.	{0} di {1}.
+enabled	attivata
+disabled	disattivata
+Challenge	Sfida
+1 challenge point.	1 punto sfida.
+{0} challenge points.	{0} punti sfida.
+{0} of {1} challenge points.	{0} punti sfida su {1}.
+Back.	Indietro.
+unknown option	opzione sconosciuta
+number 	numero 
+Start Run	Inizia sessione
+Locked starter deck	Mazzo iniziale bloccato
+Starter Deck: {0}.	Mazzo iniziale: {0}.
+Card {0} of {1}	Carta {0} di {1}
+Cards 	Carte 
+ and {0} of {1}	 e {0} di {1}
+Previous page	Pagina precedente
+Next page	Pagina successiva
+Card locked	Carta bloccata
+Challenge locked.	Sfida bloccata.
+plus 1 challenge point	più 1 punto sfida
+plus {0} challenge points	più {0} punti sfida
+Challenge complete.	Sfida completata.
+Challenge level {0}.	Livello di sfida {0}.
+All challenge levels cleared.	Tutti i livelli di sfida completati.
+Active, 	Attiva, 
+Random Starter Deck	Mazzo iniziale casuale
+unlabelled option	opzione senza etichetta
+Display is now full screen	Ora lo schermo è a schermo intero
+Display is now windowed	Ora lo schermo è in finestra
+Display resolution changed	Risoluzione dello schermo cambiata
+, {0} by {1}	, {0} per {1}
+Text Language	Lingua del testo
+Reset with {0}	Reimposta in {0}
+Full screen	Schermo intero
+Windowed	In finestra
+{0} by {1}	{0} per {1}
+On	Attivato
+Off	Disattivato
+Zero	Zero
+, default	, predefinito
+Unnamed setting.	Impostazione senza nome.
+English	Inglese
+French	Francese
+Italian	Italiano
+German	Tedesco
+Spanish	Spagnolo
+Brazilian Portuguese	Portoghese brasiliano
+Turkish	Turco
+Russian	Russo
+Japanese	Giapponese
+Korean	Coreano
+Simplified Chinese	Cinese semplificato
+Traditional Chinese	Cinese tradizionale
+Unnamed setting. Press Enter to adjust.	Impostazione senza nome. Premi Invio per regolarla.
+{0} Press Enter to adjust.	{0} Premi Invio per regolarla.
+Options Menu	Menu opzioni
+ Page {0} of {1}.	 Pagina {0} di {1}.
+{0}.{1} Press H for help.	{0}.{1} Premi H per l'aiuto.
+That setting cannot be changed.	Questa impostazione non può essere modificata.
+Setting	Impostazione
+Arrows to adjust. Backspace to return.	Frecce per regolare. Backspace per tornare indietro.
+Back. {0}	Indietro. {0}
+, locked	, bloccata
+1 option	1 opzione
+{0} options	{0} opzioni
+Pause menu. {0}.	Menu di pausa. {0}.
+Game settings.	Impostazioni di gioco.
+Display settings.	Impostazioni dello schermo.
+Audio settings.	Impostazioni audio.
+Page {0}.	Pagina {0}.
+No active challenges.	Nessuna sfida attiva.
+Active Challenges. {0}.	Sfide attive. {0}.
+Unnamed option.	Opzione senza nome.
+{0}. Option {1} of {2}.	{0}. Opzione {1} di {2}.
+That option is locked.	Questa opzione è bloccata.
+Options. 1, 2, and 3 switch pages. 	Opzioni. 1, 2 e 3 cambiano pagina. 
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	Pagina 1 impostazioni di gioco, pagina 2 impostazioni dello schermo, pagina 3 impostazioni audio. 
+Arrows browse the settings, Enter selects a setting to adjust, 	Le frecce scorrono le impostazioni, Invio seleziona un'impostazione da regolare, 
+Backspace returns. 	Backspace torna indietro. 
+ They are the last stop past the options.	 Si trovano dopo l'ultima opzione.
+Pause menu. Arrows browse the options, Enter chooses, 	Menu di pausa. Le frecce scorrono le opzioni, Invio sceglie, 
+Space repeats your position and the run information, 	Spazio ripete la tua posizione e le informazioni sulla sessione, 
+Backspace or Escape closes the menu.	Backspace o Esc chiude il menu.
+Encounter	Scontro
+Totem battle	Battaglia con totem
+Boss battle	Battaglia contro il boss
+Card choice	Scelta della carta
+Card bundle choice	Scelta del pacchetto di carte
+Rare card choice	Scelta della carta rara
+Card removal	Rimozione di una carta
+Card recycling	Riciclo delle carte
+Card copying	Copia di una carta
+Boulder choice	Scelta della roccia
+Side deck change	Cambio del mazzo secondario
+Deck trial	Prova del mazzo
+Victory feast	Banchetto della vittoria
+Random	Casuale
+Cost	Costo
+Cannot {0} right now.	Impossibile {0} adesso.
+bring your deck up	mostrare il mazzo
+You are already standing.	Sei già in piedi.
+stand up	alzarti
+Standing up from the table. Press H for help.	Ti alzi dal tavolo. Premi H per l'aiuto.
+You are at {0}.	Posizione: {0}.
+return to {0}	tornare indietro
+Back at {0}.	Di nuovo qui: {0}.
+You are at the map.	Sei alla mappa.
+return to the map	tornare alla mappa
+Game map.	Mappa di gioco.
+Returning to the table.	Torni al tavolo.
+You step back. Press Backspace again to return to the table.	Fai un passo indietro. Premi di nuovo Backspace per tornare al tavolo.
+counterclockwise	antiorario
+clockwise	orario
+Turned {0} 90 degrees.	Ti giri di 90 gradi in senso {0}.
+ turned.	 girata.
+{0} to {1} o'clock.	{0} sul {1}.
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	Il meccanismo scatta e lo sportello della cassaforte si spalanca. Dentro c'è un grosso ammasso di carne straziata e insanguinata.
+You step back.	Fai un passo indietro.
+You step back from the {0}.	Ti allontani da: {0}.
+You focus on the {0}.	Ti concentri su: {0}.
+You focus in.	Ti avvicini per guardare meglio.
+The rulebook is not within reach.	Il regolamento non è a portata di mano.
+Inside the safe is a large mass of bloodied mangled flesh.	Dentro la cassaforte c'è un grosso ammasso di carne straziata e insanguinata.
+Facing {0}.	Guardi verso: {0}.
+Nothing is directly in front of you. {0}	Non c'è niente proprio davanti a te. {0}
+Focus controls. 	Comandi di osservazione. 
+Backspace steps back from your focused object. 	Backspace ti allontana dall'oggetto che stai osservando. 
+Backspace again returns you to the game table and opens the map.	Premendo di nuovo Backspace torni al tavolo di gioco e apri la mappa.
+1, 2 and 3 examine what is in front of you. 	1, 2 e 3 esaminano ciò che hai davanti. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	Comandi in piedi. La freccia su fa un passo avanti, la freccia giù un passo indietro. 
+Left and right arrows step to the side. 	Le frecce sinistra e destra fanno un passo di lato. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A ti gira di 90 gradi in senso antiorario, D ti gira di 90 gradi in senso orario. 
+Backspace returns you to the game table and opens the map.	Backspace ti riporta al tavolo di gioco e apre la mappa.
+The Woodlands	la Foresta
+The Wetlands	le paludi
+The Snow Line	il confine innevato
+The Beach	la spiaggia
+the path to the Cabin	il sentiero verso la casetta
+You have arrived at {0}	Hai raggiunto {0}
+You are at {0}	Posizione: {0}
+the beginning of a new map	l'inizio di una nuova mappa
+unknown location	luogo sconosciuto
+Map ready.	Mappa pronta.
+1 path	1 sentiero
+{0} paths	{0} sentieri
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Mappa. {0}. {1} davanti. Frecce per scorrere, Spazio per i dettagli, Invio per viaggiare, Maiusc+freccia su per mostrare il mazzo.
+Map. Awaiting input. Press Space for your position, H for help.	Mappa. In attesa di un comando. Premi Spazio per la tua posizione, H per l'aiuto.
+Awaiting path selection. H, for help.	In attesa della scelta del sentiero. H, per l'aiuto.
+First	Primo
+Second	Secondo
+Third	Terzo
+Fourth	Quarto
+Fifth	Quinto
+Sixth	Sesto
+Seventh	Settimo
+Eighth	Ottavo
+Path {0}	Sentiero {0}
+{0} path: {1}	{0} sentiero: {1}
+, then 	, poi 
+ {0} more paths not read.	 Altri {0} sentieri non letti.
+Map unavailable.	Mappa non disponibile.
+{0}. No paths ahead.	{0}. Nessun sentiero davanti.
+Option {0}: {1}	Opzione {0}: {1}
+ You are on Option {0} of {1}.	 Sei sull'opzione {0} di {1}.
+Left and right arrows to browse, 	Frecce sinistra e destra per scorrere, 
+{0}. {1} ahead. {2}.{3} 	{0}. {1} davanti. {2}.{3} 
+Enter to travel, Shift+Up to display deck.	Invio per viaggiare, Maiusc+freccia su per mostrare il mazzo.
+Arrived at {0}.	Hai raggiunto: {0}.
+Safe	Cassaforte
+woodcarving	intaglio
+Large Picture Frame	Grande cornice
+Gramophone	Grammofono
+skull	teschio
+The human skull rests on the shelf.	Il teschio umano è appoggiato sullo scaffale.
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	Stai osservando la cassaforte. Ha tre grandi manopole circolari, ciascuna con tacche numerate da 0 a 9. Premi 1, 2 e 3 per usare le manopole, Backspace per allontanarti.
+Settler Man	Colono
+Settler Woman	Colona
+Chief	Capo
+Wildling	Selvaggio
+Enchantress	Incantatrice
+Gravedigger	Becchino
+Robot	Robot
+head	(testa)
+arms	(braccia)
+body	(corpo)
+Hour hand	Lancetta delle ore
+Minute hand	Lancetta dei minuti
+Second hand	Lancetta dei secondi
+Nothing here can be read yet. Escape opens the pause menu.	Qui non c'è ancora niente da leggere. Esc apre il menu di pausa.
+No path selected. Use left and right arrows to browse paths.	Nessun sentiero selezionato. Usa le frecce sinistra e destra per scorrere i sentieri.
+The map is still settling. Try again in a moment.	La mappa si sta ancora assestando. Riprova tra un momento.
+Card placement cannot be cancelled. Choose a slot.	Il posizionamento della carta non può essere annullato. Scegli uno spazio.
+You are in an encounter. Press H for help.	Sei in uno scontro. Premi H per l'aiuto.
+Unable to end turn: bell method not found.	Impossibile terminare il turno: metodo della campana non trovato.
+Draw piles unavailable.	Mazzi di pesca non disponibili.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	Non restano carte nel tuo mazzo. Premi S per pescare dal mazzo degli Scoiattoli.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	Non restano carte nel mazzo degli Scoiattoli. Premi D per pescare dal tuo mazzo.
+Draw pile unavailable.	Mazzo di pesca non disponibile.
+Drew {0}.	Hai pescato {0}.
+Sigil Ability	Abilità del sigillo
+Sigil Abilities	Abilità dei sigilli
+Drew {0}. It gains {1}: {2}.	Hai pescato {0}. Ottiene {1}: {2}.
+Finish placing your card before using an item.	Finisci di posizionare la carta prima di usare un oggetto.
+No items.	Nessun oggetto.
+Item unavailable.	Oggetto non disponibile.
+Item {0}: empty.	Oggetto {0}: vuoto.
+Item {0}: {1}	Oggetto {0}: {1}
+Cut up one of your adversary's cards. It is destroyed.	Taglia una carta dell'avversario. Viene distrutta.
+Place a weight on the scales. The pain is temporary.	Metti un peso sulla bilancia. Il dolore è solo temporaneo.
+Hook a card to take it as your own. Card must enter an empty space.	Prendi all'amo una carta e rendila tua. La carta deve entrare in uno spazio vuoto.
+Your cards gain temporary {0}.	Le tue carte ottengono temporaneamente {0}.
+Opponent turn skipped due to {0}.	Turno avversario saltato a causa di {0}.
+Opponent cards in slots 1 through 4 will lose all of their sigils.	Le carte avversarie negli spazi da 1 a 4 perderanno tutti i loro sigilli.
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	Scuoia una delle carte del tuo avversario. La carta viene distrutta e una carta Pelle viene aggiunta alla tua mano.
+Search your deck for any card and add it into your hand.	Esamina il tuo mazzo e scegli una carta qualsiasi da aggiungere alla tua mano.
+Use to immediately gain 4 Bones.	Usalo per ottenere immediatamente 4 ossa.
+Place a significant weight on the scales. The pain will linger...	Metti un peso considerevole sulla bilancia. Il dolore persisterà...
+An item is already being used.	Stai già usando un oggetto.
+There is no item {0}.	Non c'è nessun oggetto {0}.
+Item {0} is empty.	L'oggetto {0} è vuoto.
+{0} could not be used. Item activation is not yet supported for this slot.	Impossibile usare {0}. L'attivazione degli oggetti non è ancora supportata per questo spazio.
+Using {0}.	Usi {0}.
+{0} is still waiting for input.	{0} attende ancora un comando.
+{0} was not used.	Non hai usato {0}.
+Using the Lucky Clover discards all of these cards for new ones. 	Usare il trifoglio scarta tutte queste carte e ne porta di nuove. 
+Left and right arrows browse. Enter selects the card. 	Le frecce sinistra e destra scorrono. Invio seleziona la carta. 
+Space repeats the current option. 	Spazio ripete l'opzione attuale. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R apre il regolamento. Maiusc più freccia su mostra il tuo mazzo. 
+No back option on this screen.	In questa schermata non c'è un'opzione per tornare indietro.
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Navigazione del menu. Le frecce scorrono le opzioni. Invio sceglie quella su cui ti trovi. 
+Backspace or Escape goes back. Space repeats the current option. 	Backspace o Esc torna indietro. Spazio ripete l'opzione attuale. 
+Shift R looks up the last ability you heard. 	Maiusc R cerca l'ultima abilità che hai sentito. 
+No valid targets.	Nessun bersaglio valido.
+No valid target in that slot.	Nessun bersaglio valido in quello spazio.
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Scegli un bersaglio. {0} disponibili. {1} Frecce per scorrere, Invio per selezionare.
+Choose a target. {0} available. Arrows to browse, Enter to select.	Scegli un bersaglio. {0} disponibili. Frecce per scorrere, Invio per selezionare.
+Cannot cancel item use, please choose a target.	Impossibile annullare l'uso dell'oggetto, scegli un bersaglio.
+Choosing a target.	Scelta di un bersaglio.
+Choosing a target for {0}.	Scelta di un bersaglio per {0}.
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} Le frecce si spostano tra le carte su cui questo oggetto può agire. Invio seleziona. Un oggetto non può essere annullato dopo l'uso.
+That target could not be selected.	Impossibile selezionare quel bersaglio.
+{0} is dragged down to your side into slot {1}.	{0} viene trascinato giù dal tuo lato, nello spazio {1}.
+unknown slot.	spazio sconosciuto.
+Your slot	Il tuo spazio
+Opponent slot	Spazio avversario
+{0} {1}: empty.	{0} {1}: vuoto.
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	Non c'è ancora un lettore IKMA per questa schermata, quindi qui i soliti comandi non valgono. 
+Space describes what is in front of you. Space repeats where you are. 	Spazio descrive ciò che hai davanti. Spazio ripete dove ti trovi. 
+This screen still needs the mouse until a reader is built for it.	Questa schermata richiede ancora il mouse finché non verrà creato un lettore apposito.
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}IKMA non può ancora leggere questa schermata. Il gioco qui attende una tua azione. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Comandi della mappa. Frecce, scorri le scelte davanti a te. Invio, per viaggiare. Spazio, elenca tutte le scelte attuali. B, leggi i sentieri davanti. Maiusc più freccia su per scorrere il tuo mazzo. I, ascolta i tuoi oggetti attuali. R, apri il regolamento. Maiusc più freccia giù, per alzarti dal tavolo. H, per l'aiuto.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Comandi dello scontro. Frecce sinistra e destra per scorrere la mano. Tab, prossima carta giocabile nella tua mano. Invio, gioca la carta. E, suona la campana per finire il turno. R, apri il regolamento. Maiusc R per consultare l'ultima abilità sentita. C, leggi la tua mano. U, leggi la coda avversaria. G, leggi il tabellone avversario. Maiusc G, leggi il tuo tabellone. B, leggi tutto il tabellone e la coda. A, leggi la bilancia, le ossa e altre informazioni di gioco. I, premi più volte per scorrere i tuoi oggetti, Invio per usarlo. Devi pescare una carta prima di poter usare oggetti. Durante la tua fase di pesca: D, pesca dal tuo mazzo, o S, pesca dal mazzo degli Scoiattoli. H, per l'aiuto.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Posizionamento di una carta. Le frecce sinistra e destra scorrono gli spazi. Invio, conferma. I tasti di lettura del tavolo funzionano ancora. H, per l'aiuto.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Scelta dei sacrifici. Le frecce sinistra e destra scorrono il tuo lato del tavolo. Invio, sacrifica la carta su cui ti trovi. Un sacrificio non può essere annullato una volta iniziato. I tasti di lettura del tavolo funzionano ancora. H, per l'aiuto.
+Cannot travel there.	Impossibile viaggiare lì.
+Cancelled. {0} returned to hand.	Annullato. {0} torna nella mano.
+Cancelled. Card returned to hand.	Annullato. La carta torna nella mano.
+A sacrifice cannot be cancelled once started.	Un sacrificio non può essere annullato una volta iniziato.
+Cannot cancel right now.	Impossibile annullare adesso.
+No cards to sacrifice.	Nessuna carta da sacrificare.
+No slot {0}.	Nessuno spazio {0}.
+Only {0} in hand.	Solo {0} in mano.
+No cards in hand are currently playable.	Al momento nessuna carta in mano è giocabile.
+Card	Carta
+{0} gains {1} from your totem.	{0} ottiene {1} dal tuo totem.
+Recent item:	Oggetto recente:
+Recent items:	Oggetti recenti:
+No recent ability to look up.	Nessuna abilità recente da cercare.
+No description available for that ability.	Nessuna descrizione disponibile per quell'abilità.
+Recent ability:	Abilità recente:
+Recent abilities:	Abilità recenti:
+Cannot play a card right now.	Impossibile giocare una carta adesso.
+No card selected. Use left and right arrows to browse your hand first.	Nessuna carta selezionata. Prima usa le frecce sinistra e destra per scorrere la tua mano.
+That card	Quella carta
+That card could not be played.	Impossibile giocare quella carta.
+{0} was not played.	Carta non giocata: {0}.
+No card in this slot.	Nessuna carta in questo spazio.
+{0} already chosen to sacrifice.	{0} è già stata scelta come sacrificio.
+Slot {0} is occupied by {1}. Choose an empty slot.	Lo spazio {0} è occupato da {1}. Scegli uno spazio vuoto.
+{0} in slot {1} sacrificed. Choose {2} additional sacrifice.	{0} nello spazio {1} sacrificato. Scegli ancora {2} sacrificio.
+{0} in slot {1} sacrificed. Choose {2} additional sacrifices.	{0} nello spazio {1} sacrificato. Scegli ancora {2} sacrifici.
+{0} played in Slot {1}.	{0} entra in gioco nello spazio {1}.
+No slot restrictions to step through.	Nessuna restrizione di spazio da scorrere.
+No other slot available for this card.	Nessun altro spazio disponibile per questa carta.
+ Ability: {0}.	 Abilità: {0}.
+ Abilities: {0}.	 Abilità: {0}.
+Slot {0}: {1}, {2}/{3}.{4}{5}	Spazio {0}: {1}, {2}/{3}.{4}{5}
+Slot {0}: empty.{1}	Spazio {0}: vuoto.{1}
+ Choose a slot to play {0}.	 Scegli uno spazio in cui giocare {0}.
+Slot {0}: occupied by {1}.{2}{3}	Spazio {0}: occupato da {1}.{2}{3}
+Slot {0}: empty.{1}{2}	Spazio {0}: vuoto.{1}{2}
+{0} Enhanced Slot {1}: empty.{2} Cards played in this slot will gain {3}.{4}	Spazio {1} potenziato da {0}: vuoto.{2} Le carte giocate in questo spazio otterranno {3}.{4}
++{0} power from {1}	+{0} potenza da {1}
+{0} in adjacent slot {1}	{0} nello spazio adiacente {1}
+sacrifice	sacrificio
+sacrifices	sacrifici
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} costa {1} di sangue. Scegli {2} {3}. Frecce sinistra e destra per scorrere, Invio per confermare. Un sacrificio non può essere annullato una volta iniziato.
+Playing {0}. 	Giochi {0}. 
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Scegli uno spazio in cui giocare {1}. Frecce sinistra e destra per scorrere, Invio per confermare.{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Scegli uno spazio. Frecce sinistra e destra per scorrere, Invio per confermare.{0}
+Hand: {0}. {1}.	Mano: {0}. {1}.
+Your board	Il tuo lato del tavolo
+Enemy board	Lato nemico del tavolo
+Resources unavailable.	Risorse non disponibili.
+ 1 candle lit.	 1 candela accesa.
+ {0} candles lit.	 {0} candele accese.
+ Enemy has 1 candle.	 Il nemico ha 1 candela.
+ Enemy has {0} candles.	 Il nemico ha {0} candele.
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 Intaglio, tribù: {0}, abilità del sigillo: {1}.
+ Your deck: {0} remaining.	 Il tuo mazzo: {0} rimanenti.
+ cards	 carte
+ Squirrel deck: {0} remaining.	 Mazzo degli Scoiattoli: {0} rimanenti.
+empty	vuoto
+Item {0}: {1}.	Oggetto {0}: {1}.
+Opponent unavailable.	Avversario non disponibile.
+No cards queued.	Nessuna carta in coda.
+Blocked for Slot {0}: 	Spazio {0} bloccato: 
+Entering Slot {0}: 	In arrivo nello spazio {0}: 
+Upcoming queue: {0}. {1}.	Coda in arrivo: {0}. {1}.
+{0}: empty	{0}: vuoto
+Slots 	Spazi 
+Slot {0}	Spazio {0}
+Slots 1 to {0}	Spazi da 1 a {0}
+currently {0}/{1}.	attualmente {0}/{1}.
+{0}: empty{1}	{0}: vuoto{1}
+{0} to {1}	da {0} a {1}
+. Ability: {0}	. Abilità: {0}
+. Abilities: {0}	. Abilità: {0}
+costs 1 blood	costa 1 di sangue
+costs {0} blood	costa {0} di sangue
+costs 1 bone	costa 1 osso
+costs {0} bones	costa {0} ossa
+Scales unavailable.	Bilancia non disponibile.
+{0} moves to {1} slot {2}.	{0} si sposta nello spazio {2}, {1}.
+right, 	a destra, 
+left, 	a sinistra, 
+{0} {1} moves {2}from slot {3} to slot {4}.	{1} {0} si sposta {2}dallo spazio {3} allo spazio {4}.
+{0} {1} moves {2}	{1} {0} si sposta {2}
+from slot {0} to slot {1}.	dallo spazio {0} allo spazio {1}.
+{0} {1} moves down to slot {2}{3}.	{1} {0} scende nello spazio {2}{3}.
+{0} {1} is played in slots {2}{3}.	{0} {1} entra in gioco negli spazi {2}{3}.
+{0} {1} is played in slot {2}{3}.	{1} {0} entra in gioco nello spazio {2}{3}.
+ targeting slot {0}	 per lo spazio {0}
+Enemy {0} is queued{1}.	Il nemico mette in coda {0}{1}.
+{0} {1} has left slot {2}.	{1} {0} ha lasciato lo spazio {2}.
+The Prospector clears his queue.	Il Prospettore svuota la sua coda.
+, it is carrying a pack of cards	, e porta con sé un pacchetto di carte
+Your	dal tuo lato
+Enemy	dal lato nemico
+your	sul tuo lato
+enemy	sul lato nemico
+Fused {0}	Fusione di {0}
+Unusual {0}	{0} insolito
+{0} transforms into The {1}.	{0} si trasforma in {1}.
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	Carta glitchata. Questa carta brilla di luce bianca e ha dei glitch. Le sue statistiche sono sconosciute finché non viene giocata.
+Shift plus R looks up the last ability you heard.	Maiusc più R cerca l'ultima abilità che hai sentito.
+Ability	Abilità
+Abilities	Abilità
+ Sigil Ability: {0}.	 Abilità del sigillo: {0}.
+ Kin type: {0}.	 Tribù: {0}.
+ Kin types: {0}.	 Tribù: {0}.
+Star	Stella
+ Moving left.	 Si sposta a sinistra.
+ Moving right.	 Si sposta a destra.
+Rare	Rara
+Terrain border	Bordo da terreno
+Glitched portrait	Ritratto glitchato
+Full-card portrait	Ritratto a carta intera
+Animated portrait	Ritratto animato
+Hologram portrait	Ritratto olografico
+Golden glow	Bagliore dorato
+Red glow	Bagliore rosso
+Bloodied portrait	Ritratto insanguinato
+Moon particles	Particelle lunari
+ Attack equals the number of ants on its owner's side.	 La potenza è pari al numero di Formiche dal lato del suo proprietario.
+ Attack is equal to half the number of Bones the owner has.	 La potenza è pari alla metà del numero di ossa del suo proprietario.
+ Attack equals sacrifices made this turn.	 La potenza è pari ai sacrifici fatti in questo turno.
+ Attack varies with green gems.	 La potenza varia in base alle gemme verdi.
+1 blood	1 di sangue
+{0} blood	{0} di sangue
+Cost: {0}.	Costo: {0}.
+Cost: Free.	Costo: gratis.
+a slot	uno spazio
+{0} in {1}	{0}, {1}
+empty {0}	{0} vuoto
+, and 	, e 
+{0} attacks {1}.	{0} attacca {1}.
+{0} flies over {1} and attacks directly{2}.	{0} vola sopra {1} e attacca direttamente{2}.
+ twice	 due volte
+{0} passes by {1} and attacks directly{2}.	{0} supera {1} e attacca direttamente{2}.
+Airborne	Volante
+Mighty Leap	Balzo potente
+{0} blocks {1} {2} due to {3}.	{0} blocca {2}, che ha {1}, grazie a {3}.
+{0}{1} attacks {2}.	{0}{1} attacca {2}.
+{0}'s {1} ability triggers, preventing the damage.	L'abilità {1} di {0} si attiva, impedendo il danno.
+{0} attacks {1}, it	{0} attacca {1}, che
+{0}{1} attacks empty Slot {2}.	{0}{1} attacca lo spazio vuoto {2}.
+{0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1} attacca lo spazio vuoto {2}, attivando l'abilità {4} di {3}. {5} si sposta {6} nello spazio {7} e
+{0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1} attacca lo spazio vuoto {2}, attivando l'abilità {4} di {3}. {5} si sposta {6} nello spazio {7}.
+{0}{1} attacks directly.	{0}{1} attacca direttamente.
+ in Slot {0}	 nello spazio {0}
+ from your hand	 dalla tua mano
+{0} is played{1}{2} by Ability: {3}.	{0} entra in gioco{1}{2} grazie all'abilità: {3}.
+{0} is played{1}{2}.	{0} entra in gioco{1}{2}.
+Touch of Death	Tocco della morte
+ with {0}	 con {0}
+ to {0}	 per effetto di {0}
+The {0} queued in slot {1}	{0} in coda nello spazio {1}
+The {0} queued	{0} in coda
+{0} takes {1} and {2}{3}.	{0} subisce {1} e {2}{3}.
+{0} takes {1}.	{0} subisce {1}.
+{0} takes {1}, {2}. 	{0} subisce {1}, {2}. 
+Its {0} ability resolves before it dies.	La sua abilità {0} si risolve prima che muoia.
+{0} takes {1}, {2}.	{0} subisce {1}, {2}.
+Your {0}	{0} dal tuo lato
+Enemy {0}	{0} dal lato nemico
+{0} is sacrificed.{1}	Sacrificio: {0}.{1}
+{0} sacrificed.{1}	Sacrifici: {0}.{1}
+{0} power and {1} health	{0} di potenza e {1} di salute
+{0} power	{0} di potenza
+{0} health	{0} di salute
+Morsel	Bocconcini
+{0} {1} abilities trigger, {2} gains {3}.	{0} le abilità {1} si attivano, {2} ottiene {3}.
+{0} gained {1}.	{0} ha ottenuto {1}.
+{0} is skinned and {1}.	Scuoi {0}, che {1}.
+{0} is cut in half and {1}.	Tagli {0} a metà, che {1}.
+{0} is cut and {1}.	Tagli {0}, che {1}.
+{0} is smashed and {1}.	Frantumi {0}, che {1}.
+{0} in Slot {1}	{0} nello spazio {1}
+1 direct damage.	1 danno diretto.
+{0} direct damage.	{0} danni diretti.
+ The scale hits 5...	 La bilancia arriva a 5...
+VOLUME WARNING: 	AVVISO VOLUME: 
+Enemy deals {0}{1}	Il nemico infligge {0}{1}
+You deal {0}{1}	Infliggi {0}{1}
+Received 1 bone from 	1 osso ricevuto da: 
+the Bone Lord's boon	il dono del Signore delle ossa
+Received 8 bones from 	8 ossa ricevute da: 
+Received {0} bones at battle start.	Hai ricevuto {0} ossa all'inizio della battaglia.
+{0} attacks each of your {1} 	{0} attacca ciascuno dei tuoi {1} 
+slot	spazio
+slots	spazi
+{0} attacks {1} times.	{0} attacca {1} volte.
+and {0}{1}	e {0}{1}
+ in slot {0}	 nello spazio {0}
+{0} burrows from {1}	{0} scava da {1}
+ to 	 a 
+{0}{1} burrows	{0}{1} scava
+{0}, taking {1}, {2}.	{0}, subendo {1}, {2}.
+{0}, taking {1}.	{0}, subendo {1}.
+{0}{1} takes {2} {3}.	{0}{1} subisce {2} {3}.
+{0}{1} takes {2}.	{0}{1} subisce {2}.
+{0}{1} takes {2}, {3}.	{0}{1} subisce {2}, {3}.
+{0} attacks {1}	{0} attacca {1}
+{0} attacks {1} {2} times	{0} attacca {1} {2} volte
+Your cards attack {0} {1} times	Le tue carte attaccano {0} {1} volte
+{0} for {1}.	{0} per {1}.
+{0} for {1}, {2} health remaining.	{0} per {1}, salute rimanente: {2}.
+Brittle	Fragilità
+{0}'s {1} ability triggers, and it dies.{2}	L'abilità {1} di {0} si attiva, e {0} muore.{2}
+{0} in {1} {2}	{0}, {1} {2}
+{0} {1} abilities trigger, {2} die.{3}	{0} le abilità {1} si attivano, {2} muoiono.{3}
+Your turn.	Il tuo turno.
+Enemy turn.	Turno del nemico.
+Draw Phase skipped due to no cards remaining in either deck...	Fase di pesca saltata: non restano carte in nessuno dei due mazzi...
+Guardian	Guardiano
+{0}'s {1} ability triggers: it is blocked from 	L'abilità {1} di {0} si attiva: le viene impedito di 
+moving to slot {0}.	spostarsi nello spazio {0}.
+{0}'s {1} ability triggers: it moves to slot {2}.	L'abilità {1} di {0} si attiva: si sposta nello spazio {2}.
+Burrower	Scavatore
+right	destra
+left	sinistra
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	L'abilità {1} di {0} si attiva: si sposta a {2} nello spazio {3}.
+{0}'s {1} ability triggers in slot {2}: it moves {3} to slot {4}.	L'abilità {1} di {0} si attiva nello spazio {2}: la creatura si sposta {3} nello spazio {4}.
+ It will move left next.	 Poi si sposterà a sinistra.
+ It will move right next.	 Poi si sposterà a destra.
+ It will try to move left next.	 Poi proverà a spostarsi a sinistra.
+ It will try to move right next.	 Poi proverà a spostarsi a destra.
+{0} extends its vertebrae into slot {1}.	{0} estende le sue vertebre nello spazio {1}.
+{0} survives the sacrifice and transforms.	{0} sopravvive al sacrificio e si trasforma.
+{0} transforms.	{0} si trasforma.
+{0}'s {1} ability triggers, it transforms into a hellish beast... A {2} is added to your hand.	L'abilità {1} di {0} si attiva, la creatura si trasforma in una bestia infernale... {2} viene aggiunto alla tua mano.
+Drew Glitched card, the screen glitches and {0} {1} is added to your hand.	Hai pescato una carta corrotta, lo schermo si distorce e {0} {1} viene aggiunta alla tua mano.
+an	una
+a	una
+, Powers met: {0}, Health met: {1}, Kins met: {2} of {3}	, potenze raggiunte: {0}, salute raggiunta: {1}, parentele raggiunte: {2} su {3}
+none	nessuna
+Sprinter	Scattante
+Bloodlust	Sete di sangue
+{0}'s {1} ability triggers: it now has {2} power.	L'abilità {1} di {0} si attiva: ora ha {2} di potenza.
+{0}'s {1} ability triggers: it places a {2} in 	L'abilità {1} di {0} si attiva: mette {2} 
+{0} slot {1}.	nello spazio {1} {0}.
+{0}'s {1} ability triggers: {2} 	L'abilità {1} di {0} si attiva: {2} 
+{0} is played in {1} slot {2}.	{0} entra in gioco nello spazio {2} {1}.
+, with 	, con 
+Enemy 	(nemico) 
+{0}{1}'s {2} ability triggers in slot {3}: 	{0}L'abilità {2} di {1} si attiva nello spazio {3}: 
+it becomes a {0}/{1} {2}{3}.	diventa {2} {0}/{1}{3}.
+{0}{1}'s {2} ability triggers: 	L'abilità {2} di {1} {0}si attiva: 
+All enemy {0}'s {1} abilities trigger.	Si attivano tutte le abilità {1} di {0} avversario.
+Both enemy {0}'s {1} abilities trigger.	Si attivano entrambe le abilità {1} di {0} avversario.
+They each become {0}/{1} {2}{3}.	Ciascuna diventa {2} con {0}/{1}{3}.
+{0}'s {1} ability fizzles due to having no empty item slots.	L'abilità {1} di {0} fallisce perché non ci sono spazi oggetto liberi.
+{0} is created in your hand.	{0} compare nella tua mano.
+{0} ability triggers: {1} {2} is added to your hand.	L'abilità {0} si attiva: {2} compare nella tua mano.
+{0} {1} is added to your hand.	{0} {1} viene aggiunta alla tua mano.
+ Ouroboros comes back stronger than before...	 Uroboro ritorna più forte di prima...
+A	Un
+An	Un
+{0}'s {1}	{1} di {0}
+ by {0}'s {1}	 grazie all'abilità {1} di {0}
+{0} is created in enemy Slot {1}{2}.	{0} compare nello spazio nemico {1}{2}.
+{0} is created on the opposing space{1}.	{0} compare nello spazio opposto{1}.
+Excess damage carries to the queue, targeting Slot {0}.	Il danno in eccesso passa alla coda, nello spazio {0}.
+Excess damage carries to the queue.	Il danno in eccesso passa alla coda.
+Victory. {0} extra {1} received.	Vittoria. Hai ricevuto {0} {1} in più.
+tooth	dente
+teeth	denti
+Victory.	Vittoria.
+{0} added in {1}.	{0} aggiunto in {1}.
+item slot {0}	spazio oggetto {0}
+an item slot	uno spazio oggetto
+{0} chosen.	Scelta: {0}.
+{0} is created in {1}.	{0} compare in {1}.
+Saving.	Salvataggio.
+{0} is added to your hand.	{0} si aggiunge alla tua mano.
+Pirate Skull	Teschio pirata
+None	Nessuno
+Leshy waits silently.	Leshy attende in silenzio.
+{0} waits silently.	{0} attende in silenzio.
+One of {0}'s {1} candles is blown out.	Una delle {1} candele di {0} si spegne.
+A candle is blown out.	Una candela si spegne.
+One of {0}'s candles is blown out.	Una delle candele di {0} si spegne.
+A candle is blown out. {0} left.	Una candela si spegne. Candele rimaste: {0}.
+One of {0}'s candles is blown out. {1} left.	Una delle candele di {0} si spegne. Candele rimaste: {1}.
+The {0}	{0}
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	Leshy indossa una maschera di legno dal volto selvaggio e sporco, con una grande barba arruffata e un dente d'oro storto. Stringe un grosso piccone in una mano tremante...
+candle	candela
+candles	candele
+{0} places a skull holding {1} lit {2} 	{0} posa un teschio con {1} {2} accese 
+onto the table.	sul tavolo.
+Leshy relights your candle. You now have {0} {1} lit.	Leshy riaccende la tua candela. Candele accese: {0}.
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0} spegne la tua ultima candela. La stanza piomba nel buio mentre {1} allunga entrambe le mani sul tavolo...
+{0} blows out one of your candles. You have {1} remaining.	{0} spegne una delle tue candele. Candele rimaste: {1}.
+{0} are added to your hand.	{0} si aggiungono alla tua mano.
+{0} is added to your hand.{1}	{0} si aggiunge alla tua mano.{1}
+{0} are added to your hand.{1}	{0} si aggiungono alla tua mano.{1}
+An extra candle is lit.	Si accende una candela in più.
+The Prospector uses his pickaxe to strike all of your cards, turning them into Gold Nuggets.	Il Prospettore colpisce con il piccone tutte le tue carte, trasformandole in Pepite d'oro.
+The Prospector clears his queue, 	Il Prospettore svuota la sua coda, 
+The Limoncello	Il Limoncello
+ slot {0}	 , spazio {0}
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	I cannoni fanno fuoco {0}: una palla di cannone colpisce {1}, che {2}.
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	I cannoni fanno fuoco {0}: una palla di cannone colpisce {1}, che resta con {2} di salute.
+Cannons fire at {0}, {1} is hit by cannonball.	I cannoni fanno fuoco {0}: una palla di cannone colpisce {1}.
+Death card.	Carta della morte.
+{0} blood cost card.	Carta con costo di {0} di sangue.
+Bones cost card.	Carta con costo in ossa.
+{0} kin card.	Carta della tribù {0}.
+New cards dealt.	Nuove carte distribuite.
+ Use the Lucky Clover to discard them all and be dealt new cards.	 Usa il trifoglio per scartarle tutte e ricevere nuove carte.
+Left and right arrows to browse, Enter to turn a card over, 	Frecce sinistra e destra per scorrere, Invio per girare una carta, 
+Space to repeat, H for help.	Spazio per ripetere, H per l'aiuto.
+Shift Up displays your deck, Space to repeat, H for help.	Maiusc+freccia su mostra il tuo mazzo, Spazio per ripetere, H per l'aiuto.
+Mycologist Card Selection. 	Selezione delle carte dei Micologi. 
+Before you lay 1 face-down duplicate card. 	Davanti a te c'è 1 carta duplicata coperta. 
+Before you lay {0} face-down duplicate cards. 	Davanti a te ci sono {0} carte duplicate coperte. 
+Choose 1 to add to your deck.	Scegline 1 da aggiungere al tuo mazzo.
+Every card is face up. 	Tutte le carte sono scoperte. 
+Each one is a copy of a card already in your deck. Choose 1 to add to your deck.	Ognuna è una copia di una carta già nel tuo mazzo. Scegline 1 da aggiungere al tuo mazzo.
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Prova del mazzo. Leshy ti offre tre condizioni tra cui scegliere. Scegli quella che ha più probabilità di essere vera per il tuo mazzo attuale. Poi rivelerà tre carte a caso dal tuo mazzo. Se hai successo riceverai una ricompensa. Frecce sinistra e destra per scorrere, Invio per girare una carta, Maiusc Su mostra il tuo mazzo, Spazio per ripetere, H per l'aiuto.
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	Prova del mazzo. Leshy posa sul tavolo un arco di pietra, e i suoi occhi luminosi sembrano provenire dall'ingresso di una grotta buia.
+Deck Trial.	Prova del mazzo.
+Rare Card Choice	Scelta della carta rara
+Card Choice	Scelta della carta
+1 face-down card	1 carta coperta
+{0} face-down cards	{0} carte coperte
+1 face-down rare card	1 carta rara coperta
+{0} face-down rare cards	{0} carte rare coperte
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}. Leshy ti presenta una scatola di legno. Fa scattare una serratura e 
+opens it, revealing {0}... Choose 1 to add to your deck.	la apre, rivelando {0}... Scegline 1 da aggiungere al tuo mazzo.
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}. Tutte le carte sono scoperte. Scegline 1 da aggiungere al tuo mazzo.
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}. Davanti a te: {1}. Scegline 1 da aggiungere al tuo mazzo.
+Lucky Clover. Discard all cards and be dealt new ones.	Trifoglio. Scarta tutte le carte e ricevine di nuove.
+Face down.	Coperta.
+Trial of {0}.	Prova: {0}.
+Your 3 cards require {0} combined Power.	Le tue 3 carte devono totalizzare {0} di potenza.
+Your 3 cards require {0} combined Health.	Le tue 3 carte devono totalizzare {0} di salute.
+Your 3 cards require {0} combined sigils.	Le tue 3 carte devono totalizzare {0} sigilli.
+Your 3 cards require {0} combined Blood cost.	Le tue 3 carte devono totalizzare un costo di {0} di sangue.
+Your 3 cards require {0} combined Bone cost.	Le tue 3 carte devono totalizzare un costo di {0} ossa.
+{0} of your 3 cards must be the same kin type.	{0} delle tue 3 carte devono avere la stessa parentela.
+Face up, but the card could not be read.	Scoperta, ma impossibile leggere la carta.
+ Duplicate of card in your deck.	 Doppione di una carta del tuo mazzo.
+{0}. Arrow keys to browse.	{0}. Frecce per scorrere.
+That card could not be taken.	Impossibile prendere quella carta.
+The Lucky Clover could not be used.	Impossibile usare il trifoglio.
+That card could not be selected.	Impossibile selezionare quella carta.
+{0} added to your deck.	{0} si aggiunge al tuo mazzo.
+Card added to your deck.	Carta aggiunta al tuo mazzo.
+ Press Enter to add it to your deck.	 Premi Invio per aggiungerla al tuo mazzo.
+Deck returned.	Mazzo riposto.
+the card choice	la scelta della carta
+the map	la mappa
+Your deck. 	Il tuo mazzo. 
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	Frecce sinistra e destra per scorrere, Spazio per ripetere, A per i denti, I per gli oggetti, H per l'aiuto, Backspace per tornare a: {0}.
+Your deck is still being laid out.	Il tuo mazzo è ancora in fase di disposizione.
+Your deck. {0}.	Il tuo mazzo. {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	Le frecce sinistra e destra scorrono le carte. Spazio ripete la carta su cui ti trovi. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	A legge il numero di denti raccolti. I legge tutti e tre gli spazi oggetto, compresi quelli vuoti. 
+R opens the rulebook. 	R apre il regolamento. 
+Backspace closes your deck and returns you to {0}.	Backspace chiude il tuo mazzo e ti riporta a: {0}.
+No teeth are shown here.	Qui non vengono mostrati denti.
+ 1 tooth collected.	 1 dente raccolto.
+ {0} teeth collected.	 {0} denti raccolti.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Il tuo mazzo. Scegli una carta da aggiungere alla tua mano. Frecce per scorrere, Invio per scegliere. {0}.
+Choose a card from your deck to add to your hand. 	Scegli una carta dal tuo mazzo da aggiungere alla tua mano. 
+{0}. G, B and A to read the boardstate.	{0}. G, B e A per leggere lo stato del tavolo.
+Host Card	Creatura ospite
+Card to Sacrifice	Carta da sacrificare
+Begin Ritual	Inizia il rituale
+Send card to rest by the fire	Manda la carta a riposare accanto al fuoco
+Begin experiment...	Inizia l'esperimento...
+Select a pair of cards to fuse together	Seleziona una coppia di carte da fondere insieme
+Begin painting	Inizia a dipingere
+Choose a card to receive an artistic rendition of	Scegli una carta di cui ricevere una rappresentazione artistica
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	Scegli una carta del tuo mazzo come ospite. Sacrifica un'altra carta del tuo mazzo per trasferirne i sigilli all'ospite.
+Continue resting peacefully by the campfire and raise the stat again, or withdraw from the campfire.	Continua a riposare tranquillamente accanto al falò per aumentare ancora la statistica, oppure allontanati dal falò.
+Continue resting by the campfire and raise the stat again, or withdraw from the campfire.	Continua a riposare accanto al falò per aumentare ancora la statistica, oppure allontanati dal falò.
+Fused {0} is added to your deck.	{0} fuso viene aggiunto al tuo mazzo.
+ {0}, {1}.	 {0}, {1}.
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	Seleziona una carta del tuo mazzo da scaldare al falò. Così aumenterai in modo permanente una delle sue statistiche, ma c'è un rischio...
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	Scegli una coppia di carte identiche del tuo mazzo da fondere in una sola. La loro potenza e la loro salute si sommano, e i sigilli di entrambe vengono conservati.
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	Scegli un nuovo intaglio da aggiungere al tuo zaino: una testa di una tribù o un corpo con un sigillo. Poi, se hai sia una testa sia un corpo, scegli una combinazione di totem da portare con te. Ogni carta del tuo mazzo che appartiene alla tribù della testa otterrà il sigillo del totem, finché il totem è in uso.
+Trade the teeth you've collected for pelt cards to add to your deck.	Scambia i denti che hai raccolto con carte Pelle da aggiungere al tuo mazzo.
+The trader generously gives you five teeth...	La Commerciante ti dona generosamente cinque denti...
+The trader generously gives you {0} teeth...	La Commerciante ti dona generosamente {0} denti...
+Trade pelts from your deck for new cards.	Scambia le pelli del tuo mazzo con nuove carte.
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	Seleziona una carta del tuo mazzo da rimuovere in modo permanente. In cambio, il Signore delle ossa offre un dono: un effetto passivo che ti concede ossa all'inizio di ogni battaglia.
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	Seleziona una carta del tuo mazzo. Una sua copia viene aggiunta al tuo mazzo, anche se potrebbe non essere del tutto identica.
+card to receive an artistic rendition	carta di cui ricevere una rappresentazione artistica
+card to risk resting by the campfire	carta da rischiare riposando accanto al falò
+host card	creatura ospite
+card to sacrifice	carta da sacrificare
+The backpack cannot be reached right now.	Al momento non puoi raggiungere lo zaino.
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Zaino. Frecce per scorrere, Backspace torna alla selezione degli intagli.
+Backpack. Arrows browse, Enter chooses a totem combination.	Zaino. Frecce per scorrere, Invio sceglie una combinazione di totem.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	Il tuo zaino è vuoto. Premi Backspace per tornare alla selezione delle sculture in legno.
+The deck cannot be reached right now.	Al momento non puoi raggiungere il mazzo.
+You have {0} {1} Kin card{2} in your deck.	Hai {0} carte di parentela {1}{2} nel tuo mazzo.
+ {0}, {1} card{2}.	 {0}, carte: {1}.
+Woodcarving selection.	Selezione degli intagli.
+Withdraw from the campfire.	Allontanati dal falò.
+the fire	il fuoco
+Pair of {0}.	Coppia di {0}.
+s	​
+Altar of the Bone Lord	Altare del Signore delle ossa
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Altare del Signore delle ossa. Frecce per scorrere, Invio per confermare.
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	Cacciatore. Ricevi una Pelle di coniglio. Scambia i denti che hai raccolto con carte Pelle da aggiungere al tuo mazzo.
+1 tooth	1 dente
+{0} teeth	{0} denti
+Skinning Knife	Coltello da scuoiamento
+{0} purchased for {1}. You have {2} remaining.{3}	Hai acquistato {0} per {1}. Denti rimasti: {2}.{3}
+You are {0} short from buying {1}.{2}	Ti mancano {0} per comprare {1}.{2}
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Non hai abbastanza denti per un altro acquisto. Backspace per lasciare il Cacciatore.
+You have {0}.	Hai {0}.
+, and {0}	, e {0}
+{0} sacrificed.	Sacrificio: {0}.
+sigil	sigillo
+sigils	sigilli
+{0} gained the {1} {2}.	{0} ha ottenuto {2}: {1}.
+its {0} by {1}	la sua {0} di {1}
+its {0}	la sua {0}
+This will permanently raise one of its stats	Questo aumenterà in modo permanente una delle sue statistiche
+This will permanently raise {0}	Questo aumenterà in modo permanente {0}
+Choose a card to warm by the campfire. {0}.	Scegli una carta da scaldare al falò. {0}.
+Continue resting peacefully by the campfire, and raise the stat again.	Continua a riposare in pace accanto al falò e aumenta di nuovo la statistica.
+Continue resting by the campfire, and raise the stat again.	Continua a riposare accanto al falò e aumenta di nuovo la statistica.
+the chosen card	la carta scelta
+to peacefully rest by	a riposare in pace accanto
+to risk resting by	a riposare a proprio rischio accanto
+Send {0} {1} the campfire	Manda {0} {1} al falò
+Send {0} {1} the campfire, permanently raising {2}.	Manda {0} {1} al falò, aumentando in modo permanente {2}.
+Choose a card to become the host.	Scegli una carta che diventi l'ospite.
+Choose a card to sacrifice.	Scegli una carta da sacrificare.
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	Scegli una carta da scaldare al falò. Aumenterà le sue statistiche, ma c'è un rischio...
+{0}'s {1} rose by {2}.	Il valore di {1} di {0} è aumentato di {2}.
+Choose a card.	Scegli una carta.
+{0} selected as {1}.	Scelta come {1}: {0}.
+Pair of {0} chosen to fuse together. Enter to rechoose.	Coppia di {0} scelta per la fusione. Invio per scegliere di nuovo.
+{0} chosen as {1}. Enter to rechoose.	Scelta come {1}: {0}. Invio per scegliere di nuovo.
+A {0}.	Un {0}.
+A {0}. {1}	Un {0}. {1}
+Received {0}.	Hai ricevuto {0}.
+{0} card placed on the altar. Enter to take it.	Carta {0} posata sull'altare. Invio per prenderla.
+A carved head.	Una testa intagliata.
+{0} head.	Testa: {0}.
+A carved sigil body.	Un corpo intagliato con sigillo.
+{0} sigil body.	Corpo con sigillo: {0}.
+Totem: your {0} cards gain {1}.	Totem: le tue carte della tribù {0} ottengono {1}.
+The finished totem.	Il totem completato.
+Option {0} of {1}.	Opzione {0} di {1}.
+{0}. {1} option{2}. 	{0}. Opzioni: {1}. 
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Frecce sinistra e destra per scorrere, Invio per scegliere, Spazio per ripetere, H per l'aiuto.
+No option selected. Use left and right arrows to browse.	Nessuna opzione selezionata. Usa le frecce sinistra e destra per scorrere.
+No pair is on the stone yet. Choose a pair of cards first.	Non c'è ancora una coppia sulla pietra. Scegli prima una coppia di carte.
+Pair of {0} selected.	Coppia di {0} selezionata.
+You take the {0} Kin totem with the {1} Sigil.	Prendi il totem della stirpe {0} con il sigillo {1}.
+You took the {0}.	Hai preso: {0}.
+{0} selected.	{0} selezionato.
+Nothing to choose here.	Niente da scegliere qui.
+Trader. {0} You have {1} {2} left to trade.	Mercante. {0} Hai ancora {1} {2} da scambiare.
+Trader. {0}	Mercante. {0}
+Choosing a card. {0}. 	Scelta di una carta. {0}. 
+Arrows browse, Enter chooses, Space repeats your position.	Frecce per scorrere, Invio per scegliere, Spazio ripete la tua posizione.
+Shift Up displays your deck.	Maiusc+freccia su mostra il tuo mazzo.
+A opens your backpack, Shift Up displays your deck. 	A apre lo zaino, Maiusc+freccia su mostra il tuo mazzo. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A conta i tuoi denti, Backspace lascia il Cacciatore in qualsiasi momento. 
+zero	zero
+{0}. Item slots full. 	{0}. Spazi oggetto pieni. 
+I cycles through your current items. R opens the rulebook.	I scorre i tuoi oggetti attuali. R apre il regolamento.
+{0}. Select one of {1} items to add to your backpack. 	{0}. Scegli uno dei {1} oggetti da aggiungere allo zaino. 
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Frecce per scorrere, Invio per scegliere, Backspace lascia il Cacciatore in qualsiasi momento, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	Spazio ripete la tua posizione, A conta i tuoi denti, R apre il regolamento.
+R opens the rulebook.	R apre il regolamento.
+The totem is assembled. Your {0} cards will gain {1}. 	Il totem è montato. Le tue carte della tribù {0} ottengono {1}. 
+Enter to take the totem with you. Backspace to return to backpack and reselect.	Invio per portare con te il totem. Backspace per tornare allo zaino e scegliere di nuovo.
+Enter to take the totem with you.	Invio per portare con te il totem.
+{0} received no new sigils.	{0} non ha ricevuto nuovi sigilli.
+{0} received {1}.	{0} ha ricevuto {1}.
+{0} received {1} 	{0} ha ricevuto {1} 
+and {0}.	e {0}.
+Copy card	Carta copia
+Painted Card: {0}	Carta dipinta: {0}
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	Una bottiglia di vetro con il tappo di sughero salta all'improvviso sul tavolo da gioco. Accanto atterrano due minuscoli cavalletti con carte bianche.
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	Nella bottiglia c'è una poltiglia verde luminosa. Ha un volto deforme. Alla bottiglia è attaccato un pennello dalla punta luminosa.
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	Leshy ti presenta un calamaio decorato con {0} dentro e un pennello.
+Leshy presents you a collapsible fan with bird talon feet.	Leshy ti presenta un ventaglio pieghevole con zampe d'uccello artigliate.
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	Leshy ti presenta una bottiglia di vetro tappata con dentro una piccola carta {0}.
+Leshy presents you a rusty pair of pliers.	Leshy ti presenta un paio di pinze arrugginite.
+Leshy presents you a chipped pair of scissors.	Leshy ti presenta un paio di forbici scheggiate.
+Leshy presents you an ornate wooden hourglass.	Leshy ti presenta una clessidra di legno decorata.
+Leshy presents you a large magnifying glass.	Leshy ti presenta una grande lente d'ingrandimento.
+Leshy presents you a ceramic piggy bank.	Leshy ti presenta un salvadanaio a forma di maialino in ceramica.
+Leshy presents you a large curved fish hook.	Leshy ti presenta un grande amo da pesca ricurvo.
+Leshy presents you a razor sharp straight knife.	Leshy ti presenta un coltello dritto affilato come un rasoio.
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	Leshy ti presenta una bottiglia di vetro tappata con dentro una melma verde dal volto deforme.
+Leshy presents you a glowing, ornate pocketwatch.	Leshy ti presenta un orologio da tasca luminoso e decorato.
+Leshy presents you a straight ivory dagger, for when things become grim...	Leshy ti presenta un pugnale dritto d'avorio, per quando le cose si metteranno male...
+Leshy presents you the {0}.	Leshy ti presenta: {0}.
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	Un grosso ratto sbuca da dietro lo zaino sul tavolo. Ti offre una carta {0}. Frecce per scorrere.
+A {0} is defined as: {1} Power, {2} Health{3}.	{0} è definito come: {1} potenza, {2} salute{3}.
+Combination code: 273.	Combinazione: 273.
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	Questa pagina è rovinata dall'inchiostro. Riesci a leggere queste parole: Specchio... La Forza e... Uguale... il... che porta...
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	Questa pagina è rovinata dall'inchiostro. Riesci a leggere queste parole: Suono della campana... Il valore rappresentato da questo..... uguale a.... il....
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	Questa pagina è rovinata dall'inchiostro. Riesci a leggere queste parole: Conta carte.... Il valore rappresent.... uguale a.... numero di....
+The rulebook is not available here.	Il regolamento non è disponibile qui.
+Opened Rulebook from shelf.	Regolamento preso dallo scaffale e aperto.
+Rulebook opened.	Regolamento aperto.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Frecce sinistra e destra per voltare pagina. Backspace chiude il libro.
+Rulebook closed.	Regolamento chiuso.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Regolamento. Frecce sinistra e destra per voltare pagina. Spazio ripete la pagina. Backspace o R chiude il libro.
+Variable stat	Statistica variabile
+Boon	Dono
+Item	Oggetto
+Rule	Regola
+Page unavailable.	Pagina non disponibile.
+Blank. Page {0} of {1}.	Vuota. Pagina {0} di {1}.
+{0}. Description unavailable.	{0}. Descrizione non disponibile.
+Blank page.	Pagina vuota.
+Page {0} of {1}.	Pagina {0} di {1}.
+{0}. The description on this page is obscured by ink.	{0}. La descrizione su questa pagina è coperta dall'inchiostro.
+To the user: 	All'utente: 
+Your opponent	Il tuo avversario
+{0} is offering to surrender, press Shift and E to accept. 	{0} offre la resa: premi Maiusc ed E per accettare. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy ti porge un ramoscello d'ulivo e si arrende. Premi Maiusc ed E per accettare la sua resa.
+No surrender is being offered.	Nessuna resa è in offerta.
+Concede accepted. Victory.	Resa accettata. Vittoria.
+Victory	Vittoria
+Defeat	Sconfitta
+Backspace to return to the main menu. Space to repeat.	Backspace per tornare al menu principale. Spazio per ripetere.
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	Comandi della schermata di vittoria. Spazio ripete la schermata. Backspace torna al menu principale.
+Enter to continue. Space to repeat.	Invio per continuare. Spazio per ripetere.
+Victory Screen controls. Space repeats the screen. Enter continues.	Comandi della schermata di vittoria. Spazio ripete la schermata. Invio continua.
+Leshy blows out his final candle, the cabin goes dark.	Leshy spegne la sua ultima candela, la capanna piomba nel buio.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Comandi di fine partita. Spazio ripete la schermata. Invio inizia una nuova partita con lo stesso mazzo iniziale e le stesse sfide attivate. Backspace torna al menu principale.
+the log file could not be found	impossibile trovare il file di log
+your desktop folder could not be found	impossibile trovare la cartella del desktop
+the file could not be written	impossibile scrivere il file
+cost	il costo
+power and health	potenza e salute
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Carta della morte: scegli {0}. {1}. Frecce per scorrere, Invio per scegliere.
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	Scegli un nome per la tua carta, fino a 10 caratteri. Invio per finire. Tab legge il nome scritto finora.
+space	spazio
+capital {0}	{0} maiuscola
+backspace.	cancella.
+Character limit reached.	Limite di caratteri raggiunto.
+No name yet.	Ancora nessun nome.
+Type at least one character first.	Scrivi prima almeno un carattere.
+Mod Settings	Impostazioni della mod
+Events	Eventi
+button	pulsante
+checkbox	casella di controllo
+checked	selezionata
+unchecked	non selezionata
+{0} of {1}	{0} di {1}
+Closed	Chiuso
+Announce	Annuncia
+Add to history	Aggiungi alla cronologia
+Sources	Fonti
+Current Player	Giocatore attuale
+Enemies	Nemici
+History	Cronologia
+Reads	Letture
+Prompts	Istruzioni
+Updates	Aggiornamenti
+Automatic: new versions download and install with no question.	Automatico: le nuove versioni vengono scaricate e installate senza chiedere.
+Download, then ask before installing.	Scarica, poi chiedi prima di installare.
+Ask before downloading.	Chiedi prima di scaricare.
+Off: IKMA never connects to the internet.	Disattivato: IKMA non si connette mai a Internet.
+Speech engine	Motore vocale
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	Automatico: il tuo lettore di schermo su Windows, l'assistente vocale di IKMA su Steam Deck.
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	Sempre il tuo lettore di schermo, tramite UniversalSpeech: NVDA, JAWS o la voce di Windows.
+Always the IKMA speech helper, for Steam Deck and Linux.	Sempre l'assistente vocale di IKMA, per Steam Deck e Linux.
+Language	Lingua
+Follow the game's language setting.	Segui l'impostazione della lingua del gioco.
+Controller vibration	Vibrazione del controller
+Low	Bassa
+Medium	Media
+High	Alta
+Control template	Schema dei comandi
+Default	Predefinito
+Original	Originale
+Full log for bug reports	Log completo per le segnalazioni di bug
+Off: the short log, what IKMA said and anything that went wrong.	Disattivato: il log breve, ciò che IKMA ha detto e gli errori avvenuti.
+On: every diagnostic line, for a bug report. The log gets much longer.	Attivato: tutte le righe diagnostiche, per una segnalazione di bug. Il log diventa molto più lungo.
+NVDA line timing	Temporizzazione delle righe di NVDA
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	Esatta: IKMA chiede a NVDA quando ogni riga è terminata. Richiede NVDA 2024.1 o successivo.
+Estimated: IKMA guesses how long each line takes to read.	Stimata: IKMA stima quanto tempo serve per leggere ogni riga.
+Braille display	Display braille
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	Attivato: ogni riga pronunciata viene anche inviata al tuo display braille, tramite NVDA o JAWS.
+Off: nothing is sent to a braille display.	Disattivato: non viene inviato nulla a un display braille.
+Steam Deck speech	Voce di Steam Deck
+Voice	Voce
+Female	Femminile
+Male	Maschile
+Rate	Velocità
+Volume	Volume
+Controller buttons	Pulsanti del controller
+Open the rulebook	Apri il regolamento
+Help	Aiuto
+Repeat, describe, or advance a conversation	Ripeti, descrivi o avanza una conversazione
+Next playable card, slot, or sacrifice	Prossima carta giocabile, spazio o sacrificio
+Rulebook for the last heard abilities	Regolamento delle ultime abilità sentite
+Read your hand	Leggi la tua mano
+Read the enemy queue	Leggi la coda avversaria
+Read the enemy board	Leggi il tabellone avversario
+Read your board	Leggi il tuo tabellone
+Game info: scales, bones, and teeth	Informazioni di gioco: bilancia, ossa e denti
+Full board and queue	Tabellone completo e coda
+All three item slots	Tutti e tre gli spazi oggetto
+Rulebook for the last heard abilities, second button	Regolamento delle ultime abilità sentite, secondo pulsante
+Help list	Elenco di aiuto
+Draw from your deck	Pesca dal tuo mazzo
+Draw from the Squirrel deck	Pesca dal mazzo degli Scoiattoli
+Item menu	Menu degli oggetti
+Accept surrender	Accetta la resa
+Number 1	Numero 1
+Number 2	Numero 2
+Number 3	Numero 3
+Number 4	Numero 4
+Save a bug report log	Salva un log per una segnalazione di bug
+Review history, older	Consulta la cronologia, precedente
+Review history, newer	Consulta la cronologia, successivo
+Review history as a list	Consulta la cronologia come elenco
+Next buffer	Buffer successivo
+Previous buffer	Buffer precedente
+Silence speech	Interrompi la voce
+{0}: {1}	{0}: {1}
+{0}: {1}. Default {2}.	{0}: {1}. Predefinito: {2}.
+no button	nessun pulsante
+Reset to Default controls	Ripristina i comandi predefiniti
+Every action is reset to default controls.	Tutte le azioni sono tornate ai comandi predefiniti.
+Press a button... {0} to cancel.	Premi un pulsante... {0} per annullare.
+Hold {0}, {1}, or {2} and {3} together for a chord. Backspace on the keyboard also cancels.	Tieni premuto {0}, {1} o {2} insieme a {3} per una combinazione. Anche Backspace sulla tastiera annulla.
+Press a button... Hold {0}, {1}, or {2} and {3} together for a chord. Backspace on the keyboard cancels.	Premi un pulsante... Tieni premuto {0}, {1} o {2} insieme a {3} per una combinazione. Backspace sulla tastiera annulla.
+Button cannot be changed, due to being reserved by the game.	Impossibile modificare il pulsante, perché è riservato al gioco.
+Cancelled	Annullato
+Bound to {0}	Assegnato a {0}
+Swapped. {0} is now on {1}, and {2} is now on {3}.	Scambiati. {0} ora è su {1}, e {2} ora è su {3}.
+Changes the next time you start the game.	Cambia al prossimo avvio del gioco.
+Feature coming soon.	Funzione in arrivo.
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Impostazioni della mod. Frecce per scorrere, Invio per aprire o modificare, Backspace per tornare indietro di un livello, Esc per chiudere.
+{0} already used this turn.	{0} già usato in questo turno.
+{0} has no valid targets right now.	{0} non ha bersagli validi al momento.
+{0} cannot be used during the draw phase.	Non puoi usare {0} durante la fase di pesca.
+{0} can only be used during a battle.	Puoi usare {0} solo durante una battaglia.
+{0} cannot be used, your deck is empty.	Non puoi usare {0}, il tuo mazzo è vuoto.
+{0} cannot be used while a giant card is on the board.	Non puoi usare {0} mentre c'è una carta gigante sul tabellone.
+{0} cannot be used while {1} is on the board.	Non puoi usare {0} mentre {1} è sul tabellone.
+Now is not the time to use {0}.	Non è il momento di usare {0}.
+Help list, F1.	Elenco di aiuto, F1.
+Mod Settings, Control plus M.	Impostazioni della mod, Control più M.
+Review history, older, Control plus Down arrow.	Consulta la cronologia, precedente, Control più freccia giù.
+Review history, newer, Control plus Up arrow.	Consulta la cronologia, successivo, Control più freccia su.
+Next buffer item, Control plus Up arrow.	Elemento successivo del buffer, Control più freccia su.
+Previous buffer item, Control plus Down arrow.	Elemento precedente del buffer, Control più freccia giù.
+Next buffer, Control plus Right arrow.	Buffer successivo, Control più freccia destra.
+Previous buffer, Control plus Left arrow.	Buffer precedente, Control più freccia sinistra.
+Review history as a list, Y.	Consulta la cronologia come elenco, Y.
+Silence speech, tap Control.	Interrompi la voce, premi brevemente Control.
+Announce scales, Control plus S.	Annuncia la bilancia, Control più S.
+Announce bones, Control plus B.	Annuncia le ossa, Control più B.
+Announce candles, Control plus C.	Annuncia le candele, Control più C.
+Announce woodcarving, Control plus W.	Annuncia la scultura in legno, Control più W.
+Announce deck counts, Control plus D.	Annuncia il numero di carte nei mazzi, Control più D.
+Announce teeth, Control plus T.	Annuncia i denti, Control più T.
+Map navigation uses buffer controls, Control plus the arrow keys. Buffer controls are remapped on this screen.	La navigazione sulla mappa usa i comandi dei buffer, Control più le frecce. I comandi dei buffer vengono riassegnati in questa schermata.
+Route summary, Control plus Space.	Riepilogo del percorso, Control più Spazio.
+No buffers available	Nessun buffer disponibile
+No buffer selected	Nessun buffer selezionato
+choice	scelta
+No path forward.	Nessun percorso in avanti.
+Cannot go backwards.	Non puoi tornare indietro.
+Path continues out of sight.	Il percorso continua oltre la vista.
+{0} {1} to {2}	{0} {1} a {2}
+{0} {1}	{0} {1}
+Not in an encounter.	Non sei in uno scontro.
+You have no woodcarving.	Non hai una scultura in legno.
+It resurfaces.	Riemerge.
+They resurface.	Riemergono.
+, sending one damage back to its attacker.	, che rimanda un danno a chi l'ha attaccata.
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, scegli una carta dal tuo mazzo da aggiungere alla tua mano. Frecce per scorrere, Invio per confermare.
+It is a rugged face with a bandana wrapped tightly below the eyes.	È un volto segnato, con una bandana stretta sotto gli occhi.
+He has a large hat, a heavy unkempt beard, and crooked teeth.	Ha un grande cappello, una barba folta e incolta e denti storti.
+He has a leathery face with deep wrinkles across his forehead.	Ha un volto coriaceo, con rughe profonde sulla fronte.
+She has a strong aged face with a patterned headband.	Ha un volto forte e anziano, con una fascia decorata sulla testa.
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	Ha gli occhi infossati sotto una fronte pesante. Diversi ami gli trafiggono il labbro inferiore.
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	Leshy indossa la maschera a due facce dei Micologi. Il volto del dottore è quello di un uomo dai capelli crespi, con grandi occhiali rotondi e uno specchio frontale. Attaccato al collo c'è un secondo volto, più piccolo. Il fungo ha gli stessi lineamenti, con un grosso fungo fuso sulla testa.
+the cage is destroyed	la gabbia viene distrutta
+the ice is destroyed	il ghiaccio viene distrutto
+ It quickly snaps shut...	 Si richiude di scatto...
+Combat	Combattimento
+Death	Morte
+HP Changes	Variazioni di salute
+Enemy Moves	Movimenti nemici
+Turns	Turni
+Player Turn Start	Inizio del turno del giocatore
+Enemy Turn Start	Inizio del turno nemico
+Powers	Poteri
+Attacks	Attacchi
+Your Turn	Il tuo turno
+Challenges and Totems	Sfide e totem
+Bosses	Boss
+Card Drawn	Carta pescata
+Card Played	Carta giocata
+Card Obtained	Carta ottenuta
+Resources	Risorse
+Teeth	Denti
+Bones	Ossa
+Item Obtained	Oggetto ottenuto
+Item Used	Oggetto usato
+Other	Altro
+Dialogue	Dialogo
+Node Entered	Nodo raggiunto
+Node Results	Risultati del nodo
+Saving	Salvataggio
+
+# Italian.tsv

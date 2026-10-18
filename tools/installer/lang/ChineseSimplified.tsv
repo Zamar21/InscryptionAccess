@@ -1,0 +1,169 @@
+# ChineseSimplified.tsv
+#status: unreviewed
+# IKMA Manager. Drafted by Claude (Session 32), the game-side ChineseSimplified file's words, and ChatGPT for the lines added since; no Simplified Chinese speaker has checked it yet. English [TAB] translation.
+Open the rulebook	打开规则书
+Help	帮助
+Repeat, describe, or advance a conversation	重复、描述或推进对话
+Next playable card, slot, or sacrifice	下一张可出的牌、下一个卡槽或祭品
+Rulebook for the last heard abilities	查询最近听到的能力的规则书
+Read your hand	读手牌
+Read the enemy queue	读敌方队列
+Read the enemy board	读敌方场面
+Read your board	读你的场面
+Game info: scales, bones, and teeth	游戏信息：天平、骨头和牙齿
+Full board and queue	整个场面和队列
+All three item slots	全部三个道具槽
+Rulebook for the last heard abilities, second button	查询最近听到的能力的规则书，第二个按钮
+Mod Settings	模组设置
+Help list	帮助列表
+Draw from your deck	从你的牌组抽牌
+Draw from the Squirrel deck	从松鼠牌组抽牌
+Item menu	道具菜单
+Accept surrender	接受投降
+Number 1	数字1
+Number 2	数字2
+Number 3	数字3
+Number 4	数字4
+Save a bug report log	保存错误报告日志
+Review history, older	查看历史，更早
+Review history, newer	查看历史，更新
+Review history as a list	以列表形式查看历史
+Next buffer	下一个缓冲区
+Previous buffer	上一个缓冲区
+Silence speech	停止语音
+Announce	播报
+Add to history	添加到历史
+Current Player	当前玩家
+Enemies	敌人
+Card Drawn	抽到卡牌
+Card Obtained	获得卡牌
+Card Played	打出卡牌
+Attacks	攻击
+Bosses	首领
+Challenges and Totems	挑战与图腾
+Death	死亡
+Enemy Moves	敌方移动
+HP Changes	生命变化
+Powers	能力
+Turns	回合
+Player Turn Start	玩家回合开始
+Enemy Turn Start	敌方回合开始
+Your Turn	你的回合
+Dialogue	对话
+Node Entered	进入节点
+Node Results	节点结果
+Saving	保存
+Bones	骨头
+Item Obtained	获得道具
+Item Used	使用道具
+Teeth	牙齿
+History	历史
+Reads	朗读
+Prompts	提示
+{0}: {1}	{0}：{1}
+Cards	卡牌
+Combat	战斗
+Other	其他
+Resources	资源
+IKMA Manager, version {0}.	IKMA Manager，版本 {0}。
+Looking for Inscryption in your Steam library.	正在你的 Steam 库中查找 Inscryption。
+Found Inscryption at {0}.	已找到 Inscryption：{0}。
+Inscryption was not found in your Steam library.	在你的 Steam 库中找不到 Inscryption。
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	输入或粘贴 Inscryption 文件夹的完整路径，然后按 Enter 键。或者只按 Enter 键退出。
+That folder does not contain Inscryption.exe.	该文件夹中没有 Inscryption.exe。
+IKMA version {0} is installed and turned on.	IKMA 版本 {0} 已安装并已开启。
+IKMA is installed and turned on.	IKMA 已安装并已开启。
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA 版本 {0} 已安装，但已关闭。Inscryption 会在没有它的情况下启动。
+IKMA is installed but turned off. Inscryption starts without it.	IKMA 已安装，但已关闭。Inscryption 会在没有它的情况下启动。
+IKMA is not installed in this game folder.	此游戏文件夹中未安装 IKMA。
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	主菜单。按回车键安装或更新IKMA。也可以输入数字后按回车键。1，安装或更新。2，设置。3，重新启用IKMA。4，卸载。5，退出。
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	主菜单。按回车键安装或更新IKMA。也可以输入数字后按回车键。1，安装或更新。2，设置。3，禁用IKMA。4，卸载。5，退出。
+Invalid choice.	无效选择。
+IKMA is not installed, so there is nothing to turn off.	IKMA 未安装，所以没有可以关闭的内容。
+IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.	IKMA已禁用。Inscryption启动时将不加载IKMA。BepInEx和其他模组保持不变，IKMA的设置也会保留。
+IKMA is turned back on. Please restart the game.	IKMA已重新启用。请重新启动游戏。
+IKMA was turned off. Installing turned it back on.	IKMA 之前已关闭。安装时已将它重新开启。
+Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.	设置。输入数字后按回车键可更改相应设置。直接按回车键返回主菜单。更改将在下次启动游戏时生效。
+{0}, {1}: {2}	{0}，{1}：{2}
+{0}. Type a number, then press Enter. Press Enter to keep it as it is.	{0}。输入数字后按回车键。直接按回车键保持不变。
+{0}, {1} This is the current setting.	{0}，{1} 这是当前设置。
+{0} set to: {1}	{0} 已设为：{1}
+a custom value, {0}.	自定义值，{0}。
+Updates	更新
+Speech engine	语音引擎
+NVDA line timing	NVDA逐行计时
+Braille display	盲文显示器
+Language	语言
+Full log for bug reports	用于错误报告的完整日志
+Controller vibration	手柄震动
+Control template	操作模板
+Controller buttons	手柄按钮
+every action on its default button	所有操作均使用默认按钮
+{0} moved	已重新分配按钮的操作：{0}
+Controller buttons. Type a number, then press Enter to move that action to another button. Type R, then press Enter, to put every action back on its default button. Press Enter alone to go back to settings.	控制器按钮。输入数字后按回车键，将相应操作分配到其他按钮。输入R后按回车键，将所有操作恢复为默认按钮。只按回车键返回设置。
+{0}, {1}: {2}. Default {3}.	{0}，{1}：{2}。默认：{3}。
+Every action is back on its default button.	所有操作均已恢复为默认按钮。
+Events	事件
+every event at its default	所有事件均使用默认设置
+{0} changed	已更改的事件：{0}
+Events. Type a number, then press Enter to change that event. Press Enter alone to go back to settings.	事件。输入数字后按回车键可更改相应事件。只按回车键返回设置。
+{0}, {1}, {2}	{0}，{1}，{2}
+{0}. Type a number, then press Enter to switch it. Press Enter alone to go back to the events.	{0}。输入数字后按回车键可切换相应选项。只按回车键返回事件列表。
+{0}, {1}: checked	{0}，{1}：已勾选
+{0}, {1}: unchecked	{0}，{1}：未勾选
+checked	已选中
+unchecked	未选中
+{0}, now on {1}. Which shoulder buttons are held with it? Type a number, then press Enter. 1, none. 2, LB. 3, RB. 4, LB and RB together. Press Enter alone to keep it as it is.	{0}，当前分配到{1}。需要同时按住哪些肩键？输入数字后按回车键。1，无。2，LB。3，RB。4，同时按住LB和RB。只按回车键保持不变。
+Which button for {0}? Type a number, then press Enter. Press Enter alone to keep it as it is.	为{0}分配哪个按钮？输入数字后按回车键。只按回车键保持不变。
+{0}, {1}, used by {2}.	{0}，{1}，由{2}使用。
+this action	此操作
+Swapped. {0} is now on {1}, and {2} is now on {3}.	已交换。{0}现在使用{1}，{2}现在使用{3}。
+ plus 	 加 
+Inscryption is running. Please close the game, then press Enter.	Inscryption正在运行。请关闭游戏，然后按回车键。
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	此 Inscryption 不是本安装程序所针对的 32 位版本。未做任何更改。
+BepInEx is already installed.	BepInEx已安装。
+Installed BepInEx, the mod loader.	已安装模组加载器 BepInEx。
+Installed IKMA and its speech files.	已安装 IKMA 及其语音文件。
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	完成。像往常一样从 Steam 启动 Inscryption。IKMA 会在标题画面开始说话。
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA 已卸载。BepInEx 保留在原处，因为其他模组可能会用到它。
+IKMA was not installed in this folder.	此文件夹中没有安装 IKMA。
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows 不允许安装程序写入游戏文件夹。请关闭此窗口，右键单击 IKMA_Manager，然后选择“以管理员身份运行”。
+This installer is incomplete: a file it carries is missing. Download it again.	此安装程序不完整：缺少它应包含的一个文件。请重新下载。
+Something went wrong, and the install stopped: {0}	出现问题，安装已停止：{0}
+Press Enter to close.	按 Enter 键关闭。
+BepInEx {0} is already installed.	BepInEx {0}已安装。
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	此游戏安装了 BepInEx 6。IKMA 需要 BepInEx 5，替换它会破坏你的其他模组。未做任何更改。
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	此游戏安装了另一个模组加载器（{0}）。在旁边添加 BepInEx 可能会破坏你的其他模组。未做任何更改。
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	此游戏文件夹中的 BepInEx 是 64 位版本，无法在这个 32 位游戏中加载。未做任何更改；需要 32 位的 BepInEx。
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx 已存在，但缺少让它随游戏启动的文件（winhttp.dll）。输入 Y 并按 Enter 键添加它。只按 Enter 键则保持一切不变。
+Added the file that starts BepInEx.	已添加启动 BepInEx 的文件。
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx 保持原样。IKMA 已安装，但在 BepInEx 随游戏启动之前不会加载。
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	注意：doorstop_config.ini 中关闭了 BepInEx（enabled=false）。在它开启之前，IKMA 不会加载。安装程序没有更改它。
+Found an earlier IKMA at {0}. Updated it there.	在 {0} 找到了较早的 IKMA，已在原位置更新。
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	安装了多个 IKMA 副本：{0}。请只保留一个，删除其余副本，然后重新运行本程序。未做任何更改。
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	来自其他模组的 {0} 已另存为 {1}.before-IKMA。卸载 IKMA 时会把它放回原处。
+Put back the earlier {0}.	已把之前的 {0} 放回原处。
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	注意：这台电脑上为 Inscryption 设置了模组管理器（r2modman 或 Thunderstore）。如果你从模组管理器启动游戏，也请把 IKMA 添加到那个配置文件；本安装程序设置的是从 Steam 启动的游戏。
+Automatic: new versions download and install with no question.	自动：新版本会直接下载并安装，不再询问。
+Download, then ask before installing.	下载，然后在安装前询问。
+Ask before downloading.	在下载前询问。
+Off: IKMA never connects to the internet.	关闭：IKMA 从不连接互联网。
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	自动：在 Windows 上使用你的读屏软件，在 Steam Deck 上使用 IKMA 语音助手。
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	始终使用你的读屏软件，通过 UniversalSpeech：NVDA、JAWS 或 Windows 语音。
+Always the IKMA speech helper, for Steam Deck and Linux.	始终使用 IKMA 语音助手，适用于 Steam Deck 和 Linux。
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	精确：IKMA询问NVDA每行何时读完。需要NVDA 2024.1或更新版本。
+Estimated: IKMA guesses how long each line takes to read.	估算：IKMA估计每行的朗读时长。
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	开启：每行语音也会通过NVDA或JAWS发送到你的盲文显示器。
+Off: nothing is sent to a braille display.	关闭：不向盲文显示器发送任何内容。
+Follow the game's language setting.	跟随游戏的语言设置。
+Off	关
+Low	低
+Medium	中
+High	高
+Default	默认
+Original	原始
+Off: the short log, what IKMA said and anything that went wrong.	关闭：简短日志，只有 IKMA 说过的话和出错的内容。
+On: every diagnostic line, for a bug report. The log gets much longer.	开启：所有诊断行，用于错误报告。日志会变得长很多。
+Feature coming soon.	此功能即将推出。
+
+# ChineseSimplified.tsv

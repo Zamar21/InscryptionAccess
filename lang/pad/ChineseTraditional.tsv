@@ -1,0 +1,131 @@
+﻿# lang/pad/ChineseTraditional.tsv - controller versions (English line<TAB>ChineseTraditional with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	按 [[1]]，以相同的起始牌組和已啟用的挑戰開始新的一輪遊戲。按[[2]]返回主選單。按[[3]]重複。
+In the center of the screen is a small play button. Press Enter...	螢幕中央有一個小小的播放按鈕。按 [[1]]……
+Press H for what still works.	按 [[1]]了解哪些功能仍可使用。
+Space describes what is directly in front of you. 	[[1]]描述你正前方的東西。 
+Conversation in progress, press Space to proceed.	對話進行中，按[[1]]繼續。
+Your deck is empty, press S to draw from the Squirrel deck.	你的牌組已空，按 [[1]]從松鼠牌組抽卡。
+The Squirrel deck is empty, press D to draw from your deck.	松鼠牌組已空，按 [[1]]從你的牌組抽卡。
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	抽卡階段。按 [[1]]從你的牌組抽卡，或按 [[2]]從松鼠牌組抽卡。
+Arrows to Browse, Enter to select, Backspace to return to your hand.	十字鍵瀏覽，[[1]]選擇，[[2]]返回手牌。
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	道具選單。十字鍵左和右瀏覽你攜帶的道具。[[1]]使用目前的道具。[[2]]讀出全部三個欄位，包括空欄位。[[3]]返回手牌。[[4]] 加十字鍵上、右或下可快速使用該欄位的道具。
+Arrow keys to browse, Enter to trade. Press H for help.	十字鍵瀏覽，[[1]]交易。按 [[2]]取得說明。
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	按 [[1]]可將記錄檔儲存到桌面，用於回報錯誤，[[2]]可瀏覽記錄歷史。這些指令在這裡及遊戲中任何時候都可使用。
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	按 [[1]]可將記錄檔儲存到桌面，用於回報錯誤。此指令在這裡及遊戲中任何時候都可使用。
+Arrow keys browse, Enter trades. 	十字鍵瀏覽，[[1]]交易。 
+Arrows browse, Enter chooses, Space repeats your position. 	十字鍵瀏覽，[[1]]選擇，[[2]]重複目前位置。 
+Opening screen. Enter presses the play button. Space repeats the description.	開場畫面。[[1]]按下播放按鈕。[[2]]重複描述。
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption 標題畫面。十字鍵移動，[[1]]確認。
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption 標題畫面。十字鍵瀏覽卡片。 
+Enter chooses the one you are on. Space repeats it. 	[[1]]選擇目前的卡片。[[2]]重複。 
+Backspace to go back.	[[1]]返回。
+Arrows to navigate	十字鍵移動
+, Backspace to go back.	，[[1]]返回。
+Arrows to navigate, Enter to confirm	十字鍵移動，[[1]]確認
+Enter to confirm	[[1]]確認
+Unnamed setting. Press Enter to adjust.	未命名設定。按 [[1]]調整。
+{0} Press Enter to adjust.	{0} 按 [[1]]調整。
+{0}.{1} Press H for help.	{0}。{1} 按 [[1]]取得說明。
+Arrows to adjust. Backspace to return.	十字鍵調整。[[1]]返回。
+Options. 1, 2, and 3 switch pages. 	選項。[[1]]切換到右邊的下一頁，[[2]]切換到左邊的下一頁。 
+Arrows browse the settings, Enter selects a setting to adjust, 	十字鍵瀏覽設定，[[1]]選擇要調整的設定， 
+Backspace returns. 	[[1]]返回。 
+Pause menu. Arrows browse the options, Enter chooses, 	暫停選單。十字鍵瀏覽選項，[[1]]選擇， 
+Space repeats your position and the run information, 	[[1]]重複目前位置和本輪遊戲的資訊， 
+Backspace or Escape closes the menu.	[[1]]或 [[2]]關閉選單。
+Standing up from the table. Press H for help.	從桌前站起。按 [[1]]取得說明。
+You step back. Press Backspace again to return to the table.	你退後一步。再按一次[[1]]回到桌前。
+Backspace steps back from your focused object. 	[[1]]從目前查看的物體前退開。 
+Backspace again returns you to the game table and opens the map.	再按[[1]]回到桌前並打開地圖。
+1, 2 and 3 examine what is in front of you. 	[[1]] 加十字鍵上、右和下查看你前方的東西。 
+Standing controls. Up arrow steps forward, down arrow steps back. 	站立操作。十字鍵上向前走，十字鍵下向後退。 
+Left and right arrows step to the side. 	十字鍵左和右向側面移動。 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]]逆時針轉90度，[[2]]順時針轉90度。 
+Backspace returns you to the game table and opens the map.	[[1]]回到桌前並打開地圖。
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	地圖。{0}。前方有{1}。十字鍵瀏覽，[[1]]查看詳情，[[2]]前往，[[3]]顯示牌組。
+Map. Awaiting input. Press Space for your position, H for help.	地圖。等待操作。按[[1]]了解目前位置，按 [[2]]取得說明。
+Awaiting path selection. H, for help.	等待選擇道路。[[1]]，取得說明。
+Left and right arrows to browse, 	十字鍵左和右瀏覽， 
+Enter to travel, Shift+Up to display deck.	[[1]]前往，[[2]]顯示牌組。
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	你正查看保險箱。上面有三個大圓形旋鈕，每個旋鈕都標有 0 至 9 的刻度。按 [[1]] 加十字鍵上、右和下操作旋鈕，[[2]]退開。
+Nothing here can be read yet. Escape opens the pause menu.	這裡暫時沒有可讀取的內容。[[1]]開啟暫停選單。
+No path selected. Use left and right arrows to browse paths.	未選擇道路。請用十字鍵左和右瀏覽道路。
+You are in an encounter. Press H for help.	你正處於戰鬥中。按 [[1]]取得說明。
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	你的牌組中沒有剩餘卡片。按 [[1]]從松鼠牌組抽卡。
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	松鼠牌組中沒有剩餘卡片。按 [[1]]從你的牌組抽卡。
+Left and right arrows browse. Enter selects the card. 	十字鍵左和右瀏覽。[[1]]選擇卡片。 
+Space repeats the current option. 	[[1]]重複目前選項。 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]]開啟規則書。[[2]]顯示你的牌組。 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	選單導覽。十字鍵瀏覽選項。[[1]]選擇目前選項。 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]]或 [[2]]返回。[[3]]重複目前選項。 
+Shift R looks up the last ability you heard. 	[[1]]查詢你最後聽到的能力。 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	選擇一個目標。有{0}個可選。{1} 十字鍵瀏覽，[[1]]選擇。
+Choose a target. {0} available. Arrows to browse, Enter to select.	選擇目標。可選目標：{0}。十字鍵瀏覽，[[1]]選擇。
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 十字鍵在此道具可作用的卡片之間移動。[[1]]選擇。道具一經使用便無法取消。
+Space describes what is in front of you. Space repeats where you are. 	[[1]]描述你前方的東西。[[2]]重複你所在的位置。 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	地圖操作。十字鍵，瀏覽前方的選擇。[[1]]，前往。[[2]]，列出目前所有選擇。[[3]]，讀出前方的道路。[[4]]，瀏覽你的牌組。[[5]]，聽取你目前的道具。[[6]]，開啟規則書。[[7]]，從桌前站起。[[8]]，取得說明。
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	戰鬥操作。十字鍵左和右瀏覽手牌。[[1]]，手牌中下一張可出的卡。[[2]]，出牌。[[3]]，敲鈴結束回合。[[4]]，開啟規則書。[[5]]，查詢最近聽到的能力。[[6]]，讀手牌。[[7]]，讀敵方佇列。[[8]]，讀敵方場面。[[9]]，讀你的場面。[[10]]，讀整個場面和佇列。[[11]]，讀天秤、骨頭及其他遊戲資訊。[[12]]，重複按下以切換道具，[[13]]使用。你必須先抽一張卡才能使用道具。在你的抽卡階段：[[14]]，從你的牌組抽卡，或 [[15]]，從松鼠牌組抽卡。[[16]]，取得說明。
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	正在放置卡片。十字鍵左和右切換位置。[[1]]，確認。讀取盤面的按鍵仍可使用。[[2]]，取得說明。
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	正在選擇犧牲品。十字鍵左和右在你的盤面上移動。[[1]]，犧牲目前所在的卡片。犧牲一旦開始便無法取消。讀取盤面的按鍵仍可使用。[[2]]，取得說明。
+No card selected. Use left and right arrows to browse your hand first.	未選擇卡片。請先用十字鍵左和右瀏覽手牌。
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}花費{1}點鮮血。選擇{2}個{3}。十字鍵左和右移動，[[1]]確認。犧牲一旦開始便無法取消。
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}選擇一個位置來打出{1}。十字鍵左和右移動，[[1]]確認。{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	選擇一個位置。十字鍵左和右移動，[[1]]確認。{0}
+Shift plus R looks up the last ability you heard.	[[1]]查詢你最近聽到的能力。
+Left and right arrows to browse, Enter to turn a card over, 	十字鍵左和右瀏覽，[[1]]翻開卡片， 
+Space to repeat, H for help.	[[1]]重複，按 [[2]]取得說明。
+Shift Up displays your deck, Space to repeat, H for help.	[[1]]顯示牌組，[[2]]重複，[[3]]幫助。
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	牌組試煉。雷希給你三個條件選擇。選出對你目前牌組最可能成立的那個。接著他會從你的牌組中隨機翻開三張卡。如果成功，你將獲得獎勵。十字鍵左和右瀏覽，[[1]]翻開一張卡，[[2]]顯示你的牌組，[[3]]重複，按 [[4]]取得說明。
+{0}. Arrow keys to browse.	{0}。十字鍵瀏覽。
+ Press Enter to add it to your deck.	 按[[1]]將其加入你的牌組。
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	十字鍵左和右瀏覽，[[1]]重複，[[2]]查看獸齒，[[3]]查看道具，[[4]]幫助，[[5]]返回{0}。
+Left and right arrows browse the cards. Space repeats the card you are on. 	十字鍵左和右瀏覽卡片。[[1]]重複當前卡片。 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]]讀出已收集的獸齒數量。[[2]]讀出全部三個道具欄位，包括空欄位。 
+R opens the rulebook. 	[[1]]打開規則書。 
+Backspace closes your deck and returns you to {0}.	[[1]]關閉牌組，返回{0}。
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	你的牌組。選擇一張卡片加入手牌。十字鍵瀏覽，[[1]]選擇。{0}。
+{0}. G, B and A to read the boardstate.	{0}。[[1]]、[[2]]、[[3]]讀出盤面狀態。
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	揹包。十字鍵瀏覽，[[1]]返回木雕選擇。
+Backpack. Arrows browse, Enter chooses a totem combination.	揹包。十字鍵瀏覽，[[1]]選擇圖騰組合。
+Your backpack is empty. Press Backspace to return to woodcarving selection.	你的揹包已空。按[[1]]返回木雕選擇。
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	白骨領主的祭壇。十字鍵瀏覽，[[1]]確認。
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 獸齒不夠再購買了。[[1]]離開捕獸者。
+Pair of {0} chosen to fuse together. Enter to rechoose.	已選擇一對{0}進行融合。按[[1]]重新選擇。
+{0} chosen as {1}. Enter to rechoose.	已選擇{0}作為{1}。按[[1]]重新選擇。
+{0} card placed on the altar. Enter to take it.	{0}卡片已放在祭壇上。[[1]]拿取。
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	十字鍵左和右瀏覽，[[1]]選擇，[[2]]重複，[[3]]幫助。
+No option selected. Use left and right arrows to browse.	未選擇選項。用十字鍵左和右瀏覽。
+Arrows browse, Enter chooses, Space repeats your position.	十字鍵瀏覽，[[1]]選擇，[[2]]重複你的位置。
+Shift Up displays your deck.	[[1]]顯示牌組。
+A opens your backpack, Shift Up displays your deck. 	[[1]]打開揹包，[[2]]顯示牌組。 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]]數獸齒，[[2]]隨時離開捕獸者。 
+I cycles through your current items. R opens the rulebook.	[[1]]切換當前道具。[[2]]打開規則書。
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	十字鍵瀏覽，[[1]]選擇，[[2]]隨時離開捕獸者， 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]]重複你的位置，[[2]]數獸齒，[[3]]打開規則書。
+R opens the rulebook.	[[1]]打開規則書。
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]]帶走圖騰。[[2]]返回背包重新選擇。
+Enter to take the totem with you.	[[1]]帶走圖騰。
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	一隻大老鼠從桌上的揹包後面竄出。牠向你提供一張{0}卡片。十字鍵瀏覽。
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0}{1}十字鍵左和右翻頁。[[1]]合上書。
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	規則書。十字鍵左和右翻頁。[[1]]重複當前頁。[[2]]或[[3]]合上書。
+{0} is offering to surrender, press Shift and E to accept. 	{0}提出投降，按[[1]]接受。 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	雷希遞出橄欖枝，認輸了這場戰鬥。按[[1]]接受他的投降。
+Backspace to return to the main menu. Space to repeat.	[[1]]返回主選單。[[2]]重複。
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	勝利畫面操作。[[1]]重複畫面。[[2]]返回主選單。
+Enter to continue. Space to repeat.	[[1]]繼續。[[2]]重複。
+Victory Screen controls. Space repeats the screen. Enter continues.	勝利畫面操作。[[1]]重複畫面。[[2]]繼續。
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	結局畫面操作。[[1]]重複畫面。[[2]]使用相同的起始牌組和已啟用的挑戰開始新一局。[[3]]返回主選單。
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	死亡卡片，選擇它的{0}。{1}。十字鍵瀏覽，[[1]]選擇。
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	模組設定。十字鍵瀏覽，[[1]]開啟或變更，[[2]]返回上一層，[[3]]關閉。
+Help list, F1.	說明清單，[[1]]。
+Mod Settings, Control plus M.	模組設定，[[1]]。
+Review history, older, Control plus Down arrow.	檢視歷史，較早，[[1]]。
+Review history, newer, Control plus Up arrow.	檢視歷史，較新，[[1]]。
+Next buffer item, Control plus Up arrow.	下一個緩衝區項目，[[1]]。
+Previous buffer item, Control plus Down arrow.	上一個緩衝區項目，[[1]]。
+Next buffer, Control plus Right arrow.	下一個緩衝區，[[1]]。
+Previous buffer, Control plus Left arrow.	上一個緩衝區，[[1]]。
+Review history as a list, Y.	以清單形式檢視歷史，[[1]]。
+Silence speech, tap Control.	停止語音，[[1]]。
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	，請從牌組中選一張卡片加入手牌。十字鍵瀏覽，[[1]]確認。

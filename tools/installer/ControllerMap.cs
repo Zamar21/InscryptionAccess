@@ -70,6 +70,8 @@ namespace IKMASetup
             new Action("HistoryOlder",       L.T("Review history, older"),                    "LB+RB+DpadDown"),   // Session 35, provisional
             new Action("HistoryNewer",       L.T("Review history, newer"),                    "LB+RB+DpadUp"),     // Session 35, provisional
             new Action("HistoryList",        L.T("Review history as a list"),                 "LB+R3"),            // Session 51 (0.7.463), provisional name
+            new Action("BufferNext",         L.T("Next buffer"),                              "LB+RB+DpadRight"),  // 0.4.8.018, GAMEPAD_MAP.md
+            new Action("BufferPrevious",     L.T("Previous buffer"),                          "LB+RB+DpadLeft"),   // 0.4.8.018, GAMEPAD_MAP.md
             new Action("Silence",            L.T("Silence speech"),                           "R3"),               // Session 36, provisional
         };
 

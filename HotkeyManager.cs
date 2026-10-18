@@ -820,6 +820,7 @@ namespace IKMA
                 }
 
                 Plugin.Log?.LogInfo("IKMA PAUSE: Escape pressed — injecting Menu.");
+                if (PauseMenuReader.Active) PauseMenuReader.MarkClosing();   // Session 64
                 InjectButton("Menu");
                 return;
             }
@@ -846,6 +847,8 @@ namespace IKMA
             // ABOVE EVERY LAYER IT COVERS, and a new screen reader is added
             // BELOW both of them unless it covers them too. Escape stays at the
             // very top, because pausing has to work from everywhere.
+            // Session 64: a menu on its way out takes keys and says nothing.
+            if (PauseMenuReader.Active && PauseMenuReader.Closing) return;
             if (PauseMenuReader.Active)
             {
                 // ------------------------------------------------------------
@@ -1128,6 +1131,24 @@ namespace IKMA
             {
                 TradeReader.SpeakPosition();
                 return;
+            }
+
+            // SESSION 64 - THE SAME, FOR A NODE SCREEN. Driver run, 0.4.8.023:
+            // at the campfire, "PUSH YOUR LUCK? OR PULL AWAY?" stays on screen
+            // (ShowMessage, not a held line) while Withdraw and Continue are
+            // live, and every X / Space went to the dialogue and said nothing.
+            // When the game is not holding on a line, Space belongs to the
+            // screen and repeats the position.
+            if (KeyIn.Down(KeyCode.Space) && NodeScreenReader.Active && !MapReader.InDeckView && !CardChoiceReader.Active)
+            {
+                bool holding = true;
+                try { holding = DialogueAdvancer.ConversationHolding() || DialogueAdvancer.InAdvanceGap(); } catch { }
+                if (!holding && DialogueAdvancer.AwaitingInput())
+                {
+                    Plugin.Log?.LogInfo("IKMA DIALOGUE: Space on a node screen under a standing line - the screen takes it.");
+                    NodeScreenReader.SpeakPosition();
+                    return;
+                }
             }
 
             if (KeyIn.Down(KeyCode.Space) && DialogueAdvancer.TryAdvance())
@@ -2336,6 +2357,12 @@ namespace IKMA
                 // same words or the repeat is not a repeat.
                 if (KeyIn.Down(KeyCode.Space))
                 {
+                    // Session 64: silent once the battle is lost (RunEndProbe).
+                    if (RunEndProbe.BattleLost)
+                    {
+                        Plugin.Log?.LogInfo("IKMA DRAW: Space after the battle was lost - the draw prompt is not repeated.");
+                        return;
+                    }
                     // 0.7.266 — one composer. The duplicate this comment used to
                     // defend is gone; see Vocabulary.DrawPhasePrompt for why it
                     // had to be.
@@ -6919,6 +6946,14 @@ namespace IKMA
                 {
                     Plugin.Log?.LogInfo(
                         $"IKMA PLAY: slot {_slotIndex + 1} is not a sacrifice candidate — ignored.");
+                    // Session 64 (driver run, 0.4.8.023): Enter on a card
+                    // already marked was silent. Zamar's words: "card already
+                    // chosen to sacrifice".
+                    if (slot?.Card != null && IsMarkedForSacrifice(slot))
+                    {
+                        Speech.Browse(Vocabulary.Hotkeys.AlreadyChosenToSacrifice(CardReader.CardName(slot.Card)));
+                        return;
+                    }
                     // A number key names the slot outright, so silence would
                     // be a dead key: say what is there instead. (0.7.353.)
                     if (_directPick) AnnounceCurrentSlot(bm, choosingSacrifices);

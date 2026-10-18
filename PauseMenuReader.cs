@@ -48,6 +48,28 @@ namespace IKMA
 
         public static bool Active => _open && IsPaused();
 
+        // SESSION 64 (driver run, 0.4.8.023): Escape closed the menu, Space a
+        // moment later still reached it - the game stays Paused through the
+        // closing tween - and it said "START SCREEN. Option 1 of 3..." about a
+        // menu that was leaving, then the close cut it, so the map Space said
+        // nothing true. Zamar: "fix it how you think." From the press that
+        // closes it until the game reports it closed, the menu takes keys and
+        // says nothing (2 s at most, in case the game never closes it).
+        private static float _closingSince = -1f;
+        private const float CLOSING_MAX = 2f;
+
+        /// <summary>True between Escape closing the menu and the game closing it.</summary>
+        public static bool Closing
+            => _closingSince >= 0f && Time.unscaledTime - _closingSince < CLOSING_MAX && IsPaused();
+
+        /// <summary>Escape was pressed to close the menu.</summary>
+        public static void MarkClosing()
+        {
+            if (!_open) return;
+            _closingSince = Time.unscaledTime;
+            _log?.LogInfo("IKMA PAUSE: closing - keys are taken silently until the game closes it.");
+        }
+
         private static FieldInfo _cardsField;
         private static FieldInfo _infoBarField;
         private static FieldInfo _savedField;
@@ -214,6 +236,7 @@ namespace IKMA
         /// <summary>Called from the pause patch when the menu opens or closes.</summary>
         public static void OnPausedChanged(bool paused)
         {
+            _closingSince = -1f;
             if (!paused)
             {
                 if (_open)

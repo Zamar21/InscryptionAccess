@@ -1,0 +1,131 @@
+﻿# lang/pad/Korean.tsv - controller versions (English line<TAB>Korean with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	[[1]] 버튼을 누르면 같은 시작 덱과 챌린지로 새 도전을 시작합니다. [[2]] 버튼을 누르면 메인 메뉴로 돌아갑니다. [[3]] 버튼을 누르면 다시 듣습니다.
+In the center of the screen is a small play button. Press Enter...	화면 중앙에 작은 플레이 버튼이 있습니다. [[1]] 버튼을 누르세요...
+Press H for what still works.	[[1]] 버튼을 누르면 지금 사용할 수 있는 기능을 들을 수 있습니다.
+Space describes what is directly in front of you. 	[[1]] 버튼으로 바로 앞에 있는 것을 설명합니다. 
+Conversation in progress, press Space to proceed.	대화 중입니다. [[1]] 버튼을 눌러 진행하세요.
+Your deck is empty, press S to draw from the Squirrel deck.	내 덱이 비었습니다. [[1]] 버튼을 눌러 다람쥐 덱에서 뽑으세요.
+The Squirrel deck is empty, press D to draw from your deck.	다람쥐 덱이 비었습니다. [[1]] 버튼을 눌러 내 덱에서 뽑으세요.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	뽑기 단계입니다. [[1]] 버튼으로 내 덱에서, [[2]] 버튼으로 다람쥐 덱에서 카드를 뽑으세요.
+Arrows to Browse, Enter to select, Backspace to return to your hand.	방향 패드로 탐색, [[1]] 버튼으로 선택, [[2]] 버튼으로 패로 돌아가기.
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	아이템 메뉴. 방향 패드 왼쪽과 오른쪽으로 가지고 있는 아이템을 탐색합니다. [[1]] 버튼으로 현재 아이템을 사용합니다. [[2]] 버튼을 누르면 빈 칸을 포함해 세 칸을 모두 읽습니다. [[3]] 버튼으로 패로 돌아갑니다. [[4]] 버튼과 방향 패드 위쪽, 오른쪽 또는 아래쪽으로 해당 칸의 아이템을 바로 사용합니다.
+Arrow keys to browse, Enter to trade. Press H for help.	방향 패드로 탐색, [[1]] 버튼으로 교환. [[2]] 버튼으로 도움말.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]] 버튼으로 버그 제보용 로그 파일을 바탕화면에 저장하고, [[2]] 버튼으로 로그 기록을 탐색합니다. 이 명령들은 여기서뿐 아니라 게임 중 언제든 사용할 수 있습니다.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]] 버튼으로 버그 제보용 로그 파일을 바탕화면에 저장합니다. 이 명령은 여기서뿐 아니라 게임 중 언제든 사용할 수 있습니다.
+Arrow keys browse, Enter trades. 	방향 패드로 탐색, [[1]] 버튼으로 교환. 
+Arrows browse, Enter chooses, Space repeats your position. 	방향 패드로 탐색, [[1]] 버튼으로 선택, [[2]] 버튼으로 현재 위치 반복. 
+Opening screen. Enter presses the play button. Space repeats the description.	시작 화면. [[1]] 버튼으로 플레이 버튼을 누릅니다. [[2]] 버튼으로 설명을 다시 듣습니다.
+Inscryption title screen. Arrows to navigate, Enter to confirm.	인스크립션 타이틀 화면. 방향 패드로 이동, [[1]] 버튼으로 확인.
+Inscryption title screen. Arrow keys browse the cards. 	인스크립션 타이틀 화면. 방향 패드로 카드를 탐색합니다. 
+Enter chooses the one you are on. Space repeats it. 	[[1]] 버튼으로 현재 카드를 선택합니다. [[2]] 버튼으로 다시 듣습니다. 
+Backspace to go back.	[[1]] 버튼으로 뒤로 가기.
+Arrows to navigate	방향 패드로 이동
+, Backspace to go back.	, [[1]] 버튼으로 뒤로 가기.
+Arrows to navigate, Enter to confirm	방향 패드로 이동, [[1]] 버튼으로 확인
+Enter to confirm	[[1]] 버튼으로 확인
+Unnamed setting. Press Enter to adjust.	이름 없는 설정. [[1]] 버튼을 눌러 조정하세요.
+{0} Press Enter to adjust.	{0} [[1]] 버튼을 눌러 조정하세요.
+{0}.{1} Press H for help.	{0}.{1} [[1]] 버튼으로 도움말.
+Arrows to adjust. Backspace to return.	방향 패드로 조정, [[1]] 버튼으로 돌아가기.
+Options. 1, 2, and 3 switch pages. 	설정. [[1]] 버튼으로 오른쪽 다음 페이지로, [[2]] 버튼으로 왼쪽 다음 페이지로 이동합니다. 
+Arrows browse the settings, Enter selects a setting to adjust, 	방향 패드로 설정 탐색, [[1]] 버튼으로 조정할 설정 선택, 
+Backspace returns. 	[[1]] 버튼으로 돌아가기. 
+Pause menu. Arrows browse the options, Enter chooses, 	일시정지 메뉴. 방향 패드로 선택지 탐색, [[1]] 버튼으로 선택, 
+Space repeats your position and the run information, 	[[1]] 버튼으로 현재 위치와 도전 정보 반복, 
+Backspace or Escape closes the menu.	[[1]] 버튼 또는 [[2]] 버튼으로 메뉴 닫기.
+Standing up from the table. Press H for help.	테이블에서 일어섭니다. [[1]] 버튼으로 도움말.
+You step back. Press Backspace again to return to the table.	뒤로 물러납니다. [[1]] 버튼을 한 번 더 누르면 테이블로 돌아갑니다.
+Backspace steps back from your focused object. 	[[1]] 버튼으로 집중한 물체에서 물러납니다. 
+Backspace again returns you to the game table and opens the map.	[[1]] 버튼을 한 번 더 누르면 게임 테이블로 돌아가 지도를 엽니다.
+1, 2 and 3 examine what is in front of you. 	[[1]] 버튼과 방향 패드 위쪽, 오른쪽, 아래쪽으로 앞에 있는 것을 살펴봅니다. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	서 있을 때 조작. 방향 패드 위쪽으로 앞으로, 방향 패드 아래쪽으로 뒤로 이동합니다. 
+Left and right arrows step to the side. 	방향 패드 왼쪽과 오른쪽으로 옆으로 이동합니다. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]] 버튼으로 시계 반대 방향 90도, [[2]] 버튼으로 시계 방향 90도 회전합니다. 
+Backspace returns you to the game table and opens the map.	[[1]] 버튼으로 게임 테이블로 돌아가 지도를 엽니다.
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	지도. {0}. 앞에 {1}. 방향 패드로 탐색, [[1]] 버튼으로 상세 정보, [[2]] 버튼으로 이동, [[3]] 버튼으로 덱 보기.
+Map. Awaiting input. Press Space for your position, H for help.	지도. 입력 대기 중. [[1]] 버튼으로 현재 위치, [[2]] 버튼으로 도움말.
+Awaiting path selection. H, for help.	경로 선택 대기 중. [[1]] 버튼으로 도움말.
+Left and right arrows to browse, 	방향 패드 왼쪽과 오른쪽으로 탐색, 
+Enter to travel, Shift+Up to display deck.	[[1]] 버튼으로 이동, [[2]] 버튼으로 덱 보기.
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	금고를 살펴보고 있습니다. 커다란 원형 다이얼이 세 개 있고, 각각 0부터 9까지 눈금이 있습니다. [[1]] 버튼과 방향 패드 위쪽, 오른쪽, 아래쪽을 눌러 다이얼 조작, [[2]] 버튼으로 물러나기.
+Nothing here can be read yet. Escape opens the pause menu.	아직 읽을 수 있는 것이 없습니다. [[1]] 버튼으로 일시정지 메뉴를 엽니다.
+No path selected. Use left and right arrows to browse paths.	선택된 경로가 없습니다. 방향 패드 왼쪽과 오른쪽으로 경로를 탐색하세요.
+You are in an encounter. Press H for help.	전투 중입니다. [[1]] 버튼으로 도움말.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	내 덱에 남은 카드가 없습니다. [[1]] 버튼으로 다람쥐 덱에서 뽑으세요.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	다람쥐 덱에 남은 카드가 없습니다. [[1]] 버튼으로 내 덱에서 뽑으세요.
+Left and right arrows browse. Enter selects the card. 	방향 패드 왼쪽과 오른쪽으로 탐색, [[1]] 버튼으로 카드 선택. 
+Space repeats the current option. 	[[1]] 버튼으로 현재 선택지 반복. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]] 버튼으로 룰북 열기. [[2]] 버튼으로 덱 보기. 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	메뉴 탐색. 방향 패드로 선택지 탐색, [[1]] 버튼으로 현재 선택지 선택. 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]] 버튼 또는 [[2]] 버튼으로 뒤로 가기, [[3]] 버튼으로 현재 선택지 반복. 
+Shift R looks up the last ability you heard. 	[[1]] 버튼으로 마지막으로 들은 능력을 찾아봅니다. 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	대상을 선택하세요. 선택 가능한 대상 {0}개. {1} 방향 패드로 탐색, [[1]] 버튼으로 선택.
+Choose a target. {0} available. Arrows to browse, Enter to select.	대상을 선택하세요. 선택 가능: {0}. 방향 패드로 탐색, [[1]] 버튼으로 선택.
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 방향 패드로 이 아이템을 쓸 수 있는 카드 사이를 이동합니다. [[1]] 버튼으로 선택합니다. 아이템은 한 번 사용하면 취소할 수 없습니다.
+Space describes what is in front of you. Space repeats where you are. 	[[1]] 버튼으로 앞에 있는 것을 설명합니다. [[2]] 버튼으로 현재 위치를 반복합니다. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	지도 조작. 방향 패드: 앞의 선택지 탐색. [[1]] 버튼: 이동. [[2]] 버튼: 현재 선택지 전체 듣기. [[3]] 버튼: 앞의 경로 읽기. [[4]] 버튼: 덱 보기. [[5]] 버튼: 현재 아이템 듣기. [[6]] 버튼: 룰북 열기. [[7]] 버튼: 테이블에서 일어서기. [[8]] 버튼: 도움말.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	전투 조작. 방향 패드 왼쪽과 오른쪽으로 손패 탐색. [[1]] 버튼, 손패의 다음 낼 수 있는 카드. [[2]] 버튼, 카드 내기. [[3]] 버튼, 종을 울려 턴 종료. [[4]] 버튼, 규칙서 열기. [[5]] 버튼, 최근 들은 능력 찾아보기. [[6]] 버튼, 손패 읽기. [[7]] 버튼, 상대 대기열 읽기. [[8]] 버튼, 상대 보드 읽기. [[9]] 버튼, 내 보드 읽기. [[10]] 버튼, 보드 전체와 대기열 읽기. [[11]] 버튼, 저울, 뼈, 기타 게임 정보 읽기. [[12]] 버튼, 여러 번 눌러 아이템 순환, [[13]] 버튼으로 사용. 아이템을 쓰려면 먼저 카드를 뽑아야 합니다. 뽑기 단계 중: [[14]] 버튼, 내 덱에서 뽑기, 또는 [[15]] 버튼, 다람쥐 덱에서 뽑기. [[16]] 버튼, 도움말.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	카드 배치 중. 방향 패드 왼쪽과 오른쪽: 칸 이동. [[1]] 버튼: 확인. 보드 읽기 버튼도 계속 쓸 수 있습니다. [[2]] 버튼: 도움말.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	희생양 선택 중. 방향 패드 왼쪽과 오른쪽: 내 보드 이동. [[1]] 버튼: 현재 카드 희생. 희생은 한 번 시작하면 취소할 수 없습니다. 보드 읽기 버튼도 계속 쓸 수 있습니다. [[2]] 버튼: 도움말.
+No card selected. Use left and right arrows to browse your hand first.	선택된 카드가 없습니다. 먼저 방향 패드 왼쪽과 오른쪽으로 패를 탐색하세요.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}의 비용은 피 {1}. 희생할 카드 {2}장을 선택하세요. 방향 패드 왼쪽과 오른쪽으로 이동, [[1]] 버튼으로 확인. 희생은 한 번 시작하면 취소할 수 없습니다.
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}{1} 카드를 낼 칸을 선택하세요. 방향 패드 왼쪽과 오른쪽으로 이동, [[1]] 버튼으로 확인.{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	칸을 선택하세요. 방향 패드 왼쪽과 오른쪽으로 이동, [[1]] 버튼으로 확인.{0}
+Shift plus R looks up the last ability you heard.	[[1]] 버튼으로 마지막으로 들은 능력을 찾아봅니다.
+Left and right arrows to browse, Enter to turn a card over, 	방향 패드 왼쪽과 오른쪽으로 둘러보기, [[1]] 버튼으로 카드 뒤집기, 
+Space to repeat, H for help.	[[1]] 버튼으로 반복, [[2]] 버튼으로 도움말.
+Shift Up displays your deck, Space to repeat, H for help.	[[1]] 버튼으로 덱 보기, [[2]] 버튼으로 반복, [[3]] 버튼으로 도움말.
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	덱 시험. 레쉬가 세 가지 조건 중 하나를 고르게 합니다. 현재 덱에서 가장 참일 가능성이 높은 것을 고르세요. 그러면 레쉬가 덱에서 무작위 카드 세 장을 공개합니다. 성공하면 보상을 받습니다. 방향 패드 왼쪽과 오른쪽으로 탐색, [[1]] 버튼으로 카드 뒤집기, [[2]] 버튼으로 덱 보기, [[3]] 버튼으로 반복, [[4]] 버튼으로 도움말.
+{0}. Arrow keys to browse.	{0}. 방향 패드로 둘러보기.
+ Press Enter to add it to your deck.	 [[1]] 버튼을 눌러 덱에 추가하세요.
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	방향 패드 왼쪽과 오른쪽으로 둘러보기, [[1]] 버튼으로 반복, [[2]] 버튼으로 이빨, [[3]] 버튼으로 아이템, [[4]] 버튼으로 도움말, [[5]] 버튼으로 돌아가기: {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	방향 패드 왼쪽과 오른쪽으로 카드를 둘러봅니다. [[1]] 버튼은 현재 카드를 다시 읽습니다. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]] 버튼은 모은 이빨 수를 읽습니다. [[2]] 버튼은 빈 칸을 포함해 아이템 칸 세 개를 모두 읽습니다. 
+R opens the rulebook. 	[[1]] 버튼은 룰북을 엽니다. 
+Backspace closes your deck and returns you to {0}.	[[1]] 버튼으로 덱을 닫고 돌아갑니다: {0}.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	내 덱. 손에 넣을 카드를 고르세요. 방향 패드로 둘러보고 [[1]] 버튼으로 선택. {0}.
+{0}. G, B and A to read the boardstate.	{0}. [[1]] 버튼, [[2]] 버튼, [[3]] 버튼으로 보드 상태를 읽습니다.
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	배낭. 방향 패드로 둘러보기, [[1]] 버튼으로 목각 선택으로 돌아가기.
+Backpack. Arrows browse, Enter chooses a totem combination.	배낭. 방향 패드로 둘러보기, [[1]] 버튼으로 토템 조합 선택.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	배낭이 비었습니다. [[1]] 버튼을 눌러 목각 선택으로 돌아가세요.
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	뼈의 왕의 제단. 방향 패드로 둘러보기, [[1]] 버튼으로 확인.
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 다른 것을 살 이빨이 부족합니다. [[1]] 버튼으로 덫사냥꾼을 떠나세요.
+Pair of {0} chosen to fuse together. Enter to rechoose.	합칠 {0} 한 쌍을 선택했습니다. 다시 고르려면 [[1]] 버튼.
+{0} chosen as {1}. Enter to rechoose.	{0}, 선택: {1}. 다시 고르려면 [[1]] 버튼.
+{0} card placed on the altar. Enter to take it.	{0} 카드가 제단에 놓였습니다. [[1]] 버튼으로 가져가기.
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	방향 패드 왼쪽과 오른쪽으로 둘러보기, [[1]] 버튼으로 선택, [[2]] 버튼으로 반복, [[3]] 버튼으로 도움말.
+No option selected. Use left and right arrows to browse.	선택된 선택지가 없습니다. 방향 패드 왼쪽과 오른쪽으로 둘러보세요.
+Arrows browse, Enter chooses, Space repeats your position.	방향 패드로 둘러보기, [[1]] 버튼으로 선택, [[2]] 버튼으로 현재 위치 반복.
+Shift Up displays your deck.	[[1]] 버튼으로 덱 보기.
+A opens your backpack, Shift Up displays your deck. 	[[1]] 버튼으로 배낭 열기, [[2]] 버튼으로 덱 보기. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]] 버튼으로 이빨 세기, [[2]] 버튼으로 언제든 덫사냥꾼 떠나기. 
+I cycles through your current items. R opens the rulebook.	[[1]] 버튼으로 현재 아이템 순환. [[2]] 버튼으로 룰북 열기.
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	방향 패드로 둘러보기, [[1]] 버튼으로 선택, [[2]] 버튼으로 언제든 덫사냥꾼 떠나기, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]] 버튼으로 현재 위치 반복, [[2]] 버튼으로 이빨 세기, [[3]] 버튼으로 룰북 열기.
+R opens the rulebook.	[[1]] 버튼으로 룰북 열기.
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]] 버튼으로 토템 가져가기. [[2]] 버튼으로 배낭으로 돌아가 다시 선택.
+Enter to take the totem with you.	[[1]] 버튼으로 토템 가져가기.
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	커다란 쥐가 탁자 위 배낭 뒤에서 뛰어나옵니다. {0} 카드를 건넵니다. 방향 패드로 탐색.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} 방향 패드 왼쪽과 오른쪽으로 페이지 넘기기. [[1]] 버튼으로 책 닫기.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	룰북. 방향 패드 왼쪽과 오른쪽으로 페이지 넘기기. [[1]] 버튼으로 현재 페이지 반복. [[2]] 버튼나 [[3]] 버튼으로 책 닫기.
+{0} is offering to surrender, press Shift and E to accept. 	{0}: 항복을 제안합니다. 받아들이려면 [[1]] 버튼을 누르세요. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	레쉬가 올리브 가지를 내밀며 전투를 포기합니다. 항복을 받아들이려면 [[1]] 버튼을 누르세요.
+Backspace to return to the main menu. Space to repeat.	[[1]] 버튼으로 주 메뉴로 돌아가기. [[2]] 버튼으로 반복.
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	승리 화면 조작. [[1]] 버튼으로 화면 반복. [[2]] 버튼으로 주 메뉴로 돌아가기.
+Enter to continue. Space to repeat.	[[1]] 버튼으로 계속. [[2]] 버튼으로 반복.
+Victory Screen controls. Space repeats the screen. Enter continues.	승리 화면 조작. [[1]] 버튼으로 화면 반복. [[2]] 버튼으로 계속.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	런 종료 조작. [[1]] 버튼으로 화면 반복. [[2]] 버튼으로 같은 시작 덱과 활성화된 도전을 사용해 새 런 시작. [[3]] 버튼으로 주 메뉴로 돌아가기.
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	죽음 카드: 고를 것은 {0}. {1}. 방향 패드로 둘러보기, [[1]] 버튼으로 선택.
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	모드 설정. 방향 패드로 탐색, [[1]] 버튼으로 열기 또는 변경, [[2]] 버튼으로 한 단계 뒤로, [[3]] 버튼으로 닫기.
+Help list, F1.	도움말 목록, [[1]] 버튼.
+Mod Settings, Control plus M.	모드 설정, [[1]] 버튼.
+Review history, older, Control plus Down arrow.	기록 검토, 이전, [[1]] 버튼.
+Review history, newer, Control plus Up arrow.	기록 검토, 이후, [[1]] 버튼.
+Next buffer item, Control plus Up arrow.	다음 버퍼 항목, [[1]] 버튼.
+Previous buffer item, Control plus Down arrow.	이전 버퍼 항목, [[1]] 버튼.
+Next buffer, Control plus Right arrow.	다음 버퍼, [[1]] 버튼.
+Previous buffer, Control plus Left arrow.	이전 버퍼, [[1]] 버튼.
+Review history as a list, Y.	기록을 목록으로 검토, [[1]] 버튼.
+Silence speech, tap Control.	음성 멈추기, [[1]] 버튼.
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, 덱에서 패에 추가할 카드를 고르세요. 방향 패드로 탐색, [[1]] 버튼으로 확인.

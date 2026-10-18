@@ -385,6 +385,24 @@ namespace IKMA
 
             try
             {
+                // Session 63, seen on Zamar's Deck: under Proton the NVDA check
+                // answers "running" when no NVDA exists, IKMA pinned NVDA, and
+                // every line went nowhere. No Windows screen reader runs inside
+                // Proton, so there the screen-reader checks are skipped and
+                // SAPI5 is pinned straight away, as the only engine that can be.
+                if (UnderWine())
+                {
+                    int sapi = IndexOfEngine("SAPI5");
+                    if (sapi >= 0)
+                    {
+                        LogOnce("IKMA SPEECH: running under Proton/Wine - screen-reader checks skipped " +
+                                "(no Windows screen reader runs there, and the NVDA check answers falsely).");
+                        Pin(sapi, "SAPI5", 0);
+                        return;
+                    }
+                }
+
+
                 // Only engines that would be an UPGRADE on the current pin get
                 // probed, so a session already on NVDA never runs a probe again
                 // and a session on SAPI5 pays three cheap checks a minute.
@@ -427,6 +445,15 @@ namespace IKMA
 
         private const int UNRANKED = int.MaxValue;
         private static int _pinnedRank = UNRANKED;
+
+        // 0 = not asked yet, 1 = Wine, -1 = Windows. Asked once.
+        private static int _underWine;
+
+        private static bool UnderWine()
+        {
+            if (_underWine == 0) _underWine = SpeechBackends.RunningUnderWine(out _) ? 1 : -1;
+            return _underWine == 1;
+        }
 
         private static void Pin(int index, string name, int rank)
         {

@@ -321,6 +321,7 @@ namespace IKMA
         {
             Plugin.Log?.LogInfo("IKMA BOARDDIFF: new battle — snapshot cleared; the first board is stored, not announced.");
             Reset();
+            RunEndProbe.LostAt = -999f;   // Session 64: a new battle is not lost
         }
 
         internal static void Reset()

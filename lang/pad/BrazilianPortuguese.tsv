@@ -1,0 +1,131 @@
+﻿# lang/pad/BrazilianPortuguese.tsv - controller versions (English line<TAB>BrazilianPortuguese with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Pressione [[1]] para começar uma nova partida com o mesmo baralho inicial e os mesmos desafios ativados. [[2]] para voltar ao menu principal. [[3]] para repetir.
+In the center of the screen is a small play button. Press Enter...	No centro da tela há um pequeno botão de jogar. Pressione [[1]]...
+Press H for what still works.	Pressione [[1]] para saber o que ainda funciona.
+Space describes what is directly in front of you. 	[[1]] descreve o que está bem na sua frente. 
+Conversation in progress, press Space to proceed.	Conversa em andamento, pressione [[1]] para continuar.
+Your deck is empty, press S to draw from the Squirrel deck.	Seu baralho está vazio, pressione [[1]] para comprar do baralho de Esquilos.
+The Squirrel deck is empty, press D to draw from your deck.	O baralho de Esquilos está vazio, pressione [[1]] para comprar do seu baralho.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Fase de compra. Pressione [[1]] para comprar do seu baralho, ou [[2]] para comprar do baralho de Esquilos.
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Direcional para navegar, [[1]] para selecionar, [[2]] para voltar à sua mão.
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Menu de itens. O direcional para esquerda e direita percorre os itens que você carrega. [[1]] usa o item atual. [[2]] lê os três espaços, incluindo os vazios. [[3]] volta para a sua mão. [[4]] mais direcional para cima, direita ou baixo usa na hora o item daquele espaço.
+Arrow keys to browse, Enter to trade. Press H for help.	Direcional para navegar, [[1]] para trocar. Pressione [[2]] para ajuda.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]] salva um arquivo de registro na sua área de trabalho para relatar um bug, e [[2]] percorre o histórico do registro. Esses comandos funcionam aqui e em qualquer momento do jogo.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]] salva um arquivo de registro na sua área de trabalho para relatar um bug. Este comando funciona aqui e em qualquer momento do jogo.
+Arrow keys browse, Enter trades. 	Direcional navega, [[1]] troca. 
+Arrows browse, Enter chooses, Space repeats your position. 	Direcional navega, [[1]] escolhe, [[2]] repete sua posição. 
+Opening screen. Enter presses the play button. Space repeats the description.	Tela de abertura. [[1]] pressiona o botão de jogar. [[2]] repete a descrição.
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Tela de título do Inscryption. Direcional para navegar, [[1]] para confirmar.
+Inscryption title screen. Arrow keys browse the cards. 	Tela de título do Inscryption. O direcional percorre as cartas. 
+Enter chooses the one you are on. Space repeats it. 	[[1]] escolhe a carta atual. [[2]] a repete. 
+Backspace to go back.	[[1]] para voltar.
+Arrows to navigate	Direcional para navegar
+, Backspace to go back.	, [[1]] para voltar.
+Arrows to navigate, Enter to confirm	Direcional para navegar, [[1]] para confirmar
+Enter to confirm	[[1]] para confirmar
+Unnamed setting. Press Enter to adjust.	Configuração sem nome. Pressione [[1]] para ajustar.
+{0} Press Enter to adjust.	{0} Pressione [[1]] para ajustar.
+{0}.{1} Press H for help.	{0}.{1} Pressione [[1]] para ajuda.
+Arrows to adjust. Backspace to return.	Direcional para ajustar. [[1]] para voltar.
+Options. 1, 2, and 3 switch pages. 	Opções. [[1]] vai para a próxima página à direita, [[2]] vai para a próxima página à esquerda. 
+Arrows browse the settings, Enter selects a setting to adjust, 	O direcional percorre as configurações, [[1]] seleciona uma para ajustar, 
+Backspace returns. 	[[1]] volta. 
+Pause menu. Arrows browse the options, Enter chooses, 	Menu de pausa. O direcional percorre as opções, [[1]] escolhe, 
+Space repeats your position and the run information, 	[[1]] repete sua posição e as informações da partida, 
+Backspace or Escape closes the menu.	[[1]] ou [[2]] fecha o menu.
+Standing up from the table. Press H for help.	Levantando da mesa. Pressione [[1]] para ajuda.
+You step back. Press Backspace again to return to the table.	Você dá um passo para trás. Pressione [[1]] de novo para voltar à mesa.
+Backspace steps back from your focused object. 	[[1]] se afasta do objeto em foco. 
+Backspace again returns you to the game table and opens the map.	[[1]] de novo volta à mesa de jogo e abre o mapa.
+1, 2 and 3 examine what is in front of you. 	[[1]] mais direcional para cima, direita e baixo examinam o que está na sua frente. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	Controles de pé. Direcional para cima dá um passo à frente, direcional para baixo dá um passo para trás. 
+Left and right arrows step to the side. 	Direcional para esquerda e direita dá um passo para o lado. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]] gira você 90 graus no sentido anti-horário, [[2]] gira 90 graus no sentido horário. 
+Backspace returns you to the game table and opens the map.	[[1]] volta à mesa de jogo e abre o mapa.
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Mapa. {0}. {1} à frente. Direcional para navegar, [[1]] para detalhes, [[2]] para viajar, [[3]] para ver o baralho.
+Map. Awaiting input. Press Space for your position, H for help.	Mapa. Aguardando ação. Pressione [[1]] para sua posição, [[2]] para ajuda.
+Awaiting path selection. H, for help.	Aguardando escolha de caminho. [[1]], para ajuda.
+Left and right arrows to browse, 	Direcional para esquerda e direita para navegar, 
+Enter to travel, Shift+Up to display deck.	[[1]] para viajar, [[2]] para ver o baralho.
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	Você está olhando para o cofre. Ele tem três grandes discos circulares, cada um com marcações de 0 a 9. Pressione [[1]] mais direcional para cima, direita e baixo para girar os discos, [[2]] para se afastar.
+Nothing here can be read yet. Escape opens the pause menu.	Nada aqui pode ser lido ainda. [[1]] abre o menu de pausa.
+No path selected. Use left and right arrows to browse paths.	Nenhum caminho selecionado. Use o direcional para esquerda e direita para percorrer os caminhos.
+You are in an encounter. Press H for help.	Você está em um encontro. Pressione [[1]] para ajuda.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	Não há mais cartas no seu baralho. Pressione [[1]] para comprar do baralho de Esquilos.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	Não há mais cartas no baralho de Esquilos. Pressione [[1]] para comprar do seu baralho.
+Left and right arrows browse. Enter selects the card. 	Direcional para esquerda e direita navega. [[1]] seleciona a carta. 
+Space repeats the current option. 	[[1]] repete a opção atual. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]] abre o manual de regras. [[2]] mostra seu baralho. 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Navegação do menu. O direcional percorre as opções. [[1]] escolhe a opção atual. 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]] ou [[2]] volta. [[3]] repete a opção atual. 
+Shift R looks up the last ability you heard. 	[[1]] consulta a última habilidade que você ouviu. 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Escolha um alvo. Alvos disponíveis: {0}. {1} Direcional para navegar, [[1]] para selecionar.
+Choose a target. {0} available. Arrows to browse, Enter to select.	Escolha um alvo. {0} disponíveis. Direcional para navegar, [[1]] para selecionar.
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} O direcional percorre as cartas que este item pode afetar. [[1]] seleciona. Um item não pode ser cancelado depois de usado.
+Space describes what is in front of you. Space repeats where you are. 	[[1]] descreve o que está na sua frente. [[2]] repete onde você está. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Controles do mapa. Direcional, percorrer as escolhas à frente. [[1]], viajar. [[2]], listar todas as escolhas atuais. [[3]], ler os caminhos à frente. [[4]], ver seu baralho. [[5]], ouvir seus itens atuais. [[6]], abrir o manual de regras. [[7]], levantar da mesa. [[8]], ajuda.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Controles do confronto. Direcional para esquerda e direita para navegar pela mão. [[1]], próxima carta jogável na sua mão. [[2]], jogar a carta. [[3]], tocar o sino para encerrar o turno. [[4]], abrir o livro de regras. [[5]] para consultar a última habilidade ouvida. [[6]], ler sua mão. [[7]], ler a fila adversária. [[8]], ler o tabuleiro adversário. [[9]], ler seu tabuleiro. [[10]], ler todo o tabuleiro e a fila. [[11]], ler a balança, os ossos e outras informações do jogo. [[12]], pressione várias vezes para alternar entre seus itens, [[13]] para usar. Você precisa comprar uma carta antes de usar itens. Durante sua fase de compra: [[14]], comprar do seu baralho, ou [[15]], comprar do baralho de Esquilos. [[16]], para ajuda.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Posicionando uma carta. Direcional para esquerda e direita percorre os espaços. [[1]], confirmar. Os botões de leitura do tabuleiro continuam funcionando. [[2]], ajuda.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Escolhendo sacrifícios. Direcional para esquerda e direita percorre seu tabuleiro. [[1]], sacrificar a carta atual. Um sacrifício não pode ser cancelado depois de começar. Os botões de leitura do tabuleiro continuam funcionando. [[2]], ajuda.
+No card selected. Use left and right arrows to browse your hand first.	Nenhuma carta selecionada. Use o direcional para esquerda e direita para percorrer sua mão primeiro.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} custa {1} de sangue. Escolha {2} {3}. Direcional para esquerda e direita para navegar, [[1]] para confirmar. Um sacrifício não pode ser cancelado depois de começar.
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Escolha um espaço para jogar {1}. Direcional para esquerda e direita para navegar, [[1]] para confirmar.{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Escolha um espaço. Direcional para esquerda e direita para navegar, [[1]] para confirmar.{0}
+Shift plus R looks up the last ability you heard.	[[1]] consulta a última habilidade que você ouviu.
+Left and right arrows to browse, Enter to turn a card over, 	Direcional para esquerda e direita para navegar, [[1]] para virar uma carta, 
+Space to repeat, H for help.	[[1]] para repetir, [[2]] para ajuda.
+Shift Up displays your deck, Space to repeat, H for help.	[[1]] mostra seu baralho, [[2]] para repetir, [[3]] para ajuda.
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Teste do baralho. Leshy oferece três condições para você escolher. Escolha a que tem mais chance de ser verdadeira para o seu baralho atual. Depois ele revelará três cartas aleatórias do seu baralho. Se você acertar, receberá uma recompensa. Direcional para esquerda e direita para navegar, [[1]] para virar uma carta, [[2]] mostra seu baralho, [[3]] para repetir, [[4]] para ajuda.
+{0}. Arrow keys to browse.	{0}. Direcional para navegar.
+ Press Enter to add it to your deck.	 Pressione [[1]] para adicioná-la ao seu baralho.
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	Direcional para esquerda e direita para navegar, [[1]] para repetir, [[2]] para dentes, [[3]] para itens, [[4]] para ajuda, [[5]] para voltar para {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	Direcional para esquerda e direita percorre as cartas. [[1]] repete a carta atual. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]] informa quantos dentes você coletou. [[2]] lê os três espaços de item, incluindo os vazios. 
+R opens the rulebook. 	[[1]] abre o manual de regras. 
+Backspace closes your deck and returns you to {0}.	[[1]] fecha seu baralho e volta para {0}.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Seu baralho. Escolha uma carta para adicionar à sua mão. Direcional para navegar, [[1]] escolhe. {0}.
+{0}. G, B and A to read the boardstate.	{0}. [[1]], [[2]] e [[3]] leem o estado do tabuleiro.
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Mochila. Direcional para navegar, [[1]] volta para a seleção de esculturas.
+Backpack. Arrows browse, Enter chooses a totem combination.	Mochila. Direcional para navegar, [[1]] escolhe uma combinação de totem.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	Sua mochila está vazia. Pressione [[1]] para voltar à seleção de esculturas de madeira.
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Altar do Lorde Ossário. Direcional para navegar, [[1]] para confirmar.
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Não restam dentes suficientes para outra compra. [[1]] para deixar o Caçador.
+Pair of {0} chosen to fuse together. Enter to rechoose.	Par de {0} escolhido para a fusão. [[1]] para escolher de novo.
+{0} chosen as {1}. Enter to rechoose.	Escolha: {0} como {1}. [[1]] para escolher de novo.
+{0} card placed on the altar. Enter to take it.	Carta {0} colocada no altar. [[1]] para pegar.
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Direcional para esquerda e direita para navegar, [[1]] para escolher, [[2]] para repetir, [[3]] para ajuda.
+No option selected. Use left and right arrows to browse.	Nenhuma opção selecionada. Use o direcional para esquerda e direita para navegar.
+Arrows browse, Enter chooses, Space repeats your position.	Direcional para navegar, [[1]] escolhe, [[2]] repete sua posição.
+Shift Up displays your deck.	[[1]] mostra seu baralho.
+A opens your backpack, Shift Up displays your deck. 	[[1]] abre sua mochila, [[2]] mostra seu baralho. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]] conta seus dentes, [[2]] sai do Caçador a qualquer momento. 
+I cycles through your current items. R opens the rulebook.	[[1]] percorre seus itens atuais. [[2]] abre o manual de regras.
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Direcional para navegar, [[1]] escolhe, [[2]] sai do Caçador a qualquer momento, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]] repete sua posição, [[2]] conta seus dentes, [[3]] abre o manual de regras.
+R opens the rulebook.	[[1]] abre o manual de regras.
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]] para levar o totem com você. [[2]] para voltar à mochila e escolher de novo.
+Enter to take the totem with you.	[[1]] para levar o totem com você.
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	Um rato grande sai correndo de trás da mochila sobre a mesa. Ele oferece uma carta {0}. Direcional para navegar.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Direcional para esquerda e direita vira as páginas. [[1]] fecha o livro.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Manual de regras. Direcional para esquerda e direita vira as páginas. [[1]] repete a página atual. [[2]] ou [[3]] fecha o livro.
+{0} is offering to surrender, press Shift and E to accept. 	{0} está oferecendo rendição, pressione [[1]] para aceitar. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy está oferecendo um ramo de oliveira: ele concede a batalha. Pressione [[1]] para aceitar a rendição dele.
+Backspace to return to the main menu. Space to repeat.	[[1]] para voltar ao menu principal. [[2]] para repetir.
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	Controles da tela de vitória. [[1]] repete a tela. [[2]] volta ao menu principal.
+Enter to continue. Space to repeat.	[[1]] para continuar. [[2]] para repetir.
+Victory Screen controls. Space repeats the screen. Enter continues.	Controles da tela de vitória. [[1]] repete a tela. [[2]] continua.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Controles do fim da partida. [[1]] repete a tela. [[2]] inicia uma nova partida com o mesmo baralho inicial e os mesmos desafios ativados. [[3]] volta ao menu principal.
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Carta do ocaso: escolha {0}. {1}. Direcional para navegar, [[1]] para escolher.
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Configurações do mod. Direcional para navegar, [[1]] para abrir ou alterar, [[2]] para voltar um nível, [[3]] para fechar.
+Help list, F1.	Lista de ajuda, [[1]].
+Mod Settings, Control plus M.	Configurações do mod, [[1]].
+Review history, older, Control plus Down arrow.	Rever histórico, mais antigo, [[1]].
+Review history, newer, Control plus Up arrow.	Rever histórico, mais recente, [[1]].
+Next buffer item, Control plus Up arrow.	Próximo item do buffer, [[1]].
+Previous buffer item, Control plus Down arrow.	Item anterior do buffer, [[1]].
+Next buffer, Control plus Right arrow.	Próximo buffer, [[1]].
+Previous buffer, Control plus Left arrow.	Buffer anterior, [[1]].
+Review history as a list, Y.	Rever histórico como lista, [[1]].
+Silence speech, tap Control.	Silenciar voz, [[1]].
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, escolha uma carta do seu baralho para adicionar à sua mão. Direcional para navegar, [[1]] para confirmar.

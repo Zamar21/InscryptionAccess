@@ -7,7 +7,7 @@ Please note that this document is long and intended to be all-inclusive. I recom
 
 ## Keys that work almost everywhere
 
-- H: help for the screen you are on. It lists that screen's keys.
+- H: the help list for the screen you are on, one key per line, the same as F1. Under the Original control template, H reads the whole help at once instead.
 - Space: repeats where you are, or describes what is in front of you.
 - Escape: opens or closes the pause menu. On a menu screen it goes back.
 - Shift+L: saves a log file to your desktop for a bug report. Works at any point.
@@ -16,8 +16,36 @@ Please note that this document is long and intended to be all-inclusive. I recom
 - F1: the help list. The same help as H, one line at a time: Up and Down move, Home and End jump, Backspace, Escape or F1 closes it.
 - Control plus M: Mod Settings. Events lists every kind of announcement IKMA makes on its own; each can be switched off, or kept only in the review history. Up and Down move, Enter opens or switches, Backspace or Escape goes back.
 - Tap Control: silences speech, the line being read and everything waiting behind it.
-- Control plus Up and Control plus Down: step through the review history, newer and older.
+- Control plus Up and Control plus Down: next and previous line of the current buffer. See Buffers, below.
+- Control plus Right and Control plus Left: next and previous buffer.
+- Control plus S, B, C, W, D and T: announce the scales, bones, candles, woodcarving, deck counts and teeth. Outside a battle, the battle ones say "Not in an encounter."
+- Home and End: jump to the first or last item of any list you browse with the arrow keys.
 - Y: the review history as a list.
+
+## Lists
+
+Every list you browse with the arrow keys stops at its first and last item. It does not wrap around, and nothing is said when you press past the end. Home jumps to the first item and End to the last.
+
+## Buffers
+
+A buffer is a short list of lines you can step through without moving from where you are. There are two, in this order:
+
+- Card: whatever you last had read to you, such as a card, a menu option or a help line. Each sentence is its own line, then what each ability or item named in it does.
+- History: everything IKMA has said, newest first.
+
+- Control plus Up: the next line of the current buffer. Control plus Down: the previous line. At either end the end line is read again.
+- Control plus Right and Control plus Left: switch to the next or previous buffer. Its name is said, then its line.
+
+On the map these keys are the map preview instead. See The map.
+
+## Control template
+
+Mod Settings (Control plus M) > Control template. It is also in IKMA Manager's settings.
+
+- Default: the controls in this document.
+- Original: the earlier controls. Control plus Up and Control plus Down step through the review history, newest first, with no buffers. H reads the whole help at once; F1 still opens the help list. On the map, Control plus the arrows step through the history, and there is no map preview.
+
+In both templates, lists stop at their ends, Home and End jump, and the Control plus letter reads work.
 
 ## Conversations
 
@@ -40,6 +68,17 @@ While a character is talking, the game waits for you.
 - H: map help.
 
 The number keys do nothing on the map.
+
+### Map preview
+
+Look further down the paths without travelling. The preview starts on the path you are on, and it never changes the path you have picked: Enter still travels where the arrows left you.
+
+- Control plus Up: one step further along the path. Where the path splits, "choice" is said first.
+- Control plus Down: one step back.
+- Control plus Left and Control plus Right: the other stops at the same split.
+- Control plus Space: route summary from where the preview is. For each kind of stop, the fewest and the most that any one route passes through.
+
+The preview sees four rows ahead, as far as the screen shows. Past that it says "Path continues out of sight." Under the Original control template there is no map preview.
 
 ## Standing in the cabin
 

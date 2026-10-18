@@ -11,16 +11,16 @@ At any time during gameplay press Shift and the L key to send a log file to your
 
 ## Speech and braille
 
-- Braille output has not been confirmed on a real display. Each new line replaces the one before it, so in fast battle text the display shows the newest line. The review history (Control plus Up and Control plus Down) is how to step back.
+- Braille output has not been confirmed on a real display. Each new line replaces the one before it, so in fast battle text the display shows the newest line. The History buffer (Control plus Right to reach it, then Control plus Up and Control plus Down) is how to step back.
 - Speech timing under NVDA is estimated from line length, not measured. If a line seems cut off or a pause seems too long, a bug report with the log helps.
 - Only SAPI and NVDA have been tested currently.
 
 ## Language
 
-- English is currently the only supported language. The Language setting says "Feature coming soon."
+- IKMA speaks English and French. The French lines were translated by Claude and have not yet been checked by a French speaker. Every other game language gets English from IKMA.
 
 ## Not in this release
 
-- The story acts, languages other than English, and more! 
+- The story acts, languages other than English and French, and more! 
 
 <!-- KNOWN_ISSUES.md -->

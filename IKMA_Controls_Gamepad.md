@@ -9,7 +9,7 @@ Button names here are Xbox. PlayStation and Switch pads use their own names for 
 
 ## Keys that work almost everywhere
 
-- View: help for the screen you are on. It lists that screen's keys.
+- View: the help list for the screen you are on, one button per line, the same as LB plus View. Under the Original control template, View reads the whole help at once instead.
 - X: repeats where you are, or describes what is in front of you.
 - Menu: opens or closes the pause menu. On a menu screen it goes back.
 - LB plus RB plus View: saves a log file to your desktop for a bug report. Works at any point.
@@ -19,7 +19,32 @@ Button names here are Xbox. PlayStation and Switch pads use their own names for 
 - LB plus Menu: Mod Settings. Events lists every kind of announcement IKMA makes on its own; each can be switched off, or kept only in the review history. D-pad Up and Down move, A opens or switches, B goes back.
 - R3: silences speech, the line being read and everything waiting behind it.
 - LB plus R3: the review history as a list.
-- LB plus RB plus D-pad Up and Down: step through the review history, newer and older.
+- LB plus RB plus D-pad Up and Down: next and previous line of the current buffer. See Buffers, below.
+- LB plus RB plus D-pad Right and Left: next and previous buffer.
+- Keyboard only for now: Home and End, the Control plus letter reads, and the map's route summary (Control plus Space).
+
+## Lists
+
+Every list you browse with the D-pad stops at its first and last item. It does not wrap around, and nothing is said when you press past the end.
+
+## Buffers
+
+A buffer is a short list of lines you can step through without moving from where you are. There are two, in this order:
+
+- Card: whatever you last had read to you, such as a card, a menu option or a help line. Each sentence is its own line, then what each ability or item named in it does.
+- History: everything IKMA has said, newest first.
+
+- Hold LB plus RB, D-pad Up: the next line of the current buffer. D-pad Down: the previous line. At either end the end line is read again.
+- Hold LB plus RB, D-pad Right and Left: switch to the next or previous buffer. Its name is said, then its line.
+
+On the map these buttons are the map preview instead. See The map.
+
+## Control template
+
+Mod Settings (LB plus Menu) > Control template. It is also in IKMA Manager's settings.
+
+- Default: the controls in this document.
+- Original: the earlier controls. LB plus RB plus D-pad Up and Down step through the review history, newest first, with no buffers. View reads the whole help at once; LB plus View still opens the help list. On the map, LB plus RB plus the D-pad step through the history, and there is no map preview.
 
 ## Conversations
 
@@ -42,6 +67,16 @@ While a character is talking, the game waits for you.
 - View: map help.
 
 RB plus the D-pad does nothing on the map.
+
+### Map preview
+
+Look further down the paths without travelling. The preview starts on the path you are on, and it never changes the path you have picked: A still travels where the D-pad left you.
+
+- Hold LB plus RB, D-pad Up: one step further along the path. Where the path splits, "choice" is said first.
+- Hold LB plus RB, D-pad Down: one step back.
+- Hold LB plus RB, D-pad Left and Right: the other stops at the same split.
+
+The preview sees four rows ahead, as far as the screen shows. Past that it says "Path continues out of sight." Under the Original control template there is no map preview.
 
 ## Standing in the cabin
 

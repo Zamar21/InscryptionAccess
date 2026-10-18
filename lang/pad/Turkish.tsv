@@ -1,0 +1,131 @@
+﻿# lang/pad/Turkish.tsv - controller versions (English line<TAB>Turkish with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Aynı Başlangıç Destesi ve etkin Mücadelelerle yeni bir tur başlatmak için [[1]] düğmesine bas. Ana menüye dönmek için [[2]]. Tekrar dinlemek için [[3]].
+In the center of the screen is a small play button. Press Enter...	Ekranın ortasında küçük bir oynat düğmesi var. [[1]] düğmesine bas...
+Press H for what still works.	[[1]]âlâ neyin çalıştığını öğrenmek için H tuşuna bas.
+Space describes what is directly in front of you. 	[[1]] düğmesi tam önündekini tarif eder. 
+Conversation in progress, press Space to proceed.	Konuşma sürüyor, devam etmek için [[1]] düğmesine bas.
+Your deck is empty, press S to draw from the Squirrel deck.	Desten boş, Sincap destesinden çekmek için [[1]] düğmesine bas.
+The Squirrel deck is empty, press D to draw from your deck.	Sincap destesi boş, destenden çekmek için [[1]] düğmesine bas.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Kart çekme aşaması. Destenden çekmek için [[1]], Sincap destesinden çekmek için [[2]] düğmesine bas.
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Yön tuşlarıyla gez, seçmek için [[1]], eline dönmek için [[2]].
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Eşya menüsü. Yön tuşlarının solu ve sağı taşıdığın eşyalar arasında gezinir. [[1]], üzerinde olduğun eşyayı kullanır. [[2]], boş olanlar dahil üç yuvanın hepsini okur. [[3]] seni eline döndürür. [[4]] artı yön tuşlarında yukarı, sağ veya aşağı, o yuvadaki eşyayı hızlıca kullanır.
+Arrow keys to browse, Enter to trade. Press H for help.	Gezinmek için yön tuşları, takas için [[1]]. Yardım için [[2]] düğmesine bas.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]], hata bildirimi için masaüstüne bir günlük dosyası kaydeder; [[2]], günlük geçmişini gezer. Bu komutlar burada ve oyunun her anında çalışır.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]], hata bildirimi için masaüstüne bir günlük dosyası kaydeder. Bu komut burada ve oyunun her anında çalışır.
+Arrow keys browse, Enter trades. 	Yön tuşları gezinir, [[1]] takas eder. 
+Arrows browse, Enter chooses, Space repeats your position. 	Yön tuşlarıyla gez, [[1]] ile seç, [[2]] konumunu tekrarlar. 
+Opening screen. Enter presses the play button. Space repeats the description.	Açılış ekranı. [[1]] oynat düğmesine basar. [[2]] açıklamayı tekrarlar.
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption başlık ekranı. Gezinmek için yön tuşları, onaylamak için [[1]].
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption başlık ekranı. Yön tuşları kartlar arasında gezinir. 
+Enter chooses the one you are on. Space repeats it. 	[[1]] üzerinde olduğun kartı seçer. [[2]] onu tekrarlar. 
+Backspace to go back.	Geri dönmek için [[1]].
+Arrows to navigate	Gezinmek için yön tuşları
+, Backspace to go back.	, geri dönmek için [[1]].
+Arrows to navigate, Enter to confirm	Gezinmek için yön tuşları, onaylamak için [[1]]
+Enter to confirm	Onaylamak için [[1]]
+Unnamed setting. Press Enter to adjust.	Adsız ayar. Ayarlamak için [[1]] düğmesine bas.
+{0} Press Enter to adjust.	{0} Ayarlamak için [[1]] düğmesine bas.
+{0}.{1} Press H for help.	{0}.{1} Yardım için [[1]] düğmesine bas.
+Arrows to adjust. Backspace to return.	Ayarlamak için yön tuşları. Geri dönmek için [[1]].
+Options. 1, 2, and 3 switch pages. 	Ayarlar. [[1]] sağdaki bir sonraki sayfaya, [[2]] soldaki bir sonraki sayfaya geçer. 
+Arrows browse the settings, Enter selects a setting to adjust, 	Yön tuşları ayarlar arasında gezinir, [[1]] ayarlamak için bir ayar seçer, 
+Backspace returns. 	[[1]] geri döner. 
+Pause menu. Arrows browse the options, Enter chooses, 	Duraklatma menüsü. Yön tuşları seçenekler arasında gezinir, [[1]] seçer, 
+Space repeats your position and the run information, 	[[1]] konumunu ve tur bilgilerini tekrarlar, 
+Backspace or Escape closes the menu.	[[1]] veya [[2]] menüyü kapatır.
+Standing up from the table. Press H for help.	Masadan kalkıyorsun. Yardım için [[1]] düğmesine bas.
+You step back. Press Backspace again to return to the table.	Geri çekiliyorsun. Masaya dönmek için [[1]] düğmesine yeniden bas.
+Backspace steps back from your focused object. 	[[1]], odaklandığın nesneden geri çekilir. 
+Backspace again returns you to the game table and opens the map.	[[1]] düğmesine yeniden basmak seni oyun masasına döndürür ve haritayı açar.
+1, 2 and 3 examine what is in front of you. 	[[1]] artı yön tuşlarında yukarı, sağ ve aşağı önündekini inceler. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	Ayakta kontroller. Yön tuşlarında yukarı ileri adım atar, yön tuşlarında aşağı geri adım atar. 
+Left and right arrows step to the side. 	Yön tuşlarının solu ve sağı yana adım atar. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]] seni saat yönünün tersine 90 derece, [[2]] saat yönünde 90 derece döndürür. 
+Backspace returns you to the game table and opens the map.	[[1]] seni oyun masasına döndürür ve haritayı açar.
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Harita. {0}. İleride {1}. Gezinmek için yön tuşları, ayrıntılar için [[1]], yolculuk için [[2]], desteyi göstermek için [[3]].
+Map. Awaiting input. Press Space for your position, H for help.	Harita. Girdi bekleniyor. Konumun için [[1]], yardım için [[2]] düğmesine bas.
+Awaiting path selection. H, for help.	Yol seçimi bekleniyor. Yardım için [[1]].
+Left and right arrows to browse, 	Gezinmek için yön tuşlarının solu ve sağı, 
+Enter to travel, Shift+Up to display deck.	yolculuk için [[1]], desteyi göstermek için [[2]].
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	Kasaya odaklanıyorsun. Üzerinde her biri 0'dan 9'a kadar işaretlenmiş üç büyük yuvarlak kadran var. Kadranları kullanmak için [[1]] artı yön tuşlarında yukarı, sağ ve aşağı, geri çekilmek için [[2]] düğmesine bas.
+Nothing here can be read yet. Escape opens the pause menu.	Burada henüz okunabilecek bir şey yok. [[1]] duraklatma menüsünü açar.
+No path selected. Use left and right arrows to browse paths.	Yol seçilmedi. Yollar arasında gezinmek için yön tuşlarının solunu ve sağını kullan.
+You are in an encounter. Press H for help.	Bir karşılaşmadasın. Yardım için [[1]] düğmesine bas.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	Destende kart kalmadı. Sincap destesinden çekmek için [[1]] düğmesine bas.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	Sincap destesinde kart kalmadı. Kendi destenden çekmek için [[1]] düğmesine bas.
+Left and right arrows browse. Enter selects the card. 	Yön tuşlarının solu ve sağı gezinir. [[1]] kartı seçer. 
+Space repeats the current option. 	[[1]] geçerli seçeneği tekrarlar. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]] kural kitabını açar. [[2]] desteni gösterir. 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Menüde gezinme. Yön tuşları seçenekler arasında gezinir. [[1]] üzerinde olduğun seçeneği seçer. 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]] veya [[2]] geri gider. [[3]] geçerli seçeneği tekrarlar. 
+Shift R looks up the last ability you heard. 	[[1]] son duyduğun yeteneğe bakar. 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Bir hedef seç. Kullanılabilir: {0}. {1} Gezinmek için yön tuşları, seçmek için [[1]].
+Choose a target. {0} available. Arrows to browse, Enter to select.	Bir hedef seç. {0} hedef var. Gezinmek için yön tuşları, seçmek için [[1]].
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} Yön tuşları bu eşyanın etkileyebileceği kartlar arasında gezinir. [[1]] seçer. Bir eşya kullanıldıktan sonra iptal edilemez.
+Space describes what is in front of you. Space repeats where you are. 	[[1]] önündekini tarif eder. [[2]] bulunduğun yeri tekrarlar. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Harita kontrolleri. Yön tuşları, ilerideki seçenekler arasında gezin. [[1]], yolculuk et. [[2]], mevcut tüm seçenekleri listeler. [[3]], ilerideki yolları oku. [[4]], destene göz at. [[5]], mevcut eşyalarını dinle. [[6]], kural kitabını aç. [[7]], masadan kalk. [[8]], yardım.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Karşılaşma kontrolleri. Yön tuşlarının solu ve sağı elinde gezinir. [[1]], elindeki bir sonraki oynanabilir kart. [[2]], kartı oyna. [[3]], turu bitirmek için zili çal. [[4]], kural kitabını aç. Son duyulan yeteneğe bakmak için [[5]]. [[6]], elini oku. [[7]], rakip sırasını oku. [[8]], rakip tahtasını oku. [[9]], kendi tahtanı oku. [[10]], tüm tahtayı ve sırayı oku. [[11]], teraziyi, kemikleri ve diğer oyun bilgilerini oku. [[12]], eşyaların arasında gezinmek için tekrar tekrar bas, kullanmak için [[13]]. Eşyaları kullanmadan önce kart çekmelisin. Kart çekme aşamanda: [[14]], destenden çek, ya da [[15]], Sincap destesinden çek. [[16]], yardım için.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Kart yerleştiriliyor. Yön tuşlarının solu ve sağı alanlar arasında gezinir. [[1]], onayla. Tahta okuma tuşları hâlâ çalışır. [[2]], yardım.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Kurbanlar seçiliyor. Yön tuşlarının solu ve sağı tahtanda gezinir. [[1]], üzerinde olduğun kartı kurban et. Başlanan bir kurban iptal edilemez. Tahta okuma tuşları hâlâ çalışır. [[2]], yardım.
+No card selected. Use left and right arrows to browse your hand first.	Kart seçilmedi. Önce yön tuşlarının solu ve sağıyla elindeki kartlara göz at.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} kartının bedeli {1} kan. {2} {3} seç. Gezinmek için yön tuşlarının solu ve sağı, onaylamak için [[1]]. Başlanan bir kurban iptal edilemez.
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}{1} kartını oynamak için bir alan seç. Gezinmek için yön tuşlarının solu ve sağı, onaylamak için [[1]].{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Bir alan seç. Gezinmek için yön tuşlarının solu ve sağı, onaylamak için [[1]].{0}
+Shift plus R looks up the last ability you heard.	[[1]] son duyduğun yeteneğe bakar.
+Left and right arrows to browse, Enter to turn a card over, 	Gezinmek için yön tuşlarının solu ve sağı, bir kartı çevirmek için [[1]], 
+Space to repeat, H for help.	Tekrarlamak için [[1]], yardım için [[2]].
+Shift Up displays your deck, Space to repeat, H for help.	[[1]] desteni gösterir, tekrar için [[2]], yardım için [[3]].
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Deste Sınavı. Leshy sana seçmen için üç koşul sunuyor. Mevcut destende doğru olma olasılığı en yüksek olanı seç. Ardından destenden rastgele üç kart açacak. Başarırsan bir ödül alacaksın. Gezinmek için yön tuşlarının solu ve sağı, bir kartı çevirmek için [[1]], [[2]] desteni gösterir, tekrarlamak için [[3]], yardım için [[4]].
+{0}. Arrow keys to browse.	{0}. Gezinmek için yön tuşları.
+ Press Enter to add it to your deck.	 Destene eklemek için [[1]] düğmesine bas.
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	Gezinmek için yön tuşlarının solu ve sağı, tekrar için [[1]], dişler için [[2]], eşyalar için [[3]], yardım için [[4]], şuraya dönmek için [[5]]: {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	Yön tuşlarının solu ve sağı kartlarda gezinir. [[1]] bulunduğun kartı tekrarlar. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]] toplanan diş sayısını okur. [[2]] boş olanlar dâhil üç eşya yuvasını da okur. 
+R opens the rulebook. 	[[1]] kural kitabını açar. 
+Backspace closes your deck and returns you to {0}.	[[1]] desteni kapatır ve seni şuraya döndürür: {0}.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Destin. Eline eklemek için bir kart seç. Yön tuşları gezinir, [[1]] seçer. {0}.
+{0}. G, B and A to read the boardstate.	{0}. Oyun alanını okumak için [[1]], [[2]] ve [[3]].
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Sırt çantası. Yön tuşları gezinir, [[1]] ahşap oyma seçimine döner.
+Backpack. Arrows browse, Enter chooses a totem combination.	Sırt çantası. Yön tuşları gezinir, [[1]] bir totem birleşimi seçer.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	Sırt çantan boş. Ahşap oyma seçimine dönmek için [[1]] düğmesine bas.
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Kemiklerin Efendisi'nin Sunağı. Gezinmek için yön tuşları, onaylamak için [[1]].
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Başka bir alım için yeterli diş kalmadı. Tuzakçı'dan ayrılmak için [[1]].
+Pair of {0} chosen to fuse together. Enter to rechoose.	Birleştirmek için {0} çifti seçildi. Yeniden seçmek için [[1]].
+{0} chosen as {1}. Enter to rechoose.	{0}, {1} olarak seçildi. Yeniden seçmek için [[1]].
+{0} card placed on the altar. Enter to take it.	{0} kartı sunağa kondu. Almak için [[1]].
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Gezinmek için yön tuşlarının solu ve sağı, seçmek için [[1]], tekrar için [[2]], yardım için [[3]].
+No option selected. Use left and right arrows to browse.	Seçenek seçilmedi. Gezinmek için yön tuşlarının solunu ve sağını kullan.
+Arrows browse, Enter chooses, Space repeats your position.	Yön tuşları gezinir, [[1]] seçer, [[2]] konumunu tekrarlar.
+Shift Up displays your deck.	[[1]] desteni gösterir.
+A opens your backpack, Shift Up displays your deck. 	[[1]] sırt çantanı açar, [[2]] desteni gösterir. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]] dişlerini sayar, [[2]] Tuzakçı'dan istediğin an ayrılır. 
+I cycles through your current items. R opens the rulebook.	[[1]] mevcut eşyalarını gezer. [[2]] kural kitabını açar.
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Yön tuşları gezinir, [[1]] seçer, [[2]] Tuzakçı'dan istediğin an ayrılır, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]] konumunu tekrarlar, [[2]] dişlerini sayar, [[3]] kural kitabını açar.
+R opens the rulebook.	[[1]] kural kitabını açar.
+Enter to take the totem with you. Backspace to return to backpack and reselect.	Totemi yanına almak için [[1]]. Sırt çantasına dönüp yeniden seçmek için [[2]].
+Enter to take the totem with you.	Totemi yanına almak için [[1]].
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	Masanın üzerindeki sırt çantasının arkasından büyük bir sıçan koşarak çıkıyor. Sana bir {0} kartı sunuyor. Gezinmek için yön tuşları.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Yön tuşlarının solu ve sağı sayfa çevirir. [[1]] kitabı kapatır.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Kural kitabı. Yön tuşlarının solu ve sağı sayfa çevirir. [[1]] bulunduğun sayfayı tekrarlar. [[2]] ya da [[3]] kitabı kapatır.
+{0} is offering to surrender, press Shift and E to accept. 	{0} teslim olmayı teklif ediyor; kabul etmek için [[1]] düğmesine bas. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy zeytin dalı uzatıyor, savaşı bırakıyor. Teslimiyetini kabul etmek için [[1]] düğmesine bas.
+Backspace to return to the main menu. Space to repeat.	Ana menüye dönmek için [[1]]. Tekrarlamak için [[2]].
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	Zafer ekranı kontrolleri. [[1]] ekranı tekrarlar. [[2]] ana menüye döner.
+Enter to continue. Space to repeat.	Devam etmek için [[1]]. Tekrarlamak için [[2]].
+Victory Screen controls. Space repeats the screen. Enter continues.	Zafer ekranı kontrolleri. [[1]] ekranı tekrarlar. [[2]] devam eder.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Oyun sonu kontrolleri. [[1]] ekranı tekrarlar. [[2]] aynı başlangıç destesi ve etkin meydan okumalarla yeni bir oyun başlatır. [[3]] ana menüye döner.
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Ölüm kartı: {0} seç. {1}. Gezinmek için yön tuşları, seçmek için [[1]].
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Mod Ayarları. Gezinmek için yön tuşları, açmak veya değiştirmek için [[1]], bir düzey geri dönmek için [[2]], kapatmak için [[3]].
+Help list, F1.	Yardım listesi, [[1]].
+Mod Settings, Control plus M.	Mod Ayarları, [[1]].
+Review history, older, Control plus Down arrow.	Geçmişi incele, daha eski, [[1]].
+Review history, newer, Control plus Up arrow.	Geçmişi incele, daha yeni, [[1]].
+Next buffer item, Control plus Up arrow.	Sonraki arabellek öğesi, [[1]].
+Previous buffer item, Control plus Down arrow.	Önceki arabellek öğesi, [[1]].
+Next buffer, Control plus Right arrow.	Sonraki arabellek, [[1]].
+Previous buffer, Control plus Left arrow.	Önceki arabellek, [[1]].
+Review history as a list, Y.	Geçmişi liste olarak incele, [[1]].
+Silence speech, tap Control.	Konuşmayı sustur, [[1]].
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, destenden eline eklemek için bir kart seç. Yön tuşlarıyla gez, onaylamak için [[1]].

@@ -1,0 +1,131 @@
+﻿# lang/pad/German.tsv - controller versions (English line<TAB>German with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Drücke [[1]], um einen neuen Durchgang mit demselben Startdeck und denselben Herausforderungen zu beginnen. [[2]], um zum Hauptmenü zurückzukehren. [[3]] zum Wiederholen.
+In the center of the screen is a small play button. Press Enter...	In der Mitte des Bildschirms ist eine kleine Play-Schaltfläche. Drücke [[1]] ...
+Press H for what still works.	Drücke [[1]], um zu hören, was noch funktioniert.
+Space describes what is directly in front of you. 	[[1]] beschreibt, was direkt vor dir ist. 
+Conversation in progress, press Space to proceed.	Gespräch läuft, [[1]] zum Fortfahren.
+Your deck is empty, press S to draw from the Squirrel deck.	Dein Deck ist leer. Drücke [[1]], um vom Eichhörnchenstapel zu ziehen.
+The Squirrel deck is empty, press D to draw from your deck.	Der Eichhörnchenstapel ist leer. Drücke [[1]], um von deinem Deck zu ziehen.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Ziehphase. Drücke [[1]], um von deinem Deck zu ziehen, oder [[2]], um vom Eichhörnchenstapel zu ziehen.
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Steuerkreuz zum Blättern, [[1]] zum Auswählen, [[2]] zurück zur Hand.
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Gegenstandsmenü. Steuerkreuz nach links und rechts blättert durch deine Gegenstände. [[1]] benutzt den aktuellen Gegenstand. [[2]] liest alle drei Plätze, auch leere. [[3]] bringt dich zurück zur Hand. [[4]] plus Steuerkreuz nach oben, rechts oder unten benutzt sofort den Gegenstand auf diesem Platz.
+Arrow keys to browse, Enter to trade. Press H for help.	Steuerkreuz zum Blättern, [[1]] zum Tauschen. [[2]] für Hilfe.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]] speichert eine Logdatei für einen Fehlerbericht auf deinem Desktop. [[2]] blättert durch den Logverlauf. Diese Befehle funktionieren hier und jederzeit während des Spiels.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]] speichert eine Logdatei für einen Fehlerbericht auf deinem Desktop. Dieser Befehl funktioniert hier und jederzeit während des Spiels.
+Arrow keys browse, Enter trades. 	Steuerkreuz blättert, [[1]] tauscht. 
+Arrows browse, Enter chooses, Space repeats your position. 	Steuerkreuz blättert, [[1]] wählt, [[2]] wiederholt deine Position. 
+Opening screen. Enter presses the play button. Space repeats the description.	Startbildschirm. [[1]] drückt die Play-Schaltfläche. [[2]] wiederholt die Beschreibung.
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Titelbildschirm von Inscryption. Steuerkreuz zum Navigieren, [[1]] zum Bestätigen.
+Inscryption title screen. Arrow keys browse the cards. 	Titelbildschirm von Inscryption. Das Steuerkreuz blättert durch die Karten. 
+Enter chooses the one you are on. Space repeats it. 	[[1]] wählt die aktuelle Karte. [[2]] wiederholt sie. 
+Backspace to go back.	[[1]], um zurückzugehen.
+Arrows to navigate	Steuerkreuz zum Navigieren
+, Backspace to go back.	, [[1]] zum Zurückgehen.
+Arrows to navigate, Enter to confirm	Steuerkreuz zum Navigieren, [[1]] zum Bestätigen
+Enter to confirm	[[1]] zum Bestätigen
+Unnamed setting. Press Enter to adjust.	Unbenannte Einstellung. [[1]] zum Anpassen.
+{0} Press Enter to adjust.	{0} [[1]] zum Anpassen.
+{0}.{1} Press H for help.	{0}.{1} [[1]] für Hilfe.
+Arrows to adjust. Backspace to return.	Steuerkreuz zum Anpassen. [[1]] zum Zurückkehren.
+Options. 1, 2, and 3 switch pages. 	Optionen. [[1]] wechselt zur nächsten Seite rechts, [[2]] wechselt zur nächsten Seite links. 
+Arrows browse the settings, Enter selects a setting to adjust, 	Steuerkreuz blättert durch die Einstellungen, [[1]] wählt eine Einstellung zum Anpassen, 
+Backspace returns. 	[[1]] geht zurück. 
+Pause menu. Arrows browse the options, Enter chooses, 	Pausenmenü. Steuerkreuz blättert durch die Optionen, [[1]] wählt, 
+Space repeats your position and the run information, 	[[1]] wiederholt deine Position und die Infos zum Durchgang, 
+Backspace or Escape closes the menu.	[[1]] oder [[2]] schließt das Menü.
+Standing up from the table. Press H for help.	Du stehst vom Tisch auf. [[1]] für Hilfe.
+You step back. Press Backspace again to return to the table.	Du trittst zurück. Drücke erneut [[1]], um zum Tisch zurückzukehren.
+Backspace steps back from your focused object. 	[[1]] tritt vom betrachteten Objekt zurück. 
+Backspace again returns you to the game table and opens the map.	Erneut [[1]] bringt dich zum Spieltisch zurück und öffnet die Landkarte.
+1, 2 and 3 examine what is in front of you. 	[[1]] plus Steuerkreuz nach oben, rechts und unten untersuchen, was vor dir ist. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	Steuerung im Stehen. Steuerkreuz nach oben geht vorwärts, Steuerkreuz nach unten geht zurück. 
+Left and right arrows step to the side. 	Steuerkreuz nach links und rechts geht zur Seite. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]] dreht dich um 90 Grad gegen den Uhrzeigersinn, [[2]] dreht dich um 90 Grad im Uhrzeigersinn. 
+Backspace returns you to the game table and opens the map.	[[1]] bringt dich zum Spieltisch zurück und öffnet die Landkarte.
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Landkarte. {0}. {1} voraus. Steuerkreuz zum Blättern, [[1]] für Details, [[2]] zum Reisen, [[3]] zeigt das Deck.
+Map. Awaiting input. Press Space for your position, H for help.	Landkarte. Warte auf Eingabe. [[1]] für deine Position, [[2]] für Hilfe.
+Awaiting path selection. H, for help.	Warte auf Wegwahl. [[1]] für Hilfe.
+Left and right arrows to browse, 	Steuerkreuz nach links und rechts zum Blättern, 
+Enter to travel, Shift+Up to display deck.	[[1]] zum Reisen, [[2]] zeigt das Deck.
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	Du betrachtest den Safe. Er hat drei große runde Drehknöpfe, jeweils mit Markierungen von 0 bis 9. Drücke [[1]] plus Steuerkreuz nach oben, rechts und unten, um die Knöpfe zu bedienen. [[2]], um zurückzutreten.
+Nothing here can be read yet. Escape opens the pause menu.	Hier kann noch nichts vorgelesen werden. [[1]] öffnet das Pausenmenü.
+No path selected. Use left and right arrows to browse paths.	Kein Weg ausgewählt. Blättere mit Steuerkreuz nach links und rechts durch die Wege.
+You are in an encounter. Press H for help.	Du bist in einem Kampf. [[1]] für Hilfe.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	Keine Karten mehr in deinem Deck. Drücke [[1]], um vom Eichhörnchenstapel zu ziehen.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	Keine Karten mehr im Eichhörnchenstapel. Drücke [[1]], um von deinem Deck zu ziehen.
+Left and right arrows browse. Enter selects the card. 	Steuerkreuz nach links und rechts blättert. [[1]] wählt die Karte. 
+Space repeats the current option. 	[[1]] wiederholt die aktuelle Option. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]] öffnet das Regelbuch. [[2]] zeigt dein Deck. 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Menünavigation. Das Steuerkreuz blättert durch die Optionen. [[1]] wählt die aktuelle Option. 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]] oder [[2]] geht zurück. [[3]] wiederholt die aktuelle Option. 
+Shift R looks up the last ability you heard. 	[[1]] schlägt die zuletzt gehörte Fähigkeit nach. 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Wähle ein Ziel. {0} verfügbar. {1} Steuerkreuz zum Blättern, [[1]] zum Auswählen.
+Choose a target. {0} available. Arrows to browse, Enter to select.	Wähle ein Ziel. {0} verfügbar. Steuerkreuz zum Blättern, [[1]] zum Auswählen.
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} Das Steuerkreuz wechselt zwischen den Karten, auf die dieser Gegenstand wirken kann. [[1]] wählt aus. Ein benutzter Gegenstand kann nicht abgebrochen werden.
+Space describes what is in front of you. Space repeats where you are. 	[[1]] beschreibt, was vor dir ist. [[2]] wiederholt, wo du bist. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Steuerung auf der Landkarte. Steuerkreuz, die Wahlmöglichkeiten voraus durchblättern. [[1]], reisen. [[2]], alle aktuellen Wahlmöglichkeiten auflisten. [[3]], die Wege voraus vorlesen. [[4]], dein Deck durchblättern. [[5]], deine aktuellen Gegenstände hören. [[6]], das Regelbuch öffnen. [[7]], vom Tisch aufstehen. [[8]], Hilfe.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Kampfsteuerung. Steuerkreuz nach links und rechts blättert durch die Hand. [[1]], nächste spielbare Karte in deiner Hand. [[2]], Karte spielen. [[3]], Glocke läuten, um den Zug zu beenden. [[4]], Regelbuch öffnen. [[5]], um die zuletzt gehörte Fähigkeit nachzuschlagen. [[6]], deine Hand vorlesen. [[7]], gegnerische Warteschlange vorlesen. [[8]], gegnerisches Spielfeld vorlesen. [[9]], dein Spielfeld vorlesen. [[10]], ganzes Spielfeld und Warteschlange vorlesen. [[11]], Waage, Knochen und andere Spielinfos vorlesen. [[12]], mehrmals drücken, um durch deine Gegenstände zu wechseln, [[13]] zum Benutzen. Du musst eine Karte ziehen, bevor du Gegenstände benutzen kannst. Während deiner Ziehphase: [[14]], von deinem Deck ziehen, oder [[15]], vom Eichhörnchenstapel ziehen. [[16]], für Hilfe.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Karte ablegen. Steuerkreuz nach links und rechts wechselt die Felder. [[1]], bestätigen. Die Tasten zum Vorlesen des Bretts funktionieren weiterhin. [[2]], Hilfe.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Opfer wählen. Steuerkreuz nach links und rechts wechselt über dein Brett. [[1]], die aktuelle Karte opfern. Ein begonnenes Opfer kann nicht abgebrochen werden. Die Tasten zum Vorlesen des Bretts funktionieren weiterhin. [[2]], Hilfe.
+No card selected. Use left and right arrows to browse your hand first.	Keine Karte ausgewählt. Blättere zuerst mit Steuerkreuz nach links und rechts durch deine Hand.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} kostet {1} Blut. Wähle {2} {3}. Steuerkreuz nach links und rechts zum Wechseln, [[1]] zum Bestätigen. Ein begonnenes Opfer kann nicht abgebrochen werden.
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Wähle ein Feld, um {1} zu spielen. Steuerkreuz nach links und rechts zum Wechseln, [[1]] zum Bestätigen.{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Wähle ein Feld. Steuerkreuz nach links und rechts zum Wechseln, [[1]] zum Bestätigen.{0}
+Shift plus R looks up the last ability you heard.	[[1]] liest die zuletzt gehörte Fähigkeit nach.
+Left and right arrows to browse, Enter to turn a card over, 	Steuerkreuz nach links und rechts zum Blättern, [[1]] dreht eine Karte um, 
+Space to repeat, H for help.	[[1]] zum Wiederholen, [[2]] für Hilfe.
+Shift Up displays your deck, Space to repeat, H for help.	[[1]] zeigt dein Deck, [[2]] wiederholt, [[3]] für Hilfe.
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Deck-Probe. Leshy bietet dir drei Bedingungen zur Auswahl. Wähle die, die für dein aktuelles Deck am wahrscheinlichsten zutrifft. Dann deckt er drei zufällige Karten aus deinem Deck auf. Wenn du Erfolg hast, erhältst du eine Belohnung. Steuerkreuz nach links und rechts zum Blättern, [[1]], um eine Karte umzudrehen, [[2]] zeigt dein Deck, [[3]] zum Wiederholen, [[4]] für Hilfe.
+{0}. Arrow keys to browse.	{0}. Steuerkreuz zum Blättern.
+ Press Enter to add it to your deck.	 Drücke [[1]], um sie deinem Deck hinzuzufügen.
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	Steuerkreuz nach links und rechts zum Blättern, [[1]] wiederholt, [[2]] für Zähne, [[3]] für Gegenstände, [[4]] für Hilfe, [[5]] zurück zu {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	Steuerkreuz nach links und rechts blättert durch die Karten. [[1]] wiederholt die aktuelle Karte. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]] nennt die Zahl der gesammelten Zähne. [[2]] liest alle drei Gegenstandsplätze vor, auch die leeren. 
+R opens the rulebook. 	[[1]] öffnet das Regelbuch. 
+Backspace closes your deck and returns you to {0}.	[[1]] schließt dein Deck und bringt dich zurück zu {0}.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Dein Deck. Wähle eine Karte für deine Hand. Steuerkreuz blättert, [[1]] wählt. {0}.
+{0}. G, B and A to read the boardstate.	{0}. [[1]], [[2]] und [[3]] lesen das Spielfeld vor.
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Rucksack. Steuerkreuz blättert, [[1]] zurück zur Schnitzerei-Auswahl.
+Backpack. Arrows browse, Enter chooses a totem combination.	Rucksack. Steuerkreuz blättert, [[1]] wählt eine Totem-Kombination.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	Dein Rucksack ist leer. Drücke [[1]], um zur Auswahl der Holzschnitzerei zurückzukehren.
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Altar des Knochenfürsten. Steuerkreuz zum Blättern, [[1]] zum Bestätigen.
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Nicht genug Zähne für einen weiteren Kauf. [[1]] verlässt den Fallensteller.
+Pair of {0} chosen to fuse together. Enter to rechoose.	Paar {0} zum Verschmelzen gewählt. [[1]] für neue Wahl.
+{0} chosen as {1}. Enter to rechoose.	{0} gewählt als {1}. [[1]] für neue Wahl.
+{0} card placed on the altar. Enter to take it.	Karte {0} auf den Altar gelegt. [[1]] zum Nehmen.
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Steuerkreuz nach links und rechts zum Blättern, [[1]] zum Wählen, [[2]] wiederholt, [[3]] für Hilfe.
+No option selected. Use left and right arrows to browse.	Keine Option gewählt. Blättere mit dem Steuerkreuz nach links und rechts.
+Arrows browse, Enter chooses, Space repeats your position.	Steuerkreuz blättert, [[1]] wählt, [[2]] nennt deine Position.
+Shift Up displays your deck.	[[1]] zeigt dein Deck.
+A opens your backpack, Shift Up displays your deck. 	[[1]] öffnet deinen Rucksack, [[2]] zeigt dein Deck. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]] zählt deine Zähne, [[2]] verlässt den Fallensteller jederzeit. 
+I cycles through your current items. R opens the rulebook.	[[1]] geht deine aktuellen Gegenstände durch. [[2]] öffnet das Regelbuch.
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Steuerkreuz blättert, [[1]] wählt, [[2]] verlässt den Fallensteller jederzeit, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]] nennt deine Position, [[2]] zählt deine Zähne, [[3]] öffnet das Regelbuch.
+R opens the rulebook.	[[1]] öffnet das Regelbuch.
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]], um das Totem mitzunehmen. [[2]], um zum Rucksack zurückzukehren und neu zu wählen.
+Enter to take the totem with you.	[[1]], um das Totem mitzunehmen.
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	Eine große Ratte huscht hinter dem Rucksack auf dem Tisch hervor. Sie bietet dir eine Karte {0} an. Steuerkreuz zum Blättern.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Steuerkreuz nach links und rechts blättert um. [[1]] schließt das Buch.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Regelbuch. Steuerkreuz nach links und rechts blättert um. [[1]] wiederholt die aktuelle Seite. [[2]] oder [[3]] schließt das Buch.
+{0} is offering to surrender, press Shift and E to accept. 	{0} bietet die Kapitulation an. Drücke [[1]] zum Annehmen. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy reicht dir einen Olivenzweig und gibt den Kampf auf. Drücke [[1]], um seine Kapitulation anzunehmen.
+Backspace to return to the main menu. Space to repeat.	[[1]] zurück zum Hauptmenü. [[2]] zum Wiederholen.
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	Steuerung des Siegbildschirms. [[1]] wiederholt den Bildschirm. [[2]] führt zum Hauptmenü zurück.
+Enter to continue. Space to repeat.	[[1]] zum Fortfahren. [[2]] zum Wiederholen.
+Victory Screen controls. Space repeats the screen. Enter continues.	Steuerung des Siegbildschirms. [[1]] wiederholt den Bildschirm. [[2]] fährt fort.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Steuerung am Ende des Durchlaufs. [[1]] wiederholt den Bildschirm. [[2]] startet einen neuen Durchlauf mit demselben Startdeck und denselben aktivierten Herausforderungen. [[3]] führt zum Hauptmenü zurück.
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Todeskarte, wähle ihre {0}. {1}. Steuerkreuz zum Blättern, [[1]] zum Wählen.
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Mod-Einstellungen. Steuerkreuz zum Blättern, [[1]] zum Öffnen oder Ändern, [[2]] eine Ebene zurück, [[3]] zum Schließen.
+Help list, F1.	Hilfeliste, [[1]].
+Mod Settings, Control plus M.	Mod-Einstellungen, [[1]].
+Review history, older, Control plus Down arrow.	Verlauf durchsehen, älter, [[1]].
+Review history, newer, Control plus Up arrow.	Verlauf durchsehen, neuer, [[1]].
+Next buffer item, Control plus Up arrow.	Nächster Puffereintrag, [[1]].
+Previous buffer item, Control plus Down arrow.	Vorheriger Puffereintrag, [[1]].
+Next buffer, Control plus Right arrow.	Nächster Puffer, [[1]].
+Previous buffer, Control plus Left arrow.	Vorheriger Puffer, [[1]].
+Review history as a list, Y.	Verlauf als Liste durchsehen, [[1]].
+Silence speech, tap Control.	Sprachausgabe unterbrechen, [[1]].
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, wähle eine Karte aus deinem Deck für deine Hand. Steuerkreuz zum Blättern, [[1]] zum Bestätigen.

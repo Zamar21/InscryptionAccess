@@ -2084,19 +2084,19 @@ namespace IKMA
             public static string OptionFallback => Loc.T("Option");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string NewGame => Loc.T("New Game");
+            public static string NewGame => Loc.GameLabel("New Game");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string Continue => Loc.T("Continue");
+            public static string Continue => Loc.GameLabel("Continue");
 
             // Game, 0.7.53-0.7.109. The game's own menu word.
-            public static string Options => Loc.T("Options");
+            public static string Options => Loc.GameLabel("Options");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string Credits => Loc.T("Credits");
+            public static string Credits => Loc.GameLabel("Credits");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string Quit => Loc.T("Quit");
+            public static string Quit => Loc.GameLabel("Quit");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
             public static string CardLibrary => Loc.T("Card Library");
@@ -2105,16 +2105,16 @@ namespace IKMA
             public static string EditDeck => Loc.T("Edit Deck");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string KayceesMod => Loc.T("Kaycee's Mod");
+            public static string KayceesMod => Loc.GameLabel("Kaycee's Mod");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
             public static string ReturnToStartMenu => Loc.T("Return To Start Menu");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string EndRun => Loc.T("End Run");
+            public static string EndRun => Loc.GameLabel("End Run");
 
             // Game, 0.7.222-0.7.261. The game's own menu word.
-            public static string Concede => Loc.T("Concede");
+            public static string Concede => Loc.GameLabel("Concede");
 
             // Claude, 0.7.222-0.7.261.
             public static string InscryptionTitleScreenArrows => Loc.T("Inscryption title screen. Arrows to navigate, Enter to confirm.");
@@ -2133,31 +2133,31 @@ namespace IKMA
             public static string InscryptionKayceesModMain => Loc.T("Inscryption. Kaycee's Mod main menu");
 
             // Claude, 0.7.42 or earlier. Key: AscensionUnlocksSummaryScreen.
-            public static string Unlocks => Loc.T("Unlocks");
+            public static string Unlocks => Loc.GameLabel("Unlocks");
 
             // Claude, 0.7.222-0.7.261. Key: AscensionCardsSummaryScreen.
-            public static string CardsUnlocked => Loc.T("Cards Unlocked");
+            public static string CardsUnlocked => Loc.GameLabel("Cards Unlocked");
 
             // Claude, 0.7.42 or earlier. Key: AscensionCardsScreen.
-            public static string Cards => Loc.T("Cards");
+            public static string Cards => Loc.GameLabel("Cards");
 
             // Claude, 0.7.42 or earlier. Key: AscensionChallengeScreen.
-            public static string Challenges => Loc.T("Challenges");
+            public static string Challenges => Loc.GameLabel("Challenges");
 
             // Claude, 0.7.42 or earlier. Key: AscensionChallengeConfirmScreen.
             public static string ConfirmChallenges => Loc.T("Confirm Challenges");
 
             // Zamar, 0.7.236. Key: AscensionChooseStarterDeckScreen, AscensionStarterDeckScreen. Said from 2 places.
-            public static string SelectStarterDeck => Loc.T("Select Starter Deck");
+            public static string SelectStarterDeck => Loc.GameLabel("Select Starter Deck");
 
             // Claude, 0.7.42 or earlier. Key: AscensionStatsScreen.
-            public static string Stats => Loc.T("Stats");
+            public static string Stats => Loc.GameLabel("Stats");
 
             // Claude, 0.7.42 or earlier. Key: AscensionRunEndScreen.
             public static string RunComplete => Loc.T("Run Complete");
 
             // Claude, 0.7.42 or earlier. Key: AscensionJournalEntryScreen, AscensionJournalSummaryScreen. Said from 2 places.
-            public static string Devlog => Loc.T("Devlog");
+            public static string Devlog => Loc.GameLabel("Devlog");
 
             // Claude, 0.7.42 or earlier. Key: AscensionChallengeUnlockScreen.
             public static string NewChallenges => Loc.T("New Challenges");
@@ -2171,7 +2171,7 @@ namespace IKMA
             public static string StarterDecksUnlocked => Loc.T("Starter Deck Unlocked");
 
             // Claude, 0.7.222-0.7.261. Key: AscensionNewRunConfirmScreen.
-            public static string NewRun => Loc.T("New run");
+            public static string NewRun => Loc.GameLabel("New run");
 
             // Claude, 0.7.42 or earlier.
             public static string MenuOrPrettyName(bool noPretty, string pretty)
@@ -2259,7 +2259,7 @@ namespace IKMA
             public static string NumberSign => Loc.T("number ");
 
             // Claude, 0.7.222-0.7.261.
-            public static string StartRun => Loc.T("Start Run");
+            public static string StartRun => Loc.GameLabel("Start Run");
 
             // Claude, 0.7.42 or earlier.
             public static string LockedStarterDeck => Loc.T("Locked starter deck");
@@ -2289,7 +2289,7 @@ namespace IKMA
             public static string NextPage => Loc.T("Next page");
 
             // Claude, 0.7.42 or earlier.
-            public static string LockedCard => Loc.T("Card locked");   // Zamar, Session 33: the game prints CARD LOCKED
+            public static string LockedCard => Loc.GameLabel("Card locked");   // Zamar, Session 33: the game prints CARD LOCKED
 
             // Claude, Session 32. PROVISIONAL, from the game's own panel text
             // "CHALLENGE LOCKED" (the name shows as "???"). M6 audit.
@@ -2353,7 +2353,7 @@ namespace IKMA
 
             // Claude, 0.7.53-0.7.109. Said from 2 places.
             public static string FullScreenOrWindowed(bool fullScreen)
-                => fullScreen ? Loc.T("Full screen") : Loc.T("Windowed");
+                => fullScreen ? Loc.GameLabel("Full screen") : Loc.T("Windowed");
 
             // Claude, 0.7.53-0.7.109.
             public static string Resolution(int width, int height)
@@ -2718,7 +2718,7 @@ namespace IKMA
 
             // Zamar, 0.7.159.
             public static string NodeWithBoss(string friendly, string boss)
-                => $"{friendly}: {boss}";
+                => $"{friendly}{Loc.Colon}{boss}";
 
             // Claude, 0.7.42 or earlier.
             public static string MapReady => Loc.T("Map ready.");
@@ -3071,7 +3071,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string TargetSlotCard(string side, int number, string cardName, int attack, int health, string targetAbilities)
-                => $"{side} {number}: {cardName}, " +
+                => $"{side} {number}{Loc.Colon}{cardName}, " +
                    $"{attack}, {health}{targetAbilities}.";
 
             // Claude, 0.7.110-0.7.206.
@@ -3185,6 +3185,10 @@ namespace IKMA
 
             // Claude, 0.7.42 or earlier.
             public static string NoCardInThis => Loc.T("No card in this slot.");
+
+            // Zamar, Session 64: "card already chosen to sacrifice".
+            public static string AlreadyChosenToSacrifice(string card)
+                => Loc.F($"{card} already chosen to sacrifice.");
 
             // Claude, 0.7.42 or earlier.
             public static string SlotIsOccupiedBy(int slotNumber, string cardName)
@@ -3392,7 +3396,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string FormatSlots(string where, DiskCardGame.PlayableCard card, string cardName, string stats, string statNote, string abilityPart)
-                => $"{where}: {Vocabulary.Submerged(card, cardName)}, " +
+                => $"{where}{Loc.Colon}{Vocabulary.Submerged(card, cardName)}, " +
                    $"{stats}{statNote}{abilityPart}";
 
             // Claude, 0.7.336-0.7.345.
@@ -3401,7 +3405,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string SideCards(string label, System.Collections.Generic.List<string> parts, string cannon)
-                => $"{label}: {string.Join(". ", parts)}{cannon}";
+                => $"{label}{Loc.Colon}{string.Join(". ", parts)}{cannon}";
 
             // Claude, 0.7.211-0.7.212.
             public static string NumberRange(int numberFirst, int lastNumber)
@@ -3526,7 +3530,7 @@ namespace IKMA
 
             // Claude, 0.7.42 or earlier. Said from 2 places.
             public static string AbilitiesLine(string label, System.Collections.Generic.List<string> baseSigils)
-                => $" {label}: {string.Join(Loc.T(" and "), baseSigils)}.";
+                => $" {label}{Loc.Colon}{string.Join(Loc.T(" and "), baseSigils)}.";
 
             // Claude, 0.7.42 or earlier.
             public static string SigilAbility(string t)
@@ -3658,11 +3662,11 @@ namespace IKMA
 
             // Game, 0.7.152. Fallback copy of the game's own sigil name.
             public static string Airborne(string abilityName)
-                => abilityName ?? Loc.T("Airborne");
+                => abilityName ?? Loc.GameLabel("Airborne");
 
             // Game, 0.7.110-0.7.206. Fallback copy of the game's own sigil name.
             public static string MightyLeap(string abilityName)
-                => abilityName ?? Loc.T("Mighty Leap");
+                => abilityName ?? Loc.GameLabel("Mighty Leap");
 
             // Zamar, 0.7.152.
             public static string BlocksDueTo(string targetName, string air, string attackerName, string leap)
@@ -3727,7 +3731,7 @@ namespace IKMA
 
             // Claude, 0.7.110-0.7.206.
             public static string DeadlyName(bool noN, string n)
-                => noN ? Loc.T("Touch of Death") : n;
+                => noN ? Loc.GameLabel("Touch of Death") : n;
 
             // Claude, 0.7.110-0.7.206.
             public static string WithOne(string nameFirst)
@@ -3795,7 +3799,7 @@ namespace IKMA
                 => Loc.F($"{hp} health");
 
             // Claude, 0.7.347-0.7.357.
-            public static string MorselFallback => Loc.T("Morsel");
+            public static string MorselFallback => Loc.GameLabel("Morsel");
 
             // Claude, 0.7.347-0.7.357.
             public static string AbilitiesTriggerGains(string lead, string sigil, string receiver, string parts)
@@ -3933,7 +3937,7 @@ namespace IKMA
                 => Loc.F($"{subject} for {dmg}, {h} health remaining.");
 
             // Claude, 0.7.347-0.7.357.
-            public static string BrittleFallback => Loc.T("Brittle");
+            public static string BrittleFallback => Loc.GameLabel("Brittle");
 
             // Claude, 0.7.347-0.7.357.
             public static string SAbilityTriggersAnd(string nameFirst, string sigil, string bones)
@@ -3970,7 +3974,7 @@ namespace IKMA
         {
             // Claude, 0.7.110-0.7.206.
             public static string GuardianName(bool noN, string n)
-                => noN ? Loc.T("Guardian") : n;
+                => noN ? Loc.GameLabel("Guardian") : n;
 
             // Claude, 0.7.222-0.7.261.
             public static string SAbilityTriggersIt(string name, string sigil, int capturedTargetNumber)
@@ -3982,7 +3986,7 @@ namespace IKMA
                 => Loc.F($"{name}'s {Loc.Game(sigil)} ability triggers: it moves to slot {capturedTargetNumber}.");
 
             // Claude, 0.7.222-0.7.261.
-            public static string Burrower => Loc.T("Burrower");
+            public static string Burrower => Loc.GameLabel("Burrower");
 
             // Claude, 0.7.110-0.7.206. Said from 2 places.
             public static string RightOrLeft(int nowSlot, int capturedFrom)
@@ -4050,10 +4054,10 @@ namespace IKMA
             public static string NoneMet => Loc.T("none");
 
             // Claude, 0.7.110-0.7.206.
-            public static string Sprinter => Loc.T("Sprinter");
+            public static string Sprinter => Loc.GameLabel("Sprinter");
 
             // Claude, 0.7.110-0.7.206.
-            public static string Bloodlust => Loc.T("Bloodlust");
+            public static string Bloodlust => Loc.GameLabel("Bloodlust");
 
             // Zamar, 0.7.222-0.7.261.
             public static string SAbilityTriggersItNow(string name, string sigil, int now)
@@ -4207,7 +4211,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string SpeakerLine(string name, string clean)
-                => $"{name}: {clean}";
+                => $"{name}{Loc.Colon}{clean}";
 
             // Zamar, 0.7.449. Session 45, on Leshy's line that is only "...":
             // "Have this read as 'Leshy waits silently.'"
@@ -4328,7 +4332,7 @@ namespace IKMA
         public static class PirateSkull
         {
             // Claude, 0.7.347-0.7.357.
-            public static string Limoncello => Loc.T("The Limoncello");
+            public static string Limoncello => Loc.GameLabel("The Limoncello");
 
             // Claude, 0.7.347-0.7.357.
             public static string YourTheirSlot(bool isPlayerSlot, int number)
@@ -4751,7 +4755,7 @@ namespace IKMA
                 => n == 1 ? Loc.T("1 tooth") : Loc.F($"{n} teeth");
 
             // Claude, 0.7.326-0.7.335.
-            public static string KnifeName => Loc.T("Skinning Knife");
+            public static string KnifeName => Loc.GameLabel("Skinning Knife");
 
             // Claude, 0.7.347-0.7.357.
             public static string KnifeForTeeth(string teethWord, string knifeName, string brokeClause)
@@ -4852,6 +4856,11 @@ namespace IKMA
             // Zamar, Session 18.
             public static string ChooseACardToWarm => Loc.T("Choose a card to warm by the campfire. This will raise its stats but comes with risk...");
 
+            // Zamar, Session 64: "card name's stat rose by x". The stat is the
+            // game's own word (GetTranslatedStatText).
+            public static string StatRoseBy(string card, string stat, int by)
+                => Loc.F($"{card}'s {stat} rose by {by}.");
+
             // Claude, 0.7.53-0.7.109.
             public static string ChooseACard => Loc.T("Choose a card.");
 
@@ -4875,7 +4884,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string Word(string name, string cardName)
-                => $"{name}: {cardName}.";
+                => $"{name}{Loc.Colon}{cardName}.";
 
             // Claude, 0.7.316-0.7.325.
             public static string BoonCardLine(bool noDesc, string name, string desc)
@@ -5284,7 +5293,7 @@ namespace IKMA
         {
             // Claude, 0.7.53-0.7.109.
             public static string OutcomeLine(bool victory)
-                => victory ? Loc.T("Victory") : Loc.T("Defeat");
+                => victory ? Loc.GameLabel("Victory") : Loc.T("Defeat");
 
             // Zamar, 0.7.449. Session 45, the victory screen: "The only two
             // commands for this screen is Space to re-read the page, and
@@ -5524,6 +5533,16 @@ namespace IKMA
             public static string BrailleOn => Loc.T("On: every spoken line is also sent to your braille display, through NVDA or JAWS.");
             public static string BrailleOff => Loc.T("Off: nothing is sent to a braille display.");
 
+            // Session 63: the Steam Deck voice. "Voice", "Rate" and "Volume"
+            // are Say the Spire 2's (SPEECH.SAPI.*). The category name and
+            // the two voice names are Claude's drafts, waiting for Zamar.
+            public static string SteamDeckSpeech => Loc.T("Steam Deck speech");
+            public static string SteamDeckVoice => Loc.T("Voice");
+            public static string SteamDeckVoiceFemale => Loc.T("Female");
+            public static string SteamDeckVoiceMale => Loc.T("Male");
+            public static string SteamDeckRate => Loc.T("Rate");
+            public static string SteamDeckVolume => Loc.T("Volume");
+
             // ---- Session 40: Controller buttons, the Manager's menu in the
             // ---- game too (Zamar: "Exist in both"). The title, the action
             // ---- names, "Default", "Swapped" and the reset line are IKMA
@@ -5568,6 +5587,8 @@ namespace IKMA
                     case "HistoryOlder":       return Loc.T("Review history, older");
                     case "HistoryNewer":       return Loc.T("Review history, newer");
                     case "HistoryList":        return Loc.T("Review history as a list");   // Claude, 0.7.463, from the help list row
+                    case "BufferNext":         return Loc.T("Next buffer");       // Claude, 0.4.8.018, from the help list row
+                    case "BufferPrevious":     return Loc.T("Previous buffer");   // Claude, 0.4.8.018, from the help list row
                     case "Silence":            return Loc.T("Silence speech");
                 }
                 return action;

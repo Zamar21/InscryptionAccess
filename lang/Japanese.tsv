@@ -1,0 +1,1254 @@
+﻿# Japanese.tsv
+# IKMA language file: Japanese. Translated by Claude (Session 32) and ChatGPT (the lines added since, Session 64), following the game's own Japanese terms; no Japanese speaker has checked it yet.
+#status: unreviewed
+
+ and 	 と 
+{0} or {1}	{0}または{1}
+{0} plus {1}	{0}と{1}の同時押し
+Cross	バツ
+Circle	丸
+Square	四角
+Triangle	三角
+Minus	マイナス
+Plus	プラス
+left stick press	左スティック押し込み
+right stick press	右スティック押し込み
+D-pad up	十字キーの上
+D-pad down	十字キーの下
+D-pad left	十字キーの左
+D-pad right	十字キーの右
+right stick up	右スティック上
+right stick down	右スティック下
+right stick left	右スティック左
+right stick right	右スティック右
+{0} and {1}	{0}と{1}
+{0}, and {1}	{0}、{1}
+Hand is empty.	手札は空です。
+Board unavailable.	ボードを読み取れません。
+Items unavailable.	アイテムを読み取れません。
+You have no items.	アイテムを持っていません。
+No options.	選択肢がありません。
+No options available.	利用できる選択肢がありません。
+No settings on this page.	このページに設定項目はありません。
+No paths ahead.	この先に道はありません。
+Nothing is directly in front of you.	正面には何もありません。
+Nothing to examine here.	ここに調べるものはありません。
+Nothing on {0} from here.	ここでは{0}キーに該当するものはありません。
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Enter キーで、同じ初期デッキとチャレンジで新しいランを始めます。Backspace キーでメインメニューに戻ります。スペースキーでもう一度聞けます。
+No current run available.	続行できるランがありません。
+Inscryption Main game support still in development. I'll get it done don't worry! -Zamar :)	Inscryption本編への対応はまだ開発中です。必ず完成させるので安心してください！ -Zamar :)
+In the center of the screen is a small play button. Press Enter...	画面の中央に小さなプレイボタンがあります。Enter キーを押してください…
+Daniel Mullins Games.	Daniel Mullins Games。
+The screen glitches for a second.	画面が一瞬乱れます。
+Video logs not yet available. Coming soon!	ビデオログはまだ利用できません。近日公開予定です！
+Devolver Digital.	Devolver Digital。
+Inscryption. Press any button to start.	Inscryption。ボタンを押してスタート。
+Inscryption: Kaycee's Mod.	Inscryption: Kaycee's Mod。
+The rulebook has no pages to read.	ルールブックに読めるページがありません。
+Now is not the time to ring the bell.	今はベルを鳴らすときではありません。
+No card selected.	カードが選択されていません。
+History: empty.	履歴：空です。
+History: {0}	履歴：{0}
+History closed.	履歴を閉じました。
+Gamepad.	ゲームパッド。
+Keyboard.	キーボード。
+Dev Log Locked.	開発ログはロックされています。
+You must first select a card to add to your deck.	まず、デッキに加えるカードを選んでください。
+That option could not be selected.	その選択肢を選べませんでした。
+The surrender could not be accepted.	降参を受け入れられませんでした。
+Could not reach the table.	テーブルに戻れませんでした。
+The woodcarving could not be read.	木彫りを読み取れませんでした。
+Press H for what still works.	H キーで、まだ使える操作を確認できます。
+Space describes what is directly in front of you. 	スペースキーで正面にあるものを説明。 
+Conversation in progress, press Space to proceed.	会話中です。スペースキーで進めてください。
+Scales: you lead by {0}.	天秤：あなたが{0}リードしています。
+Scales: enemy leads by {0}.	天秤：敵が{0}リードしています。
+Scales: even.	天秤：互角です。
+{0}'s {1} ability triggers{2}	{0}の{1}の能力が発動{2}
+{0}'s {1} ability triggers.	{0}の{1}の能力が発動します。
+Both {0}'s {1} abilities trigger.	{0}の2つの{1}の能力が発動します。
+All {0}'s {1} abilities trigger.	{0}のすべての{1}の能力が発動します。
+{0}'s {1} abilities trigger.	{0}の{1}の能力が発動します。
+Comment line: {0}	コメント行：{0}
+{0} gains ability: {1} due to totem.	{0}はトーテムによって{1}の能力を得ます。
+Copy of {0} sigil negated by Kaycee override.	{0}の印の複製は、ケイシーによる上書きで無効になりました。
+{0}'s totem gives enemy {1} cards {2}.	{0}のトーテムにより、敵の{1}のカードが{2}を得ます。
+Footage, {0}.	映像、{0}。
+Your deck is empty, press S to draw from the Squirrel deck.	デッキが空です。S キーでリスのデッキから引いてください。
+The Squirrel deck is empty, press D to draw from your deck.	リスのデッキが空です。D キーで自分のデッキから引いてください。
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	ドローフェイズ。D キーで自分のデッキから、S キーでリスのデッキから引きます。
+{0}'s Waterborne ability triggers. It dives underwater...	{0}の潜水の能力が発動します。水中に潜ります…
+{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}の潜水の能力がスロット{1}で発動し、水中に潜ります...
+Submerged {0}	潜水中の{0}
+Leshy puts on the {0} mask.	レシーは{0}の仮面を着けます。
+Leshy puts on the {0} mask. {1}	レシーは{0}の仮面を着けます。{1}
+IKMA PROVISIONAL: no face description for the {0} mask.	IKMA 暫定：{0}の仮面の顔の説明がありません。
+Leshy puts on the {0} mask...	レシーは{0}の仮面を着けます…
+Leshy removes the {0}'s mask, it floats away.	レシーは{0}の仮面を外します。仮面は宙に浮かんで離れていきます。
+Leshy removes the {0}'s mask.	レシーは{0}の仮面を外します。
+the {0}	{0}
+the {0}, and the {1}	{0}、{1}
+{0} masks circle around Leshy's head: {1}. 	{0}の仮面がレシーの頭の周りを回っています：{1}。 
+Behind Leshy is a large bright full moon...	レシーの背後には、大きく明るい満月が浮かんでいます…
+Leshy blows out his first of three candles.	レシーは3本のロウソクのうち1本目を吹き消します。
+Leshy blows out the second of his three candles. The masks float away, and Leshy turns to face the moon behind him...	レシーは3本のロウソクのうち2本目を吹き消します。仮面が飛び去り、レシーは背後の月に向き直ります...
+Leshy holds up his camera and aims it at the moon.	レシーはカメラを持ち上げ、月に向けます。
+Leshy is wearing the {0}'s mask.	レシーは{0}の仮面を着けています。
+Leshy is not wearing a mask.	レシーは仮面を着けていません。
+Leshy lowers a third candle to the flame and lights it...	レシーは3本目のロウソクを炎に近づけ、火を灯します…
+the ship	船
+A {0} jumps off {1} and joins your side in slot {2}.	{0}が{1}から飛び降り、あなたの側のスロット{2}に加わります。
+{0} {1} jump off {2} and join your side in slots {3}.	{1}{0}が{2}から飛び降り、あなたの側のスロット{3}に加わります。
+A massive ship called {0} crashes onto the board. 	{0}という巨大な船がボードに激突します。 
+It has {0} dancing Skeleton Pirates on board making a ruckus.	船上では{0}体のガイコツの海賊が踊り騒いでいます。
+ No Skeleton Pirates remain on deck.	 船上にガイコツの海賊は残っていません。
+ 1 Skeleton Pirate remains on deck.	 船上にガイコツの海賊が1体残っています。
+ {0} Skeleton Pirates remain on deck.	 船上にガイコツの海賊が{0}体残っています。
+Item menu. {0} 	アイテムメニュー。{0} 
+Arrows to Browse, Enter to select, Backspace to return to your hand.	矢印キーで選択、Enter キーで決定、Backspace キーで手札に戻る。
+Item menu. 	アイテムメニュー。 
+Your hand.	手札。
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	アイテムメニュー。左右の矢印キーで所持アイテムを選択。Enter キーで選択中のアイテムを使用。Shift + I キーで、空きを含む3つのスロットすべてを読み上げ。Backspace キーで手札に戻る。Shift + 1、2、3 キーで、そのスロットのアイテムをすぐに使用。
+The pirate skull fades backwards... Something is coming...	海賊のドクロが後ろへ遠ざかっていきます… 何かが来ます…
+{0} places a skull with an eye patch and a pirate hat onto the table.	{0}は眼帯と海賊帽をつけたドクロをテーブルに置きます。
+The eye of the skull begins to glow.	ドクロの目が光り始めます。
+{0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0}が敵のボードを埋め尽くします。1枚のカードが{1}のスロットすべてにまたがっています。攻撃力{2}、体力{3}。
+{0} arrives, {1}/{2}.	{0}が現れます。攻撃力{1}、体力{2}。
+{0} is destroyed.	{0}は破壊されます。
+{0} aims his hook at your empty slot {1}.	{0}はあなたの空いたスロット{1}にフックを向けます。
+{0} aims his hook at {1} in slot {2}.	{0}はスロット{2}の{1}にフックを向けます。
+{0} hooks your {1} and pulls it to his slot {2}.	{0}はあなたの{1}をフックで引っかけ、自分のスロット{2}に引き寄せます。
+{0} lowers his hook.	{0}はフックを下ろします。
+{0} on the board and {1} in the queue	ボードに{0}、待機列に{1}
+{0} on the board	ボードに{0}
+{0} in the queue	待機列に{0}
+cards	カード
+{0} offers a trade.	{0}が取引を持ちかけます。
+{0} gives you a {1} and offers a trade.	{0}はあなたに{1}を渡し、取引を持ちかけます。
+{0} Trade pelts in your hand for one of their cards. 	{0}手札の皮を、相手のカード1枚と交換できます。 
+They have {0}. 	相手のカード：{0}。 
+The bell is disabled until you trade at least once. 	少なくとも1回取引するまで、ベルは使えません。 
+Trade pelts from your hand for cards on their board and queue.	手札の皮を、相手のボードと待機列にあるカードと交換します。
+{0} in slot {1}	スロット{1}の{0}
+empty slot {0}	空いたスロット{0}
+The cannons aim at {0} on your side, and {1} on theirs.	大砲は、あなたの側の{0}と、相手の側の{1}を狙っています。
+The cannons aim at {0} on your side.	大砲は、あなたの側の{0}を狙っています。
+The cannons aim at {0} on their side.	大砲は、相手の側の{0}を狙っています。
+The cannons are aimed at slot {0}.	大砲はスロット{0}を狙っています。
+The cannons are aimed here.	大砲はここを狙っています。
+The Pirate Skull opens a pack of cards and calls in their crew.	海賊のドクロはカードパックを開け、船員を呼び寄せます。
+The Pirate Skull calls their ship. It bears down on the cabin.	海賊のドクロは船を呼び寄せます。船が小屋に迫ってきます。
+Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {0}.	レシーは仮面を外し、上下逆さにして着け直します。彼は{0}になります。
+{0} clears his side of the table.	{0}は自分の側のテーブルを片付けます。
+A Shark takes the bait's place in slot {0}.	餌の代わりに、サメがスロット{0}に現れます。
+their	相手の
+his	彼の
+{0} sweeps {1} side of the table clean.	{0}は自分の側のテーブルを一掃します。
+pelt	皮
+pelts	皮
+returns	戻ります
+return	戻ります
+{0} sweeps {1} side of the table clean, and 	{0}は自分の側のテーブルを一掃し、 
+{0} played {1} {2} to your hand.	場に出ていた{1}{0}が手札に{2}。
+The screen glitches and {0}'s eyes glow red. A wall of Grizzlies swarms you...	画面が乱れ、{0}の目が赤く光ります。グリズリーの群れが壁となって押し寄せてきます…
+Every opposing slot on the board is filled with Grizzlies...	ボード上の相手側のスロットが、すべてグリズリーで埋め尽くされます…
+card	カード
+Begin trading. 	取引開始。 
+Trade: {0} {1} to choose from, 	取引：選べる{1}は{0}、 
+{0} {1} in hand. 	手札の{1}は{0}。 
+Arrow keys to browse, Enter to trade. Press H for help.	矢印キーで選択、Enter キーで交換。H キーでヘルプ。
+in the queue, slot {0}	待機列のスロット{0}
+on the board, slot {0}	ボードのスロット{0}
+Option {0} of {1}, {2}. {3}	選択肢 {1}個中{0}番目、{2}。{3}
+Option {0} of {1}. {2}	選択肢 {1}個中{0}番目。{2}
+You have no pelt to trade with.	交換に使える皮を持っていません。
+slot {0}	スロット{0}
+slot {0} and slot {1}	スロット{0}とスロット{1}
+{0}'s {1} ability triggers, placing a {2} in {3}.	{0}の{1}の能力が発動し、{3}に{2}を置きます。
+{0}'s Loose Tail ability triggers, it drops its tail as a decoy 	{0}の尻尾切りの能力が発動します。おとりとして尻尾を切り離し、 
+and moves to slot {0}.	スロット{0}に移動します。
+{0}'s Amorphous ability triggers, it mutates and gains {1}.	{0}のアモルファスの能力が発動します。変異して{1}を得ます。
+{0}'s Tidal Lock ability triggers, pulling your {1} into orbit, obliterating it.	{0}のタイダルロックの能力が発動します。あなたの{1}を軌道に引き込み、消し去ります。
+{0}'s Trinket Bearer ability triggers, a {1} is added to item slot {2}.	{0}の荷物運搬の能力が発動します。アイテムスロット{2}に{1}が追加されます。
+Its Trinket Bearer ability triggers, a {0} is added to item slot {1}.	荷物運搬の能力が発動し、{0}がアイテムスロット{1}に加わります。
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	Shift + L キーで、バグ報告用のログファイルをデスクトップに保存します。Control + 上または下矢印キーでログ履歴をたどります。これらの操作はここでも、ゲーム中いつでも使えます。
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	Shift + L キーで、バグ報告用のログファイルをデスクトップに保存します。この操作はここでも、ゲーム中いつでも使えます。
+Log saved to your desktop as a .txt file. Attach it to your bug report.	ログを .txt ファイルとしてデスクトップに保存しました。バグ報告に添付してください。
+The log could not be saved because {0}.	{0}ため、ログを保存できませんでした。
+{0}'s {1} ability fizzles.	{0}の{1}の能力は不発に終わります。
+{0}'s {1} ability fizzles in slot {2}.	{0}の{1}の能力はスロット{2}で不発に終わります。
+{0} dying triggers {1}'s Corpse Eater ability from your hand, 	{0}が死んだことで、手札にある{1}の骸喰いの能力が発動し、 
+playing itself into slot {0}.	自身をスロット{0}に出します。
+{0} traded for {1}.	{0}を{1}と交換しました。
+Pelt	皮
+Trade pelts from your hand for cards on their board and queue. 	手札の皮を、相手のボードと待機列にあるカードと交換します。 
+Arrow keys browse, Enter trades. 	矢印キーで選択、Enter キーで交換。 
+You have {0} {1} in hand. 	手札に{1}が{0}あります。 
+Trade until you run out of pelts, then the battle will continue.	皮がなくなるまで交換できます。その後、バトルが再開します。
+is destroyed	破壊されます
+dies	死にます
+{0} gets caught in the {1} and {2}.	{0}は{1}にかかり、{2}。
+{0} {1}, its ability {2} triggers.	{0} {1}、その{2}の能力が発動します。
+destroyed	破壊されます
+one	1つ
+two	2つ
+three	3つ
+four	4つ
+five	5つ
+six	6つ
+seven	7つ
+eight	8つ
+Angler	釣り人
+1 bone	骨1個
+{0} bones	骨{0}個
+Bone Lord	骨の王
+bone	骨
+bones	骨
+Both	2つとも
+All 	全部で 
+Arrows browse, Enter chooses, Space repeats your position. 	矢印キーで選択、Enter キーで決定、スペースキーで現在位置を繰り返し。 
+Campfire	たき火
+This card could not be read.	このカードを読み取れませんでした。
+1 card	カード1枚
+{0} cards	カード{0}枚
+1 damage	1ダメージ
+{0} damage	{0}ダメージ
+Death card	死のカード
+1 health remaining	残り体力1
+{0} health remaining	残り体力{0}
+Item pickup	アイテム入手
+Kin	親族
+Leshy	レシー
+Mycologists	菌学者
+{0} Option {1} of {2}.	{0} 選択肢 {2}個中{1}番目。
+Prospector	探鉱者
+Received {0} {1}.	{1}を{0}個獲得しました。
+Sacrifice stone	生贄の石
+Trader	商人
+Trapper	罠猟師
+Unnamed option	名前のない選択肢
+Woodcarver	木彫り師
+Your deck.	あなたのデッキ。
+unknown	不明
+IKMA version {0} loaded.	IKMA バージョン{0}を読み込みました。
+Loading.	読み込み中。
+IKMA version {0} downloaded. It installs the next time you start the game.	IKMA バージョン{0}をダウンロードしました。次にゲームを起動したときにインストールされます。
+Updated from version {0}.	バージョン{0}から更新しました。
+IKMA version {0} is available. Press F9 to download it, or F10 to skip this version.	IKMA バージョン{0}が利用できます。F9 キーでダウンロード、F10 キーでこのバージョンをスキップします。
+IKMA version {0} is downloaded. Press F9 to install it the next time you start the game, or F10 to skip this version.	IKMA バージョン{0}はダウンロード済みです。F9 キーで次にゲームを起動したときにインストール、F10 キーでこのバージョンをスキップします。
+Downloading IKMA version {0}.	IKMA バージョン{0}をダウンロードしています。
+IKMA version {0} installs the next time you start the game.	IKMA バージョン{0}は、次にゲームを起動したときにインストールされます。
+Skipping IKMA version {0}.	IKMA バージョン {0} をスキップします。
+The IKMA update failed its safety check and was not installed.	IKMA の更新は安全性の確認に失敗したため、インストールされませんでした。
+The IKMA update could not be downloaded. IKMA will offer it again the next time you start the game.	IKMA のアップデートをダウンロードできませんでした。次にゲームを起動したときに、もう一度案内します。
+Opening screen. Enter presses the play button. Space repeats the description.	オープニング画面。Enter キーでプレイボタンを押します。スペースキーで説明を繰り返します。
+Option	選択肢
+New Game	ニューゲーム
+Continue	コンティニュー
+Options	オプション
+Credits	クレジット
+Quit	終了
+Card Library	カードライブラリ
+Edit Deck	デッキ編集
+Kaycee's Mod	Kaycee's Mod
+Return To Start Menu	スタート画面に戻る
+End Run	ランを終了
+Concede	降参
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Inscryption タイトル画面。矢印キーで選択、Enter キーで決定。
+Inscryption title screen. Arrow keys browse the cards. 	Inscryption タイトル画面。矢印キーでカードを選択。 
+Enter chooses the one you are on. Space repeats it. 	Enter キーで選択中のものに決定、スペースキーで繰り返し。 
+Inscryption. Kaycee's Mod main menu	Inscryption。Kaycee's Mod メインメニュー
+Unlocks	アンロック状況
+Cards Unlocked	アンロックしたカード
+Cards	カード
+Challenges	チャレンジ
+Confirm Challenges	チャレンジを確定
+Select Starter Deck	初期デッキを選択
+Stats	統計
+Run Complete	ラン完了
+Devlog	開発ログ
+New Challenges	新しいチャレンジ
+New Starter Deck	新しい初期デッキ
+Starter Deck Unlocked	初期デッキがアンロック
+New run	新しいラン
+Menu	メニュー
+coordinates	座標
+Entry {0}. {1}	エントリー {0}。{1}
+{0}. No options available.	{0}。利用できる選択肢がありません。
+Backspace to go back.	Backspace キーで戻る。
+Arrows to navigate	矢印キーで選択
+, Backspace to go back.	、Backspace キーで戻る。
+Arrows to navigate, Enter to confirm	矢印キーで選択、Enter キーで決定
+Enter to confirm	Enter キーで決定
+Deck	デッキ
+{0} {1} of {2}.	{0} {2}個中{1}番目。
+{0} of {1}.	{1}個中{0}番目。
+enabled	有効
+disabled	無効
+Challenge	チャレンジ
+1 challenge point.	チャレンジポイント1。
+{0} challenge points.	チャレンジポイント{0}。
+{0} of {1} challenge points.	チャレンジポイント {1}中{0}。
+Back.	戻る。
+unknown option	不明な選択肢
+number 	番号 
+Start Run	ランを開始
+Locked starter deck	ロック中の初期デッキ
+Starter Deck: {0}.	初期デッキ：{0}。
+Card {0} of {1}	カード {1}枚中{0}枚目
+Cards 	カード 
+ and {0} of {1}	 と{0}、{1}枚中
+Previous page	前のページ
+Next page	次のページ
+Card locked	カードはロックされています
+Challenge locked.	ロック中のチャレンジ。
+plus 1 challenge point	チャレンジポイント プラス1
+plus {0} challenge points	チャレンジポイント プラス{0}
+Challenge complete.	チャレンジ完了。
+Challenge level {0}.	チャレンジレベル{0}。
+All challenge levels cleared.	すべてのチャレンジレベルをクリアしました。
+Active, 	有効、 
+Random Starter Deck	ランダムな初期デッキ
+unlabelled option	ラベルのない選択肢
+Display is now full screen	表示をフルスクリーンにしました
+Display is now windowed	表示をウィンドウにしました
+Display resolution changed	解像度を変更しました
+, {0} by {1}	、{0}×{1}
+Text Language	テキスト言語
+Reset with {0}	{0}でリセット
+Full screen	フルスクリーン
+Windowed	ウィンドウ
+{0} by {1}	{0}×{1}
+On	オン
+Off	オフ
+Zero	ゼロ
+, default	、デフォルト
+Unnamed setting.	名前のない設定。
+English	英語
+French	フランス語
+Italian	イタリア語
+German	ドイツ語
+Spanish	スペイン語
+Brazilian Portuguese	ブラジルポルトガル語
+Turkish	トルコ語
+Russian	ロシア語
+Japanese	日本語
+Korean	韓国語
+Simplified Chinese	簡体字
+Traditional Chinese	繁体字
+Unnamed setting. Press Enter to adjust.	名前のない設定。Enter キーで調整します。
+{0} Press Enter to adjust.	{0} Enter キーで調整します。
+Options Menu	オプションメニュー
+ Page {0} of {1}.	 {1}ページ中{0}ページ目。
+{0}.{1} Press H for help.	{0}。{1} H キーでヘルプ。
+That setting cannot be changed.	その設定は変更できません。
+Setting	設定
+Arrows to adjust. Backspace to return.	矢印キーで調整、Backspace キーで戻る。
+Back. {0}	戻る。{0}
+, locked	、ロック中
+1 option	選択肢1個
+{0} options	選択肢{0}個
+Pause menu. {0}.	ポーズメニュー。{0}。
+Game settings.	ゲーム設定。
+Display settings.	表示設定。
+Audio settings.	オーディオ設定。
+Page {0}.	ページ{0}。
+No active challenges.	有効なチャレンジはありません。
+Active Challenges. {0}.	有効なチャレンジ。{0}。
+Unnamed option.	名前のない選択肢。
+{0}. Option {1} of {2}.	{0}。選択肢 {2}個中{1}番目。
+That option is locked.	その選択肢はロックされています。
+Options. 1, 2, and 3 switch pages. 	オプション。1、2、3 キーでページを切り替え。 
+Page 1 game settings, page 2 display settings, page 3 audio settings. 	ページ1はゲーム設定、ページ2は表示設定、ページ3はオーディオ設定。 
+Arrows browse the settings, Enter selects a setting to adjust, 	矢印キーで設定を選択、Enter キーで選んだ設定を調整、 
+Backspace returns. 	Backspace キーで戻る。 
+ They are the last stop past the options.	 チャレンジの項目は、選択肢の一番最後にあります。
+Pause menu. Arrows browse the options, Enter chooses, 	ポーズメニュー。矢印キーで選択肢を選択、Enter キーで決定、 
+Space repeats your position and the run information, 	スペースキーで現在位置とランの情報を繰り返し、 
+Backspace or Escape closes the menu.	Backspace キーまたは Esc キーでメニューを閉じる。
+Encounter	バトル
+Totem battle	トーテムバトル
+Boss battle	ボス戦
+Card choice	カード選択
+Card bundle choice	カードセットの選択
+Rare card choice	レアカード選択
+Card removal	カードの除去
+Card recycling	カードのリサイクル
+Card copying	カードのコピー
+Boulder choice	岩の選択
+Side deck change	サイドデッキの変更
+Deck trial	デッキの試練
+Victory feast	勝利の宴
+Random	ランダム
+Cost	コスト
+Cannot {0} right now.	今は{0}ことができません。
+bring your deck up	デッキを表示する
+You are already standing.	すでに立っています。
+stand up	立ち上がる
+Standing up from the table. Press H for help.	テーブルから立ち上がりました。H キーでヘルプ。
+You are at {0}.	{0}にいます。
+return to {0}	{0}に戻る
+Back at {0}.	{0}に戻りました。
+You are at the map.	マップにいます。
+return to the map	マップに戻る
+Game map.	ゲームマップ。
+Returning to the table.	テーブルに戻ります。
+You step back. Press Backspace again to return to the table.	一歩下がりました。もう一度 Backspace キーを押すとテーブルに戻ります。
+counterclockwise	反時計回りに
+clockwise	時計回りに
+Turned {0} 90 degrees.	{0}90度回転しました。
+ turned.	 を回しました。
+{0} to {1} o'clock.	{0}を{1}時に合わせました。
+The mechanism cracks and the safe door swings open. Inside is a large mass of bloodied mangled flesh.	仕掛けが外れ、金庫の扉が開きます。中には、血まみれでぐちゃぐちゃになった大きな肉の塊があります。
+You step back.	一歩下がりました。
+You step back from the {0}.	{0}から一歩下がりました。
+You focus on the {0}.	{0}に注目します。
+You focus in.	近づいて注目します。
+The rulebook is not within reach.	ルールブックに手が届きません。
+Inside the safe is a large mass of bloodied mangled flesh.	金庫の中には、血まみれでぐちゃぐちゃになった大きな肉の塊があります。
+Facing {0}.	{0}の方を向いています。
+Nothing is directly in front of you. {0}	正面には何もありません。{0}
+Focus controls. 	注目時の操作。 
+Backspace steps back from your focused object. 	Backspace キーで、注目している物から一歩下がる。 
+Backspace again returns you to the game table and opens the map.	もう一度 Backspace キーを押すと、ゲームテーブルに戻ってマップを開く。
+1, 2 and 3 examine what is in front of you. 	1、2、3 キーで正面にあるものを調べる。 
+Standing controls. Up arrow steps forward, down arrow steps back. 	立っているときの操作。上矢印キーで前進、下矢印キーで後退。 
+Left and right arrows step to the side. 	左右の矢印キーで横に移動。 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	A キーで反時計回りに90度、D キーで時計回りに90度回転。 
+Backspace returns you to the game table and opens the map.	Backspace キーでゲームテーブルに戻ってマップを開く。
+The Woodlands	森林
+The Wetlands	湿地帯
+The Snow Line	雪線地帯
+The Beach	海辺
+the path to the Cabin	小屋への道
+You have arrived at {0}	{0}に到着しました
+You are at {0}	{0}にいます
+the beginning of a new map	新しいマップの始まり
+unknown location	不明な場所
+Map ready.	マップの準備ができました。
+1 path	1本の道
+{0} paths	{0}本の道
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	マップ。{0}。この先に{1}があります。矢印キーで選択、スペースキーで詳細、Enter キーで移動、Shift + 上矢印キーでデッキを表示。
+Map. Awaiting input. Press Space for your position, H for help.	マップ。入力待ちです。スペースキーで現在位置、H キーでヘルプ。
+Awaiting path selection. H, for help.	道の選択を待っています。H キーでヘルプ。
+First	1番目
+Second	2番目
+Third	3番目
+Fourth	4番目
+Fifth	5番目
+Sixth	6番目
+Seventh	7番目
+Eighth	8番目
+Path {0}	道{0}
+{0} path: {1}	{0}の道：{1}
+, then 	、次に 
+ {0} more paths not read.	 さらに{0}本の道は読み上げていません。
+Map unavailable.	マップを読み取れません。
+{0}. No paths ahead.	{0}。この先に道はありません。
+Option {0}: {1}	選択肢{0}：{1}
+ You are on Option {0} of {1}.	 現在、{1}個中{0}番目の選択肢です。
+Left and right arrows to browse, 	左右の矢印キーで選択、 
+{0}. {1} ahead. {2}.{3} 	{0}。この先に{1}があります。{2}。{3} 
+Enter to travel, Shift+Up to display deck.	Enter キーで移動、Shift + 上矢印キーでデッキを表示。
+Arrived at {0}.	{0}に到着しました。
+Safe	金庫
+woodcarving	木彫り
+Large Picture Frame	大きな額縁
+Gramophone	蓄音機
+skull	ドクロ
+The human skull rests on the shelf.	人間の頭蓋骨が棚に置かれています。
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	金庫に注目しています。大きな丸いダイヤルが3つあり、それぞれに0から9の目盛りがあります。1、2、3 キーでダイヤルを操作、Backspace キーで一歩下がります。
+Settler Man	開拓者の男
+Settler Woman	開拓者の女
+Chief	族長
+Wildling	野人
+Enchantress	魔女
+Gravedigger	墓掘人
+Robot	ロボット
+head	頭
+arms	腕
+body	胴
+Hour hand	時針
+Minute hand	分針
+Second hand	秒針
+Nothing here can be read yet. Escape opens the pause menu.	まだ読み取れるものがありません。Esc キーでポーズメニューを開きます。
+No path selected. Use left and right arrows to browse paths.	道が選択されていません。左右の矢印キーで道を選んでください。
+The map is still settling. Try again in a moment.	マップの準備中です。少し待ってからもう一度試してください。
+Card placement cannot be cancelled. Choose a slot.	カードの配置はキャンセルできません。スロットを選んでください。
+You are in an encounter. Press H for help.	バトル中です。H キーでヘルプ。
+Unable to end turn: bell method not found.	ターンを終了できません：ベルのメソッドが見つかりません。
+Draw piles unavailable.	山札を読み取れません。
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	デッキにカードが残っていません。S キーでリスのデッキから引いてください。
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	リスのデッキにカードが残っていません。D キーで自分のデッキから引いてください。
+Draw pile unavailable.	山札を読み取れません。
+Drew {0}.	{0}を引きました。
+Sigil Ability	印の能力
+Sigil Abilities	印の能力
+Drew {0}. It gains {1}: {2}.	{0}を引きました。{1}を得ます：{2}。
+Finish placing your card before using an item.	アイテムを使う前に、カードの配置を終えてください。
+No items.	アイテムはありません。
+Item unavailable.	アイテムを読み取れません。
+Item {0}: empty.	アイテム{0}：空き。
+Item {0}: {1}	アイテム{0}：{1}
+Cut up one of your adversary's cards. It is destroyed.	相手のカード1枚を切り刻みます。そのカードは破壊されます。
+Place a weight on the scales. The pain is temporary.	天秤に重りを1個置きます。痛みは一時的です。
+Hook a card to take it as your own. Card must enter an empty space.	カードを1枚引っかけて、自分のものにします。そのカードは空いた場所に入る必要があります。
+Your cards gain temporary {0}.	あなたのカードは一時的に{0}を得ます。
+Opponent turn skipped due to {0}.	{0}により相手のターンがスキップされました。
+Opponent cards in slots 1 through 4 will lose all of their sigils.	スロット1から4にある相手のカードは、すべての印を失います。
+Skin one of your opponent's cards. It is killed and a Pelt card is added to your hand.	敵のカード1枚から皮をはぎます。そのカードは死に、皮のカードが1枚手札に加わります。
+Search your deck for any card and add it into your hand.	デッキから好きなカードを1枚探し、手札に加えます。
+Use to immediately gain 4 Bones.	使うとすぐに骨を4個得ます。
+Place a significant weight on the scales. The pain will linger...	天秤に大きな重りを置きます。痛みは長引きます…
+An item is already being used.	すでにアイテムを使用中です。
+There is no item {0}.	アイテム{0}はありません。
+Item {0} is empty.	アイテム{0}は空です。
+{0} could not be used. Item activation is not yet supported for this slot.	{0}を使えませんでした。このスロットのアイテムの使用には、まだ対応していません。
+Using {0}.	{0}を使用します。
+{0} is still waiting for input.	{0}はまだ入力を待っています。
+{0} was not used.	{0}は使われませんでした。
+Using the Lucky Clover discards all of these cards for new ones. 	クローバーを使うと、これらのカードをすべて捨てて新しいカードが配られます。 
+Left and right arrows browse. Enter selects the card. 	左右の矢印キーで選択、Enter キーでカードを選ぶ。 
+Space repeats the current option. 	スペースキーで現在の選択肢を繰り返し。 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	R キーでルールブックを開く。Shift + 上矢印キーでデッキを表示。 
+No back option on this screen.	この画面には戻る選択肢がありません。
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	メニュー操作。矢印キーで選択肢を選択、Enter キーで選択中のものに決定。 
+Backspace or Escape goes back. Space repeats the current option. 	Backspace キーまたは Esc キーで戻る。スペースキーで現在の選択肢を繰り返し。 
+Shift R looks up the last ability you heard. 	Shift + R キーで、最後に聞いた能力を調べる。 
+No valid targets.	有効な対象がありません。
+No valid target in that slot.	そのスロットに有効な対象はありません。
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	対象を選んでください。候補は{0}個。{1} 矢印キーで選択、Enter キーで決定。
+Choose a target. {0} available. Arrows to browse, Enter to select.	対象を選んでください。選べる対象は{0}。矢印キーで選択、Enter キーで決定。
+Cannot cancel item use, please choose a target.	アイテムの使用はキャンセルできません。対象を選んでください。
+Choosing a target.	対象を選択中。
+Choosing a target for {0}.	{0}の対象を選択中。
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} 矢印キーで、このアイテムの対象にできるカードを移動。Enter キーで決定。アイテムは一度使うとキャンセルできません。
+That target could not be selected.	その対象を選べませんでした。
+{0} is dragged down to your side into slot {1}.	{0}はあなたの側のスロット{1}に引きずり下ろされます。
+unknown slot.	不明なスロット。
+Your slot	あなたのスロット
+Opponent slot	相手のスロット
+{0} {1}: empty.	{0}{1}：空き。
+There is no IKMA reader for this screen yet, so the usual controls do not apply here. 	この画面用の IKMA の読み上げ機能はまだないため、通常の操作は使えません。 
+Space describes what is in front of you. Space repeats where you are. 	スペースキーで正面にあるものを説明。スペースキーで現在位置を繰り返し。 
+This screen still needs the mouse until a reader is built for it.	読み上げ機能ができるまで、この画面ではまだマウスが必要です。
+{0}IKMA cannot read this screen yet. The game is waiting for you here. 	{0}IKMA はまだこの画面を読み取れません。ゲームはここであなたの操作を待っています。 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	マップの操作。矢印キー：この先の選択肢を選択。Enter キー：移動。スペースキー：現在の選択肢をすべて読み上げ。B キー：この先の道を読み上げ。Shift + 上矢印キー：デッキを表示。I キー：現在のアイテムを確認。R キー：ルールブックを開く。Shift + 下矢印キー：テーブルから立ち上がる。H キー：ヘルプ。
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	戦闘の操作。左右の矢印キーで手札を選択。Tab キーで手札の次にプレイできるカード。Enter キーでカードをプレイ。E キーでベルを鳴らしてターン終了。R キーでルールブックを開く。Shift R キーで最近聞いた能力を調べる。C キーで手札を読む。U キーで相手の待機列を読む。G キーで相手の盤面を読む。Shift G キーで自分の盤面を読む。B キーで盤面全体と待機列を読む。A キーで天秤、骨、その他のゲーム情報を読む。I キーを繰り返し押してアイテムを切り替え、Enter キーで使用。アイテムを使う前にカードを引く必要があります。ドローフェイズ中は、D キーで自分のデッキから、S キーでリスのデッキから引きます。H キーでヘルプ。
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	カードの配置中。左右の矢印キー：スロットを移動。Enter キー：決定。ボードの読み上げキーも使えます。H キー：ヘルプ。
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	生贄の選択中。左右の矢印キー：自分のボードを移動。Enter キー：選択中のカードを捧げる。生贄は一度始めるとキャンセルできません。ボードの読み上げキーも使えます。H キー：ヘルプ。
+Cannot travel there.	そこには移動できません。
+Cancelled. {0} returned to hand.	キャンセルしました。{0}を手札に戻しました。
+Cancelled. Card returned to hand.	キャンセルしました。カードを手札に戻しました。
+A sacrifice cannot be cancelled once started.	生贄は一度始めるとキャンセルできません。
+Cannot cancel right now.	今はキャンセルできません。
+No cards to sacrifice.	捧げられるカードがありません。
+No slot {0}.	スロット{0}はありません。
+Only {0} in hand.	手札は{0}だけです。
+No cards in hand are currently playable.	手札に今出せるカードはありません。
+Card	カード
+{0} gains {1} from your totem.	{0}はトーテムから{1}を得ます。
+Recent item:	最近のアイテム：
+Recent items:	最近のアイテム：
+No recent ability to look up.	調べられる最近の能力はありません。
+No description available for that ability.	その能力の説明はありません。
+Recent ability:	最近の能力：
+Recent abilities:	最近の能力：
+Cannot play a card right now.	今はカードを出せません。
+No card selected. Use left and right arrows to browse your hand first.	カードが選択されていません。まず左右の矢印キーで手札を選んでください。
+That card	そのカード
+That card could not be played.	そのカードを出せませんでした。
+{0} was not played.	{0}は出されませんでした。
+No card in this slot.	このスロットにカードはありません。
+{0} already chosen to sacrifice.	{0}はすでに生贄に選ばれています。
+Slot {0} is occupied by {1}. Choose an empty slot.	スロット{0}には{1}がいます。空いたスロットを選んでください。
+{0} in slot {1} sacrificed. Choose {2} additional sacrifice.	スロット{1}の{0}を生け贄にしました。あと{2}体の生け贄を選んでください。
+{0} in slot {1} sacrificed. Choose {2} additional sacrifices.	スロット{1}の{0}を生け贄にしました。あと{2}体の生け贄を選んでください。
+{0} played in Slot {1}.	{0}をスロット{1}に出しました。
+No slot restrictions to step through.	順に確認するスロットの制限はありません。
+No other slot available for this card.	このカードを出せる他のスロットはありません。
+ Ability: {0}.	 能力：{0}。
+ Abilities: {0}.	 能力：{0}。
+Slot {0}: {1}, {2}/{3}.{4}{5}	スロット{0}：{1}、攻撃力{2}、体力{3}。{4}{5}
+Slot {0}: empty.{1}	スロット{0}：空き。{1}
+ Choose a slot to play {0}.	 {0}を出すスロットを選んでください。
+Slot {0}: occupied by {1}.{2}{3}	スロット{0}：{1}がいます。{2}{3}
+Slot {0}: empty.{1}{2}	スロット{0}：空き。{1}{2}
+{0} Enhanced Slot {1}: empty.{2} Cards played in this slot will gain {3}.{4}	{0}で強化されたスロット{1}：空。{2}このスロットに出したカードは{3}を得ます。{4}
++{0} power from {1}	{1}による攻撃力+{0}
+{0} in adjacent slot {1}	隣のスロット{1}にいる{0}
+sacrifice	生贄
+sacrifices	生贄
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}のコストは{1}の血。{3}を{2}体選んでください。左右の矢印キーで移動、Enter キーで決定。生贄は一度始めるとキャンセルできません。
+Playing {0}. 	{0}を出します。 
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}{1}を出すスロットを選んでください。左右の矢印キーで移動、Enter キーで決定。{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	スロットを選んでください。左右の矢印キーで移動、Enter キーで決定。{0}
+Hand: {0}. {1}.	手札：{0}。{1}。
+Your board	自分のボード
+Enemy board	敵のボード
+Resources unavailable.	リソースを読み取れません。
+ 1 candle lit.	 ロウソクが1本灯っています。
+ {0} candles lit.	 ロウソクが{0}本灯っています。
+ Enemy has 1 candle.	 敵のロウソク：1本。
+ Enemy has {0} candles.	 敵のロウソク：{0}本。
+ Woodcarving, Kin type: {0}, Sigil Ability: {1}.	 木彫り、親族：{0}、印の能力：{1}。
+ Your deck: {0} remaining.	 デッキ残り：{0}。
+ cards	 枚
+ Squirrel deck: {0} remaining.	 リスのデッキ残り：{0}。
+empty	空き
+Item {0}: {1}.	アイテム{0}：{1}。
+Opponent unavailable.	対戦相手を読み取れません。
+No cards queued.	待機中のカードはありません。
+Blocked for Slot {0}: 	スロット{0}がふさがっていて待機中： 
+Entering Slot {0}: 	スロット{0}に登場予定： 
+Upcoming queue: {0}. {1}.	次の待機列：{0}。{1}。
+{0}: empty	{0}：空き
+Slots 	スロット 
+Slot {0}	スロット{0}
+Slots 1 to {0}	スロット1から{0}
+currently {0}/{1}.	現在、攻撃力{0}、体力{1}。
+{0}: empty{1}	{0}：空き{1}
+{0} to {1}	{0}から{1}
+. Ability: {0}	。能力：{0}
+. Abilities: {0}	。能力：{0}
+costs 1 blood	コスト：1の血
+costs {0} blood	コスト：{0}の血
+costs 1 bone	コスト：1の骨
+costs {0} bones	コスト：{0}の骨
+Scales unavailable.	天秤を読み取れません。
+{0} moves to {1} slot {2}.	{0}は{1}スロット{2}に移動します。
+right, 	右へ、 
+left, 	左へ、 
+{0} {1} moves {2}from slot {3} to slot {4}.	{0}{1}は{2}スロット{3}からスロット{4}に移動します。
+{0} {1} moves {2}	{0}{1}は{2}
+from slot {0} to slot {1}.	スロット{0}からスロット{1}に移動します。
+{0} {1} moves down to slot {2}{3}.	{0}{1}がスロット{2}に降りてきます{3}。
+{0} {1} is played in slots {2}{3}.	{0} {1}がスロット{2}{3}に出されます。
+{0} {1} is played in slot {2}{3}.	{0}{1}がスロット{2}に出されます{3}。
+ targeting slot {0}	 スロット{0}を狙って
+Enemy {0} is queued{1}.	敵の{0}が{1}待機列に入ります。
+{0} {1} has left slot {2}.	{0}{1}がスロット{2}を離れました。
+The Prospector clears his queue.	探鉱者は自分の待機列を片付けます。
+, it is carrying a pack of cards	、カードパックを持っています
+Your	あなたの
+Enemy	敵の
+your	あなたの
+enemy	敵の
+Fused {0}	融合した{0}
+Unusual {0}	異常な{0}
+{0} transforms into The {1}.	{0}は{1}に変わります。
+Glitched card. This card is glowing white and glitching. Card stats are unknown until played.	グリッチしたカード。このカードは白く光り、グリッチしています。出すまでステータスは分かりません。
+Shift plus R looks up the last ability you heard.	Shift + R キーで、最後に聞いた能力を調べます。
+Ability	能力
+Abilities	能力
+ Sigil Ability: {0}.	 印の能力：{0}。
+ Kin type: {0}.	 親族：{0}。
+ Kin types: {0}.	 親族：{0}。
+Star	星
+ Moving left.	 左へ移動中。
+ Moving right.	 右へ移動中。
+Rare	レア
+Terrain border	地形の枠
+Glitched portrait	グリッチしたポートレート
+Full-card portrait	カード全面のポートレート
+Animated portrait	動くポートレート
+Hologram portrait	ホログラムのポートレート
+Golden glow	金色の輝き
+Red glow	赤い輝き
+Bloodied portrait	血に染まったポートレート
+Moon particles	月の粒子
+ Attack equals the number of ants on its owner's side.	 攻撃力は、持ち主の側にいるアリの数に等しくなります。
+ Attack is equal to half the number of Bones the owner has.	 攻撃力は、持ち主の骨の数の半分に等しくなります。
+ Attack equals sacrifices made this turn.	 攻撃力は、このターンに捧げた生贄の数に等しくなります。
+ Attack varies with green gems.	 攻撃力は緑のジェムによって変わります。
+1 blood	1の血
+{0} blood	{0}の血
+Cost: {0}.	コスト：{0}。
+Cost: Free.	コスト：なし。
+a slot	スロット
+{0} in {1}	{1}の{0}
+empty {0}	空いた{0}
+, and 	、 
+{0} attacks {1}.	{0}は{1}を攻撃します。
+{0} flies over {1} and attacks directly{2}.	{0}は{1}を飛び越えて直接攻撃します{2}。
+ twice	 2回
+{0} passes by {1} and attacks directly{2}.	{0}は{1}の横を通り抜けて直接攻撃します{2}。
+Airborne	飛行
+Mighty Leap	マイティ・リープ
+{0} blocks {1} {2} due to {3}.	{3}により、{0}が{1}の{2}を防ぎます。
+{0}{1} attacks {2}.	{0}が{1}{2}を攻撃します。
+{0}'s {1} ability triggers, preventing the damage.	{0}の{1}の能力が発動し、ダメージを防ぎます。
+{0} attacks {1}, it	{0}が{1}を攻撃、攻撃された側は
+{0}{1} attacks empty Slot {2}.	{0}が{1}空いたスロット{2}を攻撃します。
+{0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1}が空のスロット{2}を攻撃し、{3}の{4}の能力が発動します。{5}が{6}へ移動してスロット{7}に入り、
+{0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1}が空のスロット{2}を攻撃し、{3}の{4}の能力が発動します。{5}が{6}へ移動してスロット{7}に入ります。
+{0}{1} attacks directly.	{0}が{1}直接攻撃します。
+ in Slot {0}	 スロット{0}に
+ from your hand	 手札から
+{0} is played{1}{2} by Ability: {3}.	{3}の能力により、{0}が{1}{2}出されます。
+{0} is played{1}{2}.	{0}が{1}{2}出されます。
+Touch of Death	タッチ・オブ・デス
+ with {0}	 {0}で
+ to {0}	 {0}により
+The {0} queued in slot {1}	スロット{1}に待機中の{0}
+The {0} queued	待機中の{0}
+{0} takes {1} and {2}{3}.	{0}は{1}を受け、{3}{2}。
+{0} takes {1}.	{0}は{1}を受けます。
+{0} takes {1}, {2}. 	{0}は{1}を受け、{2}。 
+Its {0} ability resolves before it dies.	死ぬ前に、{0}の能力が解決されます。
+{0} takes {1}, {2}.	{0}は{1}を受け、{2}。
+Your {0}	あなたの{0}
+Enemy {0}	敵の{0}
+{0} is sacrificed.{1}	{0}が捧げられます。{1}
+{0} sacrificed.{1}	{0}を捧げました。{1}
+{0} power and {1} health	攻撃力{0}と体力{1}
+{0} power	攻撃力{0}
+{0} health	体力{0}
+Morsel	欠片
+{0} {1} abilities trigger, {2} gains {3}.	{1}の能力が{0}発動し、{2}は{3}を得ます。
+{0} gained {1}.	{0}は{1}を得ました。
+{0} is skinned and {1}.	{0}は皮をはがれ、{1}。
+{0} is cut in half and {1}.	{0}は真っ二つに切られ、{1}。
+{0} is cut and {1}.	{0}は切られ、{1}。
+{0} is smashed and {1}.	{0}は叩き潰され、{1}。
+{0} in Slot {1}	スロット{1}の{0}
+1 direct damage.	直接ダメージ1。
+{0} direct damage.	直接ダメージ{0}。
+ The scale hits 5...	 天秤が5に達します…
+VOLUME WARNING: 	音量注意： 
+Enemy deals {0}{1}	敵の攻撃：{0}{1}
+You deal {0}{1}	あなたの攻撃：{0}{1}
+Received 1 bone from 	骨を1個獲得しました。獲得元： 
+the Bone Lord's boon	骨の王の恩恵
+Received 8 bones from 	骨を8個獲得しました。獲得元： 
+Received {0} bones at battle start.	バトル開始時に骨を{0}個獲得しました。
+{0} attacks each of your {1} 	{0}が攻撃するのは、あなたの{1} 
+slot	のスロット
+slots	のスロット
+{0} attacks {1} times.	{0}は{1}回攻撃します。
+and {0}{1}	、{1}{0}
+ in slot {0}	 スロット{0}の
+{0} burrows from {1}	{0}が潜って移動：{1}
+ to 	 、 
+{0}{1} burrows	{1}{0}が潜ります
+{0}, taking {1}, {2}.	{0}、{1}を受け、{2}。
+{0}, taking {1}.	{0}、{1}を受けます。
+{0}{1} takes {2} {3}.	{1}{0}は{2}を受け{3}。
+{0}{1} takes {2}.	{1}{0}は{2}を受けます。
+{0}{1} takes {2}, {3}.	{1}{0}は{2}を受け、{3}。
+{0} attacks {1}	{0}が{1}を攻撃
+{0} attacks {1} {2} times	{0}が{1}を{2}回攻撃
+Your cards attack {0} {1} times	あなたのカードが{0}を{1}回攻撃
+{0} for {1}.	{0}、{1}。
+{0} for {1}, {2} health remaining.	{0}、{1}、残り体力{2}。
+Brittle	不安定
+{0}'s {1} ability triggers, and it dies.{2}	{0}の{1}の能力が発動し、死にます。{2}
+{0} in {1} {2}	スロット{2}の{0}
+{0} {1} abilities trigger, {2} die.{3}	{1}の能力が{0}発動し、{2}が死にます。{3}
+Your turn.	あなたのターンです。
+Enemy turn.	敵のターンです。
+Draw Phase skipped due to no cards remaining in either deck...	どちらのデッキにもカードが残っていないため、ドローフェイズはスキップされました…
+Guardian	守護者
+{0}'s {1} ability triggers: it is blocked from 	{0}の{1}の能力が発動： 
+moving to slot {0}.	スロット{0}へは移動できません。
+{0}'s {1} ability triggers: it moves to slot {2}.	{0}の{1}の能力が発動：スロット{2}に移動します。
+Burrower	穴掘り
+right	右
+left	左
+{0}'s {1} ability triggers: it moves {2} to slot {3}.	{0}の{1}の能力が発動：{2}のスロット{3}に移動します。
+{0}'s {1} ability triggers in slot {2}: it moves {3} to slot {4}.	{0}の{1}の能力がスロット{2}で発動：{3}へ移動してスロット{4}に入ります。
+ It will move left next.	 次は左へ移動します。
+ It will move right next.	 次は右へ移動します。
+ It will try to move left next.	 次は左への移動を試みます。
+ It will try to move right next.	 次は右への移動を試みます。
+{0} extends its vertebrae into slot {1}.	{0}が背骨をスロット{1}まで伸ばします。
+{0} survives the sacrifice and transforms.	{0}は生け贄にされても生き残り、変身します。
+{0} transforms.	{0}が変身します。
+{0}'s {1} ability triggers, it transforms into a hellish beast... A {2} is added to your hand.	{0}の{1}の能力が発動し、地獄の獣に変身します...{2}が手札に加わります。
+Drew Glitched card, the screen glitches and {0} {1} is added to your hand.	バグのあるカードを引きました。画面が乱れ、{0}{1}が手札に加わります。
+an	カード
+a	カード
+, Powers met: {0}, Health met: {1}, Kins met: {2} of {3}	、攻撃力の達成数：{0}、体力の達成数：{1}、親族の達成数：{2}/{3}
+none	なし
+Sprinter	スプリンター
+Bloodlust	血の渇望
+{0}'s {1} ability triggers: it now has {2} power.	{0}の{1}の能力が発動：攻撃力が{2}になります。
+{0}'s {1} ability triggers: it places a {2} in 	{0}の{1}の能力が発動：{2}を 
+{0} slot {1}.	{0}スロット{1}に置きます。
+{0}'s {1} ability triggers: {2} 	{0}の{1}の能力が発動：{2} 
+{0} is played in {1} slot {2}.	{0}が{1}スロット{2}に出されます。
+, with 	。能力： 
+Enemy 	敵の 
+{0}{1}'s {2} ability triggers in slot {3}: 	{0}{1}の{2}の能力がスロット{3}で発動： 
+it becomes a {0}/{1} {2}{3}.	攻撃力{0}、体力{1}の{2}になります{3}。
+{0}{1}'s {2} ability triggers: 	{0}{1}の{2}の能力が発動： 
+All enemy {0}'s {1} abilities trigger.	相手の{0}のすべての{1}の能力が発動します。
+Both enemy {0}'s {1} abilities trigger.	相手の{0}の2つの{1}の能力が発動します。
+They each become {0}/{1} {2}{3}.	それぞれ{0}/{1}の{2}{3}になります。
+{0}'s {1} ability fizzles due to having no empty item slots.	アイテムスロットに空きがないため、{0}の{1}の能力は不発に終わります。
+{0} is created in your hand.	{0}が手札に生み出されます。
+{0} ability triggers: {1} {2} is added to your hand.	{0}の能力が発動：{2}が手札に加わります。
+{0} {1} is added to your hand.	{0}{1}が手札に加わります。
+ Ouroboros comes back stronger than before...	 ウロボロスは以前より強くなって戻ってきます…
+A	1枚の
+An	1枚の
+{0}'s {1}	{0}の{1}
+ by {0}'s {1}	 {0}の{1}により、
+{0} is created in enemy Slot {1}{2}.	{2}{0}が敵のスロット{1}に生み出されます。
+{0} is created on the opposing space{1}.	{1}{0}が向かいの場所に生み出されます。
+Excess damage carries to the queue, targeting Slot {0}.	超過ダメージが待機列に及びます。対象はスロット{0}。
+Excess damage carries to the queue.	超過ダメージが待機列に及びます。
+Victory. {0} extra {1} received.	勝利。追加の歯を{0}本獲得しました。
+tooth	歯
+teeth	歯
+Victory.	勝利。
+{0} added in {1}.	{0}が{1}に追加されました。
+item slot {0}	アイテムスロット{0}
+an item slot	アイテムスロット
+{0} chosen.	{0}を選びました。
+{0} is created in {1}.	{0}が{1}に生み出されます。
+Saving.	セーブ中。
+{0} is added to your hand.	{0}が手札に加わります。
+Pirate Skull	海賊のドクロ
+None	なし
+Leshy waits silently.	レシーは黙って待っています。
+{0} waits silently.	{0}は黙って待っています。
+One of {0}'s {1} candles is blown out.	{0}の{1}のロウソクのうち、1本が吹き消されます。
+A candle is blown out.	ロウソクが1本吹き消されます。
+One of {0}'s candles is blown out.	{0}のロウソクが1本吹き消されます。
+A candle is blown out. {0} left.	ロウソクが1本吹き消されます。残り{0}本。
+One of {0}'s candles is blown out. {1} left.	{0}のロウソクが1本吹き消されます。残り{1}本。
+The {0}	{0}
+Leshy puts on a wooden mask of a dirty wild face, with a large mangled beard and a crooked golden tooth. He holds a large pickaxe in a shaky hand...	レシーは、汚れた野性的な顔の木の仮面を着けます。もじゃもじゃの大きなひげに、曲がった金歯。震える手で大きなつるはしを握っています…
+candle	ロウソク
+candles	ロウソク
+{0} places a skull holding {1} lit {2} 	{0}は、火の灯った{2}を{1}立てたドクロを 
+onto the table.	テーブルに置きます。
+Leshy relights your candle. You now have {0} {1} lit.	レシーはあなたのロウソクに再び火を灯します。灯っている{1}は{0}になりました。
+{0} blows out your last candle. The room goes dark as {1} reaches both hands across the table...	{0}はあなたの最後のロウソクを吹き消します。部屋は暗闇に包まれ、{1}がテーブル越しに両手を伸ばしてきます…
+{0} blows out one of your candles. You have {1} remaining.	{0}はあなたのロウソクを1本吹き消します。残りは{1}本です。
+{0} are added to your hand.	{0}が手札に加わります。
+{0} is added to your hand.{1}	{0}が手札に加わります。{1}
+{0} are added to your hand.{1}	{0}が手札に加わります。{1}
+An extra candle is lit.	追加のロウソクに火が灯ります。
+The Prospector uses his pickaxe to strike all of your cards, turning them into Gold Nuggets.	探鉱者はつるはしであなたのカードをすべて打ち、金塊に変えます。
+The Prospector clears his queue, 	探鉱者は自分の待機列を片付け、 
+The Limoncello	リモンチェッロ号
+ slot {0}	 スロット{0}
+Cannons fire at {0}, {1} is hit by cannonball and {2}.	大砲が{0}に発射されます。{1}は砲弾を受け、{2}。
+Cannons fire at {0}, {1} is hit by cannonball, {2} health remaining.	大砲が{0}に発射されます。{1}は砲弾を受け、残り体力{2}。
+Cannons fire at {0}, {1} is hit by cannonball.	大砲が{0}に発射されます。{1}は砲弾を受けます。
+Death card.	死のカード。
+{0} blood cost card.	コストが{0}の血のカード。
+Bones cost card.	コストが骨のカード。
+{0} kin card.	親族が{0}のカード。
+New cards dealt.	新しいカードが配られました。
+ Use the Lucky Clover to discard them all and be dealt new cards.	 クローバーを使うと、すべて捨てて新しいカードが配られます。
+Left and right arrows to browse, Enter to turn a card over, 	左右の矢印キーで選択、Enter キーでカードをめくる、 
+Space to repeat, H for help.	Space キーでリピート、H キーでヘルプ。
+Shift Up displays your deck, Space to repeat, H for help.	Shift + 上矢印キーでデッキを表示、スペースキーで繰り返し、H キーでヘルプ。
+Mycologist Card Selection. 	菌学者のカード選択。 
+Before you lay 1 face-down duplicate card. 	目の前に、裏向きの重複カードが1枚あります。 
+Before you lay {0} face-down duplicate cards. 	目の前に、裏向きの重複カードが{0}枚あります。 
+Choose 1 to add to your deck.	デッキに加える1枚を選んでください。
+Every card is face up. 	すべてのカードが表向きです。 
+Each one is a copy of a card already in your deck. Choose 1 to add to your deck.	どれも、すでにデッキにあるカードのコピーです。デッキに加える1枚を選んでください。
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	デッキの試練。レシーは三つの条件から一つを選ばせます。今のデッキで最も成り立ちそうなものを選んでください。その後、デッキからランダムに三枚のカードが公開されます。成功すれば報酬がもらえます。左右の矢印キーで選択、Enter キーでカードをめくる、Shift 上矢印キーでデッキを表示、Space キーでリピート、H キーでヘルプ。
+Deck Trial. Leshy puts a stone arch prop on the table, making it appear like his glowing eyes are coming from a dark cave entrance.	デッキの試練。レシーはテーブルに石のアーチの小道具を置きます。まるで暗い洞窟の入り口から、彼の光る目がのぞいているように見えます。
+Deck Trial.	デッキの試練。
+Rare Card Choice	レアカード選択
+Card Choice	カード選択
+1 face-down card	裏向きのカード1枚
+{0} face-down cards	裏向きのカード{0}枚
+1 face-down rare card	裏向きのレアカード1枚
+{0} face-down rare cards	裏向きのレアカード{0}枚
+{0}. Leshy presents you a wooden box. He pops a lock and 	{0}。レシーは木箱を差し出します。鍵を外して 
+opens it, revealing {0}... Choose 1 to add to your deck.	開けると、{0}が現れます… 1枚選んでデッキに加えてください。
+{0}. Every card is face up. Choose 1 to add to your deck.	{0}。すべてのカードが表向きです。1枚選んでデッキに加えてください。
+{0}. Before you lay {1}. Choose 1 to add to your deck.	{0}。目の前に{1}が置かれています。1枚選んでデッキに加えてください。
+Lucky Clover. Discard all cards and be dealt new ones.	クローバー。すべてのカードを捨てて、新しいカードが配られます。
+Face down.	裏向き。
+Trial of {0}.	{0}の試練。
+Your 3 cards require {0} combined Power.	あなたの3枚のカードには、合計{0}の攻撃力が必要です。
+Your 3 cards require {0} combined Health.	あなたの3枚のカードには、合計{0}の体力が必要です。
+Your 3 cards require {0} combined sigils.	あなたの3枚のカードには、合計{0}個の印が必要です。
+Your 3 cards require {0} combined Blood cost.	あなたの3枚のカードには、合計{0}の血のコストが必要です。
+Your 3 cards require {0} combined Bone cost.	あなたの3枚のカードには、合計{0}の骨のコストが必要です。
+{0} of your 3 cards must be the same kin type.	あなたの3枚のカードのうち{0}枚が、同じ親族である必要があります。
+Face up, but the card could not be read.	表向きですが、カードを読み取れませんでした。
+ Duplicate of card in your deck.	 デッキにあるカードと重複しています。
+{0}. Arrow keys to browse.	{0}。矢印キーで選択。
+That card could not be taken.	そのカードを取れませんでした。
+The Lucky Clover could not be used.	クローバーを使えませんでした。
+That card could not be selected.	そのカードを選べませんでした。
+{0} added to your deck.	{0}をデッキに加えました。
+Card added to your deck.	カードをデッキに加えました。
+ Press Enter to add it to your deck.	 Enter キーでデッキに加えます。
+Deck returned.	デッキを戻しました。
+the card choice	カード選択
+the map	マップ
+Your deck. 	あなたのデッキ。 
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	左右の矢印キーで選択、スペースキーで繰り返し、A キーで歯の数、I キーでアイテム、H キーでヘルプ、Backspace キーで{0}に戻る。
+Your deck is still being laid out.	デッキはまだ並べている途中です。
+Your deck. {0}.	あなたのデッキ。{0}。
+Left and right arrows browse the cards. Space repeats the card you are on. 	左右の矢印キーでカードを選択。スペースキーで選択中のカードを繰り返し。 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	A キーで集めた歯の数を読み上げます。I キーで、空のものも含めた3つすべてのアイテムスロットを読み上げます。 
+R opens the rulebook. 	R キーでルールブックを開く。 
+Backspace closes your deck and returns you to {0}.	Backspace キーでデッキを閉じ、{0}に戻る。
+No teeth are shown here.	ここでは歯は表示されません。
+ 1 tooth collected.	 集めた歯：1本。
+ {0} teeth collected.	 集めた歯：{0}本。
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	あなたのデッキ。手札に加えるカードを選んでください。矢印キーで選択、Enter キーで決定。{0}。
+Choose a card from your deck to add to your hand. 	デッキから手札に加えるカードを選んでください。 
+{0}. G, B and A to read the boardstate.	{0}。G、B、A キーで盤面を読み上げ。
+Host Card	宿主のカード
+Card to Sacrifice	捧げるカード
+Begin Ritual	儀式を始める
+Send card to rest by the fire	カードをたき火のそばで休ませる
+Begin experiment...	実験を始める…
+Select a pair of cards to fuse together	融合させるカードのペアを選ぶ
+Begin painting	描き始める
+Choose a card to receive an artistic rendition of	芸術的に描き直すカードを選ぶ
+Choose one card from your deck to be the host. Sacrifice another card from your deck to transfer its sigils to the host.	デッキから宿主にするカードを1枚選んでください。デッキから別のカードを捧げて、その印を宿主に移します。
+Continue resting peacefully by the campfire and raise the stat again, or withdraw from the campfire.	焚き火のそばで穏やかに休み続け、もう一度能力値を上げるか、焚き火から離れてください。
+Continue resting by the campfire and raise the stat again, or withdraw from the campfire.	焚き火のそばで休み続け、もう一度能力値を上げるか、焚き火から離れてください。
+Fused {0} is added to your deck.	融合した{0}がデッキに加わります。
+ {0}, {1}.	 {0}、{1}。
+Select a card from your deck to warm by the campfire. Doing so will permanently raise one of its stats, but comes with risk...	デッキから、たき火で温めるカードを1枚選んでください。そのカードのステータスの1つが永続的に上がりますが、危険も伴います…
+Choose a pair of matching cards from your deck to fuse into one. Their attack and health are added together, and sigils from both are kept.	デッキから同じカードのペアを選び、1枚に融合させます。攻撃力と体力は合計され、両方の印が引き継がれます。
+Pick a new woodcarving to add to your backpack, either a Kin type head or a Sigil body. Then if you have both a head and body, choose a totem combination to bring with you. Each card in your deck that matches the Kin type head, will gain the totem's Sigil, for as long as the totem is in use.	カバンに入れる新しい木彫りを選んでください。親族の頭か、印の胴のどちらかです。頭と胴の両方がそろったら、持っていくトーテムの組み合わせを選びます。デッキ内で頭の親族に一致するカードはすべて、トーテムを使っている間、トーテムの印を得ます。
+Trade the teeth you've collected for pelt cards to add to your deck.	集めた歯を、デッキに加える皮のカードと交換します。
+The trader generously gives you five teeth...	商人は気前よく歯を5本くれます...
+The trader generously gives you {0} teeth...	商人は気前よく歯を{0}本くれます...
+Trade pelts from your deck for new cards.	デッキの皮を新しいカードと交換します。
+Select one card from your deck to be removed from it permanently. The Bone Lord offers a boon in return, a passive effect that grants you bones at the start of each battle.	デッキからカードを1枚選んで、永久に取り除きます。見返りに骨の王が恩恵を与えてくれます。これは、各バトルの開始時に骨を得られるパッシブ効果です。
+Select one card from your deck. A copy of it is added to your deck, although it might be slightly off.	デッキからカードを1枚選んでください。そのコピーがデッキに加わりますが、少しおかしくなっているかもしれません。
+card to receive an artistic rendition	芸術的に描き直すカード
+card to risk resting by the campfire	焚き火のそばで休ませて危険にさらすカード
+host card	宿主のカード
+card to sacrifice	捧げるカード
+The backpack cannot be reached right now.	今はカバンを開けません。
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	カバン。矢印キーで選択、Backspace キーで木彫りの選択に戻る。
+Backpack. Arrows browse, Enter chooses a totem combination.	カバン。矢印キーで選択、Enter キーでトーテムの組み合わせを決定。
+Your backpack is empty. Press Backspace to return to woodcarving selection.	カバンが空です。Backspace キーで木彫りの選択に戻ります。
+The deck cannot be reached right now.	今はデッキを開けません。
+You have {0} {1} Kin card{2} in your deck.	デッキに親族{1}のカードが{0}枚あります{2}。
+ {0}, {1} card{2}.	 {0}、{1}枚。
+Woodcarving selection.	木彫りの選択。
+Withdraw from the campfire.	たき火から離れる。
+the fire	たき火
+Pair of {0}.	{0}のペア。
+s	2枚
+Altar of the Bone Lord	骨の王の祭壇
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	骨の王の祭壇。矢印キーで選択、Enter キーで決定。
+Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	罠猟師。ウサギの皮をもらいました。集めた歯を、デッキに加える皮のカードと交換します。
+1 tooth	歯1本
+{0} teeth	歯{0}本
+Skinning Knife	皮はぎ用ナイフ
+{0} purchased for {1}. You have {2} remaining.{3}	{0}を{1}で購入しました。残りは{2}本です。{3}
+You are {0} short from buying {1}.{2}	{1}を買うには{0}足りません。{2}
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 次の購入に必要な歯が足りません。Backspace キーで罠猟師のもとを離れます。
+You have {0}.	{0}を持っています。
+, and {0}	、{0}
+{0} sacrificed.	{0}を捧げました。
+sigil	印
+sigils	印
+{0} gained the {1} {2}.	{0}は{1}の{2}を得ました。
+its {0} by {1}	{0}が{1}
+its {0}	{0}が
+This will permanently raise one of its stats	これにより、ステータスの1つが永続的に上がります
+This will permanently raise {0}	これにより永続的に{0}上がります
+Choose a card to warm by the campfire. {0}.	たき火で温めるカードを選んでください。{0}。
+Continue resting peacefully by the campfire, and raise the stat again.	たき火のそばで安らかに休み続け、もう一度ステータスを上げる。
+Continue resting by the campfire, and raise the stat again.	たき火のそばで休み続け、もう一度ステータスを上げる。
+the chosen card	選んだカード
+to peacefully rest by	安らかに休ませる
+to risk resting by	危険を冒して休ませる
+Send {0} {1} the campfire	{0}をたき火のそばで{1}
+Send {0} {1} the campfire, permanently raising {2}.	{0}をたき火のそばで{1}。永続的に{2}上がります。
+Choose a card to become the host.	宿主にするカードを選んでください。
+Choose a card to sacrifice.	捧げるカードを選んでください。
+Choose a card to warm by the campfire. This will raise its stats but comes with risk...	たき火で温めるカードを選んでください。ステータスが上がりますが、危険も伴います…
+{0}'s {1} rose by {2}.	{0}の{1}が{2}上がりました。
+Choose a card.	カードを選んでください。
+{0} selected as {1}.	{0}を{1}に選びました。
+Pair of {0} chosen to fuse together. Enter to rechoose.	融合させる{0}のペアを選びました。Enter キーで選び直し。
+{0} chosen as {1}. Enter to rechoose.	{0}を{1}に選びました。Enter キーで選び直し。
+A {0}.	{0}。
+A {0}. {1}	{0}。{1}
+Received {0}.	{0}を受け取りました。
+{0} card placed on the altar. Enter to take it.	カード{0}が祭壇に置かれています。Enter キーで取る。
+A carved head.	彫られた頭。
+{0} head.	{0}の頭。
+A carved sigil body.	彫られた印の胴。
+{0} sigil body.	{0}の印の胴。
+Totem: your {0} cards gain {1}.	トーテム：あなたの{0}のカードが{1}を得ます。
+The finished totem.	完成したトーテム。
+Option {0} of {1}.	選択肢 {1}個中{0}番目。
+{0}. {1} option{2}. 	{0}。選択肢{1}個。 
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	左右の矢印キーで選択、Enter キーで決定、スペースキーで繰り返し、H キーでヘルプ。
+No option selected. Use left and right arrows to browse.	選択肢が選ばれていません。左右の矢印キーで選んでください。
+No pair is on the stone yet. Choose a pair of cards first.	まだ石の上にペアがありません。先にカードのペアを選んでください。
+Pair of {0} selected.	{0}のペアを選びました。
+You take the {0} Kin totem with the {1} Sigil.	{1}の印を持つ{0}族のトーテムを手に入れました。
+You took the {0}.	{0}を手に入れました。
+{0} selected.	{0}を選びました。
+Nothing to choose here.	ここには選ぶものがありません。
+Trader. {0} You have {1} {2} left to trade.	商人。{0}交換できる皮はあと{1}枚です。
+Trader. {0}	商人。{0}
+Choosing a card. {0}. 	カードを選択中。{0}。 
+Arrows browse, Enter chooses, Space repeats your position.	矢印キーで選択、Enter キーで決定、スペースキーで現在位置を繰り返し。
+Shift Up displays your deck.	Shift + 上矢印キーでデッキを表示。
+A opens your backpack, Shift Up displays your deck. 	A キーでカバンを開く、Shift + 上矢印キーでデッキを表示。 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	A キーで歯の数を確認、Backspace キーでいつでも罠猟師のもとを離れる。 
+zero	0個
+{0}. Item slots full. 	{0}。アイテムスロットは満杯です。 
+I cycles through your current items. R opens the rulebook.	I キーで現在のアイテムを切り替え。R キーでルールブックを開く。
+{0}. Select one of {1} items to add to your backpack. 	{0}。{1}のアイテムから1つ選んで、カバンに加えてください。 
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	矢印キーで選択、Enter キーで決定、Backspace キーでいつでも罠猟師のもとを離れる、 
+Space repeats your position, A counts your teeth, R opens the rulebook.	スペースキーで現在位置を繰り返し、A キーで歯の数を確認、R キーでルールブックを開く。
+R opens the rulebook.	R キーでルールブックを開く。
+The totem is assembled. Your {0} cards will gain {1}. 	トーテムが完成しました。あなたの{0}のカードは{1}を得ます。 
+Enter to take the totem with you. Backspace to return to backpack and reselect.	Enter キーでトーテムを持っていく。Backspace キーでバックパックに戻って選び直す。
+Enter to take the totem with you.	Enter キーでトーテムを持っていく。
+{0} received no new sigils.	{0}は新しい印を得ませんでした。
+{0} received {1}.	{0}は{1}を得ました。
+{0} received {1} 	{0}は{1} 
+and {0}.	と{0}を得ました。
+Copy card	カードのコピー
+Painted Card: {0}	描かれたカード：{0}
+A corked glass bottle suddenly jumps onto the game table. Landing next to it are two tiny painting easels with blank cards on them.	コルク栓をしたガラス瓶が、突然ゲームテーブルに飛び乗ってきます。その隣には、白紙のカードが載った小さな画架が2つ降り立ちます。
+Inside the glass bottle is glowing green goo. It has a misshapen face. Attached to the bottle is a glowing tipped paintbrush.	ガラス瓶の中には、光る緑色のねばねばが入っています。いびつな顔があります。瓶には、先端が光る絵筆が取り付けられています。
+Leshy presents you an ornate inkwell with {0} inside and a paintbrush.	レシーは、{0}が入った装飾付きのインク壺と絵筆をあなたに差し出します。
+Leshy presents you a collapsible fan with bird talon feet.	レシーは、鳥のかぎ爪の足が付いた折りたたみ式の扇をあなたに差し出します。
+Leshy presents you a corked glass bottle with a small {0} card inside of it.	レシーは、小さな{0}のカードが入った、コルク栓のガラス瓶をあなたに差し出します。
+Leshy presents you a rusty pair of pliers.	レシーは、錆びたペンチをあなたに差し出します。
+Leshy presents you a chipped pair of scissors.	レシーは、刃の欠けたハサミをあなたに差し出します。
+Leshy presents you an ornate wooden hourglass.	レシーは、装飾付きの木製の砂時計をあなたに差し出します。
+Leshy presents you a large magnifying glass.	レシーは、大きな虫眼鏡をあなたに差し出します。
+Leshy presents you a ceramic piggy bank.	レシーは、陶器の豚の貯金箱をあなたに差し出します。
+Leshy presents you a large curved fish hook.	レシーは、大きく曲がった釣り針をあなたに差し出します。
+Leshy presents you a razor sharp straight knife.	レシーは、剃刀のように鋭いまっすぐなナイフをあなたに差し出します。
+Leshy presents you a corked glass bottle with green goo with a misshapen face inside of it.	レシーは、いびつな顔のある緑色のねばねばが入った、コルク栓のガラス瓶をあなたに差し出します。
+Leshy presents you a glowing, ornate pocketwatch.	レシーは光り輝く、装飾の施された懐中時計を差し出します。
+Leshy presents you a straight ivory dagger, for when things become grim...	レシーは、状況が厳しくなったときのために、まっすぐな象牙の短剣を差し出します...
+Leshy presents you the {0}.	レシーはあなたに{0}を差し出します。
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	大きなネズミが、テーブルに置かれたカバンの後ろから走り出てきます。カード{0}を差し出しています。矢印キーで選択。
+A {0} is defined as: {1} Power, {2} Health{3}.	{0}の定義：攻撃力{1}、体力{2}{3}。
+Combination code: 273.	ダイヤルの番号：273。
+This page is destroyed by ink. You can make out the following words: Mirror... The Power and...Equals...the...bearing...	このページはインクで汚れています。次の言葉が読み取れます：鏡… 攻撃力と…等しい…その…持つ…
+This page is destroyed by ink. You can make out the following words: Bell Ring...The value represented by this.....equal to....the....	このページはインクで汚れています。次の言葉が読み取れます：ベルを鳴らす…これが示す値は…等しい…その…
+This page is destroyed by ink. You can make out the following words: Card Count....The value represent....equal to....number of....	このページはインクで汚れています。次の言葉が読み取れます：カードの数…示す値…等しい…の数…
+The rulebook is not available here.	ここではルールブックを使えません。
+Opened Rulebook from shelf.	棚からルールブックを開きました。
+Rulebook opened.	ルールブックを開きました。
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} 左右の矢印キーでページをめくる。Backspace キーで本を閉じる。
+Rulebook closed.	ルールブックを閉じました。
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	ルールブック。左右の矢印キーでページをめくる。スペースキーで現在のページを繰り返し。Backspace キーまたは R キーで本を閉じる。
+Variable stat	変動するステータス
+Boon	恩恵
+Item	アイテム
+Rule	ルール
+Page unavailable.	ページを読み取れません。
+Blank. Page {0} of {1}.	空白。{1}ページ中{0}ページ目。
+{0}. Description unavailable.	{0}。説明はありません。
+Blank page.	空白のページ。
+Page {0} of {1}.	{1}ページ中{0}ページ目。
+{0}. The description on this page is obscured by ink.	{0}。このページの説明はインクで隠れています。
+To the user: 	ユーザーへ： 
+Your opponent	対戦相手
+{0} is offering to surrender, press Shift and E to accept. 	{0}が降参を申し出ています。Shift + E キーで受け入れます。 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	レシーが和解を申し出ています。バトルを降参するそうです。Shift + E キーで降参を受け入れます。
+No surrender is being offered.	降参の申し出はありません。
+Concede accepted. Victory.	降参を受け入れました。勝利。
+Victory	勝利
+Defeat	敗北
+Backspace to return to the main menu. Space to repeat.	Backspace キーでメインメニューに戻る。スペースキーで繰り返し。
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	勝利画面の操作。スペースキーで画面を繰り返し。Backspace キーでメインメニューに戻る。
+Enter to continue. Space to repeat.	Enter キーで続行。スペースキーで繰り返し。
+Victory Screen controls. Space repeats the screen. Enter continues.	勝利画面の操作。スペースキーで画面を繰り返し。Enter キーで続行。
+Leshy blows out his final candle, the cabin goes dark.	レシーが最後のロウソクを吹き消し、小屋は暗くなります。
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	ラン終了時の操作。スペースキーで画面を繰り返し。Enter キーで同じスターターデッキと有効なチャレンジを使って新しいランを始める。Backspace キーでメインメニューに戻る。
+the log file could not be found	ログファイルが見つからなかった
+your desktop folder could not be found	デスクトップフォルダが見つからなかった
+the file could not be written	ファイルを書き込めなかった
+cost	コスト
+power and health	攻撃力と体力
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	死のカード。{0}を選んでください。{1}。矢印キーで選択、Enter キーで決定。
+Type a name for your card, up to 10 characters. Enter to finish. Tab reads the name so far.	カードの名前を10文字以内で入力してください。Enter キーで完了。Tab キーで、ここまでの名前を読み上げ。
+space	スペース
+capital {0}	大文字の{0}
+backspace.	バックスペース。
+Character limit reached.	文字数の上限に達しました。
+No name yet.	まだ名前がありません。
+Type at least one character first.	先に1文字以上入力してください。
+Mod Settings	Mod設定
+Events	イベント
+button	ボタン
+checkbox	チェックボックス
+checked	チェックあり
+unchecked	チェックなし
+{0} of {1}	{1}中{0}
+Closed	閉じました
+Announce	読み上げ
+Add to history	履歴に追加
+Sources	発生元
+Current Player	現在のプレイヤー
+Enemies	敵
+History	履歴
+Reads	読み取り
+Prompts	操作案内
+Updates	更新
+Automatic: new versions download and install with no question.	自動：新しいバージョンを確認なしでダウンロードしてインストールします。
+Download, then ask before installing.	ダウンロード後、インストール前に確認します。
+Ask before downloading.	ダウンロード前に確認します。
+Off: IKMA never connects to the internet.	オフ：IKMAはインターネットに接続しません。
+Speech engine	音声エンジン
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	自動：Windowsではスクリーンリーダー、Steam DeckではIKMA音声ヘルパーを使います。
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	常にUniversalSpeech経由でスクリーンリーダーを使います。NVDA、JAWS、またはWindowsの音声。
+Always the IKMA speech helper, for Steam Deck and Linux.	常にIKMA音声ヘルパーを使います。Steam DeckとLinux用。
+Language	言語
+Follow the game's language setting.	ゲームの言語設定に従います。
+Controller vibration	コントローラーの振動
+Low	弱
+Medium	中
+High	強
+Control template	操作テンプレート
+Default	標準
+Original	オリジナル
+Full log for bug reports	バグ報告用の完全なログ
+Off: the short log, what IKMA said and anything that went wrong.	オフ：IKMAが話した内容と発生した問題を記録する短いログ。
+On: every diagnostic line, for a bug report. The log gets much longer.	オン：バグ報告用にすべての診断行を記録します。ログが大幅に長くなります。
+NVDA line timing	NVDAの行の読み上げ時間
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	正確：IKMAが各行の終了をNVDAに問い合わせます。NVDA 2024.1以降が必要です。
+Estimated: IKMA guesses how long each line takes to read.	推定：IKMAが各行の読み上げ時間を推定します。
+Braille display	点字ディスプレイ
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	オン：読み上げる各行をNVDAまたはJAWS経由で点字ディスプレイにも送ります。
+Off: nothing is sent to a braille display.	オフ：点字ディスプレイには何も送りません。
+Steam Deck speech	Steam Deckの音声
+Voice	声
+Female	女性
+Male	男性
+Rate	速度
+Volume	音量
+Controller buttons	コントローラーのボタン
+Open the rulebook	ルールブックを開く
+Help	ヘルプ
+Repeat, describe, or advance a conversation	繰り返し、説明、または会話を進める
+Next playable card, slot, or sacrifice	次のプレイ可能なカード、スロット、または生け贄
+Rulebook for the last heard abilities	最後に聞いた能力のルールブック
+Read your hand	手札を読む
+Read the enemy queue	相手の待機列を読む
+Read the enemy board	相手の盤面を読む
+Read your board	自分の盤面を読む
+Game info: scales, bones, and teeth	ゲーム情報：天秤、骨、歯
+Full board and queue	盤面全体と待機列
+All three item slots	3つすべてのアイテムスロット
+Rulebook for the last heard abilities, second button	最後に聞いた能力のルールブック、2つ目のボタン
+Help list	ヘルプ一覧
+Draw from your deck	自分のデッキから引く
+Draw from the Squirrel deck	リスのデッキから引く
+Item menu	アイテムメニュー
+Accept surrender	降参を受け入れる
+Number 1	数字1
+Number 2	数字2
+Number 3	数字3
+Number 4	数字4
+Save a bug report log	バグ報告用のログを保存
+Review history, older	履歴を確認、古い項目
+Review history, newer	履歴を確認、新しい項目
+Review history as a list	履歴を一覧で確認
+Next buffer	次のバッファー
+Previous buffer	前のバッファー
+Silence speech	読み上げを停止
+{0}: {1}	{0}：{1}
+{0}: {1}. Default {2}.	{0}：{1}。標準は{2}。
+no button	ボタンなし
+Reset to Default controls	標準の操作に戻す
+Every action is reset to default controls.	すべての操作を標準に戻しました。
+Press a button... {0} to cancel.	ボタンを押してください...{0}でキャンセル。
+Hold {0}, {1}, or {2} and {3} together for a chord. Backspace on the keyboard also cancels.	組み合わせるには、{0}、{1}、{2}のいずれかと{3}を同時に押し続けてください。キーボードのBackspace キーでもキャンセルできます。
+Press a button... Hold {0}, {1}, or {2} and {3} together for a chord. Backspace on the keyboard cancels.	ボタンを押してください...組み合わせるには、{0}、{1}、{2}のいずれかと{3}を同時に押し続けてください。キーボードのBackspace キーでキャンセル。
+Button cannot be changed, due to being reserved by the game.	このボタンはゲームで予約されているため変更できません。
+Cancelled	キャンセルしました
+Bound to {0}	{0}に割り当てました
+Swapped. {0} is now on {1}, and {2} is now on {3}.	入れ替えました。{0}は{1}に、{2}は{3}になりました。
+Changes the next time you start the game.	次にゲームを起動したときに変わります。
+Feature coming soon.	この機能は近日公開です。
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Mod設定。矢印キーで選択、Enter キーで開くか変更、Backspace キーで1つ上に戻る、Esc キーで閉じる。
+{0} already used this turn.	{0}はこのターンに使用済みです。
+{0} has no valid targets right now.	今、{0}に有効な対象はありません。
+{0} cannot be used during the draw phase.	ドローフェイズ中は{0}を使えません。
+{0} can only be used during a battle.	{0}は戦闘中にしか使えません。
+{0} cannot be used, your deck is empty.	デッキが空なので{0}を使えません。
+{0} cannot be used while a giant card is on the board.	盤面に巨大カードがある間は{0}を使えません。
+{0} cannot be used while {1} is on the board.	盤面に{1}がある間は{0}を使えません。
+Now is not the time to use {0}.	今は{0}を使うときではありません。
+Help list, F1.	ヘルプ一覧、F1 キー。
+Mod Settings, Control plus M.	Mod設定、Control + M キー。
+Review history, older, Control plus Down arrow.	履歴を確認、古い項目、Control + 下矢印キー。
+Review history, newer, Control plus Up arrow.	履歴を確認、新しい項目、Control + 上矢印キー。
+Next buffer item, Control plus Up arrow.	次のバッファー項目、Control + 上矢印キー。
+Previous buffer item, Control plus Down arrow.	前のバッファー項目、Control + 下矢印キー。
+Next buffer, Control plus Right arrow.	次のバッファー、Control + 右矢印キー。
+Previous buffer, Control plus Left arrow.	前のバッファー、Control + 左矢印キー。
+Review history as a list, Y.	履歴を一覧で確認、Y キー。
+Silence speech, tap Control.	読み上げを停止、Control キーを短く押す。
+Announce scales, Control plus S.	天秤を読み上げ、Control + S キー。
+Announce bones, Control plus B.	骨を読み上げ、Control + B キー。
+Announce candles, Control plus C.	ロウソクを読み上げ、Control + C キー。
+Announce woodcarving, Control plus W.	木彫りを読み上げ、Control + W キー。
+Announce deck counts, Control plus D.	各デッキの枚数を読み上げ、Control + D キー。
+Announce teeth, Control plus T.	歯を読み上げ、Control + T キー。
+Map navigation uses buffer controls, Control plus the arrow keys. Buffer controls are remapped on this screen.	マップの移動にはバッファー操作、Control + 矢印キーを使います。この画面ではバッファー操作の割り当てが変わります。
+Route summary, Control plus Space.	経路の概要、Control + スペースキー。
+No buffers available	利用できるバッファーがありません
+No buffer selected	バッファーが選ばれていません
+choice	選択
+No path forward.	先に進む道がありません。
+Cannot go backwards.	後戻りはできません。
+Path continues out of sight.	道は見えないところまで続いています。
+{0} {1} to {2}	{0} {1}、{2}へ
+{0} {1}	{0} {1}
+Not in an encounter.	戦闘中ではありません。
+You have no woodcarving.	木彫りを持っていません。
+It resurfaces.	再び浮上します。
+They resurface.	再び浮上します。
+, sending one damage back to its attacker.	し、攻撃してきた相手に1ダメージを返します。
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	します。デッキから手札に加えるカードを1枚選んでください。矢印キーで選び、Enter キーで決定します。
+It is a rugged face with a bandana wrapped tightly below the eyes.	バンダナを目の下にきつく巻いた、いかつい顔です。
+He has a large hat, a heavy unkempt beard, and crooked teeth.	大きな帽子、濃く手入れされていないひげ、曲がった歯が特徴です。
+He has a leathery face with deep wrinkles across his forehead.	革のような顔で、額には深いしわが刻まれています。
+She has a strong aged face with a patterned headband.	模様の入ったヘッドバンドを巻いた、年老いた力強い顔の女性です。
+He has deep seated eyes under a heavy brow. Multiple fishhooks pierce through his lower lip.	太い眉の下に深く落ちくぼんだ目。下唇にはいくつもの釣り針が突き刺さっています。
+Leshy puts on the two-faced Mycologist mask. The doctor's face is a frizzled hair man with large round glasses and a head mirror. Attached to his neck is a second smaller face. The mushroom has the same facial features, with a proportionally large mushroom fused onto its head.	レシーは二つの顔を持つ菌学者の仮面を着けます. 医者の顔は、縮れた髪に大きな丸眼鏡と額帯鏡をつけた男です。その首には、もう一つ小さな顔が付いています。キノコの顔も同じ顔立ちで、頭には体に不釣り合いなほど大きなキノコが生えています。
+the cage is destroyed	檻が壊れます
+the ice is destroyed	氷が砕けます
+ It quickly snaps shut...	 すぐにバチンと閉じます…
+Combat	戦闘
+Death	死亡
+HP Changes	体力の変化
+Enemy Moves	敵の移動
+Turns	ターン
+Player Turn Start	プレイヤーのターン開始
+Enemy Turn Start	敵のターン開始
+Powers	能力
+Attacks	攻撃
+Your Turn	あなたのターン
+Challenges and Totems	チャレンジとトーテム
+Bosses	ボス
+Card Drawn	カードを引いた
+Card Played	カードを出した
+Card Obtained	カードを入手
+Resources	資源
+Teeth	歯
+Bones	骨
+Item Obtained	アイテムを入手
+Item Used	アイテムを使用
+Other	その他
+Dialogue	会話
+Node Entered	ノードに入った
+Node Results	ノードの結果
+Saving	保存
+
+# Japanese.tsv

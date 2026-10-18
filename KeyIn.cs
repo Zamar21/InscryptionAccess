@@ -250,6 +250,11 @@ namespace IKMA
             // free in this map.
             new Binding(Chord.Both, PadInput.PadButton.Down, KeyCode.DownArrow, ctrl: true, action: "HistoryOlder"),
             new Binding(Chord.Both, PadInput.PadButton.Up,   KeyCode.UpArrow,   ctrl: true, action: "HistoryNewer"),
+            // 0.4.8.018 - the buffer switch (Ctrl+Left / Right) on the pad, as
+            // docs\GAMEPAD_MAP.md has listed it since 0.4.8.007 (Session 58)
+            // but nothing bound it. Also the map preview's siblings.
+            new Binding(Chord.Both, PadInput.PadButton.Right, KeyCode.RightArrow, ctrl: true, action: "BufferNext"),
+            new Binding(Chord.Both, PadInput.PadButton.Left,  KeyCode.LeftArrow,  ctrl: true, action: "BufferPrevious"),
 
             // Session 51 (0.7.463), Zamar: the review history as a list (Y on
             // the keyboard) had no button. "give it an empty one. not on the
@@ -587,18 +592,51 @@ namespace IKMA
         // buttons (Mouse0 = 323; joystick buttons start at 330). Built once.
         private static KeyCode[] _keyboardKeys;
 
+        private static KeyCode[] KeyboardKeys
+        {
+            get
+            {
+                if (_keyboardKeys == null)
+                {
+                    var list = new List<KeyCode>();
+                    foreach (KeyCode k in Enum.GetValues(typeof(KeyCode)))
+                        if (k > KeyCode.None && (int)k < (int)KeyCode.Mouse0) list.Add(k);
+                    _keyboardKeys = list.ToArray();
+                }
+                return _keyboardKeys;
+            }
+        }
+
+        /// <summary>A real keyboard key other than Control went down this
+        /// frame. SilenceKey asks, so Control and another key arriving in
+        /// the same frame (a Steam Deck grip sending Control plus Space) is a
+        /// chord, not a Control tap.</summary>
+        internal static bool KeyboardKeyDownBesidesControl()
+        {
+            foreach (var k in KeyboardKeys)
+                if (k != KeyCode.LeftControl && k != KeyCode.RightControl && Input.GetKeyDown(k))
+                    return true;
+            return false;
+        }
+
+        // Session 64 - Zamar's Steam Deck back grips: "Home L4, End L5,
+        // Control plus Space R4, R5 empty for now." Steam sends them as
+        // keyboard keys (tools\steamdeck\ikma_controller_neptune.vdf), but
+        // they are part of the pad, so on the Deck they do not switch IKMA to
+        // the keyboard (no "Keyboard." and no keyboard words in the help).
+        private static bool DeckGripKey(KeyCode k)
+        {
+            if (!SpeechBackends.HelperPossible) return false;
+            if (k == KeyCode.Home || k == KeyCode.End || k == KeyCode.LeftControl) return true;
+            return k == KeyCode.Space && Input.GetKey(KeyCode.LeftControl);
+        }
+
         private static bool KeyboardKeyDown()
         {
-            if (_keyboardKeys == null)
-            {
-                var list = new List<KeyCode>();
-                foreach (KeyCode k in Enum.GetValues(typeof(KeyCode)))
-                    if (k > KeyCode.None && (int)k < (int)KeyCode.Mouse0) list.Add(k);
-                _keyboardKeys = list.ToArray();
-            }
-            foreach (var k in _keyboardKeys)
+            foreach (var k in KeyboardKeys)
                 if (Input.GetKeyDown(k))
                 {
+                    if (LastWasPad && DeckGripKey(k)) continue;
                     // Session 34: name the key that switched IKMA to the
                     // keyboard. "Keyboard." was heard mid-pad-play and nobody
                     // remembered touching a key; this says which key it was

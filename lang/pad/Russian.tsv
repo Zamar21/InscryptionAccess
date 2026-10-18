@@ -1,0 +1,131 @@
+﻿# lang/pad/Russian.tsv - controller versions (English line<TAB>Russian with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Нажмите [[1]], чтобы начать новый заход с той же стартовой колодой и теми же препятствиями. [[2]] — вернуться в главное меню. [[3]] — повторить.
+In the center of the screen is a small play button. Press Enter...	В центре экрана маленькая кнопка запуска. Нажмите [[1]]...
+Press H for what still works.	Нажмите [[1]], чтобы узнать, что ещё работает.
+Space describes what is directly in front of you. 	[[1]] описывает то, что прямо перед вами. 
+Conversation in progress, press Space to proceed.	Идёт разговор, нажмите [[1]], чтобы продолжить.
+Your deck is empty, press S to draw from the Squirrel deck.	Ваша колода пуста, нажмите [[1]], чтобы взять карту из колоды белок.
+The Squirrel deck is empty, press D to draw from your deck.	Колода белок пуста, нажмите [[1]], чтобы взять карту из своей колоды.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Фаза взятия карты. Нажмите [[1]], чтобы взять карту из своей колоды, или [[2]] — из колоды белок.
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Крестовина — выбор, [[1]] — использовать, [[2]] — вернуться к руке.
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Меню предметов. Крестовина влево и вправо — выбор среди ваших предметов. [[1]] использует выбранный предмет. [[2]] зачитывает все три ячейки, включая пустые. [[3]] возвращает к руке. [[4]] плюс крестовина вверх, вправо или вниз сразу использует предмет в этой ячейке.
+Arrow keys to browse, Enter to trade. Press H for help.	Крестовина — выбор, [[1]] — обменять. Нажмите [[2]] для справки.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]] сохраняет файл журнала на рабочий стол для отчёта об ошибке, а [[2]] листает историю журнала. Эти команды работают здесь и в любой момент игры.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]] сохраняет файл журнала на рабочий стол для отчёта об ошибке. Эта команда работает здесь и в любой момент игры.
+Arrow keys browse, Enter trades. 	Крестовина — выбор, [[1]] — обменять. 
+Arrows browse, Enter chooses, Space repeats your position. 	Крестовина — выбор, [[1]] — выбрать, [[2]] — повторить позицию. 
+Opening screen. Enter presses the play button. Space repeats the description.	Начальный экран. [[1]] нажимает кнопку запуска. [[2]] повторяет описание.
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Титульный экран Inscryption. Крестовина — выбор, [[1]] — подтвердить.
+Inscryption title screen. Arrow keys browse the cards. 	Титульный экран Inscryption. Крестовина перебирает карты. 
+Enter chooses the one you are on. Space repeats it. 	[[1]] выбирает текущую карту. [[2]] повторяет её. 
+Backspace to go back.	[[1]] — назад.
+Arrows to navigate	Крестовина — выбор
+, Backspace to go back.	, [[1]] — назад.
+Arrows to navigate, Enter to confirm	Крестовина — выбор, [[1]] — подтвердить
+Enter to confirm	[[1]] — подтвердить
+Unnamed setting. Press Enter to adjust.	Безымянная настройка. Нажмите [[1]], чтобы изменить.
+{0} Press Enter to adjust.	{0} Нажмите [[1]], чтобы изменить.
+{0}.{1} Press H for help.	{0}.{1} Нажмите [[1]] для справки.
+Arrows to adjust. Backspace to return.	Крестовина — изменить. [[1]] — вернуться.
+Options. 1, 2, and 3 switch pages. 	Настройки. [[1]] переключает на следующую страницу справа, [[2]] — на следующую страницу слева. 
+Arrows browse the settings, Enter selects a setting to adjust, 	Крестовина перебирает настройки, [[1]] выбирает настройку для изменения, 
+Backspace returns. 	[[1]] — назад. 
+Pause menu. Arrows browse the options, Enter chooses, 	Меню паузы. Крестовина перебирает варианты, [[1]] выбирает, 
+Space repeats your position and the run information, 	[[1]] повторяет вашу позицию и сведения о заходе, 
+Backspace or Escape closes the menu.	[[1]] или [[2]] закрывает меню.
+Standing up from the table. Press H for help.	Вы встаёте из-за стола. Нажмите [[1]] для справки.
+You step back. Press Backspace again to return to the table.	Вы отходите назад. Нажмите [[1]] ещё раз, чтобы вернуться к столу.
+Backspace steps back from your focused object. 	[[1]] отводит взгляд от выбранного объекта. 
+Backspace again returns you to the game table and opens the map.	Повторный [[1]] возвращает вас к игровому столу и открывает карту.
+1, 2 and 3 examine what is in front of you. 	[[1]] плюс крестовина вверх, вправо и вниз осматривают то, что перед вами. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	Управление стоя. Крестовина вверх — шаг вперёд, крестовина вниз — шаг назад. 
+Left and right arrows step to the side. 	Крестовина влево и вправо — шаг в сторону. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]] поворачивает вас на 90 градусов против часовой стрелки, [[2]] — на 90 градусов по часовой стрелке. 
+Backspace returns you to the game table and opens the map.	[[1]] возвращает вас к игровому столу и открывает карту.
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Карта. {0}. Впереди {1}. Крестовина — выбор, [[1]] — подробности, [[2]] — отправиться, [[3]] — показать колоду.
+Map. Awaiting input. Press Space for your position, H for help.	Карта. Ожидание ввода. Нажмите [[1]], чтобы узнать позицию, [[2]] — для справки.
+Awaiting path selection. H, for help.	Ожидание выбора пути. [[1]] — справка.
+Left and right arrows to browse, 	Крестовина влево и вправо — выбор, 
+Enter to travel, Shift+Up to display deck.	[[1]] — отправиться, [[2]] — показать колоду.
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	Вы смотрите на сейф. На нём три больших круглых диска, каждый с делениями от 0 до 9. Нажимайте [[1]] плюс крестовина вверх, вправо и вниз, чтобы вращать диски, [[2]] — отойти.
+Nothing here can be read yet. Escape opens the pause menu.	Здесь пока нечего прочитать. [[1]] открывает меню паузы.
+No path selected. Use left and right arrows to browse paths.	Путь не выбран. Используйте крестовину влево и вправо, чтобы перебирать пути.
+You are in an encounter. Press H for help.	Вы в битве. Нажмите [[1]] для справки.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	В вашей колоде не осталось карт. Нажмите [[1]], чтобы взять карту из колоды белок.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	В колоде белок не осталось карт. Нажмите [[1]], чтобы взять карту из своей колоды.
+Left and right arrows browse. Enter selects the card. 	Крестовина влево и вправо — выбор. [[1]] выбирает карту. 
+Space repeats the current option. 	[[1]] повторяет текущий вариант. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]] открывает справочник. [[2]] показывает вашу колоду. 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Навигация по меню. Крестовина перебирает варианты. [[1]] выбирает текущий. 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]] или [[2]] — назад. [[3]] повторяет текущий вариант. 
+Shift R looks up the last ability you heard. 	[[1]] находит последний услышанный символ. 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Выберите цель. Доступно: {0}. {1} Крестовина — выбор, [[1]] — подтвердить.
+Choose a target. {0} available. Arrows to browse, Enter to select.	Выберите цель. Доступно: {0}. Крестовина — выбор, [[1]] — подтвердить.
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} Крестовина перемещает между картами, на которые действует этот предмет. [[1]] — выбрать. Использованный предмет нельзя отменить.
+Space describes what is in front of you. Space repeats where you are. 	[[1]] описывает то, что перед вами. [[2]] повторяет, где вы находитесь. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Управление на карте. Крестовина — перебор вариантов впереди. [[1]] — отправиться. [[2]] — перечислить все текущие варианты. [[3]] — прочитать пути впереди. [[4]] — просмотр колоды. [[5]] — ваши текущие предметы. [[6]] — открыть справочник. [[7]] — встать из-за стола. [[8]] — справка.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Управление в бою. Крестовина влево и вправо — выбор карты в руке. [[1]] — следующая карта, которую можно сыграть. [[2]] — сыграть карту. [[3]] — позвонить в колокол, чтобы закончить ход. [[4]] — открыть книгу правил. [[5]] — найти последнюю услышанную способность. [[6]] — прочитать руку. [[7]] — прочитать очередь противника. [[8]] — прочитать поле противника. [[9]] — прочитать своё поле. [[10]] — прочитать всё поле и очередь. [[11]] — прочитать весы, кости и другие сведения об игре. [[12]] — нажимайте несколько раз, чтобы перебирать предметы, [[13]] — использовать. Прежде чем использовать предметы, нужно взять карту. Во время фазы взятия карты: [[14]] — взять карту из своей колоды, или [[15]] — из колоды белок. [[16]] — справка.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Размещение карты. Крестовина влево и вправо — перебор ячеек. [[1]] — подтвердить. Кнопки чтения доски работают. [[2]] — справка.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Выбор жертв. Крестовина влево и вправо — перебор карт на вашей стороне. [[1]] — принести в жертву текущую карту. Начатое жертвоприношение нельзя отменить. Кнопки чтения доски работают. [[2]] — справка.
+No card selected. Use left and right arrows to browse your hand first.	Карта не выбрана. Сначала выберите карту в руке крестовиной влево и вправо.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}: цена — {1} крови. Выберите жертвы: {2}. Крестовина влево и вправо — выбор, [[1]] — подтвердить. Начатое жертвоприношение нельзя отменить.
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Выберите ячейку для карты {1}. Крестовина влево и вправо — выбор, [[1]] — подтвердить.{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Выберите ячейку. Крестовина влево и вправо — выбор, [[1]] — подтвердить.{0}
+Shift plus R looks up the last ability you heard.	[[1]] находит последний услышанный символ.
+Left and right arrows to browse, Enter to turn a card over, 	Крестовина влево и вправо — выбор, [[1]] — перевернуть карту, 
+Space to repeat, H for help.	[[1]] — повторить, [[2]] — справка.
+Shift Up displays your deck, Space to repeat, H for help.	[[1]] — показать колоду, [[2]] — повторить, [[3]] — справка.
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Испытание колоды. Леший предлагает вам на выбор три условия. Выберите то, которое вернее всего выполнится для вашей текущей колоды. Затем он откроет три случайные карты из вашей колоды. Если вы угадаете, то получите награду. Крестовина влево и вправо — выбор, [[1]] — перевернуть карту, [[2]] — показать колоду, [[3]] — повторить, [[4]] — справка.
+{0}. Arrow keys to browse.	{0}. Крестовина — выбор.
+ Press Enter to add it to your deck.	 Нажмите [[1]], чтобы добавить её в колоду.
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	Крестовина влево и вправо — выбор, [[1]] — повторить, [[2]] — зубы, [[3]] — предметы, [[4]] — справка, [[5]] — вернуться к {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	Крестовина влево и вправо перебирает карты. [[1]] повторяет текущую карту. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]] зачитывает число собранных зубов. [[2]] зачитывает все три ячейки предметов, включая пустые. 
+R opens the rulebook. 	[[1]] открывает справочник. 
+Backspace closes your deck and returns you to {0}.	[[1]] закрывает колоду и возвращает вас к {0}.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Ваша колода. Выберите карту, которую взять в руку. Крестовина — выбор, [[1]] — выбрать. {0}.
+{0}. G, B and A to read the boardstate.	{0}. [[1]], [[2]] и [[3]] — прочитать состояние доски.
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Рюкзак. Крестовина — выбор, [[1]] — вернуться к выбору резной фигурки.
+Backpack. Arrows browse, Enter chooses a totem combination.	Рюкзак. Крестовина — выбор, [[1]] — выбрать сочетание для тотема.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	Ваш рюкзак пуст. Нажмите [[1]], чтобы вернуться к выбору резных фигурок.
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Алтарь Повелителя костей. Крестовина — выбор, [[1]] — подтвердить.
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Зубов не хватит на ещё одну покупку. [[1]] — уйти от Охотника.
+Pair of {0} chosen to fuse together. Enter to rechoose.	Пара для слияния выбрана: {0}. [[1]] — выбрать заново.
+{0} chosen as {1}. Enter to rechoose.	{0} — {1}. [[1]] — выбрать заново.
+{0} card placed on the altar. Enter to take it.	Карта {0} помещена на алтарь. [[1]] — взять её.
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Крестовина влево и вправо — выбор, [[1]] — выбрать, [[2]] — повторить, [[3]] — справка.
+No option selected. Use left and right arrows to browse.	Вариант не выбран. Используйте крестовину влево и вправо для выбора.
+Arrows browse, Enter chooses, Space repeats your position.	Крестовина — выбор, [[1]] — выбрать, [[2]] — повторить позицию.
+Shift Up displays your deck.	[[1]] показывает вашу колоду.
+A opens your backpack, Shift Up displays your deck. 	[[1]] открывает рюкзак, [[2]] показывает колоду. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]] — сосчитать зубы, [[2]] — уйти от Охотника в любой момент. 
+I cycles through your current items. R opens the rulebook.	[[1]] перебирает ваши текущие предметы. [[2]] открывает справочник.
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	Крестовина — выбор, [[1]] — выбрать, [[2]] — уйти от Охотника в любой момент, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]] — повторить позицию, [[2]] — сосчитать зубы, [[3]] — открыть справочник.
+R opens the rulebook.	[[1]] открывает справочник.
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]] — взять тотем с собой. [[2]] — вернуться к рюкзаку и выбрать заново.
+Enter to take the totem with you.	[[1]] — взять тотем с собой.
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	Большая крыса выбегает из-за рюкзака на столе. Она предлагает вам карту {0}. Крестовина — выбор.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} Крестовина влево и вправо листает страницы. [[1]] закрывает книгу.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Справочник. Крестовина влево и вправо листает страницы. [[1]] повторяет текущую страницу. [[2]] или [[3]] закрывает книгу.
+{0} is offering to surrender, press Shift and E to accept. 	{0} предлагает сдаться, нажмите [[1]], чтобы принять. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Леший протягивает оливковую ветвь: он признаёт поражение в битве. Нажмите [[1]], чтобы принять его капитуляцию.
+Backspace to return to the main menu. Space to repeat.	[[1]] — вернуться в главное меню. [[2]] — повторить.
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	Управление на экране победы. [[1]] повторяет экран. [[2]] возвращает в главное меню.
+Enter to continue. Space to repeat.	[[1]] — продолжить. [[2]] — повторить.
+Victory Screen controls. Space repeats the screen. Enter continues.	Управление на экране победы. [[1]] повторяет экран. [[2]] продолжает.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Управление в конце захода. [[1]] повторяет экран. [[2]] начинает новый заход с той же стартовой колодой и теми же включёнными испытаниями. [[3]] возвращает в главное меню.
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Карта смерти: выберите {0}. {1}. Крестовина — выбор, [[1]] — выбрать.
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Настройки мода. Крестовина — выбор, [[1]] — открыть или изменить, [[2]] — на уровень назад, [[3]] — закрыть.
+Help list, F1.	Список справки, [[1]].
+Mod Settings, Control plus M.	Настройки мода, [[1]].
+Review history, older, Control plus Down arrow.	Просмотр истории, старее, [[1]].
+Review history, newer, Control plus Up arrow.	Просмотр истории, новее, [[1]].
+Next buffer item, Control plus Up arrow.	Следующий элемент буфера, [[1]].
+Previous buffer item, Control plus Down arrow.	Предыдущий элемент буфера, [[1]].
+Next buffer, Control plus Right arrow.	Следующий буфер, [[1]].
+Previous buffer, Control plus Left arrow.	Предыдущий буфер, [[1]].
+Review history as a list, Y.	Просмотр истории списком, [[1]].
+Silence speech, tap Control.	Остановить речь, [[1]].
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, выберите карту из колоды, чтобы взять её в руку. Крестовина — выбор, [[1]] — подтвердить.

@@ -94,7 +94,18 @@ namespace IKMA
 
         internal static string ButtonName(PadInput.PadButton b)
         {
+            string name = ButtonNameCore(b);
+            return Templated ? LocalButton(name) : name;
+        }
+
+        private static string ButtonNameCore(PadInput.PadButton b)
+        {
             var f = CurrentFamily();
+            if (Fr)
+            {
+                string fr = ButtonNameFr(b, f);
+                if (fr != null) return fr;
+            }
             switch (b)
             {
                 case PadInput.PadButton.A:      return f == Family.PlayStation ? "Cross"    : f == Family.Switch ? "B" : "A";
@@ -159,11 +170,12 @@ namespace IKMA
         private static string UpOrDown(string up, string down)
         {
             if (up == null || down == null) return null;
-            const string U = " up", D = " down";
+            if (Templated) return Loc.F($"{up} or {down}");   // Session 64
+            string U = Fr ? " haut" : " up", D = Fr ? " bas" : " down", OR = Fr ? " ou " : " or ";
             if (up.EndsWith(U, System.StringComparison.Ordinal) && down.EndsWith(D, System.StringComparison.Ordinal)
                 && up.Substring(0, up.Length - U.Length) == down.Substring(0, down.Length - D.Length))
-                return up + " or down";
-            return up + " or " + down;
+                return up + OR + D.Trim();
+            return up + OR + down;
         }
 
         /// <summary>
@@ -175,6 +187,18 @@ namespace IKMA
         internal static string Gesture(KeyIn.Chord chord, PadInput.PadButton button)
         {
             string btn = ButtonName(button);
+            if (Templated)
+            {
+                // Session 64: the other ten languages join a chord their own way.
+                string lb = ButtonName(PadInput.PadButton.LB), rb = ButtonName(PadInput.PadButton.RB);
+                switch (chord)
+                {
+                    case KeyIn.Chord.LB:   return Loc.F($"{lb} plus {btn}");
+                    case KeyIn.Chord.RB:   return Loc.F($"{rb} plus {btn}");
+                    case KeyIn.Chord.Both: { string inner = Loc.F($"{rb} plus {btn}"); return Loc.F($"{lb} plus {inner}"); }
+                    default:               return btn;
+                }
+            }
             switch (chord)
             {
                 case KeyIn.Chord.LB:   return ButtonName(PadInput.PadButton.LB) + " plus " + btn;
@@ -219,7 +243,13 @@ namespace IKMA
         private const string Verbs = @"(?:browse|move|turn|step|navigate|adjust)\b";
 
         private static readonly Regex Keys = new Regex(
-            @"(?<quick>Shift plus 1, 2, or 3)" +
+            // Session 64 (found making the pad versions for the other
+            // languages): kept as keys. Control plus Space has no button
+            // (it was said "Control plus X"), and the Mod Settings line about
+            // pressing a button names the keyboard on purpose (it was said
+            // "B on the keyboard also cancels").
+            @"(?<keep>Control plus Space|\b(?:Backspace|Escape) on the keyboard)" +
+            @"|(?<quick>Shift plus 1, 2, or 3)" +
             // Session 34: a bare number list ("1, 2 and 3 examine ...") and the
             // cabin's turn keys ("A turns you ...", "D turns you ...") - the
             // pad turns with the right stick, the keyboard's other turn keys.
@@ -242,14 +272,19 @@ namespace IKMA
             // wrong way round: the ONLY line that names the number keys as a
             // bare list is the cabin's "1, 2 and 3 examine what is in front
             // of you", so the list is rewritten there and nowhere else.
-            @"|(?<nums>\b1, 2,? (?<conj>and|or) 3(?= examine\b))" +
+            // Session 64: and the safe's "Press 1, 2, and 3 to interact with
+            // the knobs", which was said "Press RB plus D-pad up, 2, and 3".
+            @"|(?<nums>\b1, 2,? (?<conj>and|or) 3(?= examine\b| to interact\b))" +
             // Session 46 (same driver run): the review history and Mod
             // Settings are Control chords on the keyboard. "Control plus Up
             // or Down arrow scrolls the log history" was spoken on the pad as
             // "Control plus Up or D-pad down". The pad's own gesture is read
             // from the map in use, so a moved action is named where it is.
             @"|(?<hist>Control plus Up or Down arrow)" +
-            @"|(?<carrow>Control plus (?<cdir>Up|Down) arrow)" +
+            // Session 64 (found with the test driver, 0.4.8.023, on the pad):
+            // the help list's buffer rows were spoken "Next buffer, Control
+            // plus D-pad right". Left and Right are buffer chords too.
+            @"|(?<carrow>Control plus (?<cdir>Up|Down|Left|Right) arrow)" +
             @"|(?<cletter>Control plus (?<cl>[A-Z])\b)" +
             @"|(?<turn>\b(?<tk>[AD]) turns you\b)" +
             @"|(?<sarrow>Shift(?: plus | and |\+| )(?<sdir>Up|Down|Left|Right)(?: arrow)?)" +
@@ -261,7 +296,10 @@ namespace IKMA
             // Session 51: the help list row "Review history as a list, Y."
             // The list has a button now (KeyIn: HistoryList).
             @"|(?<histlist>(?<=as a list, )Y\b)" +
-            @"|(?<named>\b(?:Enter|Space|Backspace|Escape|Tab)\b)" +
+            // Session 64 (same run): the help list said "Help list, F1" and
+            // "Silence speech, tap Control" on the pad. Both have buttons.
+            @"|(?<silence>\btap Control\b)" +
+            @"|(?<named>\b(?:Enter|Space|Backspace|Escape|Tab|F1)\b)" +
             @"|(?<=\b[Pp]ress )(?<pressed>[A-Z0-9])\b" +
             @"|\b(?<letter>[A-Z])\b(?=(?: to\b| for\b|, | and\b| or\b| opens\b| cycles\b| reads\b| counts\b| closes\b| looks\b))",
             RegexOptions.CultureInvariant);
@@ -297,8 +335,9 @@ namespace IKMA
             try
             {
                 if (!KeyIn.LastWasPad || !KeyIn.PadOwned) return text;
-                if (Loc.CurrentLanguage() != "English") return text;
-                if (text.Contains("Type a name")) return text;
+                string lang = Loc.CurrentLanguage();
+                if (lang != "English" && lang != "French") return text;   // 0.4.8.018 - French too
+                if (text.Contains("Type a name") || text.Contains("Tapez un nom")) return text;
                 // The game's own dialogue is set in capitals ("I, TOO, ...").
                 // A SENTENCE with more capitals than small letters is the game
                 // talking, not IKMA naming a key: it is left alone.
@@ -329,7 +368,7 @@ namespace IKMA
 
         internal static string Rewrite(string text)
         {
-            return OrderFace(OrderDpad(ReplaceKeys(text)));
+            return OrderFace(OrderDpad(Fr ? ReplaceKeysFr(text) : ReplaceKeys(text)));
         }
 
         // ------------------------------------------------------------------
@@ -346,7 +385,7 @@ namespace IKMA
                    y = ButtonName(PadInput.PadButton.Y), b = ButtonName(PadInput.PadButton.B);
             var face = new Regex(
                 @"^(?<chord>(?:\S+ plus )*)(?<btn>" + Regex.Escape(a) + "|" + Regex.Escape(x) + "|"
-                + Regex.Escape(y) + "|" + Regex.Escape(b) + @")(?=,| to\b| for\b)",
+                + Regex.Escape(y) + "|" + Regex.Escape(b) + @")(?=,| to\b| for\b| pour\b| :)",
                 RegexOptions.CultureInvariant);
             System.Func<string, int> rank = s =>
             {
@@ -392,16 +431,16 @@ namespace IKMA
         // one control, not a list, and is left alone.
         // ------------------------------------------------------------------
         private static readonly Regex DpadSentence = new Regex(
-            @"^(?<chord>(?:\S+ plus )*)D-pad (?<dir>up|right|down|left)\b(?! and)",
+            @"^(?<chord>(?:\S+ plus )*)(?:D-pad|[Cc]roix) (?<dir>up|right|down|left|haut|droite|bas|gauche)\b(?! and| et)",
             RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
         private static int DirRank(string d)
         {
             switch (d.ToLowerInvariant())
             {
-                case "up": return 0;
-                case "right": return 1;
-                case "down": return 2;
+                case "up": case "haut": return 0;
+                case "right": case "droite": return 1;
+                case "down": case "bas": return 2;
                 default: return 3;
             }
         }
@@ -451,6 +490,7 @@ namespace IKMA
             return Keys.Replace(text, m =>
             {
                 string r = null;
+                if (m.Groups["keep"].Success) return m.Value;   // Session 64
                 if (m.Groups["quick"].Success)
                     r = ButtonName(PadInput.PadButton.RB) + " plus D-pad up, right, or down";
                 else if (m.Groups["convo"].Success)
@@ -491,6 +531,8 @@ namespace IKMA
                     r = "D-pad" + Singular(m.Groups["v3"]);
                 else if (m.Groups["histlist"].Success)
                     r = ForKey(KeyCode.Y, shift: false);
+                else if (m.Groups["silence"].Success)
+                    r = ForKey(SilenceKey.PadToken, shift: false);
                 else if (m.Groups["named"].Success)
                     r = ForKey(Named(m.Groups["named"].Value), shift: false);
                 else if (m.Groups["pressed"].Success)
@@ -509,6 +551,160 @@ namespace IKMA
         }
 
         /// <summary>" browse" -> " browses"; nothing captured -> "".</summary>
+        // ==================================================================
+        // 0.4.8.018 - FRENCH. Zamar, Session 62, on whether the French beta
+        // tester plays on a controller: "I do not know but let's get it
+        // supported." The same rewrite as ReplaceKeys, over the key words the
+        // French lines use (lang/French.tsv): Entrée, Retour arrière, Espace,
+        // Échap, Tab, Maj, Ctrl, flèches. Button words are French where French
+        // players use them (Croix, Rond, Carré, croix directionnelle, stick
+        // droit); Xbox letters and LB/RB stay as printed on the pad. Claude's
+        // words, unreviewed, like the rest of the French file.
+        // ==================================================================
+        internal static bool Fr => Loc.SpokenLanguage == "French";
+
+        private static string ButtonNameFr(PadInput.PadButton b, Family f)
+        {
+            switch (b)
+            {
+                case PadInput.PadButton.A:      return f == Family.PlayStation ? "Croix"    : null;
+                case PadInput.PadButton.B:      return f == Family.PlayStation ? "Rond"     : null;
+                case PadInput.PadButton.X:      return f == Family.PlayStation ? "Carré"    : null;
+                case PadInput.PadButton.Y:      return f == Family.PlayStation ? "Triangle" : null;
+                case PadInput.PadButton.View:   return f == Family.Switch ? "Moins" : null;
+                case PadInput.PadButton.Start:  return f == Family.Switch ? "Plus" : null;
+                case PadInput.PadButton.L3:     return f == Family.Switch ? "clic du stick gauche" : null;
+                case PadInput.PadButton.R3:     return f == Family.Switch ? "clic du stick droit"  : null;
+                case PadInput.PadButton.Up:     return "croix haut";
+                case PadInput.PadButton.Down:   return "croix bas";
+                case PadInput.PadButton.Left:   return "croix gauche";
+                case PadInput.PadButton.Right:  return "croix droite";
+                case PadInput.PadButton.RUp:    return "stick droit haut";
+                case PadInput.PadButton.RDown:  return "stick droit bas";
+                case PadInput.PadButton.RLeft:  return "stick droit gauche";
+                case PadInput.PadButton.RRight: return "stick droit droite";
+            }
+            return null;
+        }
+
+        private static readonly Regex KeysFr = new Regex(
+            @"(?<keep>Ctrl plus (?:Espace|les flèches)|(?:Retour arrière|Échap) sur le clavier)" +
+            @"|(?<quick>Maj plus 1, 2,? ou 3)" +
+            @"|(?<pages>\b1, 2,? et 3 changent de page)" +
+            @"|(?<convo>(?<=[Aa]ppuyez sur )Espace(?= pour continuer))" +
+            @"|(?<drawD>\bD(?=,? (?:pour )?piocher dans votre deck))" +
+            @"|(?<drawS>\bS(?=,? (?:pour )?piocher dans la pioche d'écureuils))" +
+            @"|(?<nums>\b1, 2,? (?<conj>et|ou) 3(?= examinent\b| pour manipuler\b))" +
+            @"|(?<hist>Ctrl plus flèche haut ou bas)" +
+            @"|(?<carrow>Ctrl plus flèche (?<cdir>haut|bas|gauche|droite))" +
+            @"|(?<cletter>Ctrl plus (?<cl>[A-Z])\b)" +
+            @"|(?<turn>\b(?<tk>[AD])\b(?= vous fait pivoter| de 90 degrés))" +
+            @"|(?<sarrow>Maj(?: plus | et | )(?:flèche )?(?<sdir>[Hh]aut|[Bb]as|[Gg]auche|[Dd]roite)\b)" +
+            @"|(?<sletter>Maj(?: plus | et | )(?<sl>[A-Z])\b)" +
+            @"|(?<art>[Ll]es )?(?<lr>[Ff]lèches gauche et droite)(?<v1> (?:parcourent|tournent|déplacent))?" +
+            @"|(?<art>[Ll]es )?(?<ud>[Ff]lèches haut et bas)(?<v2> (?:parcourent|tournent|déplacent))?" +
+            @"|(?<onearrow>\b[Ff]lèche (?<adir>haut|bas|gauche|droite)\b)" +
+            @"|(?<art>\b[Ll]es )?(?<arrows>\b[Ff]lèches\b)(?<v3> (?:parcourent|tournent|déplacent))?" +
+            @"|(?<histlist>(?<=sous forme de liste, )Y\b)" +
+            @"|(?<silence>appui bref sur Ctrl\b)" +
+            @"|(?<named>Retour arrière|Entrée|Espace|Échap|\bTab\b|\bF1\b)" +
+            @"|(?<=\b[Aa]ppuyez sur )(?<pressed>[A-Z0-9])\b" +
+            @"|\b(?<letter>[A-Z])\b(?=(?: pour\b| :|, | et\b| ou\b| ouvre\b| fait\b| lit\b| compte\b| ferme\b| consulte\b| affiche\b| enregistre\b))",
+            RegexOptions.CultureInvariant);
+
+        private static string SingularFr(Group verb)
+        {
+            if (!verb.Success) return "";
+            string v = verb.Value.Trim();
+            return " " + (v == "parcourent" ? "parcourt" : v == "tournent" ? "tourne" : "déplace");
+        }
+
+        private static string ReplaceKeysFr(string text)
+        {
+            return KeysFr.Replace(text, m =>
+            {
+                string r = null;
+                if (m.Groups["keep"].Success) return m.Value;   // no button for these yet
+                if (m.Groups["quick"].Success)
+                    r = ButtonName(PadInput.PadButton.RB) + " plus croix haut, droite ou bas";
+                else if (m.Groups["convo"].Success)
+                    r = ButtonName(PadInput.PadButton.X);
+                else if (m.Groups["drawD"].Success)
+                    r = ButtonName(PadInput.PadButton.A);
+                else if (m.Groups["drawS"].Success)
+                    r = ButtonName(PadInput.PadButton.B);
+                else if (m.Groups["pages"].Success)
+                    r = ButtonName(PadInput.PadButton.RB) + " passe à la page de droite, "
+                      + ButtonName(PadInput.PadButton.LB) + " à la page de gauche";
+                else if (m.Groups["nums"].Success)
+                    r = ButtonName(PadInput.PadButton.RB) + " plus croix haut, droite " + m.Groups["conj"].Value + " bas";
+                else if (m.Groups["hist"].Success)
+                    r = UpOrDown(ForKey(KeyCode.UpArrow, shift: false, ctrl: true),
+                                 ForKey(KeyCode.DownArrow, shift: false, ctrl: true));
+                else if (m.Groups["carrow"].Success)
+                    r = ForKey(ArrowFr(m.Groups["cdir"].Value), shift: false, ctrl: true);
+                else if (m.Groups["cletter"].Success)
+                    r = ForKey(Letter(m.Groups["cl"].Value), shift: false, ctrl: true);
+                else if (m.Groups["turn"].Success)
+                    r = ForKey(m.Groups["tk"].Value == "A" ? KeyCode.LeftArrow : KeyCode.RightArrow, shift: true);
+                else if (m.Groups["sarrow"].Success)
+                    r = ForKey(ArrowFr(m.Groups["sdir"].Value), shift: true);
+                else if (m.Groups["sletter"].Success)
+                    r = ForKey(Letter(m.Groups["sl"].Value), shift: true);
+                else if (m.Groups["lr"].Success)
+                    r = "croix gauche et droite" + SingularFr(m.Groups["v1"]);
+                else if (m.Groups["ud"].Success)
+                    r = "croix haut et bas" + SingularFr(m.Groups["v2"]);
+                else if (m.Groups["onearrow"].Success)
+                    r = "croix " + m.Groups["adir"].Value;
+                else if (m.Groups["arrows"].Success)
+                    r = "croix directionnelle" + SingularFr(m.Groups["v3"]);
+                else if (m.Groups["histlist"].Success)
+                    r = ForKey(KeyCode.Y, shift: false);
+                else if (m.Groups["silence"].Success)
+                    r = ForKey(SilenceKey.PadToken, shift: false);
+                else if (m.Groups["named"].Success)
+                    r = ForKey(NamedFr(m.Groups["named"].Value), shift: false);
+                else if (m.Groups["pressed"].Success)
+                    r = ForKey(Letter(m.Groups["pressed"].Value), shift: false);
+                else if (m.Groups["letter"].Success)
+                    r = ForKey(Letter(m.Groups["letter"].Value), shift: false);
+                if (r == null) return m.Value;   // no pad binding: keep the key
+                // "Les flèches" is plural; the pad has one cross: "la croix".
+                if (m.Groups["art"].Success)
+                    r = (char.IsUpper(m.Groups["art"].Value[0]) ? "La " : "la ") + r;
+                bool sentenceStart = m.Index == 0
+                    || (m.Index >= 2 && text[m.Index - 1] == ' ' && ".!?".IndexOf(text[m.Index - 2]) >= 0);
+                if (sentenceStart && r.Length > 0 && char.IsLower(r[0]))
+                    r = char.ToUpperInvariant(r[0]) + r.Substring(1);
+                return r;
+            });
+        }
+
+        private static KeyCode ArrowFr(string dir)
+        {
+            switch (dir.ToLowerInvariant())
+            {
+                case "haut":   return KeyCode.UpArrow;
+                case "bas":    return KeyCode.DownArrow;
+                case "gauche": return KeyCode.LeftArrow;
+                default:       return KeyCode.RightArrow;
+            }
+        }
+
+        private static KeyCode NamedFr(string name)
+        {
+            switch (name)
+            {
+                case "Entrée":         return KeyCode.Return;
+                case "Espace":         return KeyCode.Space;
+                case "Retour arrière": return KeyCode.Backspace;
+                case "Échap":          return KeyCode.Escape;
+                case "F1":             return KeyCode.F1;
+                default:               return KeyCode.Tab;
+            }
+        }
+
         private static string Singular(Group verb)
             => verb.Success ? verb.Value + "s" : "";
 
@@ -531,8 +727,236 @@ namespace IKMA
                 case "Space":     return KeyCode.Space;
                 case "Backspace": return KeyCode.Backspace;
                 case "Escape":    return KeyCode.Escape;
+                case "F1":        return KeyCode.F1;
                 default:          return KeyCode.Tab;
             }
+        }
+
+        // ==================================================================
+        // Session 64 - THE OTHER TEN LANGUAGES. Zamar, on the pad words for
+        // Italian, German, Spanish, Brazilian Portuguese, Turkish, Russian,
+        // Japanese, Korean and Chinese: "let's fix that with the translations."
+        //
+        // English and French rewrite the finished sentence (above), because
+        // their key words are known. The other ten word their keys too freely
+        // for that ("Pfeiltasten links und rechts", "左右の矢印キー"). So each
+        // line that names a key has a PAD VERSION, translated like any other
+        // line: lang/pad/<Language>.tsv, "English line<TAB>pad version". The
+        // pad version holds [[1]], [[2]] ... where the buttons go; Loc swaps
+        // it in when the last press was a pad button (Loc.PadLine), and the
+        // buttons are filled from the map in use, as in English.
+        //
+        // The slots come from the English line: the same Keys pattern, each
+        // match in order, each with a fixed number of button slots. The
+        // English pad versions handed to the translator are made by
+        // TemplateFor below, so the numbering is the same at both ends.
+        // ==================================================================
+
+        /// <summary>True when IKMA speaks one of the ten languages with pad versions.</summary>
+        internal static bool Templated
+        {
+            get
+            {
+                if (_makingTemplates) return false;
+                string lang = Loc.SpokenLanguage;
+                return lang != null && lang != "English" && lang != "French";
+            }
+        }
+
+        private static bool _makingTemplates;
+
+        // Printed labels (LB, View, Menu, Options) stay as printed, as in
+        // French; the rest are words.
+        private static string LocalButton(string name)
+        {
+            switch (name)
+            {
+                case "Cross":             return Loc.T("Cross");
+                case "Circle":            return Loc.T("Circle");
+                case "Square":            return Loc.T("Square");
+                case "Triangle":          return Loc.T("Triangle");
+                case "Minus":             return Loc.T("Minus");
+                case "Plus":              return Loc.T("Plus");
+                case "left stick press":  return Loc.T("left stick press");
+                case "right stick press": return Loc.T("right stick press");
+                case "D-pad up":          return Loc.T("D-pad up");
+                case "D-pad down":        return Loc.T("D-pad down");
+                case "D-pad left":        return Loc.T("D-pad left");
+                case "D-pad right":       return Loc.T("D-pad right");
+                case "right stick up":    return Loc.T("right stick up");
+                case "right stick down":  return Loc.T("right stick down");
+                case "right stick left":  return Loc.T("right stick left");
+                case "right stick right": return Loc.T("right stick right");
+            }
+            return name;
+        }
+
+        private const char SLOT = '\u0001';
+
+        /// <summary>One key phrase in an English line: where it is, its pad
+        /// words with SLOT where a button goes, and those buttons.</summary>
+        private sealed class KeyPiece
+        {
+            public int Index, Length;
+            public string Original, Shape;
+            public string[] Buttons;
+        }
+
+        /// <summary>
+        /// The key phrases of an English line, in order, as ReplaceKeys sees
+        /// them (the game's capitals sentences left out, as in ForSpeechCore).
+        /// A button is null where the map has none.
+        /// </summary>
+        private static System.Collections.Generic.List<KeyPiece> Pieces(string english)
+        {
+            var pieces = new System.Collections.Generic.List<KeyPiece>();
+            foreach (Match s in Regex.Matches(english, @"[^.!?]+[.!?]*"))
+            {
+                int up = 0, low = 0;
+                foreach (char ch in s.Value) { if (char.IsUpper(ch)) up++; else if (char.IsLower(ch)) low++; }
+                if (up > low) continue;
+                foreach (Match m in Keys.Matches(s.Value))
+                {
+                    var p = new KeyPiece { Index = s.Index + m.Index, Length = m.Length, Original = m.Value };
+                    string sl = SLOT.ToString();
+                    if (m.Groups["keep"].Success) continue;
+                    if (m.Groups["quick"].Success)
+                    { p.Shape = sl + " plus D-pad up, right, or down"; p.Buttons = new[] { ButtonName(PadInput.PadButton.RB) }; }
+                    else if (m.Groups["convo"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ButtonName(PadInput.PadButton.X) }; }
+                    else if (m.Groups["drawD"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ButtonName(PadInput.PadButton.A) }; }
+                    else if (m.Groups["drawS"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ButtonName(PadInput.PadButton.B) }; }
+                    else if (m.Groups["pages"].Success)
+                    {
+                        p.Shape = sl + " goes to the next page right, " + sl + " goes to the next page left";
+                        p.Buttons = new[] { ButtonName(PadInput.PadButton.RB), ButtonName(PadInput.PadButton.LB) };
+                    }
+                    else if (m.Groups["nums"].Success)
+                    { p.Shape = sl + " plus D-pad up, right, " + m.Groups["conj"].Value + " down"; p.Buttons = new[] { ButtonName(PadInput.PadButton.RB) }; }
+                    else if (m.Groups["hist"].Success)
+                    {
+                        p.Shape = sl;
+                        p.Buttons = new[] { UpOrDown(ForKey(KeyCode.UpArrow, shift: false, ctrl: true),
+                                                     ForKey(KeyCode.DownArrow, shift: false, ctrl: true)) };
+                    }
+                    else if (m.Groups["carrow"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Arrow(m.Groups["cdir"].Value), shift: false, ctrl: true) }; }
+                    else if (m.Groups["cletter"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Letter(m.Groups["cl"].Value), shift: false, ctrl: true) }; }
+                    else if (m.Groups["turn"].Success)
+                    { p.Shape = sl + " turns you"; p.Buttons = new[] { ForKey(m.Groups["tk"].Value == "A" ? KeyCode.LeftArrow : KeyCode.RightArrow, shift: true) }; }
+                    else if (m.Groups["sarrow"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Arrow(m.Groups["sdir"].Value), shift: true) }; }
+                    else if (m.Groups["sletter"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Letter(m.Groups["sl"].Value), shift: true) }; }
+                    else if (m.Groups["lr"].Success)
+                    { p.Shape = "D-pad left and right" + Singular(m.Groups["v1"]); p.Buttons = new string[0]; }
+                    else if (m.Groups["ud"].Success)
+                    { p.Shape = "D-pad up and down" + Singular(m.Groups["v2"]); p.Buttons = new string[0]; }
+                    else if (m.Groups["onearrow"].Success)
+                    { p.Shape = "D-pad " + m.Groups["adir"].Value.ToLowerInvariant(); p.Buttons = new string[0]; }
+                    else if (m.Groups["arrows"].Success)
+                    { p.Shape = "D-pad" + Singular(m.Groups["v3"]); p.Buttons = new string[0]; }
+                    else if (m.Groups["histlist"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(KeyCode.Y, shift: false) }; }
+                    else if (m.Groups["silence"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(SilenceKey.PadToken, shift: false) }; }
+                    else if (m.Groups["named"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Named(m.Groups["named"].Value), shift: false) }; }
+                    else if (m.Groups["pressed"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Letter(m.Groups["pressed"].Value), shift: false) }; }
+                    else if (m.Groups["letter"].Success)
+                    { p.Shape = sl; p.Buttons = new[] { ForKey(Letter(m.Groups["letter"].Value), shift: false) }; }
+                    else continue;
+                    pieces.Add(p);
+                }
+            }
+            return pieces;
+        }
+
+        private static bool SentenceStart(string text, int index)
+            => index == 0 || (index >= 2 && text[index - 1] == ' ' && ".!?".IndexOf(text[index - 2]) >= 0);
+
+        /// <summary>
+        /// The English pad version of a line, for the translator: the key
+        /// phrases in pad words, [[n]] where a button goes. A phrase with no
+        /// button in the standard map keeps its key words (its slot number is
+        /// still used up, so the numbers match Fill). Null when the line names
+        /// no key. Run offline (tools\dev\make_pad_templates.ps1).
+        /// </summary>
+        internal static string TemplateFor(string english)
+        {
+            if (string.IsNullOrEmpty(english) || english.Contains("Type a name")) return null;
+            _makingTemplates = true;
+            try
+            {
+                var pieces = Pieces(english);
+                if (pieces.Count == 0) return null;
+                var sb = new System.Text.StringBuilder();
+                int at = 0, slot = 0;
+                bool changed = false;
+                foreach (var p in pieces)
+                {
+                    sb.Append(english, at, p.Index - at);
+                    at = p.Index + p.Length;
+                    int first = slot;
+                    slot += p.Buttons.Length;
+                    if (System.Array.IndexOf(p.Buttons, null) >= 0) { sb.Append(p.Original); continue; }
+                    string shape = p.Shape;
+                    for (int i = 0; i < p.Buttons.Length; i++)
+                    {
+                        int k = shape.IndexOf(SLOT);
+                        shape = shape.Substring(0, k) + "[[" + (first + i + 1) + "]]" + shape.Substring(k + 1);
+                    }
+                    if (SentenceStart(english, p.Index) && shape.Length > 0 && char.IsLower(shape[0]))
+                        shape = char.ToUpperInvariant(shape[0]) + shape.Substring(1);
+                    sb.Append(shape);
+                    changed = true;
+                }
+                sb.Append(english, at, english.Length - at);
+                return changed ? sb.ToString() : null;
+            }
+            finally { _makingTemplates = false; }
+        }
+
+        private static readonly Regex SlotToken = new Regex(@"\[\[(\d+)\]\]", RegexOptions.CultureInvariant);
+
+        /// <summary>
+        /// A translated pad version with its buttons filled in from the map in
+        /// use. Null (so the keyboard words are said) when a slot has no
+        /// button or a slot number is not one the English line has.
+        /// </summary>
+        internal static string Fill(string english, string template)
+        {
+            try
+            {
+                var buttons = new System.Collections.Generic.List<string>();
+                foreach (var p in Pieces(english)) buttons.AddRange(p.Buttons);
+                bool ok = true;
+                string filled = SlotToken.Replace(template, m =>
+                {
+                    int n = int.Parse(m.Groups[1].Value) - 1;
+                    if (n < 0 || n >= buttons.Count || buttons[n] == null) { ok = false; return m.Value; }
+                    string b = buttons[n];
+                    if (SentenceStart(template, m.Index) && b.Length > 0 && char.IsLower(b[0]))
+                        b = char.ToUpperInvariant(b[0]) + b.Substring(1);
+                    return b;
+                });
+                return ok ? filled : null;
+            }
+            catch { return null; }
+        }
+
+        /// <summary>True when a line should be said in its pad version.</summary>
+        internal static bool PadLineWanted(string english)
+        {
+            try
+            {
+                return KeyIn.LastWasPad && KeyIn.PadOwned && !english.Contains("Type a name");
+            }
+            catch { return false; }
         }
 
         private static KeyCode Letter(string c)

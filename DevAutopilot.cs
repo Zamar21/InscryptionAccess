@@ -215,7 +215,9 @@ namespace IKMA
                     return KeyCode.Return;
                 }
                 sig = state + " browse " + idx + "->" + _plan.HandIndex;
-                return KeyCode.RightArrow;
+                // Session 64: lists stop at their ends since 0.4.8.013, so a
+                // card to the left is never reached by Right alone.
+                return idx > _plan.HandIndex ? KeyCode.LeftArrow : KeyCode.RightArrow;
             }
 
             // A plan past selection with nothing to choose: the game refused

@@ -1,0 +1,131 @@
+﻿# lang/pad/Spanish.tsv - controller versions (English line<TAB>Spanish with [[n]] button slots).
+# Made by localization_work\s64\import_pad_handoff.py; translated by ChatGPT, Session 64.
+Press Enter to begin a new run with the same Starter Deck and Challenges enabled. Backspace to return to the main menu. Space to repeat.	Pulsa [[1]] para empezar una nueva partida con el mismo mazo inicial y los mismos desafíos activados. [[2]] para volver al menú principal. [[3]] para repetir.
+In the center of the screen is a small play button. Press Enter...	En el centro de la pantalla hay un pequeño botón de reproducir. Pulsa [[1]]...
+Press H for what still works.	Pulsa [[1]] para saber qué sigue funcionando.
+Space describes what is directly in front of you. 	[[1]] describe lo que hay justo delante de ti. 
+Conversation in progress, press Space to proceed.	Conversación en curso, pulsa [[1]] para continuar.
+Your deck is empty, press S to draw from the Squirrel deck.	Tu mazo está vacío, pulsa [[1]] para robar del mazo de ardillas.
+The Squirrel deck is empty, press D to draw from your deck.	El mazo de ardillas está vacío, pulsa [[1]] para robar de tu mazo.
+Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Fase de robo. Pulsa [[1]] para robar de tu mazo o [[2]] para robar del mazo de ardillas.
+Arrows to Browse, Enter to select, Backspace to return to your hand.	Cruceta para explorar, [[1]] para seleccionar, [[2]] para volver a tu mano.
+Item menu. Left and right arrows browse the items you are carrying. Enter uses the item you are on. Shift plus I reads all three slots including empty ones. Backspace returns you to your hand. Shift plus 1, 2, or 3 quick uses the item in that slot.	Menú de objetos. La cruceta a izquierda y derecha recorre los objetos que llevas. [[1]] usa el objeto en el que estás. [[2]] lee las tres ranuras, incluidas las vacías. [[3]] te devuelve a tu mano. [[4]] más cruceta arriba, derecha o abajo usa directamente el objeto de esa ranura.
+Arrow keys to browse, Enter to trade. Press H for help.	Cruceta para explorar, [[1]] para intercambiar. Pulsa [[2]] para obtener ayuda.
+Shift L saves a log file to your desktop for a bug report, and Control plus Up or Down arrow scrolls the log history. Those commands work here and at any point during gameplay.	[[1]] guarda un archivo de registro en tu escritorio para informar de un error, y [[2]] recorre el historial del registro. Estos comandos funcionan aquí y en cualquier momento de la partida.
+Shift L saves a log file to your desktop for a bug report. That command works here and at any point during gameplay.	[[1]] guarda un archivo de registro en tu escritorio para informar de un error. Este comando funciona aquí y en cualquier momento de la partida.
+Arrow keys browse, Enter trades. 	La cruceta explora, [[1]] intercambia. 
+Arrows browse, Enter chooses, Space repeats your position. 	Cruceta para explorar, [[1]] para elegir, [[2]] repite tu posición. 
+Opening screen. Enter presses the play button. Space repeats the description.	Pantalla de apertura. [[1]] pulsa el botón de reproducir. [[2]] repite la descripción.
+Inscryption title screen. Arrows to navigate, Enter to confirm.	Pantalla de título de Inscryption. Cruceta para navegar, [[1]] para confirmar.
+Inscryption title screen. Arrow keys browse the cards. 	Pantalla de título de Inscryption. La cruceta recorre las cartas. 
+Enter chooses the one you are on. Space repeats it. 	[[1]] elige aquella en la que estás. [[2]] la repite. 
+Backspace to go back.	[[1]] para volver.
+Arrows to navigate	Cruceta para navegar
+, Backspace to go back.	, [[1]] para volver.
+Arrows to navigate, Enter to confirm	Cruceta para navegar, [[1]] para confirmar
+Enter to confirm	[[1]] para confirmar
+Unnamed setting. Press Enter to adjust.	Ajuste sin nombre. Pulsa [[1]] para modificarlo.
+{0} Press Enter to adjust.	{0} Pulsa [[1]] para modificarlo.
+{0}.{1} Press H for help.	{0}.{1} Pulsa [[1]] para obtener ayuda.
+Arrows to adjust. Backspace to return.	Cruceta para modificar. [[1]] para volver.
+Options. 1, 2, and 3 switch pages. 	Opciones. [[1]] pasa a la siguiente página a la derecha, [[2]] pasa a la siguiente página a la izquierda. 
+Arrows browse the settings, Enter selects a setting to adjust, 	La cruceta recorre los ajustes, [[1]] selecciona un ajuste para modificarlo, 
+Backspace returns. 	[[1]] vuelve. 
+Pause menu. Arrows browse the options, Enter chooses, 	Menú de pausa. La cruceta recorre las opciones, [[1]] elige, 
+Space repeats your position and the run information, 	[[1]] repite tu posición y la información de la partida, 
+Backspace or Escape closes the menu.	[[1]] o [[2]] cierran el menú.
+Standing up from the table. Press H for help.	Te levantas de la mesa. Pulsa [[1]] para obtener ayuda.
+You step back. Press Backspace again to return to the table.	Retrocedes. Pulsa [[1]] otra vez para volver a la mesa.
+Backspace steps back from your focused object. 	[[1]] te aparta del objeto enfocado. 
+Backspace again returns you to the game table and opens the map.	Pulsar [[1]] otra vez te devuelve a la mesa de juego y abre el mapa.
+1, 2 and 3 examine what is in front of you. 	[[1]] más cruceta arriba, derecha y abajo examinan lo que tienes delante. 
+Standing controls. Up arrow steps forward, down arrow steps back. 	Controles de pie. Cruceta arriba avanza un paso, cruceta abajo retrocede un paso. 
+Left and right arrows step to the side. 	La cruceta a izquierda y derecha da un paso lateral. 
+A turns you 90 degrees counterclockwise, D turns you 90 degrees clockwise. 	[[1]] te gira 90 grados en sentido antihorario, [[2]] te gira 90 grados en sentido horario. 
+Backspace returns you to the game table and opens the map.	[[1]] te devuelve a la mesa de juego y abre el mapa.
+Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Mapa. {0}. {1} por delante. Cruceta para explorar, [[1]] para ver detalles, [[2]] para viajar, [[3]] para mostrar el mazo.
+Map. Awaiting input. Press Space for your position, H for help.	Mapa. A la espera. Pulsa [[1]] para oír tu posición, [[2]] para obtener ayuda.
+Awaiting path selection. H, for help.	Esperando a que elijas un camino. [[1]], para obtener ayuda.
+Left and right arrows to browse, 	Cruceta a izquierda y derecha para explorar, 
+Enter to travel, Shift+Up to display deck.	[[1]] para viajar, [[2]] para mostrar el mazo.
+You're focusing on the safe. It has three large circular knobs on it, each one with notches numbers 0 through 9. Press 1, 2, and 3 to interact with the knobs, Backspace to step back.	Estás mirando la caja fuerte. Tiene tres grandes ruedas circulares, cada una numerada del 0 al 9. Pulsa [[1]] más cruceta arriba, derecha y abajo para manejar las ruedas, [[2]] para apartarte.
+Nothing here can be read yet. Escape opens the pause menu.	Aquí todavía no se puede leer nada. [[1]] abre el menú de pausa.
+No path selected. Use left and right arrows to browse paths.	No hay ningún camino seleccionado. Usa la cruceta a izquierda y derecha para explorar los caminos.
+You are in an encounter. Press H for help.	Estás en un encuentro. Pulsa [[1]] para obtener ayuda.
+No cards remaining in your deck. Press S to draw from the Squirrel deck.	No quedan cartas en tu mazo. Pulsa [[1]] para robar del mazo de ardillas.
+No cards remaining in the Squirrel deck. Press D to draw from your deck.	No quedan cartas en el mazo de ardillas. Pulsa [[1]] para robar de tu mazo.
+Left and right arrows browse. Enter selects the card. 	La cruceta a izquierda y derecha explora. [[1]] selecciona la carta. 
+Space repeats the current option. 	[[1]] repite la opción actual. 
+R opens the rulebook. Shift plus Up arrow displays your deck. 	[[1]] abre el reglamento. [[2]] muestra tu mazo. 
+Menu navigation. Arrow keys browse the options. Enter chooses the one you are on. 	Navegación por menús. La cruceta recorre las opciones. [[1]] elige aquella en la que estás. 
+Backspace or Escape goes back. Space repeats the current option. 	[[1]] o [[2]] vuelven atrás. [[3]] repite la opción actual. 
+Shift R looks up the last ability you heard. 	[[1]] consulta la última habilidad que has oído. 
+Choose a target. {0} available. {1} Arrows to browse, Enter to select.	Elige un objetivo. {0} disponibles. {1} Cruceta para explorar, [[1]] para seleccionar.
+Choose a target. {0} available. Arrows to browse, Enter to select.	Elige un objetivo. {0} disponibles. Cruceta para explorar, [[1]] para seleccionar.
+{0} Arrow keys move between the cards this item can affect. Enter selects. An item cannot be cancelled once used.	{0} La cruceta se mueve entre las cartas a las que puede afectar este objeto. [[1]] selecciona. Un objeto no se puede cancelar una vez usado.
+Space describes what is in front of you. Space repeats where you are. 	[[1]] describe lo que tienes delante. [[2]] repite dónde estás. 
+Map controls. Arrows, browse the choices ahead. Enter, to travel. Space, lists all current choices. B, read the paths ahead. Shift plus Up arrow to browse your deck. I, hear your current items. R, open the rulebook. Shift plus Down arrow, to stand up from the table. H, for help.	Controles del mapa. Cruceta: explorar las opciones que hay por delante. [[1]]: viajar. [[2]]: enumerar todas las opciones actuales. [[3]]: leer los caminos que hay por delante. [[4]]: explorar tu mazo. [[5]]: oír tus objetos actuales. [[6]]: abrir el reglamento. [[7]]: levantarte de la mesa. [[8]]: ayuda.
+Encounter controls. Left and right arrows browse hand. Tab, next playable card in your hand. Enter, play card. E, ring bell to end turn. R, open the rulebook. Shift R to look up recently heard ability. C, read your hand. U, read enemy queue. G, read enemy board. Shift G, read your board. B, read full board and queue. A, read scales, bones, and other game info. I, press repeatedly to cycle through your items, Enter to use. You must draw a card before you can use items. During your Draw Phase: D, draw from your deck, or S, draw from the Squirrel deck. H, for help.	Controles del combate. Cruceta a izquierda y derecha para explorar la mano. [[1]], siguiente carta jugable de tu mano. [[2]], jugar la carta. [[3]], tocar la campana para terminar el turno. [[4]], abrir el reglamento. [[5]] para consultar la última habilidad oída. [[6]], leer tu mano. [[7]], leer la cola rival. [[8]], leer el tablero rival. [[9]], leer tu tablero. [[10]], leer todo el tablero y la cola. [[11]], leer la balanza, los huesos y otra información de la partida. [[12]], pulsa varias veces para recorrer tus objetos, [[13]] para usarlo. Debes robar una carta antes de poder usar objetos. Durante tu fase de robo: [[14]], robar de tu mazo, o [[15]], robar del mazo de ardillas. [[16]], para obtener ayuda.
+Placing a card. Left and right arrows navigate slots. Enter, confirm. Board reading keys still work. H, for help.	Colocando una carta. Cruceta a izquierda y derecha: moverse por los espacios. [[1]]: confirmar. Los botones de lectura del tablero siguen funcionando. [[2]]: ayuda.
+Choosing sacrifices. Left and right arrows navigate your board. Enter, sacrifice the card you are on. A sacrifice cannot be cancelled once started. Board reading keys still work. H, for help.	Eligiendo sacrificios. Cruceta a izquierda y derecha: moverse por tu tablero. [[1]]: sacrificar la carta en la que estás. Un sacrificio no se puede cancelar una vez iniciado. Los botones de lectura del tablero siguen funcionando. [[2]]: ayuda.
+No card selected. Use left and right arrows to browse your hand first.	No hay ninguna carta seleccionada. Usa primero la cruceta a izquierda y derecha para explorar tu mano.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0} cuesta {1} de sangre. Elige {2} {3}. Cruceta a izquierda y derecha para navegar, [[1]] para confirmar. Un sacrificio no se puede cancelar una vez iniciado.
+{0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Elige un espacio para jugar {1}. Cruceta a izquierda y derecha para navegar, [[1]] para confirmar.{2}
+Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Elige un espacio. Cruceta a izquierda y derecha para navegar, [[1]] para confirmar.{0}
+Shift plus R looks up the last ability you heard.	[[1]] consulta la última habilidad que has oído.
+Left and right arrows to browse, Enter to turn a card over, 	Cruceta a izquierda y derecha para explorar, [[1]] para dar la vuelta a una carta, 
+Space to repeat, H for help.	[[1]] para repetir, [[2]] para obtener ayuda.
+Shift Up displays your deck, Space to repeat, H for help.	[[1]] muestra tu mazo, [[2]] para repetir, [[3]] para obtener ayuda.
+Deck Trial. Leshy offers you three conditions to choose from. Pick the one most likely to be true for your current deck. He will then reveal three random cards from your deck. If you succeed you will receive a reward. Left and right arrows to browse, Enter to turn a card over, Shift Up displays your deck, Space to repeat, H for help.	Prueba del mazo. Leshy te ofrece tres condiciones para elegir. Elige la que tenga más probabilidades de cumplirse con tu mazo actual. Después revelará tres cartas al azar de tu mazo. Si lo logras, recibirás una recompensa. Cruceta a izquierda y derecha para explorar, [[1]] para voltear una carta, [[2]] muestra tu mazo, [[3]] para repetir, [[4]] para obtener ayuda.
+{0}. Arrow keys to browse.	{0}. Cruceta para explorar.
+ Press Enter to add it to your deck.	 Pulsa [[1]] para añadirla a tu mazo.
+Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {0}.	Cruceta a izquierda y derecha para explorar, [[1]] para repetir, [[2]] para los dientes, [[3]] para los objetos, [[4]] para obtener ayuda, [[5]] para volver a {0}.
+Left and right arrows browse the cards. Space repeats the card you are on. 	La cruceta a izquierda y derecha recorre las cartas. [[1]] repite la carta en la que estás. 
+A reads the amount of teeth collected. I reads all three item slots including your empty ones. 	[[1]] lee la cantidad de dientes conseguidos. [[2]] lee las tres casillas de objetos, incluidas las vacías. 
+R opens the rulebook. 	[[1]] abre el reglamento. 
+Backspace closes your deck and returns you to {0}.	[[1]] cierra tu mazo y te devuelve a {0}.
+Your deck. Choose a card to add to your hand. Arrows browse, Enter chooses. {0}.	Tu mazo. Elige una carta para añadirla a tu mano. La cruceta explora, [[1]] elige. {0}.
+{0}. G, B and A to read the boardstate.	{0}. [[1]], [[2]] y [[3]] para leer el estado del tablero.
+Backpack. Arrows browse, Backspace returns to woodcarving selection.	Mochila. La cruceta explora, [[1]] vuelve a la selección de tallas.
+Backpack. Arrows browse, Enter chooses a totem combination.	Mochila. La cruceta explora, [[1]] elige una combinación de tótem.
+Your backpack is empty. Press Backspace to return to woodcarving selection.	Tu mochila está vacía. Pulsa [[1]] para volver a la selección de tallas de madera.
+Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Altar del señor de los huesos. Cruceta para explorar, [[1]] para confirmar.
+ Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 No te quedan dientes suficientes para otra compra. [[1]] para dejar al trampero.
+Pair of {0} chosen to fuse together. Enter to rechoose.	Has elegido el par de {0} para fusionarlo. [[1]] para volver a elegir.
+{0} chosen as {1}. Enter to rechoose.	Has elegido {0} como {1}. [[1]] para volver a elegir.
+{0} card placed on the altar. Enter to take it.	Carta {0} colocada en el altar. [[1]] para cogerla.
+Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	Cruceta a izquierda y derecha para explorar, [[1]] para elegir, [[2]] para repetir, [[3]] para obtener ayuda.
+No option selected. Use left and right arrows to browse.	No hay ninguna opción seleccionada. Usa la cruceta a izquierda y derecha para explorar.
+Arrows browse, Enter chooses, Space repeats your position.	La cruceta explora, [[1]] elige, [[2]] repite tu posición.
+Shift Up displays your deck.	[[1]] muestra tu mazo.
+A opens your backpack, Shift Up displays your deck. 	[[1]] abre tu mochila, [[2]] muestra tu mazo. 
+A counts your teeth, Backspace leaves the Trapper at anytime. 	[[1]] cuenta tus dientes, [[2]] te permite dejar al trampero en cualquier momento. 
+I cycles through your current items. R opens the rulebook.	[[1]] recorre tus objetos actuales. [[2]] abre el reglamento.
+Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, 	La cruceta explora, [[1]] elige, [[2]] te permite dejar al trampero en cualquier momento, 
+Space repeats your position, A counts your teeth, R opens the rulebook.	[[1]] repite tu posición, [[2]] cuenta tus dientes, [[3]] abre el reglamento.
+R opens the rulebook.	[[1]] abre el reglamento.
+Enter to take the totem with you. Backspace to return to backpack and reselect.	[[1]] para llevarte el tótem. [[2]] para volver a la mochila y elegir de nuevo.
+Enter to take the totem with you.	[[1]] para llevarte el tótem.
+A large rat scampers from behind the backpack resting on the table. It is offering you a {0} card. Arrows to browse.	Una rata grande sale corriendo de detrás de la mochila que hay en la mesa. Te ofrece una carta {0}. Cruceta para explorar.
+{0} {1} Left and right arrows turn pages. Backspace closes the book.	{0} {1} La cruceta a izquierda y derecha pasa las páginas. [[1]] cierra el libro.
+Rulebook. Left and right arrows turn pages. Space repeats the current page. Backspace or R closes the book.	Reglamento. La cruceta a izquierda y derecha pasa las páginas. [[1]] repite la página actual. [[2]] o [[3]] cierran el libro.
+{0} is offering to surrender, press Shift and E to accept. 	{0} se ofrece a rendirse; pulsa [[1]] para aceptar. 
+Leshy is offering an olive branch, he concedes the battle. Press Shift and E to accept his surrender.	Leshy te tiende una rama de olivo: se rinde en esta batalla. Pulsa [[1]] para aceptar su rendición.
+Backspace to return to the main menu. Space to repeat.	[[1]] para volver al menú principal. [[2]] para repetir.
+Victory Screen controls. Space repeats the screen. Backspace returns to the main menu.	Controles de la pantalla de victoria. [[1]] repite la pantalla. [[2]] vuelve al menú principal.
+Enter to continue. Space to repeat.	[[1]] para continuar. [[2]] para repetir.
+Victory Screen controls. Space repeats the screen. Enter continues.	Controles de la pantalla de victoria. [[1]] repite la pantalla. [[2]] continúa.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Controles de fin de partida. [[1]] repite la pantalla. [[2]] inicia una nueva partida con el mismo mazo inicial y los mismos desafíos activados. [[3]] vuelve al menú principal.
+Death card, choose its {0}. {1}. Arrow keys to browse, Enter to choose.	Carta de muerte: elige {0}. {1}. Cruceta para explorar, [[1]] para elegir.
+Mod Settings. Arrows to browse, Enter to open or change, Backspace to go back one level, Escape to close.	Ajustes del mod. Cruceta para explorar, [[1]] para abrir o cambiar, [[2]] para volver un nivel, [[3]] para cerrar.
+Help list, F1.	Lista de ayuda, [[1]].
+Mod Settings, Control plus M.	Ajustes del mod, [[1]].
+Review history, older, Control plus Down arrow.	Revisar historial, anterior, [[1]].
+Review history, newer, Control plus Up arrow.	Revisar historial, siguiente, [[1]].
+Next buffer item, Control plus Up arrow.	Elemento siguiente del búfer, [[1]].
+Previous buffer item, Control plus Down arrow.	Elemento anterior del búfer, [[1]].
+Next buffer, Control plus Right arrow.	Búfer siguiente, [[1]].
+Previous buffer, Control plus Left arrow.	Búfer anterior, [[1]].
+Review history as a list, Y.	Revisar historial como lista, [[1]].
+Silence speech, tap Control.	Silenciar voz, [[1]].
+, choose a card from your deck to add to your hand. Arrows browse, Enter to confirm.	, elige una carta de tu mazo para añadirla a tu mano. Cruceta para explorar, [[1]] para confirmar.

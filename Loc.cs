@@ -1,4 +1,4 @@
-// Loc.cs
+﻿// Loc.cs
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -95,6 +95,8 @@ namespace IKMA
             if (string.IsNullOrEmpty(english)) return english;
             Dictionary<string, string> table = Table();
             if (table == null) return english;
+            string pad = PadLine(english);
+            if (pad != null) return pad;
             if (table.TryGetValue(english, out string translated)) return translated;
             ReportMissing(english);
             return english;
@@ -106,6 +108,12 @@ namespace IKMA
             if (line == null) return null;
             Dictionary<string, string> table = Table();
             if (table == null) return line.ToString();
+            string padPattern = PadLine(line.Format);
+            if (padPattern != null)
+            {
+                try { return string.Format(padPattern, line.GetArguments()); }
+                catch (FormatException) { }   // the keyboard version below
+            }
             if (table.TryGetValue(line.Format, out string pattern))
             {
                 try { return string.Format(pattern, line.GetArguments()); }
@@ -157,6 +165,34 @@ namespace IKMA
             return translated;
         }
 
+        /// <summary>
+        /// A label the game prints on screen (a menu item, a screen title, a
+        /// sigil or item name), in the game's own translation - so a player
+        /// hears the word the screen shows (Session 65, Zamar: "switch the
+        /// on-screen labels to the game's own translations"). The game prints
+        /// many labels in capitals (CARD LOCKED); IKMA speaks them in
+        /// ordinary case, so a translation in capitals is lowered to match
+        /// the English. In English, and before the game's table is loaded,
+        /// the English unchanged.
+        /// </summary>
+        internal static string GameLabel(string english)
+        {
+            string s = Game(english);
+            // The game has no word of its own here (Japanese "Continue" finds the
+            // command-line "continue" first, left in English): IKMA's line instead.
+            if (string.IsNullOrEmpty(s) || s == english) return T(english);
+            bool allCaps = s.ToUpperInvariant() == s && s.ToLowerInvariant() != s;
+            if (allCaps && english.ToUpperInvariant() != english)
+            {
+                var culture = ReadGameLanguage() == "Turkish"
+                    ? System.Globalization.CultureInfo.GetCultureInfo("tr-TR")
+                    : System.Globalization.CultureInfo.InvariantCulture;
+                string lower = s.ToLower(culture);
+                s = char.ToUpper(lower[0], culture) + lower.Substring(1);
+            }
+            return s;
+        }
+
         private static readonly Dictionary<string, string> _gameCache = new Dictionary<string, string>(StringComparer.Ordinal);
         private static string _gameCacheLanguage;
 
@@ -206,6 +242,28 @@ namespace IKMA
         /// from the speech thread, which must never ask the game anything.
         /// </summary>
         internal static string SpokenLanguage => _spokenLanguage ?? "English";
+
+        // SESSION 64 - THE COLON IN LINES IKMA JOINS ITSELF ("Votre plateau:
+        // Emplacement 4", "Combat de boss: Prospector", "Capacité: ...").
+        // Zamar delegated it ("you decide"). Each language's own colon, as its
+        // translated lines already write it: French puts a space before it,
+        // Japanese and Chinese use the full-width colon with no space after,
+        // every other language ": ". Lines that go through Loc.F carry their
+        // colon in the translation and do not use this.
+        internal static string Colon
+        {
+            get
+            {
+                switch (SpokenLanguage)
+                {
+                    case "French": return " : ";
+                    case "Japanese":
+                    case "ChineseSimplified":
+                    case "ChineseTraditional": return "\uFF1A";
+                    default: return ": ";
+                }
+            }
+        }
         private static volatile string _spokenLanguage;
 
         /// <summary>
@@ -215,7 +273,28 @@ namespace IKMA
         /// and heard. While false, the [Language] setting and the game's Text
         /// Language are both ignored.
         /// </summary>
-        internal static readonly bool LocalizationShipped = false;   // readonly, not const: a const false makes the rest unreachable (warning CS0162)
+        internal static readonly bool LocalizationShipped = true;
+
+        /// <summary>
+        /// 0.4.8.017 - Zamar, Session 62: "French support would be a great to
+        /// have for v.5 as one of my most active testers is playing in french."
+        /// The languages IKMA speaks besides English. Any other language - the
+        /// game's or the [Language] setting's - speaks English, exactly as
+        /// before. Add a language here only with its file built into the DLL
+        /// (IKMAccess.csproj) and brought current with the code.
+        /// </summary>
+        internal static readonly HashSet<string> ShippedLanguages =
+            new HashSet<string>(StringComparer.Ordinal)
+            {
+                "French",
+                // Zamar, Session 64: "All 10" for v0.5. Lines added since
+                // Session 32 translated by ChatGPT (localization_work\chatgpt_returned).
+                "Italian", "German", "Spanish", "BrazilianPortuguese", "Turkish",
+                "Russian", "Japanese", "Korean", "ChineseSimplified", "ChineseTraditional",
+            };
+
+        internal static bool IsShipped(IkmaLanguage l)
+            => l == IkmaLanguage.Game || l == IkmaLanguage.English || ShippedLanguages.Contains(l.ToString());
 
         /// <summary>
         /// 0.4.8.006 - true when the game's own text comes out in the language
@@ -235,8 +314,8 @@ namespace IKMA
         {
             if (!LocalizationShipped) return "English";
             IkmaLanguage chosen = Setting != null ? Setting.Value : IkmaLanguage.Game;
-            if (chosen != IkmaLanguage.Game) return chosen.ToString();
-            return ReadGameLanguage() ?? "English";
+            string lang = chosen != IkmaLanguage.Game ? chosen.ToString() : (ReadGameLanguage() ?? "English");
+            return ShippedLanguages.Contains(lang) ? lang : "English";
         }
 
         /// <summary>
@@ -277,6 +356,64 @@ namespace IKMA
                 return _translationsField?.GetValue(null) is System.Collections.ICollection list && list.Count > 0;
             }
             catch { return false; }
+        }
+
+        // ------------------------------------------------------------------
+        // Session 64 - PAD VERSIONS for the ten languages after French (see
+        // PadWords, "THE OTHER TEN LANGUAGES"): lang/pad/<Language>.tsv,
+        // "English line<TAB>pad version with [[n]] button slots".
+        // ------------------------------------------------------------------
+        private static string _padLanguage;
+        private static Dictionary<string, string> _padTable;
+
+        /// <summary>The line's pad version, buttons filled in, or null.</summary>
+        private static string PadLine(string english)
+        {
+            string lang = _tableLanguage;
+            if (lang == "English" || lang == "French") return null;
+            if (lang != _padLanguage)
+            {
+                _padLanguage = lang;
+                _padTable = LoadPad(lang);
+            }
+            if (_padTable == null || _padTable.Count == 0) return null;
+            if (!_padTable.TryGetValue(english, out string template)) return null;
+            if (!PadWords.PadLineWanted(english)) return null;
+            return PadWords.Fill(english, template);
+        }
+
+        private static Dictionary<string, string> LoadPad(string lang)
+        {
+            var table = new Dictionary<string, string>(StringComparer.Ordinal);
+            try
+            {
+                Stream s = typeof(Loc).Assembly.GetManifestResourceStream("lang/pad/" + lang + ".tsv");
+                if (s == null) return table;
+                int bad = 0;
+                using (var reader = new StreamReader(s, Encoding.UTF8))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.StartsWith("#", StringComparison.Ordinal)) continue;
+                        int tab = line.IndexOf('\t');
+                        if (tab <= 0) continue;
+                        string english = Unescape(line.Substring(0, tab));
+                        string pad = Unescape(line.Substring(tab + 1));
+                        if (pad.Length == 0) continue;
+                        if (!BlanksFit(english, pad)) { bad++; continue; }
+                        table[english] = pad;
+                    }
+                }
+                _log?.LogInfo($"IKMA LANGUAGE: {table.Count} {lang} lines have a pad version.");
+                if (bad > 0)
+                    _log?.LogWarning($"IKMA LANGUAGE: {bad} {lang} pad versions use blanks their English does not have; those keep their keyboard words.");
+            }
+            catch (Exception e)
+            {
+                _log?.LogWarning($"IKMA LANGUAGE: could not read the {lang} pad versions ({e.Message}); keyboard words on the pad.");
+            }
+            return table;
         }
 
         private static Dictionary<string, string> Table()

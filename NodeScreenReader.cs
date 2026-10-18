@@ -917,7 +917,16 @@ namespace IKMA
 
             try
             {
-                if (InBackpackView) vm.SwitchToView(View.Default);
+                // 0.4.8.016 - WHERE THE DECK WAS OPENED FROM IS WHERE IT
+                // CLOSES TO. While two carvings are being paired the game's
+                // control mode is TotemBuilding, which allows only the backpack
+                // and the deck (ViewController.SwitchToControlMode). There is no
+                // table view in that mode, so going down to Default first and
+                // coming back to Default afterwards left the player standing on
+                // a view the game does not offer, with the backpack switched
+                // off. Asked of the game, on the keypress.
+                _deckOpenedFromBackpack = InBackpackView && !GameAllowsView(View.Default);
+                if (InBackpackView && !_deckOpenedFromBackpack) vm.SwitchToView(View.Default);
 
                 MapReader.NoteDeckOrigin(View.Default);
                 DeckViewReader.NotePlayerAsked();
@@ -1055,7 +1064,10 @@ namespace IKMA
             var vm = Views();
             if (vm == null) return;
 
-            try { vm.SwitchToView(View.Default); }
+            bool toBackpack = _deckOpenedFromBackpack;
+            _deckOpenedFromBackpack = false;
+
+            try { vm.SwitchToView(toBackpack ? View.TotemInventory : View.Default); }
             catch (System.Exception e)
             {
                 _log?.LogWarning($"IKMA NODE: leaving the deck threw {e.GetType().Name}.");
@@ -1066,8 +1078,32 @@ namespace IKMA
             _hovered = null;
             ReleaseHover();
 
+            if (toBackpack)
+            {
+                // Back where Shift+Up was pressed: the backpack, with its own
+                // line (the one A speaks on the way in).
+                _log?.LogInfo("IKMA NODE: deck view closed back to the backpack (pairing carvings).");
+                Speech.Browse(EmptyBackpackShowing()
+                    ? Vocabulary.NodeScreens.BackpackEmpty
+                    : Vocabulary.NodeScreens.BackpackArrowsBrowseOrBackpackArrowsBrowse(BackspaceLeavesBackpack()));
+                return;
+            }
+
             _log?.LogInfo("IKMA NODE: deck view closed back to the Woodcarver.");
             Speech.Browse(BACK_TO_CARVINGS);
+        }
+
+        // 0.4.8.016 - see OpenDeckView.
+        private static bool _deckOpenedFromBackpack;
+
+        private static bool GameAllowsView(View v)
+        {
+            try
+            {
+                var vc = Views()?.Controller;
+                return vc != null && vc.CurrentControlModeAllowsView(v);
+            }
+            catch { return true; }
         }
 
         /// <summary>True while the backpack log is the view on show.</summary>
@@ -1952,6 +1988,7 @@ namespace IKMA
         private static float _idleTimer;
         private static bool  _idleSpokenOnce;
         private static bool  _idlePending;
+        private static float _idlePendingSince;
         private static int   _idleGeneration;
 
         /// <summary>
@@ -1977,6 +2014,7 @@ namespace IKMA
             _idleTimer = 0f;
             _idleSpokenOnce = false;
             _idleGeneration++;
+            _idlePending = false;   // Session 64: any queued line is stale now (generation)
         }
 
         private static bool IdleQuiet()
@@ -1999,8 +2037,20 @@ namespace IKMA
             _idleTimer = 0f;
             _idleSpokenOnce = true;
 
-            if (_idlePending) return;
+            // Session 64 driver run: a queued idle line can be dropped unspoken
+            // (DropCommentary when a card is chosen, the queue cleared on a
+            // transition). Its provider never runs, so this flag never cleared
+            // and no node screen had an idle prompt again that session. After
+            // one repeat interval the old line is written off; the generation
+            // bump makes it say nothing if it does run late.
+            if (_idlePending && Time.unscaledTime - _idlePendingSince < IDLE_REPEAT) return;
+            if (_idlePending)
+            {
+                _idleGeneration++;
+                _log?.LogInfo("IKMA NODE: the last idle prompt was dropped unspoken - queuing a new one.");
+            }
             _idlePending = true;
+            _idlePendingSince = Time.unscaledTime;
             int generation = _idleGeneration;
             Speech.Commentary(() =>
             {
@@ -2968,6 +3018,32 @@ namespace IKMA
             catch { return false; }
         }
 
+        // 0.4.8.016 - BuildTotemSequencer.log (private [SerializeField]
+        // GameObject), the log the backpack sits on. BuildTotem switches it on
+        // before the carvings come out and off only after the last piece has
+        // left, so it is up for the whole Woodcarver. A beta tester (0.4.8.015
+        // log) was pairing a head and a body, opened the deck with Shift+Up and
+        // read it for a while. In the build phase the game turns the backpack
+        // slots off whenever the view is not the backpack
+        // (BuildTotemSequencer.OnViewChanged -> SetInventorySlotsEnabled), so
+        // Parts() read zero, the reader let go, and closing the deck fell to
+        // the unreadable-screen line. The game's own answer to "is the
+        // Woodcarver still up" is its log. See the release test in Tick.
+        private static readonly System.Reflection.FieldInfo _woodcarverLogField =
+            HarmonyLib.AccessTools.Field(typeof(BuildTotemSequencer), "log");
+
+        private static bool WoodcarverLogUp()
+        {
+            var seq = _sequencer as BuildTotemSequencer;
+            if (seq == null) return false;
+            try
+            {
+                var log = _woodcarverLogField?.GetValue(seq) as GameObject;
+                return log != null && log.activeSelf;
+            }
+            catch { return false; }
+        }
+
         /// <summary>
         /// Session 34. A card choice ran inside this screen (the Mycologists'
         /// no-pairs path). The screen's own parts may never appear, so the
@@ -3479,7 +3555,7 @@ namespace IKMA
             // which is why it never showed up before. The game's own answer to
             // "is this screen still up" is its backpack: ReplenishConsumables
             // switches it on first and off last.
-            if (tickParts.Count > 0 || _donePartsPresent > 0 || (BackpackAvailable && InBackpackView) || ItemPickupBackpackUp() || CampfireRingUp()) { _partsSeen = true; _emptyFor = 0f; }
+            if (tickParts.Count > 0 || _donePartsPresent > 0 || (BackpackAvailable && InBackpackView) || ItemPickupBackpackUp() || CampfireRingUp() || WoodcarverLogUp()) { _partsSeen = true; _emptyFor = 0f; }
             else if (_partsSeen && !open && !DialogueWaiting())
             {
                 _emptyFor += Time.deltaTime;
@@ -3591,10 +3667,12 @@ namespace IKMA
                 //
                 // Cut where it is redundant, kept where it earns its place: the
                 // screen's own blurb still carries the risk warning on H.
-                if (_screenName != Vocabulary.Campfire)
-                    Speech.Browse(CardPrompt());
-                else
-                    _log?.LogInfo("IKMA NODE: campfire layout prompt held — the part just said it.");
+                // SESSION 64 - SAID AGAIN. Driver run, 0.4.8.023: A on the
+                // campfire's part cut the part line (Activate silences since
+                // 0.7.361) and the held prompt left the press with nothing said.
+                // The echo this hold was for no longer happens, so the campfire
+                // says its line like every other layout. Zamar: "fix all that".
+                Speech.Browse(CardPrompt());
 
                 HoverCard(cards);
             }
@@ -3958,6 +4036,21 @@ namespace IKMA
             _log?.LogInfo(
                 $"IKMA NODE: campfire applied attack {attack:+#;-#;0}, health {health:+#;-#;0} " +
                 $"(IKMA announced {(BoostAmount() > 0 ? BoostAmount().ToString() : "no number")}).");
+
+            // SESSION 64 - THE GAIN IS SPOKEN. Zamar: "Yes add a line card
+            // name's stat rose by x." The amount is what the game applied, the
+            // stat is the game's word, the card is the one in the slot. Queued
+            // as a result, so Leshy's next line waits behind it.
+            int by = attack != 0 ? attack : health;
+            string stat = CampfireStatWord();
+            string card = CampfireChosenCard();
+            if (by == 0 || stat == null || card == null)
+            {
+                _log?.LogInfo("IKMA NODE: campfire gain not spoken - the card, stat or amount could not be read.");
+                return;
+            }
+            using (Speech.Event(EventKind.NodeResults))
+                Speech.Result(Vocabulary.NodeScreens.StatRoseBy(card, stat, by));
         }
 
         private static string CampfireChooseLine()
@@ -4859,6 +4952,11 @@ namespace IKMA
             bool mycologistsListChanges = _screenName == Vocabulary.Mycologists
                 && (target is SelectCardPairFromDeckSlot || target is SelectableCardPair);
 
+            // Session 64 - the campfire's confirm turns the list into Withdraw
+            // and Continue. Driver run, 0.4.8.023: the cursor stayed on the
+            // last option, so the first D-pad right was silent at the end.
+            bool campfireListChanges = _screenName == Vocabulary.Campfire && target is ConfirmStoneButton;
+
             string pairChosenLine = null;
             if (_screenName == Vocabulary.Mycologists && target is SelectableCardPair)
             {
@@ -4916,7 +5014,7 @@ namespace IKMA
 
             // 0.7.435 - the standing -1 rule (0.7.249), as for the carving
             // pick above: a new list starts with the cursor nowhere.
-            if (mycologistsListChanges) _index = NOWHERE;
+            if (mycologistsListChanges || campfireListChanges) _index = NOWHERE;
         }
 
         /// <summary>

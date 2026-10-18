@@ -1,0 +1,169 @@
+# Russian.tsv
+#status: unreviewed
+# IKMA Manager. Drafted by Claude (Session 32), the game-side Russian file's words, and ChatGPT for the lines added since; no Russian speaker has checked it yet. English [TAB] translation.
+Open the rulebook	Открыть книгу правил
+Help	Справка
+Repeat, describe, or advance a conversation	Повторить, описать или продолжить разговор
+Next playable card, slot, or sacrifice	Следующая доступная карта, ячейка или жертва
+Rulebook for the last heard abilities	Книга правил для последних услышанных способностей
+Read your hand	Прочитать руку
+Read the enemy queue	Прочитать очередь противника
+Read the enemy board	Прочитать поле противника
+Read your board	Прочитать своё поле
+Game info: scales, bones, and teeth	Сведения об игре: весы, кости и зубы
+Full board and queue	Всё поле и очередь
+All three item slots	Все три ячейки предметов
+Rulebook for the last heard abilities, second button	Книга правил для последних услышанных способностей, вторая кнопка
+Mod Settings	Настройки мода
+Help list	Список справки
+Draw from your deck	Взять карту из своей колоды
+Draw from the Squirrel deck	Взять карту из колоды белок
+Item menu	Меню предметов
+Accept surrender	Принять капитуляцию
+Number 1	Цифра 1
+Number 2	Цифра 2
+Number 3	Цифра 3
+Number 4	Цифра 4
+Save a bug report log	Сохранить журнал для отчёта об ошибке
+Review history, older	Просмотр истории, старее
+Review history, newer	Просмотр истории, новее
+Review history as a list	Просмотр истории списком
+Next buffer	Следующий буфер
+Previous buffer	Предыдущий буфер
+Silence speech	Остановить речь
+Announce	Озвучивать
+Add to history	Добавлять в историю
+Current Player	Текущий игрок
+Enemies	Противники
+Card Drawn	Карта взята
+Card Obtained	Карта получена
+Card Played	Карта сыграна
+Attacks	Атаки
+Bosses	Боссы
+Challenges and Totems	Испытания и тотемы
+Death	Смерть
+Enemy Moves	Перемещения противника
+HP Changes	Изменения здоровья
+Powers	Способности
+Turns	Ходы
+Player Turn Start	Начало хода игрока
+Enemy Turn Start	Начало хода противника
+Your Turn	Ваш ход
+Dialogue	Диалог
+Node Entered	Вход в узел
+Node Results	Результаты узла
+Saving	Сохранение
+Bones	Кости
+Item Obtained	Предмет получен
+Item Used	Предмет использован
+Teeth	Зубы
+History	История
+Reads	Чтение
+Prompts	Подсказки
+{0}: {1}	{0}: {1}
+Cards	Карты
+Combat	Бой
+Other	Прочее
+Resources	Ресурсы
+IKMA Manager, version {0}.	IKMA Manager, версия {0}.
+Looking for Inscryption in your Steam library.	Поиск Inscryption в вашей библиотеке Steam.
+Found Inscryption at {0}.	Inscryption найдена в папке {0}.
+Inscryption was not found in your Steam library.	Inscryption не найдена в вашей библиотеке Steam.
+Type or paste the full path of your Inscryption folder, then press Enter. Or just press Enter to quit.	Введите или вставьте полный путь к папке Inscryption и нажмите Enter. Или просто нажмите Enter, чтобы выйти.
+That folder does not contain Inscryption.exe.	В этой папке нет файла Inscryption.exe.
+IKMA version {0} is installed and turned on.	IKMA версии {0} установлен и включён.
+IKMA is installed and turned on.	IKMA установлен и включён.
+IKMA version {0} is installed but turned off. Inscryption starts without it.	IKMA версии {0} установлен, но выключен. Inscryption запускается без него.
+IKMA is installed but turned off. Inscryption starts without it.	IKMA установлен, но выключен. Inscryption запускается без него.
+IKMA is not installed in this game folder.	IKMA не установлен в этой папке игры.
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA back on. 4, uninstall. 5, quit.	Главное меню. Нажмите Enter, чтобы установить или обновить IKMA. Или введите число и нажмите Enter. 1, установить или обновить. 2, настройки. 3, снова включить IKMA. 4, удалить. 5, выйти.
+Main menu. Press Enter to install or update IKMA. Or type a number, then press Enter. 1, install or update. 2, settings. 3, turn IKMA off. 4, uninstall. 5, quit.	Главное меню. Нажмите Enter, чтобы установить или обновить IKMA. Или введите число и нажмите Enter. 1, установить или обновить. 2, настройки. 3, отключить IKMA. 4, удалить. 5, выйти.
+Invalid choice.	Недопустимый выбор.
+IKMA is not installed, so there is nothing to turn off.	IKMA не установлен, поэтому выключать нечего.
+IKMA is turned off. Inscryption starts without it. BepInEx and other mods are unchanged, and IKMA's settings are kept.	IKMA отключён. Inscryption запускается без него. BepInEx и другие моды не изменены, настройки IKMA сохранены.
+IKMA is turned back on. Please restart the game.	IKMA снова включён. Перезапустите игру.
+IKMA was turned off. Installing turned it back on.	IKMA был выключен. Установка снова его включила.
+Settings. Type a number, then press Enter to change it. Press Enter to go back to the main menu. Changes take effect the next time you start the game.	Настройки. Введите число и нажмите Enter, чтобы изменить соответствующую настройку. Нажмите Enter, чтобы вернуться в главное меню. Изменения вступят в силу при следующем запуске игры.
+{0}, {1}: {2}	{0}, {1}: {2}
+{0}. Type a number, then press Enter. Press Enter to keep it as it is.	{0}. Введите число и нажмите Enter. Нажмите Enter, чтобы оставить всё как есть.
+{0}, {1} This is the current setting.	{0}, {1} Это текущая настройка.
+{0} set to: {1}	{0}: выбрано {1}
+a custom value, {0}.	пользовательское значение, {0}.
+Updates	Обновления
+Speech engine	Речевой движок
+NVDA line timing	Длительность строк NVDA
+Braille display	Брайлевский дисплей
+Language	Язык
+Full log for bug reports	Полный журнал для отчётов об ошибках
+Controller vibration	Вибрация контроллера
+Control template	Схема управления
+Controller buttons	Кнопки контроллера
+every action on its default button	каждое действие назначено на кнопку по умолчанию
+{0} moved	переназначено действий: {0}
+Controller buttons. Type a number, then press Enter to move that action to another button. Type R, then press Enter, to put every action back on its default button. Press Enter alone to go back to settings.	Кнопки контроллера. Введите число и нажмите Enter, чтобы назначить соответствующее действие на другую кнопку. Введите R и нажмите Enter, чтобы вернуть каждому действию кнопку по умолчанию. Нажмите только Enter, чтобы вернуться к настройкам.
+{0}, {1}: {2}. Default {3}.	{0}, {1}: {2}. По умолчанию: {3}.
+Every action is back on its default button.	Каждому действию возвращена кнопка по умолчанию.
+Events	События
+every event at its default	каждое событие настроено по умолчанию
+{0} changed	изменено событий: {0}
+Events. Type a number, then press Enter to change that event. Press Enter alone to go back to settings.	События. Введите число и нажмите Enter, чтобы изменить соответствующее событие. Нажмите только Enter, чтобы вернуться к настройкам.
+{0}, {1}, {2}	{0}, {1}, {2}
+{0}. Type a number, then press Enter to switch it. Press Enter alone to go back to the events.	{0}. Введите число и нажмите Enter, чтобы переключить соответствующий пункт. Нажмите только Enter, чтобы вернуться к событиям.
+{0}, {1}: checked	{0}, {1}: отмечено
+{0}, {1}: unchecked	{0}, {1}: не отмечено
+checked	установлен
+unchecked	снят
+{0}, now on {1}. Which shoulder buttons are held with it? Type a number, then press Enter. 1, none. 2, LB. 3, RB. 4, LB and RB together. Press Enter alone to keep it as it is.	{0}, сейчас назначено на {1}. Какие плечевые кнопки нужно удерживать вместе с ней? Введите число и нажмите Enter. 1, никакие. 2, LB. 3, RB. 4, LB и RB вместе. Нажмите только Enter, чтобы оставить всё как есть.
+Which button for {0}? Type a number, then press Enter. Press Enter alone to keep it as it is.	Какую кнопку назначить для {0}? Введите число и нажмите Enter. Нажмите только Enter, чтобы оставить всё как есть.
+{0}, {1}, used by {2}.	{0}, {1}, назначение: {2}.
+this action	это действие
+Swapped. {0} is now on {1}, and {2} is now on {3}.	Поменяно местами. {0} теперь на {1}, а {2} — на {3}.
+ plus 	 плюс 
+Inscryption is running. Please close the game, then press Enter.	Inscryption запущена. Закройте игру и нажмите Enter.
+This Inscryption is not the 32-bit version this installer was made for. Nothing was changed.	Эта Inscryption не 32-битная версия, для которой сделан этот установщик. Ничего не изменено.
+BepInEx is already installed.	BepInEx уже установлен.
+Installed BepInEx, the mod loader.	Установлен BepInEx, загрузчик модов.
+Installed IKMA and its speech files.	Установлены IKMA и его речевые файлы.
+Done. Start Inscryption from Steam as usual. IKMA will speak at the title screen.	Готово. Запустите Inscryption из Steam как обычно. IKMA заговорит на титульном экране.
+IKMA is uninstalled. BepInEx was left in place, because other mods may use it.	IKMA удалён. BepInEx оставлен на месте, потому что его могут использовать другие моды.
+IKMA was not installed in this folder.	IKMA не был установлен в этой папке.
+Windows would not let the installer write to the game folder. Close this window, right-click IKMA_Manager and choose Run as administrator.	Windows не разрешила установщику записывать в папку игры. Закройте это окно, щёлкните правой кнопкой мыши по IKMA_Manager и выберите «Запуск от имени администратора».
+This installer is incomplete: a file it carries is missing. Download it again.	Этот установщик неполный: в нём не хватает файла. Скачайте его снова.
+Something went wrong, and the install stopped: {0}	Что-то пошло не так, и установка остановлена: {0}
+Press Enter to close.	Нажмите Enter, чтобы закрыть.
+BepInEx {0} is already installed.	BepInEx {0} уже установлен.
+This game has BepInEx 6 installed. IKMA needs BepInEx 5, and replacing it would break your other mods. Nothing was changed.	В этой игре установлен BepInEx 6. IKMA нужен BepInEx 5, а замена сломает ваши другие моды. Ничего не изменено.
+This game has another mod loader installed ({0}). Adding BepInEx beside it could break your other mods. Nothing was changed.	В этой игре установлен другой загрузчик модов ({0}). Если добавить рядом BepInEx, ваши другие моды могут сломаться. Ничего не изменено.
+The BepInEx in this game folder is the 64-bit build, which cannot load in this 32-bit game. Nothing was changed; it needs the 32-bit BepInEx.	BepInEx в этой папке игры 64-битный и не может загрузиться в этой 32-битной игре. Ничего не изменено; нужен 32-битный BepInEx.
+BepInEx is here, but the file that starts it with the game (winhttp.dll) is missing. Type Y and press Enter to add it. Press Enter alone to leave everything as it is.	BepInEx на месте, но нет файла, который запускает его вместе с игрой (winhttp.dll). Введите Y и нажмите Enter, чтобы добавить его. Нажмите только Enter, чтобы всё оставить как есть.
+Added the file that starts BepInEx.	Добавлен файл, который запускает BepInEx.
+Left BepInEx as it is. IKMA is installed but will not load until BepInEx starts with the game.	BepInEx оставлен как есть. IKMA установлен, но не загрузится, пока BepInEx не запускается вместе с игрой.
+Note: BepInEx is switched off in doorstop_config.ini (enabled=false). IKMA will not load until it is switched on. The installer did not change it.	Примечание: BepInEx выключен в doorstop_config.ini (enabled=false). IKMA не загрузится, пока его не включат. Установщик это не менял.
+Found an earlier IKMA at {0}. Updated it there.	Найдена прежняя версия IKMA в папке {0}. Она обновлена там же.
+More than one copy of IKMA is installed: {0}. Remove all but one, then run this again. Nothing was changed.	Установлено несколько копий IKMA: {0}. Удалите все, кроме одной, и запустите эту программу снова. Ничего не изменено.
+{0} from another mod was saved as {1}.before-IKMA. Uninstalling IKMA puts it back.	{0} от другого мода сохранён как {1}.before-IKMA. При удалении IKMA он будет возвращён.
+Put back the earlier {0}.	Прежний {0} возвращён на место.
+Note: a mod manager (r2modman or Thunderstore) is set up for Inscryption on this PC. If you start the game from the mod manager, add IKMA to that profile too; this installer set up the game started from Steam.	Примечание: на этом компьютере для Inscryption настроен менеджер модов (r2modman или Thunderstore). Если вы запускаете игру из менеджера модов, добавьте IKMA и в этот профиль; этот установщик настроил игру, запускаемую из Steam.
+Automatic: new versions download and install with no question.	Автоматически: новые версии загружаются и устанавливаются без вопросов.
+Download, then ask before installing.	Загрузить, затем спросить перед установкой.
+Ask before downloading.	Спросить перед загрузкой.
+Off: IKMA never connects to the internet.	Выключено: IKMA никогда не подключается к интернету.
+Automatic: your screen reader on Windows, the IKMA speech helper on a Steam Deck.	Автоматически: ваша программа экранного доступа в Windows, речевой помощник IKMA на Steam Deck.
+Always your screen reader, through UniversalSpeech: NVDA, JAWS, or Windows speech.	Всегда ваша программа экранного доступа через UniversalSpeech: NVDA, JAWS или голос Windows.
+Always the IKMA speech helper, for Steam Deck and Linux.	Всегда речевой помощник IKMA, для Steam Deck и Linux.
+Exact: IKMA asks NVDA when each line has finished. Needs NVDA 2024.1 or later.	Точная: IKMA узнаёт у NVDA, когда закончена каждая строка. Требуется NVDA 2024.1 или новее.
+Estimated: IKMA guesses how long each line takes to read.	Приблизительная: IKMA оценивает время чтения каждой строки.
+On: every spoken line is also sent to your braille display, through NVDA or JAWS.	Включено: каждая произнесённая строка также отправляется на брайлевский дисплей через NVDA или JAWS.
+Off: nothing is sent to a braille display.	Выключено: на брайлевский дисплей ничего не отправляется.
+Follow the game's language setting.	Следовать языковой настройке игры.
+Off	Выключено
+Low	Слабая
+Medium	Средняя
+High	Сильная
+Default	По умолчанию
+Original	Исходная
+Off: the short log, what IKMA said and anything that went wrong.	Выключено: краткий журнал, что сказал IKMA и всё, что пошло не так.
+On: every diagnostic line, for a bug report. The log gets much longer.	Включено: каждая диагностическая строка, для отчёта об ошибке. Журнал станет намного длиннее.
+Feature coming soon.	Функция скоро появится.
+
+# Russian.tsv
