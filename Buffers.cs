@@ -58,7 +58,8 @@ namespace IKMA
         private static readonly List<string> _card = new List<string>();
         private static int _cardPos;
 
-        private static readonly Regex Sentence = new Regex(@"(?<=[.!?])\s+(?=\S)");
+        // 0.5.0.007 - Session 66: full-width stops too (same rule as HelpList).
+        private static readonly Regex Sentence = new Regex(@"(?<=[.!?])\s+(?=\S)|(?<=[。！？])\s*(?=\S)");
 
         // 0.4.8.008 - [Controls] Template. Ctrl+M > Control template, and IKMA
         // Manager's settings (Zamar, Session 38: "Exist in both").
@@ -67,7 +68,7 @@ namespace IKMA
         internal static void BindConfig(ConfigFile config)
         {
             Template = config.Bind("Controls", "Template", ControlTemplate.Default,
-                "Default: the 0.4.8.007 controls (buffers on Control plus arrows, map preview, H opens the help list). " +
+                "Default: the current controls (buffers on Control plus arrows, map preview, H opens the help list). " +
                 "Original: the earlier controls (Control plus Up and Down step the review history, H speaks the help, no map preview).");
         }
 
@@ -126,7 +127,7 @@ namespace IKMA
                         string dir = CardReader.DescribeMoveDirection(source);
                         if (!string.IsNullOrEmpty(dir))
                         {
-                            string clause = dir.Trim().TrimEnd('.');
+                            string clause = dir.Trim().TrimEnd(Loc.Stops);
                             if (clause.Length > 0)
                             {
                                 clause = char.ToLowerInvariant(clause[0]) + clause.Substring(1);

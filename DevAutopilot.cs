@@ -118,7 +118,12 @@ namespace IKMA
         private static KeyCode Decide(out string sig)
         {
             sig = "";
-            if (DialogueAdvancer.AwaitingInput()) { sig = "dialogue"; return KeyCode.Space; }
+            // A node screen with a question up (the campfire's push-your-luck)
+            // waits on its options, not on Space: once Space stops advancing
+            // the line, ConversationHolding goes false and the options get it.
+            if (DialogueAdvancer.AwaitingInput()
+                && !(_runMode && NodeScreenReader.Active && !DialogueAdvancer.ConversationHolding()))
+            { sig = "dialogue"; return KeyCode.Space; }
 
             var tm = Singleton<TurnManager>.Instance;
             var bm = Singleton<BoardManager>.Instance;
@@ -279,8 +284,11 @@ namespace IKMA
             try
             {
                 var vm = Singleton<ViewManager>.Instance;
+                if (vm == null || vm.CurrentView != View.MapDefault) return false;
+                // Session 66: asked only on the map view. Asked every frame, a
+                // missing manager logged a Singleton warning each time.
                 var mgr = MapNodeManager.Instance;
-                return vm != null && vm.CurrentView == View.MapDefault && mgr != null && !mgr.MovingNodes;
+                return mgr != null && !mgr.MovingNodes;
             }
             catch { return false; }
         }

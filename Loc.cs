@@ -87,6 +87,9 @@ namespace IKMA
             Setting = config.Bind("Language", "Language", IkmaLanguage.Game,
                 "The language IKMA speaks. Game = follow the game's own language setting. " +
                 "Every language but English is a draft by Claude that no native speaker has checked yet.");
+            // 0.5.0.007 - Session 66: a new pick is heard at once. The half-second
+            // cache below let Mod Settings rebuild its labels in the old language.
+            Setting.SettingChanged += (s, e) => _cachedLanguage = null;
         }
 
         /// <summary>A fixed spoken line, in the player's language.</summary>
@@ -265,6 +268,47 @@ namespace IKMA
             }
         }
         private static volatile string _spokenLanguage;
+
+        // SESSION 66 - THE FULL STOP IKMA ADDS ITSELF. The driver run heard
+        // "たき火から離れる。." - a stop added after a Japanese one. A line that
+        // already ends in any stop, full-width included, gets no other; else
+        // Japanese and Chinese take their own full stop, as Colon above.
+        internal static string Stop
+        {
+            get
+            {
+                switch (SpokenLanguage)
+                {
+                    case "Japanese":
+                    case "ChineseSimplified":
+                    case "ChineseTraditional": return "。";
+                    default: return ".";
+                }
+            }
+        }
+
+        internal static bool EndsWithStop(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return false;
+            switch (s[s.Length - 1])
+            {
+                case '.': case '!': case '?': case ':': case '…':
+                case '。': case '！': case '？': case '：': case '．':
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// For TrimEnd before a line is joined into another: the English stop
+        /// and the full-width ones ("たき火から離れる。。" in the same run).
+        /// </summary>
+        internal static readonly char[] Stops = { '.', '。', '．' };
+
+        /// <summary>The line with a stop after it, unless it already ends in one.</summary>
+        internal static string WithStop(string s)
+            => string.IsNullOrEmpty(s) || EndsWithStop(s) ? s : s + Stop;
 
         /// <summary>
         /// Session 34, Zamar: v0.5 speaks ENGLISH ONLY, "until all are

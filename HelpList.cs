@@ -120,14 +120,16 @@ namespace IKMA
         {
             if (_rows.Count == 0) return;
             // Theirs joins with ", " and drops trailing punctuation.
-            string row = _rows[_focus].TrimEnd('.');
+            string row = _rows[_focus].TrimEnd(Loc.Stops);
             string pos = Vocabulary.ModSettings.Position(_focus + 1, _rows.Count);
             Speech.BrowseNoFocus(withListName
                 ? Vocabulary.ModSettings.Join(Vocabulary.HelpListWords.Help, row, pos)
                 : Vocabulary.ModSettings.Join(row, pos));
         }
 
-        private static readonly Regex Sentence = new Regex(@"(?<=[.!?])\s+(?=\S)");
+        // 0.5.0.007 - Session 66: Japanese and Chinese end a sentence with a
+        // full-width stop and no space, so their help came out as one row.
+        private static readonly Regex Sentence = new Regex(@"(?<=[.!?])\s+(?=\S)|(?<=[。！？])\s*(?=\S)");
 
         private static void Build()
         {

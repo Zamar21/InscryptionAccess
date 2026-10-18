@@ -77,8 +77,8 @@ Footage, {0}.	Séquence vidéo, {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	Votre deck est vide, appuyez sur S pour piocher dans la pioche d'écureuils.
 The Squirrel deck is empty, press D to draw from your deck.	La pioche d'écureuils est vide, appuyez sur D pour piocher dans votre deck.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Phase de pioche. Appuyez sur D pour piocher dans votre deck, ou sur S pour piocher dans la pioche d'écureuils.
-{0}'s Waterborne ability triggers. It dives underwater...	La capacité Eau de {0} se déclenche. La créature plonge sous l'eau...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	Les capacités Eau de {0} se déclenchent dans les emplacements {1}, les créatures plongent sous l'eau...
+{0}'s {1} ability triggers. It dives underwater...	La capacité {1} de {0} se déclenche. La créature plonge sous l'eau...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	Les capacités {1} de {0} se déclenchent dans les emplacements {2}, les créatures plongent sous l'eau...
 Submerged {0}	{0}, sous l'eau
 Leshy puts on the {0} mask.	Leshy met le masque : {0}.
 Leshy puts on the {0} mask. {1}	Leshy met le masque : {0}. {1}
@@ -728,8 +728,8 @@ slots	emplacements
 {0} attacks {1} times.	{0} attaque {1} fois.
 and {0}{1}	et {0}{1}
  in slot {0}	 dans l'emplacement {0}
-{0} burrows from {1}	{0} creuse sous terre de {1}
- to 	 à 
+{0} burrows from {1}	{0} creuse sous terre de l'{1}
+ to 	 à l'
 {0}{1} burrows	{0}{1} creuse sous terre
 {0}, taking {1}, {2}.	{0}, subit {1}, {2}.
 {0}, taking {1}.	{0}, et subit {1}.

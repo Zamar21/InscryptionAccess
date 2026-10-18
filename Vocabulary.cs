@@ -942,7 +942,7 @@ namespace IKMA
         /// </remarks>
         // Zamar, 0.7.266.
         public static string WaterborneDive(string card)
-            => Loc.F($"{card}'s Waterborne ability triggers. It dives underwater...");
+            => Loc.F($"{card}'s {Loc.Game("Waterborne")} ability triggers. It dives underwater...");   // Session 66: the game's word for the sigil
 
         // Zamar, Session 43 (0.7.436), on two Kingfishers diving at one turn
         // end: "Those two should have been grouped. '[Card name] and [card
@@ -950,7 +950,7 @@ namespace IKMA
         // underwater...'" Three or more names or slots go through AndList,
         // his Oxford-comma rule; that extension is Claude's.
         public static string WaterborneDiveGroup(string cards, string slots)
-            => Loc.F($"{cards}'s Waterborne abilities trigger in slots {slots}, they dive underwater...");
+            => Loc.F($"{cards}'s {Loc.Game("Waterborne")} abilities trigger in slots {slots}, they dive underwater...");
 
         // Claude, 0.7.262-0.7.281.
         public static string Submerged(PlayableCard card, string name)
@@ -2196,7 +2196,7 @@ namespace IKMA
 
             // Claude, 0.7.42 or earlier. Said from 2 places.
             public static string AnnounceScreenBackspaceToGo(bool hasBack)
-                => hasBack ? Loc.T(", Backspace to go back.") : ".";
+                => hasBack ? Loc.T(", Backspace to go back.") : Loc.Stop;   // Session 66: "。" in ja/zh
 
             // Claude, 0.7.42 or earlier.
             public static string ArrowsToNavigateOrEnterToConfirm(int count)
@@ -2206,23 +2206,23 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string ScreenEntryControls(string screenName, string entry, string controls)
-                => $"{screenName}. {entry} {controls}";
+                => $"{Loc.WithStop(screenName)} {entry} {controls}";
 
             // Claude, 0.7.347-0.7.357.
             public static string ScreenThenControls(string screenName, string controls)
-                => $"{screenName}. {controls}";
+                => $"{Loc.WithStop(screenName)} {controls}";
 
             // Claude, 0.7.347-0.7.357.
             public static string Name(string screenName, string total, string controls)
-                => $"{screenName}. {total} {controls}";
+                => $"{Loc.WithStop(screenName)} {total} {controls}";   // Session 66: the language's own stop
 
             // Claude, 0.7.347-0.7.357.
             public static string ScreenBodyControls(string screenName, string body, string controls)
-                => $"{screenName}. {body} {controls}";
+                => $"{Loc.WithStop(screenName)} {body} {controls}";
 
             // Claude, 0.7.347-0.7.357.
             public static string ScreenThenControlsNoBody(string screenName, string controls)
-                => $"{screenName}. {controls}";
+                => $"{Loc.WithStop(screenName)} {controls}";
 
             // Zamar, 0.7.53-0.7.109.
             public static string PositionNounFor(bool isAscensionStarterDeckIcon)
@@ -3530,7 +3530,7 @@ namespace IKMA
 
             // Claude, 0.7.42 or earlier. Said from 2 places.
             public static string AbilitiesLine(string label, System.Collections.Generic.List<string> baseSigils)
-                => $" {label}{Loc.Colon}{string.Join(Loc.T(" and "), baseSigils)}.";
+                => $" {label}{Loc.Colon}{string.Join(Loc.T(" and "), baseSigils)}{Loc.Stop}";   // Session 66: "。" in ja/zh
 
             // Claude, 0.7.42 or earlier.
             public static string SigilAbility(string t)
@@ -4536,7 +4536,7 @@ namespace IKMA
             // "cycles". "I for items" is Claude's, modelled on "A for teeth"
             // beside it; he has not ruled on it.
             public static string LeftAndRightArrows(string lead, string countWord, string kinBreakdown, string currencyPart, string placeBelow)
-                => $"{lead}{countWord}.{kinBreakdown}" +
+                => $"{lead}{Loc.WithStop(countWord)}{kinBreakdown}" +   // Session 66: "。" in ja/zh
                    $"{currencyPart} " +
                    Loc.F($"Left and right arrows to browse, Space to repeat, A for teeth, I for items, H for help, Backspace to return to {placeBelow}.");
 
@@ -5028,13 +5028,13 @@ namespace IKMA
 
             // Zamar, 0.7.335.
             public static string ArrowsBrowseEnterChooses(string screenTitle, int length, string blurb)
-                => $"{screenTitle}. {(length > 0 ? blurb + " " : "")}" +
+                => $"{Loc.WithStop(screenTitle)} {(length > 0 ? blurb + " " : "")}" +
                    Loc.T("Arrows browse, Enter chooses, Backspace leaves the Trapper at anytime, ") +
                    Loc.T("Space repeats your position, A counts your teeth, R opens the rulebook.");
 
             // Claude, 0.7.53-0.7.109.
             public static string ArrowsBrowseEnterChoosesSpace(string screenTitle, int length, string blurb, string trapperKeys, string packKey, string deckKey)
-                => $"{screenTitle}. {(length > 0 ? blurb + " " : "")}" +
+                => $"{Loc.WithStop(screenTitle)} {(length > 0 ? blurb + " " : "")}" +
                    Vocabulary.BrowseChooseRepeat_ + trapperKeys + packKey + deckKey +
                    Loc.T("R opens the rulebook.");
 
@@ -5195,7 +5195,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string NameAndDescription(string name, string clean)
-                => $"{name}. {clean}";
+                => $"{Loc.WithStop(name)} {clean}";
 
             // Claude, 0.7.53-0.7.109.
             // Zamar, Session 16: the wrap-around clause went (it is a
@@ -5227,7 +5227,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string Name(string name, string clean)
-                => $"{name}. {clean}";
+                => $"{Loc.WithStop(name)} {clean}";
 
             // Claude, 0.7.42 or earlier.
             public static string DescriptionUnavailable(string name)
@@ -5250,11 +5250,11 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string Word(string name, string desc)
-                => $"{name}. {desc}";
+                => $"{Loc.WithStop(name)} {desc}";
 
             // Claude, 0.7.347-0.7.357.
             public static string ComposeStatIcon(string name, string desc)
-                => $"{name}. {desc}";
+                => $"{Loc.WithStop(name)} {desc}";
 
             // Claude, 0.7.42 or earlier.
             public static string ToTheUser(string desc)
@@ -5262,7 +5262,7 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string ComposeItem(string name, string desc)
-                => $"{name}. {desc}";
+                => $"{Loc.WithStop(name)} {desc}";
         }
 
         /// <summary>Surrender offers.</summary>
@@ -5306,7 +5306,7 @@ namespace IKMA
                 => Loc.T("Backspace to return to the main menu. Space to repeat.");
 
             public static string OutcomeStatsNoRetry(string outcome, string stats)
-                => $"{outcome}. {stats}{NoRetryControls}";
+                => $"{Loc.WithStop(outcome)} {stats}{NoRetryControls}";
 
             // Zamar, 0.7.449. Session 45: "It should also read as Victory
             // Screen, not post run screen or whatever it said." His Session 43
@@ -5322,7 +5322,7 @@ namespace IKMA
                 => Loc.T("Enter to continue. Space to repeat.");
 
             public static string OutcomeStatsContinue(string outcome, string stats)
-                => $"{outcome}. {stats}{ContinueControls}";
+                => $"{Loc.WithStop(outcome)} {stats}{ContinueControls}";
 
             // Claude, 0.7.455. His victory help sentence with his "Enter to
             // continue" standing where the Backspace clause was.
@@ -5336,11 +5336,11 @@ namespace IKMA
 
             // Claude, 0.7.347-0.7.357.
             public static string OutcomeStatsControls(string outcome, string stats)
-                => $"{outcome}. {stats}{Vocabulary.RunEndControls()}";
+                => $"{Loc.WithStop(outcome)} {stats}{Vocabulary.RunEndControls()}";
 
             // Claude, 0.7.347-0.7.357.
             public static string OutcomeStatsLabelControls(string outcome, string stats, string label)
-                => $"{outcome}. {stats}{label}. {Vocabulary.RunEndControls()}";
+                => $"{Loc.WithStop(outcome)} {stats}{label}. {Vocabulary.RunEndControls()}";
 
             // Zamar, Session 43 (0.7.436), replacing Claude's line: "This is
             // wrong."

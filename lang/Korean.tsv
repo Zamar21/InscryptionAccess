@@ -77,8 +77,8 @@ Footage, {0}.	영상, {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	내 덱이 비었습니다. S를 눌러 다람쥐 덱에서 뽑으세요.
 The Squirrel deck is empty, press D to draw from your deck.	다람쥐 덱이 비었습니다. D를 눌러 내 덱에서 뽑으세요.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	뽑기 단계입니다. D 키로 내 덱에서, S 키로 다람쥐 덱에서 카드를 뽑으세요.
-{0}'s Waterborne ability triggers. It dives underwater...	{0}의 수생 능력이 발동합니다. 물속으로 잠수합니다...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}의 수생 능력이 {1}번 칸에서 발동하여 물속으로 잠수합니다...
+{0}'s {1} ability triggers. It dives underwater...	{0}의 {1} 능력이 발동합니다. 물속으로 잠수합니다...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}의 {1} 능력이 {2}번 칸에서 발동하여 물속으로 잠수합니다...
 Submerged {0}	잠수한 {0}
 Leshy puts on the {0} mask.	레쉬가 {0} 가면을 씁니다.
 Leshy puts on the {0} mask. {1}	레쉬가 {0} 가면을 씁니다. {1}
@@ -625,7 +625,7 @@ from slot {0} to slot {1}.	{0}번 칸에서 {1}번 칸으로 이동합니다.
 {0} {1} moves down to slot {2}{3}.	{0} {1}, {2}번 칸으로 내려옵니다{3}.
 {0} {1} is played in slots {2}{3}.	{0} {1}, {2}{3}번 칸에 등장.
 {0} {1} is played in slot {2}{3}.	{0} {1}, {2}번 칸에 나옵니다{3}.
- targeting slot {0}	 {0}번 칸을 노리고
+ targeting slot {0}	{0}번 칸을 노리고
 Enemy {0} is queued{1}.	적 {0}, {1} 대기열에 올라옵니다.
 {0} {1} has left slot {2}.	{0} {1}, {2}번 칸을 떠났습니다.
 The Prospector clears his queue.	탐광자가 대기열을 비웁니다.
@@ -678,12 +678,12 @@ Mighty Leap	위대한 도약
 {0} blocks {1} {2} due to {3}.	{0}: {3} 능력으로 {1} {2} 방어.
 {0}{1} attacks {2}.	{0}{1}: {2} 공격.
 {0}'s {1} ability triggers, preventing the damage.	{0}의 {1} 능력이 발동하여 피해를 막습니다.
-{0} attacks {1}, it	{0}, {1} 공격. 공격받은 쪽은
+{0} attacks {1}, it	{0}, {1} 공격. 공격받은 쪽
 {0}{1} attacks empty Slot {2}.	{0}{1}: 빈 {2}번 칸 공격.
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1}, 빈 {2}번 칸을 공격하여 {3}의 {4} 능력 발동. {5}, {6} 방향으로 {7}번 칸에 이동하여
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1}, 빈 {2}번 칸을 공격하여 {3}의 {4} 능력 발동. {5}, {6} 방향으로 {7}번 칸에 이동.
 {0}{1} attacks directly.	{0}{1}: 직접 공격.
- in Slot {0}	 {0}번 칸에
+ in Slot {0}	 ({0}번 칸)
  from your hand	 손에서
 {0} is played{1}{2} by Ability: {3}.	{3} 능력으로 {0} 카드가{1}{2} 나옵니다.
 {0} is played{1}{2}.	{0} 카드가{1}{2} 나옵니다.
@@ -728,8 +728,8 @@ slots	칸
 {0} attacks {1} times.	{0}: {1}번 공격.
 and {0}{1}	그리고 {0}{1}
  in slot {0}	 {0}번 칸에서
-{0} burrows from {1}	{0}: {1}에서 땅을 파고 이동
- to 	 다음 
+{0} burrows from {1}	{0}: {1}으로 땅을 파고 이동
+ to 	에서 
 {0}{1} burrows	{0}{1}: 땅을 파고 이동
 {0}, taking {1}, {2}.	{0}, {1} 받음, {2}.
 {0}, taking {1}.	{0}, {1} 받음.
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	배낭. 화
 Backpack. Arrows browse, Enter chooses a totem combination.	배낭. 화살표로 둘러보기, 엔터로 토템 조합 선택.
 Your backpack is empty. Press Backspace to return to woodcarving selection.	배낭이 비었습니다. 백스페이스를 눌러 목각 선택으로 돌아가세요.
 The deck cannot be reached right now.	지금은 덱에 닿을 수 없습니다.
-You have {0} {1} Kin card{2} in your deck.	내 덱에 {1} 친족 카드{2} {0}장.
+You have {0} {1} Kin card{2} in your deck.	내 덱에 {1} 친족 카드 {0}장.
  {0}, {1} card{2}.	 {0}, 카드 {1}장.
 Woodcarving selection.	목각 선택.
 Withdraw from the campfire.	모닥불에서 물러나기.

@@ -3074,7 +3074,7 @@ namespace IKMA
         /// says, his sentence: "You have arrived at The Woodlands".
         /// No full stop; callers add it.
         /// </summary>
-        private static string WhereSentence(MapNode node)
+        internal static string WhereSentence(MapNode node)
         {
             string name = null;
             try { name = GetNodeFriendlyName(node); } catch { }

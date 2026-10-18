@@ -77,8 +77,8 @@ Footage, {0}.	Запись, {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	Ваша колода пуста, нажмите S, чтобы взять карту из колоды белок.
 The Squirrel deck is empty, press D to draw from your deck.	Колода белок пуста, нажмите D, чтобы взять карту из своей колоды.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Фаза взятия карты. Нажмите D, чтобы взять карту из своей колоды, или S — из колоды белок.
-{0}'s Waterborne ability triggers. It dives underwater...	{0}: срабатывает символ Амфибия. Карта ныряет под воду...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}: символы Амфибия срабатывают в ячейках {1}, существа ныряют под воду...
+{0}'s {1} ability triggers. It dives underwater...	{0}: срабатывает символ {1}. Карта ныряет под воду...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}: символы {1} срабатывают в ячейках {2}, существа ныряют под воду...
 Submerged {0}	Под водой: {0}
 Leshy puts on the {0} mask.	Леший надевает маску: {0}.
 Leshy puts on the {0} mask. {1}	Леший надевает маску: {0}. {1}
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	Рюкза�
 Backpack. Arrows browse, Enter chooses a totem combination.	Рюкзак. Стрелки — выбор, Enter — выбрать сочетание для тотема.
 Your backpack is empty. Press Backspace to return to woodcarving selection.	Ваш рюкзак пуст. Нажмите Backspace, чтобы вернуться к выбору резных фигурок.
 The deck cannot be reached right now.	Колода сейчас недоступна.
-You have {0} {1} Kin card{2} in your deck.	В вашей колоде {0} карт{2} рода {1}.
+You have {0} {1} Kin card{2} in your deck.	Карт рода {1} в вашей колоде: {0}.
  {0}, {1} card{2}.	 {0}, карт: {1}.
 Woodcarving selection.	Выбор резной фигурки.
 Withdraw from the campfire.	Отойти от костра.

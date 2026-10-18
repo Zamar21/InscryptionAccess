@@ -142,6 +142,16 @@ namespace IKMA
         // coming back arms it too, and so does a node or card-choice screen
         // letting go.
         private bool _mapWasHidden = true;
+
+        // Session 66 - CONTINUE RUN SAID THE MAP TWICE. The reloaded map
+        // flickers out and back once, which re-armed the line a moment after
+        // it was spoken: "Carte. Vous êtes ici ..." / "Sauvegarde." / the same
+        // line again. A second arming on the same node, within a few seconds,
+        // with nothing pressed in between, is that flicker - not a return.
+        private float _mapAnnouncedAt = -100f;
+        private int _mapAnnouncedNode = int.MinValue;   // MapNode.nodeId: a load rebuilds the node objects
+        private bool _keySinceMapAnnounce;
+        private const float MAP_REPEAT_GUARD_S = 5f;
         private static bool _armFromScreen;
         internal static void ArmMapReturn() => _armFromScreen = true;
 
@@ -1935,6 +1945,7 @@ namespace IKMA
             }
 
             bool battleActive = IsBattleActive();
+            if (KeyIn.AnyDown) _keySinceMapAnnounce = true;
 
             // Anywhere IKMA has a real reader, the unreadable-screen latch is
             // not armed. Cleared here rather than in each branch so a new
@@ -2010,9 +2021,21 @@ namespace IKMA
                     if (_mapReturnPending && !MapReader.ArrivalMustWait())
                     {
                         _mapReturnPending = false;
+                        int node = int.MinValue;
+                        try { var active = MapNodeManager.Instance?.ActiveNode; if (active != null) node = active.nodeId; } catch { }
+                        if (!_keySinceMapAnnounce && node != int.MinValue
+                            && node == _mapAnnouncedNode
+                            && Time.unscaledTime - _mapAnnouncedAt < MAP_REPEAT_GUARD_S)
+                        {
+                            Plugin.Log?.LogInfo("IKMA MAP: map came back on the same node with nothing pressed — already said.");
+                            return;
+                        }
                         _mapIdleTimer = 0f;
                         _mapIdleInterval = MAP_IDLE_REPEAT;
-                        Plugin.Log?.LogInfo("IKMA MAP: encounter ended, map navigable — announcing.");
+                        Plugin.Log?.LogInfo($"IKMA MAP: encounter ended, map navigable — announcing. (node {(node == int.MinValue ? "none" : node == _mapAnnouncedNode ? "same" : "new")}, key since last {_keySinceMapAnnounce}, last {Time.unscaledTime - _mapAnnouncedAt:0.0}s ago)");
+                        _mapAnnouncedNode = node;
+                        _mapAnnouncedAt = Time.unscaledTime;
+                        _keySinceMapAnnounce = false;
                         MapReader.AnnounceMapReady();
                         return;
                     }
@@ -5835,7 +5858,7 @@ namespace IKMA
                     if (!string.IsNullOrEmpty(dir))
                     {
                         // " Moving right." -> "moving right"
-                        string clause = dir.Trim().TrimEnd('.');
+                        string clause = dir.Trim().TrimEnd(Loc.Stops);
                         if (clause.Length > 0)
                         {
                             clause = char.ToLowerInvariant(clause[0]) + clause.Substring(1);

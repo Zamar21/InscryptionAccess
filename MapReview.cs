@@ -96,6 +96,11 @@ namespace IKMA
         private static string Described(bool choicePrefix)
         {
             string name = Name(_current);
+            // Session 66 driver run: Ctrl+Down back onto the first node of a
+            // map, which has no name, said only ".". It is where the player
+            // stands, so it gets the map's own sentence for that place.
+            if (string.IsNullOrWhiteSpace(name))
+                return Loc.WithStop(MapReader.WhereSentence(_current));
             if (choicePrefix && Siblings().Count > 1)
                 return Vocabulary.BufferWords.Choice + ", " + name + ".";
             return name + ".";

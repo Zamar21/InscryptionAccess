@@ -77,8 +77,8 @@ Footage, {0}.	Filmato, {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	Il tuo mazzo è vuoto, premi S per pescare dal mazzo degli Scoiattoli.
 The Squirrel deck is empty, press D to draw from your deck.	Il mazzo degli Scoiattoli è vuoto, premi D per pescare dal tuo mazzo.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Fase di pesca. Premi D per pescare dal tuo mazzo, o S per pescare dal mazzo degli Scoiattoli.
-{0}'s Waterborne ability triggers. It dives underwater...	L'abilità Acquatico di {0} si attiva. Si immerge sott'acqua...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	Le abilità Acquatico di {0} si attivano negli spazi {1}, le creature si immergono...
+{0}'s {1} ability triggers. It dives underwater...	L'abilità {1} di {0} si attiva. Si immerge sott'acqua...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	Le abilità {1} di {0} si attivano negli spazi {2}, le creature si immergono...
 Submerged {0}	{0}, sott'acqua
 Leshy puts on the {0} mask.	Leshy indossa la maschera: {0}.
 Leshy puts on the {0} mask. {1}	Leshy indossa la maschera: {0}. {1}
@@ -387,7 +387,7 @@ You are already standing.	Sei già in piedi.
 stand up	alzarti
 Standing up from the table. Press H for help.	Ti alzi dal tavolo. Premi H per l'aiuto.
 You are at {0}.	Posizione: {0}.
-return to {0}	tornare indietro
+return to {0}	tornare a {0}
 Back at {0}.	Di nuovo qui: {0}.
 You are at the map.	Sei alla mappa.
 return to the map	tornare alla mappa
@@ -728,8 +728,8 @@ slots	spazi
 {0} attacks {1} times.	{0} attacca {1} volte.
 and {0}{1}	e {0}{1}
  in slot {0}	 nello spazio {0}
-{0} burrows from {1}	{0} scava da {1}
- to 	 a 
+{0} burrows from {1}	{0} scava dallo {1}
+ to 	 allo 
 {0}{1} burrows	{0}{1} scava
 {0}, taking {1}, {2}.	{0}, subendo {1}, {2}.
 {0}, taking {1}.	{0}, subendo {1}.
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	Zaino. Frec
 Backpack. Arrows browse, Enter chooses a totem combination.	Zaino. Frecce per scorrere, Invio sceglie una combinazione di totem.
 Your backpack is empty. Press Backspace to return to woodcarving selection.	Il tuo zaino è vuoto. Premi Backspace per tornare alla selezione delle sculture in legno.
 The deck cannot be reached right now.	Al momento non puoi raggiungere il mazzo.
-You have {0} {1} Kin card{2} in your deck.	Hai {0} carte di parentela {1}{2} nel tuo mazzo.
+You have {0} {1} Kin card{2} in your deck.	Carte di parentela {1} nel tuo mazzo: {0}.
  {0}, {1} card{2}.	 {0}, carte: {1}.
 Woodcarving selection.	Selezione degli intagli.
 Withdraw from the campfire.	Allontanati dal falò.

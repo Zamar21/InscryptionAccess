@@ -937,7 +937,7 @@ namespace IKMA
             // period after speed before 6." A stop makes the voice pause and
             // drop, so "Dialogue text speed. 6." lands as two statements when
             // it is one — the setting and where it is set.
-            return $"{Sentence(label).TrimEnd('.')} {value}.";
+            return $"{Sentence(label).TrimEnd(Loc.Stops)} {value}.";
         }
 
         /// <summary>

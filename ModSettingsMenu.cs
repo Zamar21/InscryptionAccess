@@ -74,6 +74,7 @@ namespace IKMA
             internal Func<string> LabelNow;        // Session 40: a label that changes while the menu is open
             internal string Text => LabelNow != null ? LabelNow() : Label;
             internal int Focus;                    // remembered focus, for a category
+            internal bool IsLanguage;              // 0.5.0.002: the Language list; picking one rebuilds the tree
         }
 
         private static readonly List<Node> _stack = new List<Node>();
@@ -184,12 +185,33 @@ namespace IKMA
             }
             if (node.Flip == null) return;
             node.Flip();
+            // 0.5.0.002 - Session 66 driver run: a new language left every
+            // label in the old one until the menu was closed and reopened.
+            if (_stack[_stack.Count - 1].IsLanguage) RebuildForLanguage(_stack[_stack.Count - 1].Focus);
             bool on = node.IsOn();
             Plugin.Log?.LogInfo($"IKMA SETTINGS: {PathText()} {node.Label} = {on}.");
             string word = on ? Vocabulary.ModSettings.Checked : Vocabulary.ModSettings.Unchecked;
             Speech.Browse(node.NextStart
                 ? Vocabulary.ModSettings.Join(word, Vocabulary.ModSettings.NextStart)
                 : word);
+        }
+
+        /// <summary>
+        /// The labels are built in the language of the moment, and the root
+        /// is sorted by them, so a new language needs a new tree. Focus stays
+        /// on the language just picked; the Language list keeps its order.
+        /// </summary>
+        private static void RebuildForLanguage(int focus)
+        {
+            var root = BuildRoot();
+            int at = root.Children.FindIndex(c => c.IsLanguage);
+            if (at < 0) return;
+            root.Focus = at;
+            var language = root.Children[at];
+            language.Focus = Math.Min(focus, language.Children.Count - 1);
+            _stack.Clear();
+            _stack.Add(root);
+            _stack.Add(language);
         }
 
         private static string PathText()
@@ -329,6 +351,7 @@ namespace IKMA
                 var language = Choice(Vocabulary.ModSettings.Language, Loc.Setting, false, langs.ToArray(), names.ToArray());
                 // Zamar, Session 38: "Feature coming soon" until translations ship.
                 if (!Loc.LocalizationShipped) language.Notice = Vocabulary.ModSettings.ComingSoon;
+                language.IsLanguage = true;
                 root.Children.Add(language);
             }
             if (GamepadSupport.Vibration != null)

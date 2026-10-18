@@ -932,7 +932,7 @@ namespace IKMA
                 // One stop: the last one comes off here.
                 if (varies)
                 {
-                    stats = (stats + statNote).TrimEnd('.');
+                    stats = (stats + statNote).TrimEnd(Loc.Stops);
                     statNote = "";
                 }
 
@@ -951,7 +951,7 @@ namespace IKMA
             var cannonNotes = new List<string>();
             for (int i = 0; i < slots.Count; i++)
                 if (PirateSkullNarrator.IsCannonTarget(slots[i]))
-                    cannonNotes.Add(Vocabulary.CannonAimedAtSlot(i + 1).TrimEnd('.'));
+                    cannonNotes.Add(Vocabulary.CannonAimedAtSlot(i + 1).TrimEnd(Loc.Stops));
             string cannon = cannonNotes.Count > 0 ? ". " + string.Join(". ", cannonNotes.ToArray()) : "";
 
             if (parts.Count == 0)

@@ -77,8 +77,8 @@ Footage, {0}.	Aufnahme, {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	Dein Deck ist leer. Drücke S, um vom Eichhörnchenstapel zu ziehen.
 The Squirrel deck is empty, press D to draw from your deck.	Der Eichhörnchenstapel ist leer. Drücke D, um von deinem Deck zu ziehen.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Ziehphase. Drücke D, um von deinem Deck zu ziehen, oder S, um vom Eichhörnchenstapel zu ziehen.
-{0}'s Waterborne ability triggers. It dives underwater...	Fähigkeit Wasserwesen von {0} wird ausgelöst. Die Karte taucht ab ...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	Die Wasserwesen-Fähigkeiten von {0} wirken auf den Plätzen {1}, die Kreaturen tauchen unter...
+{0}'s {1} ability triggers. It dives underwater...	Fähigkeit {1} von {0} wird ausgelöst. Die Karte taucht ab ...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	Die Fähigkeiten {1} von {0} wirken auf den Plätzen {2}, die Kreaturen tauchen unter...
 Submerged {0}	{0} (abgetaucht)
 Leshy puts on the {0} mask.	Leshy setzt die {0}-Maske auf.
 Leshy puts on the {0} mask. {1}	Leshy setzt die {0}-Maske auf. {1}
@@ -712,8 +712,8 @@ Morsel	Leckerbissen
 {0} is cut and {1}.	{0} wird zerschnitten und {1}.
 {0} is smashed and {1}.	{0} wird zertrümmert und {1}.
 {0} in Slot {1}	{0} in Feld {1}
-1 direct damage.	1 direkter Schaden.
-{0} direct damage.	{0} direkter Schaden.
+1 direct damage.	1 direkten Schaden.
+{0} direct damage.	{0} direkten Schaden.
  The scale hits 5...	 Die Waage schlägt bis 5 aus ...
 VOLUME WARNING: 	LAUTSTÄRKE-WARNUNG: 
 Enemy deals {0}{1}	Der Gegner verursacht {0}{1}
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	Rucksack. P
 Backpack. Arrows browse, Enter chooses a totem combination.	Rucksack. Pfeiltasten blättern, Eingabetaste wählt eine Totem-Kombination.
 Your backpack is empty. Press Backspace to return to woodcarving selection.	Dein Rucksack ist leer. Drücke die Rücktaste, um zur Auswahl der Holzschnitzerei zurückzukehren.
 The deck cannot be reached right now.	Das Deck ist gerade nicht erreichbar.
-You have {0} {1} Kin card{2} in your deck.	Du hast {0} Karte{2} der Verwandtschaft {1} in deinem Deck.
+You have {0} {1} Kin card{2} in your deck.	Karten der Verwandtschaft {1} in deinem Deck: {0}.
  {0}, {1} card{2}.	 {0}, Karten: {1}.
 Woodcarving selection.	Schnitzerei-Auswahl.
 Withdraw from the campfire.	Vom Lagerfeuer zurückziehen.

@@ -1077,7 +1077,7 @@ namespace IKMA
                 // run: X before any arrow said "Card Choice. D-pad to browse."
                 // on the Deck Trial. His title for the screen, from its idle line.
                 string what = InTrialSelection()
-                    ? Vocabulary.CardChoices.DeckTrialTitle.TrimEnd('.')
+                    ? Vocabulary.CardChoices.DeckTrialTitle.TrimEnd(Loc.Stops)
                     : Vocabulary.CardChoices.RareCardChoiceOrCardChoice(_sequencer is RareCardChoicesSequencer);
                 _log?.LogInfo($"IKMA CHOICE: Space at NOWHERE — naming the screen ({what}).");
                 Speech.Browse(Vocabulary.CardChoices.ArrowKeysToBrowse(what));

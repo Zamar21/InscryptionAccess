@@ -4411,9 +4411,7 @@ namespace IKMA
 
         private static string WithStop(string line)
         {
-            if (string.IsNullOrEmpty(line)) return line;
-            char last = line[line.Length - 1];
-            return (last == '.' || last == '!' || last == '?' || last == ':' || last == '\u2026') ? line : line + ".";
+            return Loc.WithStop(line);   // Session 66: full-width stops too
         }
 
         /// <summary>
@@ -4806,7 +4804,7 @@ namespace IKMA
             }
 
             Speech.Browse(
-                Vocabulary.NodeScreens.OptionOfName(DescribePart(parts[_index]).TrimEnd('.'), _index + 1, parts.Count));
+                Vocabulary.NodeScreens.OptionOfName(DescribePart(parts[_index]).TrimEnd(Loc.Stops), _index + 1, parts.Count));
         }
 
         /// <summary>
@@ -5080,7 +5078,7 @@ namespace IKMA
             if (string.IsNullOrEmpty(piece)) return "";
 
             // "Insect head." -> "Insect head"
-            string bare = piece.TrimEnd('.');
+            string bare = piece.TrimEnd(Loc.Stops);
 
             string phase = null;
             try

@@ -2024,8 +2024,7 @@ namespace IKMA
         private static string Sentence(string label)
         {
             if (string.IsNullOrEmpty(label)) return "";
-            char last = label[label.Length - 1];
-            return (last == '.' || last == '!' || last == '?') ? label : label + ".";
+            return Loc.WithStop(label);   // Session 66: full-width stops too
         }
 
         private static string LabelFor(List<MainInputInteractable> items, int index)

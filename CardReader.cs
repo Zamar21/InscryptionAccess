@@ -908,7 +908,7 @@ namespace IKMA
             // DescribeMoveDirection returns " Moving right." for the standalone
             // clause it was built for. Inline it wants neither the capital nor
             // the stop.
-            dir = dir.Trim().TrimEnd('.');
+            dir = dir.Trim().TrimEnd(Loc.Stops);
             if (dir.Length == 0) return name;
             dir = char.ToLowerInvariant(dir[0]) + dir.Substring(1);
 
@@ -1186,7 +1186,7 @@ namespace IKMA
                 labels.Insert(0, Vocabulary.Cards.Rare);
             }
 
-            return " " + string.Join(" ", labels.ConvertAll(l => l + ".").ToArray());
+            return " " + string.Join(" ", labels.ConvertAll(l => Loc.WithStop(l)).ToArray());   // Session 66: "。" in ja/zh
         }
 
         // ---------------------------------------------------------------------

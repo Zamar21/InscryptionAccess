@@ -77,8 +77,8 @@ Footage, {0}.	录像，{0}。
 Your deck is empty, press S to draw from the Squirrel deck.	你的牌组已空，按S键从松鼠牌组抽牌。
 The Squirrel deck is empty, press D to draw from your deck.	松鼠牌组已空，按D键从你的牌组抽牌。
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	抽牌阶段。按D键从你的牌组抽牌，或按S键从松鼠牌组抽牌。
-{0}'s Waterborne ability triggers. It dives underwater...	{0}的水袭能力触发。它潜入了水下……
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}的水袭能力在卡槽{1}触发，它们潜入水中...
+{0}'s {1} ability triggers. It dives underwater...	{0}的{1}能力触发。它潜入了水下……
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}的{1}能力在卡槽{2}触发，它们潜入水中...
 Submerged {0}	潜入水下的{0}
 Leshy puts on the {0} mask.	莱西戴上了{0}面具。
 Leshy puts on the {0} mask. {1}	莱西戴上了{0}面具。{1}
@@ -625,7 +625,7 @@ from slot {0} to slot {1}.	从{0}号位移动到{1}号位。
 {0} {1} moves down to slot {2}{3}.	{0}{1}下移到{2}号位{3}。
 {0} {1} is played in slots {2}{3}.	{0} {1}在卡槽{2}{3}出场。
 {0} {1} is played in slot {2}{3}.	{0}{1}被打出在{2}号位{3}。
- targeting slot {0}	 ，瞄准{0}号位
+ targeting slot {0}	，瞄准{0}号位
 Enemy {0} is queued{1}.	敌方{0}已排队{1}。
 {0} {1} has left slot {2}.	{0}{1}离开了{2}号位。
 The Prospector clears his queue.	矿工清空了他的队列。
@@ -675,7 +675,7 @@ empty {0}	空的{0}
 {0} passes by {1} and attacks directly{2}.	{0}越过{1}，直接攻击{2}。
 Airborne	空袭
 Mighty Leap	高跳
-{0} blocks {1} {2} due to {3}.	{0}凭借{3}挡住了{1}{2}。
+{0} blocks {1} {2} due to {3}.	{0}凭借{3}挡住了拥有{1}的{2}。
 {0}{1} attacks {2}.	{0}{1}攻击{2}。
 {0}'s {1} ability triggers, preventing the damage.	{0}的{1}能力触发，抵挡了伤害。
 {0} attacks {1}, it	{0}攻击{1}，后者
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	背包。�
 Backpack. Arrows browse, Enter chooses a totem combination.	背包。方向键浏览，回车键选择图腾组合。
 Your backpack is empty. Press Backspace to return to woodcarving selection.	你的背包已空。按退格键返回木雕选择。
 The deck cannot be reached right now.	现在无法打开牌组。
-You have {0} {1} Kin card{2} in your deck.	你的牌组中有{0}张{1}同族牌{2}。
+You have {0} {1} Kin card{2} in your deck.	你的牌组中有{0}张{1}同族牌。
  {0}, {1} card{2}.	 {0}，{1}张卡牌。
 Woodcarving selection.	木雕选择。
 Withdraw from the campfire.	离开篝火。

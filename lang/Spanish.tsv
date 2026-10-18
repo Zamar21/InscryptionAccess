@@ -77,8 +77,8 @@ Footage, {0}.	Grabación: {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	Tu mazo está vacío, pulsa S para robar del mazo de ardillas.
 The Squirrel deck is empty, press D to draw from your deck.	El mazo de ardillas está vacío, pulsa D para robar de tu mazo.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Fase de robo. Pulsa D para robar de tu mazo o S para robar del mazo de ardillas.
-{0}'s Waterborne ability triggers. It dives underwater...	Se activa la habilidad Acuático de {0}. Se sumerge bajo el agua...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	Se activan las habilidades Acuático de {0} en las casillas {1}, se sumergen bajo el agua...
+{0}'s {1} ability triggers. It dives underwater...	Se activa la habilidad {1} de {0}. Se sumerge bajo el agua...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	Se activan las habilidades {1} de {0} en los espacios {2}, se sumergen bajo el agua...
 Submerged {0}	Bajo el agua: {0}
 Leshy puts on the {0} mask.	Leshy se pone la máscara de {0}.
 Leshy puts on the {0} mask. {1}	Leshy se pone la máscara de {0}. {1}
@@ -729,7 +729,7 @@ slots	espacios
 and {0}{1}	y {0}{1}
  in slot {0}	 en el espacio {0}
 {0} burrows from {1}	{0} excava desde {1}
- to 	 a 
+ to 	 hasta 
 {0}{1} burrows	{0}{1} excava
 {0}, taking {1}, {2}.	{0}, recibiendo {1}, {2}.
 {0}, taking {1}.	{0}, recibiendo {1}.

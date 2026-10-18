@@ -77,8 +77,8 @@ Footage, {0}.	Görüntü: {0}.
 Your deck is empty, press S to draw from the Squirrel deck.	Desten boş, Sincap destesinden çekmek için S tuşuna bas.
 The Squirrel deck is empty, press D to draw from your deck.	Sincap destesi boş, destenden çekmek için D tuşuna bas.
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	Kart çekme aşaması. Destenden çekmek için D, Sincap destesinden çekmek için S tuşuna bas.
-{0}'s Waterborne ability triggers. It dives underwater...	{0} kartının Suda Süzülen yeteneği tetiklendi. Suyun altına dalıyor...
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0} kartının Suda Süzülen yetenekleri {1} yuvalarında tetiklendi, yaratıklar suya dalıyor...
+{0}'s {1} ability triggers. It dives underwater...	{0} kartının {1} yeteneği tetiklendi. Suyun altına dalıyor...
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0} kartının {1} yetenekleri {2} yuvalarında tetiklendi, yaratıklar suya dalıyor...
 Submerged {0}	Suya dalmış: {0}
 Leshy puts on the {0} mask.	Leshy, {0} maskesini takıyor.
 Leshy puts on the {0} mask. {1}	Leshy, {0} maskesini takıyor. {1}
@@ -98,7 +98,7 @@ Leshy is not wearing a mask.	Leshy maske takmıyor.
 Leshy lowers a third candle to the flame and lights it...	Leshy üçüncü bir mumu aleve indirip yakıyor...
 the ship	gemi
 A {0} jumps off {1} and joins your side in slot {2}.	Bir {0}, {1} güvertesinden atlayıp {2}. alanda senin tarafına katılıyor.
-{0} {1} jump off {2} and join your side in slots {3}.	{1} kartları, {2} güvertesinden atlayıp {3}. alanlarda senin tarafına katılıyor.
+{0} {1} jump off {2} and join your side in slots {3}.	{0} {1}, {2} güvertesinden atlayıp {3}. alanlarda senin tarafına katılıyor.
 A massive ship called {0} crashes onto the board. 	{0} adında devasa bir gemi oyun tahtasına çarpıyor. 
 It has {0} dancing Skeleton Pirates on board making a ruckus.	Güvertede dans edip ortalığı birbirine katan {0} İskelet Korsan var.
  No Skeleton Pirates remain on deck.	 Güvertede hiç İskelet Korsan kalmadı.
@@ -449,7 +449,7 @@ Option {0}: {1}	Seçenek {0}: {1}
  You are on Option {0} of {1}.	 Seçenek {0} üzerindesin, toplam {1}.
 Left and right arrows to browse, 	Gezinmek için sol ve sağ oklar, 
 {0}. {1} ahead. {2}.{3} 	{0}. İleride {1}. {2}.{3} 
-Enter to travel, Shift+Up to display deck.	yolculuk için Enter, desteyi göstermek için Shift+Yukarı ok.
+Enter to travel, Shift+Up to display deck.	Yolculuk için Enter, desteyi göstermek için Shift+Yukarı ok.
 Arrived at {0}.	Vardın: {0}.
 Safe	Kasa
 woodcarving	ahşap oyma
@@ -683,7 +683,7 @@ Mighty Leap	Güçlü Sıçrayış
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1}, boş {2} yuvasına saldırarak {3} kartının {4} yeteneğini tetikliyor. {5}, {6} yönünde {7} yuvasına ilerliyor ve
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1}, boş {2} yuvasına saldırarak {3} kartının {4} yeteneğini tetikliyor. {5}, {6} yönünde {7} yuvasına ilerliyor.
 {0}{1} attacks directly.	{0}{1} doğrudan saldırıyor.
- in Slot {0}	 {0}. alana
+ in Slot {0}	 ({0}. alan)
  from your hand	 elinden
 {0} is played{1}{2} by Ability: {3}.	{0}{1}{2} oynandı, Yetenek: {3}.
 {0} is played{1}{2}.	{0}{1}{2} oynandı.
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	Sırt çant
 Backpack. Arrows browse, Enter chooses a totem combination.	Sırt çantası. Oklar gezinir, Enter bir totem birleşimi seçer.
 Your backpack is empty. Press Backspace to return to woodcarving selection.	Sırt çantan boş. Ahşap oyma seçimine dönmek için Geri silme tuşuna bas.
 The deck cannot be reached right now.	Desteye şu an ulaşılamıyor.
-You have {0} {1} Kin card{2} in your deck.	Destende {1} soyundan {0} kart{2} var.
+You have {0} {1} Kin card{2} in your deck.	Destende {1} soyundan {0} kart var.
  {0}, {1} card{2}.	 {0}, kart sayısı: {1}.
 Woodcarving selection.	Ahşap oyma seçimi.
 Withdraw from the campfire.	Kamp ateşinden ayrıl.

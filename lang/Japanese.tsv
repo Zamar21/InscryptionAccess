@@ -77,8 +77,8 @@ Footage, {0}.	映像、{0}。
 Your deck is empty, press S to draw from the Squirrel deck.	デッキが空です。S キーでリスのデッキから引いてください。
 The Squirrel deck is empty, press D to draw from your deck.	リスのデッキが空です。D キーで自分のデッキから引いてください。
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	ドローフェイズ。D キーで自分のデッキから、S キーでリスのデッキから引きます。
-{0}'s Waterborne ability triggers. It dives underwater...	{0}の潜水の能力が発動します。水中に潜ります…
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}の潜水の能力がスロット{1}で発動し、水中に潜ります...
+{0}'s {1} ability triggers. It dives underwater...	{0}の{1}の能力が発動します。水中に潜ります…
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}の{1}の能力がスロット{2}で発動し、水中に潜ります...
 Submerged {0}	潜水中の{0}
 Leshy puts on the {0} mask.	レシーは{0}の仮面を着けます。
 Leshy puts on the {0} mask. {1}	レシーは{0}の仮面を着けます。{1}
@@ -625,7 +625,7 @@ from slot {0} to slot {1}.	スロット{0}からスロット{1}に移動しま�
 {0} {1} moves down to slot {2}{3}.	{0}{1}がスロット{2}に降りてきます{3}。
 {0} {1} is played in slots {2}{3}.	{0} {1}がスロット{2}{3}に出されます。
 {0} {1} is played in slot {2}{3}.	{0}{1}がスロット{2}に出されます{3}。
- targeting slot {0}	 スロット{0}を狙って
+ targeting slot {0}	スロット{0}を狙って
 Enemy {0} is queued{1}.	敵の{0}が{1}待機列に入ります。
 {0} {1} has left slot {2}.	{0}{1}がスロット{2}を離れました。
 The Prospector clears his queue.	探鉱者は自分の待機列を片付けます。
@@ -675,15 +675,15 @@ empty {0}	空いた{0}
 {0} passes by {1} and attacks directly{2}.	{0}は{1}の横を通り抜けて直接攻撃します{2}。
 Airborne	飛行
 Mighty Leap	マイティ・リープ
-{0} blocks {1} {2} due to {3}.	{3}により、{0}が{1}の{2}を防ぎます。
+{0} blocks {1} {2} due to {3}.	{3}により、{0}が{1}を持つ{2}を防ぎます。
 {0}{1} attacks {2}.	{0}が{1}{2}を攻撃します。
 {0}'s {1} ability triggers, preventing the damage.	{0}の{1}の能力が発動し、ダメージを防ぎます。
-{0} attacks {1}, it	{0}が{1}を攻撃、攻撃された側は
+{0} attacks {1}, it	{0}が{1}を攻撃、攻撃された側
 {0}{1} attacks empty Slot {2}.	{0}が{1}空いたスロット{2}を攻撃します。
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1}が空のスロット{2}を攻撃し、{3}の{4}の能力が発動します。{5}が{6}へ移動してスロット{7}に入り、
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1}が空のスロット{2}を攻撃し、{3}の{4}の能力が発動します。{5}が{6}へ移動してスロット{7}に入ります。
 {0}{1} attacks directly.	{0}が{1}直接攻撃します。
- in Slot {0}	 スロット{0}に
+ in Slot {0}	（スロット{0}）
  from your hand	 手札から
 {0} is played{1}{2} by Ability: {3}.	{3}の能力により、{0}が{1}{2}出されます。
 {0} is played{1}{2}.	{0}が{1}{2}出されます。
@@ -727,7 +727,7 @@ slot	のスロット
 slots	のスロット
 {0} attacks {1} times.	{0}は{1}回攻撃します。
 and {0}{1}	、{1}{0}
- in slot {0}	 スロット{0}の
+ in slot {0}	スロット{0}の
 {0} burrows from {1}	{0}が潜って移動：{1}
  to 	 、 
 {0}{1} burrows	{1}{0}が潜ります
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	カバン�
 Backpack. Arrows browse, Enter chooses a totem combination.	カバン。矢印キーで選択、Enter キーでトーテムの組み合わせを決定。
 Your backpack is empty. Press Backspace to return to woodcarving selection.	カバンが空です。Backspace キーで木彫りの選択に戻ります。
 The deck cannot be reached right now.	今はデッキを開けません。
-You have {0} {1} Kin card{2} in your deck.	デッキに親族{1}のカードが{0}枚あります{2}。
+You have {0} {1} Kin card{2} in your deck.	デッキに親族{1}のカードが{0}枚あります。
  {0}, {1} card{2}.	 {0}、{1}枚。
 Woodcarving selection.	木彫りの選択。
 Withdraw from the campfire.	たき火から離れる。

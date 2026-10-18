@@ -77,8 +77,8 @@ Footage, {0}.	影片片段，{0}。
 Your deck is empty, press S to draw from the Squirrel deck.	你的牌組已空，按 S 鍵從松鼠牌組抽卡。
 The Squirrel deck is empty, press D to draw from your deck.	松鼠牌組已空，按 D 鍵從你的牌組抽卡。
 Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.	抽卡階段。按 D 鍵從你的牌組抽卡，或按 S 鍵從松鼠牌組抽卡。
-{0}'s Waterborne ability triggers. It dives underwater...	{0}的水生能力觸發。它潛入了水下……
-{0}'s Waterborne abilities trigger in slots {1}, they dive underwater...	{0}的水生能力在卡槽{1}觸發，牠們潛入水中...
+{0}'s {1} ability triggers. It dives underwater...	{0}的{1}能力觸發。它潛入了水下……
+{0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}的{1}能力在卡槽{2}觸發，牠們潛入水中...
 Submerged {0}	潛入水下的{0}
 Leshy puts on the {0} mask.	雷希戴上了{0}面具。
 Leshy puts on the {0} mask. {1}	雷希戴上了{0}面具。{1}
@@ -625,7 +625,7 @@ from slot {0} to slot {1}.	從{0}號位移動到{1}號位。
 {0} {1} moves down to slot {2}{3}.	{0}{1}下移到{2}號位{3}。
 {0} {1} is played in slots {2}{3}.	{0} {1}在卡槽{2}{3}出場。
 {0} {1} is played in slot {2}{3}.	{0}{1}被打出在{2}號位{3}。
- targeting slot {0}	 ，瞄準{0}號位
+ targeting slot {0}	，瞄準{0}號位
 Enemy {0} is queued{1}.	敵方{0}已排隊{1}。
 {0} {1} has left slot {2}.	{0}{1}離開了{2}號位。
 The Prospector clears his queue.	探勘者清空了他的隊列。
@@ -675,7 +675,7 @@ empty {0}	空的{0}
 {0} passes by {1} and attacks directly{2}.	{0}越過{1}，直接攻擊{2}。
 Airborne	飛空
 Mighty Leap	奮力跳躍
-{0} blocks {1} {2} due to {3}.	{0}憑藉{3}擋住了{1}{2}。
+{0} blocks {1} {2} due to {3}.	{0}憑藉{3}擋住了擁有{1}的{2}。
 {0}{1} attacks {2}.	{0}{1}攻擊{2}。
 {0}'s {1} ability triggers, preventing the damage.	{0}的{1}能力觸發，抵擋了傷害。
 {0} attacks {1}, it	{0}攻擊{1}，後者
@@ -932,7 +932,7 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	揹包。�
 Backpack. Arrows browse, Enter chooses a totem combination.	揹包。方向鍵瀏覽，Enter 鍵選擇圖騰組合。
 Your backpack is empty. Press Backspace to return to woodcarving selection.	你的揹包已空。按退格鍵返回木雕選擇。
 The deck cannot be reached right now.	現在無法打開牌組。
-You have {0} {1} Kin card{2} in your deck.	你的牌組中有{0}張{1}同類卡{2}。
+You have {0} {1} Kin card{2} in your deck.	你的牌組中有{0}張{1}同類卡。
  {0}, {1} card{2}.	 {0}，{1}張卡片。
 Woodcarving selection.	木雕選擇。
 Withdraw from the campfire.	離開營火。

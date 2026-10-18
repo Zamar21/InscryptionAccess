@@ -214,9 +214,7 @@ namespace IKMA
         {
             if (string.IsNullOrEmpty(s)) return s;
             s = s.Trim();
-            char last = s[s.Length - 1];
-            if (last == '.' || last == '!' || last == '?' || last == ':') return s;
-            return s + ".";
+            return Loc.WithStop(s);   // Session 66: full-width stops too
         }
     }
 
