@@ -103,6 +103,26 @@ namespace IKMA
             catch { return null; }
         }
 
+        // Session 67: "Card choice Random" as one line (Vocabulary.Map).
+        private static string CardChoiceNameOf(object data)
+        {
+            var choices = data as CardChoicesNodeData;
+            if (choices == null) return null;
+
+            try
+            {
+                switch (choices.choicesType)
+                {
+                    case CardChoicesType.Random:    return Vocabulary.Map.CardChoiceRandom;
+                    case CardChoicesType.Tribe:     return Vocabulary.Map.CardChoiceKin;
+                    case CardChoicesType.Cost:      return Vocabulary.Map.CardChoiceCost;
+                    case CardChoicesType.Deathcard: return Vocabulary.Map.CardChoiceDeathCard;
+                    default:                        return null;
+                }
+            }
+            catch { return null; }
+        }
+
         public static void Init(ManualLogSource log)
         {
             _log = log;
@@ -3134,6 +3154,8 @@ namespace IKMA
                 // appends the type name — so a sighted player can see which one
                 // it is from the map. choicesType is PUBLIC and is what the game
                 // itself reads to pick that prefab.
+                string whole = friendly == Vocabulary.Map.CardChoice ? CardChoiceNameOf(data) : null;
+                if (whole != null) return whole;
                 string kind = CardChoiceKindOf(data);
                 return kind == null ? friendly : $"{friendly} {kind}";
             }
@@ -3190,7 +3212,7 @@ namespace IKMA
             // Named here rather than in a table of every boss, so the
             // game-says-it rule above still holds for the other four and for
             // any boss this project has never met.
-            if (n == "TrapperTrader") n = Vocabulary.Trapper;
+            if (n == "TrapperTrader") n = "Trapper";   // translated at the return
 
             var sb = new System.Text.StringBuilder();
             foreach (char c in n)
@@ -3198,7 +3220,9 @@ namespace IKMA
                 if (char.IsUpper(c) && sb.Length > 0) sb.Append(' ');
                 sb.Append(c);
             }
-            return sb.ToString();
+            // Session 67: in the player's language. French heard "Combat de
+            // boss : Angler."
+            return Vocabulary.MaskName(sb.ToString());
         }
 
         // ------------------------------------------------------------------

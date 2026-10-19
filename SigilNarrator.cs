@@ -146,6 +146,12 @@ namespace IKMA
                 $"'{CardReader.CardName(otherCard)}' resolving. Target slot " +
                 $"{targetIndex + 1} occupied at trigger = {blockedAtTrigger}.");
 
+            // Session 67b - the diff must not say this move before this line
+            // does. Same race as Sprinter (0.7.344): the enemy's play summary
+            // composed first and said "Your Mantis God moves right", then this
+            // line said it again.
+            if (!blockedAtTrigger) BoardWatcher.NoteMoverPending(guardian);
+
             var capturedGuardian = guardian;
             int capturedTarget   = targetIndex;
             int capturedFrom     = fromSlot;
@@ -165,6 +171,7 @@ namespace IKMA
                 // note below.
                 string name = null;
                 try { name = CardReader.CardName(capturedGuardian); } catch { }
+                BoardWatcher.ClearMoverPending(capturedGuardian);
 
                 if (string.IsNullOrEmpty(name)) return null;
 
@@ -916,8 +923,11 @@ namespace IKMA
                 // 0.7.227 — the one construction. "triggers, it now has" ->
                 // "ability triggers: it now has". See NoteStrafeMove.
                 return Vocabulary.Sigils.SAbilityTriggersItNow(name, sigil, now);
-            });
+            }, BLOODLUST_SETTLE_SECONDS);
         }
+
+        // The game adds the +1 after its trigger flourish and a 0.3 s wait.
+        private const float BLOODLUST_SETTLE_SECONDS = 1.0f;
         // ==================================================================
         // BROOD PARASITE — the Cuckoo laying its egg. (0.7.190.)
         //
@@ -2096,8 +2106,15 @@ namespace IKMA
             var capturedCard   = card;
             int capturedOrigin = originIndex;
 
+            // Session 67b - THE LOG SETTLED IT: the diff did report the move
+            // too. "...leaves its tail as a decoy and moves to slot 3." was
+            // followed at the turn's end by "Your Lizard moves right, from
+            // slot 2 to slot 3." This line owns the move, as Sprinter's does.
+            BoardWatcher.NoteMoverPending(card);
+
             using (Speech.Event(EventKind.Powers)) Speech.Result(() =>
             {
+                BoardWatcher.ClearMoverPending(capturedCard);
                 string name = null;
                 try { name = CardReader.CardName(capturedCard); } catch { }
                 if (string.IsNullOrEmpty(name)) return null;
@@ -2117,6 +2134,7 @@ namespace IKMA
                     $"IKMA SIGIL: Loose Tail on '{name}' moved slot {capturedOrigin + 1} " +
                     $"to slot {now + 1}.");
 
+                try { BoardWatcher.NoteAnnounced(capturedCard); } catch { }
                 return Vocabulary.LooseTailTriggers(name, now + 1);
             }, TAIL_SETTLE_SECONDS);
         }

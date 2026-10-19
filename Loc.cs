@@ -114,12 +114,12 @@ namespace IKMA
             string padPattern = PadLine(line.Format);
             if (padPattern != null)
             {
-                try { return string.Format(padPattern, line.GetArguments()); }
+                try { return Elide(string.Format(Plurals.Instance, padPattern, line.GetArguments())); }
                 catch (FormatException) { }   // the keyboard version below
             }
             if (table.TryGetValue(line.Format, out string pattern))
             {
-                try { return string.Format(pattern, line.GetArguments()); }
+                try { return Elide(string.Format(Plurals.Instance, pattern, line.GetArguments())); }
                 catch (FormatException)
                 {
                     if (_reportedMissing.Add("bad:" + line.Format))
@@ -128,6 +128,39 @@ namespace IKMA
             }
             else ReportMissing(line.Format);
             return line.ToString();
+        }
+
+        // Session 67b: French drops the e of "de" before a vowel or a silent h
+        // ("d'Hermine", "d'Écureuil"). A pattern cannot know which card name
+        // will fill its blank, so it is done once the line is filled. Card
+        // names with a silent h are listed (Hodag, Hrokkall and the game's
+        // "Harpie" keep their h).
+        private static readonly System.Text.RegularExpressions.Regex _frenchDe =
+            new System.Text.RegularExpressions.Regex(
+                @"\b([Dd])e (?=[AEIOUÀÂÄÉÈÊËÎÏÔÖÙÛÜŒaeiouàâäéèêëîïôöùûüœ]|Herm|Homm|Hydr|Hyperh|Hameç|herm|homm|hydr|hameç)",
+                System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+        // Session 67b: a card name that starts with the article ("Le Daus")
+        // contracts with "de" and "à" the way French requires: "du Daus",
+        // "au Daus", "des"/"aux" for Les. Capital Le only - lowercase "de le"
+        // is the pronoun ("de le faire") and stays.
+        private static readonly System.Text.RegularExpressions.Regex _frenchDeLe =
+            new System.Text.RegularExpressions.Regex(
+                @"\b([Dd])e Le(s?) ",
+                System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+        private static readonly System.Text.RegularExpressions.Regex _frenchALe =
+            new System.Text.RegularExpressions.Regex(
+                @"(^|\s)([àÀ]) Le(s?) ",
+                System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+        private static string Elide(string filled)
+        {
+            if (_tableLanguage != "French" || string.IsNullOrEmpty(filled))
+                return filled;
+            filled = _frenchDeLe.Replace(filled, m => m.Groups[1].Value + (m.Groups[2].Value.Length > 0 ? "es " : "u "));
+            filled = _frenchALe.Replace(filled, m => m.Groups[1].Value + (m.Groups[2].Value == "À" ? "A" : "a") + (m.Groups[3].Value.Length > 0 ? "ux " : "u "));
+            if (filled.IndexOf("e ", StringComparison.Ordinal) < 0) return filled;
+            return _frenchDe.Replace(filled, "$1'");
         }
 
         /// <summary>
@@ -192,6 +225,15 @@ namespace IKMA
                     : System.Globalization.CultureInfo.InvariantCulture;
                 string lower = s.ToLower(culture);
                 s = char.ToUpper(lower[0], culture) + lower.Substring(1);
+            }
+            // Session 67: Russian "Continue" finds a lowercase "продолжить"
+            // (the command-line one). A capitalised label stays capitalised.
+            else if (char.IsUpper(english[0]) && char.IsLower(s[0]))
+            {
+                var culture = ReadGameLanguage() == "Turkish"
+                    ? System.Globalization.CultureInfo.GetCultureInfo("tr-TR")
+                    : System.Globalization.CultureInfo.InvariantCulture;
+                s = char.ToUpper(s[0], culture) + s.Substring(1);
             }
             return s;
         }
@@ -352,6 +394,23 @@ namespace IKMA
         {
             string g = ReadGameLanguage();
             return g == null || g == CurrentLanguage();
+        }
+
+        /// <summary>
+        /// Session 67 - true once IKMA can tell which language to speak: a
+        /// language chosen in IKMA's own setting, or the game's options
+        /// loaded. A Russian boot heard "IKMA version 0.5.0.016 loaded." in
+        /// English because Awake runs before the game reads its options.
+        /// Forgets the cached language when it answers yes, so the next line
+        /// is built in the language just learned.
+        /// </summary>
+        internal static bool LanguageKnown()
+        {
+            bool known = !LocalizationShipped
+                || (Setting != null && Setting.Value != IkmaLanguage.Game)
+                || ReadGameLanguage() != null;
+            if (known) _cachedLanguage = null;
+            return known;
         }
 
         private static string ReadLanguage()
@@ -560,6 +619,39 @@ namespace IKMA
                 else sb.Append(c);
             }
             return sb.ToString();
+        }
+    }
+    /// <summary>
+    /// Session 67: a count's noun in a language file, "{0} {0:pl:карта|карты|карт}".
+    /// The forms are one|few|many (Russian: 1, 21 / 2-4, 22-24 / 5-20, 11-14)
+    /// or one|other everywhere else. Any other format string is left to the
+    /// value itself, so every existing pattern formats exactly as before.
+    /// </summary>
+    internal sealed class Plurals : IFormatProvider, ICustomFormatter
+    {
+        internal static readonly Plurals Instance = new Plurals();
+
+        public object GetFormat(Type t) => t == typeof(ICustomFormatter) ? this : null;
+
+        public string Format(string format, object arg, IFormatProvider provider)
+        {
+            if (format != null && format.StartsWith("pl:", StringComparison.Ordinal))
+            {
+                string[] forms = format.Substring(3).Split('|');
+                long n;
+                try { n = Math.Abs(Convert.ToInt64(arg)); } catch { return arg?.ToString() ?? ""; }
+                if (forms.Length >= 3)
+                {
+                    long ten = n % 10, hundred = n % 100;
+                    if (ten == 1 && hundred != 11) return forms[0];
+                    if (ten >= 2 && ten <= 4 && (hundred < 12 || hundred > 14)) return forms[1];
+                    return forms[2];
+                }
+                if (forms.Length == 2) return n == 1 ? forms[0] : forms[1];
+                return forms[0];
+            }
+            if (arg is IFormattable f) return f.ToString(format, System.Globalization.CultureInfo.CurrentCulture);
+            return arg?.ToString() ?? "";
         }
     }
 }

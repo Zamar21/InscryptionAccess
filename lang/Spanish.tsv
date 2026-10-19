@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	Se activa la habilidad {1} de {0}. Se sumerge bajo el agua...
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	Se activan las habilidades {1} de {0} en los espacios {2}, se sumergen bajo el agua...
 Submerged {0}	Bajo el agua: {0}
+Doctor	Doctor
 Leshy puts on the {0} mask.	Leshy se pone la máscara de {0}.
 Leshy puts on the {0} mask. {1}	Leshy se pone la máscara de {0}. {1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISIONAL: no hay descripción del rostro para la máscara de {0}.
@@ -379,6 +380,10 @@ Boulder choice	Elección de peñasco
 Side deck change	Cambio de mazo secundario
 Deck trial	Prueba de mazo
 Victory feast	Festín de la victoria
+Card choice Random	Elección de carta Aleatoria
+Card choice Kin	Elección de carta Parentesco
+Card choice Cost	Elección de carta Coste
+Card choice Death card	Elección de carta Carta de muerte
 Random	Aleatoria
 Cost	Coste
 Cannot {0} right now.	Ahora no puedes {0}.
@@ -697,7 +702,7 @@ The {0} queued	{0}, en la cola
 {0} takes {1}, {2}. 	{0} recibe {1}, {2}. 
 Its {0} ability resolves before it dies.	Su habilidad {0} se resuelve antes de morir.
 {0} takes {1}, {2}.	{0} recibe {1}, {2}.
-Your {0}	Tu {0}
+Your {0}	{0} de tu lado
 Enemy {0}	{0} rival
 {0} is sacrificed.{1}	Se sacrifica {0}.{1}
 {0} sacrificed.{1}	Sacrificio: {0}.{1}
@@ -810,6 +815,7 @@ an item slot	una ranura de objeto
 Saving.	Guardando.
 {0} is added to your hand.	Se añade {0} a tu mano.
 Pirate Skull	Calavera pirata
+Mushroom	Hongo
 None	Ninguno
 Leshy waits silently.	Leshy espera en silencio.
 {0} waits silently.	{0} espera en silencio.
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	Te faltan {0} para comprar {1}.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 No te quedan dientes suficientes para otra compra. Retroceso para dejar al trampero.
 You have {0}.	Tienes {0}.
 , and {0}	, y {0}
+Added to your deck: {0}.	Se añaden a tu mazo: {0}.
 {0} sacrificed.	Sacrificio: {0}.
 sigil	sello
 sigils	sellos

@@ -1410,8 +1410,11 @@ namespace IKMA
                     // Formatting codes: [c:bR] colour, [w:1] wait.
                     if (token.StartsWith("c:") || token.StartsWith("w:")) return "";
 
+                    // Session 67: the game's own translation of it, as
+                    // AbilityPageContent prints it (Russian was "A card
+                    // bearing this sigil блокирует ...").
                     if (_creatureTokens.Contains(token.ToLowerInvariant()))
-                        return "a card bearing this sigil";
+                        return Loc.Game("a card bearing this sigil");
 
                     if (_seenTokens.Add(token))
                         _log?.LogInfo($"IKMA RULEBOOK: unknown text token '[{token}]' dropped.");

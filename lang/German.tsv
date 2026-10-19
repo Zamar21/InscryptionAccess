@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	Fähigkeit {1} von {0} wird ausgelöst. Die Karte taucht ab ...
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	Die Fähigkeiten {1} von {0} wirken auf den Plätzen {2}, die Kreaturen tauchen unter...
 Submerged {0}	{0} (abgetaucht)
+Doctor	Doktor
 Leshy puts on the {0} mask.	Leshy setzt die {0}-Maske auf.
 Leshy puts on the {0} mask. {1}	Leshy setzt die {0}-Maske auf. {1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA VORLÄUFIG: keine Gesichtsbeschreibung für die {0}-Maske.
@@ -379,6 +380,10 @@ Boulder choice	Felsbrocken-Wahl
 Side deck change	Zweitstapel wechseln
 Deck trial	Deckprüfung
 Victory feast	Siegesfestmahl
+Card choice Random	Kartenwahl Zufall
+Card choice Kin	Kartenwahl Familie
+Card choice Cost	Kartenwahl Kosten
+Card choice Death card	Kartenwahl Todeskarte
 Random	Zufall
 Cost	Kosten
 Cannot {0} right now.	Gerade nicht möglich: {0}.
@@ -810,6 +815,7 @@ an item slot	ein Gegenstandsplatz
 Saving.	Speichern.
 {0} is added to your hand.	{0} kommt auf deine Hand.
 Pirate Skull	Piratenschädel
+Mushroom	Pilz
 None	Keine
 Leshy waits silently.	Leshy wartet schweigend.
 {0} waits silently.	{0} wartet schweigend.
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	Dir fehlen {0} für {1}.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Nicht genug Zähne für einen weiteren Kauf. Rücktaste verlässt den Fallensteller.
 You have {0}.	Du hast {0}.
 , and {0}	und {0}
+Added to your deck: {0}.	Zu deinem Deck hinzugefügt: {0}.
 {0} sacrificed.	{0} geopfert.
 sigil	Siegel
 sigils	Siegel

@@ -180,6 +180,20 @@ namespace IKMA
                 return true;
             }
 
+            // Session 67b: the game's own gate. The olive branch can be
+            // clicked only in the player's main phase (CanAcceptSurrender);
+            // accepting during the draw let the game re-offer after it,
+            // undo the acceptance, and the battle carried on after IKMA
+            // had said "Victory". Keep the callback for a later press.
+            bool canAccept = false;
+            try { canAccept = TurnManager.Instance != null && TurnManager.Instance.IsPlayerMainPhase; } catch { }
+            if (!canAccept)
+            {
+                Speech.Browse(Vocabulary.SurrenderNotAccepted);
+                Plugin.Log?.LogInfo("IKMA SURRENDER: accept pressed outside the main phase; refused.");
+                return true;
+            }
+
             if (_acceptCallback == null)
             {
                 // Honest rather than silent: the player pressed a key IKMA

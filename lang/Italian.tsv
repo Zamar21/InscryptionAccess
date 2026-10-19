@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	L'abilità {1} di {0} si attiva. Si immerge sott'acqua...
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	Le abilità {1} di {0} si attivano negli spazi {2}, le creature si immergono...
 Submerged {0}	{0}, sott'acqua
+Doctor	Dottore
 Leshy puts on the {0} mask.	Leshy indossa la maschera: {0}.
 Leshy puts on the {0} mask. {1}	Leshy indossa la maschera: {0}. {1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVVISORIO: nessuna descrizione del volto per la maschera {0}.
@@ -379,6 +380,10 @@ Boulder choice	Scelta della roccia
 Side deck change	Cambio del mazzo secondario
 Deck trial	Prova del mazzo
 Victory feast	Banchetto della vittoria
+Card choice Random	Scelta della carta Casuale
+Card choice Kin	Scelta della carta Tribù
+Card choice Cost	Scelta della carta Costo
+Card choice Death card	Scelta della carta Carta della morte
 Random	Casuale
 Cost	Costo
 Cannot {0} right now.	Impossibile {0} adesso.
@@ -810,6 +815,7 @@ an item slot	uno spazio oggetto
 Saving.	Salvataggio.
 {0} is added to your hand.	{0} si aggiunge alla tua mano.
 Pirate Skull	Teschio pirata
+Mushroom	Fungo
 None	Nessuno
 Leshy waits silently.	Leshy attende in silenzio.
 {0} waits silently.	{0} attende in silenzio.
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	Ti mancano {0} per comprare {1}.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Non hai abbastanza denti per un altro acquisto. Backspace per lasciare il Cacciatore.
 You have {0}.	Hai {0}.
 , and {0}	, e {0}
+Added to your deck: {0}.	Si aggiungono al tuo mazzo: {0}.
 {0} sacrificed.	Sacrificio: {0}.
 sigil	sigillo
 sigils	sigilli

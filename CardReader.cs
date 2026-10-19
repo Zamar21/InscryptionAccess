@@ -135,8 +135,7 @@ namespace IKMA
         {
             if (info == null) return null;
 
-            string name = null;
-            try { name = info.DisplayedNameLocalized; } catch { }
+            string name = LocalizedName(info);
             if (string.IsNullOrEmpty(name)) return name;
 
             // ==================================================================
@@ -193,7 +192,23 @@ namespace IKMA
         public static string BaseCardName(CardInfo info)
         {
             if (info == null) return null;
-            try { return info.DisplayedNameLocalized; } catch { return null; }
+            return LocalizedName(info);
+        }
+
+        // Session 67b: the game's own name, with a capital first letter. The
+        // French table holds "Ring Worm" twice, and the lowercase one (a Deck
+        // Trial line) comes first; the card has no name id of its own, so the
+        // game finds that one and a line opened with "larve virevoltante".
+        // Same word, capitalised like every other card name.
+        private static string LocalizedName(CardInfo info)
+        {
+            string name = null;
+            try { name = info.DisplayedNameLocalized; } catch { }
+            if (string.IsNullOrEmpty(name) || !char.IsLower(name[0])) return name;
+            var culture = Loc.CurrentLanguage() == "Turkish"
+                ? System.Globalization.CultureInfo.GetCultureInfo("tr-TR")
+                : System.Globalization.CultureInfo.InvariantCulture;
+            return char.ToUpper(name[0], culture) + name.Substring(1);
         }
 
         // ======================================================================
@@ -258,7 +273,9 @@ namespace IKMA
             var data = BoonInfo(type);
             string name = null;
             try { name = data?.displayedName; } catch { }
-            return string.IsNullOrEmpty(name) ? null : name;
+            // Session 67: in the game's language. Russian heard "Получена 1
+            // кость: Minor Boon of the Bone Lord."
+            return string.IsNullOrEmpty(name) ? null : Loc.Game(name);
         }
 
         /// <summary>What the boon does, in the game's own words, or null.</summary>
@@ -266,7 +283,7 @@ namespace IKMA
         {
             var data = BoonInfo(type);
             string desc = null;
-            try { desc = RulebookReader.Clean(data?.description); } catch { }
+            try { desc = RulebookReader.Clean(Loc.Game(data?.description)); } catch { }
             return string.IsNullOrEmpty(desc) ? null : desc;
         }
 
@@ -593,7 +610,7 @@ namespace IKMA
                     {
                         if (!NegatedOnCard(card, ability) && seenAbilities.Add(ability))
                         {
-                            string n = GetAbilityName(ability);
+                            string n = Loc.Game(GetAbilityName(ability));
                             if (n != null) tempSigils.Add(n);
                         }
                     }
@@ -634,7 +651,7 @@ namespace IKMA
                     // Squirrel is suppressed (no visual indicator in-game).
                     // Compared as an enum: one fewer string per tribe per read.
                     if (tribe == Tribe.Squirrel) continue;
-                    tribeNames.Add(tribe.ToString());
+                    tribeNames.Add(Loc.Game(tribe.ToString()));   // Session 67
                 }
                 // Session 10 note 7: a bare "Hooved." at the end of a card read
                 // gave no clue what the word referred to. Label it. Sighted
@@ -741,7 +758,7 @@ namespace IKMA
                     //
                     // The three reads that DO have a live card go through
                     // AbilityNameWithDirection.
-                    string n = GetAbilityName(ability);
+                    string n = Loc.Game(GetAbilityName(ability));   // Session 67
                     n = WithHatchProgress(ability, n);   // 0.7.443
                     if (n != null) sigils.Add(n);
                 }
@@ -782,7 +799,7 @@ namespace IKMA
                     // Squirrel is suppressed (no visual indicator in-game).
                     // Compared as an enum: one fewer string per tribe per read.
                     if (tribe == Tribe.Squirrel) continue;
-                    tribeNames.Add(tribe.ToString());
+                    tribeNames.Add(Loc.Game(tribe.ToString()));   // Session 67
                 }
                 if (tribeNames.Count == 1)
                     tribePart = Vocabulary.Cards.KinType(tribeNames[0]);
@@ -886,7 +903,9 @@ namespace IKMA
         // ----------------------------------------------------------------------
         internal static string AbilityNameWithDirection(Ability ability, PlayableCard card)
         {
-            string name = GetAbilityName(ability);
+            // Session 67: in the game's own language, as the card shows it
+            // (a Russian game read "Символ: Mighty Leap").
+            string name = Loc.Game(GetAbilityName(ability));
             if (card == null || string.IsNullOrEmpty(name)) return name;
 
             // Remember the pairing for Shift+R, for EVERY ability on this card
@@ -1714,13 +1733,18 @@ namespace IKMA
             _abilityCardsThisLine.Add(card);
         }
 
+        // Session 67: the name in the game's language (Loc.Game). A Russian
+        // run heard "Горностай получает Mighty Leap." and "Волчонок, 1/1,
+        // Fledgling." - some forty callers speak this name and only some
+        // translated it. The cache keeps the English; translating twice is
+        // harmless, so callers that already wrap it in Loc.Game still work.
         public static string GetAbilityName(Ability ability)
         {
             if (!_abilitiesThisLine.Contains(ability)) _abilitiesThisLine.Add(ability);
 
             EnsureCacheReady();
             if (_abilityNameCache.TryGetValue(ability, out string cached))
-                return cached;
+                return Loc.Game(cached);
 
             var allData = ScriptableObjectLoader<AbilityInfo>.AllData;
             if (allData == null) return null;
@@ -1729,7 +1753,7 @@ namespace IKMA
             string result = info?.rulebookName;
             if (result != null)
                 _abilityNameCache[ability] = result;
-            return result;
+            return Loc.Game(result);
         }
 
         // The one place an utterance is logged. Every other reader delegates

@@ -335,6 +335,24 @@ namespace IKMA
                         continue;
                     }
 
+                    // Session 67: every options row and the buttons in it.
+                    case "options":
+                        foreach (var r in OptionsReader.Rows())
+                        {
+                            var sb = new StringBuilder();
+                            foreach (var b in r.Buttons)
+                            {
+                                string pos = "";
+                                try { var p = b.transform.position; pos = $"@{p.x:0.00},{p.y:0.00}"; } catch { }
+                                sb.Append(" [" + (b != null ? b.gameObject.name : "?") + pos + "]");
+                            }
+                            string parent = "?";
+                            try { parent = r.Parent.gameObject.name; } catch { }
+                            Emit("STATE", "row '" + (r.Label ?? "?") + "' parent=" + parent + sb);
+                        }
+                        Done(id, "");
+                        continue;
+
                     case "runbg":
                         Application.runInBackground = arg.Equals("on", StringComparison.OrdinalIgnoreCase);
                         Done(id, "runInBackground=" + Application.runInBackground);

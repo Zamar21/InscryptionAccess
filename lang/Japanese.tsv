@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	{0}の{1}の能力が発動します。水中に潜ります…
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}の{1}の能力がスロット{2}で発動し、水中に潜ります...
 Submerged {0}	潜水中の{0}
+Doctor	ドクター
 Leshy puts on the {0} mask.	レシーは{0}の仮面を着けます。
 Leshy puts on the {0} mask. {1}	レシーは{0}の仮面を着けます。{1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA 暫定：{0}の仮面の顔の説明がありません。
@@ -379,6 +380,10 @@ Boulder choice	岩の選択
 Side deck change	サイドデッキの変更
 Deck trial	デッキの試練
 Victory feast	勝利の宴
+Card choice Random	カード選択 ランダム
+Card choice Kin	カード選択 親族
+Card choice Cost	カード選択 コスト
+Card choice Death card	カード選択 死のカード
 Random	ランダム
 Cost	コスト
 Cannot {0} right now.	今は{0}ことができません。
@@ -810,6 +815,7 @@ an item slot	アイテムスロット
 Saving.	セーブ中。
 {0} is added to your hand.	{0}が手札に加わります。
 Pirate Skull	海賊のドクロ
+Mushroom	キノコ
 None	なし
 Leshy waits silently.	レシーは黙って待っています。
 {0} waits silently.	{0}は黙って待っています。
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	{1}を買うには{0}足りません。{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 次の購入に必要な歯が足りません。Backspace キーで罠猟師のもとを離れます。
 You have {0}.	{0}を持っています。
 , and {0}	、{0}
+Added to your deck: {0}.	デッキに加えました：{0}。
 {0} sacrificed.	{0}を捧げました。
 sigil	印
 sigils	印

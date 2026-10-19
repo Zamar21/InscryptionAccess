@@ -9,7 +9,7 @@ using Rewired;
 
 namespace IKMA
 {
-    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.5.0.010")]
+    [BepInPlugin("com.zamar.ikma", "IKMA - Inscryption Kaycee's Mod Access", "0.5.0.024")]
     public class Plugin : BaseUnityPlugin
     {
         // Static log handle so Harmony patch classes can log diagnostics
@@ -1097,6 +1097,16 @@ namespace IKMA
                 AccessTools.Method(typeof(WhackAMole), "OnSlotTargetedForAttack"),
                 typeof(WhackAMole_OnSlotTargetedForAttack_Patch), "Prefix");
 
+            // BLOODLUST. Session 67b: the patch class and its line (0.7.222)
+            // were written but never registered, so a kill with Bloodlust was
+            // silent. PUBLIC override IEnumerator
+            // GainAttackOnKill.OnOtherCardDie(PlayableCard, CardSlot, bool,
+            // PlayableCard), called only when this card was the killer.
+            TryPatch(harmony,
+                "bloodlust",
+                AccessTools.Method(typeof(GainAttackOnKill), "OnOtherCardDie"),
+                typeof(GainAttackOnKill_OnOtherCardDie_Patch), "Prefix");
+
             // INSCRYPTION'S OWN TITLE SCREEN. (0.7.231.)
             //
             // Zamar wants the non-Kaycee's-Mod title screen navigable for v0.5,
@@ -1859,6 +1869,20 @@ namespace IKMA
             //
             // Read off the BepInPlugin attribute instead, so the attribute is
             // the only place a version number is ever typed.
+            //
+            // Session 67: said once the language is known (Loc.LanguageKnown),
+            // not here in Awake, where the game has not read its options yet
+            // and every language heard this line in English. Ten seconds at
+            // most, then it is said anyway. The update check follows it.
+            StartCoroutine(GreetWhenLanguageKnown());
+        }
+
+        private System.Collections.IEnumerator GreetWhenLanguageKnown()
+        {
+            float giveUp = Time.realtimeSinceStartup + 10f;
+            while (!Loc.LanguageKnown() && Time.realtimeSinceStartup < giveUp)
+                yield return null;
+
             Speech.Quiet(Vocabulary.Mod.IkmaVersionLoaded(PluginVersion));
 
             // Session 32 - auto-update. After the load line, so "Updated from
@@ -5201,6 +5225,10 @@ namespace IKMA
             { "Trapper",    Vocabulary.Trapper },
             { "Bonelord",   Vocabulary.BoneLord },
             { "PirateSkull", Vocabulary.Dialogue.PirateSkull },   // 0.7.344 — his boss, KM Final Boss challenge
+            // Session 67b — the Mycologists' small face. It fell through to
+            // Prettify, which is English in every language ("Mushroom:" in a
+            // Russian run).
+            { "Mushroom",   Vocabulary.Dialogue.Mushroom },
         };
         private static System.Collections.Generic.Dictionary<string, string> _speakerNamesCache;
         private static string _speakerNamesLanguage;
@@ -5268,7 +5296,7 @@ namespace IKMA
                 if (string.Equals(mask, "Woodcarver", System.StringComparison.OrdinalIgnoreCase))
                     return Vocabulary.Leshy;
 
-                if (!string.IsNullOrEmpty(mask)) return mask;
+                if (!string.IsNullOrEmpty(mask)) return Vocabulary.MaskName(mask);
             }
 
             if (rawSpeaker != "Single") return null;
@@ -5296,7 +5324,7 @@ namespace IKMA
             {
                 var boss = TurnManager.Instance?.Opponent as Part1BossOpponent;
                 if (boss == null) return null;
-                return BossNarrator.BossDisplayName(boss);
+                return Vocabulary.MaskName(BossNarrator.BossDisplayName(boss));
             }
             catch { return null; }
         }

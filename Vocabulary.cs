@@ -986,6 +986,19 @@ namespace IKMA
             return !_masksDescribed.Add(mask ?? "");
         }
 
+        // Session 67: the mask's name in the player's language. The identity
+        // is the game's enum name ("Trader"), and a Russian log read
+        // "Леший надевает маску: Trader." and "Trader: ПОКАЖИ МНЕ...". The
+        // English word stays the lookup key everywhere else.
+        public static string MaskName(string mask)
+        {
+            if (string.IsNullOrEmpty(mask)) return mask;
+            // The Mycologists' doctor has no Loc.T of his own anywhere else;
+            // named here so the language files keep the line.
+            if (mask == "Doctor") return Loc.T("Doctor");
+            return Loc.T(mask);
+        }
+
         // Claude, 0.7.326-0.7.335.
         public static string LeshyMaskOn(string mask)
         {
@@ -1000,14 +1013,14 @@ namespace IKMA
                 return stop > 0 ? whole.Substring(0, stop + 1) : whole;
             }
 
-            if (seen) return Loc.F($"Leshy puts on the {mask} mask.");
+            if (seen) return Loc.F($"Leshy puts on the {MaskName(mask)} mask.");
 
             string face;
             if (!string.IsNullOrEmpty(mask) && _maskFaces.TryGetValue(mask, out face))
-                return Loc.F($"Leshy puts on the {mask} mask. {Loc.T(face)}");
+                return Loc.F($"Leshy puts on the {MaskName(mask)} mask. {Loc.T(face)}");
 
             Plugin.Log?.LogInfo(Loc.F($"IKMA PROVISIONAL: no face description for the {mask} mask."));
-            return Loc.F($"Leshy puts on the {mask} mask...");
+            return Loc.F($"Leshy puts on the {MaskName(mask)} mask...");
         }
 
         /// <summary>
@@ -1033,8 +1046,8 @@ namespace IKMA
         // Zamar, 0.7.217.
         public static string LeshyMaskOff(string mask, bool floatsAway)
             => floatsAway
-                ? Loc.F($"Leshy removes the {mask}'s mask, it floats away.")
-                : Loc.F($"Leshy removes the {mask}'s mask.");
+                ? Loc.F($"Leshy removes the {MaskName(mask)}'s mask, it floats away.")
+                : Loc.F($"Leshy removes the {MaskName(mask)}'s mask.");
 
         /// <summary>
         /// The masks begin circling at the end of the intro. HIS WORDING,
@@ -1048,11 +1061,11 @@ namespace IKMA
 
             string list;
             if (masks.Count == 1)
-                list = Loc.F($"the {masks[0]}");
+                list = Loc.F($"the {MaskName(masks[0])}");
             else
             {
-                var head = string.Join(", ", masks.GetRange(0, masks.Count - 1).ToArray());
-                list = Loc.F($"the {head}, and the {masks[masks.Count - 1]}");
+                var head = string.Join(", ", masks.GetRange(0, masks.Count - 1).ConvertAll(MaskName).ToArray());
+                list = Loc.F($"the {head}, and the {MaskName(masks[masks.Count - 1])}");
             }
 
             return Loc.F($"{NumberWord(masks.Count)} masks circle around Leshy's head: {list}. ") +
@@ -1380,7 +1393,7 @@ namespace IKMA
         public static string LeshyMaskFlip(string mask)
             // ZAMAR'S WORDING, 0.7.302, verbatim. The old line said what the
             // state change WAS; his says what is on the table.
-            => Loc.F($"Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {mask}.");
+            => Loc.F($"Leshy removes the mask, flips it upside-down, and puts it back on. He becomes the {MaskName(mask)}.");
 
         /// <summary>
         /// The Angler's phase two, first half: the table clears.
@@ -2551,6 +2564,14 @@ namespace IKMA
 
             // Claude, 0.7.42 or earlier. Key: VictoryFeast.
             public static string VictoryFeast => Loc.T("Victory feast");
+
+            // Session 67: the whole node name, one line each, so a language
+            // can word it as one phrase. Russian heard "Выбор карты Случайный
+            // выбор." from the two words joined. The English is unchanged.
+            public static string CardChoiceRandom => Loc.T("Card choice Random");
+            public static string CardChoiceKin => Loc.T("Card choice Kin");
+            public static string CardChoiceCost => Loc.T("Card choice Cost");
+            public static string CardChoiceDeathCard => Loc.T("Card choice Death card");
 
             // Claude, 0.7.222-0.7.261.
             public static string RandomChoice => Loc.T("Random");
@@ -4206,6 +4227,11 @@ namespace IKMA
             // Claude, 0.7.336-0.7.345. Key: PirateSkull.
             public static string PirateSkull => Loc.T("Pirate Skull");
 
+            // Claude, Session 67b. Key: Mushroom. The Mycologists' small
+            // face. English is what Prettify already said; the entry exists
+            // so other languages can translate it.
+            public static string Mushroom => Loc.T("Mushroom");
+
             // Claude, 0.7.42 or earlier.
             public static string None => Loc.T("None");
 
@@ -4244,11 +4270,11 @@ namespace IKMA
 
             // Claude, 0.7.110-0.7.206.
             public static string TheMask(string maskIdentity)
-                => Loc.F($"The {maskIdentity}");
+                => Loc.F($"The {MaskName(maskIdentity)}");
 
             // Claude, 0.7.110-0.7.206.
             public static string LeshyThe(bool noBoss, string boss)
-                => noBoss ? Loc.T("Leshy") : Loc.F($"The {boss}");
+                => noBoss ? Loc.T("Leshy") : Loc.F($"The {MaskName(boss)}");
 
             // Zamar, 0.7.204. Key: Prospector.
             public static string LeshyPutsOnA => Loc.T("Leshy puts on a wooden mask of a dirty wild face, with a large mangled " +
@@ -4712,8 +4738,10 @@ namespace IKMA
                 => Loc.F($"You have {n} {Loc.Game(tribe.ToString())} Kin card{(n == 1 ? "" : "s")} in your deck.");
 
             // Claude, 0.7.222-0.7.261.
+            // Session 67: GameLabel, so it starts its sentence capitalised.
+            // French heard "Votre deck. 5 cartes. reptile, 1 carte."
             public static string CardS(DiskCardGame.Tribe t, int n)
-                => Loc.F($" {t}, {n} card{(n == 1 ? "" : "s")}.");
+                => Loc.F($" {Loc.GameLabel(t.ToString())}, {n} card{(n == 1 ? "" : "s")}.");
 
             // Zamar, 0.7.258.
             public static string WoodcarvingSelection => Loc.T("Woodcarving selection.");
@@ -4800,6 +4828,12 @@ namespace IKMA
             // Claude, 0.7.42 or earlier.
             public static string PeltsAddedLine(string list)
                 => Loc.F($"{list} added to your deck.");
+
+            // Session 67: the pelts bought, in every language but English,
+            // which says "Two Rabbit Pelts added to your deck." English never
+            // speaks this line.
+            public static string PeltsAddedList(string list)
+                => Loc.F($"Added to your deck: {list}.");
 
             // Claude, 0.7.326-0.7.335.
             public static string Sacrificed(string sacrificedName)

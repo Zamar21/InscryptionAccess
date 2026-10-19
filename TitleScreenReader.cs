@@ -248,17 +248,21 @@ namespace IKMA
             string via = "MenuAction";
             string label = null;
 
+            // THE SAME QUESTION DisplayMenuCardTitle ASKS. (Session 67.) The
+            // raw TitleText is the English source; in Russian the screen
+            // prints its translation, and IKMA was saying "New Game" under
+            // "НОВАЯ ИГРА". The loc id first, the translated text second.
             try
             {
-                if (!string.IsNullOrEmpty(card.TitleText))
-                {
-                    label = card.TitleText;
-                    via = "MenuCard.TitleText";
-                }
-                else if (!string.IsNullOrEmpty(card.TitleLocId))
+                if (!string.IsNullOrEmpty(card.TitleLocId))
                 {
                     label = Localization.TranslateWithID(card.TitleLocId);
                     via = "MenuCard.TitleLocId";
+                }
+                if (string.IsNullOrEmpty(label) && !string.IsNullOrEmpty(card.TitleText))
+                {
+                    label = Localization.Translate(card.TitleText);
+                    via = "MenuCard.TitleText";
                 }
             }
             catch { label = null; }

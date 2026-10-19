@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	{0}: срабатывает символ {1}. Карта ныряет под воду...
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}: символы {1} срабатывают в ячейках {2}, существа ныряют под воду...
 Submerged {0}	Под водой: {0}
+Doctor	Доктор
 Leshy puts on the {0} mask.	Леший надевает маску: {0}.
 Leshy puts on the {0} mask. {1}	Леший надевает маску: {0}. {1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISIONAL: нет описания лица для маски {0}.
@@ -200,7 +201,7 @@ seven	семь
 eight	восемь
 Angler	Рыболов
 1 bone	1 кость
-{0} bones	костей: {0}
+{0} bones	{0} {0:pl:кость|кости|костей}
 Bone Lord	Повелитель костей
 bone	кость
 bones	кости
@@ -210,7 +211,7 @@ Arrows browse, Enter chooses, Space repeats your position. 	Стрелки — �
 Campfire	Костёр
 This card could not be read.	Эту карту не удалось прочитать.
 1 card	1 карта
-{0} cards	карт: {0}
+{0} cards	{0} {0:pl:карта|карты|карт}
 1 damage	урон 1
 {0} damage	урон {0}
 Death card	Карта смерти
@@ -301,12 +302,12 @@ Cards 	Карты
 Previous page	Предыдущая страница
 Next page	Следующая страница
 Card locked	Карта заблокирована
-Challenge locked.	Испытание недоступно.
+Challenge locked.	Препятствие недоступно.
 plus 1 challenge point	плюс 1 к очкам препятствия
 plus {0} challenge points	плюс {0} к очкам препятствия
-Challenge complete.	Испытание завершено.
-Challenge level {0}.	Уровень испытаний {0}.
-All challenge levels cleared.	Все уровни испытаний пройдены.
+Challenge complete.	Препятствие завершено.
+Challenge level {0}.	Уровень препятствия {0}.
+All challenge levels cleared.	Все уровни препятствия пройдены.
 Active, 	Активно, 
 Random Starter Deck	Случайная стартовая колода
 unlabelled option	вариант без подписи
@@ -347,7 +348,7 @@ Arrows to adjust. Backspace to return.	Стрелки — изменить. Back
 Back. {0}	Назад. {0}
 , locked	, недоступно
 1 option	1 вариант
-{0} options	вариантов: {0}
+{0} options	{0} {0:pl:вариант|варианта|вариантов}
 Pause menu. {0}.	Меню паузы. {0}.
 Game settings.	Настройки игры.
 Display settings.	Настройки экрана.
@@ -379,6 +380,10 @@ Boulder choice	Выбор булыжника
 Side deck change	Смена запасной колоды
 Deck trial	Испытание колоды
 Victory feast	Победный пир
+Card choice Random	Выбор карты наугад
+Card choice Kin	Выбор карты по семейству
+Card choice Cost	Выбор карты по цене
+Card choice Death card	Выбор карты смерти
 Random	Случайный выбор
 Cost	Выбор по цене
 Cannot {0} right now.	Сейчас нельзя {0}.
@@ -427,7 +432,7 @@ the beginning of a new map	начало новой карты
 unknown location	неизвестное место
 Map ready.	Карта готова.
 1 path	1 путь
-{0} paths	путей: {0}
+{0} paths	{0} {0:pl:путь|пути|путей}
 Map. {0}. {1} ahead. Arrows to browse, Space for details, Enter to travel, Shift+Up to display deck.	Карта. {0}. Впереди {1}. Стрелки — выбор, Пробел — подробности, Enter — отправиться, Shift+стрелка вверх — показать колоду.
 Map. Awaiting input. Press Space for your position, H for help.	Карта. Ожидание ввода. Нажмите Пробел, чтобы узнать позицию, H — для справки.
 Awaiting path selection. H, for help.	Ожидание выбора пути. H — справка.
@@ -484,7 +489,7 @@ Draw pile unavailable.	Колода для взятия карт недосту�
 Drew {0}.	Взята карта: {0}.
 Sigil Ability	Символ
 Sigil Abilities	Символы
-Drew {0}. It gains {1}: {2}.	Взята карта: {0}. Она получает {1}: {2}.
+Drew {0}. It gains {1}: {2}.	Взята карта: {0}. Она получает: {2}.
 Finish placing your card before using an item.	Закончите размещение карты, прежде чем использовать предмет.
 No items.	Нет предметов.
 Item unavailable.	Предмет недоступен.
@@ -562,9 +567,9 @@ That card could not be played.	Эту карту не удалось разыг�
 No card in this slot.	В этой ячейке нет карты.
 {0} already chosen to sacrifice.	{0} уже выбрана для жертвоприношения.
 Slot {0} is occupied by {1}. Choose an empty slot.	Ячейка {0} занята: {1}. Выберите пустую ячейку.
-{0} in slot {1} sacrificed. Choose {2} additional sacrifice.	Карта {0} в ячейке {1} принесена в жертву. Выберите ещё {2} жертву.
-{0} in slot {1} sacrificed. Choose {2} additional sacrifices.	Карта {0} в ячейке {1} принесена в жертву. Выберите ещё {2} жертвы.
-{0} played in Slot {1}.	{0} выложена в ячейку {1}.
+{0} in slot {1} sacrificed. Choose {2} additional sacrifice.	Карта {0} в ячейке {1} принесена в жертву. Выберите ещё {2} {2:pl:жертву|жертвы|жертв}.
+{0} in slot {1} sacrificed. Choose {2} additional sacrifices.	Карта {0} в ячейке {1} принесена в жертву. Выберите ещё {2} {2:pl:жертву|жертвы|жертв}.
+{0} played in Slot {1}.	Карта {0} выложена в ячейку {1}.
 No slot restrictions to step through.	Нет ограничений по ячейкам для перебора.
 No other slot available for this card.	Для этой карты нет других свободных ячеек.
  Ability: {0}.	 Символ: {0}.
@@ -579,7 +584,7 @@ Slot {0}: empty.{1}{2}	Ячейка {0}: пусто.{1}{2}
 {0} in adjacent slot {1}	{0} в соседней ячейке {1}
 sacrifice	жертву
 sacrifices	жертвы
-{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}: цена — {1} крови. Выберите жертвы: {2}. Стрелки влево и вправо — выбор, Enter — подтвердить. Начатое жертвоприношение нельзя отменить.
+{0} costs {1} blood. Choose {2} {3}. Left and right arrows to navigate, Enter to confirm. A sacrifice cannot be cancelled once started.	{0}: цена — {1} {1:pl:кровь|крови|крови}. Выберите жертвы: {2}. Стрелки влево и вправо — выбор, Enter — подтвердить. Начатое жертвоприношение нельзя отменить.
 Playing {0}. 	Разыгрывается {0}. 
 {0}Choose a slot to play {1}. Left and right arrows to navigate, Enter to confirm.{2}	{0}Выберите ячейку для карты {1}. Стрелки влево и вправо — выбор, Enter — подтвердить.{2}
 Choose a slot. Left and right arrows to navigate, Enter to confirm.{0}	Выберите ячейку. Стрелки влево и вправо — выбор, Enter — подтвердить.{0}
@@ -641,10 +646,10 @@ Glitched card. This card is glowing white and glitching. Card stats are unknown 
 Shift plus R looks up the last ability you heard.	Shift+R находит последний услышанный символ.
 Ability	Символ
 Abilities	Символы
- Sigil Ability: {0}.	 Символ: {0}.
+ Sigil Ability: {0}.	 Полученный символ: {0}.
  Kin type: {0}.	 Семейство: {0}.
  Kin types: {0}.	 Семейства: {0}.
-Star	звёздочка
+Star	Звёздочка
  Moving left.	 Движется влево.
  Moving right.	 Движется вправо.
 Rare	Редкая
@@ -678,7 +683,7 @@ Mighty Leap	Мощный прыжок
 {0} blocks {1} {2} due to {3}.	{0} блокирует карту {2} с символом {1} благодаря символу {3}.
 {0}{1} attacks {2}.	{0}{1} атакует: {2}.
 {0}'s {1} ability triggers, preventing the damage.	{0}: срабатывает символ {1}, предотвращая урон.
-{0} attacks {1}, it	{0} атакует {1}, цель
+{0} attacks {1}, it	{0} атакует карту {1}, цель
 {0}{1} attacks empty Slot {2}.	{0}{1} атакует пустую ячейку {2}.
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7} and	{0}{1} атакует пустую ячейку {2}, срабатывает символ {4} карты {3}. {5} перемещается {6} в ячейку {7} и
 {0}{1} attacks empty Slot {2}, triggering {3}'s {4} ability. {5} moves {6} to slot {7}.	{0}{1} атакует пустую ячейку {2}, срабатывает символ {4} карты {3}. {5} перемещается {6} в ячейку {7}.
@@ -697,8 +702,8 @@ The {0} queued	{0} в очереди
 {0} takes {1}, {2}. 	{0} получает {1}, {2}. 
 Its {0} ability resolves before it dies.	Символ {0} срабатывает до гибели карты.
 {0} takes {1}, {2}.	{0} получает {1}, {2}.
-Your {0}	Ваша карта {0}
-Enemy {0}	Карта противника {0}
+Your {0}	{0} с вашей стороны
+Enemy {0}	{0} противника
 {0} is sacrificed.{1}	{0} приносится в жертву.{1}
 {0} sacrificed.{1}	В жертву принесены: {0}.{1}
 {0} power and {1} health	+{0} к силе и +{1} к здоровью
@@ -712,8 +717,8 @@ Morsel	Лакомый кусочек
 {0} is cut and {1}.	Карту {0} разрезают, и она {1}.
 {0} is smashed and {1}.	Карту {0} разбивают, и она {1}.
 {0} in Slot {1}	{0} в ячейке {1}
-1 direct damage.	прямой урон: 1.
-{0} direct damage.	прямой урон: {0}.
+1 direct damage.	1 прямого урона.
+{0} direct damage.	{0} прямого урона.
  The scale hits 5...	 Весы доходят до 5...
 VOLUME WARNING: 	ВНИМАНИЕ, ГРОМКИЙ ЗВУК: 
 Enemy deals {0}{1}	Противник наносит {0}{1}
@@ -765,7 +770,7 @@ left	влево
 {0} survives the sacrifice and transforms.	{0} переживает жертвоприношение и превращается.
 {0} transforms.	{0} превращается.
 {0}'s {1} ability triggers, it transforms into a hellish beast... A {2} is added to your hand.	{0}: срабатывает символ {1}, существо превращается в адского зверя... В вашу руку добавляется {2}.
-Drew Glitched card, the screen glitches and {0} {1} is added to your hand.	Взята сбойная карта, изображение искажается, и в вашу руку добавляется {0} {1}.
+Drew Glitched card, the screen glitches and {0} {1} is added to your hand.	Взята сбойная карта, изображение искажается, и в вашу руку добавляется карта {1}.
 an	карта
 a	карта
 , Powers met: {0}, Health met: {1}, Kins met: {2} of {3}	, сила достигнута: {0}, здоровье достигнуто: {1}, родство достигнуто: {2} из {3}
@@ -788,7 +793,7 @@ They each become {0}/{1} {2}{3}.	Все превращаются в {2} с {0}/{
 {0}'s {1} ability fizzles due to having no empty item slots.	{0}: символ {1} не срабатывает: нет свободных ячеек для предметов.
 {0} is created in your hand.	{0} появляется в вашей руке.
 {0} ability triggers: {1} {2} is added to your hand.	Срабатывает {0}: карта {2} добавляется в вашу руку.
-{0} {1} is added to your hand.	В вашу руку добавляется {0} {1}.
+{0} {1} is added to your hand.	В вашу руку добавляется карта {1}.
  Ouroboros comes back stronger than before...	 Уроборос возвращается сильнее прежнего...
 A	Карта
 An	Карта
@@ -810,6 +815,7 @@ an item slot	ячейке предметов
 Saving.	Сохранение.
 {0} is added to your hand.	{0} добавляется в вашу руку.
 Pirate Skull	Пиратский череп
+Mushroom	Гриб
 None	Нет
 Leshy waits silently.	Леший молча ждёт.
 {0} waits silently.	{0} молча ждёт.
@@ -874,7 +880,7 @@ Your 3 cards require {0} combined Health.	Суммарное здоровье в
 Your 3 cards require {0} combined sigils.	Общее число символов ваших 3 карт должно составить {0}.
 Your 3 cards require {0} combined Blood cost.	Суммарная цена ваших 3 карт должна составить {0} крови.
 Your 3 cards require {0} combined Bone cost.	Суммарная цена ваших 3 карт должна составить {0} костей.
-{0} of your 3 cards must be the same kin type.	Карты одного рода среди ваших 3 карт: нужно {0}.
+{0} of your 3 cards must be the same kin type.	Карты одного семейства среди ваших 3 карт: нужно {0}.
 Face up, but the card could not be read.	Лицом вверх, но карту не удалось прочитать.
  Duplicate of card in your deck.	 Такая карта уже есть в вашей колоде.
 {0}. Arrow keys to browse.	{0}. Стрелки — выбор.
@@ -932,8 +938,8 @@ Backpack. Arrows browse, Backspace returns to woodcarving selection.	Рюкза�
 Backpack. Arrows browse, Enter chooses a totem combination.	Рюкзак. Стрелки — выбор, Enter — выбрать сочетание для тотема.
 Your backpack is empty. Press Backspace to return to woodcarving selection.	Ваш рюкзак пуст. Нажмите Backspace, чтобы вернуться к выбору резных фигурок.
 The deck cannot be reached right now.	Колода сейчас недоступна.
-You have {0} {1} Kin card{2} in your deck.	Карт рода {1} в вашей колоде: {0}.
- {0}, {1} card{2}.	 {0}, карт: {1}.
+You have {0} {1} Kin card{2} in your deck.	Карт семейства {1} в вашей колоде: {0}.
+ {0}, {1} card{2}.	 {0}, {1} {1:pl:карта|карты|карт}.
 Woodcarving selection.	Выбор резной фигурки.
 Withdraw from the campfire.	Отойти от костра.
 the fire	костёр
@@ -943,13 +949,14 @@ Altar of the Bone Lord	Алтарь Повелителя костей
 Altar of the Bone Lord. Arrows to browse, Enter to confirm.	Алтарь Повелителя костей. Стрелки — выбор, Enter — подтвердить.
 Trapper. You are given a Rabbit Pelt. Trade the teeth you've collected for pelt cards to add to your deck.	Охотник. Вы получаете Кроличью шкурку. Обменяйте собранные зубы на карты шкурок для своей колоды.
 1 tooth	1 зуб
-{0} teeth	зубов: {0}
+{0} teeth	{0} {0:pl:зуб|зуба|зубов}
 Skinning Knife	Шкуросъёмный нож
 {0} purchased for {1}. You have {2} remaining.{3}	Куплено: {0}. Потрачено {1}. Осталось зубов: {2}.{3}
 You are {0} short from buying {1}.{2}	Не хватает на покупку: {1}. Нужно ещё {0}.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Зубов не хватит на ещё одну покупку. Backspace — уйти от Охотника.
 You have {0}.	У вас {0}.
 , and {0}	 и {0}
+Added to your deck: {0}.	Добавлено в вашу колоду: {0}.
 {0} sacrificed.	Принесено в жертву: {0}.
 sigil	символ
 sigils	символы
@@ -990,7 +997,7 @@ Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	�
 No option selected. Use left and right arrows to browse.	Вариант не выбран. Используйте стрелки влево и вправо для выбора.
 No pair is on the stone yet. Choose a pair of cards first.	На камне ещё нет пары. Сначала выберите пару карт.
 Pair of {0} selected.	Выбрана пара: {0}.
-You take the {0} Kin totem with the {1} Sigil.	Вы берёте тотем рода «{0}» с символом «{1}».
+You take the {0} Kin totem with the {1} Sigil.	Вы берёте тотем семейства «{0}» с символом «{1}».
 You took the {0}.	Вы взяли: {0}.
 {0} selected.	Выбрано: {0}.
 Nothing to choose here.	Здесь нечего выбирать.
@@ -1068,7 +1075,7 @@ Victory Screen controls. Space repeats the screen. Backspace returns to the main
 Enter to continue. Space to repeat.	Enter — продолжить. Пробел — повторить.
 Victory Screen controls. Space repeats the screen. Enter continues.	Управление на экране победы. Пробел повторяет экран. Enter продолжает.
 Leshy blows out his final candle, the cabin goes dark.	Леший задувает последнюю свечу, хижина погружается во тьму.
-Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Управление в конце захода. Пробел повторяет экран. Enter начинает новый заход с той же стартовой колодой и теми же включёнными испытаниями. Backspace возвращает в главное меню.
+Run end controls. Space repeats the screen. Enter begins a new run with the same Starter Deck and Challenges enabled. Backspace returns to the main menu.	Управление в конце захода. Пробел повторяет экран. Enter начинает новый заход с той же стартовой колодой и теми же включёнными препятствиями. Backspace возвращает в главное меню.
 the log file could not be found	файл журнала не найден
 your desktop folder could not be found	папка рабочего стола не найдена
 the file could not be written	не удалось записать файл
@@ -1235,7 +1242,7 @@ Enemy Turn Start	Начало хода противника
 Powers	Способности
 Attacks	Атаки
 Your Turn	Ваш ход
-Challenges and Totems	Испытания и тотемы
+Challenges and Totems	Препятствия и тотемы
 Bosses	Боссы
 Card Drawn	Карта взята
 Card Played	Карта сыграна

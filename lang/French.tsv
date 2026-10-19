@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	La capacité {1} de {0} se déclenche. La créature plonge sous l'eau...
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	Les capacités {1} de {0} se déclenchent dans les emplacements {2}, les créatures plongent sous l'eau...
 Submerged {0}	{0}, sous l'eau
+Doctor	Docteur
 Leshy puts on the {0} mask.	Leshy met le masque : {0}.
 Leshy puts on the {0} mask. {1}	Leshy met le masque : {0}. {1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISOIRE : aucune description du visage pour le masque {0}.
@@ -114,7 +115,7 @@ The pirate skull fades backwards... Something is coming...	Le crâne de pirate r
 The eye of the skull begins to glow.	L'œil du crâne se met à briller.
 {0} fills the enemy board, one card across all {1} slots, {2}/{3}.	{0} occupe tout le plateau adverse : une seule carte sur les {1} emplacements, {2}/{3}.
 {0} arrives, {1}/{2}.	{0} arrive, {1}/{2}.
-{0} is destroyed.	{0} est détruit.
+{0} is destroyed.	{0} se brise.
 {0} aims his hook at your empty slot {1}.	{0} vise avec son hameçon votre emplacement vide {1}.
 {0} aims his hook at {1} in slot {2}.	{0} vise avec son hameçon {1}, emplacement {2}.
 {0} hooks your {1} and pulls it to his slot {2}.	{0} ferre votre {1} et l'attire dans son emplacement {2}.
@@ -185,7 +186,7 @@ Trade pelts from your hand for cards on their board and queue. 	Échangez les fo
 Arrow keys browse, Enter trades. 	Flèches pour parcourir, Entrée pour échanger. 
 You have {0} {1} in hand. 	Vous avez {0} {1} en main. 
 Trade until you run out of pelts, then the battle will continue.	Échangez jusqu'à ne plus avoir de fourrures, puis le combat reprendra.
-is destroyed	est détruit
+is destroyed	se brise
 dies	meurt
 {0} gets caught in the {1} and {2}.	{0} se fait prendre par {1} et {2}.
 {0} {1}, its ability {2} triggers.	{0} {1}, sa capacité {2} se déclenche.
@@ -305,8 +306,8 @@ Challenge locked.	Défi verrouillé.
 plus 1 challenge point	plus 1 point de défi
 plus {0} challenge points	plus {0} points de défi
 Challenge complete.	Défi terminé.
-Challenge level {0}.	Niveau de défi {0}.
-All challenge levels cleared.	Tous les niveaux de défi sont terminés.
+Challenge level {0}.	Niveau de difficulté {0}.
+All challenge levels cleared.	Tous les niveaux de difficulté sont terminés.
 Active, 	Actif, 
 Random Starter Deck	Deck de départ aléatoire
 unlabelled option	option sans libellé
@@ -379,6 +380,10 @@ Boulder choice	Choix de rocher
 Side deck change	Changement de deck secondaire
 Deck trial	Épreuve du deck
 Victory feast	Festin de la victoire
+Card choice Random	Choix de carte aléatoire
+Card choice Kin	Choix de carte par tribu
+Card choice Cost	Choix de carte par coût
+Card choice Death card	Choix de carte de la Mort
 Random	Aléatoire
 Cost	Coût
 Cannot {0} right now.	Impossible de {0} pour l'instant.
@@ -641,7 +646,7 @@ Glitched card. This card is glowing white and glitching. Card stats are unknown 
 Shift plus R looks up the last ability you heard.	Maj plus R consulte la dernière capacité entendue.
 Ability	Capacité
 Abilities	Capacités
- Sigil Ability: {0}.	 Capacité : {0}.
+ Sigil Ability: {0}.	 Capacité d'emblème : {0}.
  Kin type: {0}.	 Tribu : {0}.
  Kin types: {0}.	 Tribus : {0}.
 Star	Étoile
@@ -697,7 +702,7 @@ The {0} queued	{0} en file d'attente
 {0} takes {1}, {2}. 	{0} subit {1}, {2}. 
 Its {0} ability resolves before it dies.	Sa capacité {0} se résout avant sa mort.
 {0} takes {1}, {2}.	{0} subit {1}, {2}.
-Your {0}	Votre {0}
+Your {0}	{0} de votre côté
 Enemy {0}	{0} adverse
 {0} is sacrificed.{1}	Sacrifice : {0}.{1}
 {0} sacrificed.{1}	Sacrifices : {0}.{1}
@@ -810,6 +815,7 @@ an item slot	un emplacement d'objet
 Saving.	Sauvegarde.
 {0} is added to your hand.	{0} rejoint votre main.
 Pirate Skull	Crâne de pirate
+Mushroom	Champignon
 None	Aucun
 Leshy waits silently.	Leshy attend en silence.
 {0} waits silently.	{0} attend en silence.
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	Il vous manque {0} pour acheter {1}.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Il ne vous reste pas assez de dents pour un autre achat. Retour arrière pour quitter le trappeur.
 You have {0}.	Vous avez {0}.
 , and {0}	, et {0}
+Added to your deck: {0}.	Rejoignent votre deck : {0}.
 {0} sacrificed.	Sacrifice : {0}.
 sigil	l'emblème
 sigils	les emblèmes
@@ -990,7 +997,7 @@ Left and right arrows to browse, Enter to choose, Space to repeat, H for help.	F
 No option selected. Use left and right arrows to browse.	Aucune option sélectionnée. Utilisez les flèches gauche et droite pour parcourir.
 No pair is on the stone yet. Choose a pair of cards first.	Aucune paire n'est encore sur la pierre. Choisissez d'abord deux cartes.
 Pair of {0} selected.	Paire sélectionnée : {0}.
-You take the {0} Kin totem with the {1} Sigil.	Vous prenez le totem de parenté {0} avec le sigil {1}.
+You take the {0} Kin totem with the {1} Sigil.	Vous prenez le totem de la tribu {0} avec la capacité {1}.
 You took the {0}.	Vous avez pris : {0}.
 {0} selected.	Sélection : {0}.
 Nothing to choose here.	Rien à choisir ici.

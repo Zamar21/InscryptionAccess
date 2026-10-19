@@ -165,6 +165,9 @@ namespace IKMA
         {
             public string Label;
             public Transform Parent;
+            /// <summary>Session 67: the label cache's key. The parent's name,
+            /// or parent/button for a button sitting loose on a page container.</summary>
+            public string Key;
             public readonly List<GBC.GenericUIButton> Buttons = new List<GBC.GenericUIButton>();
 
             public GBC.GenericUIButton Decrease;   // Minus / Left
@@ -245,11 +248,21 @@ namespace IKMA
                     try { parent = b.transform.parent; } catch { }
                     if (parent == null) continue;
 
+                    // A BUTTON LOOSE ON A PAGE CONTAINER IS A ROW OF ITS OWN.
+                    // (Session 67.) TabGroup_Gameplay holds both RESET SAVE DATA
+                    // and the game's set-language button ("Выбрать Русский"),
+                    // which appears after Text Language is changed. Grouped by
+                    // parent they were one row, the language button was never
+                    // reachable, and a changed language could not be applied.
+                    bool loose = !IsRealRow(parent.gameObject.name);
+                    Transform groupKey = loose ? b.transform : parent;
+
                     Row row;
-                    if (!byParent.TryGetValue(parent, out row))
+                    if (!byParent.TryGetValue(groupKey, out row))
                     {
-                        row = new Row { Parent = parent };
-                        byParent[parent] = row;
+                        row = new Row { Parent = parent,
+                                        Key = loose ? parent.gameObject.name + "/" + nm : parent.gameObject.name };
+                        byParent[groupKey] = row;
                         rows.Add(row);
                     }
                     row.Buttons.Add(b);
@@ -343,7 +356,7 @@ namespace IKMA
             // A button that carries its own words is named by them; only a
             // control with no text of its own (a plus, a minus) falls back to
             // the row it sits in.
-            return Remember(objName, ScanLabel(row));
+            return Remember(row.Key ?? objName, ScanLabel(row));
         }
 
         /// <summary>Where the row sits on screen — its topmost button.</summary>
@@ -1403,6 +1416,15 @@ namespace IKMA
                 try { now = ScanLabel(row); } catch { }
                 if (now != last) { last = now; stableSince = Time.realtimeSinceStartup; continue; }
                 if (!string.IsNullOrEmpty(now) && Time.realtimeSinceStartup - stableSince >= 0.3f) break;
+            }
+
+            // GONE WITH THE SCREEN. (Session 67.) The language button reloads
+            // the start screen; the row's objects are destroyed and the echo
+            // came out after the new screen's first line, in the old language.
+            if (row?.Parent == null || PanelRoot() == null)
+            {
+                _log?.LogInfo("IKMA OPTIONS: the panel closed after the press; nothing echoed.");
+                yield break;
             }
 
             bool changed = !string.IsNullOrEmpty(last) && !string.Equals(last, before, System.StringComparison.Ordinal);

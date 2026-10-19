@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	{0} kartının {1} yeteneği tetiklendi. Suyun altına dalıyor...
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0} kartının {1} yetenekleri {2} yuvalarında tetiklendi, yaratıklar suya dalıyor...
 Submerged {0}	Suya dalmış: {0}
+Doctor	Doktor
 Leshy puts on the {0} mask.	Leshy, {0} maskesini takıyor.
 Leshy puts on the {0} mask. {1}	Leshy, {0} maskesini takıyor. {1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA GEÇİCİ: {0} maskesi için yüz tarifi yok.
@@ -379,6 +380,10 @@ Boulder choice	Kaya seçimi
 Side deck change	Yan deste değişimi
 Deck trial	Deste sınaması
 Victory feast	Zafer ziyafeti
+Card choice Random	Kart seçimi Rastgele
+Card choice Kin	Kart seçimi Soy
+Card choice Cost	Kart seçimi Bedel
+Card choice Death card	Kart seçimi Ölüm kartı
 Random	Rastgele
 Cost	Bedel
 Cannot {0} right now.	Şu anda {0} mümkün değil.
@@ -810,6 +815,7 @@ an item slot	bir eşya yuvası
 Saving.	Kaydediliyor.
 {0} is added to your hand.	{0} eline eklendi.
 Pirate Skull	Korsan Kafatası
+Mushroom	Mantar
 None	Yok
 Leshy waits silently.	Leshy sessizce bekliyor.
 {0} waits silently.	{0} sessizce bekliyor.
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	{1} için {0} eksiğin var.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 Başka bir alım için yeterli diş kalmadı. Tuzakçı'dan ayrılmak için Geri silme.
 You have {0}.	Sende {0} var.
 , and {0}	ve {0}
+Added to your deck: {0}.	Destene eklendi: {0}.
 {0} sacrificed.	{0} kurban edildi.
 sigil	mühür
 sigils	mühürlerini

@@ -93,6 +93,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	
 Submerged {0}	
+Doctor	
 Leshy puts on the {0} mask.	
 Leshy puts on the {0} mask. {1}	
 IKMA PROVISIONAL: no face description for the {0} mask.	
@@ -392,6 +393,10 @@ Boulder choice
 Side deck change	
 Deck trial	
 Victory feast	
+Card choice Random	
+Card choice Kin	
+Card choice Cost	
+Card choice Death card	
 Random	
 Cost	
 Cannot {0} right now.	
@@ -823,6 +828,7 @@ an item slot
 Saving.	
 {0} is added to your hand.	
 Pirate Skull	
+Mushroom	
 None	
 Leshy waits silently.	
 {0} waits silently.	
@@ -963,6 +969,7 @@ You are {0} short from buying {1}.{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	
 You have {0}.	
 , and {0}	
+Added to your deck: {0}.	
 {0} sacrificed.	
 sigil	
 sigils	

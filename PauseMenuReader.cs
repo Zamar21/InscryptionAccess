@@ -154,8 +154,15 @@ namespace IKMA
         {
             if (card == null) return null;
 
+            // Translated the way the game draws it (Session 67: the raw
+            // TitleText is the English source).
             string title = null;
-            try { title = card.TitleText; } catch { }
+            try
+            {
+                if (!string.IsNullOrEmpty(card.TitleLocId)) title = Localization.TranslateWithID(card.TitleLocId);
+                if (string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(card.TitleText)) title = Localization.Translate(card.TitleText);
+            }
+            catch { }
             if (string.IsNullOrEmpty(title)) return null;
 
             bool locked = false;
@@ -553,7 +560,7 @@ namespace IKMA
                 foreach (var challenge in data.activeChallenges)
                 {
                     var info = AscensionChallengesUtil.GetInfo(challenge);
-                    string title = info?.title;
+                    string title = Loc.Game(info?.title);   // Session 67
                     if (string.IsNullOrEmpty(title)) continue;
 
                     // The same challenge can be stacked, and a title said twice

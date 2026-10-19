@@ -4,7 +4,7 @@
 
 IKMA (Inscryption Kaycee's Mod Access) lets you play Inscryption's Kaycee's Mod with a screen reader, from the keyboard or a controller. This guide covers installing, checking that it works, changing settings, updating, uninstalling, and fixing the problems people hit most.
 
-Version 0.4.8 (beta) is for Windows only.
+Version 0.5 is for Windows and the Steam Deck.
 
 ## Contents
 
@@ -12,6 +12,7 @@ Version 0.4.8 (beta) is for Windows only.
 - Which download to pick
 - Install with IKMA Manager (recommended)
 - Install by hand
+- Install on a Steam Deck
 - Check that it works
 - Settings
 - Updating
@@ -22,7 +23,7 @@ Version 0.4.8 (beta) is for Windows only.
 
 ## What you need
 
-- Inscryption on Steam, on Windows.
+- Inscryption on Steam, on Windows. For the Steam Deck, see Install on a Steam Deck.
 - A screen reader. NVDA is what IKMA is built for. JAWS reaches IKMA through the same speech library, but it has not been tested. With no screen reader running, IKMA speaks through the Windows built-in voice.
 - Optional: any controller. Optional: a braille display (see Settings).
 - Nothing else if you use IKMA Manager. If you install by hand you also need BepInEx 5, the Windows x86 (32-bit) build. Inscryption is a 32-bit game, and the 64-bit build will not load.
@@ -35,6 +36,7 @@ Everything is on the latest release page: https://github.com/Zamar21/Inscryption
 
 - IKMA-v(version)-windows-manager.exe is the one most people want. It is a single file that installs everything. The version number is in the file name.
 - IKMA-v(version)-windows.zip is for installing by hand. It does not contain BepInEx.
+- IKMA-v(version)-steamdeck.zip is for the Steam Deck. It does not contain BepInEx.
 - SHA256SUMS.txt lists a fingerprint for each download, so you can check yours is the file that was published. See Troubleshooting.
 - IKMAccess.dll and IKMAccess.dll.sig are used by the automatic updater. You do not download them yourself.
 
@@ -78,6 +80,44 @@ The dialog is titled "Windows protected your PC". It appears when you run the fi
 4. Unzip IKMA-v(version)-windows.zip into the same folder. It puts IKMAccess.dll in BepInEx\plugins, and puts UniversalSpeech.dll and nvdaControllerClient.dll next to Inscryption.exe.
 5. Start your screen reader, then start Inscryption.
 
+## Install on a Steam Deck
+
+IKMA is a Windows mod, so on the Deck the game's Windows version runs through Proton. The install is done once, in Desktop Mode. IKMA brings its own speech: a small speech helper that the script installs and starts by itself whenever the Deck starts.
+
+1. Switch to Desktop Mode: press the Steam button, then Power, then Switch to Desktop.
+2. Download IKMA-v(version)-steamdeck.zip from the release page.
+3. Download BepInEx 5, the Windows x86 zip, from its official page only: https://github.com/BepInEx/BepInEx/releases. Its file name starts with BepInEx_win_x86_5. Leave it in your Downloads folder.
+4. Unzip IKMA-v(version)-steamdeck.zip into its own folder.
+5. Exit Steam completely (right-click the Steam icon in the taskbar, then Exit Steam). The script can only pick the controller layout while Steam is closed. If Steam is open, everything else still installs.
+6. Open Konsole in the folder you unzipped to, and type, with the name of the BepInEx file you downloaded:
+
+bash install_ikma_deck.sh --bepinex-zip ~/Downloads/BepInEx_win_x86_5.4.23.2.zip
+
+   Add --dry-run to the end first if you want to see every step without changing anything.
+7. The script finds the game, unpacks BepInEx into the game folder, copies IKMA in, installs the speech helper, downloads the Piper voice (about 105 MB in all, each file checked against a fixed checksum), and adds the "Inscryption Access Official" controller layout. It never uses sudo and changes nothing outside your home folder and the game folder.
+8. Make the two settings the script prints at the end, in Steam > Inscryption > Properties:
+   - Compatibility: tick "Force the use of a specific Steam Play compatibility tool" and pick Proton.
+   - General > Launch Options: set exactly
+
+WINEDLLOVERRIDES="winhttp=n,b" %command%
+
+9. Return to Gaming Mode and start Inscryption. IKMA speaks at the title screen.
+
+To test the voice without the game, the script prints a test command as its last line.
+
+### Speech and controls on the Deck
+
+- English is spoken with the Piper voice. Every other language uses the Deck's system voice. If Piper could not be installed, English uses the system voice too.
+- Mod Settings (LB plus Menu) > Steam Deck speech: Voice (female, the default, or male), Rate, and Volume (1 to 10).
+- The "Inscryption Access Official" layout plays like a controller, with the back buttons set: L4 Home, L5 End, R4 Control plus Space. If Steam was open during the install, pick it yourself: Steam > Inscryption > the controller icon > Controller Layout > Community Layouts.
+- IKMA updates itself on the Deck the same way as on Windows.
+
+### Uninstalling from the Deck
+
+In Desktop Mode, delete IKMAccess.dll from BepInEx/plugins in the game folder, and clear the Launch Options in Steam. To stop the speech helper, type in Konsole:
+
+systemctl --user disable --now ikma-speech
+
 ## Check that it works
 
 - IKMA speaks at the title screen.
@@ -103,7 +143,7 @@ Most settings can be changed in the game: press Control plus M for Mod Settings 
 - Mode: Automatic, DownloadThenAsk, AskFirst or Off. Off means IKMA never connects to the internet. When IKMA asks a question, answer in the game: F9 for yes, F10 for no.
 
 [Language]
-- Language: Game, English or French. Game follows the game's own language; any language other than French speaks English.
+- Language: Game, or one of the twelve languages IKMA speaks (English, French, Italian, German, Spanish, Brazilian Portuguese, Turkish, Russian, Japanese, Korean, Chinese (Simplified) and Chinese (Traditional)). Game follows the game's own language.
 
 [History]
 - Reads and Prompts: whether the review history keeps what you read and the prompts you hear.
@@ -143,7 +183,7 @@ To turn IKMA off without removing it, use IKMA Manager, option 3.
 4. Open BepInEx\LogOutput.log in the game folder. If it does not exist, BepInEx did not run. If it exists, send it with your bug report.
 5. With no screen reader running, IKMA uses the Windows built-in voice. Check that Windows has a voice installed and the volume is up.
 
-### Windows or my antivirus complains about a file
+### Windows or my antivirus stops a file
 
 IKMA is a normal BepInEx plugin. It is not injected into the game from outside. But the files are new and not code-signed, and some antivirus programs distrust new unsigned files. Check your download against SHA256SUMS.txt first (next entry). If it matches, you can allow it.
 

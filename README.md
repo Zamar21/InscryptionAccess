@@ -4,13 +4,13 @@
 
 IKMA is a mod that makes Inscryption's game mode called "Kaycee's Mod" blind accessible. It adds screen reader support and controls for keyboard or controller.
 
-Version 0.4.8 is a beta, ahead of the version 0.5 launch. It covers the "Kaycee's Mod" portion of Inscryption only. The story acts are not currently covered.
+Version 0.5 covers the "Kaycee's Mod" portion of Inscryption only. The story acts are not yet covered.
 
 Every action in this game is turn based, there are zero timing based requirements. However there are also very few moments you can take something back after performing a game action, so be deliberate! 
 
 This game exclusively utilizes Auto-saves, and you can have one active run ongoing at a time, which can be paused, suspended, or reset at nearly any time. 
 
-Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
+Mod made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 
 ## Contents
 
@@ -24,6 +24,7 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 - Troubleshooting
 - Reporting a bug
 - Language
+- Steam Deck
 - Not in this version
 - Known issues
 - Notes
@@ -70,7 +71,7 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 - Kaycee's Mod title screen: main menu, new run, starter deck select, challenge select (with the challenge level and points), the two confirm screens, stats, unlocks (cards, starter decks, challenges) and the devlog entries.
 - Run end screen and victory screen: your stats are read out, then what each key does.
 - Locked items say that they are locked and where they sit in the list.
-- In vanilla Inscryption "Kaycee's Mod" is unlocked through story progression. While IKMA is enabled you will have access to it without finishing the story first, and IKMA does not write that to your save. With IKMA off, your save decides.
+- In vanilla Inscryption "Kaycee's Mod" is unlocked through story progression. While IKMA is enabled you will have access to it from the start, and IKMA does not write that to your save. With IKMA off, your save decides.
 
 ### The map
 
@@ -115,7 +116,7 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 
 - While at the game map, you can press Shift and the Down arrow to stand up from the game table. This enters you into a first person mode. 
 - As in the unmodded game, your character can only ever look North, South, East, and West in this first person mode. The game works on a square grid system. 
-- The standing mode in Kaycee's Mod is an optional mostly scenic mode, but will give you a taste of the escape room style puzzles you will encounter in the main story mode later next year with version 1.0!  
+- The standing mode in Kaycee's Mod is an optional mostly scenic mode, but will give you a taste of the escape room style puzzles you will encounter in the main story mode later with version 1.0!  
 
 
 ### Buffers, review history and silence 
@@ -131,8 +132,8 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 - Opened in the game with Control plus M. It navigates like the game's own menus.
 - Events: twenty kinds of announcements, each with its own switch for being spoken and for being kept in the history. Some also split into your side and the enemy's. The groups are Combat (Death, HP Changes, Enemy Moves, Turns, Powers, Attacks, Your Turn, Challenges and Totems, Bosses), Cards (Card Drawn, Card Played, Card Obtained), Resources (Teeth, Bones, Item Obtained, Item Used) and Other (Dialogue, Node Entered, Node Results, Saving).
 - History: whether reads and prompts are kept.
-- Also: Updates, Speech engine, Braille display, Controller vibration, Controller buttons, Control template, and Full log for bug reports.
-- Language: follow the game's language, English, or French.
+- Also: Updates, Speech engine, Steam Deck speech, Braille display, Controller vibration, Controller buttons, Control template, and Full log for bug reports.
+- Language: follow the game's language, or pick one of the twelve IKMA speaks.
 - The same settings are in IKMA Manager.
 
 ### IKMA Manager and updates
@@ -149,8 +150,8 @@ Made by Zamar. Not affiliated with Daniel Mullins Games or Devolver Digital.
 
 ## What you need to get started
 
-- Inscryption on Steam, on Windows.
-- A screen reader. NVDA is what IKMA is built for. With no screen reader active, IKMA uses the Windows built-in voice.
+- Inscryption on Steam, on Windows or a Steam Deck.
+- On Windows, a screen reader. NVDA is what IKMA is built for. With no screen reader active, IKMA uses the Windows built-in voice.
 - Nothing else if you use IKMA Manager. Installing by hand also needs BepInEx 5, the 32-bit (x86) build, from the official page only: https://github.com/BepInEx/BepInEx/releases
 - Optional: a controller, and a braille display.
 
@@ -163,6 +164,8 @@ The short version. INSTALL.md has the full steps, including the Windows warning 
 3. Press Enter to install.
 4. Start Inscryption normally from Steam. IKMA speaks at the title screen.
 5. Start your screen reader before the game, or within 30 seconds after it.
+
+On a Steam Deck the install is different. See Steam Deck below, and INSTALL.md.
 
 ## Updating and uninstalling
 
@@ -203,19 +206,33 @@ At any point during gameplay, press Shift plus L (LB plus RB plus View on a cont
 
 ## Language
 
-IKMA speaks English and French. With the game set to French, IKMA's own lines are in French too; card names, abilities and dialogue always come from the game's own text. The French lines were translated by Claude and have not yet been checked by a French speaker, so please report anything that sounds wrong. Every other game language gets English from IKMA for now. More languages are planned! 
+IKMA speaks English, French, Italian, German, Spanish, Brazilian Portuguese, Turkish, Russian, Japanese, Korean, Chinese (Simplified) and Chinese (Traditional). These are the languages the game itself comes in.
+
+- By default IKMA follows the game's language: set the language in the game's own options, and IKMA's lines follow it. Mod Settings (Control plus M) > Language can set IKMA to a different language from the game.
+- Card names, abilities and dialogue always come from the game's own text. Labels the game already translates, such as its menu and screen names, use the game's own word.
+- On a controller, every language names your controller's buttons.
+- IKMA Manager is translated into the same languages.
+- Please note that all translations are done through AI, and none have been checked by a native speaker yet. Please report anything that sounds wrong, with a log (Shift plus L).
+
+## Steam Deck
+
+IKMA runs on the Steam Deck, with the game's Windows version through Proton.
+
+- Download IKMA-v(version)-steamdeck.zip from the release page. INSTALL.md, Install on a Steam Deck, has the steps.
+- The install is done once, in Desktop Mode, with a script that explains each step before it makes it. You play in Gaming Mode as usual.
+- Speech: SteamOS has no screen reader, so IKMA brings its own speech. English uses the Piper voice, which the install script downloads. Every other language uses the Deck's system voice.
+- Mod Settings > Steam Deck speech sets the voice (female or male), the rate and the volume.
+- Controls: the install script adds the "Inscryption Access Official" controller layout and picks it for Inscryption. It plays like a controller, with the back buttons set: L4 Home, L5 End, R4 Control plus Space.
 
 ## Not in this version
 
 - The story acts (Acts 1, 2 and 3). This version is Kaycee's Mod only.
-- Languages other than English and French.
 
 ## Known issues
 
 The current list is in KNOWN_ISSUES.md. The ones most players will meet:
 
 - IKMA Manager is unsigned, so Windows warns the first time it runs.
-- Braille output has not been confirmed by a braille reader.
 - Speech timing under NVDA is estimated, not measured.
 
 ## Notes

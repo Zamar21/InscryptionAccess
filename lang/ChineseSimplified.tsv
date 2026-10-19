@@ -80,6 +80,7 @@ Draw phase. Press D to draw from your deck, or S to draw from the Squirrel deck.
 {0}'s {1} ability triggers. It dives underwater...	{0}的{1}能力触发。它潜入了水下……
 {0}'s {1} abilities trigger in slots {2}, they dive underwater...	{0}的{1}能力在卡槽{2}触发，它们潜入水中...
 Submerged {0}	潜入水下的{0}
+Doctor	医生
 Leshy puts on the {0} mask.	莱西戴上了{0}面具。
 Leshy puts on the {0} mask. {1}	莱西戴上了{0}面具。{1}
 IKMA PROVISIONAL: no face description for the {0} mask.	IKMA PROVISIONAL: {0}面具没有面部描述。
@@ -379,6 +380,10 @@ Boulder choice	选择磐石
 Side deck change	更换副牌组
 Deck trial	牌组试炼
 Victory feast	胜利宴席
+Card choice Random	选择卡牌 随机
+Card choice Kin	选择卡牌 族群
+Card choice Cost	选择卡牌 费用
+Card choice Death card	选择卡牌 死亡卡
 Random	随机
 Cost	费用
 Cannot {0} right now.	现在无法{0}。
@@ -810,6 +815,7 @@ an item slot	一个道具栏
 Saving.	正在保存。
 {0} is added to your hand.	{0}加入你的手牌。
 Pirate Skull	海盗骷髅
+Mushroom	蘑菇
 None	无
 Leshy waits silently.	莱西静静等待。
 {0} waits silently.	{0}静静等待。
@@ -950,6 +956,7 @@ You are {0} short from buying {1}.{2}	购买{1}还差{0}。{2}
  Not enough teeth remaining for another purchase. Backspace to leave the Trapper.	 牙齿不够再购买了。退格键离开猎人。
 You have {0}.	你有{0}。
 , and {0}	，以及{0}
+Added to your deck: {0}.	已加入你的牌组：{0}。
 {0} sacrificed.	{0}已献祭。
 sigil	印记
 sigils	印记

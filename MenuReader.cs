@@ -98,6 +98,9 @@ namespace IKMA
             { "AscensionCardsSummaryScreen",       Vocabulary.Menus.CardsUnlocked },
             { "AscensionCardsScreen",              Vocabulary.Menus.Cards },
             { "AscensionChallengeScreen",          Vocabulary.Menus.Challenges },
+            // Session 67: the object in the log is ChallengesScreen; missed, the
+            // fallback trimmed it to an English "Challenges" in every language.
+            { "ChallengesScreen",                  Vocabulary.Menus.Challenges },
             { "AscensionChallengeConfirmScreen",   Vocabulary.Menus.ConfirmChallenges },
             // "First words should be 'Select Starter Deck.'" — Zamar, 0.7.236.
             // Two keys because the CLASS is AscensionChooseStarterDeckScreen
@@ -1630,7 +1633,7 @@ namespace IKMA
             int    nth    = DuplicateTitleIndex(icon, info.title);
             string title  = string.IsNullOrEmpty(info.title)
                           ? Vocabulary.Menus.ChallengeFallback
-                          : (nth > 0 ? $"{info.title} {nth}" : info.title);
+                          : (nth > 0 ? $"{Loc.Game(info.title)} {nth}" : Loc.Game(info.title));
 
 
             Speech.Confirm(points == null
@@ -2246,12 +2249,15 @@ namespace IKMA
                         // The same title twice on one screen is two options a
                         // blind player cannot tell apart. See DuplicateTitleIndex.
                         int nth = DuplicateTitleIndex(item, info.title);
-                        string name = nth > 0 ? $"{info.title} {nth}" : info.title;
+                        // Session 67: the game's translations, as
+                        // AscensionChallengeDisplayer prints them.
+                        string shown = Loc.Game(info.title);
+                        string name = nth > 0 ? $"{shown} {nth}" : shown;
 
                         label = Vocabulary.Menus.ChallengeWithPoints(name, points);
 
                         if (!string.IsNullOrEmpty(info.description))
-                            label += $". {info.description}";
+                            label += $". {Loc.Game(info.description)}";
 
                         // WHETHER IT IS SWITCHED ON, FIRST. (0.7.240.)
                         //
@@ -2346,6 +2352,12 @@ namespace IKMA
             if (string.IsNullOrEmpty(label))
             {
                 label = Prettify(item.gameObject.name);
+
+                // Session 67: the two arrows with no text of their own spoke
+                // their object names in English in every language. The same
+                // words, from lines already translated.
+                if (label == "Back") label = Vocabulary.Menus.BackPressed.TrimEnd(Loc.Stops);
+                else if (label == "Continue") label = Vocabulary.Title.Continue;
 
                 // THE RANDOM DECK IS A DECK, AND ITS NAME DOES NOT SAY SO.
                 // (0.7.242.) Zamar: "Change this to Random Starter Deck."

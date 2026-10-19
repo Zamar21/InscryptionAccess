@@ -3331,6 +3331,24 @@ namespace IKMA
             var names = new List<string>(counts.Keys);
             names.Sort((a, b) => order[a].CompareTo(order[b]));
 
+            // Session 67: English plurals are English. French heard "Deux
+            // Fourrure de lapins rejoint votre deck." Every other language
+            // names each pelt once with its count, "(2)", in a list line.
+            if (Loc.CurrentLanguage() != "English")
+            {
+                bool several = names.Count > 1;
+                var counted = new List<string>();
+                foreach (var name in names)
+                {
+                    int n = counts[name];
+                    if (n > 1) several = true;
+                    counted.Add(n == 1 ? name : $"{name} ({n})");
+                }
+                return several
+                    ? Vocabulary.NodeScreens.PeltsAddedList(string.Join(", ", counted.ToArray()))
+                    : Vocabulary.NodeScreens.PeltsAddedLine(counted[0]);
+            }
+
             var parts = new List<string>();
             foreach (var name in names)
             {

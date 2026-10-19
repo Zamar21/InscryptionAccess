@@ -21,13 +21,13 @@ CURSOR = os.path.expanduser("~/.ikma_drive_cursor")
 
 def load_cursor():
     try:
-        tag, n = open(CURSOR).read().rsplit(" ", 1)   # the tag has spaces
+        tag, n = open(CURSOR, encoding="utf-8").read().rsplit(" ", 1)   # the tag has spaces
         return tag, int(n)
     except Exception:
         return None, 0
 
 def save_cursor(tag, n):
-    with open(CURSOR, "w") as f:
+    with open(CURSOR, "w", encoding="utf-8") as f:
         f.write(f"{tag} {n}")
 
 def read_out():

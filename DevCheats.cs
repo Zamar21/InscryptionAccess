@@ -14,8 +14,10 @@
 //
 //   deck rares            add one of every rare card to this run's deck.
 //   deck onlyrares        the same, after emptying the deck first.
-//   deck add <CardName>   add one card by the game's internal name
-//                         ("Ijiraq", "LongElk"). "deck list" prints the deck.
+//   deck add <CardName> [xN] [A/H]
+//                         add a card by the game's internal name
+//                         ("Ijiraq", "LongElk"), N copies, each at A/H.
+//                         "deck list" prints the deck.
 //   hand <CardName>       in a battle: put that card in the hand, through
 //                         CardSpawner.SpawnCardToHand - the door the game's
 //                         own sigils use (Rabbit Hole, Bees Within).
@@ -132,10 +134,31 @@ namespace IKMA
 
             if (what == "add")
             {
-                var info = ByName(parts.Length > 1 ? parts[1].Trim() : "");
+                // Session 67: "deck add MantisGod x5 3/3" - a count and the
+                // stats each copy should have, through a CardModificationInfo
+                // (the same mod a campfire buff writes).
+                string[] words = (parts.Length > 1 ? parts[1] : "").Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var info = ByName(words.Length > 0 ? words[0] : "");
                 if (info == null) { error = "no card with that internal name"; return false; }
-                deck.AddCard(info);
-                note = "added " + info.name + "; deck is " + deck.Cards.Count + " cards";
+                int count = 1, atk = -1, hp = -1;
+                for (int w = 1; w < words.Length; w++)
+                {
+                    string word = words[w];
+                    if (word.StartsWith("x") && int.TryParse(word.Substring(1), out int c) && c >= 1 && c <= 20) count = c;
+                    else if (word.Contains("/"))
+                    {
+                        var ah = word.Split('/');
+                        if (ah.Length != 2 || !int.TryParse(ah[0], out atk) || !int.TryParse(ah[1], out hp)) { error = "stats as attack/health, e.g. 3/3"; return false; }
+                    }
+                    else { error = "'add <CardName> [xN] [attack/health]'"; return false; }
+                }
+                for (int i = 0; i < count; i++)
+                {
+                    var copy = i == 0 ? info : ByName(info.name);
+                    if (atk >= 0) copy.Mods.Add(new CardModificationInfo(atk - copy.Attack, hp - copy.Health));
+                    deck.AddCard(copy);
+                }
+                note = "added " + count + " " + info.name + (atk >= 0 ? " at " + atk + "/" + hp : "") + "; deck is " + deck.Cards.Count + " cards";
                 return true;
             }
 
